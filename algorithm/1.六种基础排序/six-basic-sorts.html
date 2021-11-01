@@ -15,8 +15,6 @@
     function selectSort(arr){
       const ret = [];
       function getMinIndex(arr){
-        if(arr.length === 0) return null;
-        if(arr.length ===1) return 0;
         let ind = 0;
         for(let i = 1;i<arr.length;i++){
           if(arr[ind]>arr[i]) ind = i;
