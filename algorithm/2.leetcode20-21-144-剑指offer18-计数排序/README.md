@@ -19,5 +19,5 @@ leetcode-144-二叉树的前序遍历
 [B站](https://www.bilibili.com/video/BV1dq4y1g732?spm_id_from=333.999.0.0)
 
 leetcode-剑指offer-018-有效的回文
-[掘金](https://juejin.cn/post/7024096823937597448/)
+[掘金](https://juejin.cn/post/7026566945579204644/)
 [B站](https://www.bilibili.com/video/BV1yR4y177Ym?spm_id_from=333.999.0.0)
