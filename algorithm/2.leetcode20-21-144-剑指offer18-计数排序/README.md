@@ -10,7 +10,7 @@ leetcode-20-有效的括号
 
 leetcode-21-合并两个有序链表
 
-[掘金](https://juejin.cn/post/7024096823937597448/)
+[掘金](https://juejin.cn/post/7026564426979344415/)
 [B站](https://www.bilibili.com/video/BV1dq4y1g732?spm_id_from=333.999.0.0)
 
 leetcode-144-二叉树的前序遍历
