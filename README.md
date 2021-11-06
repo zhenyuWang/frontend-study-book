@@ -62,3 +62,10 @@ leetcode-剑指offer24-翻转链表
 [掘金](https://juejin.cn/post/7026922113000800287)
 [B站](https://www.bilibili.com/video/BV1jr4y1C7P8?spm_id_from=333.999.0.0)
 
+**2021.11.6**
+
+leetcode-面试题02.07-链表相交
+
+[掘金](https://juejin.cn/post/7027304259586637832/)
+[B站](https://www.bilibili.com/video/BV1sb4y187bg?spm_id_from=333.999.0.0)
+
