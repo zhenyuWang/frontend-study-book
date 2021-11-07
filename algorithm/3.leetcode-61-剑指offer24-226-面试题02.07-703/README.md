@@ -18,3 +18,8 @@ leetcode-面试题02.07-链表相交
 
 [掘金](https://juejin.cn/post/7027304259586637832/)
 [B站](https://www.bilibili.com/video/BV1sb4y187bg?spm_id_from=333.999.0.0)
+
+
+leetcode-703-数据流中的第K大元素
+
+[B站](https://www.bilibili.com/video/BV1sb4y187bg?spm_id_from=333.999.0.0)
