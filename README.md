@@ -69,3 +69,25 @@ leetcode-面试题02.07-链表相交
 [掘金](https://juejin.cn/post/7027304259586637832/)
 [B站](https://www.bilibili.com/video/BV1sb4y187bg?spm_id_from=333.999.0.0)
 
+
+**2021.11.6**
+
+leetcode-703-数据流中的第K大元素
+
+[B站](https://www.bilibili.com/video/BV1Lq4y1k7mz?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer55-I-二叉树的深度
+
+[B站](https://www.bilibili.com/video/BV1Mr4y1y7uF?spm_id_from=333.999.0.0)
+
+leetcode-344-反转字符串
+
+[B站](https://www.bilibili.com/video/BV1mh411t7i5?spm_id_from=333.999.0.0)
+
+leetcode-110-平衡二叉树
+
+[B站](https://www.bilibili.com/video/BV1pq4y137E4?spm_id_from=333.999.0.0)
+
+leetcode-35-搜索插入位置
+
+[B站](https://www.bilibili.com/video/BV1b34y1Z7EM?spm_id_from=333.999.0.0)
