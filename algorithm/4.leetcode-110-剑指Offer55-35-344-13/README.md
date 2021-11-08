@@ -19,3 +19,7 @@ leetcode-344-反转字符串
 [掘金](https://juejin.cn/post/7028045968809394207)
 [B站](https://www.bilibili.com/video/BV1mh411t7i5?spm_id_from=333.999.0.0)
 
+leetcode-13-罗马数字转整数
+
+[掘金](https://juejin.cn/post/7028141570931032071)
+[B站](https://www.bilibili.com/video/BV1Xh411t7Mo?spm_id_from=333.999.0.0)

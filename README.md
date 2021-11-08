@@ -113,3 +113,23 @@ leetcode-剑指 Offer55-I-二叉树的深度
 leetcode-344-反转字符串
 
 [掘金](https://juejin.cn/post/7028045968809394207)
+
+leetcode-13-罗马数字转整数
+
+[掘金](https://juejin.cn/post/7028141570931032071)
+[B站](https://www.bilibili.com/video/BV1Xh411t7Mo?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer 06. 从尾到头打印链表
+
+[掘金](https://juejin.cn/post/7028143282777653279/)
+[B站](https://www.bilibili.com/video/BV1Cg411K7pn?spm_id_from=333.999.0.0)
+
+leetcode-面试题 02.02. 返回倒数第 k 个节点
+
+[掘金](https://juejin.cn/post/7028145025875705892/)
+[B站](https://www.bilibili.com/video/BV1DU4y1g7Am?spm_id_from=333.999.0.0)
+
+leetcode-141-环形链表
+
+[掘金](https://juejin.cn/post/7028149146175406111/)
+[B站](https://www.bilibili.com/video/BV1FF411Y7Qa?spm_id_from=333.999.0.0)
