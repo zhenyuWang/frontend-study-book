@@ -91,3 +91,25 @@ leetcode-110-平衡二叉树
 leetcode-35-搜索插入位置
 
 [B站](https://www.bilibili.com/video/BV1b34y1Z7EM?spm_id_from=333.999.0.0)
+
+**2021.11.8**
+
+leetcode-703-数据流中的第K大元素
+
+[掘金](https://juejin.cn/post/7028031475505168392)
+
+leetcode-35-搜索插入位置
+
+[掘金](https://juejin.cn/post/7028034233671106567)
+
+leetcode-110-平衡二叉树
+
+[掘金](https://juejin.cn/post/7028041532028485646)
+
+leetcode-剑指 Offer55-I-二叉树的深度
+
+[掘金](https://juejin.cn/post/7028042926663942152/)
+
+leetcode-344-反转字符串
+
+[掘金](https://juejin.cn/post/7028045968809394207)
