@@ -133,3 +133,10 @@ leetcode-141-环形链表
 
 [掘金](https://juejin.cn/post/7028149146175406111/)
 [B站](https://www.bilibili.com/video/BV1FF411Y7Qa?spm_id_from=333.999.0.0)
+
+**2021.11.9**
+
+leetcode-剑指 Offer II 004-只出现一次的数字
+
+[掘金](https://juejin.cn/post/7028407264314654728/)
+[B站](https://www.bilibili.com/video/BV1hg411K7nX?spm_id_from=333.999.0.0)
