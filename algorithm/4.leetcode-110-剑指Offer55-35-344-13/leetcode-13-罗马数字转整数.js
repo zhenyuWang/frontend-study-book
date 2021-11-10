@@ -1,20 +1,20 @@
-/**
- * @param {string} s
- * @return {number}
- */
-// M  1000
-// CM 900
-// D  500
-// CD 400
-// C  100
-// XC 90
-// L  50
-// XL 40
-// X  10
-// IX 9
-// V  5
-// IV 4
-// I  1
+/* 
+  通过题意可知罗马数字共有以下组合方式
+  M  1000
+  CM 900
+  D  500
+  CD 400
+  C  100
+  XC 90
+  L  50
+  XL 40
+  X  10
+  IX 9
+  V  5
+  IV 4
+  I  1
+  从左到右遍历字符串的每一个字符，根据相应字符或字符组合将数值累加到结果即可
+*/
 var romanToInt = function(s) {
   let ret = 0;
   for(let i = 0;i<s.length;i++){

@@ -1,3 +1,9 @@
+/* 
+  递归的获取左右子树高度，判断高度差的绝对值是否大于1
+  这里有一个技巧即如果大于1，返回一个极大值
+  通过判断整棵树的高度是否是极大值，即可得到整棵树是否是平衡二叉树
+*/
+
 var isBalanced = function(root) {
   function getHeight(root){
       if(root === null) return 0;

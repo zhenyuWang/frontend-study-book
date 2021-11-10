@@ -1,3 +1,7 @@
+/* 
+  利用双指针两端对比字符是否相等，直到双指针相遇
+*/
+
 var isPalindrome = function(s) {
   if(s.length===1) return true;
   const reg = /[a-zA-Z0-9]/

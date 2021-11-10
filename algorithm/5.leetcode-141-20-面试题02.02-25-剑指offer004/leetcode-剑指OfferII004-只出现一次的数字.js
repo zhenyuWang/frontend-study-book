@@ -1,3 +1,9 @@
+/* 
+  利用map记录每个值出现的次数
+  当值出现三次的时候，从map中删除
+  最后map中保存的就是出现一次的元素的值，以及对应的次数1
+*/
+
 var singleNumber = function(nums) {
   const map = new Map();
   for(let i = 0;i<nums.length;i++){
