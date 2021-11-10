@@ -147,3 +147,11 @@ leetcode-25-K个一组翻转链表
 
 [掘金](https://juejin.cn/post/7028754308917100575)
 [B站](https://www.bilibili.com/video/BV1e34y1Z7yN?spm_id_from=333.999.0.0)
+
+门徒动态规划算法学完，完成
+leetcode-300. 最长递增子序列
+leetcode-674. 最长连续递增序列
+leetcode-剑指 Offer II 094. 最少回文分割
+leetcode-495. 提莫攻击
+leetcode-剑指 Offer 47. 礼物的最大价值
+解题，部分题解待优化
