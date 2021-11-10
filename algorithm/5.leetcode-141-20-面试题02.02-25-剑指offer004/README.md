@@ -17,3 +17,8 @@ leetcode-剑指 Offer II 004-只出现一次的数字
 
 [掘金](https://juejin.cn/post/7028407264314654728/)
 [B站](https://www.bilibili.com/video/BV18P4y1j7Rv?spm_id_from=333.999.0.0)
+
+leetcode-25-K个一组翻转链表
+
+[掘金](https://juejin.cn/post/7028754308917100575)
+[B站](https://www.bilibili.com/video/BV1e34y1Z7yN?spm_id_from=333.999.0.0)
