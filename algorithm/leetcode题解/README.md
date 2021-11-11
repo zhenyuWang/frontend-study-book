@@ -93,3 +93,18 @@ leetcode-25-K个一组翻转链表
 
 [掘金](https://juejin.cn/post/7028754308917100575)
 [B站](https://www.bilibili.com/video/BV1e34y1Z7yN?spm_id_from=333.999.0.0)
+
+leetcode-1-两数之和
+
+[掘金](https://juejin.cn/post/7029150298002161701)
+[B站](https://www.bilibili.com/video/BV16f4y1u7PH?spm_id_from=333.999.0.0)
+
+leetcode-633-平方数之和
+
+[掘金](https://juejin.cn/post/7029137389817708574)
+[B站](https://www.bilibili.com/video/BV1cS4y1d74C?spm_id_from=333.999.0.0)
+
+leetcode-704-二分查找
+
+[掘金](https://juejin.cn/post/7029131230817812488)
+[B站](https://www.bilibili.com/video/BV1DQ4y1S7j6?spm_id_from=333.999.0.0)
