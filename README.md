@@ -209,3 +209,16 @@ leetcode-704-二分查找
 [code](./algorithm/leetcode题解/leetcode-704-二分查找.js)
 [掘金](https://juejin.cn/post/7029131230817812488)
 [B站](https://www.bilibili.com/video/BV1DQ4y1S7j6?spm_id_from=333.999.0.0)
+
+leetcode-213-打家劫舍II
+
+leetcode-714-买卖股票的最佳时机含手续费
+
+题解完成
+
+**2021.11.12**
+
+leetcode-300-最长递增子序列
+
+[code](./algorithm/leetcode题解/leetcode-300-最长递增子序列.js)
+[掘金](https://juejin.cn/post/7029709108995424270)
