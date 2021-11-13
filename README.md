@@ -222,3 +222,9 @@ leetcode-300-最长递增子序列
 
 [code](./algorithm/leetcode题解/leetcode-300-最长递增子序列.js)
 [掘金](https://juejin.cn/post/7029709108995424270)
+
+**2021.11.13**
+
+leetcode-300-最长递增子序列
+
+[B站](https://www.bilibili.com/video/BV1mq4y137Wf?spm_id_from=333.999.0.0)
