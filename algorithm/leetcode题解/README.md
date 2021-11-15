@@ -133,3 +133,8 @@ leetcode-409-最长回文串
 
 [掘金](https://juejin.cn/post/7030415970220900365)
 [B站](https://www.bilibili.com/video/BV1kS4y1972g?spm_id_from=333.999.0.0)
+
+leetcode-543-二叉树的直径
+
+[掘金](https://juejin.cn/post/7030624238205681671)
+[B站](https://www.bilibili.com/video/BV12b4y1t7Sd?spm_id_from=333.999.0.0)
