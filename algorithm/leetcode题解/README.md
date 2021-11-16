@@ -138,3 +138,14 @@ leetcode-543-二叉树的直径
 
 [掘金](https://juejin.cn/post/7030624238205681671)
 [B站](https://www.bilibili.com/video/BV12b4y1t7Sd?spm_id_from=333.999.0.0)
+
+leetcode-121-买卖股票的最佳时机
+
+[掘金](https://juejin.cn/post/7030968646482526244)
+[B站](https://www.bilibili.com/video/BV1h341187Le?spm_id_from=333.999.0.0)
+
+
+leetcode-746-使用最小花费爬楼梯
+
+[掘金](https://juejin.cn/post/7030976932212637709)
+[B站](https://www.bilibili.com/video/BV1fQ4y1m7h7?spm_id_from=333.999.0.0)
