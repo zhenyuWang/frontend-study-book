@@ -283,9 +283,20 @@ leetcode-121-买卖股票的最佳时机
 [掘金](https://juejin.cn/post/7030968646482526244)
 [B站](https://www.bilibili.com/video/BV1h341187Le?spm_id_from=333.999.0.0)
 
-
 leetcode-746-使用最小花费爬楼梯
 
 [code](./algorithm/leetcode题解/leetcode-746-使用最小花费爬楼梯.js)
 [掘金](https://juejin.cn/post/7030976932212637709)
 [B站](https://www.bilibili.com/video/BV1fQ4y1m7h7?spm_id_from=333.999.0.0)
+
+leetcode-剑指OfferII095-最长公共子序列
+
+[code](./algorithm/leetcode题解/leetcode-剑指OfferII095-最长公共子序列.js)
+[掘金](https://juejin.cn/post/7031106372079091749)
+[B站](https://www.bilibili.com/video/BV1FQ4y1U7Hw?spm_id_from=333.999.0.0)
+
+leetcode-647-回文子串
+
+[code](./algorithm/leetcode题解/leetcode-647-回文子串.js)
+[掘金](https://juejin.cn/post/7031118941388800013)
+[B站](https://www.bilibili.com/video/BV17b4y1t7As?spm_id_from=333.999.0.0)
