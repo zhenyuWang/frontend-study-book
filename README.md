@@ -300,3 +300,17 @@ leetcode-647-回文子串
 [code](./algorithm/leetcode题解/leetcode-647-回文子串.js)
 [掘金](https://juejin.cn/post/7031118941388800013)
 [B站](https://www.bilibili.com/video/BV17b4y1t7As?spm_id_from=333.999.0.0)
+
+**2021.11.17**
+
+leetcode-剑指Offer22-链表中倒数第k个节点
+
+[code](./algorithm/leetcode题解/leetcode-剑指Offer22-链表中倒数第k个节点.js)
+[掘金](https://juejin.cn/post/7031512106448994340)
+[B站](https://www.bilibili.com/video/BV1VQ4y1U74a?spm_id_from=333.999.0.0)
+
+leetcode-1721-交换链表中的节点
+
+[code](./algorithm/leetcode题解/leetcode-1721-交换链表中的节点.js)
+[掘金](https://juejin.cn/post/7031516322924068894)
+[B站](https://www.bilibili.com/video/BV1yr4y1r7p5?spm_id_from=333.999.0.0)
