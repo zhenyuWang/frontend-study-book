@@ -179,3 +179,8 @@ leetcode-23-合并K个升序链表
 
 [掘金](https://juejin.cn/post/7031748586765287437/)
 [B站](https://www.bilibili.com/video/BV18r4y1k7LS?spm_id_from=333.999.0.0)
+
+leetcode-138-复制带随机指针的链表
+
+[掘金](https://juejin.cn/post/7031806814958141447)
+[B站](https://www.bilibili.com/video/BV15g411N7HU?spm_id_from=333.999.0.0)
