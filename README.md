@@ -334,3 +334,10 @@ leetcode-138-复制带随机指针的链表
 [code](./algorithm/leetcode题解/leetcode-138-复制带随机指针的链表.js)
 [掘金](https://juejin.cn/post/7031806814958141447)
 [B站](https://www.bilibili.com/video/BV15g411N7HU?spm_id_from=333.999.0.0)
+
+**2021.11.19**
+
+leetcode-2-两数相加
+
+[code](./algorithm/未输出题解/leetcode-2-两数相加.js)
+[掘金](https://juejin.cn/post/7032127633156472863)
