@@ -275,6 +275,10 @@ leetcode-543-二叉树的直径
 [掘金](https://juejin.cn/post/7030624238205681671)
 [B站](https://www.bilibili.com/video/BV12b4y1t7Sd?spm_id_from=333.999.0.0)
 
+完成算法刷题模板拆分方法
+
+[code](https://github.com/su37josephxia/Daydayup/tree/main/src/code-template/zhenyuWang)
+
 **2021.11.16**
 
 leetcode-121-买卖股票的最佳时机
@@ -348,3 +352,14 @@ leetcode-3-无重复字符的最长子串
 
 [code](./algorithm/未输出题解/leetcode-3-无重复字符的最长子串.js)
 [掘金](https://juejin.cn/post/7032475123705708558)
+
+完成 yaml文件读写方法及测试用例编写
+
+[code](https://github.com/su37josephxia/Daydayup/tree/main/glory-report/prototype/write-yaml/zhenyuWang)
+
+**2021.11.21**
+
+leetcode-4-寻找两个正序数组的中位数
+
+[code](./algorithm/未输出题解/leetcode-4-寻找两个正序数组的中位数.js)
+[掘金](https://juejin.cn/post/7032958898688491557)
