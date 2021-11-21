@@ -1,4 +1,4 @@
-// O(nlogn)
+O(nlogn)
 var findMedianSortedArrays = function(nums1, nums2) {
   // 合并数组
   const arr = [...nums1,...nums2],
@@ -15,8 +15,9 @@ var findMedianSortedArrays = function(nums1, nums2) {
 // O((m+n)>>1+1)
 var findMedianSortedArrays = function(nums1, nums2) {
   // 获取两数组长度
- const len1 = nums1.length;len2 = nums2.length,
-//  获取两数组中长度
+  const len1 = nums1.length,
+  len2 = nums2.length,
+  //  获取两数组中长度
   len = len1+len2,
   // 初始化arr存放有序元素
   arr = [],
