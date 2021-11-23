@@ -184,3 +184,13 @@ leetcode-138-复制带随机指针的链表
 
 [掘金](https://juejin.cn/post/7031806814958141447)
 [B站](https://www.bilibili.com/video/BV15g411N7HU?spm_id_from=333.999.0.0)
+
+leetcode-2-两数相加
+
+[掘金](https://juejin.cn/post/7032127633156472863)
+[B站](https://www.bilibili.com/video/BV1VY41147M9?spm_id_from=333.999.0.0)
+
+leetcode-3-无重复字符的最长子串
+
+[掘金](https://juejin.cn/post/7032475123705708558)
+[B站](https://www.bilibili.com/video/BV1oF411h7VK?spm_id_from=333.999.0.0)

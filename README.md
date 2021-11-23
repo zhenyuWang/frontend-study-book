@@ -370,3 +370,13 @@ leetcode-145-二叉树的后序遍历
 
 [code](./algorithm/未输出题解/leetcode-145-二叉树的后序遍历.js)
 [掘金](https://juejin.cn/post/7033418682462109733)
+
+**2021.11.23**
+
+leetcode-2-两数相加
+
+[B站](https://www.bilibili.com/video/BV1VY41147M9?spm_id_from=333.999.0.0)
+
+leetcode-3-无重复字符的最长子串
+
+[B站](https://www.bilibili.com/video/BV1oF411h7VK?spm_id_from=333.999.0.0)
