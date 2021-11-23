@@ -383,4 +383,8 @@ leetcode-3-无重复字符的最长子串
 
 leetcode-4-寻找两个正序数组的中位数
 
-[[B站]](https://www.bilibili.com/video/BV1RL411M733?spm_id_from=333.999.0.0)
+[B站](https://www.bilibili.com/video/BV1RL411M733?spm_id_from=333.999.0.0)
+
+leetcode-145-二叉树的后序遍历
+
+[B站](https://www.bilibili.com/video/BV1844y1Y7EM?spm_id_from=333.999.0.0)
