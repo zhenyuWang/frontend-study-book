@@ -51,10 +51,8 @@ var findMedianSortedArrays = function(nums1, nums2) {
 
 // 二分 O(logn)
 var findMedianSortedArrays = function (nums1, nums2) {
-  const len1 =nums1.length,
-  len2 = nums2.length,
   // 两数组长度之和
-  len = len1+len2,
+  const len = nums1.length+nums2.length,
   // 中位数为第 mid 大的值
   // 如果len为奇数，则中位数就是第 mid 大的值
   // 否则是第 mid 和第 mid+1 大的值

@@ -380,3 +380,7 @@ leetcode-2-两数相加
 leetcode-3-无重复字符的最长子串
 
 [B站](https://www.bilibili.com/video/BV1oF411h7VK?spm_id_from=333.999.0.0)
+
+leetcode-4-寻找两个正序数组的中位数
+
+[[B站]](https://www.bilibili.com/video/BV1RL411M733?spm_id_from=333.999.0.0)

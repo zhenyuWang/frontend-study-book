@@ -194,3 +194,8 @@ leetcode-3-无重复字符的最长子串
 
 [掘金](https://juejin.cn/post/7032475123705708558)
 [B站](https://www.bilibili.com/video/BV1oF411h7VK?spm_id_from=333.999.0.0)
+
+leetcode-4-寻找两个正序数组的中位数
+
+[掘金](https://juejin.cn/post/7032958898688491557)
+[[B站]](https://www.bilibili.com/video/BV1RL411M733?spm_id_from=333.999.0.0)
