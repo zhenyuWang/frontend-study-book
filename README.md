@@ -343,14 +343,14 @@ leetcode-138-复制带随机指针的链表
 
 leetcode-2-两数相加
 
-[code](./algorithm/未输出题解/leetcode-2-两数相加.js)
+[code](./algorithm/leetcode题解/leetcode-2-两数相加.js)
 [掘金](https://juejin.cn/post/7032127633156472863)
 
 **2021.11.20**
 
 leetcode-3-无重复字符的最长子串
 
-[code](./algorithm/未输出题解/leetcode-3-无重复字符的最长子串.js)
+[code](./algorithm/leetcode题解/leetcode-3-无重复字符的最长子串.js)
 [掘金](https://juejin.cn/post/7032475123705708558)
 
 完成 yaml文件读写方法及测试用例编写
@@ -361,14 +361,14 @@ leetcode-3-无重复字符的最长子串
 
 leetcode-4-寻找两个正序数组的中位数
 
-[code](./algorithm/未输出题解/leetcode-4-寻找两个正序数组的中位数.js)
+[code](./algorithm/leetcode题解/leetcode-4-寻找两个正序数组的中位数.js)
 [掘金](https://juejin.cn/post/7032958898688491557)
 
 **2021.11.22**
 
 leetcode-145-二叉树的后序遍历
 
-[code](./algorithm/未输出题解/leetcode-145-二叉树的后序遍历.js)
+[code](./algorithm/leetcode题解/leetcode-145-二叉树的后序遍历.js)
 [掘金](https://juejin.cn/post/7033418682462109733)
 
 **2021.11.23**
@@ -388,3 +388,26 @@ leetcode-4-寻找两个正序数组的中位数
 leetcode-145-二叉树的后序遍历
 
 [B站](https://www.bilibili.com/video/BV1844y1Y7EM?spm_id_from=333.999.0.0)
+
+leetcode-331-验证二叉树的前序序列化
+
+[code](./algorithm/leetcode题解/leetcode-331-验证二叉树的前序序列化.js)
+[掘金](https://juejin.cn/post/7033793911306846221/)
+
+**2021.11.24**
+
+leetcode-331-验证二叉树的前序序列化
+
+[B站](https://www.bilibili.com/video/BV1644y1Y7YC?spm_id_from=333.999.0.0)
+
+leetcode-227-基本计算器 II
+
+[code](./algorithm/leetcode题解/leetcode-227-基本计算器II.js)
+[掘金](https://juejin.cn/post/7034053040025894949)
+[B站](https://www.bilibili.com/video/BV1yq4y1B7RJ?spm_id_from=333.999.0.0)
+
+leetcode-636-函数的独占时间
+
+[code](./algorithm/leetcode题解/leetcode-636-函数的独占时间.js)
+[掘金](https://juejin.cn/post/7034059596138446856)
+[B站](https://www.bilibili.com/video/BV1UL4y1p7jk?spm_id_from=333.999.0.0)

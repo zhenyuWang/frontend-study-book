@@ -204,3 +204,18 @@ leetcode-145-二叉树的后序遍历
 
 [掘金](https://juejin.cn/post/7033418682462109733)
 [B站](https://www.bilibili.com/video/BV1844y1Y7EM?spm_id_from=333.999.0.0)
+
+leetcode-331-验证二叉树的前序序列化
+
+[掘金](https://juejin.cn/post/7033793911306846221/)
+[B站](https://www.bilibili.com/video/BV1644y1Y7YC?spm_id_from=333.999.0.0)
+
+leetcode-227-基本计算器 II
+
+[掘金](https://juejin.cn/post/7034053040025894949)
+[B站](https://www.bilibili.com/video/BV1yq4y1B7RJ?spm_id_from=333.999.0.0)
+
+leetcode-636-函数的独占时间
+
+[掘金](https://juejin.cn/post/7034059596138446856)
+[B站](https://www.bilibili.com/video/BV1UL4y1p7jk?spm_id_from=333.999.0.0)
