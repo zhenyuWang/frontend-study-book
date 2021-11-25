@@ -411,3 +411,15 @@ leetcode-636-函数的独占时间
 [code](./algorithm/leetcode题解/leetcode-636-函数的独占时间.js)
 [掘金](https://juejin.cn/post/7034059596138446856)
 [B站](https://www.bilibili.com/video/BV1UL4y1p7jk?spm_id_from=333.999.0.0)
+
+**2021.11.25**
+
+leetcode-1124-表现良好的最长时间段
+
+[code](./algorithm/leetcode题解/leetcode-1124-表现良好的最长时间段.js)
+[掘金](https://juejin.cn/post/7034502282259464228)
+
+leetcode-142-环形链表II
+
+[code](./algorithm/leetcode题解/leetcode-142-环形链表II.js)
+[掘金](https://juejin.cn/post/7034505388040912933)
