@@ -223,7 +223,9 @@ leetcode-636-函数的独占时间
 leetcode-1124-表现良好的最长时间段
 
 [掘金](https://juejin.cn/post/7034502282259464228)
+[B站](https://www.bilibili.com/video/BV1ES4y1R7Ao?spm_id_from=333.999.0.0)
 
 leetcode-142-环形链表II
 
 [掘金](https://juejin.cn/post/7034505388040912933)
+[[B站]](https://www.bilibili.com/video/BV1nq4y1g7uK?spm_id_from=333.999.0.0)
