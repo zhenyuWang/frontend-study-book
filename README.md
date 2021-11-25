@@ -425,3 +425,16 @@ leetcode-142-环形链表II
 [code](./algorithm/leetcode题解/leetcode-142-环形链表II.js)
 [掘金](https://juejin.cn/post/7034505388040912933)
 [[B站]](https://www.bilibili.com/video/BV1nq4y1g7uK?spm_id_from=333.999.0.0)
+
+
+leetcode-206-反转链表
+
+[code](./algorithm/leetcode题解/leetcode-206-反转链表.js)
+[掘金](https://juejin.cn/post/7034558169913229342)
+[[B站]](https://www.bilibili.com/video/BV1FS4y1X7ui?spm_id_from=333.999.0.0)
+
+leetcode-19-删除链表的倒数第N个结点
+
+[code](./algorithm/leetcode题解/leetcode-19-删除链表的倒数第N个结点.js)
+[掘金](https://juejin.cn/post/7034571008551944199)
+[B站](https://www.bilibili.com/video/BV1w44y1e74L?spm_id_from=333.999.0.0)
