@@ -228,12 +228,12 @@ leetcode-1124-表现良好的最长时间段
 leetcode-142-环形链表II
 
 [掘金](https://juejin.cn/post/7034505388040912933)
-[[B站]](https://www.bilibili.com/video/BV1nq4y1g7uK?spm_id_from=333.999.0.0)
+[B站](https://www.bilibili.com/video/BV1nq4y1g7uK?spm_id_from=333.999.0.0)
 
 leetcode-206-反转链表
 
 [掘金](https://juejin.cn/post/7034558169913229342)
-[[B站]](https://www.bilibili.com/video/BV1FS4y1X7ui?spm_id_from=333.999.0.0)
+[B站](https://www.bilibili.com/video/BV1FS4y1X7ui?spm_id_from=333.999.0.0)
 
 leetcode-19-删除链表的倒数第N个结点
 
