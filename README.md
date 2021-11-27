@@ -458,3 +458,17 @@ leetcode-82-删除排序链表中的重复元素 II
 [code](./algorithm/leetcode题解/leetcode-82-删除排序链表中的重复元素II.js)
 [掘金](https://juejin.cn/post/7034909561337151525)
 [B站](https://www.bilibili.com/video/BV1Wq4y1g7n1?spm_id_from=333.999.0.0)
+
+**2021.11.27**
+
+leetcode-86-分隔链表
+
+[code](./algorithm/leetcode题解/leetcode-86-分隔链表.js)
+[掘金](https://juejin.cn/post/7035194124470845470)
+[B站](https://www.bilibili.com/video/BV1nU4y1T7id?spm_id_from=333.999.0.0)
+
+leetcode-622-设计循环队列
+
+[code](./algorithm/leetcode题解/leetcode-622-设计循环队列.js)
+[掘金](https://juejin.cn/post/7035249484648939533)
+[B站](https://www.bilibili.com/video/BV1ob4y1q7vd?spm_id_from=333.999.0.0)
