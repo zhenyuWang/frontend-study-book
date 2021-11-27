@@ -239,3 +239,18 @@ leetcode-19-删除链表的倒数第N个结点
 
 [掘金](https://juejin.cn/post/7034571008551944199)
 [B站](https://www.bilibili.com/video/BV1w44y1e74L?spm_id_from=333.999.0.0)
+
+leetcode-92-反转链表 II
+
+[掘金](https://juejin.cn/post/7034870347941806117)
+[B站](https://www.bilibili.com/video/BV1qU4y1T7um?spm_id_from=333.999.0.0)
+
+leetcode-83-删除排序链表中的重复元素
+
+[掘金](https://juejin.cn/post/7034890161758404639)
+[B站](https://www.bilibili.com/video/BV1K3411b7XY?spm_id_from=333.999.0.0)
+
+leetcode-82-删除排序链表中的重复元素 II
+
+[掘金](https://juejin.cn/post/7034909561337151525)
+[B站](https://www.bilibili.com/video/BV1Wq4y1g7n1?spm_id_from=333.999.0.0)
