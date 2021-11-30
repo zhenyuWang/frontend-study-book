@@ -279,3 +279,13 @@ leetcode-933-最近的请求次数
 
 [掘金](https://juejin.cn/post/7035559710241587214)
 [B站](https://www.bilibili.com/video/BV1xP4y1V76F?spm_id_from=333.999.0.0)
+
+leetcode-面试题17.09-第k个数
+
+[掘金](https://juejin.cn/post/7036381241616105508)
+[B站](https://www.bilibili.com/video/BV1x44y1h74o?spm_id_from=333.999.0.0)
+
+leetcode-859-亲密字符串
+
+[掘金](https://juejin.cn/post/7036385045665284110)
+[B站](https://www.bilibili.com/video/BV1a34y1R7px?spm_id_from=333.999.0.0)
