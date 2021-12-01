@@ -289,3 +289,13 @@ leetcode-859-亲密字符串
 
 [掘金](https://juejin.cn/post/7036385045665284110)
 [B站](https://www.bilibili.com/video/BV1a34y1R7px?spm_id_from=333.999.0.0)
+
+leetcode-860-柠檬水找零
+
+[掘金](https://juejin.cn/post/7036730398365188126)
+[B站](https://www.bilibili.com/video/BV1Vr4y1X7RT?spm_id_from=333.999.0.0)
+
+leetcode-969-煎饼排序
+
+[掘金](https://juejin.cn/post/7036734034914836510)
+[B站](https://www.bilibili.com/video/BV1oZ4y1X7tV?spm_id_from=333.999.0.0)
