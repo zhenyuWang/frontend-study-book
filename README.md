@@ -534,3 +534,27 @@ leetcode-969-煎饼排序
 [B站](https://www.bilibili.com/video/BV1oZ4y1X7tV?spm_id_from=333.999.0.0)
 
 leetcode-621-任务调度器
+
+[code](./algorithm/leetcode题解/leetcode-621-任务调度器.js)
+[掘金](https://juejin.cn/post/7036930322872664077)
+[B站](https://www.bilibili.com/video/BV1g341147KC?spm_id_from=333.999.0.0)
+
+**2021.12.2**
+
+leetcode-面试题03.04-化栈为队
+
+[code](./algorithm/leetcode题解/leetcode-面试题03.04-化栈为队.js)
+[掘金](https://juejin.cn/post/7036940900257234958)
+[B站](https://www.bilibili.com/video/BV1eS4y1X7mB?spm_id_from=333.999.0.0)
+
+leetcode-682-棒球比赛
+
+[code](./algorithm/leetcode题解/leetcode-682-棒球比赛.js)
+[掘金](https://juejin.cn/post/7036942597650120712)
+[B站](https://www.bilibili.com/video/BV1mb4y1B7ru?spm_id_from=333.999.0.0)
+
+leetcode-844-比较含退格的字符串
+
+[code](./algorithm/leetcode题解/leetcode-844-比较含退格的字符串.js)
+[掘金](https://juejin.cn/post/7036946298389397541)
+[B站](https://www.bilibili.com/video/BV1Qg411A7as?spm_id_from=333.999.0.0)
