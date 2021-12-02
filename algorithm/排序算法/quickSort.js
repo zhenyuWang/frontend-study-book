@@ -1,4 +1,4 @@
-/* 
+/*
   快速排序
   不停递归拆分数组直到数组长度为1
   递归回溯过程中组合left,base,right
@@ -18,11 +18,14 @@ function quickSort1(arr){
 }
 console.log('quickSort1',quickSort1([...origin]));
 
-
+/*
+  通过交换元素完成快排，
+  相对第一种方法，优点是无需创建大量数组，空间复杂度为O(1)
+*/
 origin = [5,4,9,3,2,5,1,0,8,7,6]
 function handle(arr, left, right) {
   if(left>=right) return left;
-  
+
   const base = arr[left]
   let l = left + 1;
   let r = right;
