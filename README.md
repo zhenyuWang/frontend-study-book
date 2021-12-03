@@ -565,3 +565,17 @@ leetcode-844-比较含退格的字符串
 [code](./algorithm/leetcode题解/leetcode-844-比较含退格的字符串.js)
 [掘金](https://juejin.cn/post/7036946298389397541)
 [B站](https://www.bilibili.com/video/BV1Qg411A7as?spm_id_from=333.999.0.0)
+
+**2021.12.3**
+
+leetcode-946-验证栈序列
+
+[code](./algorithm/leetcode题解/leetcode-946-验证栈序列.js)
+[掘金](https://juejin.cn/post/7037476581098389517)
+[B站](https://www.bilibili.com/video/BV13S4y1X7G4?spm_id_from=333.999.0.0)
+
+leetcode-1021-删除最外层的括号
+
+[code](./algorithm/leetcode题解/leetcode-1021-删除最外层的括号.js)
+[掘金](https://juejin.cn/post/7037481986839019550)
+[B站](https://www.bilibili.com/video/BV1Mf4y1T78A?spm_id_from=333.999.0.0)
