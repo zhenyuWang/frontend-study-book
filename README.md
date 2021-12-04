@@ -579,3 +579,17 @@ leetcode-1021-删除最外层的括号
 [code](./algorithm/leetcode题解/leetcode-1021-删除最外层的括号.js)
 [掘金](https://juejin.cn/post/7037481986839019550)
 [B站](https://www.bilibili.com/video/BV1Mf4y1T78A?spm_id_from=333.999.0.0)
+
+**2021.12.4**
+
+leetcode-剑指offer-复杂链表的复制
+
+[code](./algorithm/leetcode题解/leetcode-剑指offer-复杂链表的复制.js)
+[掘金](https://juejin.cn/post/7037783500476383262)
+[B站](https://www.bilibili.com/video/BV1hP4y1374P?spm_id_from=333.999.0.0)
+
+leetcode-面试题02.03-删除中间节点
+
+[code](./algorithm/leetcode题解/leetcode-面试题02.03-删除中间节点.js)
+[掘金](https://juejin.cn/post/7037822305103249438)
+[B站](https://www.bilibili.com/video/BV1UZ4y1X7M3?spm_id_from=333.999.0.0)
