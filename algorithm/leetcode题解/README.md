@@ -339,3 +339,18 @@ leetcode-面试题02.03-删除中间节点
 
 [掘金](https://juejin.cn/post/7037822305103249438)
 [B站](https://www.bilibili.com/video/BV1UZ4y1X7M3?spm_id_from=333.999.0.0)
+
+leetcode-445-两数相加II
+
+[掘金](https://juejin.cn/post/7038233609836167199)
+[B站](https://www.bilibili.com/video/BV1kL41177HP?spm_id_from=333.999.0.0)
+
+leetcode-143-重排链表
+
+[掘金](https://juejin.cn/post/7038236860417572872)
+[B站](https://www.bilibili.com/video/BV1Rr4y1S7Mz?spm_id_from=333.999.0.0)
+
+leetcode-1249-移除无效的括号
+
+[掘金](https://juejin.cn/post/7038241095423098894)
+[B站](https://www.bilibili.com/video/BV1wZ4y1979n?spm_id_from=333.999.0.0)
