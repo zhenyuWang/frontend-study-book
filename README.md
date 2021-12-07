@@ -635,3 +635,9 @@ leetcode-707-设计链表
 [code](./algorithm/leetcode题解/leetcode-707-设计链表.js)
 [掘金](https://juejin.cn/post/7038933753653116959)
 [B站](https://www.bilibili.com/video/BV1Sr4y1S74d?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer18-删除链表的节点
+
+[code](./algorithm/leetcode题解/leetcode-剑指Offer18-删除链表的节点.js)
+[掘金](https://juejin.cn/post/7038954098829787150)
+[B站](https://www.bilibili.com/video/BV1kU4y1N7FA?spm_id_from=333.999.0.0)
