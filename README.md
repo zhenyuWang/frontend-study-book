@@ -615,3 +615,23 @@ leetcode-1249-移除无效的括号
 [B站](https://www.bilibili.com/video/BV1wZ4y1979n?spm_id_from=333.999.0.0)
 
 **2021.12.6**
+
+leetcode-714-买卖股票的最佳时机含手续费
+
+[code](./algorithm/leetcode题解/leetcode-714-买卖股票的最佳时机含手续费.js)
+[掘金](https://juejin.cn/post/7038906740259160100)
+[B站](https://www.bilibili.com/video/BV1mU4y1N7EC?spm_id_from=333.999.0.0)
+
+**2021.12.7**
+
+leetcode-面试题02.08-环路检测
+
+[code](./algorithm/leetcode题解/leetcode-面试题02.08-环路检测.js)
+[掘金](https://juejin.cn/post/7038927824312336391)
+[B站](https://www.bilibili.com/video/BV1DS4y1D7BZ?spm_id_from=333.999.0.0)
+
+leetcode-707-设计链表
+
+[code](./algorithm/leetcode题解/leetcode-707-设计链表.js)
+[掘金](https://juejin.cn/post/7038933753653116959)
+[B站](https://www.bilibili.com/video/BV1Sr4y1S74d?spm_id_from=333.999.0.0)
