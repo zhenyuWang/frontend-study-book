@@ -641,3 +641,29 @@ leetcode-剑指 Offer18-删除链表的节点
 [code](./algorithm/leetcode题解/leetcode-剑指Offer18-删除链表的节点.js)
 [掘金](https://juejin.cn/post/7038954098829787150)
 [B站](https://www.bilibili.com/video/BV1kU4y1N7FA?spm_id_from=333.999.0.0)
+
+**2021.12.7**
+
+leetcode-725-分隔链表
+
+[code](./algorithm/leetcode题解/leetcode-725-分隔链表.js)
+[掘金](https://juejin.cn/post/7039261133101875208)
+[B站](https://www.bilibili.com/video/BV1d3411473m?spm_id_from=333.999.0.0)
+
+leetcode-面试题 02.04-分割链表
+
+[code](./algorithm/leetcode题解/leetcode-面试题02.04-分割链表.js)
+[掘金](https://juejin.cn/post/7039265624049647629)
+[B站](https://www.bilibili.com/video/BV1634y1X7dH?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer 10- I-斐波那契数列
+
+[code](./algorithm/leetcode题解/leetcode-剑指Offer10-I-斐波那契数列.js)
+[掘金](https://juejin.cn/post/7039306066483478542)
+[B站](https://www.bilibili.com/video/BV1Yq4y1z7zY?spm_id_from=333.999.0.0)
+
+leetcode-112-路径总和
+
+[code](./algorithm/leetcode题解/leetcode-112-路径总和.js)
+[掘金](https://juejin.cn/post/7039310828994035749)
+[B站](https://www.bilibili.com/video/BV1wr4y1D7U2?spm_id_from=333.999.0.0)
