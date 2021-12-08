@@ -642,7 +642,7 @@ leetcode-剑指 Offer18-删除链表的节点
 [掘金](https://juejin.cn/post/7038954098829787150)
 [B站](https://www.bilibili.com/video/BV1kU4y1N7FA?spm_id_from=333.999.0.0)
 
-**2021.12.7**
+**2021.12.8**
 
 leetcode-725-分隔链表
 
