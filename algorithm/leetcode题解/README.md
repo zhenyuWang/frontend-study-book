@@ -394,3 +394,19 @@ leetcode-112-路径总和
 
 [掘金](https://juejin.cn/post/7039310828994035749)
 [B站](https://www.bilibili.com/video/BV1wr4y1D7U2?spm_id_from=333.999.0.0)
+
+
+leetcode-105-从前序与中序遍历序列构造二叉树
+
+[掘金](https://juejin.cn/post/7039718789750997005)
+[B站](https://www.bilibili.com/video/BV1BP4y137RX?spm_id_from=333.999.0.0)
+
+leetcode-779-第K个语法符号
+
+[掘金](https://juejin.cn/post/7039723061284700190)
+[B站](https://www.bilibili.com/video/BV16g411P7cc?spm_id_from=333.999.0.0)
+
+leetcode-222-完全二叉树的节点个数
+
+[掘金](https://juejin.cn/post/7039726092860522527)
+[B站](https://www.bilibili.com/video/BV1qS4y1D7Ny?spm_id_from=333.999.0.0)
