@@ -430,3 +430,8 @@ leetcode-144-二叉树的前序遍历-迭代算法
 
 [掘金](https://juejin.cn/post/7040456985052971022)
 [B站](https://www.bilibili.com/video/BV1SL411L7mZ?spm_id_from=333.999.0.0)
+
+leetcode-968-监控二叉树
+
+[掘金](https://juejin.cn/post/7040796337775837198)
+[B站](https://www.bilibili.com/video/BV1eg411w7eL?spm_id_from=333.999.0.0)
