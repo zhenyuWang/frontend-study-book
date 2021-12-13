@@ -435,3 +435,11 @@ leetcode-968-监控二叉树
 
 [掘金](https://juejin.cn/post/7040796337775837198)
 [B站](https://www.bilibili.com/video/BV1eg411w7eL?spm_id_from=333.999.0.0)
+
+leetcode-589-N 叉树的前序遍历
+
+[掘金](https://juejin.cn/post/7041201097607741470)
+
+leetcode-剑指 Offer 32 - II-从上到下打印二叉树 II
+
+[掘金](https://juejin.cn/post/7041202553828147208)

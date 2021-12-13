@@ -6,6 +6,17 @@
 
 # 日志
 
+**2021.12.13**
+
+leetcode-589-N 叉树的前序遍历
+
+[code](./algorithm/leetcode题解/leetcode-589-N叉树的前序遍历.js)
+[掘金](https://juejin.cn/post/7041201097607741470)
+
+leetcode-剑指 Offer 32 - II-从上到下打印二叉树 II
+
+[code](./algorithm/leetcode题解/leetcode-剑指Offer32-II-从上到下打印二叉树II.js)
+[掘金](https://juejin.cn/post/7041202553828147208)
 
 **2021.12.12**
 
