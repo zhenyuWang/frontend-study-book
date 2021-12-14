@@ -6,6 +6,34 @@
 
 # 日志
 
+**2021.12.14**
+
+leetcode-589-N 叉树的前序遍历
+
+[B站](https://www.bilibili.com/video/BV1WY411W71w?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer 32 - II-从上到下打印二叉树 II
+
+[B站](https://www.bilibili.com/video/BV1Ki4y1d768?spm_id_from=333.999.0.0)
+
+leetcode-373-查找和最小的K对数字
+
+[code](./algorithm/leetcode题解/leetcode-373-查找和最小的K对数字.js)
+[掘金](https://juejin.cn/post/7041554346747625486)
+[B站](https://www.bilibili.com/video/BV1N34y197Lm?spm_id_from=333.999.0.0)
+
+leetcode-107-二叉树的层序遍历 II
+
+[code](./algorithm/leetcode题解/leetcode-107-二叉树的层序遍历II.js)
+[掘金](https://juejin.cn/post/7041560842978099230)
+[B站](https://www.bilibili.com/video/BV1mL4y1H7a1?spm_id_from=333.999.0.0)
+
+leetcode-103-二叉树的锯齿形层序遍历
+
+[code](./algorithm/leetcode题解/leetcode-103-二叉树的锯齿形层序遍历.js)
+[掘金](https://juejin.cn/post/7041564626470846472)
+[B站](https://www.bilibili.com/video/BV1YS4y1Q7ti?spm_id_from=333.999.0.0)
+
 **2021.12.13**
 
 leetcode-589-N 叉树的前序遍历
