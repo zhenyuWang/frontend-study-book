@@ -460,3 +460,8 @@ leetcode-103-二叉树的锯齿形层序遍历
 
 [掘金](https://juejin.cn/post/7041564626470846472)
 [B站](https://www.bilibili.com/video/BV1YS4y1Q7ti?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer 40-最小的k个数
+
+[掘金](https://juejin.cn/post/7041922416045457422)
+[B站](https://www.bilibili.com/video/BV1GM4y1c74x?spm_id_from=333.999.0.0)

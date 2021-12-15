@@ -6,6 +6,14 @@
 
 # 日志
 
+**2021.12.15**
+
+leetcode-剑指 Offer 40-最小的k个数
+
+[code](./algorithm/leetcode题解/leetcode-剑指Offer40-最小的k个数.js)
+[掘金](https://juejin.cn/post/7041922416045457422)
+[B站](https://www.bilibili.com/video/BV1GM4y1c74x?spm_id_from=333.999.0.0)
+
 **2021.12.14**
 
 leetcode-589-N 叉树的前序遍历
