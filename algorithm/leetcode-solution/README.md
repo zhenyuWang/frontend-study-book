@@ -465,3 +465,8 @@ leetcode-剑指 Offer 40-最小的k个数
 
 [掘金](https://juejin.cn/post/7041922416045457422)
 [B站](https://www.bilibili.com/video/BV1GM4y1c74x?spm_id_from=333.999.0.0)
+
+leetcode-1046-最后一块石头的重量
+
+[掘金](https://juejin.cn/post/7042328189749690404)
+[B站](https://www.bilibili.com/video/BV1cZ4y1X7j9?spm_id_from=333.999.0.0)
