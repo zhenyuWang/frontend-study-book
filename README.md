@@ -6,6 +6,14 @@
 
 # 日志
 
+**2021.12.17**
+
+leetcode-215-数组中的第K个最大元素
+
+[code](./algorithm/leetcode-solution/leetcode-215-数组中的第K个最大元素.js)
+[掘金](https://juejin.cn/post/7042688394735910942)
+[B站](https://www.bilibili.com/video/BV1q34y167t2?spm_id_from=333.999.0.0)
+
 **2021.12.16**
 
 leetcode-1046-最后一块石头的重量
