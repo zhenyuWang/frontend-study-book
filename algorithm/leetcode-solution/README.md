@@ -1,3 +1,13 @@
+leetcode-692-前K个高频单词
+
+[掘金](https://juejin.cn/post/7043005374727159839)
+[B站](https://www.bilibili.com/video/BV15Z4y1X7XC?spm_id_from=333.999.0.0)
+
+leetcode-355-设计推特
+
+[掘金](https://juejin.cn/post/7043001686415605773)
+[B站](https://www.bilibili.com/video/BV1i3411x71D?spm_id_from=333.999.0.0)
+
 leetcode-215-数组中的第K个最大元素
 
 [掘金](https://juejin.cn/post/7042688394735910942)

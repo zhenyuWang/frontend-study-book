@@ -6,6 +6,26 @@
 
 # 日志
 
+**2021.12.19**
+
+leetcode-面试题 17.20-连续中值
+
+leetcode-295-数据流的中位数
+
+**2021.12.18**
+
+leetcode-355-设计推特
+
+[code](./algorithm/leetcode-solution/leetcode-355-设计推特.js)
+[掘金](https://juejin.cn/post/7043001686415605773)
+[B站](https://www.bilibili.com/video/BV1i3411x71D?spm_id_from=333.999.0.0)
+
+leetcode-692-前K个高频单词
+
+[code](./algorithm/leetcode-solution/leetcode-692-前K个高频单词.js)
+[掘金](https://juejin.cn/post/7043005374727159839)
+[B站](https://www.bilibili.com/video/BV15Z4y1X7XC?spm_id_from=333.999.0.0)
+
 **2021.12.17**
 
 leetcode-215-数组中的第K个最大元素
