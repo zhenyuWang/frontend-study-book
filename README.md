@@ -20,6 +20,10 @@ leetcode-295-数据流的中位数
 [掘金](https://juejin.cn/post/7043354231759175717)
 [B站](https://www.bilibili.com/video/BV1o44y1E7WM?spm_id_from=333.999.0.0)
 
+React是如何利用堆进行任务调度的？
+
+[掘金](https://juejin.cn/post/7043375627759517703)
+
 **2021.12.18**
 
 leetcode-355-设计推特
