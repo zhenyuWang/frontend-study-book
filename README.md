@@ -10,7 +10,15 @@
 
 leetcode-面试题 17.20-连续中值
 
+[code](./algorithm/leetcode-solution/leetcode-面试题17.20-连续中值.js)
+[掘金](https://juejin.cn/post/7043350154300112926)
+[B站](https://www.bilibili.com/video/BV1jq4y1B7Nb?spm_id_from=333.999.0.0)
+
 leetcode-295-数据流的中位数
+
+[code](./algorithm/leetcode-solution/leetcode-295-数据流的中位数.js)
+[掘金](https://juejin.cn/post/7043354231759175717)
+[B站](https://www.bilibili.com/video/BV1o44y1E7WM?spm_id_from=333.999.0.0)
 
 **2021.12.18**
 
