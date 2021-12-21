@@ -6,6 +6,22 @@
 
 # 日志
 
+**2021.12.21**
+
+leetcode-264-丑数 II
+
+leetcode-313-超级丑数
+
+leetcode-1753-移除石子的最大得分
+
+**2021.12.20**
+
+leetcode-104-二叉树的最大深度
+
+[code](./algorithm/leetcode-solution/leetcode-104-二叉树的最大深度.js)
+[掘金](https://juejin.cn/post/7043965935438266375)
+[B站](https://www.bilibili.com/video/BV11m4y1X7ta?spm_id_from=333.999.0.0)
+
 **2021.12.19**
 
 leetcode-面试题 17.20-连续中值

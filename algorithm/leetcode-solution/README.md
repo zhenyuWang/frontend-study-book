@@ -1,3 +1,8 @@
+leetcode-104-二叉树的最大深度
+
+[掘金](https://juejin.cn/post/7043965935438266375)
+[B站](https://www.bilibili.com/video/BV11m4y1X7ta?spm_id_from=333.999.0.0)
+
 leetcode-295-数据流的中位数
 
 [掘金](https://juejin.cn/post/7043354231759175717)
