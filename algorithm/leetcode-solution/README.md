@@ -1,3 +1,18 @@
+leetcode-1753-移除石子的最大得分
+
+[掘金](https://juejin.cn/post/7044185551338995742)
+[B站](https://www.bilibili.com/video/BV1vb4y1v7up?spm_id_from=333.999.0.0)
+
+leetcode-313-超级丑数
+
+[掘金](https://juejin.cn/post/7044181862985498660)
+[B站](https://www.bilibili.com/video/BV1Ma41167B3?spm_id_from=333.999.0.0)
+
+leetcode-264-丑数 II
+
+[掘金](https://juejin.cn/post/7044179414145302535)
+[B站](https://www.bilibili.com/video/BV1nF411B7w1?spm_id_from=333.999.0.0)
+
 leetcode-104-二叉树的最大深度
 
 [掘金](https://juejin.cn/post/7043965935438266375)
