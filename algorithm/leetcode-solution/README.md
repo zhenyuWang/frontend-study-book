@@ -1,3 +1,18 @@
+leetcode-199-二叉树的右视图
+
+[掘金](https://juejin.cn/post/7044853405021372447)
+[B站](https://www.bilibili.com/video/BV1pi4y1R7b7?spm_id_from=333.999.0.0)
+
+leetcode-230-二叉搜索树中第K小的元素
+
+[掘金](https://juejin.cn/post/7044851121550000164)
+[B站](https://www.bilibili.com/video/BV11T4y1f7XV?spm_id_from=333.999.0.0)
+
+leetcode-面试题 04.05-合法二叉搜索树
+
+[掘金](https://juejin.cn/post/7044850845438967839)
+[B站](https://www.bilibili.com/video/BV1db4y1v7Rd?spm_id_from=333.999.0.0)
+
 leetcode-1801-积压订单中的订单总数
 
 [掘金](https://juejin.cn/post/7044701000753479717)

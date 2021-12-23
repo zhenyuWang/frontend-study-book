@@ -6,13 +6,31 @@
 
 # 日志
 
+**2021.12.2**
+
+leetcode-100-相同的树
+
+leetcode-101-对称二叉树
+
 **2021.12.23**
 
 leetcode-面试题 04.05-合法二叉搜索树
 
+[code](./algorithm/leetcode-solution/leetcode-面试题04.05-合法二叉搜索树.js)
+[掘金](https://juejin.cn/post/7044850845438967839)
+[B站](https://www.bilibili.com/video/BV1db4y1v7Rd?spm_id_from=333.999.0.0)
+
 leetcode-230-二叉搜索树中第K小的元素
 
+[code](./algorithm/leetcode-solution/leetcode-230-二叉搜索树中第K小的元素.js)
+[掘金](https://juejin.cn/post/7044851121550000164)
+[B站](https://www.bilibili.com/video/BV11T4y1f7XV?spm_id_from=333.999.0.0)
+
 leetcode-199-二叉树的右视图
+
+[code](./algorithm/leetcode-solution/leetcode-199-二叉树的右视图.js)
+[掘金](https://juejin.cn/post/7044853405021372447)
+[B站](https://www.bilibili.com/video/BV1pi4y1R7b7?spm_id_from=333.999.0.0)
 
 **2021.12.22**
 
