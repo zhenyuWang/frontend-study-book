@@ -6,6 +6,22 @@
 
 # 日志
 
+**2021.12.23**
+
+leetcode-面试题 04.05-合法二叉搜索树
+
+leetcode-230-二叉搜索树中第K小的元素
+
+leetcode-199-二叉树的右视图
+
+**2021.12.22**
+
+leetcode-1801-积压订单中的订单总数
+
+[code](./algorithm/leetcode-solution/leetcode-1801-积压订单中的订单总数.js)
+[掘金](https://juejin.cn/post/7044701000753479717)
+[B站](https://www.bilibili.com/video/BV1pm4y197Y8?spm_id_from=333.999.0.0)
+
 **2021.12.21**
 
 leetcode-264-丑数 II

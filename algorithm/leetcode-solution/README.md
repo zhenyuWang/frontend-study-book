@@ -1,3 +1,8 @@
+leetcode-1801-积压订单中的订单总数
+
+[掘金](https://juejin.cn/post/7044701000753479717)
+[B站](https://www.bilibili.com/video/BV1pm4y197Y8?spm_id_from=333.999.0.0)
+
 leetcode-1753-移除石子的最大得分
 
 [掘金](https://juejin.cn/post/7044185551338995742)
