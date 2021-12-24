@@ -6,11 +6,19 @@
 
 # 日志
 
-**2021.12.2**
+**2021.12.24**
 
 leetcode-100-相同的树
 
+[code](./algorithm/leetcode-solution/leetcode-100-相同的树.js)
+[掘金](https://juejin.cn/post/7045336946993790990)
+[B站](https://www.bilibili.com/video/BV1LR4y1s7WC?spm_id_from=333.999.0.0)
+
 leetcode-101-对称二叉树
+
+[code](./algorithm/leetcode-solution/leetcode-101-对称二叉树.js)
+[掘金](https://juejin.cn/post/7045343001429671967)
+[B站](https://www.bilibili.com/video/BV1fF411q7eS?spm_id_from=333.999.0.0)
 
 **2021.12.23**
 

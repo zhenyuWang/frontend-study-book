@@ -1,3 +1,13 @@
+leetcode-101-对称二叉树
+
+[掘金](https://juejin.cn/post/7045343001429671967)
+[B站](https://www.bilibili.com/video/BV1fF411q7eS?spm_id_from=333.999.0.0)
+
+leetcode-100-相同的树
+
+[掘金](https://juejin.cn/post/7045336946993790990)
+[B站](https://www.bilibili.com/video/BV1LR4y1s7WC?spm_id_from=333.999.0.0)
+
 leetcode-199-二叉树的右视图
 
 [掘金](https://juejin.cn/post/7044853405021372447)
