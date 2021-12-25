@@ -6,6 +6,20 @@
 
 # 日志
 
+**2021.11.25**
+
+leetcode-剑指 Offer 68 - I-二叉搜索树的最近公共祖先
+
+[code](./algorithm/leetcode-solution/leetcode-剑指Offer68-I-二叉搜索树的最近公共祖先.js)
+[掘金](https://juejin.cn/post/7045657179231584270)
+[B站](https://www.bilibili.com/video/BV13q4y1m7sL?spm_id_from=333.999.0.0)
+
+leetcode-124-二叉树中的最大路径和
+
+[code](./algorithm/leetcode-solution/leetcode-124-二叉树中的最大路径和.js)
+[掘金](https://juejin.cn/post/7045660064023052325)
+[B站](https://www.bilibili.com/video/BV1o3411x7Dv?spm_id_from=333.999.0.0)
+
 **2021.12.24**
 
 leetcode-100-相同的树
