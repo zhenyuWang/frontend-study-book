@@ -1,3 +1,13 @@
+leetcode-451-根据字符出现频率排序
+
+[掘金](https://juejin.cn/post/7045944168346026015)
+[B站](https://www.bilibili.com/video/BV1bD4y1c71d?spm_id_from=333.999.0.0)
+
+leetcode-973-最接近原点的 K 个点
+
+[掘金](https://juejin.cn/post/7045933961595322405)
+[B站](https://www.bilibili.com/video/BV1N34y1r7kb?spm_id_from=333.999.0.0)
+
 leetcode-124-二叉树中的最大路径和
 
 [掘金](https://juejin.cn/post/7045660064023052325)
