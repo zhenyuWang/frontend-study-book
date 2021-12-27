@@ -1,3 +1,13 @@
+leetcode-200-岛屿数量
+
+[掘金](https://juejin.cn/post/7046197453703348260)
+[B站](https://www.bilibili.com/video/BV1A34y1z7E3?spm_id_from=333.999.0.0)
+
+leetcode-547-省份数量
+
+[掘金](https://juejin.cn/post/7046194203893694495)
+[B站](https://www.bilibili.com/video/BV1qS4y1M7eA?spm_id_from=333.999.0.0)
+
 leetcode-451-根据字符出现频率排序
 
 [掘金](https://juejin.cn/post/7045944168346026015)
