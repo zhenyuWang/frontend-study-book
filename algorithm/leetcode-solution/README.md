@@ -1,3 +1,8 @@
+leetcode-990-等式方程的可满足性
+
+[掘金](https://juejin.cn/post/7047020570453475336)
+[B站](https://www.bilibili.com/video/BV1sY411p7Dm?spm_id_from=333.999.0.0)
+
 leetcode-200-岛屿数量
 
 [掘金](https://juejin.cn/post/7046197453703348260)

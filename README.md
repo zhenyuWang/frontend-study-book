@@ -6,11 +6,19 @@
 
 # 日志
 
+**2021.11.29**
+
+leetcode-684-冗余连接
+
+leetcode-1319-连通网络的操作次数
 
 **2021.12.28**
 
 leetcode-990-等式方程的可满足性
 
+[code](./algorithm/leetcode-solution/leetcode-990-等式方程的可满足性.js)
+[掘金](https://juejin.cn/post/7047020570453475336)
+[B站](https://www.bilibili.com/video/BV1sY411p7Dm?spm_id_from=333.999.0.0)
 
 **2021.12.27**
 
