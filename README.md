@@ -6,9 +6,20 @@
 
 # 日志
 
-**2021.12.27**
+
+**2021.12.28**
 
 leetcode-990-等式方程的可满足性
+
+
+**2021.12.27**
+
+数据结构-并查集
+
+[code](./algorithm/data-structure/UnionSet.js)
+[掘金](https://juejin.cn/post/7047014200962449445)
+[B站](https://www.bilibili.com/video/BV1ra4116755?spm_id_from=333.999.0.0)
+
 
 **2021.12.26**
 
