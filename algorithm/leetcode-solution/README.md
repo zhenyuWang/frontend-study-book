@@ -1,3 +1,13 @@
+leetcode-1319-连通网络的操作次数
+
+[掘金](https://juejin.cn/post/7047117656427593758)
+[B站](https://www.bilibili.com/video/BV1wM4y1F7KY?spm_id_from=333.999.0.0)
+
+leetcode-684-冗余连接
+
+[掘金](https://juejin.cn/post/7047109972634632222)
+[B站](https://www.bilibili.com/video/BV1Jq4y1178x?spm_id_from=333.999.0.0)
+
 leetcode-990-等式方程的可满足性
 
 [掘金](https://juejin.cn/post/7047020570453475336)
