@@ -2,14 +2,6 @@
 var minCameraCover = function(root) {
   let res = 0;
   function preorder(node){
-    // 当前节点为叶子节点
-    if(node.left===null && node.right===null){
-      // 如果有父节点，优先父节点安装摄像头
-      if(node.parent) node.parent.val = 2,node.val = 1;
-      // 否则只能自己放置摄像头
-      else node.val = 2,res++;
-      return;
-    }
     // 如果有左子树
     if(node.left){
       // 定义parent属性指向当前节点
@@ -28,9 +20,9 @@ var minCameraCover = function(root) {
     if(node.val === 2){
       // 数量加1
       res++;
-      // 如果有父节点且父节点值不为2,将父节点值 val = 1,标识父节点可以被监视到
+      // 如果有父节点且父节点值为0,将父节点值 val = 1,标识父节点可以被监视到
       // 如果父节点已经放置了摄像头，不能修改父节点val
-      if(node.parent&&node.parent.val!==2) node.parent.val = 1;
+      if(node.parent&&node.parent.val===0) node.parent.val = 1;
     }else if(node.val === 0){
       // 如果当前节点没有被监视到
       // 如果有父节点，优先让父节点放置摄像头，覆盖当前节点
