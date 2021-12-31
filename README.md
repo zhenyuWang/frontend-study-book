@@ -6,6 +6,20 @@
 
 # 日志
 
+**2021.12.31**
+
+leetcode-947-移除最多的同行或同列石头
+
+[code](./algorithm/leetcode-solution/leetcode-947-移除最多的同行或同列石头.js)
+[掘金](https://juejin.cn/post/7047899460893933581)
+[B站](https://www.bilibili.com/video/BV1LP4y1n7Px?spm_id_from=333.999.0.0)
+
+leetcode-1202-交换字符串中的元素
+
+[code](./algorithm/leetcode-solution/leetcode-1202-交换字符串中的元素.js)
+[掘金](https://juejin.cn/post/7047902807160487967)
+[B站](https://www.bilibili.com/video/BV1344y1E7Sg?spm_id_from=333.999.0.0)
+
 **2021.12.30**
 
 leetcode-128-最长连续序列
