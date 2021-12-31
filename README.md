@@ -6,7 +6,15 @@
 
 # 日志
 
-**2021.11.29**
+**2021.12.30**
+
+leetcode-128-最长连续序列
+
+[code](./algorithm/leetcode-solution/leetcode-128-最长连续序列.js)
+[掘金](https://juejin.cn/post/7047669835567726629)
+[B站](https://www.bilibili.com/video/BV1cD4y1w7dz?spm_id_from=333.999.0.0)
+
+**2021.12.29**
 
 leetcode-684-冗余连接
 

@@ -1,3 +1,8 @@
+leetcode-128-最长连续序列
+
+[掘金](https://juejin.cn/post/7047669835567726629)
+[B站](https://www.bilibili.com/video/BV1cD4y1w7dz?spm_id_from=333.999.0.0)
+
 leetcode-1319-连通网络的操作次数
 
 [掘金](https://juejin.cn/post/7047117656427593758)
