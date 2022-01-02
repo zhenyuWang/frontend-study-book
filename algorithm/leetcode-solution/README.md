@@ -1,3 +1,13 @@
+leetcode-765-情侣牵手
+
+[掘金](https://juejin.cn/post/7048539170997796877)
+[B站](https://www.bilibili.com/video/BV1eF411i7tZ?spm_id_from=333.999.0.0)
+
+leetcode-721-账户合并
+
+[掘金](https://juejin.cn/post/7048535629092618271)
+[B站](https://www.bilibili.com/video/BV1dF411i7sD?spm_id_from=333.999.0.0)
+
 leetcode-1202-交换字符串中的元素
 
 [掘金](https://juejin.cn/post/7047902807160487967)
