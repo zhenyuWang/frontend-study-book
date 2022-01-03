@@ -16,3 +16,48 @@ var minSwapsCouples = function(row) {
   // 返回结果
   return res;
 };
+
+// for循环优化indexOf
+var minSwapsCouples = function(row) {
+  const len = row.length;
+  let res = 0;
+  for(let i = 0;i<len;i+=2){
+    if(Math.abs(row[i]-row[i+1])!==1||(row[i]>>1!==row[i+1]>>1)){
+      targetVal = row[i]+1;
+      if(row[i]%2) targetVal = row[i]-1;
+      let targetValInd;
+      for(let j = i+2;j<len;j++){
+        if(row[j]===targetVal){
+          targetValInd = j;
+          break;
+        }
+      }
+      row[targetValInd] = row[i+1]
+      row[i+1] = targetVal
+      res++;
+    }
+  }
+  return res;
+};
+
+// Map优化indexOf
+var minSwapsCouples = function(row) {
+  const len = row.length,map = new Map();
+  for(let i = 0;i<len;i++){
+    map.set(row[i],i)
+  }
+  let res = 0;
+  for(let i = 0;i<len;i+=2){
+    if(Math.abs(row[i]-row[i+1])!==1||(row[i]>>1!==row[i+1]>>1)){
+      targetVal = row[i]+1;
+      if(row[i]%2) targetVal = row[i]-1;
+      let targetValInd = map.get(targetVal);
+      map.set(targetVal,i+1)
+      map.set(row[i+1],targetValInd)
+      row[targetValInd] = row[i+1]
+      row[i+1] = targetVal
+      res++;
+    }
+  }
+  return res;
+};
