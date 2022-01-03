@@ -1,3 +1,19 @@
+leetcode-394-字符串解码
+
+[掘金](https://juejin.cn/post/7048988705129758750)
+[B站](https://www.bilibili.com/video/BV1Ni4y197Cy?spm_id_from=333.999.0.0)
+
+leetcode-685-冗余连接 II
+
+[掘金](https://juejin.cn/post/7048934951479148551)
+[B站](https://www.bilibili.com/video/BV1pr4y1U7u9?spm_id_from=333.999.0.0)
+
+leetcode-239-滑动窗口最大值
+
+[掘金](https://juejin.cn/post/7048643448282284045)
+[B站](https://www.bilibili.com/video/BV1YP4y1E7Df?spm_id_from=333.999.0.0)
+
+
 leetcode-765-情侣牵手
 
 [掘金](https://juejin.cn/post/7048539170997796877)
