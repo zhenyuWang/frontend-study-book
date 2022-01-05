@@ -1,3 +1,14 @@
+
+leetcode-11-盛最多水的容器
+
+[掘金](https://juejin.cn/post/7049592800840515597)
+[B站](https://www.bilibili.com/video/BV1hR4y1u7Ym?spm_id_from=333.999.0.0)
+
+leetcode-470-用 Rand7() 实现 Rand10()
+
+[掘金](https://juejin.cn/post/7049587917471088653)
+[B站](https://www.bilibili.com/video/BV1TT4y1m75W?spm_id_from=333.999.0.0)
+
 leetcode-394-字符串解码
 
 [掘金](https://juejin.cn/post/7048988705129758750)

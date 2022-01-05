@@ -6,6 +6,26 @@
 
 # 日志
 
+**2022.1.5**
+
+leetcode-75-颜色分类
+leetcode-面试题 17.14-最小K个数
+leetcode-剑指 Offer 21-调整数组顺序使奇数位于偶数前面
+
+**2022.1.4**
+
+leetcode-470-用 Rand7() 实现 Rand10()
+
+[code](./algorithm/leetcode-solution/leetcode-470-用Rand7()实现Rand10().js)
+[掘金](https://juejin.cn/post/7049587917471088653)
+[B站](https://www.bilibili.com/video/BV1TT4y1m75W?spm_id_from=333.999.0.0)
+
+leetcode-11-盛最多水的容器
+
+[code](./algorithm/leetcode-solution/leetcode-11-盛最多水的容器.js)
+[掘金](https://juejin.cn/post/7049592800840515597)
+[B站](https://www.bilibili.com/video/BV1hR4y1u7Ym?spm_id_from=333.999.0.0)
+
 **2022.1.3**
 
 leetcode-685-冗余连接 II
