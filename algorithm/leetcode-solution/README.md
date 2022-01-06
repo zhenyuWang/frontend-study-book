@@ -1,3 +1,17 @@
+leetcode-剑指 Offer 21-调整数组顺序使奇数位于偶数前面
+
+[掘金](https://juejin.cn/post/7049910165700608030)
+[B站](https://www.bilibili.com/video/BV1bq4y127yG?spm_id_from=333.999.0.0)
+
+leetcode-面试题 17.14-最小K个数
+
+[掘金](https://juejin.cn/post/7049906621408870437)
+[B站](https://www.bilibili.com/video/BV1EF411q73s?spm_id_from=333.999.0.0)
+
+leetcode-75-颜色分类
+
+[掘金](https://juejin.cn/post/7049901337693143048)
+[B站](https://www.bilibili.com/video/BV1Gq4y127Ve?spm_id_from=333.999.0.0)
 
 leetcode-11-盛最多水的容器
 
