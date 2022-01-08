@@ -6,11 +6,39 @@
 
 # 日志
 
+**2021.1.8**
+
+leetcode-面试题 04.08-首个共同祖先
+
+leetcode-剑指 Offer 51-数组中的逆序对
+
+**2021.1.7**
+
+leetcode-148-排序链表
+
+[code](./algorithm/leetcode-solution/leetcode-148-排序链表.js)
+[掘金](https://juejin.cn/post/7050858075435040775)
+[B站](https://www.bilibili.com/video/BV1hm4y1D7G9?spm_id_from=333.999.0.0)
+
+leetcode-1305-两棵二叉搜索树中的所有元素
+
+[code](./algorithm/leetcode-solution/leetcode-1305-两棵二叉搜索树中的所有元素.js)
+[掘金](https://juejin.cn/post/7050872193781071880)
+[B站](https://www.bilibili.com/video/BV15q4y1A7Yv?spm_id_from=333.999.0.0)
+
 **2021.1.6**
+
+leetcode-96-不同的二叉搜索树
+
+[code](./algorithm/leetcode-solution/leetcode-96-不同的二叉搜索树.js)
+[掘金](https://juejin.cn/post/7050812555912020004)
+[B站](https://www.bilibili.com/video/BV1qF411v7SC?spm_id_from=333.999.0.0)
 
 leetcode-95-不同的二叉搜索树 II
 
-leetcode-887-鸡蛋掉落
+[code](./algorithm/leetcode-solution/leetcode-95-不同的二叉搜索树II.js)
+[掘金](https://juejin.cn/post/7050819789463224351)
+[B站](https://www.bilibili.com/video/BV1wL411c7ay?spm_id_from=333.999.0.0)
 
 **2022.1.5**
 
