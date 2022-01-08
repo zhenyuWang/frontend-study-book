@@ -1,3 +1,8 @@
+leetcode-面试题 04.08-首个共同祖先
+
+[掘金](https://juejin.cn/post/7050880760953176094)
+[B站](https://www.bilibili.com/video/BV1CS4y1Z7Y7?spm_id_from=333.999.0.0)
+
 leetcode-1305-两棵二叉搜索树中的所有元素
 
 [掘金](https://juejin.cn/post/7050872193781071880)

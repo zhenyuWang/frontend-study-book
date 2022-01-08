@@ -6,11 +6,19 @@
 
 # 日志
 
+**2021.1.9**
+
+leetcode-剑指 Offer 51-数组中的逆序对
+
+leetcode-887-鸡蛋掉落
+
 **2021.1.8**
 
 leetcode-面试题 04.08-首个共同祖先
 
-leetcode-剑指 Offer 51-数组中的逆序对
+[code](./algorithm/leetcode-solution/leetcode-面试题04.08-首个共同祖先.js)
+[掘金](https://juejin.cn/post/7050880760953176094)
+[B站](https://www.bilibili.com/video/BV1CS4y1Z7Y7?spm_id_from=333.999.0.0)
 
 **2021.1.7**
 
