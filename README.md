@@ -5,14 +5,21 @@
 记录学习过程，加油！
 
 # 日志
-
-**2021.1.9**
+### 2022.1.9
 
 leetcode-剑指 Offer 51-数组中的逆序对
 
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
+
 leetcode-887-鸡蛋掉落
 
-**2021.1.8**
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
+
+### 2022.1.8
 
 leetcode-面试题 04.08-首个共同祖先
 
@@ -20,7 +27,7 @@ leetcode-面试题 04.08-首个共同祖先
 [掘金](https://juejin.cn/post/7050880760953176094)
 [B站](https://www.bilibili.com/video/BV1CS4y1Z7Y7?spm_id_from=333.999.0.0)
 
-**2021.1.7**
+### 2022.1.7
 
 leetcode-148-排序链表
 
@@ -34,7 +41,7 @@ leetcode-1305-两棵二叉搜索树中的所有元素
 [掘金](https://juejin.cn/post/7050872193781071880)
 [B站](https://www.bilibili.com/video/BV15q4y1A7Yv?spm_id_from=333.999.0.0)
 
-**2021.1.6**
+### 2022.1.6
 
 leetcode-96-不同的二叉搜索树
 
@@ -48,7 +55,7 @@ leetcode-95-不同的二叉搜索树 II
 [掘金](https://juejin.cn/post/7050819789463224351)
 [B站](https://www.bilibili.com/video/BV1wL411c7ay?spm_id_from=333.999.0.0)
 
-**2022.1.5**
+### 2022.1.5
 
 leetcode-75-颜色分类
 
@@ -68,7 +75,7 @@ leetcode-剑指 Offer 21-调整数组顺序使奇数位于偶数前面
 [掘金](https://juejin.cn/post/7049910165700608030)
 [B站](https://www.bilibili.com/video/BV1bq4y127yG?spm_id_from=333.999.0.0)
 
-**2022.1.4**
+### 2022.1.4
 
 leetcode-470-用 Rand7() 实现 Rand10()
 
@@ -82,7 +89,7 @@ leetcode-11-盛最多水的容器
 [掘金](https://juejin.cn/post/7049592800840515597)
 [B站](https://www.bilibili.com/video/BV1hR4y1u7Ym?spm_id_from=333.999.0.0)
 
-**2022.1.3**
+### 2022.1.3
 
 leetcode-685-冗余连接 II
 
@@ -96,7 +103,7 @@ leetcode-394-字符串解码
 [掘金](https://juejin.cn/post/7048988705129758750)
 [B站](https://www.bilibili.com/video/BV1Ni4y197Cy?spm_id_from=333.999.0.0)
 
-**2022.1.2**
+### 2022.1.2
 
 数据结构-单调队列
 
@@ -110,7 +117,7 @@ leetcode-239-滑动窗口最大值
 [掘金](https://juejin.cn/post/7048643448282284045)
 [B站](https://www.bilibili.com/video/BV1YP4y1E7Df?spm_id_from=333.999.0.0)
 
-**2022.1.1**
+### 2022.1.1
 
 leetcode-721-账户合并
 
@@ -124,7 +131,7 @@ leetcode-765-情侣牵手
 [掘金](https://juejin.cn/post/7048539170997796877)
 [B站](https://www.bilibili.com/video/BV1eF411i7tZ?spm_id_from=333.999.0.0)
 
-**2021.12.31**
+### 2021.12.31
 
 leetcode-947-移除最多的同行或同列石头
 
@@ -138,7 +145,7 @@ leetcode-1202-交换字符串中的元素
 [掘金](https://juejin.cn/post/7047902807160487967)
 [B站](https://www.bilibili.com/video/BV1344y1E7Sg?spm_id_from=333.999.0.0)
 
-**2021.12.30**
+### 2021.12.30
 
 leetcode-128-最长连续序列
 
@@ -146,7 +153,7 @@ leetcode-128-最长连续序列
 [掘金](https://juejin.cn/post/7047669835567726629)
 [B站](https://www.bilibili.com/video/BV1cD4y1w7dz?spm_id_from=333.999.0.0)
 
-**2021.12.29**
+### 2021.12.29
 
 leetcode-684-冗余连接
 
@@ -160,7 +167,7 @@ leetcode-1319-连通网络的操作次数
 [掘金](https://juejin.cn/post/7047117656427593758)
 [B站](https://www.bilibili.com/video/BV1wM4y1F7KY?spm_id_from=333.999.0.0)
 
-**2021.12.28**
+### 2021.12.28
 
 leetcode-990-等式方程的可满足性
 
@@ -168,7 +175,7 @@ leetcode-990-等式方程的可满足性
 [掘金](https://juejin.cn/post/7047020570453475336)
 [B站](https://www.bilibili.com/video/BV1sY411p7Dm?spm_id_from=333.999.0.0)
 
-**2021.12.27**
+### 2021.12.27
 
 数据结构-并查集
 
@@ -177,7 +184,7 @@ leetcode-990-等式方程的可满足性
 [B站](https://www.bilibili.com/video/BV1ra4116755?spm_id_from=333.999.0.0)
 
 
-**2021.12.26**
+### 2021.12.26
 
 leetcode-973-最接近原点的 K 个点
 
@@ -203,7 +210,7 @@ leetcode-200-岛屿数量
 [掘金](https://juejin.cn/post/7046197453703348260)
 [B站](https://www.bilibili.com/video/BV1A34y1z7E3?spm_id_from=333.999.0.0)
 
-**2021.11.25**
+### 2021.11.25
 
 leetcode-剑指 Offer 68 - I-二叉搜索树的最近公共祖先
 
@@ -217,7 +224,7 @@ leetcode-124-二叉树中的最大路径和
 [掘金](https://juejin.cn/post/7045660064023052325)
 [B站](https://www.bilibili.com/video/BV1o3411x7Dv?spm_id_from=333.999.0.0)
 
-**2021.12.24**
+### 2021.12.24
 
 leetcode-100-相同的树
 
@@ -231,7 +238,7 @@ leetcode-101-对称二叉树
 [掘金](https://juejin.cn/post/7045343001429671967)
 [B站](https://www.bilibili.com/video/BV1fF411q7eS?spm_id_from=333.999.0.0)
 
-**2021.12.23**
+### 2021.12.23
 
 leetcode-面试题 04.05-合法二叉搜索树
 
@@ -251,7 +258,7 @@ leetcode-199-二叉树的右视图
 [掘金](https://juejin.cn/post/7044853405021372447)
 [B站](https://www.bilibili.com/video/BV1pi4y1R7b7?spm_id_from=333.999.0.0)
 
-**2021.12.22**
+### 2021.12.22
 
 leetcode-1801-积压订单中的订单总数
 
@@ -259,7 +266,7 @@ leetcode-1801-积压订单中的订单总数
 [掘金](https://juejin.cn/post/7044701000753479717)
 [B站](https://www.bilibili.com/video/BV1pm4y197Y8?spm_id_from=333.999.0.0)
 
-**2021.12.21**
+### 2021.12.21
 
 leetcode-264-丑数 II
 
@@ -279,7 +286,7 @@ leetcode-1753-移除石子的最大得分
 [掘金](https://juejin.cn/post/7044185551338995742)
 [B站](https://www.bilibili.com/video/BV1vb4y1v7up?spm_id_from=333.999.0.0)
 
-**2021.12.20**
+### 2021.12.20
 
 leetcode-104-二叉树的最大深度
 
@@ -287,7 +294,7 @@ leetcode-104-二叉树的最大深度
 [掘金](https://juejin.cn/post/7043965935438266375)
 [B站](https://www.bilibili.com/video/BV11m4y1X7ta?spm_id_from=333.999.0.0)
 
-**2021.12.19**
+### 2021.12.19
 
 leetcode-面试题 17.20-连续中值
 
@@ -305,7 +312,7 @@ React是如何利用堆进行任务调度的？
 
 [掘金](https://juejin.cn/post/7043375627759517703)
 
-**2021.12.18**
+### 2021.12.18
 
 leetcode-355-设计推特
 
@@ -319,7 +326,7 @@ leetcode-692-前K个高频单词
 [掘金](https://juejin.cn/post/7043005374727159839)
 [B站](https://www.bilibili.com/video/BV15Z4y1X7XC?spm_id_from=333.999.0.0)
 
-**2021.12.17**
+### 2021.12.17
 
 leetcode-215-数组中的第K个最大元素
 
@@ -327,7 +334,7 @@ leetcode-215-数组中的第K个最大元素
 [掘金](https://juejin.cn/post/7042688394735910942)
 [B站](https://www.bilibili.com/video/BV1q34y167t2?spm_id_from=333.999.0.0)
 
-**2021.12.16**
+### 2021.12.16
 
 leetcode-1046-最后一块石头的重量
 
@@ -335,7 +342,7 @@ leetcode-1046-最后一块石头的重量
 [掘金](https://juejin.cn/post/7042328189749690404)
 [B站](https://www.bilibili.com/video/BV1cZ4y1X7j9?spm_id_from=333.999.0.0)
 
-**2021.12.15**
+### 2021.12.15
 
 leetcode-剑指 Offer 40-最小的k个数
 
@@ -343,7 +350,7 @@ leetcode-剑指 Offer 40-最小的k个数
 [掘金](https://juejin.cn/post/7041922416045457422)
 [B站](https://www.bilibili.com/video/BV1GM4y1c74x?spm_id_from=333.999.0.0)
 
-**2021.12.14**
+### 2021.12.14
 
 leetcode-589-N 叉树的前序遍历
 
@@ -371,7 +378,7 @@ leetcode-103-二叉树的锯齿形层序遍历
 [掘金](https://juejin.cn/post/7041564626470846472)
 [B站](https://www.bilibili.com/video/BV1YS4y1Q7ti?spm_id_from=333.999.0.0)
 
-**2021.12.13**
+### 2021.12.13
 
 leetcode-589-N 叉树的前序遍历
 
@@ -383,7 +390,7 @@ leetcode-剑指 Offer 32 - II-从上到下打印二叉树 II
 [code](./algorithm/leetcode-solution/leetcode-剑指Offer32-II-从上到下打印二叉树II.js)
 [掘金](https://juejin.cn/post/7041202553828147208)
 
-**2021.12.12**
+### 2021.12.12
 
 leetcode-968-监控二叉树
 
@@ -391,7 +398,7 @@ leetcode-968-监控二叉树
 [掘金](https://juejin.cn/post/7040796337775837198)
 [B站](https://www.bilibili.com/video/BV1eg411w7eL?spm_id_from=333.999.0.0)
 
-**2021.12.11**
+### 2021.12.11
 
 leetcode-剑指 Offer 54-二叉搜索树的第k大节点
 
@@ -418,11 +425,11 @@ leetcode-144-二叉树的前序遍历-迭代算法
 [B站](https://www.bilibili.com/video/BV1SL411L7mZ?spm_id_from=333.999.0.0)
 
 
-**2021.12.10**
+### 2021.12.10
 
 搭建[Vue3开发框架](https://github.com/zhenyuWang/vue3-development-framework)
 
-**2021.12.9**
+### 2021.12.9
 
 leetcode-105-从前序与中序遍历序列构造二叉树
 
@@ -442,7 +449,7 @@ leetcode-222-完全二叉树的节点个数
 [掘金](https://juejin.cn/post/7039726092860522527)
 [B站](https://www.bilibili.com/video/BV1qS4y1D7Ny?spm_id_from=333.999.0.0)
 
-**2021.12.8**
+### 2021.12.8
 
 leetcode-725-分隔链表
 
@@ -468,7 +475,7 @@ leetcode-112-路径总和
 [掘金](https://juejin.cn/post/7039310828994035749)
 [B站](https://www.bilibili.com/video/BV1wr4y1D7U2?spm_id_from=333.999.0.0)
 
-**2021.12.7**
+### 2021.12.7
 
 leetcode-面试题02.08-环路检测
 
@@ -488,7 +495,7 @@ leetcode-剑指 Offer18-删除链表的节点
 [掘金](https://juejin.cn/post/7038954098829787150)
 [B站](https://www.bilibili.com/video/BV1kU4y1N7FA?spm_id_from=333.999.0.0)
 
-**2021.12.6**
+### 2021.12.6
 
 leetcode-714-买卖股票的最佳时机含手续费
 
@@ -496,7 +503,7 @@ leetcode-714-买卖股票的最佳时机含手续费
 [掘金](https://juejin.cn/post/7038906740259160100)
 [B站](https://www.bilibili.com/video/BV1mU4y1N7EC?spm_id_from=333.999.0.0)
 
-**2021.12.5**
+### 2021.12.5
 
 leetcode-445-两数相加II
 
@@ -516,7 +523,7 @@ leetcode-1249-移除无效的括号
 [掘金](https://juejin.cn/post/7038241095423098894)
 [B站](https://www.bilibili.com/video/BV1wZ4y1979n?spm_id_from=333.999.0.0)
 
-**2021.12.4**
+### 2021.12.4
 
 leetcode-剑指offer-复杂链表的复制
 
@@ -530,7 +537,7 @@ leetcode-面试题02.03-删除中间节点
 [掘金](https://juejin.cn/post/7037822305103249438)
 [B站](https://www.bilibili.com/video/BV1UZ4y1X7M3?spm_id_from=333.999.0.0)
 
-**2021.12.3**
+### 2021.12.3
 
 leetcode-946-验证栈序列
 
@@ -544,7 +551,7 @@ leetcode-1021-删除最外层的括号
 [掘金](https://juejin.cn/post/7037481986839019550)
 [B站](https://www.bilibili.com/video/BV1Mf4y1T78A?spm_id_from=333.999.0.0)
 
-**2021.12.2**
+### 2021.12.2
 
 leetcode-面试题03.04-化栈为队
 
@@ -564,7 +571,7 @@ leetcode-844-比较含退格的字符串
 [掘金](https://juejin.cn/post/7036946298389397541)
 [B站](https://www.bilibili.com/video/BV1Qg411A7as?spm_id_from=333.999.0.0)
 
-**2021.12.1**
+### 2021.12.1
 
 leetcode-860-柠檬水找零
 
@@ -584,7 +591,7 @@ leetcode-621-任务调度器
 [掘金](https://juejin.cn/post/7036930322872664077)
 [B站](https://www.bilibili.com/video/BV1g341147KC?spm_id_from=333.999.0.0)
 
-**2021.11.30**
+### 2021.11.30
 
 leetcode-面试题17.09-第k个数
 
@@ -599,7 +606,7 @@ leetcode-859-亲密字符串
 [B站](https://www.bilibili.com/video/BV1a34y1R7px?spm_id_from=333.999.0.0)
 
 
-**2021.11.29**
+### 2021.11.29
 
 leetcode-6-Z字形变换
 
@@ -610,7 +617,7 @@ leetcode-6-Z字形变换
 [服务地址](http://114.115.235.59:8083)
 [项目地址](https://github.com/zhenyuWang/glory-report)
 
-**2021.11.28**
+### 2021.11.28
 
 leetcode-641-设计循环双端队列
 
@@ -630,7 +637,7 @@ leetcode-933-最近的请求次数
 [掘金](https://juejin.cn/post/7035559710241587214)
 [B站](https://www.bilibili.com/video/BV1xP4y1V76F?spm_id_from=333.999.0.0)
 
-**2021.11.27**
+### 2021.11.27
 
 leetcode-86-分隔链表
 
@@ -644,7 +651,7 @@ leetcode-622-设计循环队列
 [掘金](https://juejin.cn/post/7035249484648939533)
 [B站](https://www.bilibili.com/video/BV1ob4y1q7vd?spm_id_from=333.999.0.0)
 
-**2021.11.26**
+### 2021.11.26
 
 leetcode-92-反转链表 II
 
@@ -664,7 +671,7 @@ leetcode-82-删除排序链表中的重复元素 II
 [掘金](https://juejin.cn/post/7034909561337151525)
 [B站](https://www.bilibili.com/video/BV1Wq4y1g7n1?spm_id_from=333.999.0.0)
 
-**2021.11.25**
+### 2021.11.25
 
 leetcode-1124-表现良好的最长时间段
 
@@ -690,7 +697,7 @@ leetcode-19-删除链表的倒数第N个结点
 [掘金](https://juejin.cn/post/7034571008551944199)
 [B站](https://www.bilibili.com/video/BV1w44y1e74L?spm_id_from=333.999.0.0)
 
-**2021.11.24**
+### 2021.11.24
 
 leetcode-331-验证二叉树的前序序列化
 
@@ -708,7 +715,7 @@ leetcode-636-函数的独占时间
 [掘金](https://juejin.cn/post/7034059596138446856)
 [B站](https://www.bilibili.com/video/BV1UL4y1p7jk?spm_id_from=333.999.0.0)
 
-**2021.11.23**
+### 2021.11.23
 
 leetcode-2-两数相加
 
@@ -731,21 +738,21 @@ leetcode-331-验证二叉树的前序序列化
 [code](./algorithm/leetcode-solution/leetcode-331-验证二叉树的前序序列化.js)
 [掘金](https://juejin.cn/post/7033793911306846221)
 
-**2021.11.22**
+### 2021.11.22
 
 leetcode-145-二叉树的后序遍历
 
 [code](./algorithm/leetcode-solution/leetcode-145-二叉树的后序遍历.js)
 [掘金](https://juejin.cn/post/7033418682462109733)
 
-**2021.11.21**
+### 2021.11.21
 
 leetcode-4-寻找两个正序数组的中位数
 
 [code](./algorithm/leetcode-solution/leetcode-4-寻找两个正序数组的中位数.js)
 [掘金](https://juejin.cn/post/7032958898688491557)
 
-**2021.11.20**
+### 2021.11.20
 
 leetcode-3-无重复字符的最长子串
 
@@ -756,14 +763,14 @@ leetcode-3-无重复字符的最长子串
 
 [code](https://github.com/su37josephxia/Daydayup/tree/main/glory-report/prototype/write-yaml/zhenyuWang)
 
-**2021.11.19**
+### 2021.11.19
 
 leetcode-2-两数相加
 
 [code](./algorithm/leetcode-solution/leetcode-2-两数相加.js)
 [掘金](https://juejin.cn/post/7032127633156472863)
 
-**2021.11.18**
+### 2021.11.18
 
 leetcode-24-两两交换链表中的节点
 
@@ -783,7 +790,7 @@ leetcode-138-复制带随机指针的链表
 [掘金](https://juejin.cn/post/7031806814958141447)
 [B站](https://www.bilibili.com/video/BV15g411N7HU?spm_id_from=333.999.0.0)
 
-**2021.11.17**
+### 2021.11.17
 
 leetcode-剑指Offer22-链表中倒数第k个节点
 
@@ -797,7 +804,7 @@ leetcode-1721-交换链表中的节点
 [掘金](https://juejin.cn/post/7031516322924068894)
 [B站](https://www.bilibili.com/video/BV1yr4y1r7p5?spm_id_from=333.999.0.0)
 
-**2021.11.16**
+### 2021.11.16
 
 leetcode-121-买卖股票的最佳时机
 
@@ -823,7 +830,7 @@ leetcode-647-回文子串
 [掘金](https://juejin.cn/post/7031118941388800013)
 [B站](https://www.bilibili.com/video/BV17b4y1t7As?spm_id_from=333.999.0.0)
 
-**2021.11.15**
+### 2021.11.15
 
 leetcode-543-二叉树的直径
 
@@ -835,7 +842,7 @@ leetcode-543-二叉树的直径
 
 [code](https://github.com/su37josephxia/Daydayup/tree/main/src/code-template/zhenyuWang)
 
-**2021.11.14**
+### 2021.11.14
 
 leetcode-347-前k个高频元素
 
@@ -861,7 +868,7 @@ leetcode-409-最长回文串
 [掘金](https://juejin.cn/post/7030415970220900365)
 [B站](https://www.bilibili.com/video/BV1kS4y1972g?spm_id_from=333.999.0.0)
 
-**2021.11.13**
+### 2021.11.13
 
 leetcode-300-最长递增子序列
 
@@ -878,14 +885,14 @@ leetcode-912-排序数组
 [掘金](https://juejin.cn/post/7030071403399348254)
 [B站](https://www.bilibili.com/video/BV1og411K7g8?spm_id_from=333.999.0.0)
 
-**2021.11.12**
+### 2021.11.12
 
 leetcode-300-最长递增子序列
 
 [code](./algorithm/leetcode-solution/leetcode-300-最长递增子序列.js)
 [掘金](https://juejin.cn/post/7029709108995424270)
 
-**2021.11.11**
+### 2021.11.11
 
 leetcode-1-两数之和
 
@@ -905,7 +912,7 @@ leetcode-704-二分查找
 [掘金](https://juejin.cn/post/7029131230817812488)
 [B站](https://www.bilibili.com/video/BV1DQ4y1S7j6?spm_id_from=333.999.0.0)
 
-**2021.11.10**
+### 2021.11.10
 
 leetcode-25-K个一组翻转链表
 
@@ -927,7 +934,7 @@ leetcode-剑指 Offer 47. 礼物的最大价值
 
 解题
 
-**2021.11.9**
+### 2021.11.9
 
 leetcode-剑指 Offer II 004-只出现一次的数字
 
@@ -935,7 +942,7 @@ leetcode-剑指 Offer II 004-只出现一次的数字
 [掘金](https://juejin.cn/post/7028407264314654728/)
 [B站](https://www.bilibili.com/video/BV18P4y1j7Rv?spm_id_from=333.999.0.0)
 
-**2021.11.8**
+### 2021.11.8
 
 leetcode-703-数据流中的第K大元素
 
@@ -981,7 +988,7 @@ leetcode-141-环形链表
 [掘金](https://juejin.cn/post/7028149146175406111/)
 [B站](https://www.bilibili.com/video/BV1FF411Y7Qa?spm_id_from=333.999.0.0)
 
-**2021.11.7**
+### 2021.11.7
 
 leetcode-703-数据流中的第K大元素
 
@@ -1008,7 +1015,7 @@ leetcode-35-搜索插入位置
 [code](./algorithm/leetcode-solution/leetcode-35-搜索插入位置.js)
 [B站](https://www.bilibili.com/video/BV1b34y1Z7EM?spm_id_from=333.999.0.0)
 
-**2021.11.6**
+### 2021.11.6
 
 leetcode-面试题02.07-链表相交
 
@@ -1016,7 +1023,7 @@ leetcode-面试题02.07-链表相交
 [掘金](https://juejin.cn/post/7027304259586637832/)
 [B站](https://www.bilibili.com/video/BV1sb4y187bg?spm_id_from=333.999.0.0)
 
-**2021.11.5**
+### 2021.11.5
 
 leetcode-61-旋转链表
 
@@ -1036,7 +1043,7 @@ leetcode-剑指offer24-翻转链表
 [掘金](https://juejin.cn/post/7026922113000800287)
 [B站](https://www.bilibili.com/video/BV1jr4y1C7P8?spm_id_from=333.999.0.0)
 
-**2021.11.4**
+### 2021.11.4
 
 计数排序
 
@@ -1068,7 +1075,7 @@ leetcode-剑指offer-018-有效的回文
 [掘金](https://juejin.cn/post/7026566945579204644/)
 [B站](https://www.bilibili.com/video/BV1yR4y177Ym?spm_id_from=333.999.0.0)
 
-**2021.11.2**
+### 2021.11.2
 
 6种基础排序算法
 
@@ -1081,7 +1088,7 @@ B站 👉
 [quickSort1](https://www.bilibili.com/video/BV15h411t7mS?spm_id_from=333.999.0.0)
 [quickSort2](https://www.bilibili.com/video/BV1HF411h7Sx?spm_id_from=333.999.0.0)
 
-**2021.10.30**
+### 2021.10.30
 
 6种基础排序算法
 
