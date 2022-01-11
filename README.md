@@ -5,19 +5,24 @@
 记录学习过程，加油！
 
 # 日志
+
+### 2022.1.11
+
+leetcode-887-鸡蛋掉落
+### 2022.1.10
+
+leetcode-1508-子数组和排序后的区间和
+
+[code](./algorithm/leetcode-solution/leetcode-1508-子数组和排序后的区间和.js)
+[掘金](https://juejin.cn/post/7051806710037479431)
+[B站](https://www.bilibili.com/video/BV1zP4y1E7gG?spm_id_from=333.999.0.0)
 ### 2022.1.9
 
 leetcode-剑指 Offer 51-数组中的逆序对
 
-[code](./algorithm/leetcode-solution/)
-[掘金]()
-[B站](
-
-leetcode-887-鸡蛋掉落
-
-[code](./algorithm/leetcode-solution/)
-[掘金]()
-[B站](
+[code](./algorithm/leetcode-solution/leetcode-剑指Offer51-数组中的逆序对.js)
+[掘金](https://juejin.cn/post/7051431233091272734)
+[B站](https://www.bilibili.com/video/BV1RP4y1E7dw?spm_id_from=333.999.0.0)
 
 ### 2022.1.8
 

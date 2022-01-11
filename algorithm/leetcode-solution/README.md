@@ -1,3 +1,13 @@
+leetcode-1508-子数组和排序后的区间和
+
+[掘金](https://juejin.cn/post/7051806710037479431)
+[B站](https://www.bilibili.com/video/BV1zP4y1E7gG?spm_id_from=333.999.0.0)
+
+leetcode-剑指 Offer 51-数组中的逆序对
+
+[掘金](https://juejin.cn/post/7051431233091272734)
+[B站](https://www.bilibili.com/video/BV1RP4y1E7dw?spm_id_from=333.999.0.0)
+
 leetcode-面试题 04.08-首个共同祖先
 
 [掘金](https://juejin.cn/post/7050880760953176094)
