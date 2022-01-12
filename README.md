@@ -6,9 +6,31 @@
 
 # 日志
 
-### 2022.1.11
+### 2022.1.12
 
 leetcode-887-鸡蛋掉落
+
+[code](./algorithm/leetcode-solution/leetcode-887-鸡蛋掉落.js)
+[掘金](https://juejin.cn/post/7051884819453575181)
+
+leetcode-315-计算右侧小于当前元素的个数
+
+[code](./algorithm/leetcode-solution/leetcode-315-计算右侧小于当前元素的个数.js)
+[掘金](https://juejin.cn/post/7052299208048508936)
+[B站](https://www.bilibili.com/video/BV1qZ4y1S7QM?spm_id_from=333.999.0.0)
+
+leetcode-1302-层数最深叶子节点的和
+
+[code](./algorithm/leetcode-solution/leetcode-1302-层数最深叶子节点的和.js)
+[掘金](https://juejin.cn/post/7052254287316926477)
+[B站](https://www.bilibili.com/video/BV1UP4y1E7pn?spm_id_from=333.999.0.0)
+### 2022.1.11
+
+leetcode-327-区间和的个数
+
+[code](./algorithm/leetcode-solution/leetcode-327-区间和的个数.js)
+[掘金](https://juejin.cn/post/7052154137202393096)
+[B站](https://www.bilibili.com/video/BV1c34y1B7we?spm_id_from=333.999.0.0)
 ### 2022.1.10
 
 leetcode-1508-子数组和排序后的区间和
