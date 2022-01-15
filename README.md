@@ -6,12 +6,34 @@
 
 # 日志
 
-### 2022.1.12
+### 2022.1.15
+
+leetcode-106-从中序与后序遍历序列构造二叉树
+
+[code](./algorithm/leetcode-solution/leetcode-106-从中序与后序遍历序列构造二叉树.js)
+[B站](https://www.bilibili.com/video/BV1SF411H73h?spm_id_from=333.999.0.0)
+
+leetcode-53-最大子数组和
+
+[code](./algorithm/leetcode-solution/leetcode-53-最大子数组和.js)
+[B站](https://www.bilibili.com/video/BV1HT4y117CQ?spm_id_from=333.999.0.0)
+### 2022.1.14
+
+### 2022.1.13
 
 leetcode-887-鸡蛋掉落
 
 [code](./algorithm/leetcode-solution/leetcode-887-鸡蛋掉落.js)
 [掘金](https://juejin.cn/post/7051884819453575181)
+
+Vue 源码学习开篇！
+
+[掘金]()
+
+Vue3源码的整体架构
+
+[掘金]()
+### 2022.1.12
 
 leetcode-315-计算右侧小于当前元素的个数
 
