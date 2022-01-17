@@ -6,6 +6,28 @@
 
 # 日志
 
+### 2022.1.17
+
+leetcode-491-递增子序列
+
+[code](./algorithm/leetcode-solution/.js)
+[B站]()
+
+leetcode-面试题 04.12-求和路径
+
+[code](./algorithm/leetcode-solution/.js)
+[B站]()
+### 2022.1.16
+
+leetcode-56-合并区间
+
+[code](./algorithm/leetcode-solution/leetcode-56-合并区间.js)
+[B站](https://www.bilibili.com/video/BV1Ya411B7HX?spm_id_from=333.999.0.0)
+
+leetcode-1288-删除被覆盖区间
+
+[code](./algorithm/leetcode-solution/leetcode-1288-删除被覆盖区间.js)
+[B站](https://www.bilibili.com/video/BV1g3411Y7Yw?spm_id_from=333.999.0.0)
 ### 2022.1.15
 
 leetcode-106-从中序与后序遍历序列构造二叉树
