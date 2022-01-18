@@ -6,17 +6,26 @@
 
 # 日志
 
+### 2022.1.18
+
+记录一下，今天掘金升 Lv4 了！😀
+
+0.1+0.2 等于 0.3 吗？
+
+[掘金]（）
 ### 2022.1.17
+
+记录一下，今天是成为 [varlet](https://github.com/varletjs) core team 的第一天！😀
 
 leetcode-491-递增子序列
 
-[code](./algorithm/leetcode-solution/.js)
-[B站]()
+[code](./algorithm/leetcode-solution/leetcode-491-递增子序列.js)
+[B站](https://www.bilibili.com/video/BV1a3411Y73a?spm_id_from=333.999.0.0)
 
 leetcode-面试题 04.12-求和路径
 
-[code](./algorithm/leetcode-solution/.js)
-[B站]()
+[code](./algorithm/leetcode-solution/leetcode-面试题04.12-求和路径.js)
+[B站](https://www.bilibili.com/video/BV1US4y1571T?spm_id_from=333.999.0.0)
 ### 2022.1.16
 
 leetcode-56-合并区间
@@ -41,6 +50,10 @@ leetcode-53-最大子数组和
 [B站](https://www.bilibili.com/video/BV1HT4y117CQ?spm_id_from=333.999.0.0)
 ### 2022.1.14
 
+[一文彻底搞懂作用域](https://juejin.cn/post/7054205471791513613)
+
+[一文彻底搞懂闭包](https://juejin.cn/post/7054205481190948894)
+
 ### 2022.1.13
 
 leetcode-887-鸡蛋掉落
@@ -52,9 +65,6 @@ Vue 源码学习开篇！
 
 [掘金]()
 
-Vue3源码的整体架构
-
-[掘金]()
 ### 2022.1.12
 
 leetcode-315-计算右侧小于当前元素的个数
