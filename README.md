@@ -42,6 +42,7 @@ leetcode-1288-删除被覆盖区间
 leetcode-106-从中序与后序遍历序列构造二叉树
 
 [code](./algorithm/leetcode-solution/leetcode-106-从中序与后序遍历序列构造二叉树.js)
+[掘金](https://juejin.cn/post/7054596547555622926)
 [B站](https://www.bilibili.com/video/BV1SF411H73h?spm_id_from=333.999.0.0)
 
 leetcode-53-最大子数组和
@@ -63,7 +64,7 @@ leetcode-887-鸡蛋掉落
 
 Vue 源码学习开篇！
 
-[掘金]()
+[掘金](https://juejin.cn/post/7054967140532617253)
 
 ### 2022.1.12
 
