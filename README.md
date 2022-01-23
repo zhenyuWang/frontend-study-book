@@ -6,6 +6,57 @@
 
 # 日志
 
+### 2022.1.23
+
+leetcode-763-划分字母区间
+
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
+
+### 2022.1.22
+
+leetcode-164-最大间距
+
+[code](./algorithm/leetcode-solution/leetcode-164-最大间距.js)
+[掘金]()
+[B站](
+
+### 2022.1.21
+
+leetcode-207-课程表
+
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
+
+leetcode-210-课程表 II
+
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
+
+### 2022.1.20
+
+拓扑排序
+
+[掘金](https://juejin.cn/post/7024096823937597448)
+[B站](https://www.bilibili.com/video/BV1VY41187ti?spm_id_from=333.999.0.0)
+
+### 2022.1.19
+
+leetcode-274-H 指数
+
+[code](./algorithm/leetcode-solution/leetcode-274-H指数.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1tF411n7cL?spm_id_from=333.999.0.0)
+
+leetcode-1122-数组的相对排序
+
+[code](./algorithm/leetcode-solution/leetcode-1122-数组的相对排序.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1tR4y1u7LF?spm_id_from=333.999.0.0)
+
 ### 2022.1.18
 
 记录一下，今天掘金升 Lv4 了！😀
@@ -20,22 +71,26 @@
 leetcode-491-递增子序列
 
 [code](./algorithm/leetcode-solution/leetcode-491-递增子序列.js)
+[掘金]()
 [B站](https://www.bilibili.com/video/BV1a3411Y73a?spm_id_from=333.999.0.0)
 
 leetcode-面试题 04.12-求和路径
 
 [code](./algorithm/leetcode-solution/leetcode-面试题04.12-求和路径.js)
+[掘金]()
 [B站](https://www.bilibili.com/video/BV1US4y1571T?spm_id_from=333.999.0.0)
 ### 2022.1.16
 
 leetcode-56-合并区间
 
 [code](./algorithm/leetcode-solution/leetcode-56-合并区间.js)
+[掘金](https://juejin.cn/post/7055856685469925406)
 [B站](https://www.bilibili.com/video/BV1Ya411B7HX?spm_id_from=333.999.0.0)
 
 leetcode-1288-删除被覆盖区间
 
 [code](./algorithm/leetcode-solution/leetcode-1288-删除被覆盖区间.js)
+[掘金](https://juejin.cn/post/7055488194829090824)
 [B站](https://www.bilibili.com/video/BV1g3411Y7Yw?spm_id_from=333.999.0.0)
 ### 2022.1.15
 
@@ -48,6 +103,7 @@ leetcode-106-从中序与后序遍历序列构造二叉树
 leetcode-53-最大子数组和
 
 [code](./algorithm/leetcode-solution/leetcode-53-最大子数组和.js)
+[掘金](https://juejin.cn/post/7056199441589469197)
 [B站](https://www.bilibili.com/video/BV1HT4y117CQ?spm_id_from=333.999.0.0)
 ### 2022.1.14
 
