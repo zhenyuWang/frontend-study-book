@@ -6,6 +6,21 @@
 
 # 日志
 
+### 2022.1.25
+
+leetcode-面试题 16.16-部分排序
+
+leetcode-179-最大数
+
+leetcode-347-前 K 个高频元素
+
+### 2022.1.24
+
+leetcode-687-最长同值路径
+be
+[code](./algorithm/leetcode-solution/)
+[掘金]()
+[B站](
 ### 2022.1.23
 
 leetcode-763-划分字母区间
@@ -15,6 +30,11 @@ leetcode-763-划分字母区间
 [B站](
 
 ### 2022.1.22
+
+基数排序
+
+[掘金](https://juejin.cn/post/7024096823937597448)
+[B站]()
 
 leetcode-164-最大间距
 
@@ -26,15 +46,15 @@ leetcode-164-最大间距
 
 leetcode-207-课程表
 
-[code](./algorithm/leetcode-solution/)
+[code](./algorithm/leetcode-solution/leetcode-207-课程表.js)
 [掘金]()
-[B站](
+[B站](https://www.bilibili.com/video/BV1p3411h7qb?spm_id_from=333.999.0.0)
 
 leetcode-210-课程表 II
 
-[code](./algorithm/leetcode-solution/)
+[code](./algorithm/leetcode-solution/leetcode-210-课程表II.js)
 [掘金]()
-[B站](
+[B站](https://www.bilibili.com/video/BV1H44y1s75a?spm_id_from=333.999.0.0()
 
 ### 2022.1.20
 
@@ -71,7 +91,7 @@ leetcode-1122-数组的相对排序
 leetcode-491-递增子序列
 
 [code](./algorithm/leetcode-solution/leetcode-491-递增子序列.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7056588098284552222)
 [B站](https://www.bilibili.com/video/BV1a3411Y73a?spm_id_from=333.999.0.0)
 
 leetcode-面试题 04.12-求和路径
