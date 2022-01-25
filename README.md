@@ -137,6 +137,7 @@ leetcode-887-鸡蛋掉落
 
 [code](./algorithm/leetcode-solution/leetcode-887-鸡蛋掉落.js)
 [掘金](https://juejin.cn/post/7051884819453575181)
+[B站](https://www.bilibili.com/video/BV1nS4y1L7VB?spm_id_from=333.999.0.0)
 
 Vue 源码学习开篇！
 
