@@ -17,10 +17,10 @@ leetcode-347-前 K 个高频元素
 ### 2022.1.24
 
 leetcode-687-最长同值路径
-be
+
 [code](./algorithm/leetcode-solution/)
 [掘金]()
-[B站](
+[B站](https://www.bilibili.com/video/BV1Dm4y1Z7hQ?spm_id_from=333.999.0.0)
 ### 2022.1.23
 
 leetcode-763-划分字母区间
@@ -54,7 +54,7 @@ leetcode-210-课程表 II
 
 [code](./algorithm/leetcode-solution/leetcode-210-课程表II.js)
 [掘金]()
-[B站](https://www.bilibili.com/video/BV1H44y1s75a?spm_id_from=333.999.0.0()
+[B站](https://www.bilibili.com/video/BV1H44y1s75a?spm_id_from=333.999.0.0)
 
 ### 2022.1.20
 
@@ -83,7 +83,7 @@ leetcode-1122-数组的相对排序
 
 0.1+0.2 等于 0.3 吗？
 
-[掘金]（）
+[掘金](https://juejin.cn/post/7056934829920616461)
 ### 2022.1.17
 
 记录一下，今天是成为 [varlet](https://github.com/varletjs) core team 的第一天！😀
