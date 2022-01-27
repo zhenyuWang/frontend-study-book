@@ -8,3 +8,4 @@ B站 👉
 [mergeSort](https://www.bilibili.com/video/BV12P4y1L7wq?spm_id_from=333.999.0.0)
 [quickSort1](https://www.bilibili.com/video/BV15h411t7mS?spm_id_from=333.999.0.0)
 [quickSort2](https://www.bilibili.com/video/BV1HF411h7Sx?spm_id_from=333.999.0.0)
+[radixSort](https://www.bilibili.com/video/BV1LT4y1y7Kg?spm_id_from=333.999.0.0)
