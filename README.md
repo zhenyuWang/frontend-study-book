@@ -18,29 +18,29 @@ leetcode-347-前 K 个高频元素
 
 leetcode-687-最长同值路径
 
-[code](./algorithm/leetcode-solution/)
+[code](./algorithm/leetcode-solution/leetcode-687-最长同值路径.js)
 [掘金]()
 [B站](https://www.bilibili.com/video/BV1Dm4y1Z7hQ?spm_id_from=333.999.0.0)
 ### 2022.1.23
 
 leetcode-763-划分字母区间
 
-[code](./algorithm/leetcode-solution/)
+[code](./algorithm/leetcode-solution/leetcode-763-划分字母区间.js)
 [掘金]()
-[B站](
+[B站](https://www.bilibili.com/video/BV1mP4y1P77c?spm_id_from=333.999.0.0)
 
 ### 2022.1.22
 
 基数排序
 
 [掘金](https://juejin.cn/post/7024096823937597448)
-[B站]()
+[B站](https://www.bilibili.com/video/BV1LT4y1y7Kg?spm_id_from=333.999.0.0)
 
 leetcode-164-最大间距
 
 [code](./algorithm/leetcode-solution/leetcode-164-最大间距.js)
 [掘金]()
-[B站](
+[B站](https://www.bilibili.com/video/BV153411h7mk?spm_id_from=333.999.0.0)
 
 ### 2022.1.21
 
@@ -68,7 +68,7 @@ leetcode-210-课程表 II
 leetcode-274-H 指数
 
 [code](./algorithm/leetcode-solution/leetcode-274-H指数.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7057684682174890021)
 [B站](https://www.bilibili.com/video/BV1tF411n7cL?spm_id_from=333.999.0.0)
 
 leetcode-1122-数组的相对排序
@@ -97,7 +97,7 @@ leetcode-491-递增子序列
 leetcode-面试题 04.12-求和路径
 
 [code](./algorithm/leetcode-solution/leetcode-面试题04.12-求和路径.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7057313437054926884)
 [B站](https://www.bilibili.com/video/BV1US4y1571T?spm_id_from=333.999.0.0)
 ### 2022.1.16
 
