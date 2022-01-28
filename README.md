@@ -6,13 +6,53 @@
 
 # 日志
 
+## 2022.1.28
+
+leetcode-1353-最多可以参加的会议数目
+
+leetcode-1312-让字符串成为回文串的最少插入次数
+
+### 2022.1.27
+
+leetcode-面试题 10.01-合并排序的数组
+
+[code](./algorithm/leetcode-solution/leetcode-面试题10.01-合并排序的数组.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1VF411H7MK?spm_id_from=333.999.0.0)
+
+leetcode-561-数组拆分 I
+
+[code](./algorithm/leetcode-solution/leetcode-561-数组拆分I.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV11R4y1T75e?spm_id_from=333.999.0.0)
+
+### 2022.1.26
+
+leetcode-1647-字符频次唯一的最小删除次数
+
+[code](./algorithm/leetcode-solution/leetcode-1647-字符频次唯一的最小删除次数.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1ea41117bZ?spm_id_from=333.999.0.0)
+
+leetcode-283-移动零
+
+[code](./algorithm/leetcode-solution/leetcode-283-移动零.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1qu411R7VY?spm_id_from=333.999.0.0)
+
 ### 2022.1.25
 
 leetcode-面试题 16.16-部分排序
 
+[code](./algorithm/leetcode-solution/leetcode-面试题16.16-部分排序.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1uR4y1T7Tq?spm_id_from=333.999.0.0)
+
 leetcode-179-最大数
 
-leetcode-347-前 K 个高频元素
+[code](./algorithm/leetcode-solution/leetcode-179-最大数.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1c34y127FD?spm_id_from=333.999.0.0)
 
 ### 2022.1.24
 
@@ -74,7 +114,7 @@ leetcode-274-H 指数
 leetcode-1122-数组的相对排序
 
 [code](./algorithm/leetcode-solution/leetcode-1122-数组的相对排序.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7058074639590752286)
 [B站](https://www.bilibili.com/video/BV1tR4y1u7LF?spm_id_from=333.999.0.0)
 
 ### 2022.1.18

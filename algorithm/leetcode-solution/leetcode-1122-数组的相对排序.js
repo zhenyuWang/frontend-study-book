@@ -17,7 +17,7 @@ var relativeSortArray = function(arr1, arr2) {
       temp[num]--
     }
   }
-  // 将剩余元素从小到大当如结果数组
+  // 将剩余元素从小到大插入结果数组
   for(let i = 0;i<temp.length;i++){
     if(temp[i]===0) continue
     while(temp[i]){
