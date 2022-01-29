@@ -1,3 +1,13 @@
+leetcode-106-从中序与后序遍历序列构造二叉树
+
+[掘金](https://juejin.cn/post/7054596547555622926)
+[B站](https://www.bilibili.com/video/BV1SF411H73h?spm_id_from=333.999.0.0)
+
+leetcode-887-鸡蛋掉落
+
+[掘金](https://juejin.cn/post/7051884819453575181)
+[B站](https://www.bilibili.com/video/BV1nS4y1L7VB?spm_id_from=333.999.0.0)
+
 leetcode-1302-层数最深叶子节点的和
 
 [掘金](https://juejin.cn/post/7052254287316926477)
