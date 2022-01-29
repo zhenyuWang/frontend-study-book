@@ -1,3 +1,8 @@
+leetcode-53-最大子数组和
+
+[掘金](https://juejin.cn/post/7056199441589469197)
+[B站](https://www.bilibili.com/video/BV1HT4y117CQ?spm_id_from=333.999.0.0)
+
 leetcode-106-从中序与后序遍历序列构造二叉树
 
 [掘金](https://juejin.cn/post/7054596547555622926)
