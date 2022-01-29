@@ -6,11 +6,23 @@
 
 # 日志
 
+## 2022.1.29
+
+[B站年终总结](https://www.bilibili.com/video/BV18a41117G8?spm_id_from=333.999.0.0)
+
 ## 2022.1.28
 
 leetcode-1353-最多可以参加的会议数目
 
+[code](./algorithm/leetcode-solution/leetcode-1353-最多可以参加的会议数目.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1AS4y1y7b3?spm_id_from=333.999.0.0)
+
 leetcode-1312-让字符串成为回文串的最少插入次数
+
+[code](./algorithm/leetcode-solution/leetcode-1312-让字符串成为回文串的最少插入次数.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1j5411Z7gi?spm_id_from=333.999.0.0)
 
 ### 2022.1.27
 
@@ -87,7 +99,7 @@ leetcode-164-最大间距
 leetcode-207-课程表
 
 [code](./algorithm/leetcode-solution/leetcode-207-课程表.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7058449666957901831)
 [B站](https://www.bilibili.com/video/BV1p3411h7qb?spm_id_from=333.999.0.0)
 
 leetcode-210-课程表 II
@@ -100,6 +112,7 @@ leetcode-210-课程表 II
 
 拓扑排序
 
+[code](./algorithm/sort/radixSort.js)
 [掘金](https://juejin.cn/post/7024096823937597448)
 [B站](https://www.bilibili.com/video/BV1VY41187ti?spm_id_from=333.999.0.0)
 
