@@ -1,3 +1,43 @@
+leetcode-210-课程表 II
+
+[掘金](https://juejin.cn/post/7058832451556081671)
+[B站](https://www.bilibili.com/video/BV1H44y1s75a?spm_id_from=333.999.0.0)
+
+leetcode-207-课程表
+
+[掘金](https://juejin.cn/post/7058449666957901831)
+[B站](https://www.bilibili.com/video/BV1p3411h7qb?spm_id_from=333.999.0.0)
+
+leetcode-1122-数组的相对排序
+
+[掘金](https://juejin.cn/post/7058074639590752286)
+[B站](https://www.bilibili.com/video/BV1tR4y1u7LF?spm_id_from=333.999.0.0)
+
+leetcode-274-H 指数
+
+[掘金](https://juejin.cn/post/7057684682174890021)
+[B站](https://www.bilibili.com/video/BV1tF411n7cL?spm_id_from=333.999.0.0)
+
+leetcode-面试题 04.12-求和路径
+
+[掘金](https://juejin.cn/post/7057313437054926884)
+[B站](https://www.bilibili.com/video/BV1US4y1571T?spm_id_from=333.999.0.0)
+
+leetcode-491-递增子序列
+
+[掘金](https://juejin.cn/post/7056588098284552222)
+[B站](https://www.bilibili.com/video/BV1a3411Y73a?spm_id_from=333.999.0.0)
+
+leetcode-1288-删除被覆盖区间
+
+[掘金](https://juejin.cn/post/7055488194829090824)
+[B站](https://www.bilibili.com/video/BV1g3411Y7Yw?spm_id_from=333.999.0.0)
+
+leetcode-56-合并区间
+
+[掘金](https://juejin.cn/post/7055856685469925406)
+[B站](https://www.bilibili.com/video/BV1Ya411B7HX?spm_id_from=333.999.0.0)
+
 leetcode-53-最大子数组和
 
 [掘金](https://juejin.cn/post/7056199441589469197)
