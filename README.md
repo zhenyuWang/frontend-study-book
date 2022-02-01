@@ -78,7 +78,7 @@ leetcode-687-最长同值路径
 leetcode-763-划分字母区间
 
 [code](./algorithm/leetcode-solution/leetcode-763-划分字母区间.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7059400660843757598)
 [B站](https://www.bilibili.com/video/BV1mP4y1P77c?spm_id_from=333.999.0.0)
 
 ### 2022.1.22
