@@ -57,7 +57,7 @@ leetcode-283-移动零
 leetcode-面试题 16.16-部分排序
 
 [code](./algorithm/leetcode-solution/leetcode-面试题16.16-部分排序.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7060142835567165471)
 [B站](https://www.bilibili.com/video/BV1uR4y1T7Tq?spm_id_from=333.999.0.0)
 
 leetcode-179-最大数
