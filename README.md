@@ -71,7 +71,7 @@ leetcode-179-最大数
 leetcode-687-最长同值路径
 
 [code](./algorithm/leetcode-solution/leetcode-687-最长同值路径.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7059873592913166373)
 [B站](https://www.bilibili.com/video/BV1Dm4y1Z7hQ?spm_id_from=333.999.0.0)
 ### 2022.1.23
 
