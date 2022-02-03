@@ -1,3 +1,8 @@
+leetcode-164-最大间距
+
+[掘金](https://juejin.cn/post/7059029584339025951)
+[B站](https://www.bilibili.com/video/BV153411h7mk?spm_id_from=333.999.0.0)
+
 leetcode-210-课程表 II
 
 [掘金](https://juejin.cn/post/7058832451556081671)
