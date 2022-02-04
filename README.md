@@ -63,7 +63,7 @@ leetcode-面试题 16.16-部分排序
 leetcode-179-最大数
 
 [code](./algorithm/leetcode-solution/leetcode-179-最大数.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7060513919286132743)
 [B站](https://www.bilibili.com/video/BV1c34y127FD?spm_id_from=333.999.0.0)
 
 ### 2022.1.24
