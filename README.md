@@ -43,7 +43,7 @@ leetcode-561-数组拆分 I
 leetcode-1647-字符频次唯一的最小删除次数
 
 [code](./algorithm/leetcode-solution/leetcode-1647-字符频次唯一的最小删除次数.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7061041113330614285)
 [B站](https://www.bilibili.com/video/BV1ea41117bZ?spm_id_from=333.999.0.0)
 
 leetcode-283-移动零
