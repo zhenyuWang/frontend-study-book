@@ -49,7 +49,7 @@ leetcode-1647-字符频次唯一的最小删除次数
 leetcode-283-移动零
 
 [code](./algorithm/leetcode-solution/leetcode-283-移动零.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7061255754917003271)
 [B站](https://www.bilibili.com/video/BV1qu411R7VY?spm_id_from=333.999.0.0)
 
 ### 2022.1.25
