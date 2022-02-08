@@ -29,13 +29,13 @@ leetcode-1312-让字符串成为回文串的最少插入次数
 leetcode-面试题 10.01-合并排序的数组
 
 [code](./algorithm/leetcode-solution/leetcode-面试题10.01-合并排序的数组.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7061862574702198821)
 [B站](https://www.bilibili.com/video/BV1VF411H7MK?spm_id_from=333.999.0.0)
 
 leetcode-561-数组拆分 I
 
 [code](./algorithm/leetcode-solution/leetcode-561-数组拆分I.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7062138168597807135)
 [B站](https://www.bilibili.com/video/BV11R4y1T75e?spm_id_from=333.999.0.0)
 
 ### 2022.1.26
