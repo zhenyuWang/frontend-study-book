@@ -1,3 +1,48 @@
+leetcode-1353-最多可以参加的会议数目
+
+[掘金](https://juejin.cn/post/7062368425024159758)
+[B站](https://www.bilibili.com/video/BV1AS4y1y7b3?spm_id_from=333.999.0.0)
+
+leetcode-561-数组拆分 I
+
+[掘金](https://juejin.cn/post/7062138168597807135)
+[B站](https://www.bilibili.com/video/BV11R4y1T75e?spm_id_from=333.999.0.0)
+
+leetcode-面试题 10.01-合并排序的数组
+
+[掘金](https://juejin.cn/post/7061862574702198821)
+[B站](https://www.bilibili.com/video/BV1VF411H7MK?spm_id_from=333.999.0.0)
+
+leetcode-283-移动零
+
+[掘金](https://juejin.cn/post/7061255754917003271)
+[B站](https://www.bilibili.com/video/BV1qu411R7VY?spm_id_from=333.999.0.0)
+
+leetcode-1647-字符频次唯一的最小删除次数
+
+[掘金](https://juejin.cn/post/7061041113330614285)
+[B站](https://www.bilibili.com/video/BV1ea41117bZ?spm_id_from=333.999.0.0)
+
+leetcode-179-最大数
+
+[掘金](https://juejin.cn/post/7060513919286132743)
+[B站](https://www.bilibili.com/video/BV1c34y127FD?spm_id_from=333.999.0.0)
+
+leetcode-面试题 16.16-部分排序
+
+[掘金](https://juejin.cn/post/7060142835567165471)
+[B站](https://www.bilibili.com/video/BV1uR4y1T7Tq?spm_id_from=333.999.0.0)
+
+leetcode-687-最长同值路径
+
+[掘金](https://juejin.cn/post/7059873592913166373)
+[B站](https://www.bilibili.com/video/BV1Dm4y1Z7hQ?spm_id_from=333.999.0.0)
+
+leetcode-763-划分字母区间
+
+[掘金](https://juejin.cn/post/7059400660843757598)
+[B站](https://www.bilibili.com/video/BV1mP4y1P77c?spm_id_from=333.999.0.0)
+
 leetcode-164-最大间距
 
 [掘金](https://juejin.cn/post/7059029584339025951)
