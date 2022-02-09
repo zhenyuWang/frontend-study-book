@@ -15,7 +15,7 @@
 leetcode-1353-最多可以参加的会议数目
 
 [code](./algorithm/leetcode-solution/leetcode-1353-最多可以参加的会议数目.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7062368425024159758)
 [B站](https://www.bilibili.com/video/BV1AS4y1y7b3?spm_id_from=333.999.0.0)
 
 leetcode-1312-让字符串成为回文串的最少插入次数
