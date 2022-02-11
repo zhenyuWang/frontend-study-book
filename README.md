@@ -6,6 +6,10 @@
 
 # 日志
 
+
+## 2022.2.10
+
+[ES6 class](https://juejin.cn/post/7063251767290658829)
 ## 2022.1.29
 
 [B站年终总结](https://www.bilibili.com/video/BV18a41117G8?spm_id_from=333.999.0.0)
@@ -21,7 +25,7 @@ leetcode-1353-最多可以参加的会议数目
 leetcode-1312-让字符串成为回文串的最少插入次数
 
 [code](./algorithm/leetcode-solution/leetcode-1312-让字符串成为回文串的最少插入次数.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7062740427715117092)
 [B站](https://www.bilibili.com/video/BV1j5411Z7gi?spm_id_from=333.999.0.0)
 
 ### 2022.1.27
