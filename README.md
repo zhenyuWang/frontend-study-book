@@ -10,6 +10,36 @@
 ## 2022.2.10
 
 [ES6 class](https://juejin.cn/post/7063251767290658829)
+
+## 2022.2.9
+
+## 2022.2.8
+
+## 2022.2.7
+
+## 2022.2.6
+
+## 2022.2.5
+
+leetcode-81-搜索旋转排序数组 II
+
+[code](./algorithm/leetcode-solution/leetcode-81-搜索旋转排序数组II.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1vS4y1G7mM?spm_id_from=333.999.0.0)
+## 2022.2.4
+
+leetcode-34-在排序数组中查找元素的第一个和最后一个位置
+
+[code](./algorithm/leetcode-solution/leetcode-34-在排序数组中查找元素的第一个和最后一个位置.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1HS4y1G7WQ?spm_id_from=333.999.0.0)
+## 2022.2.3
+
+leetcode-69-x 的平方根
+
+[code](./algorithm/leetcode-solution/leetcode-69-x的平方根.js)
+[掘金](https://juejin.cn/post/7063740211368296484)
+[B站](https://www.bilibili.com/video/BV15m4y1d73m?spm_id_from=333.999.0.0)
 ## 2022.1.29
 
 [B站年终总结](https://www.bilibili.com/video/BV18a41117G8?spm_id_from=333.999.0.0)
@@ -1309,11 +1339,11 @@ B站 👉
 6种基础排序算法
 
 code 👉
-[bubbleSort](./algorithm/排序算法/bubbleSort.js)
-[selectSort](./algorithm/排序算法/selectSort.js)
-[insertSort](./algorithm/排序算法/insertSort.js)
-[shellSort](./algorithm/排序算法/shellSort.js)
-[mergeSort](./algorithm/排序算法/mergeSort.js)
-[quickSort](./algorithm/排序算法/quickSort.js)
+[bubbleSort](./algorithm/sort/bubbleSort.js)
+[selectSort](./algorithm/sort/selectSort.js)
+[insertSort](./algorithm/sort/insertSort.js)
+[shellSort](./algorithm/sort/shellSort.js)
+[mergeSort](./algorithm/sort/mergeSort.js)
+[quickSort](./algorithm/sort/quickSort.js)
 
 [掘金](https://juejin.cn/post/7024096823937597448/)
