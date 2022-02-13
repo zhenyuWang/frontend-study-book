@@ -6,6 +6,9 @@
 
 # 日志
 
+## 2022.2.13
+
+## 2022.2.12
 
 ## 2022.2.10
 
@@ -13,11 +16,35 @@
 
 ## 2022.2.9
 
+leetcode-130-被围绕的区域
+
+[code](./algorithm/leetcode-solution/leetcode-130-被围绕的区域.js)
+[掘金]()
+[B站]()
+
 ## 2022.2.8
+
+leetcode-494-目标和
+
+[code](./algorithm/leetcode-solution/leetcode-494-目标和.js)
+[掘金]()
+[B站]()
 
 ## 2022.2.7
 
+leetcode-430-扁平化多级双向链表
+
+[code](./algorithm/leetcode-solution/leetcode-430-扁平化多级双向链表.js)
+[掘金]()
+[B站]()
+
 ## 2022.2.6
+
+leetcode-979-在二叉树中分配硬币
+
+[code](./algorithm/leetcode-solution/leetcode-979-在二叉树中分配硬币.js)
+[掘金]()
+[B站]()
 
 ## 2022.2.5
 
@@ -31,7 +58,7 @@ leetcode-81-搜索旋转排序数组 II
 leetcode-34-在排序数组中查找元素的第一个和最后一个位置
 
 [code](./algorithm/leetcode-solution/leetcode-34-在排序数组中查找元素的第一个和最后一个位置.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7063853609804365831)
 [B站](https://www.bilibili.com/video/BV1HS4y1G7WQ?spm_id_from=333.999.0.0)
 ## 2022.2.3
 
