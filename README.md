@@ -7,8 +7,13 @@
 # 日志
 
 ## 2022.2.13
-
 ## 2022.2.12
+
+leetcode-120-三角形最小路径和
+
+[code](./algorithm/leetcode-solution/leetcode-120-三角形最小路径和.js)
+[掘金]()
+[B站](https://www.bilibili.com/video/BV1Na411C7cE?spm_id_from=333.999.0.0)
 
 ## 2022.2.10
 
@@ -20,7 +25,7 @@ leetcode-130-被围绕的区域
 
 [code](./algorithm/leetcode-solution/leetcode-130-被围绕的区域.js)
 [掘金]()
-[B站]()
+[B站](https://www.bilibili.com/video/BV1eS4y1C7AY?spm_id_from=333.999.0.0)
 
 ## 2022.2.8
 
@@ -28,7 +33,7 @@ leetcode-494-目标和
 
 [code](./algorithm/leetcode-solution/leetcode-494-目标和.js)
 [掘金]()
-[B站]()
+[B站](https://www.bilibili.com/video/BV11m4y1d7eR?spm_id_from=333.999.0.0)
 
 ## 2022.2.7
 
@@ -36,22 +41,22 @@ leetcode-430-扁平化多级双向链表
 
 [code](./algorithm/leetcode-solution/leetcode-430-扁平化多级双向链表.js)
 [掘金]()
-[B站]()
+[B站](https://www.bilibili.com/video/BV11Z4y1R778?spm_id_from=333.999.0.0)
 
 ## 2022.2.6
 
 leetcode-979-在二叉树中分配硬币
 
 [code](./algorithm/leetcode-solution/leetcode-979-在二叉树中分配硬币.js)
-[掘金]()
-[B站]()
+[掘金](https://juejin.cn/post/7064736401337614350)
+[B站](https://www.bilibili.com/video/BV1j34y1C7XM?spm_id_from=333.999.0.0)
 
 ## 2022.2.5
 
 leetcode-81-搜索旋转排序数组 II
 
 [code](./algorithm/leetcode-solution/leetcode-81-搜索旋转排序数组II.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7064503715511664677)
 [B站](https://www.bilibili.com/video/BV1vS4y1G7mM?spm_id_from=333.999.0.0)
 ## 2022.2.4
 
