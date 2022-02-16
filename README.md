@@ -40,7 +40,7 @@ leetcode-494-目标和
 leetcode-430-扁平化多级双向链表
 
 [code](./algorithm/leetcode-solution/leetcode-430-扁平化多级双向链表.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7065105659020181541)
 [B站](https://www.bilibili.com/video/BV11Z4y1R778?spm_id_from=333.999.0.0)
 
 ## 2022.2.6
