@@ -1,3 +1,28 @@
+leetcode-430-扁平化多级双向链表
+
+[掘金](https://juejin.cn/post/7065105659020181541)
+[B站](https://www.bilibili.com/video/BV11Z4y1R778?spm_id_from=333.999.0.0)
+
+leetcode-979-在二叉树中分配硬币
+
+[掘金](https://juejin.cn/post/7064736401337614350)
+[B站](https://www.bilibili.com/video/BV1j34y1C7XM?spm_id_from=333.999.0.0)
+
+leetcode-81-搜索旋转排序数组 II
+
+[掘金](https://juejin.cn/post/7064503715511664677)
+[B站](https://www.bilibili.com/video/BV1vS4y1G7mM?spm_id_from=333.999.0.0)
+
+leetcode-34-在排序数组中查找元素的第一个和最后一个位置
+
+[掘金](https://juejin.cn/post/7063853609804365831)
+[B站](https://www.bilibili.com/video/BV1HS4y1G7WQ?spm_id_from=333.999.0.0)
+
+leetcode-69-x 的平方根
+
+[掘金](https://juejin.cn/post/7063740211368296484)
+[B站](https://www.bilibili.com/video/BV15m4y1d73m?spm_id_from=333.999.0.0)
+
 leetcode-1353-最多可以参加的会议数目
 
 [掘金](https://juejin.cn/post/7062368425024159758)
