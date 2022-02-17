@@ -24,7 +24,7 @@ leetcode-120-三角形最小路径和
 leetcode-130-被围绕的区域
 
 [code](./algorithm/leetcode-solution/leetcode-130-被围绕的区域.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7065480553377562631)
 [B站](https://www.bilibili.com/video/BV1eS4y1C7AY?spm_id_from=333.999.0.0)
 
 ## 2022.2.8
