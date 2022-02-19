@@ -1,7 +1,17 @@
+leetcode-120-三角形最小路径和
+
+[掘金](https://juejin.cn/post/7066235249394450440)
+[B站](https://www.bilibili.com/video/BV1Na411C7cE?spm_id_from=333.999.0.0)
+
 leetcode-130-被围绕的区域
 
 [掘金](https://juejin.cn/post/7065480553377562631)
 [B站](https://www.bilibili.com/video/BV1eS4y1C7AY?spm_id_from=333.999.0.0)
+
+leetcode-494-目标和
+
+[掘金](https://juejin.cn/post/7065856939317526536)
+[B站](https://www.bilibili.com/video/BV11m4y1d7eR?spm_id_from=333.999.0.0)
 
 leetcode-430-扁平化多级双向链表
 
