@@ -5,14 +5,12 @@
 记录学习过程，加油！
 
 # 日志
-
-## 2022.2.13
 ## 2022.2.12
 
 leetcode-120-三角形最小路径和
 
 [code](./algorithm/leetcode-solution/leetcode-120-三角形最小路径和.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7066235249394450440)
 [B站](https://www.bilibili.com/video/BV1Na411C7cE?spm_id_from=333.999.0.0)
 
 ## 2022.2.10
@@ -32,7 +30,7 @@ leetcode-130-被围绕的区域
 leetcode-494-目标和
 
 [code](./algorithm/leetcode-solution/leetcode-494-目标和.js)
-[掘金]()
+[掘金](https://juejin.cn/post/7065856939317526536)
 [B站](https://www.bilibili.com/video/BV11m4y1d7eR?spm_id_from=333.999.0.0)
 
 ## 2022.2.7
