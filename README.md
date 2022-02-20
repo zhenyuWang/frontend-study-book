@@ -8,7 +8,7 @@
 
 ## 2022.2.13
 
-1658-将 x 减到 0 的最小操作数
+leetcode-1658-将 x 减到 0 的最小操作数
 
 [code](./algorithm/leetcode-solution/1658-将x减到0的最小操作数.js)
 [掘金](https://juejin.cn/post/7066786543809069069)

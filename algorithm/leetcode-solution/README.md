@@ -1,3 +1,7 @@
+leetcode-1658-将 x 减到 0 的最小操作数
+
+[掘金](https://juejin.cn/post/7066786543809069069)
+
 leetcode-120-三角形最小路径和
 
 [掘金](https://juejin.cn/post/7066235249394450440)
