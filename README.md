@@ -6,11 +6,23 @@
 
 # 日志
 
+## 2022.2.19
+
+[Vue3源码的主体结构及初始化流程](https://juejin.cn/post/7067443809742749704)
+
+## 2022.2.18
+
+leetcode-658-找到 K 个最接近的元素
+
+[code](./algorithm/leetcode-solution/leetcode-658-找到K个最接近的元素.js)
+[掘金](https://juejin.cn/post/7067151513201672200)
+[B站]()
+
 ## 2022.2.13
 
 leetcode-1658-将 x 减到 0 的最小操作数
 
-[code](./algorithm/leetcode-solution/1658-将x减到0的最小操作数.js)
+[code](./algorithm/leetcode-solution/leetcode-1658-将x减到0的最小操作数.js)
 [掘金](https://juejin.cn/post/7066786543809069069)
 
 ## 2022.2.12
