@@ -6,20 +6,24 @@
 
 # 日志
 
+## 2022.2.25
+
+leetcode-剑指 Offer 11-旋转数组的最小数字
+
+[code](./algorithm/leetcode-solution/leetcode-剑指Offer11-旋转数组的最小数字.js)
+[掘金](https://juejin.cn/post/7068643301024333855)
 ## 2022.2.20
 
 leetcode-111-二叉树的最小深度
 
 [code](./algorithm/leetcode-solution/leetcode-111-二叉树的最小深度.js)
 [掘金](https://juejin.cn/post/7068074941106618376)
-[B站]()
 ## 2022.2.19
 
 leetcode-690-员工的重要性
 
 [code](./algorithm/leetcode-solution/leetcode-690-员工的重要性.js)
 [掘金](https://juejin.cn/post/7067873771201232932)
-[B站]()
 
 ## 2022.2.27
 
@@ -31,7 +35,6 @@ leetcode-658-找到 K 个最接近的元素
 
 [code](./algorithm/leetcode-solution/leetcode-658-找到K个最接近的元素.js)
 [掘金](https://juejin.cn/post/7067151513201672200)
-[B站]()
 
 ## 2022.2.13
 
