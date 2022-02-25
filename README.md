@@ -8,9 +8,24 @@
 
 ## 2022.2.20
 
+leetcode-111-二叉树的最小深度
+
+[code](./algorithm/leetcode-solution/leetcode-111-二叉树的最小深度.js)
+[掘金](https://juejin.cn/post/7068074941106618376)
+[B站]()
+## 2022.2.19
+
+leetcode-690-员工的重要性
+
+[code](./algorithm/leetcode-solution/leetcode-690-员工的重要性.js)
+[掘金](https://juejin.cn/post/7067873771201232932)
+[B站]()
+
+## 2022.2.27
+
 [Vue3源码的主体结构及初始化流程](https://juejin.cn/post/7067443809742749704)
 
-## 2022.2.19
+## 2022.2.15
 
 leetcode-658-找到 K 个最接近的元素
 
