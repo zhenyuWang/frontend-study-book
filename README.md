@@ -6,6 +6,12 @@
 
 # 日志
 
+## 2022.2.26
+
+leetcode-462-最少移动次数使数组元素相等 II
+
+[code](./algorithm/leetcode-solution/leetcode-462-最少移动次数使数组元素相等II.js)
+[掘金](https://juejin.cn/post/7069016817322164254)
 ## 2022.2.25
 
 leetcode-剑指 Offer 11-旋转数组的最小数字
