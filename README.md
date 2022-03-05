@@ -6,6 +6,29 @@
 
 # 日志
 
+## 2022.3.5
+
+合铺宝优化 setup 语法糖\
+域名备案
+## 2022.3.4
+
+合铺宝 element3 切换 element-plus
+
+## 2022.3.3
+
+域名注册，ssl 证书申请，为 http2 做准备
+## 2022.3.2
+
+跟投管理系统异常监控调优，缓存策略配置
+## 2022.3.1
+
+跟投管理系统打包优化
+## 2022.2.27
+
+leetcode-1438-绝对差不超过限制的最长连续子数组
+
+[code](./algorithm/leetcode-solution/leetcode-1438-绝对差不超过限制的最长连续子数组.js)
+
 ## 2022.2.26
 
 leetcode-462-最少移动次数使数组元素相等 II
@@ -31,7 +54,7 @@ leetcode-690-员工的重要性
 [code](./algorithm/leetcode-solution/leetcode-690-员工的重要性.js)
 [掘金](https://juejin.cn/post/7067873771201232932)
 
-## 2022.2.27
+## 2022.2.17
 
 [Vue3源码的主体结构及初始化流程](https://juejin.cn/post/7067443809742749704)
 
