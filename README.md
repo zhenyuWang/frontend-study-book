@@ -5,10 +5,32 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.3.19
 
+[《代码整洁之道》-有意义的命名](https://juejin.cn/post/7076697242521829389)
+## 2022.3.18
+
+[《代码整洁之道》-开篇](https://juejin.cn/post/7076282238077239333)
+## 2022.3.17
+
+[varlet-vue2](https://github.com/varletjs/varlet-vue2) 单测快照完善
+
+## 2022.3.16
+
+[varlet-vue2](https://github.com/varletjs/varlet-vue2) 单测快照完善
+
+## 2022.3.15
+
+[varlet-vue2](https://github.com/varletjs/varlet-vue2) 单测快照完善
+
+## 2022.3.14
+
+[varlet-vue2](https://github.com/varletjs/varlet-vue2) 单测快照完善
+
+[vue2后台管理系统开发框架](https://github.com/zhenyuWang/vue2-element-admin) 调优
 ## 2022.3.13
 
-Vue3 后台管理系统开发框架搭建 [vue3-element-admin2](https://github.com/zhenyuWang/vue3-element-admin2)
+Vue3 后台管理系统开发框架 [vue3-element-admin2](https://github.com/zhenyuWang/vue3-element-admin2) 搭建
 ## 2022.3.12
 
 [create-koa-template](https://github.com/zhenyuWang/create-koa-template) 调优
