@@ -6,6 +6,29 @@
 
 # 日志
 
+## 2022.3.27
+
+实现 ref & isRef & unRef & proxyRefs & computed & 初始化 component 流程
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
+## 2022.3.26
+
+实现 isReactive & isReadonly & shallowReadonly & isProxy
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
+## 2022.3.25
+
+实现 effect & reactive & scheduler & stop & readonly
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
+## 2022.3.24
+
+梳理 vue3 初始化及更新流程
+## 2022.3.23
+
+varlet BottomNavigation 需求规划\
+学习 vue3 初始化及更新流程，搭建 mini-vue3 开发环境
+
 ## 2022.3.22
 
 驾驶舱大屏性能优化及自动化部署
