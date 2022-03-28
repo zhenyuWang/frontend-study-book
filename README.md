@@ -6,6 +6,11 @@
 
 # 日志
 
+## 2022.3.28
+
+实现 rollup 打包 & 初始化 element 流程 & 组件代理对象 & shapeFlags & 事件注册
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
 ## 2022.3.27
 
 实现 ref & isRef & unRef & proxyRefs & computed & 初始化 component 流程
