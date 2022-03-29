@@ -6,6 +6,10 @@
 
 # 日志
 
+### 2022.3.29
+
+实现 [varlet](https://github.com/varletjs/varlet) BottomNavigation 组件
+
 ## 2022.3.28
 
 实现 rollup 打包 & 初始化 element 流程 & 组件代理对象 & shapeFlags & 事件注册
