@@ -6,7 +6,12 @@
 
 # 日志
 
-### 2022.3.29
+## 2022.3.30
+
+[varlet](https://github.com/varletjs/varlet) BottomNavigation 组件支持 fab\
+实现组件 props & emit & slots & Fragment & Text 类型节点 & getCurrentInstance
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+## 2022.3.29
 
 实现 [varlet](https://github.com/varletjs/varlet) BottomNavigation 组件
 
