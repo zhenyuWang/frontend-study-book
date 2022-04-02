@@ -6,6 +6,11 @@
 
 # 日志
 
+## 2022.4.2
+
+实现 组件更新 & nextTick & parser 插值 & parser element & parser text
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
 ## 2022.4.1
 
 实现 更新 children
