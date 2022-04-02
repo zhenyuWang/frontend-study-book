@@ -6,6 +6,16 @@
 
 # 日志
 
+## 2022.4.1
+
+实现 更新 children
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+## 2022.3.31
+
+[varlet](https://github.com/varletjs/varlet) BottomNavigation 组件 code optimize\
+实现 provide & inject & custom renderer & 更新 props
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
 ## 2022.3.30
 
 [varlet](https://github.com/varletjs/varlet) BottomNavigation 组件支持 fab\
