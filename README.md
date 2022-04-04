@@ -6,6 +6,16 @@
 
 # 日志
 
+## 2022.4.4
+
+实现 编译 template to render，mini-vue3 0.0.1 完成！
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
+## 2022.4.3
+
+实现 同时解析 element、插值、text & code to string
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
+
 ## 2022.4.2
 
 实现 组件更新 & nextTick & parser 插值 & parser element & parser text
