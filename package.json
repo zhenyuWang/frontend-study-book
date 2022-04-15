@@ -1,0 +1,28 @@
+{
+  "name": "frontend-study-book",
+  "version": "0.0.1",
+  "author": "zhenyuWang <13641039885@163.com>",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "study"
+  ],
+  "description": "记录学习过程，每日更新",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenyuWang/frontend-studybook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhenyuWang/frontend-studybook/issues"
+  },
+  "homepage": "https://github.com/zhenyuWang/frontend-studybook#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
