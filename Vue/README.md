@@ -1,3 +1,3 @@
-Vue 源码学习开篇！
+[mini-vue3](https://github.com/zhenyuWang/mini-vue3)
 
-[掘金](https://juejin.cn/post/7054967140532617253)
+[Vue 源码学习开篇！](https://juejin.cn/post/7054967140532617253)
