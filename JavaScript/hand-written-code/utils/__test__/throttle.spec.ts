@@ -1,17 +1,17 @@
-import debounce from '../debounce'
+import throttle from '../throttle'
 import {delay} from '../../../../utils/jest'
 
 test('happy path',async () => {
   const originalFn = jest.fn()
 
-  const debounceFn = debounce(originalFn)
+  const throttleFn = throttle(originalFn)
 
-  debounceFn()
+  throttleFn()
 
   await delay(100)
-  debounceFn()
+  throttleFn()
 
-  await delay(210)
+  await delay(110)
 
   expect(originalFn).toBeCalledTimes(0)
 
@@ -19,8 +19,7 @@ test('happy path',async () => {
 
   expect(originalFn).toBeCalledTimes(1)
 
-  debounceFn()
-
+  throttleFn()
   await delay(310)
 
   expect(originalFn).toBeCalledTimes(2)
@@ -30,10 +29,10 @@ test('custom delay',async () => {
   const originalFn = jest.fn()
   const timerDelay = 500
 
-  const debounceFn = debounce(originalFn,timerDelay)
+  const throttleFn = throttle(originalFn,timerDelay)
 
-  debounceFn()
-  debounceFn()
+  throttleFn()
+  throttleFn()
 
   await delay(timerDelay-100)
 
@@ -43,7 +42,7 @@ test('custom delay',async () => {
 
   expect(originalFn).toBeCalledTimes(1)
 
-  debounceFn()
+  throttleFn()
 
   await delay(timerDelay+10)
 
