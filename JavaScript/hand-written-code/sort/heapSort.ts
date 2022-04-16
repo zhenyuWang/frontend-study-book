@@ -1,5 +1,3 @@
-// O(n*logn)/O(n)
-
 class MinHeap {
   private list:number[] = []
   public size:number = 0
@@ -61,6 +59,7 @@ class MinHeap {
   }
 }
 
+// O(n*logn)/O(n)
 export default function heapSort(original:number[]){
   const len = original.length
   const minHeap = new MinHeap()

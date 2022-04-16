@@ -4,7 +4,6 @@ export default function countSort(original:number[]){
   const min = Math.min(...original)
   const counts:number[] = []
 
-
   for(let i = 0;i<len;i++){
     const item = original[i]
     const target = item-min
