@@ -1,11 +1,11 @@
-export default function myCall(target,...args){
+export default function myCall(target:any,...args){
   target = target?Object(target):window
 
   let callFnName = Symbol('call-fn-name')
 
   target[callFnName] = this
 
-  const res = target[callFnName](args)
+  const res = args?target[callFnName](...args):target[callFnName]()
 
   Reflect.deleteProperty(target, callFnName)
 
