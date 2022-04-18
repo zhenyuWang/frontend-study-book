@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1.0,  maximum-scale=1.0,minimum-scale=1.0"
+    />
+    <title>double-refers-operation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow: hidden;
+      }
+      #box {
+        width: 70vw;
+        height: 70vw;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 2vw;
+        box-shadow: 0 0 5px blue;
+      }
+      #test-touch-img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <img id="test-touch-img" src="../../../../assets/img/avatar.png" alt="" />
+    </div>
+
+    <script>
+      const handleTouchOperation = () => {
+        const MIN_PROPORTION = 0.01
+        const MAX_PROPORTION = 100
+
+        const SCALE_BASE = 0.006
+
+        let prePoint
+        let preTranslateX = 0
+        let preTranslateY = 0
+
+        let scale = 1
+        let preDistance
+
+        window.addEventListener('touchmove', handleTouchMove)
+
+        function handleTouchMove(e) {
+          if (
+            !(e.target.id !== 'box' || e.target.id !== 'test-touch-img' || e.touches.length > 2)
+          ) {
+            return
+          }
+
+          const target = document.getElementById('test-touch-img')
+          const touches = e.touches
+
+          if (touches.length === 1) {
+            handleMove(target, touches[0])
+          } else if (touches.length === 2) {
+            handleZoom(target, touches)
+          }
+
+          function handleMove(target, touchInfo) {
+            const point = getPoint(touchInfo)
+
+            if (!prePoint) {
+              updatePrePoint(point)
+            } else {
+              move(target, point)
+            }
+          }
+
+          function getPoint(touchInfo) {
+            return { x: touchInfo.clientX, y: touchInfo.clientY }
+          }
+
+          function updatePrePoint(point) {
+            prePoint = point
+          }
+
+          function move(target, point) {
+            const { distanceX, distanceY } = getDistanceInfo(point, prePoint)
+
+            updatePrePoint(point)
+
+            const { translateX, translateY } = calcTranslate(
+              { preTranslateX, preTranslateY },
+              { distanceX, distanceY },
+            )
+
+            updatePreTranslate(translateX, translateY)
+
+            handleTransform(target, translateX, translateY, scale)
+          }
+
+          function getDistanceInfo(point, prePoint) {
+            return {
+              distanceX: point.x - prePoint.x,
+              distanceY: point.y - prePoint.y,
+            }
+          }
+
+          function calcTranslate({ preTranslateX, preTranslateY }, { distanceX, distanceY }) {
+            return {
+              translateX: preTranslateX + distanceX,
+              translateY: preTranslateY + distanceY,
+            }
+          }
+
+          function updatePreTranslate(translateX, translateY) {
+            preTranslateX = translateX
+            preTranslateY = translateY
+          }
+
+          function handleZoom(target, touches) {
+            const { x1, y1, x2, y2 } = getPointLocation(touches)
+            const distance = calcDistance(x1, y1, x2, y2)
+
+            if (!preDistance) {
+              updatePreDistance(distance)
+            } else {
+              scale = updateScale(scale, distance, preDistance)
+
+              updatePreDistance(distance)
+
+              scale = handleScaleBoundary(scale)
+
+              handleTransform(target, preTranslateX, preTranslateY, scale)
+            }
+          }
+
+          function getPointLocation(touches) {
+            const point1 = touches[0]
+            const point2 = touches[1]
+
+            return {
+              x1: point1.clientX,
+              y1: point1.clientY,
+              x2: point2.clientX,
+              y2: point2.clientY,
+            }
+          }
+
+          function calcDistance(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(Math.abs(x1 - x2), 2) + Math.pow(Math.abs(y1 - y2), 2), 2)
+          }
+
+          function updatePreDistance(distance) {
+            preDistance = distance
+          }
+
+          function updateScale(scale, distance, preDistance) {
+            return scale + (distance - preDistance) * SCALE_BASE
+          }
+
+          function handleScaleBoundary(scale) {
+            if (scale < MIN_PROPORTION) {
+              return MIN_PROPORTION
+            }
+
+            if (scale > MAX_PROPORTION) {
+              return MAX_PROPORTION
+            }
+
+            return scale
+          }
+
+          function handleTransform(target, translateX, translateY, scale) {
+            target.style.transform = `
+              translateX(${translateX}px)
+              translateY(${translateY}px)
+              scale(${scale})
+            `
+          }
+        }
+
+        window.addEventListener('touchend', resetPreInfo)
+
+        function resetPreInfo() {
+          prePoint = null
+          preDistance = null
+        }
+      }
+
+      window.onload = () => {
+        handleTouchOperation()
+      }
+    </script>
+  </body>
+</html>
