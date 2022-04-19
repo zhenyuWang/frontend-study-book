@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1.0,  maximum-scale=1.0,minimum-scale=1.0"
+    />
+    <title>swiper</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow: hidden;
+      }
+      .swiper {
+        height: 200px;
+        overflow: hidden;
+        user-select: none;
+      }
+      ul.swiper__container {
+        height: 100%;
+        display: flex;
+        transform: translateX(0px);
+        transition-duration: 300ms;
+        list-style: none;
+      }
+      ul.swiper__container > li.swiper-item {
+        width: 100vw;
+        height: 100%;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      ul.swiper__container > li.swiper-item.active {
+        z-index: 2;
+      }
+
+      ul.swiper__container > li.swiper-item > img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper">
+      <ul class="swiper__container">
+        <li class="swiper-item">
+          <img src="./img/loop1.jpg" alt="" />
+        </li>
+        <li class="swiper-item">
+          <img src="./img/loop2.jpg" alt="" />
+        </li>
+        <li class="swiper-item">
+          <img src="./img/loop3.jpg" alt="" />
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function swiperInit() {
+        const { swiper, swiperContainer, swiperItems } = getDom()
+
+        const width = swiper.offsetWidth
+        const length = swiperItems.length
+
+        let leftSideIndex = 0
+        let rightSideIndex = length - 1
+
+        let theLastTimeTranslateX = 0
+
+        let activeIndex = 0
+
+        let prePointX = null
+        let translateX = 0
+
+        initItemTranslateX(swiperItems)
+
+        updateItemActiveClass(swiperItems, activeIndex)
+        ;({ leftSideIndex, rightSideIndex } = handleBoundaryItem(
+          activeIndex,
+          leftSideIndex,
+          rightSideIndex,
+          swiperItems,
+          width,
+          length,
+        ))
+
+        swiper.addEventListener('touchmove', handleSwiperTouchMove)
+
+        function handleSwiperTouchMove(e) {
+          const pointX = e.touches[0].clientX
+
+          if (prePointX === null) {
+            prePointX = pointX
+          } else {
+            const diff = pointX - prePointX
+            translateX += diff
+
+            prePointX = pointX
+
+            swiperContainer.style.transform = `translateX(${translateX}px)`
+          }
+        }
+
+        swiper.addEventListener('touchend', handleSwiperTouchEnd)
+
+        function handleSwiperTouchEnd() {
+          prePointX = null
+
+          translateX = handleTranslateXBoundary(translateX, theLastTimeTranslateX, width)
+
+          translateX = calcTargetTranslateX(translateX, width)
+
+          theLastTimeTranslateX = translateX
+
+          activeIndex = calcActiveIndex(translateX, width, length)
+          ;({ leftSideIndex, rightSideIndex } = handleBoundaryItem(
+            activeIndex,
+            leftSideIndex,
+            rightSideIndex,
+            swiperItems,
+            width,
+            length,
+          ))
+
+          updateItemActiveClass(swiperItems, activeIndex)
+
+          swiperContainer.style.transform = `translateX(${translateX}px)`
+        }
+      }
+
+      function getDom() {
+        return {
+          swiper: document.getElementsByClassName('swiper')[0],
+          swiperContainer: document.getElementsByClassName('swiper__container')[0],
+          swiperItems: document.getElementsByClassName('swiper-item'),
+        }
+      }
+
+      function initItemTranslateX(items) {
+        for (let i = 0; i < items.length; i++) {
+          items[i].translateX = 0
+        }
+      }
+
+      function updateItemActiveClass(items, activeIndex) {
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i]
+          if (i === activeIndex) {
+            item.classList.add('active')
+          } else {
+            item.classList.remove('active')
+          }
+        }
+      }
+
+      function handleTranslateXBoundary(translateX, theLastTimeTranslateX, width) {
+        if (translateX > theLastTimeTranslateX && translateX - theLastTimeTranslateX > width) {
+          translateX = theLastTimeTranslateX + width
+        }
+
+        if (translateX < theLastTimeTranslateX && theLastTimeTranslateX - translateX > width) {
+          translateX = theLastTimeTranslateX - width
+        }
+
+        return translateX
+      }
+
+      function calcTargetTranslateX(translateX, width) {
+        const multiple = Math.floor(Math.abs(translateX) / width)
+
+        if (translateX < 0) {
+          max = multiple * -width
+          min = max - width
+
+          if (max - translateX < translateX - min) {
+            translateX = max
+          } else {
+            translateX = min
+          }
+        } else {
+          min = multiple * width
+          max = min + width
+
+          if (max - translateX < translateX - min) {
+            translateX = max
+          } else {
+            translateX = min
+          }
+        }
+
+        return translateX
+      }
+
+      function calcActiveIndex(translateX, width, length) {
+        let multiple = (translateX * -1) / width
+
+        activeIndex = multiple % length
+
+        if (activeIndex < 0) {
+          activeIndex += length
+        }
+
+        return activeIndex
+      }
+
+      function handleBoundaryItem(
+        activeIndex,
+        leftSideIndex,
+        rightSideIndex,
+        swiperItems,
+        width,
+        length,
+      ) {
+        if (activeIndex === rightSideIndex) {
+          const item = swiperItems[leftSideIndex]
+
+          const newTranslateX = item.translateX + width * length
+
+          item.style.transform = `translateX(${newTranslateX}px)`
+
+          item.translateX = newTranslateX
+
+          rightSideIndex = leftSideIndex
+
+          leftSideIndex++
+          leftSideIndex %= length
+        }
+
+        if (activeIndex === leftSideIndex) {
+          const item = swiperItems[rightSideIndex]
+
+          const newTranslateX = item.translateX - width * length
+
+          item.style.transform = `translateX(${newTranslateX}px)`
+
+          item.translateX = newTranslateX
+
+          leftSideIndex = rightSideIndex
+
+          rightSideIndex--
+          if (rightSideIndex < 0) {
+            rightSideIndex += length
+          }
+        }
+
+        return {
+          leftSideIndex,
+          rightSideIndex,
+        }
+      }
+
+      window.onload = () => {
+        swiperInit()
+      }
+    </script>
+  </body>
+</html>
