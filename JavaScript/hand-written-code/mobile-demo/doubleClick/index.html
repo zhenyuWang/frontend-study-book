@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1.0,  maximum-scale=1.0,minimum-scale=1.0"
+    />
+    <title>double-refers-operation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="test-button">test button</button>
+    <script>
+      function handleButtonClick() {
+        const button = document.getElementById('test-button')
+        let clickTime = 0
+
+        button.onclick = function () {
+          clickTime++
+
+          if (clickTime === 2) {
+            console.log('double click')
+            clickTime = 0
+            return
+          }
+
+          setTimeout(() => {
+            clickTime--
+
+            if (clickTime === 0) {
+              console.log('click')
+            } else {
+              clickTime = 0
+            }
+          }, 300)
+        }
+      }
+
+      window.onload = function () {
+        handleButtonClick()
+      }
+    </script>
+  </body>
+</html>
