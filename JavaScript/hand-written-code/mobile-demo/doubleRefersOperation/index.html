@@ -38,29 +38,31 @@
 
     <script>
       const handleTouchOperation = () => {
-        const MIN_PROPORTION = 0.01
-        const MAX_PROPORTION = 100
+        const target = document.getElementById('test-touch-img')
+        target.translateX = 0
+        target.translateY = 0
+        target.scale = 1
 
-        const SCALE_BASE = 0.006
+        target.MIN_PROPORTION = 0.01
+        target.MAX_PROPORTION = 100
 
-        let prePoint
-        let preTranslateX = 0
-        let preTranslateY = 0
+        target.SCALE_BASE = 0.006
 
-        let scale = 1
-        let preDistance
+        target.prePoint = null
+
+        target.preDistance = 0
 
         window.addEventListener('touchmove', handleTouchMove)
 
         function handleTouchMove(e) {
+          const touches = e.touches
+
           if (
-            !(e.target.id !== 'box' || e.target.id !== 'test-touch-img' || e.touches.length > 2)
+            !(e.target.id !== 'box' || e.target.id !== 'test-touch-img' || touches.length > 2)
           ) {
             return
           }
 
-          const target = document.getElementById('test-touch-img')
-          const touches = e.touches
 
           if (touches.length === 1) {
             handleMove(target, touches[0])
@@ -71,8 +73,8 @@
           function handleMove(target, touchInfo) {
             const point = getPoint(touchInfo)
 
-            if (!prePoint) {
-              updatePrePoint(point)
+            if (!target.prePoint) {
+              target.prePoint = point
             } else {
               move(target, point)
             }
@@ -82,23 +84,16 @@
             return { x: touchInfo.clientX, y: touchInfo.clientY }
           }
 
-          function updatePrePoint(point) {
-            prePoint = point
-          }
-
           function move(target, point) {
-            const { distanceX, distanceY } = getDistanceInfo(point, prePoint)
+            const { distanceX, distanceY } = getDistanceInfo(point, target.prePoint)
 
-            updatePrePoint(point)
+            target.prePoint = point
 
-            const { translateX, translateY } = calcTranslate(
-              { preTranslateX, preTranslateY },
-              { distanceX, distanceY },
-            )
+            target.translateX += distanceX
+            target.translateY += distanceY
 
-            updatePreTranslate(translateX, translateY)
 
-            handleTransform(target, translateX, translateY, scale)
+            handleTransform(target)
           }
 
           function getDistanceInfo(point, prePoint) {
@@ -108,38 +103,25 @@
             }
           }
 
-          function calcTranslate({ preTranslateX, preTranslateY }, { distanceX, distanceY }) {
-            return {
-              translateX: preTranslateX + distanceX,
-              translateY: preTranslateY + distanceY,
-            }
-          }
-
-          function updatePreTranslate(translateX, translateY) {
-            preTranslateX = translateX
-            preTranslateY = translateY
-          }
-
           function handleZoom(target, touches) {
             const { x1, y1, x2, y2 } = getPointLocation(touches)
             const distance = calcDistance(x1, y1, x2, y2)
 
-            if (!preDistance) {
-              updatePreDistance(distance)
+            if (!target.preDistance) {
+              target.preDistance = distance
             } else {
-              scale = updateScale(scale, distance, preDistance)
+              updateScale(target, distance)
 
-              updatePreDistance(distance)
+              target.preDistance = distance
 
-              scale = handleScaleBoundary(scale)
+              handleScaleBoundary(target)
 
-              handleTransform(target, preTranslateX, preTranslateY, scale)
+              handleTransform(target)
             }
           }
 
           function getPointLocation(touches) {
-            const point1 = touches[0]
-            const point2 = touches[1]
+            const [point1,point2] = touches
 
             return {
               x1: point1.clientX,
@@ -153,31 +135,23 @@
             return Math.sqrt(Math.pow(Math.abs(x1 - x2), 2) + Math.pow(Math.abs(y1 - y2), 2), 2)
           }
 
-          function updatePreDistance(distance) {
-            preDistance = distance
+          function updateScale(target, distance) {
+            target.scale += (distance - target.preDistance) * target.SCALE_BASE
           }
 
-          function updateScale(scale, distance, preDistance) {
-            return scale + (distance - preDistance) * SCALE_BASE
-          }
-
-          function handleScaleBoundary(scale) {
-            if (scale < MIN_PROPORTION) {
-              return MIN_PROPORTION
+          function handleScaleBoundary(target) {
+            if (target.scale < target.MIN_PROPORTION) {
+              target.scale = target.MIN_PROPORTION
+            }else if (target.scale > target.MAX_PROPORTION) {
+              target.scale = target.MAX_PROPORTION
             }
-
-            if (scale > MAX_PROPORTION) {
-              return MAX_PROPORTION
-            }
-
-            return scale
           }
 
-          function handleTransform(target, translateX, translateY, scale) {
+          function handleTransform(target) {
             target.style.transform = `
-              translateX(${translateX}px)
-              translateY(${translateY}px)
-              scale(${scale})
+              translateX(${target.translateX}px)
+              translateY(${target.translateY}px)
+              scale(${target.scale})
             `
           }
         }
@@ -185,8 +159,8 @@
         window.addEventListener('touchend', resetPreInfo)
 
         function resetPreInfo() {
-          prePoint = null
-          preDistance = null
+          target.prePoint = null
+          target.preDistance = null
         }
       }
 
