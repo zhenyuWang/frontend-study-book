@@ -5,7 +5,7 @@ export default function myApply(target:any,args?:any[]){
 
   target[applyFnName] = this
 
-  const res = args?target[applyFnName](...args!):target[applyFnName]()
+  const res = (args?.length)?target[applyFnName](...args):target[applyFnName]()
 
   Reflect.deleteProperty(target,applyFnName)
 

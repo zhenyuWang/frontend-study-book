@@ -12,10 +12,13 @@ export default function deepCopy(original:any,hash = new WeakMap()){
     case '[object Date]':
     case '[object RegExp]':
     case '[object Error]':
+    case '[object Function]':
       return original
   }
 
-  if (hash.has(original)) return hash.get(original)
+  if(hash.has(original)){
+    return hash.get(original)
+  }
 
   const target = Array.isArray(original)?[]:{}
 
@@ -23,8 +26,7 @@ export default function deepCopy(original:any,hash = new WeakMap()){
 
   const keys = Reflect.ownKeys(original)
 
-  for(let i = 0;i<keys.length;i++){
-    const key = keys[i]
+  for(let key of keys){
     const value = original[key]
 
     target[key] = deepCopy(value,hash)
