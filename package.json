@@ -9,7 +9,8 @@
   ],
   "description": "记录学习过程，每日更新",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch":"jest --watchAll"
   },
   "repository": {
     "type": "git",
