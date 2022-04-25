@@ -33,7 +33,6 @@
         width: 100vw;
         height: 100%;
         flex-shrink: 0;
-        position: relative;
       }
 
       ul.swiper__container > li.swiper-item.active {
@@ -68,6 +67,10 @@
         const width = swiper.offsetWidth
         const length = swiperItems.length
 
+        if(length<2){
+          return
+        }
+
         let leftSideIndex = 0
         let rightSideIndex = length - 1
 
@@ -78,17 +81,11 @@
         let prePointX = null
         let translateX = 0
 
+        let direction = 0
+
         initItemTranslateX(swiperItems)
 
         updateItemActiveClass(swiperItems, activeIndex)
-        ;({ leftSideIndex, rightSideIndex } = handleBoundaryItem(
-          activeIndex,
-          leftSideIndex,
-          rightSideIndex,
-          swiperItems,
-          width,
-          length,
-        ))
 
         swiper.addEventListener('touchmove', handleSwiperTouchMove)
 
@@ -99,6 +96,19 @@
             prePointX = pointX
           } else {
             const diff = pointX - prePointX
+
+            direction = diff>0?1:0
+
+            ;({ leftSideIndex, rightSideIndex } = handleBoundaryItem(
+            activeIndex,
+            leftSideIndex,
+            rightSideIndex,
+            swiperItems,
+            width,
+            length,
+            direction
+          ))
+
             translateX += diff
 
             prePointX = pointX
@@ -119,14 +129,6 @@
           theLastTimeTranslateX = translateX
 
           activeIndex = calcActiveIndex(translateX, width, length)
-          ;({ leftSideIndex, rightSideIndex } = handleBoundaryItem(
-            activeIndex,
-            leftSideIndex,
-            rightSideIndex,
-            swiperItems,
-            width,
-            length,
-          ))
 
           updateItemActiveClass(swiperItems, activeIndex)
 
@@ -216,8 +218,9 @@
         swiperItems,
         width,
         length,
+        direction
       ) {
-        if (activeIndex === rightSideIndex) {
+        if (activeIndex === rightSideIndex && direction === 0) {
           const item = swiperItems[leftSideIndex]
 
           const newTranslateX = item.translateX + width * length
@@ -232,7 +235,7 @@
           leftSideIndex %= length
         }
 
-        if (activeIndex === leftSideIndex) {
+        if (activeIndex === leftSideIndex && direction===1) {
           const item = swiperItems[rightSideIndex]
 
           const newTranslateX = item.translateX - width * length

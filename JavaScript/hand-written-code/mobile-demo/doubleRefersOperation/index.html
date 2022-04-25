@@ -58,7 +58,7 @@
           const touches = e.touches
 
           if (
-            !(e.target.id !== 'box' || e.target.id !== 'test-touch-img' || touches.length > 2)
+            (e.target.id !== 'box' && e.target.id !== 'test-touch-img') || touches.length > 2
           ) {
             return
           }
