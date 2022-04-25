@@ -21,33 +21,33 @@ export function quickSortByRecursive(original:number[]):number[]{
   return [...quickSortByRecursive(l),base,...quickSortByRecursive(r)]
 }
 
+function getMid(original:number[],left:number,right:number){
+  const mid = original[left]
+  let l = left+1
+  let r = right
 
-function getMid(arr:number[],left:number,right:number):number{
-  const l = left
-  const base = arr[l]
-  left++
-
-  while(left<right){
-    if(arr[left]<base){
-      left++
-    }else if(arr[right]>=base){
-      right--
+  while(l<r){
+    if(original[l]<mid){
+      l++
+    }else if(original[r]>=mid){
+      r--
     }else{
-      [arr[left],arr[right]] = [arr[right],arr[left]]
-      left++
-      right--
+      [original[l],original[r]] = [original[r],original[l]]
+
+      l++
+      r--
     }
   }
 
-  if(arr[left]<base){
-   [arr[l],arr[left]] = [arr[left],arr[l]]
+  if(original[l]<mid){
+    [original[left],original[l]] = [original[l],original[left]]
 
-   return left
+    return l
   }
 
-  [arr[l],arr[left-1]] = [arr[left-1],arr[l]]
+  [original[left],original[l-1]] = [original[l-1],original[left]]
 
-  return left-1
+  return l-1
 }
 
 // O(nlogn)/O(1)

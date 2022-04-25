@@ -25,20 +25,20 @@ export function mergeSortByRecursive(original:number[]):number[]{
 }
 
 
-function mergeByExchange(arr:number[],l:number,mid:number,r:number){
-  const temp = [...arr]
-  let i = l
+function mergeByExchange(original:number[],left:number,mid:number,right:number){
+  const temp = [...original]
+  let i = left
   let j = mid+1
 
-  for(let k = l;k<=r;k++){
+  for(let k = left;k<=right;k++){
     if(i>mid){
-      arr[k] = temp[j++]
-    }else if(j>r){
-      arr[k] = temp[i++]
+      original[k] = temp[j++]
+    }else if(j>right){
+      original[k] = temp[i++]
     }else if(temp[i]<temp[j]){
-      arr[k] = temp[i++]
+      original[k] = temp[i++]
     }else{
-      arr[k] = temp[j++]
+      original[k] = temp[j++]
     }
   }
 }
