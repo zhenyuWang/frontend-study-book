@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{
+      margin:0;
+      display: flex;
+      list-style: none;
+    }
+
+    /* 这个写法 live server 启动服务的时候不生效，浏览器直接打开文件可以*/
+    ul:last-child>li{border-bottom: 1px solid #ccc;}
+
+    ul>li{
+      width:100px;
+      padding:4px 0;
+      flex-shrink: 0;
+      text-align: center;
+      border-top:1px solid #ccc;
+      border-left:1px solid #ccc;
+    }
+    ul>li:last-child{border-right: 1px solid #ccc;}
+  </style>
+</head>
+<body>
+  <script>
+    let fragment =  document.createDocumentFragment()
+
+    for(let i = 1;i<=9;i++){
+      const ul = document.createElement('ul')
+
+      for(let j = 1;j<=i;j++){
+        const li = document.createElement('li')
+
+        li.innerHTML = `${i}x${j}=${i*j}`
+
+        ul.appendChild(li)
+      }
+      fragment.appendChild(ul)
+    }
+
+    document.body.appendChild(fragment)
+  </script>
+</body>
+</html>
