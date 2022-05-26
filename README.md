@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2022.5.26
+
+力扣刷题
+
+leetcode-1175-质数排列\
+[code](./algorithm/leetcode-solution/leetcode-1175-质数排列.js)
+[掘金](https://juejin.cn/post/7101918396056338446)
+
 ## 2022.5.25
 
 力扣刷题
