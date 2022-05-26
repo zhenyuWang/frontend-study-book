@@ -8,6 +8,10 @@
 
 力扣刷题
 
+leetcode-5-最长回文子串\
+[code](./algorithm/leetcode-solution/leetcode-5-最长回文子串.js)
+[掘金](https://juejin.cn/post/7101700819656900615)
+
 ## 2022.5.24
 
 面试\
