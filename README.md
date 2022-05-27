@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2022.5.27
+
+力扣刷题
+
+leetcode-1957-删除字符使字符串变好\
+[code](./algorithm/leetcode-solution/leetcode-1957-删除字符使字符串变好.js)
+[掘金](https://juejin.cn/post/7102394759662010376)
+
 ## 2022.5.26
 
 力扣刷题
