@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2022.5.28
+
+力扣刷题
+
+leetcode-1217-玩筹码\
+[code](./algorithm/leetcode-solution/leetcode-1217-玩筹码.js)
+[掘金](https://juejin.cn/post/7102630701203193869)
+
 ## 2022.5.27
 
 力扣刷题
