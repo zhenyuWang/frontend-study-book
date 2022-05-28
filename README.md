@@ -12,6 +12,8 @@ leetcode-1217-玩筹码\
 [code](./algorithm/leetcode-solution/leetcode-1217-玩筹码.js)
 [掘金](https://juejin.cn/post/7102630701203193869)
 
+双周赛解出3道题，第4题解慢了，这次题目简单
+
 ## 2022.5.27
 
 力扣刷题
