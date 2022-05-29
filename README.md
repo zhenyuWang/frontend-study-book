@@ -4,6 +4,15 @@
 
 # 日志
 
+## 2022.5.29
+
+力扣刷题\
+力扣周赛，又是只解出 2 题 😢\
+
+leetcode-468-验证IP地址\
+[code](./algorithm/leetcode-solution/leetcode-468-验证IP地址.js)
+[掘金](https://juejin.cn/post/7103097618921685005)
+
 ## 2022.5.28
 
 力扣刷题
