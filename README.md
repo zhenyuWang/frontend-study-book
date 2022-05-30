@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2022.5.30
+
+leetcode-55-跳跃游戏 \
+[code](./algorithm/leetcode-solution/leetcode-55-跳跃游戏.js)
+[掘金](https://juejin.cn/post/7103501757136764965)
+
+
+
 ## 2022.5.29
 
 力扣刷题\
