@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2022.5.31
+
+leetcode-7-整数反转 \
+[code](./algorithm/leetcode-solution/leetcode-7-整数反转.js)
+[掘金](https://juejin.cn/post/7103901012166967327)
+
 ## 2022.5.30
 
 leetcode-55-跳跃游戏 \
