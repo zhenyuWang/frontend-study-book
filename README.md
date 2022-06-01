@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2022.6.1
+
+leetcode-8-字符串转换整数(atoi) \
+[code](./algorithm/leetcode-solution/leetcode-8-字符串转换整数(atoi).js)
+[掘金](https://juejin.cn/post/7104296232583069704)
+
 ## 2022.5.31
 
 leetcode-7-整数反转 \
