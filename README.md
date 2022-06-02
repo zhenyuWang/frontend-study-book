@@ -4,6 +4,9 @@
 
 # 日志
 
+leetcode-9-回文数 \
+[code](./algorithm/leetcode-solution/leetcode-9-回文数.js)
+[掘金](https://juejin.cn/post/7104671846410223624)
 ## 2022.6.1
 
 leetcode-8-字符串转换整数(atoi) \
