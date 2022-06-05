@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2022.6.4
+
+leetcode-14-最长公共前缀 \
+[code](./algorithm/leetcode-solution/leetcode-14-最长公共前缀.js)
+[掘金](https://juejin.cn/post/7105392971435999262)
+
 ## 2022.6.3
 
 leetcode-12-整数转罗马数字 \
