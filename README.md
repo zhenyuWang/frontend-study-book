@@ -4,6 +4,13 @@
 
 # 日志
 
+## 2022.6.5
+
+leetcode-15-三数之和 \
+[code](./algorithm/leetcode-solution/leetcode-15-三数之和.js)
+[掘金](https://juejin.cn/post/7105744748706529294)
+
+
 ## 2022.6.4
 
 leetcode-14-最长公共前缀 \
