@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2022.6.6
+
+leetcode-16-最接近的三数之和 \
+[code](./algorithm/leetcode-solution/leetcode-16-最接近的三数之和.js)
+[掘金](https://juejin.cn/post/7106135586049622023)
+
 ## 2022.6.5
 
 leetcode-15-三数之和 \
