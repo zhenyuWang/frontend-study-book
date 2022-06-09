@@ -4,6 +4,11 @@
 
 # 日志
 
+## 2022.6.8
+leetcode-18-四数之和 \
+[code](./algorithm/leetcode-solution/leetcode-18-四数之和.js)
+[掘金](https://juejin.cn/post/7106870992701489188)
+
 ## 2022.6.7
 leetcode-17-电话号码的字母组合 \
 [code](./algorithm/leetcode-solution/leetcode-17-电话号码的字母组合.js)
