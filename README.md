@@ -3,7 +3,10 @@
 记录学习过程，加油！
 
 # 日志
-
+## 2022.6.9
+leetcode-22-括号生成 \
+[code](./algorithm/leetcode-solution/leetcode-22-括号生成.js)
+[掘金](https://juejin.cn/post/7107253459539197959)
 ## 2022.6.8
 leetcode-18-四数之和 \
 [code](./algorithm/leetcode-solution/leetcode-18-四数之和.js)
