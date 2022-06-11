@@ -3,6 +3,11 @@
 记录学习过程，加油！
 
 # 日志
+
+## 2022.6.10
+leetcode-26-删除有序数组中的重复项  \
+[code](./algorithm/leetcode-solution/leetcode-26-删除有序数组中的重复项.js)
+[掘金](https://juejin.cn/post/7107619259932475422)
 ## 2022.6.9
 leetcode-22-括号生成 \
 [code](./algorithm/leetcode-solution/leetcode-22-括号生成.js)
