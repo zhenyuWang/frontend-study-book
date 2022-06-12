@@ -4,6 +4,11 @@
 
 # 日志
 
+## 2022.6.11
+leetcode-27-移除元素  \
+[code](./algorithm/leetcode-solution/leetcode-27-移除元素.js)
+[掘金](https://juejin.cn/post/7107958134886367239)
+
 ## 2022.6.10
 leetcode-26-删除有序数组中的重复项  \
 [code](./algorithm/leetcode-solution/leetcode-26-删除有序数组中的重复项.js)
