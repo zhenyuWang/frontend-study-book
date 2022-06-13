@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2022.6.12
+leetcode-28-实现 strStr()  \
+[code](./algorithm/leetcode-solution/leetcode-28-实现strStr().js)
+[掘金](https://juejin.cn/post/7108336915190906893)
+
+
 ## 2022.6.11
 leetcode-27-移除元素  \
 [code](./algorithm/leetcode-solution/leetcode-27-移除元素.js)
