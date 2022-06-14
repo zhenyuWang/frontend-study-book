@@ -4,6 +4,11 @@
 
 # 日志
 
+## 2022.6.14
+leetcode-31-下一个排列  \
+[code](./algorithm/leetcode-solution/leetcode-31-下一个排列.js)
+[掘金](https://juejin.cn/post/7109111274545348622/)
+
 ## 2022.6.12
 leetcode-28-实现 strStr()  \
 [code](./algorithm/leetcode-solution/leetcode-28-实现strStr().js)
