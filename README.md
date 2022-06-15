@@ -3,11 +3,15 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.15
+leetcode-33-搜索旋转排序数组  \
+[code](./algorithm/leetcode-solution/leetcode-33-搜索旋转排序数组.js)
+[掘金](https://juejin.cn/post/7109451377436262408)
 
 ## 2022.6.14
 leetcode-31-下一个排列  \
 [code](./algorithm/leetcode-solution/leetcode-31-下一个排列.js)
-[掘金](https://juejin.cn/post/7109111274545348622/)
+[掘金](https://juejin.cn/post/7109111274545348622)
 
 ## 2022.6.12
 leetcode-28-实现 strStr()  \
