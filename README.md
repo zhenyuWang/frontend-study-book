@@ -3,6 +3,11 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.16
+leetcode-36-有效的数独  \
+[code](./algorithm/leetcode-solution/leetcode-36-有效的数独.js)
+[掘金](https://juejin.cn/post/7109856450901442597)
+
 ## 2022.6.15
 leetcode-33-搜索旋转排序数组  \
 [code](./algorithm/leetcode-solution/leetcode-33-搜索旋转排序数组.js)
