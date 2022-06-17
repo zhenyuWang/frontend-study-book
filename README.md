@@ -3,6 +3,11 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.17
+leetcode-39-组合总和  \
+[code](./algorithm/leetcode-solution/leetcode-39-组合总和.js)
+[掘金](https://juejin.cn/post/7110226490570047496)
+
 ## 2022.6.16
 leetcode-36-有效的数独  \
 [code](./algorithm/leetcode-solution/leetcode-36-有效的数独.js)
