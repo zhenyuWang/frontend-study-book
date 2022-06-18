@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.18
+leetcode-41-缺失的第一个正数  \
+[code](./algorithm/leetcode-solution/leetcode-41-缺失的第一个正数.js)
+[掘金](https://juejin.cn/post/7110609650415828999)
 ## 2022.6.17
 leetcode-39-组合总和  \
 [code](./algorithm/leetcode-solution/leetcode-39-组合总和.js)
