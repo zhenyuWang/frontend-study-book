@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.21
+leetcode-46-全排列 \
+[code](./algorithm/leetcode-solution/leetcode-46-全排列.js)
+[掘金](https://juejin.cn/post/7111699544911380487)
 ## 2022.6.20
 leetcode-45-跳跃游戏 II \
 [code](./algorithm/leetcode-solution/leetcode-45-跳跃游戏II.js)
