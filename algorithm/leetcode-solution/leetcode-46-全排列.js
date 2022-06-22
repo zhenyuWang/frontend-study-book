@@ -9,7 +9,7 @@ var permute = function(nums) {
 
     for(let i = 0;i<nums.length;i++){
       const _arr = [...arr]
-      const nums = [...nums]
+      const _nums = [...nums]
       _arr.push(_nums.splice(i,1))
       getRes(_nums,_arr)
     }
