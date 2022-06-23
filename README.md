@@ -3,9 +3,13 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.23
+leetcode-49-字母异位词分组 \
+[code](./algorithm/leetcode-solution/leetcode-49-字母异位词分组.js)
+[掘金](https://juejin.cn/post/7112457778714640415)
 ## 2022.6.22
-leetcode-46-全排列 II \
-[code](./algorithm/leetcode-solution/leetcode-46-全排列II.js)
+leetcode-47-全排列 II \
+[code](./algorithm/leetcode-solution/leetcode-47-全排列II.js)
 [掘金](https://juejin.cn/post/7112058223506489374)
 ## 2022.6.21
 leetcode-46-全排列 \
