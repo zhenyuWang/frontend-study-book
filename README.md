@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.25
+leetcode-50-Pow(x, n)  \
+[code](./algorithm/leetcode-solution/leetcode-50-Pow(x,n).js)
+[掘金](https://juejin.cn/post/7113206244193599495)
 ## 2022.6.23
 leetcode-49-字母异位词分组 \
 [code](./algorithm/leetcode-solution/leetcode-49-字母异位词分组.js)
