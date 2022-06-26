@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.6.26
+代码整洁之道-第五章-格式 阅读
 ## 2022.6.25
 leetcode-50-Pow(x, n)  \
 [code](./algorithm/leetcode-solution/leetcode-50-Pow(x,n).js)
