@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.9.22
+leetcode-116-填充每个节点的下一个右侧节点指针\
+[code](./algorithm/leetcode-solution/leetcode-116-填充每个节点的下一个右侧节点指针.js)
+[掘金](https://juejin.cn/post/7146584366003519495)
 ## 2022.9.21
 leetcode-109-有序链表转换二叉搜索树\
 [code](./algorithm/leetcode-solution/leetcode-109-有序链表转换二叉搜索树.js)
