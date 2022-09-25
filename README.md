@@ -3,10 +3,14 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.9.24
+leetcode-131-分割回文串\
+[code](./algorithm/leetcode-solution/leetcode-131-分割回文串.js)
+[掘金](https://juejin.cn/post/7147250078183325732)
 ## 2022.9.23
 leetcode-129-求根节点到叶节点数字之和\
 [code](./algorithm/leetcode-solution/leetcode-129-求根节点到叶节点数字之和.js)
-[掘金](https://juejin.cn/post/7146966593874952199/)
+[掘金](https://juejin.cn/post/7146966593874952199)
 ## 2022.9.22
 leetcode-116-填充每个节点的下一个右侧节点指针\
 [code](./algorithm/leetcode-solution/leetcode-116-填充每个节点的下一个右侧节点指针.js)
