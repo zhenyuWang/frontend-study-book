@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2022.9.26
+红宝书第四版第一章阅读
 ## 2022.9.25
 leetcode-132-分割回文串 II\
 [code](./algorithm/leetcode-solution/leetcode-132-分割回文串II.js)
@@ -227,7 +229,6 @@ leetcode-45-跳跃游戏 II \
 leetcode-42-接雨水 \
 [code](./algorithm/leetcode-solution/leetcode-42-接雨水.js)
 [掘金](https://juejin.cn/post/7110905347467902990)
-
 ## 2022.6.18
 leetcode-41-缺失的第一个正数  \
 [code](./algorithm/leetcode-solution/leetcode-41-缺失的第一个正数.js)
@@ -236,33 +237,26 @@ leetcode-41-缺失的第一个正数  \
 leetcode-39-组合总和  \
 [code](./algorithm/leetcode-solution/leetcode-39-组合总和.js)
 [掘金](https://juejin.cn/post/7110226490570047496)
-
 ## 2022.6.16
 leetcode-36-有效的数独  \
 [code](./algorithm/leetcode-solution/leetcode-36-有效的数独.js)
 [掘金](https://juejin.cn/post/7109856450901442597)
-
 ## 2022.6.15
 leetcode-33-搜索旋转排序数组  \
 [code](./algorithm/leetcode-solution/leetcode-33-搜索旋转排序数组.js)
 [掘金](https://juejin.cn/post/7109451377436262408)
-
 ## 2022.6.14
 leetcode-31-下一个排列  \
 [code](./algorithm/leetcode-solution/leetcode-31-下一个排列.js)
 [掘金](https://juejin.cn/post/7109111274545348622)
-
 ## 2022.6.12
 leetcode-28-实现 strStr()  \
 [code](./algorithm/leetcode-solution/leetcode-28-实现strStr().js)
 [掘金](https://juejin.cn/post/7108336915190906893)
-
-
 ## 2022.6.11
 leetcode-27-移除元素  \
 [code](./algorithm/leetcode-solution/leetcode-27-移除元素.js)
 [掘金](https://juejin.cn/post/7107958134886367239)
-
 ## 2022.6.10
 leetcode-26-删除有序数组中的重复项  \
 [code](./algorithm/leetcode-solution/leetcode-26-删除有序数组中的重复项.js)
@@ -275,181 +269,116 @@ leetcode-22-括号生成 \
 leetcode-18-四数之和 \
 [code](./algorithm/leetcode-solution/leetcode-18-四数之和.js)
 [掘金](https://juejin.cn/post/7106870992701489188)
-
 ## 2022.6.7
 leetcode-17-电话号码的字母组合 \
 [code](./algorithm/leetcode-solution/leetcode-17-电话号码的字母组合.js)
 [掘金](https://juejin.cn/post/7106498479681191966)
 ## 2022.6.6
-
 leetcode-16-最接近的三数之和 \
 [code](./algorithm/leetcode-solution/leetcode-16-最接近的三数之和.js)
 [掘金](https://juejin.cn/post/7106135586049622023)
-
 ## 2022.6.5
-
 leetcode-15-三数之和 \
 [code](./algorithm/leetcode-solution/leetcode-15-三数之和.js)
 [掘金](https://juejin.cn/post/7105744748706529294)
-
-
 ## 2022.6.4
-
 leetcode-14-最长公共前缀 \
 [code](./algorithm/leetcode-solution/leetcode-14-最长公共前缀.js)
 [掘金](https://juejin.cn/post/7105392971435999262)
 
 ## 2022.6.3
-
 leetcode-12-整数转罗马数字 \
 [code](./algorithm/leetcode-solution/leetcode-12-整数转罗马数字.js)
 [掘金](https://juejin.cn/post/7105038837574795278)
-
 ## 2022.6.2
-
 leetcode-9-回文数 \
 [code](./algorithm/leetcode-solution/leetcode-9-回文数.js)
 [掘金](https://juejin.cn/post/7104671846410223624)
 ## 2022.6.1
-
 leetcode-8-字符串转换整数(atoi) \
 [code](./algorithm/leetcode-solution/leetcode-8-字符串转换整数(atoi).js)
 [掘金](https://juejin.cn/post/7104296232583069704)
-
 ## 2022.5.31
-
 leetcode-7-整数反转 \
 [code](./algorithm/leetcode-solution/leetcode-7-整数反转.js)
 [掘金](https://juejin.cn/post/7103901012166967327)
-
 ## 2022.5.30
-
 leetcode-55-跳跃游戏 \
 [code](./algorithm/leetcode-solution/leetcode-55-跳跃游戏.js)
 [掘金](https://juejin.cn/post/7103501757136764965)
-
-
-
 ## 2022.5.29
-
 力扣刷题\
 力扣周赛，又是只解出 2 题 😢\
-
 leetcode-468-验证IP地址\
 [code](./algorithm/leetcode-solution/leetcode-468-验证IP地址.js)
 [掘金](https://juejin.cn/post/7103097618921685005)
-
 ## 2022.5.28
-
-力扣刷题
-
+力扣刷题\
 leetcode-1217-玩筹码\
 [code](./algorithm/leetcode-solution/leetcode-1217-玩筹码.js)
-[掘金](https://juejin.cn/post/7102630701203193869)
-
+[掘金](https://juejin.cn/post/7102630701203193869)\
 双周赛解出3道题，第4题解慢了，这次题目简单
-
 ## 2022.5.27
-
-力扣刷题
-
+力扣刷题\
 leetcode-1957-删除字符使字符串变好\
 [code](./algorithm/leetcode-solution/leetcode-1957-删除字符使字符串变好.js)
 [掘金](https://juejin.cn/post/7102394759662010376)
 
 ## 2022.5.26
-
-力扣刷题
-
+力扣刷题\
 leetcode-1175-质数排列\
 [code](./algorithm/leetcode-solution/leetcode-1175-质数排列.js)
 [掘金](https://juejin.cn/post/7101918396056338446)
 
 ## 2022.5.25
-
-力扣刷题
-
+力扣刷题\
 leetcode-5-最长回文子串\
 [code](./algorithm/leetcode-solution/leetcode-5-最长回文子串.js)
 [掘金](https://juejin.cn/post/7101700819656900615)
-
 ## 2022.5.24
-
 面试\
 力扣刷题
-
 ## 2022.5.23
-
 力扣刷题
-
 ## 2022.5.22
-
 第2次参加力扣周赛，依然弱 😢\
 力扣刷题
-
 ## 2022.5.21
 
 力扣刷题，400了 😊\
 varlet bottom-navigation vue2 迁移
-
 ## 2022.5.20
-
 力扣刷题\
 varlet bottom-navigation 组件优化
-
 ## 2022.5.19
-
 力扣刷题
-
 ## 2022.5.18
-
 面试\
 力扣刷题
-
 ## 2022.5.17
-
 力扣刷题
-
 ## 2022.5.16
-
 力扣刷题
-
 ## 2022.5.15
-
 第1次参加力扣周赛，太弱了 😢\
 力扣刷题\
-[算法图解-读书笔记](https://juejin.cn/post/7097881646858240007)\
-红宝书第四版阅读
-
-
+[算法图解-读书笔记](https://juejin.cn/post/7097881646858240007)
 ## 2022.5.14
-
-红宝书第四版阅读\
 力扣刷题
-
 ## 2022.5.13
-
 力扣刷题
 ## 2022.5.12
-
 力扣刷题
 ## 2022.5.11
-
 力扣刷题\
 面试&复盘
-
 ## 2022.5.10
-
 力扣刷题\
 面试&复盘
-
 ## 2022.5.9
-
 算法图解阅读\
 力扣刷题
-
 ## 2022.5.8
-
 算法图解阅读\
 力扣刷题
 
