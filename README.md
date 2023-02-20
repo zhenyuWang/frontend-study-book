@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.2.17
+[52天背完小猪佩奇-3](https://www.bilibili.com/video/BV1jB4y187A4/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[笔记](./English/Peppa%20Pig/3-Best%20Friend.md)
 ## 2023.2.16
 [52天背完小猪佩奇-2](https://www.bilibili.com/video/BV1yf4y1d7zi/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
 [笔记](./English/Peppa%20Pig/2-Mr%20Dinosaur%20Is%20Lost.md)
