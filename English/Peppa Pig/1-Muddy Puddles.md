@@ -22,7 +22,7 @@ All right.\
 Run along you two.\
 你们两个去玩吧\
 Peppa loves jumping in muddy puddles.\
-佩奇喜欢在泥坑里跳\
+佩奇最喜欢在泥坑里跳了\
 I love muddy puddles.\
 我喜欢泥坑\
 Peppa. If you jump in muddy puddles, you must wear your boots.\
