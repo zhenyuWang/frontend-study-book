@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.2.15
+[52天背完小猪佩奇-1](https://www.bilibili.com/video/BV113411F7ME/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[笔记](./English/Peppa%20Pig/1-Muddy%20Puddles.md)
 ## 2023.2.14
 重构 12.11
 ## 2023.2.13
