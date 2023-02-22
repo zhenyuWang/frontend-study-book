@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.2.21
+[52天背完小猪佩奇-5](https://www.bilibili.com/video/BV1xU4y1Y7pk/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[笔记](./English/Peppa%20Pig/5-Hide%20and%20Seek.md)
 ## 2023.2.20
 [52天背完小猪佩奇-4](https://www.bilibili.com/video/BV1EB4y1h7z8/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
 [笔记](./English/Peppa%20Pig/4-Polly%20Parrot.md)
