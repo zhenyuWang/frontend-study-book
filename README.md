@@ -3,6 +3,12 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.2.23
+[52天背完小猪佩奇-7](https://www.bilibili.com/video/BV1Wt4y1n7yF/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[笔记](./English/Peppa%20Pig/7-Mummy%20Pig%20at%20Work.md)\
+leetcode-40-组合总和 II \
+[code](./algorithm/leetcode-solution/leetcode-40-组合总和II.js)
+[掘金](https://juejin.cn/post/7203351367313965093/)
 ## 2023.2.22
 [52天背完小猪佩奇-6](https://www.bilibili.com/video/BV1xa411V756/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
 [笔记](./English/Peppa%20Pig/6-The%20Playgroup.md)\
