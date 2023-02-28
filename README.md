@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.2.27
+[52天背完小猪佩奇-8](https://www.bilibili.com/video/BV1at4y177zv/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[笔记](./English/Peppa%20Pig/8-Piggy%20in%20the%20Middle.md)
 ## 2023.2.25
 leetcode-43-字符串相乘 \
 [code](./algorithm/leetcode-solution/leetcode-43-字符串相乘.js)
