@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.1
+[52天背完小猪佩奇-10](https://www.bilibili.com/video/BV13e4y1H7qZ/?spm_id_from=333.999.0.0)
+[笔记](./English/Peppa%20Pig/10-Gardening.md)
 ## 2023.2.28
 [52天背完小猪佩奇-9](https://www.bilibili.com/video/BV1tB4y1n7bN/?spm_id_from=333.788&vd_source=44899c4b99a7693520925f09747604fb)
 [笔记](./English/Peppa%20Pig/9-Daddy%20Loses%20His%20Glasses.md)
