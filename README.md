@@ -3,14 +3,17 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.2
+[52天背完小猪佩奇-11](https://www.bilibili.com/video/BV1dG411E775)
+[笔记](./English/Peppa%20Pig/11-Hiccups.md)
 ## 2023.3.1
-[52天背完小猪佩奇-10](https://www.bilibili.com/video/BV13e4y1H7qZ/?spm_id_from=333.999.0.0)
+[52天背完小猪佩奇-10](https://www.bilibili.com/video/BV13e4y1H7qZ)
 [笔记](./English/Peppa%20Pig/10-Gardening.md)
 ## 2023.2.28
-[52天背完小猪佩奇-9](https://www.bilibili.com/video/BV1tB4y1n7bN/?spm_id_from=333.788&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-9](https://www.bilibili.com/video/BV1tB4y1n7bN)
 [笔记](./English/Peppa%20Pig/9-Daddy%20Loses%20His%20Glasses.md)
 ## 2023.2.27
-[52天背完小猪佩奇-8](https://www.bilibili.com/video/BV1at4y177zv/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-8](https://www.bilibili.com/video/BV1at4y177zv)
 [笔记](./English/Peppa%20Pig/8-Piggy%20in%20the%20Middle.md)
 ## 2023.2.25
 leetcode-43-字符串相乘 \
@@ -21,31 +24,31 @@ leetcode-48-旋转图像 \
 [code](./algorithm/leetcode-solution/leetcode-48-旋转图像.js)
 [掘金](https://juejin.cn/post/7203512643239854139)
 ## 2023.2.23
-[52天背完小猪佩奇-7](https://www.bilibili.com/video/BV1Wt4y1n7yF/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-7](https://www.bilibili.com/video/BV1Wt4y1n7yF)
 [笔记](./English/Peppa%20Pig/7-Mummy%20Pig%20at%20Work.md)\
 leetcode-40-组合总和 II \
 [code](./algorithm/leetcode-solution/leetcode-40-组合总和II.js)
 [掘金](https://juejin.cn/post/7203351367313965093/)
 ## 2023.2.22
-[52天背完小猪佩奇-6](https://www.bilibili.com/video/BV1xa411V756/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-6](https://www.bilibili.com/video/BV1xa411V756)
 [笔记](./English/Peppa%20Pig/6-The%20Playgroup.md)\
 leetcode-38-外观数列 \
 [code](./algorithm/leetcode-solution/leetcode-38-外观数列.js)
 [掘金](https://juejin.cn/post/7202952940197150778/)
 ## 2023.2.21
-[52天背完小猪佩奇-5](https://www.bilibili.com/video/BV1xU4y1Y7pk/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-5](https://www.bilibili.com/video/BV1xU4y1Y7pk)
 [笔记](./English/Peppa%20Pig/5-Hide%20and%20Seek.md)
 ## 2023.2.20
-[52天背完小猪佩奇-4](https://www.bilibili.com/video/BV1EB4y1h7z8/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-4](https://www.bilibili.com/video/BV1EB4y1h7z8)
 [笔记](./English/Peppa%20Pig/4-Polly%20Parrot.md)
 ## 2023.2.17
-[52天背完小猪佩奇-3](https://www.bilibili.com/video/BV1jB4y187A4/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-3](https://www.bilibili.com/video/BV1jB4y187A4)
 [笔记](./English/Peppa%20Pig/3-Best%20Friend.md)
 ## 2023.2.16
-[52天背完小猪佩奇-2](https://www.bilibili.com/video/BV1yf4y1d7zi/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-2](https://www.bilibili.com/video/BV1yf4y1d7zi)
 [笔记](./English/Peppa%20Pig/2-Mr%20Dinosaur%20Is%20Lost.md)
 ## 2023.2.15
-[52天背完小猪佩奇-1](https://www.bilibili.com/video/BV113411F7ME/?spm_id_from=333.999.0.0&vd_source=44899c4b99a7693520925f09747604fb)
+[52天背完小猪佩奇-1](https://www.bilibili.com/video/BV113411F7ME)
 [笔记](./English/Peppa%20Pig/1-Muddy%20Puddles.md)
 ## 2023.2.14
 重构 12.11
