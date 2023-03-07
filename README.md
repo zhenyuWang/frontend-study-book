@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.6
+[52天背完小猪佩奇-13](https://www.bilibili.com/video/BV1tm4y1F78o)
+[笔记](./English/Peppa%20Pig/13-Secrets.md)
 ## 2023.3.3
 [52天背完小猪佩奇-12](https://www.bilibili.com/video/BV1JD4y1r7af)
 [笔记](./English/Peppa%20Pig/12-Bicycles.md)
