@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.10
+[52天背完小猪佩奇-17](https://www.bilibili.com/video/BV1Pe4y1W7Vn)
+[笔记](./English/Peppa%20Pig/17-Frogs%20and%20Worms%20and%20Butterflies.md)
 ## 2023.3.9
 [52天背完小猪佩奇-16](https://www.bilibili.com/video/BV1vR4y1Z7KW)
 [笔记](./English/Peppa%20Pig/16-Musical%20Instruments.md)
