@@ -94,7 +94,7 @@ George has a drum and Peppa has a trumpet.\
 乔治放了一个鼓，佩奇放了一个喇叭\
 Oh.Lovely!\
 哦，太棒了!\
-Yes,it sounds very nice.Do you have anymore secret things?\
+Yes,it sounds very nice.Do you have any more secret things?\
 是的，听上去真不错。你们还有其他的秘密东西吗？\
 George has a custard doughnut!\
 乔治还有一个甜甜圈\
