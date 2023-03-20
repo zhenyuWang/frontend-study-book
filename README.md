@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.20
+[52天背完小猪佩奇-23](https://www.bilibili.com/video/BV1je4y1P7as)
+[笔记](./English/Peppa%20Pig/23-The%20New%20Car.md)
 ## 2023.3.17
 [52天背完小猪佩奇-22](https://www.bilibili.com/video/BV1Q34y1f7ui)
 [笔记](./English/Peppa%20Pig/22-The%20Tooth%20Fairy.md)
