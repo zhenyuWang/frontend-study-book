@@ -1,4 +1,5 @@
 ## Best Friend
+## 最好的朋友
 
 Peppa is waiting for her best friend, Suzy Sheep.\
 佩奇正在等她最好的朋友，小羊 苏西\

@@ -1,4 +1,5 @@
 ## Polly Parrot
+## 鹦鹉波莉
 
 Peppa and her family are visiting Granny Pig and GrandPa Pig.\
 佩奇和她的家人来看望祝奶奶和猪爷爷\
@@ -17,9 +18,9 @@ No, it's not a dinosaur. Come and see.\
 Granny Pig and Grandpa Pig have a pet parrot.\
 猪奶奶和猪爷爷有一个宠物鹦鹉\
 Peppa, George, this is our pet parrot. She's called Polly. Pretty Polly.\
-佩奇，乔治，这是我们的宠物鹦鹉，它叫做波利，漂亮的波利\
+佩奇，乔治，这是我们的宠物鹦鹉，它叫做波莉，漂亮的波莉\
 Pretty Polly.\
-漂亮的波利\
+漂亮的波莉\
 Oooh,. Wow.\
 哇哦！\
 I'm a clever parrot.\
@@ -27,13 +28,13 @@ I'm a clever parrot.\
 I'm a clever parrot.
 我是一只聪明的鹦鹉\
 Mummy. Why does Polly copy everything hat Granny says?\
-妈妈，为什么波利重复奶奶说的话？\
+妈妈，为什么波莉重复奶奶说的话？\
 That's what parrots do. I'll show you.\
 鹦鹉就是这样。你看着。\
 Hello Polly.\
-你好波利。\
+你好波莉。\
 Hello Polly.
-你好波利。\
+你好波莉。\
 What s sweet little parrot!\
 真是只可爱的小鹦鹉！\
 What s sweet little parrot!\
@@ -43,13 +44,13 @@ Come on, everyone. tea time. Peppa. George. Come on. There's is chocolate cake.\
 Coming, Granny!\
 来了，奶奶\
 Peppa and George love eating chocolate cake. But today, they are hurry to get back and play with Polly Parrot.\
-佩奇和乔治喜欢吃巧克力蛋糕。但是今天，他们赶着回去和鹦鹉波利玩\
+佩奇和乔治喜欢吃巧克力蛋糕。但是今天，他们赶着回去和鹦鹉波莉玩\
 Finished!\
 吃完了！\
 What noisy little ones you are!\
 真是吵闹的小家伙！\
 Granny, please, can we leave the table and go and see Polly Parrot?\
-奶奶，现在我们可以离开桌子去看鹦鹉波利了吗？\
+奶奶，现在我们可以离开桌子去看鹦鹉波莉了吗？\
 Are you sure you've completely finished your cake?\
 你确定你吃完你的蛋糕了吗？\
 Off you go, then.\
@@ -57,7 +58,7 @@ Off you go, then.\
 Hurry!\
 快！\
 George, say something to Polly.\
-乔治，跟波利说点什么\
+乔治，跟波莉说点什么\
 George is a little bit shy.\
 乔治有点害羞\
 Hello!\
@@ -65,7 +66,7 @@ Hello!\
 Hello!
 你好！\
 Peppa and George are really enjoying playing with Polly Parrot.\
-佩奇和乔治真的很喜欢和鹦鹉波利玩\
+佩奇和乔治真的很喜欢和鹦鹉波莉玩\
 I'm Peppa Pig!\
 我是小猪佩奇\
 I'm Peppa Pig!\
@@ -75,19 +76,19 @@ George, say something.\
 Peppa and George are pretending to be parrots.\
 佩奇和乔治在扮演鹦鹉\
 I'm Polly Parrot.\
-我是鹦鹉波利\
+我是鹦鹉波莉\
 Peppa is thinking of something else to say to Polly Parrot.\
-佩奇在想还有什么和鹦鹉波利说\
+佩奇在想还有什么和鹦鹉波莉说\
 I'm a noisy parrot!\
 我是只吵闹的鹦鹉\
 I'm a noisy parrot!\
 我是只吵闹的鹦鹉\
 Peppa, George, have you been playing with Polly?\
-佩奇，乔治，你们一直在和波利玩吗？\
+佩奇，乔治，你们一直在和波莉玩吗？\
 Yes, Granny.\
 是的，奶奶\
 Polly is such a sweet parrot.\
-波利真是只可爱的鹦鹉\
+波莉真是只可爱的鹦鹉\
 Yes, Granny.\
 是的，奶奶\
 I'm a clever parrot.\

@@ -1,6 +1,6 @@
 ## Mr Dinosaur Is Lost
 
-George's favourite toy is Mr. Dinosaur. George loves Mr. Dinosaur.\
+George's favorite toy is Mr. Dinosaur. George loves Mr. Dinosaur.\
 乔治最喜欢的玩具是恐龙先生。 乔治最喜欢恐龙先生了\
 Sometimes, George likes to scare Peppa with Mr. Dinosaur.\
 有时，乔治喜欢用恐龙先生吓唬佩奇\
@@ -22,14 +22,14 @@ Goodnight George. And goodnight, Mr. Dinosaur.\
 晚安，乔治，还有晚安，恐龙先生\
 When George goes to bed, Mr. Dinosaur is tucked up with him.\
 乔治睡觉的时候，恐龙先生和他在一起\
-George's favourite game is throwing Mr. Dinosaur up in the air and catching him when he falls back down.\
+George's favorite game is throwing Mr. Dinosaur up in the air and catching him when he falls back down.\
 乔治最喜欢的游戏是把恐龙先生扔到空中并在他掉下来的时候接住他\
 Peppa and Daddy Pig are playing draughts.\
 佩奇和猪爸爸正在下棋\
 I win, Daddy.\
 爸爸，我赢了\
 Oh, Well done, Peppa. George?\
-哦，下的好啊佩奇. 乔治？\
+哦，干的好，佩奇. 乔治？\
 George, what's the matter?\
 乔治，怎么了？\
 Dinosaur\
@@ -66,7 +66,7 @@ George always has Mr. Dinosaur with him in the bath. So Mr. Dinosaur is in the b
 乔治总是洗澡的时候也拿着恐龙先生，所以恐龙先生在浴缸里\
 Mr. Dinosaur is not in the bath.\
 恐龙先生不在浴缸里\
-Oh, I know. Ikonw where Mr. Dinosaur is.\
+Oh, I know. I know where Mr. Dinosaur is.\
 哦... 我知道了，我知道恐龙先生在哪里了\
 George always has Mr. Dinosaur in his bed at night. So that's where he is.\
 乔治总是让恐龙先生陪他睡觉，所以他一定在床上\

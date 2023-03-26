@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.3.23
+[52天背完小猪佩奇-生词](./English/Peppa%20Pig/words.md)
 ## 2023.3.22
 [52天背完小猪佩奇-25](https://www.bilibili.com/video/BV1TY4y1S7fD)
 [笔记](./English/Peppa%20Pig/25-Not%20Very%20Well.md)

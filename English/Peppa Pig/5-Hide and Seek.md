@@ -1,4 +1,5 @@
 ## Hide and Seek
+## 捉迷藏
 
 Peppa and George are playing hide and seek. It is George's turn to hide.\
 佩奇和乔治在玩捉迷藏。现在轮到乔治藏了\
