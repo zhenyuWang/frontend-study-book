@@ -55,6 +55,24 @@ look forward to 期待...\
 keep someone company 陪某人 Thanks for keeping me company\
 How is/are xxx going? xxx 进展怎么样了？
 
+## 7-Mummy Pig at work
+
+as long as 只要\
+open the door 空间上的打开\
+turn on/off the light switch on/off the light 机械上的打开\
+what happened 看到结果，询问怎么发生的\
+what is going on 究竟/到底 发生了什么\
+I see 看起来
+
+## 8-Piggy in the Middle
+
+in the middle 在中间\
+on the left 在左边\
+not really 不太强烈的否定，不算是，不太...\
+It's not fair. Yes,it is. 后面对前面的公平有否表示肯定或否定，所以这里翻译为这不公平。 这是公平的\
+It's fair. Yes, it is. 如果前面是否定句，后边的句子表示对前一句的肯定或否定\
+helping hand 援助之手
+
 ## 11-Hiccups
 
 单腿站 On one leg 不是 with with 通常用于做某事，比如踢球
