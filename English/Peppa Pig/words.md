@@ -13,6 +13,7 @@ scare 吓唬\
 scary 吓人的\
 suppertime 晚饭时间\
 pardon 请原谅\
+draught 国际跳棋\
 detective 侦探\
 guess 猜测
 
