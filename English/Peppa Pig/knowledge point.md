@@ -41,6 +41,20 @@ pretend to do 假装干什么\
 think of 想，简答的想一下 think of a number between 1 and 10\
 think about 想 偏向于思考，深入想一下
 
+## 5-Hide
+just in time 刚好\
+Here I come 我来了，通常用于某个地方，例： Hang Zhou here I come.\
+come here 距离比较近\
+come over here 过来，距离相对远一些\
+a good place to 干 xxx 的好地方\
+all the time 一直
+
+## 6-The Playground
+
+look forward to 期待...\
+keep someone company 陪某人 Thanks for keeping me company\
+How is/are xxx going? xxx 进展怎么样了？
+
 ## 11-Hiccups
 
 单腿站 On one leg 不是 with with 通常用于做某事，比如踢球

@@ -56,6 +56,7 @@ turn 轮到\
 upstairs 楼上\
 strange 奇怪的\
 noise 噪音\
+curtain 窗帘\
 basket 篮子\
 newspaper 报纸
 
