@@ -3,7 +3,8 @@
 记录学习过程，加油！
 
 # 日志
-## 2023.3.27
+## 2023.3.28
+[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)## 2023.3.27
 [52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.24
 [52天背完小猪佩奇-生词](./English/Peppa%20Pig/words.md)

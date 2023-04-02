@@ -26,6 +26,8 @@ frog 青蛙\
 on his own 某人自己\
 chocolate 巧克力\
 cookie 饼干\
+lick 舔\
+bowl 碗\
 chest 胸部 箱子\
 plaster 创可贴 石膏\
 open wide 张开嘴 张大嘴巴\
