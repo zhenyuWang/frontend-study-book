@@ -73,6 +73,26 @@ It's not fair. Yes,it is. 后面对前面的公平有否表示肯定或否定，
 It's fair. Yes, it is. 如果前面是否定句，后边的句子表示对前一句的肯定或否定\
 helping hand 援助之手
 
+## 9-Daddy loses his glasses
+
+肯定时用 everything 否定时用 anything\
+put on/off 指动作 wear 指状态\
+seek 通常接抽象的东西，seek advice seek help\
+look for 寻找某物，某人\
+be careful not to 小心不要...
+
+## Look Watch See 区别
+
+look 后要有一个介词，look at/on/under 看的动作 目光定位\
+watch 通常指看电视，看表，看时间，看电影，看比赛 带有一定时间长度\
+see 看到 通常指看到某人，看到某物，看到某事物
+## 10-Gardening
+
+What does xxx do? xxx 是做什么的\
+what do I do? 我该做什么 我该怎么办？\
+相比 in，inside 更内部，同时可以做名词，比如 inside the house\
+George has thought of something he wants to grow. 乔治想到了他想种的东西
+
 ## 11-Hiccups
 
 单腿站 On one leg 不是 with with 通常用于做某事，比如踢球
