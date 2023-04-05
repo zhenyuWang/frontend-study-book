@@ -110,4 +110,13 @@ Watch out Look out 也是小心，但是更紧急，比如快撞上了
 ## 13-Secrets
 
 I won't tell you or George or Daddy 否定句的连接词要用 or\
-when while 前者指一个瞬时状态 后者通常指当某段时间
+when while 前者指一个瞬时状态 后者通常指当某段时间\
+Can I have a try? 我能试一下吗？\
+So they are 的确如此\
+What you got there? 你拿的什么？\
+fill sth with sth 用什么把什么装满\
+on the count of three 数到三\
+
+## 14-Flying a Kite
+
+wind picks up 起风

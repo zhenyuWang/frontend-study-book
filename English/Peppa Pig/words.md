@@ -165,9 +165,11 @@ park 公园\
 kite 风筝\
 wind 风\
 windy 多风的\
+further far 的比较级\
 heavy 重的\
 nonsense 胡说\
-rescue 营救 救援
+rescue 营救 救援\
+muddier muddy 的比较级
 
 ## 15-Picnic
 
