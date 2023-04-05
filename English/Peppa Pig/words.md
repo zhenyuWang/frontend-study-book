@@ -180,7 +180,18 @@ lemonade 柠檬水\
 blanket 毯子\
 tomato 番茄\
 tease 取笑 嘲笑 逗\
-spot 地点 地方
+spot 地点 地方\
+outdoors 户外\
+exercise 锻炼\
+nap 小睡\
+certainly 当然，肯定\
+rest 剩余部分，休息\
+fuss 闹事，大惊小怪\
+scram 走开，滚开\
+sting 蜇，刺痛\
+pest 害虫，讨厌的人\
+leave 留下，离开\
+chance 机会，可能性
 
 ## 16-Musical Instruments
 
@@ -195,7 +206,9 @@ accordion 手风琴\
 tune 曲子\
 horn 号角\
 blow 吹\
-impossible 不可能的
+impossible 不可能的\
+tent 帐篷\
+bravo 喝彩 比如当别人进球了，you can say bravo!
 
 ## 17-Frogs and Worms and Butterflies
 

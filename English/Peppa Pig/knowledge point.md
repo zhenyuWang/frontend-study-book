@@ -120,3 +120,21 @@ on the count of three 数到三\
 ## 14-Flying a Kite
 
 wind picks up 起风
+
+## 15-Picnic
+
+no one else 没有别人\
+you again 又是你 you guys again 又是你们 you lot again 又是你们这群\
+left over 被剩下 if there is any cake left over 如果有剩下的蛋糕\
+All you have to do is to do sth. 你只要做什么就行了\
+manage to do sth 设法做什么\
+hang on 保住
+
+## 16-Musical Instruments
+
+trust 相信 偏向于信任 believe 更倾向于相信一个人的话或者某事\
+used to 过去，以前，某些场景暗含过去常常\
+take 拿 指从一个地方拿到另一个地方 hold 拿 指拿这个动作，拿着\
+Maybe you would do better xxx 可能你更适合做什么\
+stick to 坚持做某事，坚持某种态度\
+even if I say so myself 即使我自己说 常用于自豪 骄傲的事之后，不是我自夸的意思

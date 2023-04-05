@@ -65,7 +65,7 @@ What a fuss,Mummy Pig!It's only a little wasp!\
 这有什么关系，猪妈妈，它只是个小黄蜂\
 Go away,wasp!\
 走开，黄蜂\
-Just stay still,Mummy Pig.Then it will fly away.There you see,all you had to do is stay still.Eh?Get away!Scram!Whoa... Help!Whoooooaaa!Shhooo!Get it off me!\
+Just stay still,Mummy Pig.Then it will fly away.There you see,all you had to do was stay still.Eh?Get away!Scram!Whoa... Help!Whoooooaaa!Shhooo!Get it off me!\
 站着别动，猪妈妈。然后它就飞走了。你看，你只需要站着别动就好了。诶？走开！走开！哇哦... 救命！嗷！走开！不要跟着我！\
 Whoooa!Arrgh!I hope the wasp doesn't sting Daddy!\
 哇哦！希望那只黄蜂没有叮到爸爸\
