@@ -95,13 +95,17 @@ George has thought of something he wants to grow. 乔治想到了他想种的东
 
 ## 11-Hiccups
 
-单腿站 On one leg 不是 with with 通常用于做某事，比如踢球
+have to 常用于游戏规则，you have to catch it\
+You have to do what I say 按我说的做\
+单腿站 On one leg 不是 with with 通常用于做某事，比如踢球\
+can't wait to do sth 等不及做某事\
+Here comes Daddy Pig 猪爸爸来了，倒装句，很常用
 
 ## 12-Bicycles
 
-If the pumpkin got broken 故去完成时表假设\
+If the pumpkin got broken 过去完成时表假设\
 Be careful with ... 小心什么东西，指当心 注意\
-Watch out Look out 也只小心，但是更紧急，比如快撞上了
+Watch out Look out 也是小心，但是更紧急，比如快撞上了
 
 ## 13-Secrets
 

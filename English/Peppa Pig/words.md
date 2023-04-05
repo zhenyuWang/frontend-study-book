@@ -136,6 +136,7 @@ steady 稳定地\
 let go 放手\
 hold on 抓紧\
 pedal 踩踏板 踏板\
+ages 很久了\
 on sb own 某人自己  You've been cycling on your own for ages. \你已经自己骑了很久了\
 properly 恰当的，合适的\
 squash  压扁，压烂\
