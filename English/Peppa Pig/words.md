@@ -214,11 +214,15 @@ bravo 喝彩 比如当别人进球了，you can say bravo!
 
 worm 虫子 蠕虫\
 butterfly 蝴蝶\
-wriggly 蠕动的
+wriggly 蠕动的\
+doll 玩偶
 
 ## 18-Dressing Up
 
+dress up 打扮\
+make-up 化妆\
 powder 粉底\
+lip 嘴唇\
 lipstick 口红\
 bored 无聊\
 dig 挖\

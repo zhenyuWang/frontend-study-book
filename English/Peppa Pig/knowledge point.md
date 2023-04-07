@@ -138,3 +138,18 @@ take 拿 指从一个地方拿到另一个地方 hold 拿 指拿这个动作，�
 Maybe you would do better xxx 可能你更适合做什么\
 stick to 坚持做某事，坚持某种态度\
 even if I say so myself 即使我自己说 常用于自豪 骄傲的事之后，不是我自夸的意思
+
+## 17-Frogs and Worms and Butterflies
+
+what xxx 表强调 what a beautiful butterfly\
+play at 扮演\
+lie down lie 后一般跟 down 明确表 躺下
+
+## 18-Dressing Up
+
+now for 现在到 xxx 了 例：now for the fun part 现在是有趣的部分\
+be getting xxx 逐渐变得 xxx 例：be getting hungry 逐渐饿了\
+sb is here to do sth 某人是来做某事的 I'm here to kiss you\
+sb is here for sth 某人是为xxx而来的 I'm here for you\
+have sb do sth 让某人做某事\
+have sb done 让某人被做了某事 例： I can have you fired
