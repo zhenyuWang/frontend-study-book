@@ -153,3 +153,13 @@ sb is here to do sth 某人是来做某事的 I'm here to kiss you\
 sb is here for sth 某人是为xxx而来的 I'm here for you\
 have sb do sth 让某人做某事\
 have sb done 让某人被做了某事 例： I can have you fired
+
+## 19-New shoes
+
+they make you xxx 它们让你xxx 例：they make you feel good 他们让你感觉好
+
+## 20-The School Fete
+
+get you sth 让你有某物\
+best of all 最好的是\
+this is the best sth 这是最好的xxx 例：this is the best game ever 这是我玩过最好的游戏

@@ -233,7 +233,8 @@ fooled 愚弄
 
 flowerbed 花坛\
 wheelbarrow 手推车\
-flowerpots 花盆
+flowerpots 花盆\
+poor 可怜的\
 draughts 棋\
 smart 漂亮\
 ever 始终 任何时候\
@@ -243,18 +244,21 @@ wet 潮湿
 ## 20-The School Fete
 
 fete 游园会\
+amusement park 游乐场 游乐园\
 pussycat 小猫\
 balloon 气球\
 bouncy 有弹性的\
 castle 城堡\
-bouncy castle 充气城\堡\
+bouncy castle 充气城堡\
 certain 确定的\
+pussycat 猫咪\
 elephant 大象\
 instead 替代\
 creep 爬行 匍匐 蹑手蹑脚的移动\
 lick 舔\
 purr 呜呜声\
 goodness 天哪\
+proper 真正的\
 kangaroo 袋鼠
 
 ## 21-Mummy Pig's birthday
