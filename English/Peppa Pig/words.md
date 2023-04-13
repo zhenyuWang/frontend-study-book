@@ -266,27 +266,37 @@ kangaroo 袋鼠
 breakfast 早餐\
 surprise 惊喜\
 enjoy 享受\
+sitting room 客厅\
 relax 放松\
 sitting room 客厅\
 magazine 杂志\
 candle 蜡烛\
+whisper 耳语，悄悄说\
+decorate 装饰\
+decoration 装饰品\
+blow 吹\
+blow out 吹灭\
+wish 希望，想要，愿望，心愿\
 present 礼物\
 ticket 票\
 theater 戏院 剧院 观剧 观戏\
-baby-sit 临时照顾\
+baby-sit 临时照顾小孩\
 super 美好
 
 # 22-The Tooth Fairy
 
 spaghetti 意大利面\
 mirror 镜子\
+fall 掉下来\
+fairy 仙子\
 pillow 枕头\
 shiny 闪亮\
 coin 硬币\
 brush 刷\
 stay 保持 坚持\
 awake 醒着 醒来\
-asleep 睡着的 麻木的
+asleep 睡着的 麻木的\
+sleepy 困倦的，想睡的
 
 ## 23-The New Car
 

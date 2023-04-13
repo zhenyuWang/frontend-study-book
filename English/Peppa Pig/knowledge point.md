@@ -163,3 +163,23 @@ they make you xxx 它们让你xxx 例：they make you feel good 他们让你感�
 get you sth 让你有某物\
 best of all 最好的是\
 this is the best sth 这是最好的xxx 例：this is the best game ever 这是我玩过最好的游戏
+
+## 21-Mummy Pig's birthday
+
+nearly enough 远远不够\
+put up 贴上，挂起\
+how 感叹形容词，what 感叹名词\
+not doing sth 不做某事 Aren't you coming inside? 你不进来吗？
+
+# 22-The Tooth Fairy
+
+where did that come from? 这是从哪里来的？\
+look in a mirror 照镜子\
+be meant to do sth 本来就是干xxx的 命中注定做xxx\
+grow up 长大 也有成熟点的意思\
+stay up late 熬夜\
+stay up all night 通宵\
+sb is falling asleep 某人快要睡着了\
+in return 回报\
+wake up 醒醒\
+have been somewhere 去过某地方
