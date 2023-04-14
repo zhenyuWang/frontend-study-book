@@ -183,3 +183,19 @@ sb is falling asleep 某人快要睡着了\
 in return 回报\
 wake up 醒醒\
 have been somewhere 去过某地方
+
+## 23-The New Car
+
+go for sth 一般指出去做某事\
+bring sth 带 sth\
+take sb to xxx 带某人去 xxx\
+bring 指携带，take 指把什么带到什么地方，bring 通常比较顺路，take 指专门带过去\
+have 更偏向安排的意思，make 更偏向促使的意思
+
+## 24-Treasure Hunt
+
+hold upside down 上下拿反了 inside out 里外反了 backwards 前后反了\
+I thought as much 我就知道 我早就想到了\
+hang on hold on wait a moment 等等，等一下\
+worth fortune 值很多钱\
+more better 都有更的意思，more通常指数量，better通常指质量

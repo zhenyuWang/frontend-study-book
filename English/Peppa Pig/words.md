@@ -271,12 +271,12 @@ relax 放松\
 sitting room 客厅\
 magazine 杂志\
 candle 蜡烛\
-whisper 耳语，悄悄说\
+whisper 耳语 悄悄说\
 decorate 装饰\
 decoration 装饰品\
 blow 吹\
 blow out 吹灭\
-wish 希望，想要，愿望，心愿\
+wish 希望 想要 愿望 心愿\
 present 礼物\
 ticket 票\
 theater 戏院 剧院 观剧 观戏\
@@ -328,7 +328,8 @@ make it out at all 一点也看不出来\
 sticks 棍 树枝\
 chest 宝箱\
 unlocks 解锁\
-hang on 等等
+worth 值...的 价值...的\
+fortune 很多钱 财富 巨款
 
 ## 25-Not Very Well
 
