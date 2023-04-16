@@ -199,3 +199,12 @@ I thought as much 我就知道 我早就想到了\
 hang on hold on wait a moment 等等，等一下\
 worth fortune 值很多钱\
 more better 都有更的意思，more通常指数量，better通常指质量
+
+## 25-Not Very Well
+
+I'll be right there/over 我马上就来\
+take medicine 吃药 不用 eat\
+get some flowers 采点花\
+real 形容名词，really 形容动词\
+No more xxx 没有 xxx 了\
+complete recovery 完全康复
