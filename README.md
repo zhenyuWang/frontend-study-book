@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.4.13
+[52天背完小猪佩奇-26](https://www.bilibili.com/video/BV1zk4y1i7Eo)
+[笔记](./English/Peppa%20Pig/26-Snow.md)
 ## 2023.4.12
 [52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.11
