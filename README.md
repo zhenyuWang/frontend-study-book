@@ -3,35 +3,38 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.4.14
+[52天背完小猪佩奇-26 知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-26 单词](./English/Peppa%20Pig/words.md)
 ## 2023.4.13
 [52天背完小猪佩奇-26](https://www.bilibili.com/video/BV1zk4y1i7Eo)
 [笔记](./English/Peppa%20Pig/26-Snow.md)
 ## 2023.4.12
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 25](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.11
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 23-24](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.10
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 21-22](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.7
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 19-20](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.6
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 17-18](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.5
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 15-16](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.4
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 13-14](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.3
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 11-12](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.31
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 9-10](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.30
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 7-8](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.29
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 5-6](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.28
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 3-4](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.27
-[52天背完小猪佩奇-知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-知识点 1-2](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.3.24
 [52天背完小猪佩奇-生词](./English/Peppa%20Pig/words.md)
 ## 2023.3.23

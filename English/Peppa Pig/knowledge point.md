@@ -208,3 +208,7 @@ get some flowers 采点花\
 real 形容名词，really 形容动词\
 No more xxx 没有 xxx 了\
 complete recovery 完全康复
+
+## Snow
+
+go and play in the snow| go to play in the snow| go play in the snow 都可以

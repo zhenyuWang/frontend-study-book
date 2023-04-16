@@ -345,3 +345,14 @@ outfit 服装\
 costume 服装\
 fancy 想要 喜欢\
 recovery 康复 痊愈
+
+## Snow
+
+wrap up 包裹\
+wrap up warm 穿暖和\
+scarf 围巾\
+glove 手套\
+footprint 足迹 脚印\
+snowball  雪球\
+snowman 雪人\
+rough 粗暴 猛烈\
