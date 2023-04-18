@@ -212,3 +212,9 @@ complete recovery 完全康复
 ## Snow
 
 go and play in the snow| go to play in the snow| go play in the snow 都可以
+
+## Windy Castle
+
+we are lost 迷路，更着重结果\
+we get lost 迷路，更着重过程\
+here we come 我们来了

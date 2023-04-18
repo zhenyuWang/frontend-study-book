@@ -355,4 +355,11 @@ glove 手套\
 footprint 足迹 脚印\
 snowball  雪球\
 snowman 雪人\
-rough 粗暴 猛烈\
+rough 粗暴 猛烈
+
+## Windy Castle 风息堡
+
+castle 城堡\
+hill 山丘\
+view 风景 视野\
+map-read 看地图
