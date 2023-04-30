@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.4.28
+[52天背完小猪佩奇-27-2](https://www.bilibili.com/video/BV1ro4y1576D)
+[笔记](./English/Peppa%20Pig/27-Windy%20Castle.md)
+[52天背完小猪佩奇-27 知识点](./English/Peppa%20Pig/knowledge%20point.md)
 ## 2023.4.27
 [老友记-第一季-1](./English/Friends/first%20season/1.md)
 [老友记-第一季-1 单词](./English/Friends/first%20season/words.md)

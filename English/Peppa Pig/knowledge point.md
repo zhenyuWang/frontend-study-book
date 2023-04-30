@@ -217,4 +217,6 @@ go and play in the snow| go to play in the snow| go play in the snow 都可以
 
 we are lost 迷路，更着重结果\
 we get lost 迷路，更着重过程\
-here we come 我们来了
+here we come 我们来了\
+Is she there? 她在那吗？ Is she there yet? 她到那了吗？\
+I'll go first 我先来\
