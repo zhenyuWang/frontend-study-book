@@ -116,3 +116,31 @@ Wow!\
 哇哦！\
 Look at the view!\
 看看这景色！\
+Mummy, is that Granny and Grandpa's house?\
+妈妈，那是奶奶和爷爷的房子吗？\
+Yes, it is!\
+是的\
+It's for far away!\
+它好远！\
+Let's take a look through the telescope.\
+我们来通过望远镜看看。\
+Can I look first, please?\
+我能第一个看吗？\
+Yes, but you must let George look next.\
+可以，但是你必须让乔治下一个看\
+The telescope makes everything look bigger.\
+望远镜让所有东西看起来都更大。\
+I can see Granny and Grandpa! Look, George!\
+我能看到奶奶和爷爷！乔治，快看！\
+George is waving at Granny and Grandpa Pig.\
+乔治在向奶奶和爷爷猪挥手。\
+Silly George! Granny and Grandpa are too far away to see you waving.\
+傻乔治！奶奶和爷爷太远了，看不到你挥手。\
+I know, we can ring them!\
+我知道了，我们可以给他们打电话！\
+Hello?\
+喂？\
+Grandpa Pig! We can see you from Windy Castle! Wave at us!\
+猪爷爷！我们可以在风息堡上看到你！向我们挥手！\
+Granny and Grandpa are waving at us! I love Windy Castle!\
+奶奶和爷爷在向我们挥手！我爱风息堡！

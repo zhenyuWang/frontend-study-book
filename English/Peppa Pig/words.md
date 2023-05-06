@@ -363,3 +363,7 @@ castle 城堡\
 hill 山丘\
 view 风景 视野\
 map-read 看地图
+route 路线\
+fantastic 极好的\
+through 通过，穿过\
+telescope 望远镜

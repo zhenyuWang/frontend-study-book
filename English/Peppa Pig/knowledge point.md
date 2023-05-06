@@ -220,3 +220,8 @@ we get lost 迷路，更着重过程\
 here we come 我们来了\
 Is she there? 她在那吗？ Is she there yet? 她到那了吗？\
 I'll go first 我先来\
+go ahead 往前走\
+across from sth 在某物的对面\
+go along this road 沿着这条路走\
+through 通过望远镜 这种情况不用 with\
+wave at|wave to 向 xxx 挥手

@@ -3,6 +3,11 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.5.4
+[52天背完小猪佩奇-27-3](https://www.bilibili.com/video/BV17L41187Va)
+[笔记](./English/Peppa%20Pig/27-Windy%20Castle.md)
+[52天背完小猪佩奇-27 知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-27 单词](./English/Peppa%20Pig/words.md)
 ## 2023.4.28
 [52天背完小猪佩奇-27-2](https://www.bilibili.com/video/BV1ro4y1576D)
 [笔记](./English/Peppa%20Pig/27-Windy%20Castle.md)
