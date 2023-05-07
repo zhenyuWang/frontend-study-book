@@ -84,3 +84,11 @@ geeky 怪异的\
 intense 很大的 强烈的 这里用作 心灵\
 vulnerability 脆弱性\
 factor 因素
+
+## 2
+opening act 开场表演\
+stand-up comedian 脱口秀演员\
+traffic 拥堵\
+basically 基本上\
+word of advice 忠告 建议\
+otherwise 否则
