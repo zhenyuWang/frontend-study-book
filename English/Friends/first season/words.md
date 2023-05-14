@@ -127,4 +127,18 @@ museum 博物馆\
 satisfied 满意的\
 cancer 癌症\
 anecdotes 轶事\
-folks 人们
+folks 人们 父母\
+pros 专业的\
+pee 小便\
+worse 更坏的\
+twins 双胞胎\
+high-powered 高功率的 精力充沛的\
+only child 独生子\
+imaginary 想象的\
+preferred 偏爱的\
+dumped 倾倒 扔掉 甩\
+steer clear of 避开\
+chances are ... 很有可能\
+broke shell 破壳 伤自尊\
+terrific 极好的\
+complicated 复杂的\
