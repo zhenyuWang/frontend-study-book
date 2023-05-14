@@ -142,3 +142,19 @@ chances are ... 很有可能\
 broke shell 破壳 伤自尊\
 terrific 极好的\
 complicated 复杂的\
+familiar with 熟悉\
+supportive 支持的\
+gag 呕吐\
+decision 决定\
+for instance 例如\
+roll with the punches 适应变化\
+on the table 在谈论中 作为备选\
+tanned 晒黑的\
+maid of honor 女嘉宾 伴娘\
+lenses 镜片\
+spit 吐\
+suggest 建议\
+abuse 虐待 侮辱\
+nausea 恶心\
+lie back 躺下\
+supposed to 应该
