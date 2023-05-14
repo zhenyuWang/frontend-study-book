@@ -91,4 +91,40 @@ stand-up comedian 脱口秀演员\
 traffic 拥堵\
 basically 基本上\
 word of advice 忠告 建议\
-otherwise 否则
+otherwise 否则\
+bang 猛击\
+mastodon 乳齿象\
+smell 嗅 气味\
+carpet 地毯\
+cave 洞穴\
+glacier 冰川\
+ex-wife 前妻\
+erect 直立的\
+pregnant 怀孕的\
+episode 插曲\
+misunderstanding 误解 误会\
+swallowing 吞咽\
+fluff 使...松软\
+ammunition 弹药\
+chaotic 混乱的\
+concerned 担心的 关注的 关心的\
+apparently 显然\
+ceremony 仪式\
+engagement 订婚\
+ring 戒指\
+stomp 跺脚 踩\
+entire 整个的\
+perspective 观点 关注点\
+involve 包含 参与\
+sonogram 胎儿超声波图\
+curry 咖喱\
+taste 品尝\
+have a thing for sb 喜欢某人\
+altar 教堂 祭坛\
+independent 独立的\
+chubby 胖乎乎的\
+museum 博物馆\
+satisfied 满意的\
+cancer 癌症\
+anecdotes 轶事\
+folks 人们
