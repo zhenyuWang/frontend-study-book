@@ -158,3 +158,11 @@ abuse 虐待 侮辱\
 nausea 恶心\
 lie back 躺下\
 supposed to 应该
+
+## 3
+cushions 垫子 缓冲\
+blow (风)吹 炸毁\
+chase 追逐\
+unbelievable 难以置信的\
+take a puff 抽一口\
+cigarette 香烟\

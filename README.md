@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.5.11
+[老友记-第一季-3](./English/Friends/first%20season/3.md)
+[老友记-第一季-3 单词](./English/Friends/first%20season/words.md)
 ## 2023.5.10
 [老友记-第一季-2](./English/Friends/first%20season/2.md)
 [老友记-第一季-2 单词](./English/Friends/first%20season/words.md)
