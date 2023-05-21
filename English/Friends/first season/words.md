@@ -184,3 +184,8 @@ crooked 弯曲的 不直的 歪的\
 yardstick 标准\
 measure 测量 衡量\
 impression 印象\
+fantastic 极好的\
+innate 天生的\
+adore 喜欢\
+alphabet 字母表\
+we are even 我们扯平了\
