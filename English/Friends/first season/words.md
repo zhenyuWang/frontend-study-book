@@ -189,3 +189,13 @@ innate 天生的\
 adore 喜欢\
 alphabet 字母表\
 we are even 我们扯平了\
+thumb 拇指\
+contest 比赛\
+unfair 不公平的\
+flaw 缺点\
+annoying 讨厌的\
+chew 咀嚼\
+endearing 讨人喜欢的\
+correctly 正确地\
+Indeed 确实\
+ordered 订购 点的(点餐)\
