@@ -166,3 +166,13 @@ chase 追逐\
 unbelievable 难以置信的\
 take a puff 抽一口\
 cigarette 香烟\
+Good for me 我真行，我真棒\
+extra 额外的\
+minion 奴才 手下\
+steal 偷\
+giant 巨大的\
+karmic 因果报应\
+debt 债务\
+quit 辞职 放弃 此处用于戒烟\
+put it out 熄灭\
+figure out 弄清楚
