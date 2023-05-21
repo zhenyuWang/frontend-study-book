@@ -175,4 +175,7 @@ karmic 因果报应\
 debt 债务\
 quit 辞职 放弃 此处用于戒烟\
 put it out 熄灭\
-figure out 弄清楚
+figure out 弄清楚\
+buddy 伙计\
+attention 注意力\
+inconvenience 不便\
