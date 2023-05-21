@@ -179,3 +179,8 @@ figure out 弄清楚\
 buddy 伙计\
 attention 注意力\
 inconvenience 不便\
+bashing 猛击 批评\
+crooked 弯曲的 不直的 歪的\
+yardstick 标准\
+measure 测量 衡量\
+impression 印象\
