@@ -199,3 +199,8 @@ endearing 讨人喜欢的\
 correctly 正确地\
 Indeed 确实\
 ordered 订购 点的(点餐)\
+relieved 放心的 解脱的\
+rented 租的\
+row 划船\
+mention 提到\
+weak 虚弱的 无力的
