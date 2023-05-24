@@ -225,3 +225,7 @@ across from sth 在某物的对面\
 go along this road 沿着这条路走\
 through 通过望远镜 这种情况不用 with\
 wave at|wave to 向 xxx 挥手
+
+## My Cousin Chloe
+
+only/just do sth because xxx 因为 xxx 才做某事\

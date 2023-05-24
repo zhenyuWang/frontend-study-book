@@ -367,3 +367,15 @@ route 路线\
 fantastic 极好的\
 through 通过，穿过\
 telescope 望远镜
+
+## My Cousin Chloe
+
+cousin 表姐 表哥 堂弟 堂妹 所有同辈亲戚\
+the rules say 按照规则\
+Aunty 姑姑 伯母 舅妈 所有父母同辈的女性长辈\
+proper 真正的，像样的；实际上的，严格意义上的；正确的，合适的；合理的\
+chase 追逐 追赶\
+creep up on sb. 悄悄靠近sb\
+stay very still 保持静止\
+grown-up 成年人 长大的\
+secretly 偷偷地 私底下的

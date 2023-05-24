@@ -3,7 +3,12 @@
 记录学习过程，加油！
 
 # 日志
-## 2023.5.21
+## 2023.5.23
+[52天背完小猪佩奇-28](https://www.bilibili.com/video/BV1iz4y1b7za)
+[笔记](./English/Peppa%20Pig/28-My%20Cousin%20Chloe.md)
+[52天背完小猪佩奇-28 知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[52天背完小猪佩奇-28 单词](./English/Peppa%20Pig/words.md)
+## 2023.5.22
 [老友记-第一季-3](./English/Friends/first%20season/3.md)
 [老友记-第一季-3 单词](./English/Friends/first%20season/words.md)
 ## 2023.5.19
