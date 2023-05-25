@@ -3,6 +3,11 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.5.24
+52天背完小猪佩奇 这个系列更的太慢了，老友记 学起来太吃力，计划自行跟小猪佩奇系列\
+[小猪佩奇29-笔记](./English/Peppa%20Pig/28-My%20Cousin%20Chloe.md)
+[知识点](./English/Peppa%20Pig/knowledge%20point.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.23
 [52天背完小猪佩奇-28](https://www.bilibili.com/video/BV1iz4y1b7za)
 [笔记](./English/Peppa%20Pig/28-My%20Cousin%20Chloe.md)

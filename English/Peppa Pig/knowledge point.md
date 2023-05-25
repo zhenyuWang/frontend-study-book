@@ -228,4 +228,4 @@ wave at|wave to 向 xxx 挥手
 
 ## My Cousin Chloe
 
-only/just do sth because xxx 因为 xxx 才做某事\
+only/just do sth because xxx 因为 xxx 才做某事

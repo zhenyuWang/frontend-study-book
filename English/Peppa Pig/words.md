@@ -379,3 +379,17 @@ creep up on sb. 悄悄靠近sb\
 stay very still 保持静止\
 grown-up 成年人 长大的\
 secretly 偷偷地 私底下的
+
+## Pancakes
+
+teatime 下午茶\
+pancake 薄煎饼\
+expert 专家\
+flip 翻转\
+frying pan 平底锅\
+batter 面糊\
+flour 面粉\
+bowl 碗\
+stir 搅拌\
+as well 也\
+syrup 糖浆
