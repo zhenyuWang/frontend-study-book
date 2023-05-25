@@ -393,3 +393,26 @@ bowl 碗\
 stir 搅拌\
 as well 也\
 syrup 糖浆
+
+## Babysitting
+
+babysitting 临时照顾小孩\
+sleep tight 好好睡觉\
+darling 亲爱的\
+behaved 表现好的\
+particularly 特别的\
+thorny 棘手的 多刺的\
+prune 修剪\
+lop off 砍掉\
+snip away 剪掉\
+budding 萌芽的\\
+budding shoots 新芽\
+rare 稀有的\
+treat 对待 看待 招待 但这里是物种的意思\
+discerning 有眼光的 有洞察力的\
+horticulturalist 园艺学家\
+prone to 易于...的 倾向于...的\
+lob 拍打 这里应该是萎靡，焉了的意思\
+temperate 温和的\
+habitats 栖息地\
+heavier 更重的
