@@ -405,7 +405,7 @@ thorny 棘手的 多刺的\
 prune 修剪\
 lop off 砍掉\
 snip away 剪掉\
-budding 萌芽的\\
+budding 萌芽的\
 budding shoots 新芽\
 rare 稀有的\
 treat 对待 看待 招待 但这里是物种的意思\
@@ -416,3 +416,14 @@ lob 拍打 这里应该是萎靡，焉了的意思\
 temperate 温和的\
 habitats 栖息地\
 heavier 更重的
+
+## Ballet Lesson
+
+pupil 学生\
+demi-plier 半蹲\
+raise 抬起\
+swan 天鹅\
+grace 优雅\
+graceful 优雅的\
+bend 弯曲\
+knees 膝盖
