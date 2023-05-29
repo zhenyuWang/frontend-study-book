@@ -427,3 +427,14 @@ grace 优雅\
 graceful 优雅的\
 bend 弯曲\
 knees 膝盖
+
+## ThouderStorm
+
+thunderstorm 雷暴雨\
+thunder 雷\
+a long way off 远在...的地方\
+plenty of 很多\
+soaking wet 湿透的\
+bucket 桶\
+drip 滴 水滴\
+frighten 使害怕
