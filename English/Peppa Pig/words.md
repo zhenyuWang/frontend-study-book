@@ -450,3 +450,12 @@ bonnet 发动机盖 引擎盖\
 hose 水管\
 polish 擦亮\
 shiny 闪亮的
+
+## Lunch
+
+vegetable 蔬菜\
+tomatoe 番茄\
+lettuce 生菜\
+cucumber 黄瓜\
+salad 沙拉\
+appetite 食欲 胃口 欲望

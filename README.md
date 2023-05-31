@@ -3,11 +3,14 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.5.31
+[小猪佩奇34-笔记](./English/Peppa%20Pig/34-Lunch.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.30
-[小猪佩奇31-笔记](./English/Peppa%20Pig/33-Cleaning%20the%20Car.md)
+[小猪佩奇33-笔记](./English/Peppa%20Pig/33-Cleaning%20the%20Car.md)
 [单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.29
-[小猪佩奇31-笔记](./English/Peppa%20Pig/32-ThouderStorm.md)
+[小猪佩奇32-笔记](./English/Peppa%20Pig/32-ThouderStorm.md)
 [单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.26
 [小猪佩奇31-笔记](./English/Peppa%20Pig/31-Ballet%20Lesson.md)
