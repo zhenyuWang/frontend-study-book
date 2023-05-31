@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.5.30
+[小猪佩奇31-笔记](./English/Peppa%20Pig/33-Cleaning%20the%20Car.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.29
 [小猪佩奇31-笔记](./English/Peppa%20Pig/32-ThouderStorm.md)
 [单词](./English/Peppa%20Pig/words.md)

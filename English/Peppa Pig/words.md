@@ -438,3 +438,15 @@ soaking wet 湿透的\
 bucket 桶\
 drip 滴 水滴\
 frighten 使害怕
+
+## Cleaning the Car
+
+messy 凌乱的 邋遢的\
+naughty 顽皮的 淘气的\
+rubbish 垃圾\
+soapy 肥皂的\
+roof 车顶\
+bonnet 发动机盖 引擎盖\
+hose 水管\
+polish 擦亮\
+shiny 闪亮的
