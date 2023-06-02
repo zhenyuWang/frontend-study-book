@@ -437,6 +437,7 @@ plenty of 很多\
 soaking wet 湿透的\
 bucket 桶\
 drip 滴 水滴\
+easy as pie 极其容易 小菜一碟\
 frighten 使害怕
 
 ## Cleaning the Car
@@ -459,3 +460,20 @@ lettuce 生菜\
 cucumber 黄瓜\
 salad 沙拉\
 appetite 食欲 胃口 欲望
+
+## Camping
+
+camping 露营\
+tent 帐篷\
+peg 木桩 钉子\
+camp-fire 营火 篝火\
+match 火柴 通常是 matches 因为不太会只有一根火柴\
+heat up 加热 变热 升温\
+crickets 蟋蟀\
+chirping 鸣叫\
+owl 猫头鹰\
+rather 相当 宁愿 最好\
+above 在...上面\
+after all 毕竟 终究\
+cozy 舒适的\
+snoring 打鼾\

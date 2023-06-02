@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.1
+[小猪佩奇35-笔记](./English/Peppa%20Pig/35-Camping.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.5.31
 [小猪佩奇34-笔记](./English/Peppa%20Pig/34-Lunch.md)
 [单词](./English/Peppa%20Pig/words.md)
