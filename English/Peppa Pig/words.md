@@ -476,4 +476,16 @@ rather 相当 宁愿 最好\
 above 在...上面\
 after all 毕竟 终究\
 cozy 舒适的\
-snoring 打鼾\
+snoring 打鼾
+
+## The Sleepy Princess
+
+once upon a time 从前 很久以前 一个用于开始讲故事的短语，通常用于引入童话或传说\
+prince 王子\
+handsome 英俊的\
+dragon 龙\
+huge 巨大的\
+fierce 凶猛的 残暴的\
+gentle 温柔的\
+grass 草\
+be worn out 筋疲力尽 累坏了
