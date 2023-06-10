@@ -489,3 +489,9 @@ fierce 凶猛的 残暴的\
 gentle 温柔的\
 grass 草\
 be worn out 筋疲力尽 累坏了
+
+## The Tree House
+
+curtains 窗帘\
+homemade 自制的\
+in that case 那样的话\
