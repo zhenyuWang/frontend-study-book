@@ -494,4 +494,17 @@ be worn out 筋疲力尽 累坏了
 
 curtains 窗帘\
 homemade 自制的\
-in that case 那样的话\
+in that case 那样的话
+
+## Fancy Dress Party
+
+fancy dress party 化妆舞会\
+shiver 发抖 颤抖\
+timbers 木材\
+witch 女巫\
+clown 小丑\
+bow 瞻礼 鞠躬\
+Your Majesty 陛下\
+admir 佩服 仰慕 欣赏\
+fairest 最美的\
+reflection 反射 倒影\

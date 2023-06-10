@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.6
+[小猪佩奇38-笔记](./English/Peppa%20Pig/38-Fancy%20Dress%20Party.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.5
 [小猪佩奇37-笔记](./English/Peppa%20Pig/37-The%20Tree%20House.md)
 [单词](./English/Peppa%20Pig/words.md)
