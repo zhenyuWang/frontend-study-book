@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.8
+[小猪佩奇40-笔记](./English/Peppa%20Pig/40-Very%20Hot%20Day.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.7
 [小猪佩奇39-笔记](./English/Peppa%20Pig/39-The%20New%20Car.md)
 [单词](./English/Peppa%20Pig/words.md)

@@ -517,3 +517,17 @@ throne 王位\
 crown 王冠\
 imagine 想象\
 your royal highness 殿下 陛下
+
+## Very Hot Day
+
+paddling 涉水\
+pool 水池\
+paddling pool 浅水池\
+sun cream 防晒霜\
+oily 油的\
+pumping 用泵输送 注入\
+cone 圆锥体 秋果 冰淇淋蛋筒\
+it just so happens that 恰好\
+ice lolly 冰棍\
+melt 融化\
+tip 倾斜
