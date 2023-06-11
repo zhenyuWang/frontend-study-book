@@ -507,4 +507,13 @@ bow 瞻礼 鞠躬\
 Your Majesty 陛下\
 admir 佩服 仰慕 欣赏\
 fairest 最美的\
-reflection 反射 倒影\
+reflection 反射 倒影
+
+## The Museum
+
+museum 博物馆\
+belonged 属于\
+throne 王位\
+crown 王冠\
+imagine 想象\
+your royal highness 殿下 陛下

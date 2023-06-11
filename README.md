@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.7
+[小猪佩奇39-笔记](./English/Peppa%20Pig/39-The%20New%20Car.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.6
 [小猪佩奇38-笔记](./English/Peppa%20Pig/38-Fancy%20Dress%20Party.md)
 [单词](./English/Peppa%20Pig/words.md)
