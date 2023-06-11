@@ -531,3 +531,12 @@ it just so happens that 恰好\
 ice lolly 冰棍\
 melt 融化\
 tip 倾斜
+
+## Chole's Puppet Show
+
+puppet 木偶\
+uncle 叔叔 伯伯 舅舅 所有父母同辈的男性长辈\
+aunty 姑姑 伯母 舅妈 所有父母同辈的女性长辈\
+cousin 堂兄弟 堂姐妹 表兄弟 表姐妹\
+pointy 尖的\
+snore 打鼾

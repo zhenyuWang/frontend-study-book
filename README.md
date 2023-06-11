@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.9
+[小猪佩奇41-笔记](./English/Peppa%20Pig/41-Chloe's%20Puppet%20Show.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.8
 [小猪佩奇40-笔记](./English/Peppa%20Pig/40-Very%20Hot%20Day.md)
 [单词](./English/Peppa%20Pig/words.md)
