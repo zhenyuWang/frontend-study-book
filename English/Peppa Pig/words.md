@@ -540,3 +540,20 @@ aunty 姑姑 伯母 舅妈 所有父母同辈的女性长辈\
 cousin 堂兄弟 堂姐妹 表兄弟 表姐妹\
 pointy 尖的\
 snore 打鼾
+
+## Daddy Gets Fit
+
+keep fit 保持健康 健身\
+programme 节目\
+thank goodness 谢天谢地 幸亏\
+naturally 自然地\
+fit 健康的\
+exercise 锻炼 运动\
+in charge of 负责 管理\
+press-ups 俯卧撑\
+overdoing 过度 把……做得过头 使……过于疲劳\
+cheat 欺骗 作弊\
+somehow 以某种方式 用某种方法\
+brake 刹车\
+bell 铃\
+whiz 嗖的一声
