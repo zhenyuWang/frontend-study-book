@@ -557,3 +557,12 @@ somehow 以某种方式 用某种方法\
 brake 刹车\
 bell 铃\
 whiz 嗖的一声
+
+## Tidying Up
+
+tidy 整洁的\
+tidy up 收拾\
+dolly 娃娃\
+horrible 可怕的\
+monster 怪物\
+trip over 绊倒
