@@ -62,7 +62,7 @@ newspaper 报纸
 
 ## 6-The Playground
 
-playgroup 托儿所 幼儿园\
+playgroup 托儿所 幼儿园 游乐场\
 company 陪伴 同伴 公司\
 paint 涂鸦 画画\
 petal 花瓣\
@@ -566,3 +566,12 @@ dolly 娃娃\
 horrible 可怕的\
 monster 怪物\
 trip over 绊倒
+
+## The Playground
+
+climbing frame 攀登架\
+slide 滑梯\
+swing 秋千\
+tight 紧的\
+gently 轻轻地\
+tyre 轮胎

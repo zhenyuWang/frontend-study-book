@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.14
+[小猪佩奇44-笔记](./English/Peppa%20Pig/44-The%20Playground.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.13
 [小猪佩奇43-笔记](./English/Peppa%20Pig/43-Tidying%20Up.md)
 [单词](./English/Peppa%20Pig/words.md)
