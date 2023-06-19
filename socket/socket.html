@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="box">this is test socket html</div>
+  <script>
+    const socket = new WebSocket('ws://localhost:8080'); // 传入服务器的地址和端口号
+
+    socket.addEventListener('open', () => {
+      socket.send('Hello from client!');
+    });
+
+    socket.addEventListener('message', (event) => {
+      console.log(`收到服务器消息：${event.data}`);
+    });
+
+    socket.addEventListener('close', () => {
+      console.log('连接已关闭');
+    });
+    socket.addEventListener('error', (err) => {
+      console.log('连接异常', err);
+    });
+    box.addEventListener('click', () => {
+      socket.send('Hello from client by box click!');
+    })
+  </script>
+</body>
+
+</html>
