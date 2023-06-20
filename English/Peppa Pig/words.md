@@ -575,3 +575,15 @@ swing 秋千\
 tight 紧的\
 gently 轻轻地\
 tyre 轮胎
+
+## Daddy Puts up a Picture
+
+nail 钉子\
+measure 测量 卷尺\
+pencil 铅笔\
+craftsman 工匠\
+crack 裂缝\
+brick 砖\
+plaster 灰泥 熟石膏\
+vacuum 用真空吸尘器打扫\
+excitement 兴奋

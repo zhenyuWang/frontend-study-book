@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.15
+[小猪佩奇45-笔记](./English/Peppa%20Pig/45-Daddy%20Puts%20up%20a%20Picture.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.14
 [小猪佩奇44-笔记](./English/Peppa%20Pig/44-The%20Playground.md)
 [单词](./English/Peppa%20Pig/words.md)
