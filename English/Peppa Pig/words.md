@@ -618,3 +618,13 @@ afloat 浮在水面上\
 rusty 生锈的\
 petrol 汽油\
 tow 拖曳
+
+## Shopping
+
+trolley 手推车\
+onion 洋葱\
+plenty of 大量的\
+crisps 薯片\
+supermarket 超市\
+checkout 结账台 检验 签出\
+pudding 布丁
