@@ -587,3 +587,17 @@ brick 砖\
 plaster 灰泥 熟石膏\
 vacuum 用真空吸尘器打扫\
 excitement 兴奋
+
+## At the Beach
+
+beach 海滩\
+stuff 东西\
+sunshade 遮阳伞\
+towel 毛巾\
+spade 铲子\
+suncream 防晒霜\
+paddle 涉水\
+water wings 腋下圈 浮圈\
+steady on 慢点\
+splashing 溅水\
+straw 草
