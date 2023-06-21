@@ -607,3 +607,14 @@ straw 草
 downstairs 楼下\
 teapot 茶壶\
 spider 蜘蛛
+
+## Grandpa Pig's Boat
+
+aboard 在船上 登船\
+life jacket 救生衣\
+wheel 舵轮 方向盘\
+full sail 全帆 (船)全速前进\
+afloat 浮在水面上\
+rusty 生锈的\
+petrol 汽油\
+tow 拖曳

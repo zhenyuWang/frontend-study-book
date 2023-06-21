@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.20
+[小猪佩奇48-笔记](./English/Peppa%20Pig/48-Grandpa%20Pig's%20Boat.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.19
 [小猪佩奇47-笔记](./English/Peppa%20Pig/47-Mister%20Skinnylegs.md)
 [单词](./English/Peppa%20Pig/words.md)
