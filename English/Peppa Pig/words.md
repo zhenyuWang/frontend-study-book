@@ -601,3 +601,9 @@ water wings 腋下圈 浮圈\
 steady on 慢点\
 splashing 溅水\
 straw 草
+
+## Mister Skinnylegs
+
+downstairs 楼下\
+teapot 茶壶\
+spider 蜘蛛
