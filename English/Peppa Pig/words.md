@@ -628,3 +628,11 @@ crisps 薯片\
 supermarket 超市\
 checkout 结账台 检验 签出\
 pudding 布丁
+
+## My Birthday Party
+
+fast asleep 熟睡\
+magic 魔法 魔术\
+practice 练习\
+trick 诡计 魔术 骗局\
+audience 观众 听众
