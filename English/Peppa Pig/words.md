@@ -636,3 +636,13 @@ magic 魔法 魔术\
 practice 练习\
 trick 诡计 魔术 骗局\
 audience 观众 听众
+
+## Daddy's Movie Camera
+
+deliver 递送\
+parcel 包裹\
+instruction 说明 用法 说明书\
+eager 渴望的\
+film 胶卷 电影 影片 拍摄\
+peek 偷看\
+frighten 吓唬

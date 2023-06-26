@@ -3,6 +3,9 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.26
+[小猪佩奇50-笔记](./English/Peppa%20Pig/51-Daddy's%20Movie%20Camera.md)
+[单词](./English/Peppa%20Pig/words.md)
 ## 2023.6.25
 [小猪佩奇50-笔记](./English/Peppa%20Pig/50-My%20birthday%20Party.md)
 [单词](./English/Peppa%20Pig/words.md)
