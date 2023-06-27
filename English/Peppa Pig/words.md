@@ -646,3 +646,12 @@ eager 渴望的\
 film 胶卷 电影 影片 拍摄\
 peek 偷看\
 frighten 吓唬
+
+## School Play
+
+hunter 猎人\
+cupboard 橱柜\
+actor 演员\
+sake 缘故 目的 好处 利益\
+photography 摄影\
+carry on 继续
