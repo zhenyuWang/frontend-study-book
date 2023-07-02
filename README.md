@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.6.28-30
+最近加班 + 接下来学习react, 没时间和状态转，休息两天
 ## 2023.6.27
 [小猪佩奇52-笔记](./English/Peppa%20Pig/52-School%20Play.md)
 [单词](./English/Peppa%20Pig/words.md)
