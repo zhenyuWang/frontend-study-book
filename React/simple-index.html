@@ -1,0 +1,42 @@
+<!-- index.html -->
+<html>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+      const app = document.getElementById('app')
+
+      function Header({title}){
+        return <h1>{title}</h1>
+      }
+      function Message({count}){
+        return <p>The count from home page is: {count}</p>
+      }
+      function HomePage({title}){
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        const [count, setCount] = React.useState(0)
+        function handleClick() {
+          setCount(count + 1)
+        }
+        return (
+          <div>
+            <Header title={title} />
+            <p>React is a JavaScript library for building user interfaces.</p>
+            <ul>
+              {names.map((name, index) => (
+                <li key={index}>{name}</li>
+              ))}
+            </ul>
+            <button onClick={handleClick}>Click me to plus count</button>
+            <Message count={count} />
+          </div>
+        )
+      }
+      ReactDOM.render(<HomePage title='my react page title' />, app);
+    </script>
+  </body>
+</html>
