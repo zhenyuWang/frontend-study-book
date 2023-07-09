@@ -1,16 +1,27 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link'
 
-import { getSortedPostsData } from '../lib/posts'
+// import { getSortedPostsData } from '../lib/posts'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   }
+// }
+
+export async function getServerSideProps() {
+  const allPostsData = await fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((data) => {
+      return data
+    })
   return {
-    props: {
-      allPostsData,
-    },
+    props: { allPostsData },
   }
 }
 
@@ -25,7 +36,8 @@ export default function Home({ allPostsData }) {
           Hi, my name is runnnig snail. I'm a front-end development engineer
         </p>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title, author }) => (
+          {/* getStaticProps */}
+          {/* {allPostsData.map(({ id, date, title, author }) => (
             <li className={utilStyles.listItem} key={id}>
               {title}
               <br />
@@ -34,6 +46,17 @@ export default function Home({ allPostsData }) {
               {date}
               <br />
               {author}
+            </li>
+          ))} */}
+
+          {/* getServerSideProps */}
+          {allPostsData.map(({ id, title, body }) => (
+            <li className={utilStyles.listItem} key={id}>
+              id: {id}
+              <br />
+              {title}
+              <br />
+              {body}
             </li>
           ))}
         </ul>
