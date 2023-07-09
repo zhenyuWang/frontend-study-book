@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.6
+next-blog getServerSideProps
 ## 2023.7.5
 next-blog getStaticProps
 ## 2023.7.4
