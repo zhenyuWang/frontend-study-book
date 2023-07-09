@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.5
+next-blog getStaticProps
 ## 2023.7.4
 next-blog setup assets metadata third-party-js css layout global style
 ## 2023.7.3
