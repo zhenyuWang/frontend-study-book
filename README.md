@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.11
+next-blog deploy
 ## 2023.7.10
 next-blog dynamic route & getData
 ## 2023.7.7
