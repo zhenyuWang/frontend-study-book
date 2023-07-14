@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.14
+next-blog Rendering and Ranking
 ## 2023.7.13
 next-blog sitemap
 ## 2023.7.12
