@@ -1,0 +1,9 @@
+   <!-- Manual -->
+   <xml version="1.0" encoding="UTF-8">
+   <urlset xmlns="https://vercel-next-blog-six.vercel.app/schemas/sitemap/0.1">
+     <url>
+       <loc>https://vercel-next-blog-six.vercel.app</loc>
+       <lastmod>2023-07-13</lastmod>
+     </url>
+   </urlset>
+   </xml>
