@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.13
+next-blog sitemap
+## 2023.7.12
+next-blog Robots.txt
 ## 2023.7.11
 next-blog deploy
 ## 2023.7.10
