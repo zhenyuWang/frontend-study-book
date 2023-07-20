@@ -3,6 +3,10 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.18
+next-blog Improving your Core Web Vitals
+## 2023.7.17
+next-blog Performance & Core Web Vitals
 ## 2023.7.14
 next-blog Rendering and Ranking
 ## 2023.7.13
