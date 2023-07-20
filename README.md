@@ -3,6 +3,8 @@
 记录学习过程，加油！
 
 # 日志
+## 2023.7.20
+next-blog TypeScript
 ## 2023.7.19
 next-blog Custom Reporting
 ## 2023.7.18
