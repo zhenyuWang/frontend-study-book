@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.8.7
+
+[react-todo-list: git hooks](https://github.com/zhenyuWang/react-todo-list/commit/2a0c2114c7b4fb82f7fc711ce81063fbfca43457)
+
 ## 2023.8.4
 
 [react-todo-list: test](https://github.com/zhenyuWang/react-todo-list/commit/c3232e9c15387b517231641e0ab6e73dd1382230)
