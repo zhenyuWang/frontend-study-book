@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.8.8
+
+[react-todo-list: module css](https://github.com/zhenyuWang/react-todo-list/commit/bb93f5e86912546dc460627c97d2e9652db2c994)
+
 ## 2023.8.7
 
 [react-todo-list: git hooks](https://github.com/zhenyuWang/react-todo-list/commit/2a0c2114c7b4fb82f7fc711ce81063fbfca43457)
