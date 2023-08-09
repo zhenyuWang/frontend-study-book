@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.8.9
+
+[react-todo-list: storage](https://github.com/zhenyuWang/react-todo-list/commit/6eccaf4823ed3f91311ec14679de488bd291710b)
+
 ## 2023.8.8
 
 [react-todo-list: module css](https://github.com/zhenyuWang/react-todo-list/commit/bb93f5e86912546dc460627c97d2e9652db2c994)
