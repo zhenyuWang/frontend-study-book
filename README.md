@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.8.10
+
+[react-todo-list: lint & prettier](https://github.com/zhenyuWang/react-todo-list/commit/a02f58994cd541cf77beca113fb8460dc79de8fd)
+
 ## 2023.8.9
 
 [react-todo-list: storage](https://github.com/zhenyuWang/react-todo-list/commit/6eccaf4823ed3f91311ec14679de488bd291710b)
