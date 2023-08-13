@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.8.11
+
+[react-todo-list: tailwind](https://github.com/zhenyuWang/react-todo-list/commit/bd1b7e631378d0eefb78fd35a9e08c197b9a269c)
+
 ## 2023.8.10
 
 [react-todo-list: lint & prettier](https://github.com/zhenyuWang/react-todo-list/commit/a02f58994cd541cf77beca113fb8460dc79de8fd)
