@@ -4,6 +4,22 @@
 
 # 日志
 
+## 2023.8.17
+
+[vite-react-todo-list: title and ico](https://github.com/zhenyuWang/vite-react-todo-list/commit/c345b39872535a4691fbeab65091aec202f97464)
+
+## 2023.8.16
+
+[vite-react-todo-list: init](https://github.com/zhenyuWang/vite-react-todo-list)
+
+## 2023.8.15
+
+[react-todo-list: optimize code](https://github.com/zhenyuWang/react-todo-list/commit/32b4e2b46988c5c9bce59a2a62e737e67e48939e)
+
+## 2023.8.14
+
+[react-todo-list: optimize code](https://github.com/zhenyuWang/react-todo-list/commit/dd1d71adec3dd31ab01604a8721b78a9e5be7839)
+
 ## 2023.8.11
 
 [react-todo-list: tailwind](https://github.com/zhenyuWang/react-todo-list/commit/bd1b7e631378d0eefb78fd35a9e08c197b9a269c)
