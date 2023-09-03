@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2023.8.22
+
+[vite-react-todo-list: vercel deploy](https://vite-react-todo-list.vercel.app)
+
+## 2023.8.21
+
+[vite-react-todo-list: fix: strictMode](https://github.com/zhenyuWang/vite-react-todo-list/commit/0e5713573119915cf168c6e1c2130503e448ef97)
+
+## 2023.8.18
+
+[vite-react-todo-list: refactor: Modal](https://github.com/zhenyuWang/vite-react-todo-list/commit/acd6642ef22dee7d11b3e50c0b2beb6774e8cc30)
+
 ## 2023.8.17
 
 [vite-react-todo-list: title and ico](https://github.com/zhenyuWang/vite-react-todo-list/commit/c345b39872535a4691fbeab65091aec202f97464)
