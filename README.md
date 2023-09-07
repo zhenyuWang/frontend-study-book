@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2023.8.25
+
+[vite-react-todo-list: detail link into module](https://github.com/zhenyuWang/nextjs-route/commit/eb745df6485e32cd93343c38ad9bc57e6c8b7f0d)
+
+## 2023.8.24
+
+[vite-react-todo-list: nextjs-route](https://github.com/zhenyuWang/nextjs-route/commit/ee57f61957b4ceb679c6718621e5f08eee8c7011)
+
+## 2023.8.23
+
+[vite-react-todo-list: vite-react-route](https://github.com/zhenyuWang/vite-react-route)
+
 ## 2023.8.22
 
 [vite-react-todo-list: vercel deploy](https://vite-react-todo-list.vercel.app)
