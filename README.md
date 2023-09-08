@@ -4,17 +4,37 @@
 
 # 日志
 
+## 2023.9.1
+
+[nextjs-events: event list](https://github.com/zhenyuWang/nextjs-events/commit/049c6f83472da8e8be497774b98b1f431213ed8f)
+
+## 2023.8.31
+
+[nextjs-events: event list](https://github.com/zhenyuWang/nextjs-events/commit/e4d35ec8531c092698dfefb13cb45564e812913a)
+
+## 2023.8.30
+
+[nextjs-events: init](https://github.com/zhenyuWang/nextjs-events/commit/f92ace39c190a44aabb8ea6a8ed7643ff26e3330)
+
+## 2023.8.29
+
+[nextjs-route: custom 404](https://github.com/zhenyuWang/nextjs-route/commit/03cfd6fa392ee93f41cfe161e074e0944bdab134)
+
+## 2023.8.28
+
+[nextjs-route: router api](https://github.com/zhenyuWang/nextjs-route/commit/2db93b6ae1393e2701aa84bfb8695f28d2fad498)
+
 ## 2023.8.25
 
-[vite-react-todo-list: detail link into module](https://github.com/zhenyuWang/nextjs-route/commit/eb745df6485e32cd93343c38ad9bc57e6c8b7f0d)
+[nextjs-route: detail link into module](https://github.com/zhenyuWang/nextjs-route/commit/eb745df6485e32cd93343c38ad9bc57e6c8b7f0d)
 
 ## 2023.8.24
 
-[vite-react-todo-list: nextjs-route](https://github.com/zhenyuWang/nextjs-route/commit/ee57f61957b4ceb679c6718621e5f08eee8c7011)
+[nextjs-route: init](https://github.com/zhenyuWang/nextjs-route/commit/ee57f61957b4ceb679c6718621e5f08eee8c7011)
 
 ## 2023.8.23
 
-[vite-react-todo-list: vite-react-route](https://github.com/zhenyuWang/vite-react-route)
+[vite-react-route](https://github.com/zhenyuWang/vite-react-route)
 
 ## 2023.8.22
 
