@@ -4,6 +4,26 @@
 
 # 日志
 
+## 2023.9.8
+
+[nextjs-events: style and info and page jump](https://github.com/zhenyuWang/nextjs-events/commit/38abb3f5d6dca759d6b519cf86dd59d3e4a36487)
+
+## 2023.9.7
+
+[nextjs-events: filtered events page](https://github.com/zhenyuWang/nextjs-events/commit/5a59fdecfc32d037ada001c64cdcf175985c2789)
+
+## 2023.9.6
+
+[nextjs-events: all events page](https://github.com/zhenyuWang/nextjs-events/commit/33acc80e9b39761b8b598316e3d79d2e14b39fa2)
+
+## 2023.9.5
+
+[nextjs-events: layout](https://github.com/zhenyuWang/nextjs-events/commit/43dfc85d72a8cdaf4b7d76654584ff36903d3da1)
+
+## 2023.9.4
+
+[nextjs-events: event detail](https://github.com/zhenyuWang/nextjs-events/commit/71e3829f804aefeb101579ea16c66e17389b492c)
+
 ## 2023.9.1
 
 [nextjs-events: event list](https://github.com/zhenyuWang/nextjs-events/commit/049c6f83472da8e8be497774b98b1f431213ed8f)
