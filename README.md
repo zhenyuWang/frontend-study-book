@@ -4,6 +4,26 @@
 
 # 日志
 
+## 2023.9.15
+
+[nextjs-events: get data from server](https://github.com/zhenyuWang/nextjs-events/commit/7f5619f18d54f536aa9c1395cd0790a5394fbc1e)
+
+## 2023.9.14
+
+[nextjs-ssr: swr](https://github.com/zhenyuWang/nextjs-ssr/commit/ea1c4c2fa0400c7bbeff529128e639a5e84122ae)
+
+## 2023.9.13
+
+[nextjs-ssr: getServerSideProps](https://github.com/zhenyuWang/nextjs-ssr/commit/e783297b0b6c153ff59deadd7358db7edce3af17)
+
+## 2023.9.12
+
+[nextjs-ssr: getStaticPaths](https://github.com/zhenyuWang/nextjs-ssr/commit/7f89b4477877d45e06c3d809341e7f35964d8687)
+
+## 2023.9.11
+
+[nextjs-ssr: init and getStaticProps](https://github.com/zhenyuWang/nextjs-ssr/commit/852758ff1b73cb2ec06f3d8c49a4c5aee3df42f5)
+
 ## 2023.9.8
 
 [nextjs-events: style and info and page jump](https://github.com/zhenyuWang/nextjs-events/commit/38abb3f5d6dca759d6b519cf86dd59d3e4a36487)
