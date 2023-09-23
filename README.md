@@ -4,6 +4,26 @@
 
 # 日志
 
+## 2023.9.22
+
+[nextjs-api-routes: dynamic api routes](https://github.com/zhenyuWang/nextjs-api-routes/commit/6cf3a521b73e396d2ead4fb678422492fe2b24ad)
+
+## 2023.9.21
+
+[nextjs-api-routes: init](https://github.com/zhenyuWang/nextjs-api-routes/commit/189aaaebe30ac35d5e79d7038881bcc1de06af86)
+
+## 2023.9.20
+
+[nextjs-events: Image](https://github.com/zhenyuWang/nextjs-events/commit/ac721cfa2d4dbb22f5628406a4647f7c17532e3a)
+
+## 2023.9.19
+
+[nextjs-events: custom document](https://github.com/zhenyuWang/nextjs-events/commit/d1146ae91a19fcd3458709b11b52d30473dfbe0d)
+
+## 2023.9.18
+
+[nextjs-events: Metadata](https://github.com/zhenyuWang/nextjs-events/commit/5ca861b8667af7d13f0f21c63c267cfe02eb2b60)
+
 ## 2023.9.15
 
 [nextjs-events: get data from server](https://github.com/zhenyuWang/nextjs-events/commit/7f5619f18d54f536aa9c1395cd0790a5394fbc1e)
