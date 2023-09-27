@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2023.9.27
+
+[nextjs-events: comments only for current event](https://github.com/zhenyuWang/nextjs-events/commit/4367d7561ffda79360011e33d605ff2ffacf201d)
+
+## 2023.9.26
+
+[nextjs-events: comments with database](https://github.com/zhenyuWang/nextjs-events/commit/32b9f0ebd64a7c4ae32fad2fb67b45ad69f1b486)
+
+## 2023.9.25
+
+[nextjs-events: comments with database](https://github.com/zhenyuWang/nextjs-events/commit/32b9f0ebd64a7c4ae32fad2fb67b45ad69f1b486)
+
 ## 2023.9.22
 
 [nextjs-api-routes: dynamic api routes](https://github.com/zhenyuWang/nextjs-api-routes/commit/6cf3a521b73e396d2ead4fb678422492fe2b24ad)
