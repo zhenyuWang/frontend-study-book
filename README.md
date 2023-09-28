@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.9.28
+
+[nextjs-events: notification by content](https://github.com/zhenyuWang/nextjs-events/commit/0870812fb6bccf6fee4653c443e3dd5392ec5f6f)
+
 ## 2023.9.27
 
 [nextjs-events: comments only for current event](https://github.com/zhenyuWang/nextjs-events/commit/4367d7561ffda79360011e33d605ff2ffacf201d)
