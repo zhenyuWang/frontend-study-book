@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2023.9.30
+
+[nextjs-blog: base pages and components](https://github.com/zhenyuWang/nextjs-blog/commit/2b27402cb0687231ee61586a2a1c59f7a015ab7d)
+
+## 2023.9.29
+
+[nextjs-events: perf: notification](https://github.com/zhenyuWang/nextjs-events/commit/f580fdb3b41bc0f0cda79ba9d6d62d83c8ec8213)
+
 ## 2023.9.28
 
 [nextjs-events: notification by content](https://github.com/zhenyuWang/nextjs-events/commit/0870812fb6bccf6fee4653c443e3dd5392ec5f6f)
