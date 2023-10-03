@@ -4,6 +4,20 @@
 
 # 日志
 
+## 2023.10.3
+
+[nextjs-blog: notification to portal](https://github.com/zhenyuWang/nextjs-blog/commit/f4d0bd5244bb02b091227b1a97db7fd998d20b0b)
+[nextjs-blog: meta data](https://github.com/zhenyuWang/nextjs-blog/commit/ab26be2ab9f885d92ab5c0c37bc4d43f5746f4ef)
+[nextjs-blog: contact page](https://github.com/zhenyuWang/nextjs-blog/commit/891e82c82588af441967ffba8dac878c90099190)
+
+## 2023.10.2
+
+[nextjs-blog: post page](https://github.com/zhenyuWang/nextjs-blog/commit/e8401698effd1e3bd0520b9b9ae6d1ffcaa0f8a4)
+
+## 2023.10.1
+
+[nextjs-blog:featured posts](https://github.com/zhenyuWang/nextjs-blog/commit/6023739b44b1bc7cb19a145f62cacf523f00878d)
+
 ## 2023.9.30
 
 [nextjs-blog: base pages and components](https://github.com/zhenyuWang/nextjs-blog/commit/2b27402cb0687231ee61586a2a1c59f7a015ab7d)
