@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2023.10.4
+
+[nextjs-blog: deploy](https://nextjs-blog-lake-phi-56.vercel.app/)
+[nextjs-blog: chore: environment variable](https://github.com/zhenyuWang/nextjs-blog/commit/c1f898d46273695382a7e4fc470715acab1049fb)
+[nextjs-blog: perf: react-syntax-highlighter size](https://github.com/zhenyuWang/nextjs-blog/commit/2e1edbd39d88b3ff0a566e9b56a7be3b275013cb)
+
 ## 2023.10.3
 
 [nextjs-blog: notification to portal](https://github.com/zhenyuWang/nextjs-blog/commit/f4d0bd5244bb02b091227b1a97db7fd998d20b0b)
