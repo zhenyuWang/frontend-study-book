@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2023.10.6
+
+[nextjs-auth: user auth](https://github.com/zhenyuWang/nextjs-auth/commit/7fa6d0f47a653fca0bde8f250bc9b456a754cd08)
+
+## 2023.10.5
+
+[nextjs-auth: user auth](https://github.com/zhenyuWang/nextjs-auth/commit/7fa6d0f47a653fca0bde8f250bc9b456a754cd08)
+
 ## 2023.10.4
 
 [nextjs-blog: deploy](https://nextjs-blog-lake-phi-56.vercel.app/)
