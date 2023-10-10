@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2023.10.9
+
+[clone-leetcode: auth modal with login、sign up and reset password](https://github.com/zhenyuWang/clone-leetcode/commit/583e36f5e1fcd6672e794fd4e41cad121b8cf223)
+
+## 2023.10.8
+
+[clone-leetcode: auth modal with login、sign up and reset password](https://github.com/zhenyuWang/clone-leetcode/commit/583e36f5e1fcd6672e794fd4e41cad121b8cf223)
+
+## 2023.10.7
+
+[clone-leetcode: init](https://github.com/zhenyuWang/clone-leetcode/commit/a65f8874ff573b4b74e8ccf282a5244b42503d2d)
+
 ## 2023.10.6
 
 [nextjs-auth: user auth](https://github.com/zhenyuWang/nextjs-auth/commit/7fa6d0f47a653fca0bde8f250bc9b456a754cd08)
