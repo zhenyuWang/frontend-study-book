@@ -4,6 +4,22 @@
 
 # 日志
 
+## 2023.10.14
+
+[clone-leetcode: top bar timer](https://github.com/zhenyuWang/clone-leetcode/commit/9c387817a4c499a877c778d3770117b276a98ae1)
+
+[clone-leetcode: use toast instead alert](https://github.com/zhenyuWang/clone-leetcode/commit/da99b1cdc2b354b29455b4631874ac1ac1dd446a)
+
+## 2023.10.13
+
+[clone-leetcode: rest password](https://github.com/zhenyuWang/clone-leetcode/commit/6a5a083ce627923f58e1c47692aaedd72ea88803)
+
+[clone-leetcode: logout](https://github.com/zhenyuWang/clone-leetcode/commit/8bd1e7f10761dcb507dbae912fcb4134e8b68f6f)
+
+## 2023.10.12
+
+[clone-leetcode: static problem list](https://github.com/zhenyuWang/clone-leetcode/commit/bb99a945f505eba1c7b31bd6106019f642c2fbe8)
+
 ## 2023.10.11
 
 [clone-leetcode: top bar](https://github.com/zhenyuWang/clone-leetcode/commit/caaddbab2825e3716650f72d40b2258b0e029db0)
