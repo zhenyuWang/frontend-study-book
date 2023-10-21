@@ -6,7 +6,9 @@
 
 ## 2023.10.21
 
-[clone-leetcode: ]()
+[clone-leetcode: check and submit user solution](https://github.com/zhenyuWang/clone-leetcode/commit/a999e0afcd33288cacd5076954d595868fcfd4c8)\
+[clone-leetcode: show null when unmounted](https://github.com/zhenyuWang/clone-leetcode/commit/0b0ae54fa5630406112f28940a2331d1a867f1f5)\
+[clone-leetcode: switch pre or next](https://github.com/zhenyuWang/clone-leetcode/commit/3043a7b1929337c8694263862a5899ec84c7d6af)
 
 ## 2023.10.20
 
@@ -14,7 +16,7 @@
 
 ## 2023.10.19
 
-[clone-leetcode: get solve state from firebase](https://github.com/zhenyuWang/clone-leetcode/commit/99fd762de0b6146a9c4fe1c30b318ccfa3b7304c)
+[clone-leetcode: get solve state from firebase](https://github.com/zhenyuWang/clone-leetcode/commit/99fd762de0b6146a9c4fe1c30b318ccfa3b7304c)\
 [clone-leetcode: save user info when sign up](https://github.com/zhenyuWang/clone-leetcode/commit/988e63aefdf0cdf0d86c9fe514ff17deba823d5b)
 
 ## 2023.10.18
@@ -32,14 +34,12 @@
 
 ## 2023.10.14
 
-[clone-leetcode: top bar timer](https://github.com/zhenyuWang/clone-leetcode/commit/9c387817a4c499a877c778d3770117b276a98ae1)
-
+[clone-leetcode: top bar timer](https://github.com/zhenyuWang/clone-leetcode/commit/9c387817a4c499a877c778d3770117b276a98ae1)\
 [clone-leetcode: use toast instead alert](https://github.com/zhenyuWang/clone-leetcode/commit/da99b1cdc2b354b29455b4631874ac1ac1dd446a)
 
 ## 2023.10.13
 
-[clone-leetcode: rest password](https://github.com/zhenyuWang/clone-leetcode/commit/6a5a083ce627923f58e1c47692aaedd72ea88803)
-
+[clone-leetcode: rest password](https://github.com/zhenyuWang/clone-leetcode/commit/6a5a083ce627923f58e1c47692aaedd72ea88803)\
 [clone-leetcode: logout](https://github.com/zhenyuWang/clone-leetcode/commit/8bd1e7f10761dcb507dbae912fcb4134e8b68f6f)
 
 ## 2023.10.12
@@ -76,14 +76,14 @@
 
 ## 2023.10.4
 
-[nextjs-blog: deploy](https://nextjs-blog-lake-phi-56.vercel.app/)
-[nextjs-blog: chore: environment variable](https://github.com/zhenyuWang/nextjs-blog/commit/c1f898d46273695382a7e4fc470715acab1049fb)
+[nextjs-blog: deploy](https://nextjs-blog-lake-phi-56.vercel.app/)\
+[nextjs-blog: chore: environment variable](https://github.com/zhenyuWang/nextjs-blog/commit/c1f898d46273695382a7e4fc470715acab1049fb)\
 [nextjs-blog: perf: react-syntax-highlighter size](https://github.com/zhenyuWang/nextjs-blog/commit/2e1edbd39d88b3ff0a566e9b56a7be3b275013cb)
 
 ## 2023.10.3
 
-[nextjs-blog: notification to portal](https://github.com/zhenyuWang/nextjs-blog/commit/f4d0bd5244bb02b091227b1a97db7fd998d20b0b)
-[nextjs-blog: meta data](https://github.com/zhenyuWang/nextjs-blog/commit/ab26be2ab9f885d92ab5c0c37bc4d43f5746f4ef)
+[nextjs-blog: notification to portal](https://github.com/zhenyuWang/nextjs-blog/commit/f4d0bd5244bb02b091227b1a97db7fd998d20b0b)\
+[nextjs-blog: meta data](https://github.com/zhenyuWang/nextjs-blog/commit/ab26be2ab9f885d92ab5c0c37bc4d43f5746f4ef)\
 [nextjs-blog: contact page](https://github.com/zhenyuWang/nextjs-blog/commit/891e82c82588af441967ffba8dac878c90099190)
 
 ## 2023.10.2
