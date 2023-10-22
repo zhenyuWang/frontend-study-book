@@ -4,6 +4,11 @@
 
 # 日志
 
+## 2023.10.22
+
+[clone-leetcode: deployment](https://clone-leetcode-five.vercel.app)\
+[clone-leetcode: setting fontSize](https://github.com/zhenyuWang/clone-leetcode/commit/54d28c9e09608154e03774120821235df0a4df6f)
+
 ## 2023.10.21
 
 [clone-leetcode: check and submit user solution](https://github.com/zhenyuWang/clone-leetcode/commit/a999e0afcd33288cacd5076954d595868fcfd4c8)\
