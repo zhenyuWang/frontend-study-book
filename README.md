@@ -4,6 +4,27 @@
 
 # 日志
 
+## 2023.10.27
+
+[nestjs-study: data type and validate](https://github.com/zhenyuWang/nestjs-study/commit/7635909c1a5cbfd182fe7107c728de5ffc52df6f)
+
+## 2023.10.26
+
+[nestjs-study: coffees module](https://github.com/zhenyuWang/nestjs-study/commit/322acb04fbc65468c910b7e58de6429aefaba578)
+
+## 2023.10.25
+
+[nestjs-study: coffee CRUD](https://github.com/zhenyuWang/nestjs-study/commit/fbfce568581525bcf78984e1267b7658368828b4)\
+[nestjs-study: query with limit & offset](https://github.com/zhenyuWang/nestjs-study/commit/8a1e2e563252c94d9df9c980cf62ba90917170b8)
+
+## 2023.10.24
+
+[nestjs-study: coffee get post patch delete](https://github.com/zhenyuWang/nestjs-study/commit/eabd4c63bd7e77f3c0f24ea576d178003657ab13)
+
+## 2023.10.23
+
+[nestjs-study: init](https://github.com/zhenyuWang/nestjs-study/commit/e2537d7bcc28121e595327a0828f9af0e3b01333)
+
 ## 2023.10.22
 
 [clone-leetcode: deployment](https://clone-leetcode-five.vercel.app)\
