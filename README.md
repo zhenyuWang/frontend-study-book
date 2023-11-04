@@ -4,6 +4,28 @@
 
 # 日志
 
+## 2023.11.3
+
+[nestjs-study: database migration](https://github.com/zhenyuWang/nestjs-study/commit/8187da06c7a2b2a7afbe4b986b47925b900ebb80)\
+[nestjs-study: transaction](https://github.com/zhenyuWang/nestjs-study/commit/5bc87cd0d9aeb9ea6d26ac1476dc884fba705da6)
+
+## 2023.11.2
+
+[nestjs-study: query with limit and offset](https://github.com/zhenyuWang/nestjs-study/commit/9a2d292e035c2322b428902b944fd771dc8caa70)
+
+## 2023.11.1
+
+[nestjs-study: related flavor when coffee create and update](https://github.com/zhenyuWang/nestjs-study/commit/1d27545479705ff37082cc216d386abd9edb40ad)
+
+## 2023.10.31
+
+[nestjs-study: related to flavor and coffee](https://github.com/zhenyuWang/nestjs-study/commit/40fdd6227c4c7fb32be72e0cd299212f20ac17f5)
+
+## 2023.10.30
+
+[nestjs-study: data base with docker and typeorm
+](https://github.com/zhenyuWang/nestjs-study/commit/ea7ab935df2fefe4e76e9582c166f06a3118b2b9)
+
 ## 2023.10.27
 
 [nestjs-study: data type and validate](https://github.com/zhenyuWang/nestjs-study/commit/7635909c1a5cbfd182fe7107c728de5ffc52df6f)
