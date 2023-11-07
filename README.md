@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2023.11.7
+
+[nestjs-study: environment variable and various configuration loading methods](https://github.com/zhenyuWang/nestjs-study/commit/3b1c1ff8f276ccd3bb351f94bfd57e3278cc20e4)
+
+## 2023.11.6
+
+[nestjs-study: provide & inject](https://github.com/zhenyuWang/nestjs-study/commit/65ba51ea767f37ee18e91dd8a30af86362682389)
+
 ## 2023.11.3
 
 [nestjs-study: database migration](https://github.com/zhenyuWang/nestjs-study/commit/8187da06c7a2b2a7afbe4b986b47925b900ebb80)\
