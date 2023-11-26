@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2023.11.27
+
+[nextjs-development-framework: specify the package manager](https://github.com/zhenyuWang/nextjs-development-framework/commit/c9e8f91c017621dc237f93c80a219f831f7a55a2)\
+[nextjs-development-framework: check commit-msg](https://github.com/zhenyuWang/nextjs-development-framework/commit/43f869c19c465a605e4c2f9fabe36e95704e31b8)\
+[nextjs-development-framework: pre commit automatically formats the code](https://github.com/zhenyuWang/nextjs-development-framework/commit/34b2394973154e63c964f97f0c0c295d0ba915d3)
+
 ## 2023.11.24
 
 [nextjs-development-framework: Sign In](https://github.com/zhenyuWang/nextjs-development-framework/commit/0066acd921b9b114fd9ec5ad6b44716da7b91c00)\
