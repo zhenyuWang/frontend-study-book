@@ -4,6 +4,16 @@
 
 # 日志
 
+## 2023.11.24
+
+[nextjs-development-framework: Sign In](https://github.com/zhenyuWang/nextjs-development-framework/commit/0066acd921b9b114fd9ec5ad6b44716da7b91c00)\
+[nextjs-development-framework: Sign Up](https://github.com/zhenyuWang/nextjs-development-framework/commit/5482b17ecac8e99b5344cee38581badb1f6501ec)\
+[nextjs-development-framework: Forget Password](https://github.com/zhenyuWang/nextjs-development-framework/commit/14c5e900456064b1e0a4537679906aa928c87610)
+
+## 2023.11.23
+
+[nextjs-development-framework: init](https://github.com/zhenyuWang/nextjs-development-framework/commit/a443d3ef4b81831eb3499ae822b278ca46b73b0e)
+
 ## 2023.11.22
 
 [nestjs-study: database with mongo](https://github.com/zhenyuWang/nestjs-study/commit/b50f23a82f14af3f419230b795a445fd73d025aa)
