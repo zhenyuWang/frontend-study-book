@@ -4,6 +4,27 @@
 
 # 日志
 
+## 2023.11.30
+
+[nextjs-development-framework: workflow add e2e test](https://github.com/zhenyuWang/nextjs-development-framework/commit/7fae9ba457277a9fdf171a163eef00881a15ef72)\
+[nextjs-development-framework: e2e test](https://github.com/zhenyuWang/nextjs-development-framework/commit/d32dff23e06a3af0fa9dc47d6b168f46c1f9fa24)\
+[nextjs-development-framework: pages route jump](https://github.com/zhenyuWang/nextjs-development-framework/commit/52f0f1c91c84aca8e2e743bb2171b835d6c954a1)
+
+## 2023.11.30
+
+[nextjs-development-framework: NavBar](https://github.com/zhenyuWang/nextjs-development-framework/commit/c28a4b8d8a05454af2a700eb37e376f6ce822a8a)\
+[nextjs-development-framework: workflow unit test](https://github.com/zhenyuWang/nextjs-development-framework/commit/d96d7af002ea2feed3aa798d79a1742eefd46ec3)
+
+## 2023.11.29
+
+[nextjs-development-framework: test coverage](https://github.com/zhenyuWang/nextjs-development-framework/commit/35521afa2c6bd9aa4cd3e03d09a30633aaee5d37)\
+[nextjs-development-framework: unit test case](https://github.com/zhenyuWang/nextjs-development-framework/commit/408fd5aee560c0cfa8b878392a27d62b35f8f6ba)
+
+## 2023.11.28
+
+[nextjs-development-framework: add unit test](https://github.com/zhenyuWang/nextjs-development-framework/commit/fddadd32ff1d878d74cd01150c7ff6f42fae6d35)\
+[nextjs-development-framework: chore: run simple-git-hooks after installing dependencies](https://github.com/zhenyuWang/nextjs-development-framework/commit/371c56ec42a1dd030e3157a71920749fb17cda2b)
+
 ## 2023.11.27
 
 [nextjs-development-framework: specify the package manager](https://github.com/zhenyuWang/nextjs-development-framework/commit/c9e8f91c017621dc237f93c80a219f831f7a55a2)\
