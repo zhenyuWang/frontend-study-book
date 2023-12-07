@@ -4,7 +4,19 @@
 
 # 日志
 
-## 2023.11.30
+## 2023.12.6
+
+[blocklet-profile: profile edit](https://github.com/zhenyuWang/blocklet-profile/commit/8df53a39b650991b7357e9d72bb25dd91413c22d)
+
+## 2023.12.5
+
+[blocklet-profile: profile index](https://github.com/zhenyuWang/blocklet-profile/commit/61af250fd90c01ec77d6c6163448a5b320b68f0e)
+
+## 2023.12.4
+
+[blocklet-profile: init](https://github.com/zhenyuWang/blocklet-profile/commit/e5b4b4d8599754ce8c4e7b6dc11ffbb4022908f0)
+
+## 2023.12.1
 
 [nextjs-development-framework: workflow add e2e test](https://github.com/zhenyuWang/nextjs-development-framework/commit/7fae9ba457277a9fdf171a163eef00881a15ef72)\
 [nextjs-development-framework: e2e test](https://github.com/zhenyuWang/nextjs-development-framework/commit/d32dff23e06a3af0fa9dc47d6b168f46c1f9fa24)\
