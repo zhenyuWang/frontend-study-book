@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2023.12.8
+
+[nextjs-development-framework: theme switching](https://github.com/zhenyuWang/nextjs-development-framework/commit/fab96cf119240927941822cf6dbfbe66c3fbf6b0)
+
+## 2023.12.7
+
+[blocklet-profile: theme switching](https://github.com/zhenyuWang/blocklet-profile/commit/c9adee6d405bccaeaacf5ec8f59ac5da375648ca)
+
 ## 2023.12.6
 
 [blocklet-profile: profile edit](https://github.com/zhenyuWang/blocklet-profile/commit/8df53a39b650991b7357e9d72bb25dd91413c22d)
