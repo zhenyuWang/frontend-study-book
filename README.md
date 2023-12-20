@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2023.12.19
+
+[3d-personal-profile: Projects](https://github.com/zhenyuWang/3d-personal-profile/commit/b57e2299670f04efd0dadfab2fb586ce16eda9b8)
+
+## 2023.12.18
+
+[3d-personal-profile: Tech](https://github.com/zhenyuWang/3d-personal-profile/commit/eaabbd121d7ab4fdab5a91f12afc2e76d20f791a)
+
 ## 2023.12.15
 
 [3d-personal-profile: Experience](https://github.com/zhenyuWang/3d-personal-profile/commit/ee1f32d76f1c10e3f7b6f52b24d3fe30bea5c24d)
