@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2023.12.23
+
+[3d-personal-profile: optimized interaction](https://github.com/zhenyuWang/3d-personal-profile/commit/9b9ee8816ee5773ee9d19963ed865957a5f64b35)
+
 ## 2023.12.22
 
 [3d-personal-profile: Stars](https://github.com/zhenyuWang/3d-personal-profile/commit/8bfd8b750153ca0732bb01ce74f54ad08fd250ed)
