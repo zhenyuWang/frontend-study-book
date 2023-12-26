@@ -4,6 +4,17 @@
 
 # 日志
 
+## 2023.12.26
+
+[nextjs-admin: Dashboard](https://github.com/zhenyuWang/nextjs-admin/commit/b1f2aa59520a7cf384d2ac1d423e29d9309e3c07)\
+[nextjs-admin: Navbar](https://github.com/zhenyuWang/nextjs-admin/commit/4d1b4ab88391d44a1a1cafd22ad8c49dab6039c8)
+
+## 2023.12.25
+
+[nextjs-admin: SideBar](https://github.com/zhenyuWang/nextjs-admin/commit/6fe2fcc1b74cf2fa4b658cec2fcc1c0c938a242c)\
+[nextjs-admin: layout](https://github.com/zhenyuWang/nextjs-admin/commit/805c41a37b46b980d4fc0148949ed4a321af0e9e)\
+[nextjs-admin: init](https://github.com/zhenyuWang/nextjs-admin/commit/041f049a35da148d69174dc27ea59eacc77b24f8)
+
 ## 2023.12.23
 
 [3d-personal-profile: optimized interaction](https://github.com/zhenyuWang/3d-personal-profile/commit/9b9ee8816ee5773ee9d19963ed865957a5f64b35)
