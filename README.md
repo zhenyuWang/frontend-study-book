@@ -4,6 +4,52 @@
 
 # 日志
 
+## 2024.1.10
+
+[nextjs-admin: SideBar support multilevel nesting and external link](https://github.com/zhenyuWang/nextjs-admin/commit/b71205f38b0486ff23f92e62a04a0dc0675549c7)
+
+## 2024.1.9
+
+[nextjs-admin: optimize Login page error message and toast](https://github.com/zhenyuWang/nextjs-admin/commit/25f5a38ae68ec6788437a7e529c56e1750fe976e)\
+[nextjs-admin: add loading when fetching](https://github.com/zhenyuWang/nextjs-admin/commit/f7493157f608b522d7a241f1bf72189a31f06cb2)
+
+## 2024.1.8
+
+[nextjs-admin: optimize component and style](https://github.com/zhenyuWang/nextjs-admin/commit/83e242f307f6e2fc66ac9691c46cf883617b1548)\
+[nextjs-admin: upload img](https://github.com/zhenyuWang/nextjs-admin/commit/17ae233fe2978a33327adad7e918bae69c192cf8)
+
+## 2024.1.5
+
+[nextjs-admin: auth](https://github.com/zhenyuWang/nextjs-admin/commit/19cfdb5676cf431a88efbb7a9fdf450748738aa8)
+
+## 2024.1.4
+
+[nextjs-admin: Login Page](https://github.com/zhenyuWang/nextjs-admin/commit/c34a52bc9043e2ffad1cb6913ce66a6d1fa07339)
+
+## 2024.1.3
+
+[nextjs-admin: AddProduct Page](https://github.com/zhenyuWang/nextjs-admin/commit/22111f1907ace185fe6894b70f281500c9929e9d)
+
+## 2024.1.2
+
+[nextjs-admin: Product Page](https://github.com/zhenyuWang/nextjs-admin/commit/c2c114ecc4fb4bae3a94bb3abaef22897a9b5efd)
+
+## 2024.1.1
+
+[nextjs-admin: Products Page](https://github.com/zhenyuWang/nextjs-admin/commit/55b42d1b8b3485087ebbe7eb3af5b984637b0e2b)
+
+## 2023.12.29
+
+[nextjs-admin: AddUser Page](https://github.com/zhenyuWang/nextjs-admin/commit/38b5c982ba3fbf7e71a88ef36b110d2ba3cebb09)
+
+## 2023.12.28
+
+[nextjs-admin: User Page](https://github.com/zhenyuWang/nextjs-admin/commit/a99ffa601ca5ea4d39e9c26232f55a47f85f51b2)
+
+## 2023.12.27
+
+[nextjs-admin: Users Page](https://github.com/zhenyuWang/nextjs-admin/commit/63f8ecf8a55cf4a4cb6a3236286d1d6b071283ea)
+
 ## 2023.12.26
 
 [nextjs-admin: Dashboard](https://github.com/zhenyuWang/nextjs-admin/commit/b1f2aa59520a7cf384d2ac1d423e29d9309e3c07)\
