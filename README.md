@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2024.1.11
+
+[nextjs-admin: get real user info](https://github.com/zhenyuWang/nextjs-admin/commit/4cc6c325134a794e9cfe740a05a9a395abee977e)\
+[nextjs-admin: SideBar expand and collapse](https://github.com/zhenyuWang/nextjs-admin/commit/40fa9cf22f321dae851d9c10d8e15b64f7c74f31)
+
+
 ## 2024.1.10
 
 [nextjs-admin: SideBar support multilevel nesting and external link](https://github.com/zhenyuWang/nextjs-admin/commit/b71205f38b0486ff23f92e62a04a0dc0675549c7)
