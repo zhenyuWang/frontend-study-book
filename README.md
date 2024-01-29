@@ -4,6 +4,35 @@
 
 # 日志
 
+## 2024.1.22
+
+[nextjs-todo-list: readme](https://github.com/zhenyuWang/nextjs-todo-list/commit/f1054ad6283db933428e9f981ca5d43956088b11)
+
+## 2024.1.19
+
+[nextjs-todo-list: all tasks page](https://github.com/zhenyuWang/nextjs-todo-list/commit/bc50b27c36e05c39dd1b9fc829142dfb94c8a7ed)
+
+## 2024.1.18
+
+[nextjs-todo-list: task pages init](https://github.com/zhenyuWang/nextjs-todo-list/commit/94dbf2657f8c876023b4eeb7854ab0ad5e07f572)\
+[nextjs-todo-list: homepage redirect tasks page](https://github.com/zhenyuWang/nextjs-todo-list/commit/711f7f4244e064203f1972f703756c8c5625a321)
+
+## 2024.1.17
+
+[nextjs-todo-list: Sidebar](https://github.com/zhenyuWang/nextjs-todo-list/commit/1b80e3d7c29fbb6b0d13dd2b3bd8680ec3b29d59)
+
+## 2024.1.16
+
+[nextjs-todo-list: nextUI](https://github.com/zhenyuWang/nextjs-todo-list/commit/c8c8968bd7fd8a43d04adaa622fa34bddab825bf)
+
+## 2024.1.15
+
+[nextjs-todo-list: add prettier rules](https://github.com/zhenyuWang/nextjs-todo-list/commit/428cfdeea018b95ba99ae393742a43eec44ddc96)
+
+## 2024.1.12
+
+[nextjs-todo-list: init](https://github.com/zhenyuWang/nextjs-todo-list/commit/05663575240ac63f0b0b896536970e529344f926)
+
 ## 2024.1.11
 
 [nextjs-admin: get real user info](https://github.com/zhenyuWang/nextjs-admin/commit/4cc6c325134a794e9cfe740a05a9a395abee977e)\
