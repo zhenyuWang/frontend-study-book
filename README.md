@@ -4,6 +4,60 @@
 
 # 日志
 
+## 2024.2.8
+
+[nextjs-todo-list: task list support search](https://github.com/zhenyuWang/nextjs-todo-list/commit/3dd53466ba0b333f430e4c88eb5dfb6d58b32500)
+
+## 2024.2.7
+
+[nextjs-todo-list: edit user profile](https://github.com/zhenyuWang/nextjs-todo-list/commit/26a9815352735189264f208bf6d34524902a14fa)
+[nextjs-todo-list: GitHub Link](https://github.com/zhenyuWang/nextjs-todo-list/commit/39440b1e2bb135e2f5571371097a0af6369f01f2)
+
+## 2024.2.6
+
+[nextjs-todo-list: theme switch](https://github.com/zhenyuWang/nextjs-todo-list/commit/37de5175764df9e02d98bd8074b4a9c8e4a6e4c1)\
+[nextjs-todo-list: responsive support](https://github.com/zhenyuWang/nextjs-todo-list/commit/c7e5d883204d1073a756329f3515b42e9fefebf4)
+
+## 2024.2.5
+
+[nextjs-todo-list: task category page](https://github.com/zhenyuWang/nextjs-todo-list/commit/1db47ca34f2988be09b4d0695d40b79391ef5ac0)
+
+## 2024.2.2
+
+[nextjs-todo-list: edit task](https://github.com/zhenyuWang/nextjs-todo-list/commit/6c26f7aa51d5e7d2cde5c295af936f9f0c25ffa3)
+
+## 2024.2.1
+
+[nextjs-todo-list: delete task](https://github.com/zhenyuWang/nextjs-todo-list/commit/2c02e7ccb6c8d78b7c4032115e5e50225e838cd1)
+
+## 2024.1.31
+
+[nextjs-todo-list: forget password page](https://github.com/zhenyuWang/nextjs-todo-list/commit/40a4ac50927474eee45b84146dbac3d64e67cfbb)
+
+## 2024.1.30
+
+[nextjs-todo-list: create task](https://github.com/zhenyuWang/nextjs-todo-list/commit/9c5f3fcbc50f89a7311f4151297243d90167407f)
+
+## 2024.1.29
+
+[nextjs-todo-list: fetch tasks](https://github.com/zhenyuWang/nextjs-todo-list/commit/f235e4d07f98f94d43c14e457c3b3bf56a1e2b2b)
+
+## 2024.1.26
+
+[nextjs-todo-list: next-auth replace clerk](https://github.com/zhenyuWang/nextjs-todo-list/commit/2fb53ff95ddd6a47c526902c8cdc74ffaabe066a)
+
+## 2024.1.25
+
+[nextjs-todo-list: sign in and sign up by clerk](https://github.com/zhenyuWang/nextjs-todo-list/commit/eecb6ada7b704780fd174235e37c7c5c074caa62)
+
+## 2024.1.24
+
+[nextjs-todo-list: sign in and sign up by clerk](https://github.com/zhenyuWang/nextjs-todo-list/commit/eecb6ada7b704780fd174235e37c7c5c074caa62)
+
+## 2024.1.23
+
+[nextjs-todo-list: custom scrollbar style](https://github.com/zhenyuWang/nextjs-todo-list/commit/d218cfafa9b2e0a3e40abef0fb449635356dac10)
+
 ## 2024.1.22
 
 [nextjs-todo-list: readme](https://github.com/zhenyuWang/nextjs-todo-list/commit/f1054ad6283db933428e9f981ca5d43956088b11)
