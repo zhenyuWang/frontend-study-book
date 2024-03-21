@@ -61,3 +61,25 @@ export default function MyApp() {
 }
 ```
 The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, `MDN` and `javascript.info` have great references.
+
+## Writing markup with JSX
+
+The markup syntax you've seen above is called `JSX`. It is optional, but most `React` projects use `JSX` for it's convenience. All of the tools we recommend for local development support `JSX` out of the box.\
+optional ['ɒpʃən(ə)l] adj. 可选择的;\
+convenience [kən'viːnɪəns] n. 便利\
+recommend [rekə'mend] v. 推荐
+
+`JSX` is stricter than `HTML`. You have to close tags like `<br />`. Your component also can't return multiple `JSX` tags. You have to wrap them into a shared parent, like a `<div>...<d/div>` or an empty `<>...</>` wrapper:\
+stricter ['strɪktə] adj. 严格的;\
+multiple ['mʌltɪp(ə)l] adj. 多个的;\
+```jsx
+function AboutPage() {
+  return (
+    <>
+      <h1>About</h1>
+      <p>Hello there.<br />How do you do?</p>
+    </>
+  );
+}
+```
+Ig you have a lot of HTML to port to JSX, you can use an online converter.

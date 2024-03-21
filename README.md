@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.2.22
+
+[React doc Quick Start - Writing markup with JSX](./English/React/Quick-Start.md)
+
 ## 2024.2.21
 
 [React doc Quick Start - Creating and nesting components](./English/React/Quick-Start.md)
