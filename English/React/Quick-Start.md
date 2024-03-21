@@ -83,3 +83,20 @@ function AboutPage() {
 }
 ```
 Ig you have a lot of HTML to port to JSX, you can use an online converter.
+
+## Adding styles
+
+In React, you specify a CSS class with `className`.It works the same way as the HTML `class` attribute.
+```jsx
+<img className="avatar" />
+```
+Then you write the CSS rules for it in a separate CSS file:\
+separate ['sep(ə)rət] adj. 分开的;\
+```css
+.avatar {
+  border-radius: 50%;
+}
+```
+React does not prescribe how you add CSS files. In the simplest case, you'll add a `<link>` tag to your HTML.If you use a build tool or a framework, consult it's documentation to learn how to add a CSS file to your project.\
+prescribe [prɪ'skraɪb] v. 规定;\
+consult [kən'sʌlt] v. 参考;
