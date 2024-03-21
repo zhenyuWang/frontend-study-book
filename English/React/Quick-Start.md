@@ -189,3 +189,134 @@ When you don't need the `else` branch, you can also use a shorter `logical && sy
 ```
 All of these approaches also work for conditionally specifying attributes. If you're unfamiliar with some of this JavaScript syntax, you can start by always using `if...else`.\
 approaches [ə'prəʊtʃɪz] n. 方法;
+
+## Rendering lists
+
+You will rely on JavaScript features like `for loop` and the `array map() function` to render lists of components.For example, let's say you have an array of products:
+```jsx
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+];
+```
+Inside your component, use the `map()` function to transform an array of products into an array of `<li>` items:
+```jsx
+const listItems = products.map(product =>
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
+return (
+  <ul>{listItems}</ul>
+);
+```
+Notice how `<li>` has a `key` attribute.For each item in a list,you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID.React uses your keys to know what happened if you later insert, delete, or reorder the items.\
+uniquely ['juːniːkli] adv. 独特地;
+```jsx
+const products = [
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
+
+export default function ShoppingList() {
+  const listItems = products.map(product =>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? 'magenta' : 'darkgreen'
+      }}
+    >
+      {product.title}
+    </li>
+  );
+
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+```
+
+## Responding to events
+
+You can respond to events by declaring event handler functions inside your components:
+```jsx
+function MyButton() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+}
+```
+Notice how `onClick={handleClick}` has no parentheses at the end! Do not call the event handler function: you only need to pass it down. React will call your event handler when the user clicks the button.\
+parentheses [pə'renθəsɪz] n. 圆括号;
+
+## Updating the screen
+
+Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add state to your component.\
+First, import `useState` from React:
+```jsx
+import { useState } from 'react';
+```
+Now you can declare a state variable inside your component:
+```jsx
+function MyButton() {
+  const [count, setCount] = useState(0);
+  // ...
+```
+You'll get two things from `useState`:the current state(count), and the function that lets you update it(setCount). You can give them any names, but the convention is to write [something, setSomething].
+
+The first time the button is displayed, `count` will be `0` because you passed `0` to `useState()`. When you want to change state, call `setCount()` and pass the new value to it. Clicking this button will increment the counter:
+```jsx
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+React will call your component function again. This time, `count` will be `1`. Then it will be `2`. And so on.\
+If you render the same component multiple times, each will get its own state. Click each button separately:
+```jsx
+import { useState } from 'react';
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
+  );
+}
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
+

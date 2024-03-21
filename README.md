@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2024.3.1
+
+[React doc Quick Start-Updating the screen](./English/React/Quick-Start.md)
+
+## 2024.2.29
+
+[React doc Quick Start-Responding to events](./English/React/Quick-Start.md)
+
+## 2024.2.28
+
+[React doc Quick Start-Rendering lists](./English/React/Quick-Start.md)
+
 ## 2024.2.27
 
 [React doc Quick Start-Conditional rendering](./English/React/Quick-Start.md)
