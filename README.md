@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.2.26
+
+[React doc Quick Start - Displaying data](./English/React/Quick-Start.md)
+
 ## 2024.2.23
 
 [React doc Quick Start - Adding styles](./English/React/Quick-Start.md)
