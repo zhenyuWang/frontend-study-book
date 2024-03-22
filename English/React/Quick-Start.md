@@ -328,3 +328,109 @@ exist ['ɪɡzɪst] v. 存在;
 Hooks are more restrictive than other functions. You can only call Hooks at the top of your components(or other Hooks). If you want to use `useState` in a condition or a loop, extract a new component and put it there.\
 restrictive [rɪ'strɪktɪv] adj. 限制性的;\
 extract [ɪk'strækt] v. 提取;
+
+## Sharing data between components
+
+In the previous example, each `MyButton` had its own independent `count`, and when each button was clicked, only the `count` for the button clicked changed:\
+previous ['priːvɪəs] adj. 以前的;
+
+![alt text](./images/sharing-data-between-components-1.png)
+
+However, often you'll need components to share data and always update together.
+
+To make both `MyButton` components display the same `count` and update together, you need to move the state from the individual buttons "upwards" to the closest component containing all of them.\
+individual [ˌɪndɪ'vɪdʒʊəl] adj. 个别的;\
+closest ['kləʊsɪst] adj. 最近的;
+
+In this example, it is `MyApp`:
+
+![alt text](./images/sharing-data-between-components-2.png)
+
+Now when you click either button, the `count` in `MyApp` will change both of the counts in `MyButton`. Here's how you can express this in code.
+
+First, move the state up from `MyButton` into `MyApp`:
+```jsx
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
+  );
+}
+
+function MyButton() {
+  // ... we're moving code from here ...
+}
+```
+Then, pass the state down from `MyApp` to each `MyButton`, together with the shared click handler. You can pass information to `MyButton` using the JSX curly braces, just like you previously did with built-in tags like `<img>`:
+```jsx
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
+```
+The information you pass down like this is called props. Now the `MyApp` component contains the `count` state and the `handleClick` event handler, and passes both of them down as props to each of the buttons.
+
+Finally, change `MyButton` to read the props you have passed from its parent component:
+```jsx
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+When you click the button, the `onClick` handler fires. Each button's `onClick` prop was set to the `handleClick` function inside `MyApp`, so the code inside of it runs. That code calls `setCount(count + 1)`, incrementing the `count` state variable. The new `count` value is passed as a prop to each button, so they all show the new value. This is called `lifting state up`. By moving state up, you've shared it between components.
+```jsx
+import { useState } from 'react';
+
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
+
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+
+## Next Steps
+
+By now, you know the basics of how to write React code!\
+Check out the Tutorial to put them into practice and build your first mini-app with React.\
+tutorial [tuːˈtɔːriəl] n. 教程;
