@@ -4,6 +4,13 @@
 
 # 日志
 
+## 2024.3.20-22
+[React doc Tutorial:Tic-Tac-Toe-Lifting state up](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.3.19
+
+[React doc Tutorial:Tic-Tac-Toe-Completing the Game](./English//React/Tutorial:Tic-Tac-Toe.md)
+
 ## 2024.3.18
 
 [React doc Tutorial:Tic-Tac-Toe-React Developer Tools](./English//React/Tutorial:Tic-Tac-Toe.md)
