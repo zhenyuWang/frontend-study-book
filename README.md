@@ -4,7 +4,28 @@
 
 # 日志
 
+## 2024.3.29
+
+[React doc Tutorial:Tic-Tac-Toe-Adding time travel](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.3.28
+
+[React doc Tutorial:Tic-Tac-Toe-Storing a history of moves](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.3.27
+
+[React doc Tutorial:Tic-Tac-Toe-Declaring a winner](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.3.26
+
+[React doc Tutorial:Tic-Tac-Toe-Why immutability is important](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.3.25
+
+[React doc Tutorial:Tic-Tac-Toe-Why immutability is important](./English//React/Tutorial:Tic-Tac-Toe.md)
+
 ## 2024.3.20-22
+
 [React doc Tutorial:Tic-Tac-Toe-Lifting state up](./English//React/Tutorial:Tic-Tac-Toe.md)
 
 ## 2024.3.19
