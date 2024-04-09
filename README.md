@@ -4,13 +4,21 @@
 
 # 日志
 
+## 2024.4.2
+
+[React doc Tutorial:Tic-Tac-Toe-Showing the past moves](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.4.1
+
+[React doc Tutorial:Tic-Tac-Toe-Lifting state up, again](./English//React/Tutorial:Tic-Tac-Toe.md)
+
 ## 2024.3.29
 
-[React doc Tutorial:Tic-Tac-Toe-Adding time travel](./English//React/Tutorial:Tic-Tac-Toe.md)
+[React doc Tutorial:Tic-Tac-Toe-Storing a history of moves](./English//React/Tutorial:Tic-Tac-Toe.md)
 
 ## 2024.3.28
 
-[React doc Tutorial:Tic-Tac-Toe-Storing a history of moves](./English//React/Tutorial:Tic-Tac-Toe.md)
+[React doc Tutorial:Tic-Tac-Toe-Adding time travel](./English//React/Tutorial:Tic-Tac-Toe.md)
 
 ## 2024.3.27
 
