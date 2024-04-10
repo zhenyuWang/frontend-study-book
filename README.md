@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2024.4.7
+
+[React doc Tutorial:Tic-Tac-Toe-Implementing time travel](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.4.3
+
+[React doc Tutorial:Tic-Tac-Toe-Picking a key](./English//React/Tutorial:Tic-Tac-Toe.md)
+
 ## 2024.4.2
 
 [React doc Tutorial:Tic-Tac-Toe-Showing the past moves](./English//React/Tutorial:Tic-Tac-Toe.md)
