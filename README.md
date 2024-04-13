@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2024.4.9
+
+[React doc Tutorial:Tic-Tac-Toe-Wrapping up](./English//React/Tutorial:Tic-Tac-Toe.md)
+
+## 2024.4.8
+
+[React doc Tutorial:Tic-Tac-Toe-Final cleanup](./English//React/Tutorial:Tic-Tac-Toe.md)
+
 ## 2024.4.7
 
 [React doc Tutorial:Tic-Tac-Toe-Implementing time travel](./English//React/Tutorial:Tic-Tac-Toe.md)
