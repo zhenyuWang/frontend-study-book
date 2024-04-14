@@ -4,6 +4,18 @@
 
 # 日志
 
+## 2024.4.12
+
+[React doc Tutorial:Thinking in React-Step 1: Break the UI into a component hierarchy](./English//React/Thinking-in-React.md)
+
+## 2024.4.11
+
+[React doc Tutorial:Thinking in React-Start with the mockup](./English//React/Thinking-in-React.md)
+
+## 2024.4.10
+
+[React doc Tutorial:Thinking in React](./English//React/Thinking-in-React.md)
+
 ## 2024.4.9
 
 [React doc Tutorial:Tic-Tac-Toe-Wrapping up](./English//React/Tutorial:Tic-Tac-Toe.md)
