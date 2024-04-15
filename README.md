@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.4.15
+
+[React doc Tutorial:Thinking in React-Step 2: Build a static version in React](./English//React/Thinking-in-React.md)
+
 ## 2024.4.12
 
 [React doc Tutorial:Thinking in React-Step 1: Break the UI into a component hierarchy](./English//React/Thinking-in-React.md)
