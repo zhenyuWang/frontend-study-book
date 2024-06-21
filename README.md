@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.4.17
+
+[React doc Tutorial:Thinking in React-Step 4: Identify where your state should live](./English//React/Thinking-in-React.md)
+
 ## 2024.4.16
 
 [React doc Tutorial:Thinking in React-Step 3: Find the minimal but complete representation of UI state](./English//React/Thinking-in-React.md)

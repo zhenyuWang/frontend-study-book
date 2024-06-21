@@ -196,3 +196,67 @@ Let’s go through them one by one again:
 4. The filtered list of products isn’t state because it can be computed by taking the original list of products and filtering it according to the search text and value of the checkbox.
 
 This means only the search text and the value of the checkbox are state! Nicely done!
+
+## Step 4: Identify where your state should live
+After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or owns the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state.\
+responsible [rɪˈspɑːnsəbl] 负责的
+
+ This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
+
+For each piece of state in your application:
+1. Identify every component that renders something based on that state.
+2. Find their closest common parent component—a component above them all in the hierarchy.
+3. Decide where the state should live:
+    1. Often, you can put the state directly into their common parent.
+    2. You can also put the state into some component above their common parent.
+    3. If you can’t find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common parent component.
+
+In the previous step, you found two pieces of state in this application: the search input text, and the value of the checkbox. In this example, they always appear together, so it makes sense to put them into the same place.
+
+Now let’s run through our strategy for them:\
+strategy [ˈstrætədʒi] 策略
+
+1. Identify components that use state:
+    - ProductTable needs to filter the product list based on that state (search text and checkbox value).
+    - SearchBar needs to display that state (search text and checkbox value).
+2. Find their common parent: The first parent component both components share is `FilterableProductTable`.
+3. Decide where the state lives: We’ll keep the filter text and checked state values in `FilterableProductTable`.
+
+So the state values will live in `FilterableProductTable`.
+
+Add state to the component with the `useState() Hook`. Hooks are special functions that let you “hook into” React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
+```
+function `FilterableProductTable`({ products }) {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+```
+
+Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
+```
+<div>
+  <SearchBar 
+    filterText={filterText} 
+    inStockOnly={inStockOnly} />
+  <ProductTable 
+    products={products}
+    filterText={filterText}
+    inStockOnly={inStockOnly} />
+</div>
+```
+You can start seeing how your application will behave. Edit the `filterText` initial value from `useState('')` to `useState('fruit')` in the sandbox code below. You’ll see both the search input text and the table update:
+
+Notice that editing the form doesn’t work yet. There is a console error in the sandbox above explaining why:
+
+You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field.
+
+In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
+```
+function SearchBar({ filterText, inStockOnly }) {
+  return (
+    <form>
+      <input 
+        type="text" 
+        value={filterText} 
+        placeholder="Search..."/>
+```
+However, you haven’t added any code to respond to the user actions like typing yet. This will be your final step.
