@@ -4,6 +4,14 @@
 
 # 日志
 
+## 2024.4.19
+
+[React doc Tutorial:Thinking in React-Where to go from here](./English//React/Thinking-in-React.md)
+
+## 2024.4.18
+
+[React doc Tutorial:Thinking in React-Step 5: Add inverse data flow](./English//React/Thinking-in-React.md)
+
 ## 2024.4.17
 
 [React doc Tutorial:Thinking in React-Step 4: Identify where your state should live](./English//React/Thinking-in-React.md)
