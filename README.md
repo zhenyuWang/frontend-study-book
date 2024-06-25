@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.4.22
+
+[React doc Tutorial:Installation](./English//React/Installation.md)
+
 ## 2024.4.19
 
 [React doc Tutorial:Thinking in React-Where to go from here](./English//React/Thinking-in-React.md)
