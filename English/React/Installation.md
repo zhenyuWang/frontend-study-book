@@ -16,3 +16,6 @@ To try React locally on your computer, [download this HTML page](https://gist.gi
 
 ## Start a new React project
 If you want to build an app or a website fully with React, [start a new React project](https://react.dev/learn/start-a-new-react-project).
+
+## Add React to an existing project
+If want to try using React in your existing app or a website, [add React to an existing project](https://react.dev/learn/add-react-to-an-existing-project).
