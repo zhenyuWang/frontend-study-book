@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.4.24
+
+[React doc Tutorial:Installation-Try React locally](./English//React/Installation.md)
+
 ## 2024.4.23
 
 [React doc Tutorial:Installation-Try React](./English//React/Installation.md)

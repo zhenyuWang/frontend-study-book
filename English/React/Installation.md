@@ -10,3 +10,6 @@ You don’t need to install anything to play with React. Try editing this sandbo
 You can edit it directly or open it in a new tab by pressing the “Fork” button in the upper right corner.
 
 Most pages in the React documentation contain sandboxes like this. Outside of the React documentation, there are many online sandboxes that support React: for example, CodeSandbox, StackBlitz, or CodePen.
+
+## Try React locally
+To try React locally on your computer, [download this HTML page](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html). Open it in your editor and in your browser!
