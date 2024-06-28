@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.5.9
+
+[React doc Tutorial:Production-Expo (for native apps)](./English//React/Start-a-New-React-Project.md)
+
 ## 2024.5.8
 
 [React doc Tutorial:Production-Gatsby](./English//React/Start-a-New-React-Project.md)

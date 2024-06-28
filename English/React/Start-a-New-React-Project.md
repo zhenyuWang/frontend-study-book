@@ -40,3 +40,14 @@ npx create-gatsby
 If you’re new to Gatsby, check out the [Gatsby tutorial](https://www.gatsbyjs.com/docs/tutorial/). 
 
 Gatsby is maintained by Netlify. You can deploy a fully static Gatsby site to any static hosting. If you opt into using server-only features, make sure your hosting provider supports them for Gatsby. 
+
+## Expo (for native apps) 
+[Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs. It provides an SDK for React Native that makes the native parts easier to use. To create a new Expo project, run: 
+```
+npx create-expo-app
+```
+If you’re new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/). 
+
+Expo is maintained by Expo (the company). Building apps with Expo is free, and you can submit them to the Google and Apple app stores without restrictions. Expo additionally provides opt-in paid cloud services.\
+restrictions [rɪˈstrɪkʃnz] n. 限制；约束；\
+additionally [əˈdɪʃənəli] adv. 此外；另外；
