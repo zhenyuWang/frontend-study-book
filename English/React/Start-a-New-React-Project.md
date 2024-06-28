@@ -51,3 +51,12 @@ If you’re new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tut
 Expo is maintained by Expo (the company). Building apps with Expo is free, and you can submit them to the Google and Apple app stores without restrictions. Expo additionally provides opt-in paid cloud services.\
 restrictions [rɪˈstrɪkʃnz] n. 限制；约束；\
 additionally [əˈdɪʃənəli] adv. 此外；另外；
+
+## Bleeding-edge React frameworks
+As we’ve explored how to continue improving React, we realized that integrating React more closely with frameworks (specifically, with routing, bundling, and server technologies) is our biggest opportunity to help React users build better apps. \
+ The Next.js team has agreed to collaborate with us in researching, developing, integrating, and testing framework-agnostic bleeding-edge React features like React Server Components. \
+ integrating [ˈɪntɪɡreɪtɪŋ] v. 整合；结合；\
+
+These features are getting closer to being production-ready every day, and we’ve been in talks with other bundler and framework developers about integrating them. Our hope is that in a year or two, all frameworks listed on this page will have full support for these features. 
+ (If you’re a framework author interested in partnering with us to experiment with these features, please let us know!) 
+ 
