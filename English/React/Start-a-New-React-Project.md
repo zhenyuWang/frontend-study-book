@@ -31,3 +31,12 @@ npx create-remix
 If you’re new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
 
 Remix is maintained by Shopify. When you create a Remix project, you need to pick your deployment target. You can deploy a Remix app to any Node.js or serverless hosting by using or writing an adapter.
+
+## Gatsby
+[Gatsby](https://www.gatsbyjs.com/) is a React framework for fast CMS-backed websites. Its rich plugin ecosystem and its GraphQL data layer simplify integrating content, APIs, and services into one website. To create a new Gatsby project, run:
+```
+npx create-gatsby
+```
+If you’re new to Gatsby, check out the [Gatsby tutorial](https://www.gatsbyjs.com/docs/tutorial/). 
+
+Gatsby is maintained by Netlify. You can deploy a fully static Gatsby site to any static hosting. If you opt into using server-only features, make sure your hosting provider supports them for Gatsby. 
