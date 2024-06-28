@@ -59,4 +59,8 @@ As we’ve explored how to continue improving React, we realized that integratin
 
 These features are getting closer to being production-ready every day, and we’ve been in talks with other bundler and framework developers about integrating them. Our hope is that in a year or two, all frameworks listed on this page will have full support for these features. 
  (If you’re a framework author interested in partnering with us to experiment with these features, please let us know!) 
- 
+
+ ## Next.js (App Router)
+ [Next.js’s App Router](https://nextjs.org/docs) is a redesign of the Next.js APIs aiming to fulfill the React team’s full-stack architecture vision. It lets you fetch data in asynchronous components that run on the server or even during the build. 
+
+Next.js is maintained by Vercel. You can deploy a Next.js app to any Node.js or serverless hosting, or to your own server. Next.js also supports static export which doesn’t require a server. 
