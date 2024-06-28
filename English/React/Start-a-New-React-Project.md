@@ -22,3 +22,12 @@ npx create-next-app@latest
 If you’re new to Next.js, check out the [learn Next.js course](https://nextjs.org/learn).
 
 Next.js is maintained by Vercel. You can deploy a Next.js app to any Node.js or serverless hosting, or to your own server. Next.js also supports a static export which doesn’t require a server.
+
+## Remix
+[Remix](https://remix.run) is a full-stack React framework with nested routing. It lets you break your app into nested parts that can load data in parallel and refresh in response to the user actions. To create a new Remix project, run:
+```
+npx create-remix
+```
+If you’re new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
+
+Remix is maintained by Shopify. When you create a Remix project, you need to pick your deployment target. You can deploy a Remix app to any Node.js or serverless hosting by using or writing an adapter.
