@@ -116,3 +116,66 @@ type RequestState =
 
 const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' });
 ```
+
+### useReducer
+The `useReducer Hook` is a more complex Hook that takes a reducer function and an initial state. The types for the reducer function are inferred from the initial state. You can optionally provide a type argument to the useReducer call to provide a type for the state, but it is often better to set the type on the initial state instead:
+```
+import {useReducer} from 'react';
+
+interface State {
+   count: number 
+};
+
+type CounterAction =
+  | { type: "reset" }
+  | { type: "setCount"; value: State["count"] }
+
+const initialState: State = { count: 0 };
+
+function stateReducer(state: State, action: CounterAction): State {
+  switch (action.type) {
+    case "reset":
+      return initialState;
+    case "setCount":
+      return { ...state, count: action.value };
+    default:
+      throw new Error("Unknown action");
+  }
+}
+
+export default function App() {
+  const [state, dispatch] = useReducer(stateReducer, initialState);
+
+  const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
+  const reset = () => dispatch({ type: "reset" });
+
+  return (
+    <div>
+      <h1>Welcome to my counter</h1>
+
+      <p>Count: {state.count}</p>
+      <button onClick={addFive}>Add 5</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+```
+We are using TypeScript in a few key places:
+
+- `interface State` describes the shape of the reducer’s state.
+- `type CounterAction` describes the different actions which can be dispatched to the reducer.
+- `const initialState: State` provides a type for the initial state, and also the type which is used by useReducer by default.
+- `stateReducer(state: State, action: CounterAction): State` sets the types for the reducer function’s arguments and return value.
+
+A more explicit alternative to setting the type on initialState is to provide a type argument to useReducer:\
+explicit [ɪkˈsplɪsɪt] 明确的\
+alternative [ɔːlˈtɜːrnətɪv] 替代方案
+```
+import { stateReducer, State } from './your-reducer-implementation';
+
+const initialState = { count: 0 };
+
+export default function App() {
+  const [state, dispatch] = useReducer<State>(stateReducer, initialState);
+}
+```
