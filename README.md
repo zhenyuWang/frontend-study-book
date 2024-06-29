@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.5.27
+
+[React doc Tutorial:Using TypeScript](./English//React/Using-TypeScript.md)
+
 ## 2024.5.24
 
 [React doc Tutorial:Recommended text editor features](./English//React/Editor-Setup.md)
