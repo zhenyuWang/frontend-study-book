@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.5.21
+
+[React doc Tutorial:Editor Setup](./English//React/Editor-Setup.md)
+
 ## 2024.5.20
 
 [React doc Tutorial:Using React Native in an existing native mobile app](./English//React/Add-React-to-an-Existing-Project.md)
