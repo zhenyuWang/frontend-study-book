@@ -82,3 +82,9 @@ export default function MyApp() {
 }
 ```
 The type describing your component’s props can be as simple or as complex as you need, though they should be an object type described with either a type or interface. You can learn about how TypeScript describes objects in Object Types but you may also be interested in using Union Types to describe a prop that can be one of a few different types and the Creating Types from Types guide for more advanced use cases.
+
+## Example Hooks
+The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get `inferred types` a lot of the time and ideally do not need to handle the minutiae of providing the types.\
+minutiae [ˌmɪnjuˈʃiː] 细微之处
+
+However, we can look at a few examples of how to provide types for Hooks.
