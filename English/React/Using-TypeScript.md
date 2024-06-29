@@ -88,3 +88,31 @@ The type definitions from `@types/react` include types for the built-in Hooks, s
 minutiae [ˌmɪnjuˈʃiː] 细微之处
 
 However, we can look at a few examples of how to provide types for Hooks.
+
+### useState
+The `useState Hook` will re-use the value passed in as the initial state to determine what the type of the value should be. For example:
+```
+// Infer the type as "boolean"
+const [enabled, setEnabled] = useState(false);
+```
+This will assign the type of `boolean` to `enabled`, and `setEnabled` will be a function accepting either a `boolean` argument, or a function that returns a `boolean`. If you want to explicitly provide a type for the state, you can do so by providing a type argument to the `useState` call:
+```
+// Explicitly set the type to "boolean"
+const [enabled, setEnabled] = useState<boolean>(false);
+```
+This isn’t very useful in this case, but a common case where you may want to provide a type is when you have a union type. For example, status here can be one of a few different strings:
+```
+type Status = "idle" | "loading" | "success" | "error";
+
+const [status, setStatus] = useState<Status>("idle");
+```
+Or, as recommended in Principles for structuring state, you can group related state as an object and describe the different possibilities via object types:
+```
+type RequestState =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'success', data: any }
+  | { status: 'error', error: Error };
+
+const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' });
+```
