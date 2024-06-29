@@ -87,3 +87,8 @@ Notice how the original HTML content from `index.html` is preserved, but your ow
 When you adopt React in an existing project, it’s common to start with small interactive components (like buttons), and then gradually keep “moving upwards” until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to a React framework right after to get the most out of React.\
 adopt [əˈdɒpt] 采用；收养；接受\
 migrate [ˈmaɪɡreɪt] 迁移；移居；移植
+
+## Using React Native in an existing native mobile app
+React Native can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), follow this guide to add a React Native screen to it.\
+integrate [ˈɪntɪɡreɪt] 整合；结合；使一体化\
+incrementally [ɪnˈkrementəli] 逐渐地；增量地
