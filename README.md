@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.5.29
+
+[React doc Tutorial:Using TypeScript with React Components](./English//React/Using-TypeScript.md)
+
 ## 2024.5.28
 
 [React doc Tutorial:Using TypeScript-Installation](./English//React/Using-TypeScript.md)
