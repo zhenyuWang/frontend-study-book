@@ -294,3 +294,8 @@ export default function Form() {
   );
 }
 ```
+
+## Useful Types
+There is quite an expansive set of types which come from the `@types/react` package, it is worth a read when you feel comfortable with how React and TypeScript interact. You can find them in React’s folder in DefinitelyTyped. We will cover a few of the more common types here.\
+quite [kwaɪt] 相当\
+expansive [ɪkˈspænsɪv] 广阔的
