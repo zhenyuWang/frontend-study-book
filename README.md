@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.6.11
+
+[React doc Tutorial:Useful Types-Children](./English//React/Using-TypeScript.md)
+
 ## 2024.6.7
 
 [React doc Tutorial:Useful Types-DOM Events](./English//React/Using-TypeScript.md)
