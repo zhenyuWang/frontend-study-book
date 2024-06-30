@@ -6,6 +6,10 @@
 
 ## 2024.6.7
 
+[React doc Tutorial:Useful Types-DOM Events](./English//React/Using-TypeScript.md)
+
+## 2024.6.7
+
 [React doc Tutorial:Useful Types](./English//React/Using-TypeScript.md)
 
 ## 2024.6.6

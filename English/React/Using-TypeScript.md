@@ -299,3 +299,29 @@ export default function Form() {
 There is quite an expansive set of types which come from the `@types/react` package, it is worth a read when you feel comfortable with how React and TypeScript interact. You can find them in React’s folder in DefinitelyTyped. We will cover a few of the more common types here.\
 quite [kwaɪt] 相当\
 expansive [ɪkˈspænsɪv] 广阔的
+
+### DOM Events
+When working with DOM events in React, the type of the event can often be inferred from the event handler. However, when you want to extract a function to be passed to an event handler, you will need to explicitly set the type of the event.
+```
+import { useState } from 'react';
+
+export default function Form() {
+  const [value, setValue] = useState("Change me");
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setValue(event.currentTarget.value);
+  }
+
+  return (
+    <>
+      <input value={value} onChange={handleChange} />
+      <p>Value: {value}</p>
+    </>
+  );
+}
+```
+There are many types of events provided in the React types - the full list can be found here which is based on the most popular events from the DOM.
+
+When determining the type you are looking for you can first look at the hover information for the event handler you are using, which will show the type of the event.
+
+If you need to use an event that is not included in this list, you can use the `React.SyntheticEvent` type, which is the base type for all events.
