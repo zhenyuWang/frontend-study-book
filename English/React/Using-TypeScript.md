@@ -265,3 +265,32 @@ The [useMemo](https://react.dev/reference/react/useMemo) Hooks will create/re-ac
  // The type of visibleTodos is inferred from the return value of filterTodos
 const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 ```
+
+### useCallback
+The [useCallback](https://react.dev/reference/react/useCallback) provide a stable reference to a function as long as the dependencies passed into the second parameter are the same. Like `useMemo`, the function’s type is inferred from the return value of the function in the first parameter, and you can be more explicit by providing a type argument to the Hook.
+```
+const handleClick = useCallback(() => {
+  // ...
+}, [todos]);
+```
+When working in TypeScript strict mode `useCallback` requires adding types for the parameters in your callback. This is because the type of the callback is inferred from the return value of the function, and without parameters the type cannot be fully understood.
+
+Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback:
+```
+import { useState, useCallback } from 'react';
+
+export default function Form() {
+  const [value, setValue] = useState("Change me");
+
+  const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
+    setValue(event.currentTarget.value);
+  }, [setValue])
+  
+  return (
+    <>
+      <input value={value} onChange={handleChange} />
+      <p>Value: {value}</p>
+    </>
+  );
+}
+```
