@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.6.14
+
+[React doc Tutorial:React Developer Tools](./English//React/React-Developer-Tools.md)
+
 ## 2024.6.13
 
 [React doc Tutorial:Useful Types-Style Props](./English//React/Using-TypeScript.md)
