@@ -353,3 +353,16 @@ interface MyComponentProps {
   style: React.CSSProperties;
 }
 ```
+
+## Further learning
+This guide has covered the basics of using TypeScript with React, but there is a lot more to learn.
+Individual API pages on the docs may contain more in-depth documentation on how to use them with TypeScript.\
+individual [ˌɪndɪˈvɪdʒuəl] 个人的, 单独的
+
+We recommend the following resources:
+- [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/) is the official documentation for TypeScript, and covers most key language features.
+- [The TypeScript release notes](https://devblogs.microsoft.com/typescript) cover new features in depth.
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) is a community-maintained cheatsheet for using TypeScript with React, covering a lot of useful edge cases and providing more breadth than this document.
+- TypeScript Community Discord is a great place to ask questions and get help with TypeScript and React issues.
+
+cheatsheet [ˈtʃiːtʃiːt] 速查表

@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.6.13
+
+[React doc Tutorial:Useful Types-Style Props](./English//React/Using-TypeScript.md)
+
 ## 2024.6.12
 
 [React doc Tutorial:Useful Types-Style Props](./English//React/Using-TypeScript.md)
