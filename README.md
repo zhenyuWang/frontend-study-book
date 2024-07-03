@@ -4,9 +4,13 @@
 
 # 日志
 
+## 2024.6.18
+
+[React doc Tutorial:Browser extension-Safari and other browsers](./English//React/React-Developer-Tools.md)
+
 ## 2024.6.17
 
-[React doc Tutorial:React Developer Tools](./English//React/React-Developer-Tools.md)
+[React doc Tutorial:Browser extension](./English//React/React-Developer-Tools.md)
 
 ## 2024.6.14
 
