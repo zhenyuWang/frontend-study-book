@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.6.28
+
+[React doc Tutorial:Installing eslint-plugin-react-compiler](./English//React/React-Compiler.md)
+
 ## 2024.6.27
 
 [React doc Tutorial:Checking compatibility](./English//React/React-Compiler.md)

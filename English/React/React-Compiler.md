@@ -144,3 +144,27 @@ Successfully compiled 8 out of 9 components.
 StrictMode usage not found.
 Found no usage of incompatible libraries.
 ```
+
+### Installing eslint-plugin-react-compiler
+React Compiler also powers an eslint plugin. The eslint plugin can be used independently of the compiler, meaning you can use the eslint plugin even if you don’t use the compiler.
+```bash
+npm install eslint-plugin-react-compiler
+```
+Then, add it to your eslint config:
+```
+module.exports = {
+  plugins: [
+    'eslint-plugin-react-compiler',
+  ],
+  rules: {
+    'react-compiler/react-compiler': "error",
+  },
+}
+```
+The eslint plugin will display any violations of the rules of React in your editor. When it does this, it means that the compiler has skipped over optimizing that component or hook.
+ This is perfectly okay, and the compiler can recover and continue optimizing other components in your codebase.\
+ violation [vaɪˈleɪʃn] 违反
+
+You don’t have to fix all eslint violations straight away. You can address them at your own pace to increase the amount of components and hooks being optimized, but it is not required to fix everything before you can use the compiler.\
+straight away [streɪt əˈweɪ] 立即\
+increase [ɪnˈkriːs] 增加
