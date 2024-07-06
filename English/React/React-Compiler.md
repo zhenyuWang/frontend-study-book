@@ -168,3 +168,42 @@ The eslint plugin will display any violations of the rules of React in your edit
 You don’t have to fix all eslint violations straight away. You can address them at your own pace to increase the amount of components and hooks being optimized, but it is not required to fix everything before you can use the compiler.\
 straight away [streɪt əˈweɪ] 立即\
 increase [ɪnˈkriːs] 增加
+
+### Rolling out the compiler to your codebase
+#### Existing projects
+The compiler is designed to compile functional components and hooks that follow the Rules of React. It can also handle code that breaks those rules by bailing out (skipping over) those components or hooks.\
+bail out [beɪl aʊt] 退出\
+ However, due to the flexible nature of JavaScript, the compiler cannot catch every possible violation and may compile with false negatives: that is, the compiler may accidentally compile a component/hook that breaks the Rules of React which can lead to undefined behavior.\
+ due to [duː tuː] 由于\
+ flexible [ˈfleksəbl] 灵活的\
+ negative [ˈneɡətɪv] 负面的\
+ accidentally [ˌæksɪˈdentəli] 意外地
+
+For this reason, to adopt the compiler successfully on existing projects, we recommend running it on a small directory in your product code first. You can do this by configuring the compiler to only run on a specific set of directories:\
+adopt [əˈdɑːpt] 采用\
+```
+const ReactCompilerConfig = {
+  sources: (filename) => {
+    return filename.indexOf('src/path/to/dir') !== -1;
+  },
+}
+```
+In rare cases, you can also configure the compiler to run in “opt-in” mode using the `compilationMode: "annotation"` option. This makes it so the compiler will only compile components and hooks annotated with a `"use memo"` directive. Please note that the annotation mode is a temporary one to aid early adopters, and that we don’t intend for the `"use memo"` directive to be used for the long term.\
+rare [rer] 稀有的\
+annotate [ˈænəˌteɪt] 注释\
+temporary [ˈtempəˌreri] 临时的\
+aid [eɪd] 帮助\
+intend [ɪnˈtend] 打算
+```
+const ReactCompilerConfig = {
+  compilationMode: "annotation",
+};
+
+// src/app.jsx
+export default function App() {
+  "use memo";
+  // ...
+}
+```
+When you have more confidence with rolling out the compiler, you can expand coverage to other directories as well and slowly roll it out to your whole app.\
+confidence [ˈkɑːnfɪdəns] 信心
