@@ -123,3 +123,24 @@ appreciate [əˈpriːʃieɪt] 感激
 ## Getting Started
 In addition to these docs, we recommend checking the React Compiler Working Group for additional information and discussion about the compiler.\
 addition [əˈdɪʃn] 补充
+
+### Checking compatibility
+Prior to installing the compiler, you can first check to see if your codebase is compatible:\
+prior [ˈpraɪər] 先前的\
+compatible [kəmˈpætəbl] 兼容的
+```bash
+npx react-compiler-healthcheck@latest
+```
+This script will:
+
+- Check how many components can be successfully optimized: higher is better
+- Check for `<StrictMode>` usage: having this enabled and followed means a higher chance that the Rules of React are followed
+- Check for incompatible library usage: known libraries that are incompatible with the compiler
+
+usage [ˈjuːsɪdʒ] 使用\
+As an example:
+```
+Successfully compiled 8 out of 9 components.
+StrictMode usage not found.
+Found no usage of incompatible libraries.
+```
