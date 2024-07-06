@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.2
+
+[React doc Tutorial:Usage-Babel](./English//React/React-Compiler.md)
+
 ## 2024.7.1
 
 [React doc Tutorial:Rolling out the compiler to your codebase](./English//React/React-Compiler.md)

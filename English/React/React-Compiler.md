@@ -207,3 +207,32 @@ export default function App() {
 ```
 When you have more confidence with rolling out the compiler, you can expand coverage to other directories as well and slowly roll it out to your whole app.\
 confidence [ˈkɑːnfɪdəns] 信心
+
+##### New projects 
+If you’re starting a new project, you can enable the compiler on your entire codebase, which is the default behavior.
+
+## Usage
+### Babel
+```bash
+npm install babel-plugin-react-compiler
+```
+The compiler includes a Babel plugin which you can use in your build pipeline to run the compiler.\
+pipeline [ˈpaɪplaɪn] 管道
+
+After installing, add it to your Babel config. Please note that it’s critical that the compiler run first in the pipeline:\
+critical [ˈkrɪtɪkl] 关键的
+```
+// babel.config.js
+const ReactCompilerConfig = { /* ... */ };
+
+module.exports = function () {
+  return {
+    plugins: [
+      ['babel-plugin-react-compiler', ReactCompilerConfig], // must run first!
+      // ...
+    ],
+  };
+};
+```
+`babel-plugin-react-compiler` should run first before other Babel plugins as the compiler requires the input source information for sound analysis.\
+analysis [əˈnæləsɪs] 分析
