@@ -111,3 +111,11 @@ verify [ˈverɪfaɪ] 验证\
 statically [ˈstætɪkli] 静态地\
 compilation [ˌkɑːmpəˈleɪʃn] 编译
 detect [dɪˈtekt] 检测
+
+### Should I try out the compiler?
+Please note that the compiler is still experimental and has many rough edges. While it has been used in production at companies like Meta, rolling out the compiler to production for your app will depend on the health of your codebase and how well you’ve followed the Rules of React.\
+experimental [ɪkˌsperɪˈment(ə)l] 实验性的
+
+You don’t have to rush into using the compiler now. It’s okay to wait until it reaches a stable release before adopting it. However, we do appreciate trying it out in small experiments in your apps so that you can provide feedback to us to help make the compiler better.\
+adopt [əˈdɑːpt] 采用\
+appreciate [əˈpriːʃieɪt] 感激
