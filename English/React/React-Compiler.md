@@ -119,3 +119,7 @@ experimental [ɪkˌsperɪˈment(ə)l] 实验性的
 You don’t have to rush into using the compiler now. It’s okay to wait until it reaches a stable release before adopting it. However, we do appreciate trying it out in small experiments in your apps so that you can provide feedback to us to help make the compiler better.\
 adopt [əˈdɑːpt] 采用\
 appreciate [əˈpriːʃieɪt] 感激
+
+## Getting Started
+In addition to these docs, we recommend checking the React Compiler Working Group for additional information and discussion about the compiler.\
+addition [əˈdɪʃn] 补充

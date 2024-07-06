@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.6.26
+
+[React doc Tutorial:Getting Started](./English//React/React-Compiler.md)
+
 ## 2024.6.25
 
 [React doc Tutorial:Should I try out the compiler?](./English//React/React-Compiler.md)
