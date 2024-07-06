@@ -1,4 +1,6 @@
 # React Compiler
+
+## Overview
 This page will give you an introduction to the new experimental React Compiler and how to try it out successfully.\
 experimental [ɪkˌsperɪˈment(ə)l] 实验性的
 
@@ -28,7 +30,7 @@ independently [ˌɪndɪˈpendəntli] 独立地
 
  We recommend all React developers to use this eslint plugin to help improve the quality of your codebase.
 
-## What does the compiler do?
+### What does the compiler do?
 In order to optimize applications, React Compiler automatically memoizes your code. You may be familiar today with memoization through APIs such as useMemo, useCallback, and React.memo. With these APIs you can tell React that certain parts of your application don’t need to recompute if their inputs haven’t changed, reducing work on updates. While powerful, it’s easy to forget to apply memoization or apply them incorrectly.\
 This can lead to inefficient updates as React has to check parts of your UI that don’t have any meaningful changes.\
  meaningful [ˈmiːnɪŋfl] 有意义的
@@ -40,14 +42,14 @@ If it detects breakages of the rules, it will automatically skip over just those
 
 If your codebase is already very well-memoized, you might not expect to see major performance improvements with the compiler. However, in practice memoizing the correct dependencies that cause performance issues is tricky to get right by hand.
 
-### What kind of memoization does React Compiler add?
+#### What kind of memoization does React Compiler add?
 The initial release of React Compiler is primarily focused on improving update performance (re-rendering existing components), so it focuses on these two use cases:
 
 1. Skipping cascading re-rendering of components
     - Re-rendering `<Parent />` causes many components in its component tree to re-render, even though only `<Parent />` has changed
 2. Skipping expensive calculations from outside of React
     - For example, calling `expensivelyProcessAReallyLargeArrayOfObjects()` inside of your component or hook that needs that data
-#### Optimizing Re-renders 
+##### Optimizing Re-renders 
 React lets you express your UI as a function of their current state (more concretely: their props, state, and context). In its current implementation, when a component’s state changes, React will re-render that component and all of its children — unless you have applied some form of manual memoization with `useMemo()`, `useCallback()`, or `React.memo()`. For example, in the following example, `<MessageButton>` will re-render whenever `<FriendList>`’s state changes:\
 manual [ˈmænjuəl] 手动的
 ```jsx
@@ -72,7 +74,7 @@ React Compiler automatically applies the equivalent of manual memoization, ensur
 fine-grained [faɪn ɡreɪnd] 细粒度的\
  In the above example, React Compiler determines that the return value of `<FriendListCard />` can be reused even as friends changes, and can avoid recreating this JSX and avoid re-rendering `<MessageButton>` as the count changes.
 
-#### Expensive calculations also get memoized 
+##### Expensive calculations also get memoized 
 The compiler can also automatically memoize for expensive calculations used during rendering:
 ```jsx
 // **Not** memoized by React Compiler, since this is not a component or hook
@@ -95,3 +97,17 @@ implementing [ˈɪmplɪmɛntɪŋ] 实现
 
 So if `expensivelyProcessAReallyLargeArrayOfObjects` was used in many different components, even if the same exact items were passed down, that expensive calculation would be run repeatedly. We recommend profiling first to see if it really is that expensive before making code more complicated.\
 complicated [ˈkɑːmplɪˌkeɪtɪd] 复杂的
+
+### What does the compiler assume?
+React Compiler assumes that your code:
+
+1. Is valid, semantic JavaScript
+2. Tests that nullable/optional values and properties are defined before accessing them (for example, by enabling `strictNullChecks` if using TypeScript), i.e., `if (object.nullableProperty) { object.nullableProperty.foo }` or with optional-chaining `object.nullableProperty?.foo`
+3. Follows the [Rules of React](https://react.dev/reference/rules)
+
+semantic [sɪˈmæntɪk] 语义的\
+React Compiler can verify many of the Rules of React statically, and will safely skip compilation when it detects an error. To see the errors we recommend also installing `eslint-plugin-react-compiler`.\
+verify [ˈverɪfaɪ] 验证\
+statically [ˈstætɪkli] 静态地\
+compilation [ˌkɑːmpəˈleɪʃn] 编译
+detect [dɪˈtekt] 检测
