@@ -285,3 +285,30 @@ Using the experimental option ensures support for the React Compiler in:
 - Pages Router
 - Webpack (default)
 - Turbopack (opt-in through `--turbo`)
+
+### Remix
+Install `vite-plugin-babel`, and add the compiler’s Babel plugin to it:
+```bash
+npm install vite-plugin-babel
+```
+```js
+// vite.config.js
+import babel from "vite-plugin-babel";
+
+const ReactCompilerConfig = { /* ... */ };
+
+export default defineConfig({
+  plugins: [
+    remix({ /* ... */}),
+    babel({
+      filter: /\.[jt]sx?$/,
+      babelConfig: {
+        presets: ["@babel/preset-typescript"], // if you use TypeScript
+        plugins: [
+          ["babel-plugin-react-compiler", ReactCompilerConfig],
+        ],
+      },
+    }),
+  ],
+});
+```
