@@ -236,3 +236,25 @@ module.exports = function () {
 ```
 `babel-plugin-react-compiler` should run first before other Babel plugins as the compiler requires the input source information for sound analysis.\
 analysis [əˈnæləsɪs] 分析
+
+### Vite
+If you use Vite, you can add the plugin to vite-plugin-react:
+```
+// vite.config.js
+const ReactCompilerConfig = { /* ... */ };
+
+export default defineConfig(() => {
+  return {
+    plugins: [
+      react({
+        babel: {
+          plugins: [
+            ["babel-plugin-react-compiler", ReactCompilerConfig],
+          ],
+        },
+      }),
+    ],
+    // ...
+  };
+});
+```
