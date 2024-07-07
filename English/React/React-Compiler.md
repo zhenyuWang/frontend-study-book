@@ -151,7 +151,7 @@ React Compiler also powers an eslint plugin. The eslint plugin can be used indep
 npm install eslint-plugin-react-compiler
 ```
 Then, add it to your eslint config:
-```
+```js
 module.exports = {
   plugins: [
     'eslint-plugin-react-compiler',
@@ -181,7 +181,7 @@ bail out [beɪl aʊt] 退出\
 
 For this reason, to adopt the compiler successfully on existing projects, we recommend running it on a small directory in your product code first. You can do this by configuring the compiler to only run on a specific set of directories:\
 adopt [əˈdɑːpt] 采用\
-```
+```js
 const ReactCompilerConfig = {
   sources: (filename) => {
     return filename.indexOf('src/path/to/dir') !== -1;
@@ -194,7 +194,7 @@ annotate [ˈænəˌteɪt] 注释\
 temporary [ˈtempəˌreri] 临时的\
 aid [eɪd] 帮助\
 intend [ɪnˈtend] 打算
-```
+```js
 const ReactCompilerConfig = {
   compilationMode: "annotation",
 };
@@ -221,7 +221,7 @@ pipeline [ˈpaɪplaɪn] 管道
 
 After installing, add it to your Babel config. Please note that it’s critical that the compiler run first in the pipeline:\
 critical [ˈkrɪtɪkl] 关键的
-```
+```js
 // babel.config.js
 const ReactCompilerConfig = { /* ... */ };
 
@@ -239,7 +239,7 @@ analysis [əˈnæləsɪs] 分析
 
 ### Vite
 If you use Vite, you can add the plugin to vite-plugin-react:
-```
+```js
 // vite.config.js
 const ReactCompilerConfig = { /* ... */ };
 
@@ -258,3 +258,30 @@ export default defineConfig(() => {
   };
 });
 ```
+
+### Next.js 
+Next.js has an experimental configuration to enable the React Compiler. It automatically ensures Babel is set up with `babel-plugin-react-compiler`.
+
+- Install Next.js canary, which uses React 19 Release Candidate
+- Install babel-plugin-react-compiler
+```bash
+npm install next@canary babel-plugin-react-compiler
+```
+Then configure the experimental option in `next.config.js`:
+```js
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    reactCompiler: true,
+  },
+};
+
+module.exports = nextConfig;
+```
+Using the experimental option ensures support for the React Compiler in:
+
+- App Router
+- Pages Router
+- Webpack (default)
+- Turbopack (opt-in through `--turbo`)
