@@ -39,11 +39,11 @@ individual [ˌɪndɪˈvɪdʒuəl] 个别的；单独的；独特的
 - If your app doesn’t have an existing setup for compiling JavaScript modules, set it up with Vite. The Vite community maintains many integrations with backend frameworks, including Rails, Django, and Laravel. If your backend framework is not listed, follow this guide to manually integrate Vite builds with your backend.
 
 To check whether your setup works, run this command in your project folder:
-```
+```bash
 npm install react react-dom
 ```
 Then add these lines of code at the top of your main JavaScript file (it might be called index.js or main.js):
-```
+```tsx
 import { createRoot } from 'react-dom/client';
 
 // Clear the existing HTML content
@@ -60,7 +60,7 @@ Integrating a modular JavaScript environment into an existing project for the fi
 
 ### Step 2: Render React components anywhere on the page
 In the previous step, you put this code at the top of your main file:
-```
+```jsx
 import { createRoot } from 'react-dom/client';
 
 // Clear the existing HTML content
@@ -75,7 +75,7 @@ Of course, you don’t actually want to clear the existing HTML content!
 Delete this code.
 
 Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique `id` attribute to any tag, for example:
-```
+```html
 <!-- ... somewhere in your html ... -->
 <nav id="navigation"></nav>
 <!-- ... more html ... -->

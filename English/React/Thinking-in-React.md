@@ -225,14 +225,14 @@ strategy [ˈstrætədʒi] 策略
 So the state values will live in `FilterableProductTable`.
 
 Add state to the component with the `useState() Hook`. Hooks are special functions that let you “hook into” React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
-```
+```js
 function `FilterableProductTable`({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 ```
 
 Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
-```
+```html
 <div>
   <SearchBar 
     filterText={filterText} 
@@ -250,7 +250,7 @@ Notice that editing the form doesn’t work yet. There is a console error in the
 You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field.
 
 In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
-```
+```js
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
@@ -269,7 +269,7 @@ explicit [ɪkˈsplɪsɪt] 明确的\
 intentional [ɪnˈtenʃənl] 故意的
 
 You want to make it so whenever the user changes the form inputs, the state updates to reflect those changes. The state is owned by `FilterableProductTable`, so only it can call `setFilterText` and `setInStockOnly`. To let `SearchBar` update the `FilterableProductTable`’s state, you need to pass these functions down to `SearchBar`:
-```
+```js
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
@@ -283,7 +283,7 @@ function FilterableProductTable({ products }) {
         onInStockOnlyChange={setInStockOnly} />
 ```
 Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
-```
+```jsx
 function SearchBar({
   filterText,
   inStockOnly,

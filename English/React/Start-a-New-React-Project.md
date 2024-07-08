@@ -16,7 +16,7 @@ vision [ˈvɪʒn] n. 视力；视觉；幻想；愿望；愿景；
 [Next.js’ Pages Router](https://nextjs.org) is a full-stack React framework. It’s versatile and lets you create React apps of any size—from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your terminal:\
 versatile [ˈvɜːrsətl] adj. 多才多艺的；多方面的；多功能的；\
 mostly [ˈməʊstli] adv. 大部分；主要地；
-```
+```bash
 npx create-next-app@latest
 ```
 If you’re new to Next.js, check out the [learn Next.js course](https://nextjs.org/learn).
@@ -25,7 +25,7 @@ Next.js is maintained by Vercel. You can deploy a Next.js app to any Node.js or 
 
 ## Remix
 [Remix](https://remix.run) is a full-stack React framework with nested routing. It lets you break your app into nested parts that can load data in parallel and refresh in response to the user actions. To create a new Remix project, run:
-```
+```bash
 npx create-remix
 ```
 If you’re new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
@@ -34,7 +34,7 @@ Remix is maintained by Shopify. When you create a Remix project, you need to pic
 
 ## Gatsby
 [Gatsby](https://www.gatsbyjs.com/) is a React framework for fast CMS-backed websites. Its rich plugin ecosystem and its GraphQL data layer simplify integrating content, APIs, and services into one website. To create a new Gatsby project, run:
-```
+```bash
 npx create-gatsby
 ```
 If you’re new to Gatsby, check out the [Gatsby tutorial](https://www.gatsbyjs.com/docs/tutorial/). 
@@ -43,7 +43,7 @@ Gatsby is maintained by Netlify. You can deploy a fully static Gatsby site to an
 
 ## Expo (for native apps) 
 [Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs. It provides an SDK for React Native that makes the native parts easier to use. To create a new Expo project, run: 
-```
+```bash
 npx create-expo-app
 ```
 If you’re new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/). 

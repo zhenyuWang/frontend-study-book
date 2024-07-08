@@ -19,7 +19,7 @@ All production-grade React frameworks offer support for using TypeScript. Follow
 
 ### Adding TypeScript to an existing React project
 To install the latest version of React’s type definitions:
-```
+```bash
 npm install @types/react @types/react-dom
 ```
 The following compiler options need to be set in your tsconfig.json:
@@ -37,7 +37,7 @@ Writing TypeScript with React is very similar to writing JavaScript with React. 
 These types can be used for correctness checking and providing inline documentation in editors.
 
 Taking the `MyButton component` from the `Quick Start` guide, we can add a type describing the `title` for the button:
-```
+```jsx
 function MyButton({ title }: { title: string }) {
   return (
     <button>{title}</button>
@@ -58,7 +58,7 @@ These sandboxes can handle TypeScript code, but they do not run the type-checker
 
 This inline syntax is the simplest way to provide types for a component, though once you start to have a few fields to describe it can become unwieldy. Instead, you can use an interface or type to describe the component’s props:\
 unwieldy [ʌnˈwiːldi] 难处理的，笨重的
-```
+```tsx
 interface MyButtonProps {
   /** The text to display inside the button */
   title: string;
@@ -91,23 +91,23 @@ However, we can look at a few examples of how to provide types for Hooks.
 
 ### useState
 The `useState Hook` will re-use the value passed in as the initial state to determine what the type of the value should be. For example:
-```
+```js
 // Infer the type as "boolean"
 const [enabled, setEnabled] = useState(false);
 ```
 This will assign the type of `boolean` to `enabled`, and `setEnabled` will be a function accepting either a `boolean` argument, or a function that returns a `boolean`. If you want to explicitly provide a type for the state, you can do so by providing a type argument to the `useState` call:
-```
+```js
 // Explicitly set the type to "boolean"
 const [enabled, setEnabled] = useState<boolean>(false);
 ```
 This isn’t very useful in this case, but a common case where you may want to provide a type is when you have a union type. For example, status here can be one of a few different strings:
-```
+```ts
 type Status = "idle" | "loading" | "success" | "error";
 
 const [status, setStatus] = useState<Status>("idle");
 ```
 Or, as recommended in Principles for structuring state, you can group related state as an object and describe the different possibilities via object types:
-```
+```ts
 type RequestState =
   | { status: 'idle' }
   | { status: 'loading' }
@@ -119,7 +119,7 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 
 ### useReducer
 The `useReducer Hook` is a more complex Hook that takes a reducer function and an initial state. The types for the reducer function are inferred from the initial state. You can optionally provide a type argument to the useReducer call to provide a type for the state, but it is often better to set the type on the initial state instead:
-```
+```tsx
 import {useReducer} from 'react';
 
 interface State {
@@ -170,7 +170,7 @@ We are using TypeScript in a few key places:
 A more explicit alternative to setting the type on initialState is to provide a type argument to useReducer:\
 explicit [ɪkˈsplɪsɪt] 明确的\
 alternative [ɔːlˈtɜːrnətɪv] 替代方案
-```
+```tsx
 import { stateReducer, State } from './your-reducer-implementation';
 
 const initialState = { count: 0 };
@@ -186,7 +186,7 @@ consume [kənˈsjuːm] 消耗
 
 The type of the value provided by the context is inferred from the value passed to the `createContext` call:\
 infer [ɪnˈfɜːr] 推断
-```
+```tsx
 import { createContext, useContext, useState } from 'react';
 
 type Theme = "light" | "dark" | "system";
@@ -219,7 +219,7 @@ occasionally [əˈkeɪʒənəli] 偶尔
 
 This causes the issue that you need to eliminate the `| null` in the type for context consumers. Our recommendation is to have the Hook do a runtime check for it’s existence and throw an error when not present:\
 eliminate [ɪˈlɪmɪneɪt] 消除
-```
+```tsx
 import { createContext, useContext, useState, useMemo } from 'react';
 
 // This is a simpler example, but you can imagine a more complex object here
@@ -261,14 +261,14 @@ function MyComponent() {
 ### useMemo
 The [useMemo](https://react.dev/reference/react/useMemo) Hooks will create/re-access a memorized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed. The result of calling the Hook is inferred from the return value from the function in the first parameter.
  You can be more explicit by providing a type argument to the Hook.
- ```
+ ```tsx
  // The type of visibleTodos is inferred from the return value of filterTodos
 const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 ```
 
 ### useCallback
 The [useCallback](https://react.dev/reference/react/useCallback) provide a stable reference to a function as long as the dependencies passed into the second parameter are the same. Like `useMemo`, the function’s type is inferred from the return value of the function in the first parameter, and you can be more explicit by providing a type argument to the Hook.
-```
+```tsx
 const handleClick = useCallback(() => {
   // ...
 }, [todos]);
@@ -276,7 +276,7 @@ const handleClick = useCallback(() => {
 When working in TypeScript strict mode `useCallback` requires adding types for the parameters in your callback. This is because the type of the callback is inferred from the return value of the function, and without parameters the type cannot be fully understood.
 
 Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback:
-```
+```tsx
 import { useState, useCallback } from 'react';
 
 export default function Form() {
@@ -302,7 +302,7 @@ expansive [ɪkˈspænsɪv] 广阔的
 
 ### DOM Events
 When working with DOM events in React, the type of the event can often be inferred from the event handler. However, when you want to extract a function to be passed to an event handler, you will need to explicitly set the type of the event.
-```
+```tsx
 import { useState } from 'react';
 
 export default function Form() {
@@ -328,7 +328,7 @@ If you need to use an event that is not included in this list, you can use the `
 
 ### Children
 There are two common paths to describing the children of a component. The first is to use the `React.ReactNode` type, which is a union of all the possible types that can be passed as children in JSX:\
-```
+```ts
 interface ModalRendererProps {
   title: string;
   children: React.ReactNode;
@@ -336,7 +336,7 @@ interface ModalRendererProps {
 ```
 This is a very broad definition of children. The second is to use the React.ReactElement type, which is only JSX elements and not JavaScript primitives like strings or numbers:\
 primitive [ˈprɪmətɪv] 原始的
-```
+```ts
 interface ModalRendererProps {
   title: string;
   children: React.ReactElement;
@@ -348,7 +348,7 @@ You can see an example of both `React.ReactNode` and `React.ReactElement` with t
 
 ### Style Props
 When using inline styles in React, you can use `React.CSSProperties` to describe the object passed to the `style` prop. This type is a union of all the possible CSS properties, and is a good way to ensure you are passing valid CSS properties to the style prop, and to get auto-complete in your editor.
-```
+```ts
 interface MyComponentProps {
   style: React.CSSProperties;
 }

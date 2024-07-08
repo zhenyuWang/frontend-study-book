@@ -7,7 +7,7 @@ experimental [ɪkˌsperɪˈment(ə)l] 实验性的
 **Under Construction**\
 These docs are still a work in progress. More documentation is available in the React Compiler Working Group repo, and will be upstreamed into these docs when they are more stable.
 
-**You will learn**\
+**You will learn**
 - Getting started with the compiler
 - Installing the compiler and eslint plugin
 - Troubleshooting
@@ -311,4 +311,39 @@ export default defineConfig({
     }),
   ],
 });
+```
+
+### Webpack
+You can create your own loader for React Compiler, like so:
+```js
+const ReactCompilerConfig = { /* ... */ };
+const BabelPluginReactCompiler = require('babel-plugin-react-compiler');
+
+function reactCompilerLoader(sourceCode, sourceMap) {
+  // ...
+  const result = transformSync(sourceCode, {
+    // ...
+    plugins: [
+      [BabelPluginReactCompiler, ReactCompilerConfig],
+    ],
+  // ...
+  });
+
+  if (result === null) {
+    this.callback(
+      Error(
+        `Failed to transform "${options.filename}"`
+      )
+    );
+    return;
+  }
+
+  this.callback(
+    null,
+    result.code,
+    result.map === null ? undefined : result.map
+  );
+}
+
+module.exports = reactCompilerLoader;
 ```
