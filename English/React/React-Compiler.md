@@ -347,3 +347,15 @@ function reactCompilerLoader(sourceCode, sourceMap) {
 
 module.exports = reactCompilerLoader;
 ```
+
+### Expo
+Please refer to [Expo’s docs](https://docs.expo.dev/preview/react-compiler/) to enable and use the React Compiler in Expo apps.
+
+### Metro (React Native)
+React Native uses Babel via Metro, so refer to the [Usage with Babel](https://react.dev/learn/react-compiler#usage-with-babel) section for installation instructions.
+
+### Rspack
+Please refer to [Rspack’s docs](https://www.rspack.dev/guide/tech/react#react-compiler) to enable and use the React Compiler in Rspack apps.
+
+### Rsbuild
+Please refer to [Rsbuild’s docs](https://rsbuild.dev/guide/framework/react#react-compiler) to enable and use the React Compiler in Rsbuild apps.
