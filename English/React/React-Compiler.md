@@ -359,3 +359,45 @@ Please refer to [Rspack’s docs](https://www.rspack.dev/guide/tech/react#react-
 
 ### Rsbuild
 Please refer to [Rsbuild’s docs](https://rsbuild.dev/guide/framework/react#react-compiler) to enable and use the React Compiler in Rsbuild apps.
+
+## Troubleshooting
+Troubleshooting [ˈtrʌbəlˌʃuːtɪŋ] 故障排除\
+To report issues, please first create a minimal repro on the [React Compiler Playground](https://playground.react.dev/#N4Igzg9grgTgxgUxALhAejQAgFTYHIQAuumAtgqRAJYBeCAJpgEYCemASggIZyGYDCEUgAcqAGwQwANJjBUAdokyEAFlTCZ1meUUxdMcIcIjyE8vhBiYVECAGsAOvIBmURYSonMCAB7CzcgBuCGIsAAowEIhgYACCnFxioQAyXDAA5gixMDBcLADyzvlMAFYIvGAAFACUmMCYaNiYAHStOFgAvk5OGJgAshTUdIysHNy8AkbikrIKSqpaWvqGIiZmhE6u7p7ymAAqXEwSguZcCpKV9VSEFBodtcBOmAYmYHz0XIT6ALzefgFUYKhCJRBAxeLcJIsVIZLI5PKFYplCqVa63aoAbm6u0wMAQhFguwAPPRAQA+YAfL4dIloUmBMlODogDpAA) and include it in your bug report. You can open issues in the facebook/react repo.
+
+You can also provide feedback in the React Compiler Working Group by applying to be a member. Please see the README for more details on joining.
+```js
+(0 , _c) is not a function error
+```
+This occurs if you are not using React 19 RC and up. To fix this, [upgrade your app to React 19 RC](https://react.dev/blog/2024/04/25/react-19-upgrade-guide) first.
+
+If you are unable to upgrade to React 19, you may try a userspace implementation of the cache function as described in the Working Group. However, please note that this is not recommended and you should upgrade to React 19 when possible.
+
+### How do I know my components have been optimized?
+React Devtools (v5.0+) has built-in support for React Compiler and will display a “Memo ✨” badge next to components that have been optimized by the compiler.
+
+### Something is not working after compilation
+If you have eslint-plugin-react-compiler installed, the compiler will display any violations of the rules of React in your editor. When it does this, it means that the compiler has skipped over optimizing that component or hook. This is perfectly okay, and the compiler can recover and continue optimizing other components in your codebase. You don’t have to fix all eslint violations straight away. You can address them at your own pace to increase the amount of components and hooks being optimized.
+
+Due to the flexible and dynamic nature of JavaScript however, it’s not possible to comprehensively detect all cases. Bugs and undefined behavior such as infinite loops may occur in those cases.\
+comprehensively [ˌkɑːmprɪˈhensɪvli] 全面地
+
+If your app doesn’t work properly after compilation and you aren’t seeing any eslint errors, the compiler may be incorrectly compiling your code. To confirm this, try to make the issue go away by aggressively opting out any component or hook you think might be related via the "use no memo" directive.\
+aggressively [əˈɡresɪvli] 激烈地
+```js
+function SuspiciousComponent() {
+  "use no memo"; // opts out this component from being compiled by React Compiler
+  // ...
+}
+```
+**Note**\
+"use no memo" is a temporary escape hatch that lets you opt-out components and hooks from being compiled by the React Compiler. This directive is not meant to be long lived the same way as eg "use client" is.\
+hatch [hætʃ] 舱口；孵化；策划
+
+It is not recommended to reach for this directive unless it’s strictly necessary. Once you opt-out a component or hook, it is opted-out forever until the directive is removed. This means that even if you fix the code, the compiler will still skip over compiling it unless you remove the directive.\
+necessary [ˈnesəˌseri] 必要的\
+opted-out [ˈɑːpt aʊt] 退出
+
+When you make the error go away, confirm that removing the opt out directive makes the issue come back. Then share a bug report with us (you can try to reduce it to a small repro, or if it’s open source code you can also just paste the entire source) using the React Compiler Playground so we can identify and help fix the issue.
+
+### Other issues
+Please see [https://github.com/reactwg/react-compiler/discussions/7](https://github.com/reactwg/react-compiler/discussions/7).

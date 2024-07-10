@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.10
+
+[React doc Tutorial:Troubleshooting](./English//React/React-Compiler.md)
+
 ## 2024.7.9
 
 [React doc Tutorial:Usage](./English//React/React-Compiler.md)
