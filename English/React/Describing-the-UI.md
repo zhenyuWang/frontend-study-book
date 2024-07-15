@@ -41,3 +41,34 @@ export default function Gallery() {
 
 Ready to learn this topic?\
 Read Your First Component to learn how to declare and use React components.
+
+## Importing and exporting components
+You can declare many components in one file, but large files can get difficult to navigate. To solve this, you can export a component into its own file, and then import that component from another file:
+```jsx
+// Gallery.js
+import Profile from './Profile.js';
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
+```jsx
+// Profile.js
+export default function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/QIrZWGIs.jpg"
+      alt="Alan L. Hart"
+    />
+  );
+}
+```
+#### Ready to learn this topic?
+Read [Importing and Exporting Components](https://react.dev/learn/importing-and-exporting-components) to learn how to split components into their own files.

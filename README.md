@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.15
+
+[React doc Tutorial:Describing the UI-Importing and exporting components](./English//React/Describing-the-UI.md)
+
 ## 2024.7.12
 
 [React doc Tutorial:Describing the UI-Your first component](./English//React/Describing-the-UI.md)
