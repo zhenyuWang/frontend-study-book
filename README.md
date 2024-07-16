@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.16
+
+[React doc Tutorial:Describing the UI-Writing markup with JSX](./English//React/Describing-the-UI.md)
+
 ## 2024.7.15
 
 [React doc Tutorial:Describing the UI-Importing and exporting components](./English//React/Describing-the-UI.md)

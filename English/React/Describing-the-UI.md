@@ -72,3 +72,49 @@ export default function Profile() {
 ```
 #### Ready to learn this topic?
 Read [Importing and Exporting Components](https://react.dev/learn/importing-and-exporting-components) to learn how to split components into their own files.
+
+## Writing markup with JSX
+Each React component is a JavaScript function that may contain some markup that React renders into the browser. React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information.\
+represent [ˈreprezent] 表示；表示法；表示形式
+
+If we paste existing HTML markup into a React component, it won’t always work:
+```jsx
+export default function TodoList() {
+  return (
+    // This doesn't quite work!
+    <h1>Hedy Lamarr's Todos</h1>
+    <img
+      src="https://i.imgur.com/yXOvdOSs.jpg"
+      alt="Hedy Lamarr"
+      class="photo"
+    >
+    <ul>
+      <li>Invent new traffic lights
+      <li>Rehearse a movie scene
+      <li>Improve spectrum technology
+    </ul>
+  );
+}
+```
+If you have existing HTML like this, you can fix it using a converter:
+```jsx
+export default function TodoList() {
+  return (
+    <>
+      <h1>Hedy Lamarr's Todos</h1>
+      <img
+        src="https://i.imgur.com/yXOvdOSs.jpg"
+        alt="Hedy Lamarr"
+        className="photo"
+      />
+      <ul>
+        <li>Invent new traffic lights</li>
+        <li>Rehearse a movie scene</li>
+        <li>Improve spectrum technology</li>
+      </ul>
+    </>
+  );
+}
+```
+Ready to learn this topic?\
+Read [Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx) to learn how to write valid JSX.
