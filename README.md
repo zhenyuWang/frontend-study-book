@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.17
+
+[React doc Tutorial:Describing the UI-JavaScript in JSX with curly braces](./English//React/Describing-the-UI.md)
+
 ## 2024.7.16
 
 [React doc Tutorial:Describing the UI-Writing markup with JSX](./English//React/Describing-the-UI.md)
