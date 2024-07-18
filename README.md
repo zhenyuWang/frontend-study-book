@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.18
+
+[React doc Tutorial:Describing the UI-Passing props to a component](./English//React/Describing-the-UI.md)
+
 ## 2024.7.17
 
 [React doc Tutorial:Describing the UI-JavaScript in JSX with curly braces](./English//React/Describing-the-UI.md)
