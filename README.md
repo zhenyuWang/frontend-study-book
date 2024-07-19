@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.19
+
+[React doc Tutorial:Describing the UI-Keeping components pure](./English//React/Describing-the-UI.md)
+
 ## 2024.7.18
 
 [React doc Tutorial:Describing the UI-Passing props to a component](./English//React/Describing-the-UI.md)

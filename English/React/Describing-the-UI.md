@@ -314,3 +314,74 @@ export function getImageUrl(person) {
 ```
 Ready to learn this topic?\
 Read [Rendering Lists](https://react.dev/learn/rendering-lists) to learn how to render a list of components, and how to choose a key.
+
+## Keeping components pure
+Some JavaScript functions are pure. A pure function:
+
+- Minds its own business. It does not change any objects or variables that existed before it was called.
+- Same inputs, same output. Given the same inputs, a pure function should always return the same result.
+By strictly only writing your components as pure functions, you can avoid an entire class of baffling bugs and unpredictable behavior as your codebase grows. Here is an example of an impure component:\
+avoid [əˈvɔɪd] 避免；避开；避开
+baffling [ˈbæflɪŋ] 令人困惑的；难解的
+unpredictable [ˌʌnprɪˈdɪktəbl] 不可预测的；不可预言的
+```jsx
+let guest = 0;
+
+function Cup() {
+  // Bad: changing a preexisting variable!
+  guest = guest + 1;
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaSet() {
+  return (
+    <>
+      <Cup />
+      <Cup />
+      <Cup />
+    </>
+  );
+}
+```
+You can make this component pure by passing a prop instead of modifying a preexisting variable:\
+preexisting [ˌpri:ɪɡˈzɪstɪŋ] 事先存在的
+```jsx
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaSet() {
+  return (
+    <>
+      <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
+    </>
+  );
+}
+```
+Ready to learn this topic?\
+Read [Keeping Components Pure](https://react.dev/learn/keeping-components-pure) to learn how to write components as pure, predictable functions.
+
+## Your UI as a tree
+React uses trees to model the relationships between components and modules.
+
+A React render tree is a representation of the parent and child relationship between components.\
+representation [ˌreprɪzenˈteɪʃn] 表示；表现；表现法
+
+Components near the top of the tree, near the root component, are considered top-level components. Components with no child components are leaf components. This categorization of components is useful for understanding data flow and rendering performance.\
+categorization [ˌkætɪgəraɪˈzeɪʃn] 分类；分类法
+
+Modelling the relationship between JavaScript modules is another useful way to understand your app. We refer to it as a module dependency tree.
+
+A dependency tree is often used by build tools to bundle all the relevant JavaScript code for the client to download and render. A large bundle size regresses user experience for React apps. Understanding the module dependency tree is helpful to debug such issues.\
+relevant [ˈreləvənt] 相关的；有关的\
+regress [rɪˈɡres] 退步；逆行；使倒退
+
+Ready to learn this topic?\
+Read [Your UI as a Tree](https://react.dev/learn/understanding-your-ui-as-a-tree) to learn how to create a render and module dependency trees for a React app and how they’re useful mental models for improving user experience and performance.
+
+## What’s next? 
+Head over to [Your First Component](https://react.dev/learn/your-first-component) to start reading this chapter page by page!
+
+Or, if you’re already familiar with these topics, why not read about [Adding Interactivity](https://react.dev/learn/adding-interactivity)?
