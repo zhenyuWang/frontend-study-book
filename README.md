@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.22
+
+[React doc Tutorial:Your First Component](./English//React/Your-First-Component.md)
+
 ## 2024.7.19
 
 [React doc Tutorial:Describing the UI-Keeping components pure](./English//React/Describing-the-UI.md)
