@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.24
+
+[React doc Tutorial:Your First Component-Using a component](./English//React/Your-First-Component.md)
+
 ## 2024.7.23
 
 [React doc Tutorial:Your First Component-Defining a component](./English//React/Your-First-Component.md)
