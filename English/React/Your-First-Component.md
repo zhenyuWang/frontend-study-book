@@ -108,3 +108,47 @@ export default function Gallery() {
   );
 }
 ```
+
+### What the browser sees
+Notice the difference in casing:
+
+- `<section>` is lowercase, so React knows we refer to an HTML tag.
+- `<Profile />` starts with a capital `P`, so React knows that we want to use our component called `Profile`.
+And `Profile` contains even more HTML: `<img />`. In the end, this is what the browser sees:
+```jsx
+<section>
+  <h1>Amazing scientists</h1>
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>
+```
+
+### Nesting and organizing components
+Components are regular JavaScript functions, so you can keep multiple components in the same file. This is convenient when components are relatively small or tightly related to each other. If this file gets crowded, you can always move `Profile` to a separate file. You will learn how to do this shortly on the [page about imports](https://react.dev/learn/importing-and-exporting-components).
+
+Because the `Profile` components are rendered inside `Gallery`—even several times!—we can say that `Gallery` is a **parent component**, rendering each `Profile` as a “child”. This is part of the magic of React: you can define a component once, and then use it in as many places and as many times as you like.
+
+**Pitfall**\
+Components can render other components, but you must never nest their definitions:
+```jsx
+export default function Gallery() {
+  // 🔴 Never define a component inside another component!
+  function Profile() {
+    // ...
+  }
+  // ...
+}
+```
+The snippet above is very slow and causes bugs. Instead, define every component at the top level:
+```jsx
+export default function Gallery() {
+  // ...
+}
+
+// ✅ Declare components at the top level
+function Profile() {
+  // ...
+}
+```
+When a child component needs some data from a parent, pass it by props instead of nesting definitions.
