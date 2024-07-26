@@ -152,3 +152,14 @@ function Profile() {
 }
 ```
 When a child component needs some data from a parent, pass it by props instead of nesting definitions.
+
+## Recap
+You’ve just gotten your first taste of React! Let’s recap some key points.\
+recap [ˈriːkæp] 总结
+
+- React lets you create components, reusable UI elements for your app.
+- In a React app, every piece of UI is a component.
+- React components are regular JavaScript functions except:
+  1. Their names always begin with a capital letter.
+  2. They return JSX markup.
+  
