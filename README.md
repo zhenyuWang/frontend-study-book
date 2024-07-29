@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.7.29
+
+[React doc Tutorial:Your First Component-Recap](./English//React/Your-First-Component.md)
+
 ## 2024.7.26
 
 [React doc Tutorial:Your First Component-Recap](./English//React/Your-First-Component.md)
