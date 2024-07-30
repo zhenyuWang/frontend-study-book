@@ -4,9 +4,13 @@
 
 # 日志
 
+## 2024.7.30
+
+[React doc Tutorial:Importing and Exporting Components-The root component file](./English//React/Importing-and-Exporting-Components.md)
+
 ## 2024.7.29
 
-[React doc Tutorial:Your First Component-Recap](./English//React/Your-First-Component.md)
+[React doc Tutorial:Importing and Exporting Components](./English//React/Importing-and-Exporting-Components.md)
 
 ## 2024.7.26
 

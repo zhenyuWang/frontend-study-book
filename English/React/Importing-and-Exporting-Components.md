@@ -8,3 +8,28 @@ You will learn
 - When to use default and named imports and exports
 - How to import and export multiple components from one file
 - How to split components into multiple files
+
+## The root component file
+In Your First Component, you made a `Profile` component and a `Gallery` component that renders it:
+```jsx
+function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
+These currently live in a root component file, named `App.js` in this example. Depending on your setup, your root component could be in another file, though. If you use a framework with file-based routing, such as Next.js, your root component will be different for every page.
