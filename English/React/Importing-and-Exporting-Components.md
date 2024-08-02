@@ -148,3 +148,11 @@ Now you’re using a mix of default and named exports:
   - Imports `Profile` as a named import called `Profile` from `Gallery.js`.
   - Imports `Gallery` as a default import from `Gallery.js`.
   - Exports the root App component as a default export.
+
+## Recap
+On this page you learned:
+
+- What a root component file is
+- How to import and export a component
+- When and how to use default and named imports and exports
+- How to export multiple components from the same file

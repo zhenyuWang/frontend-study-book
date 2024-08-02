@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.8.2
+
+[React doc Tutorial:Importing and Exporting Components-Recap](./English//React/Importing-and-Exporting-Components.md)
+
 ## 2024.8.1
 
 [React doc Tutorial:Importing and Exporting Components-Exporting and importing multiple components from the same file](./English//React/Importing-and-Exporting-Components.md)
