@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.8.5
+
+[React doc Tutorial:Writing Markup with JSX](./English//React/Writing-Markup-with-JSX.md)
+
 ## 2024.8.2
 
 [React doc Tutorial:Importing and Exporting Components-Recap](./English//React/Importing-and-Exporting-Components.md)
