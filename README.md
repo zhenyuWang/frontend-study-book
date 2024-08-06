@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.8.6
+
+[React doc Tutorial:Writing Markup with JSX-JSX: Putting markup into JavaScript](./English//React/Writing-Markup-with-JSX.md)
+
 ## 2024.8.5
 
 [React doc Tutorial:Writing Markup with JSX](./English//React/Writing-Markup-with-JSX.md)
