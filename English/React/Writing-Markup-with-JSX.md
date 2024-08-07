@@ -21,3 +21,51 @@ Each React component is a JavaScript function that may contain some markup that 
 
 **Note**\
 JSX and React are two separate things. They’re often used together, but you can use them independently of each other. JSX is a syntax extension, while React is a JavaScript library.
+
+## Converting HTML to JSX
+Suppose that you have some (perfectly valid) HTML:
+```jsx
+<h1>Hedy Lamarr's Todos</h1>
+<img 
+  src="https://i.imgur.com/yXOvdOSs.jpg" 
+  alt="Hedy Lamarr" 
+  class="photo"
+>
+<ul>
+    <li>Invent new traffic lights
+    <li>Rehearse a movie scene
+    <li>Improve the spectrum technology
+</ul>
+```
+And you want to put it into your component:
+```jsx
+export default function TodoList() {
+  return (
+    // ???
+  )
+}
+```
+If you copy and paste it as is, it will not work:
+```jsx
+// App.js
+export default function TodoList() {
+  return (
+    // This doesn't quite work!
+    <h1>Hedy Lamarr's Todos</h1>
+    <img 
+      src="https://i.imgur.com/yXOvdOSs.jpg" 
+      alt="Hedy Lamarr" 
+      class="photo"
+    >
+    <ul>
+      <li>Invent new traffic lights
+      <li>Rehearse a movie scene
+      <li>Improve the spectrum technology
+    </ul>
+  );
+}
+```
+This is because JSX is stricter and has a few more rules than HTML! If you read the error messages above, they’ll guide you to fix the markup, or you can follow the guide below.
+
+**Note**\
+Most of the time, React’s on-screen error messages will help you find where the problem is. Give them a read if you get stuck!
