@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.8.14
+
+[React doc Tutorial:JavaScript in JSX with Curly Braces-Using curly braces: A window into the JavaScript world](./English//React/Writing-Markup-with-JSX.md)
+
 ## 2024.8.13
 
 [React doc Tutorial:JavaScript in JSX with Curly Braces-Passing strings with quotes](./English//React/Writing-Markup-with-JSX.md)

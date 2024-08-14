@@ -37,3 +37,41 @@ export default function Avatar() {
 }
 ```
 Notice the difference between `className="avatar"`, which specifies an `"avatar"` CSS class name that makes the image round, and `src={avatar}` that reads the value of the JavaScript variable called `avatar`. That’s because curly braces let you work with JavaScript right there in your markup!
+
+## Using curly braces: A window into the JavaScript world
+JSX is a special way of writing JavaScript. That means it’s possible to use JavaScript inside it—with curly braces `{ }`. The example below first declares a name for the scientist, `name`, then embeds it with curly braces inside the `<h1>`:\
+declare [/dɪˈkler/] 声明\
+scientist [/ˈsaɪəntɪst/] 科学家\
+embed [/ɪmˈbed/] 嵌入
+```jsx
+export default function TodoList() {
+  const name = 'Gregorio Y. Zara';
+  return (
+    <h1>{name}'s To Do List</h1>
+  );
+}
+```
+Try changing the `name`’s value from `'Gregorio Y. Zara'` to `'Hedy Lamarr'`. See how the list title changes?
+
+Any JavaScript expression will work between curly braces, including function calls like `formatDate()`:
+```jsx
+const today = new Date();
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat(
+    'en-US',
+    { weekday: 'long' }
+  ).format(date);
+}
+
+export default function TodoList() {
+  return (
+    <h1>To Do List for {formatDate(today)}</h1>
+  );
+}
+```
+### Where to use curly braces 
+You can only use curly braces in two ways inside JSX:
+
+1. As text directly inside a JSX tag: `<h1>{name}'s To Do List</h1>` works, but `<{tag}>Gregorio Y. Zara's To Do List</{tag}>` will not.
+2. As attributes immediately following the `=` sign: `src={avatar}` will read the `avatar` variable, but `src="{avatar}"` will pass the string `"{avatar}"`.
