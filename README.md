@@ -4,6 +4,10 @@
 
 # 日志
 
+## 2024.8.16
+
+[React doc Tutorial:JavaScript in JSX with Curly Braces-More fun with JavaScript objects and curly braces](./English//React/Writing-Markup-with-JSX.md)
+
 ## 2024.8.15
 
 [React doc Tutorial:JavaScript in JSX with Curly Braces-Using “double curlies”: CSS and other objects in JSX](./English//React/Writing-Markup-with-JSX.md)

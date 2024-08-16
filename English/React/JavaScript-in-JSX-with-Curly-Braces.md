@@ -109,3 +109,49 @@ You can really see the JavaScript object inside the curly braces when you write 
 The next time you see `{{ and }}` in JSX, know that it’s nothing more than an object inside the JSX curlies!
 
 Inline style properties are written in camelCase. For example, HTML `<ul style="background-color: black">` would be written as `<ul style={{ backgroundColor: 'black' }}>`  in your component.
+
+## More fun with JavaScript objects and curly braces
+You can move several expressions into one object, and reference them in your JSX inside curly braces:
+```jsx
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
+
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+```
+In this example, the `person` JavaScript object contains a `name` string and a `theme` object:
+```jsx
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
+```
+The component can use these values from `person` like so:
+```jsx
+<div style={person.theme}>
+  <h1>{person.name}'s Todos</h1>
+```
+JSX is very minimal as a templating language because it lets you organize data and logic using JavaScript.
