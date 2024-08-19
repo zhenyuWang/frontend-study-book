@@ -155,3 +155,11 @@ The component can use these values from `person` like so:
   <h1>{person.name}'s Todos</h1>
 ```
 JSX is very minimal as a templating language because it lets you organize data and logic using JavaScript.
+
+## Recap
+Now you know almost everything about JSX:
+
+- JSX attributes inside quotes are passed as strings.
+- Curly braces let you bring JavaScript logic and variables into your markup.
+- They work inside the JSX tag content or immediately after `=` in attributes.
+- `{{ and }}` is not special syntax: it’s a JavaScript object tucked inside JSX curly braces.
