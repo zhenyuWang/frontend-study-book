@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.8.20
+[React doc Tutorial:Passing Props to a Component](./English//React/Passing-Props-to-a-Component.md)
+
 ## 2024.8.19
 
 [React doc Tutorial:JavaScript in JSX with Curly Braces-Recap](./English//React/Writing-Markup-with-JSX.md)
