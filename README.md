@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.8.22
+[React doc Tutorial:Passing Props to a Component-Passing props to a component](./English//React/Passing-Props-to-a-Component.md)
+
 ## 2024.8.21
 [React doc Tutorial:Passing Props to a Component-Familiar props](./English//React/Passing-Props-to-a-Component.md)
 
