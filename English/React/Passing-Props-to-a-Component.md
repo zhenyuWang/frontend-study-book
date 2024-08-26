@@ -164,3 +164,38 @@ function Avatar({ person, size = 100 }) {
 Now, if `<Avatar person={...} />` is rendered with no size prop, the size will be set to 100.
 
 The default value is only used if the size prop is missing or if you pass `size={undefined}`. But if you pass `size={null}` or `size={0}`, the default value will not be used.
+
+## Forwarding props with the JSX spread syntax
+Sometimes, passing props gets very repetitive:\
+repetitive [rɪˈpetətɪv] 重复的
+```jsx
+function Profile({ person, size, isSepia, thickBorder }) {
+  return (
+    <div className="card">
+      <Avatar
+        person={person}
+        size={size}
+        isSepia={isSepia}
+        thickBorder={thickBorder}
+      />
+    </div>
+  );
+}
+```
+There’s nothing wrong with repetitive code—it can be more legible. But at times you may value conciseness. Some components forward all of their props to their children, like how this `Profile` does with `Avatar`. Because they don’t use any of their props directly, it can make sense to use a more concise “spread” syntax:\
+legible [ˈledʒəbl] 易读的\
+conciseness [kənˈsaɪn.nəs] 简洁
+```jsx
+function Profile(props) {
+  return (
+    <div className="card">
+      <Avatar {...props} />
+    </div>
+  );
+}
+```
+This forwards all of `Profile’s` props to the `Avatar` without listing each of their names.
+
+Use spread syntax with restraint. If you’re using it in every other component, something is wrong. Often, it indicates that you should split your components and pass children as JSX. More on that next!\
+restraint [rɪˈstreɪnt] 克制\
+indicate [ˈɪndɪkeɪt] 表明
