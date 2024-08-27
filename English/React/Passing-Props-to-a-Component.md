@@ -199,3 +199,73 @@ This forwards all of `Profile’s` props to the `Avatar` without listing each of
 Use spread syntax with restraint. If you’re using it in every other component, something is wrong. Often, it indicates that you should split your components and pass children as JSX. More on that next!\
 restraint [rɪˈstreɪnt] 克制\
 indicate [ˈɪndɪkeɪt] 表明
+
+## Passing JSX as children
+It is common to nest built-in browser tags:
+```jsx
+<div>
+  <img />
+</div>
+```
+Sometimes you’ll want to nest your own components the same way:
+```jsx
+<Card>
+  <Avatar />
+</Card>
+```
+When you nest content inside a JSX tag, the parent component will receive that content in a prop called children. For example, the `Card` component below will receive a children prop set to `<Avatar />` and render it in a wrapper div:
+```jsx
+// App.js
+import Avatar from './Avatar.js';
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
+    </div>
+  );
+}
+
+export default function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+}
+
+// Avatar.js
+import { getImageUrl } from './utils.js';
+
+export default function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+// utils.js
+export function getImageUrl(person, size = 's') {
+  return (
+    'https://i.imgur.com/' +
+    person.imageId +
+    size +
+    '.jpg'
+  );
+}
+```
+Try replacing the `<Avatar>` inside `<Card>` with some text to see how the `Card` component can wrap any nested content. It doesn’t need to “know” what’s being rendered inside of it. You will see this flexible pattern in many places.
+
+You can think of a component with a children prop as having a “hole” that can be “filled in” by its parent components with arbitrary JSX. You will often use the children prop for visual wrappers: panels, grids, etc.\
+arbitrary [ˈɑːrbɪˌtrerɪ] 任意的

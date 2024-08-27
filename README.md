@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.8.27
+[React doc Tutorial:Passing Props to a Component-Passing JSX as children](./English//React/Passing-Props-to-a-Component.md)
+
 ## 2024.8.26
 [React doc Tutorial:Passing Props to a Component-Forwarding props with the JSX spread syntax](./English//React/Passing-Props-to-a-Component.md)
 
