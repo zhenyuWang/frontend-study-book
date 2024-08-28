@@ -269,3 +269,27 @@ Try replacing the `<Avatar>` inside `<Card>` with some text to see how the `Card
 
 You can think of a component with a children prop as having a “hole” that can be “filled in” by its parent components with arbitrary JSX. You will often use the children prop for visual wrappers: panels, grids, etc.\
 arbitrary [ˈɑːrbɪˌtrerɪ] 任意的
+
+## How props change over time
+The `Clock` component below receives two props from its parent component: `color` and `time`. (The parent component’s code is omitted because it uses state, which we won’t dive into just yet.)
+
+Try changing the color in the select box below:
+```jsx
+// Clock.js
+export default function Clock({ color, time }) {
+  return (
+    <h1 style={{ color: color }}>
+      {time}
+    </h1>
+  );
+}
+```
+This example illustrates that a component may receive different props over time. Props are not always static! Here, the `time` prop changes every second, and the `color` prop changes when you select another color. Props reflect a component’s data at any point in time, rather than only in the beginning.\
+illustrates [ˈɪləˌstreɪts] 说明
+
+However, props are immutable—a term from computer science meaning “unchangeable”. When a component needs to change its props (for example, in response to a user interaction or new data), it will have to “ask” its parent component to pass it different props—a new object! Its old props will then be cast aside, and eventually the JavaScript engine will reclaim the memory taken by them.\
+immutable [ɪˈmjuːtəbl] 不可变的\
+eventually [ɪˈventʃuəli] 最终\
+reclaim [rɪˈkleɪm] 取回
+
+Don’t try to “change props”. When you need to respond to the user input (like changing the selected color), you will need to “set state”, which you can learn about in State: A Component’s Memory.
