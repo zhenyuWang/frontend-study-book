@@ -82,3 +82,45 @@ export default function PackingList() {
 Try editing what gets returned in either case, and see how the result changes!
 
 Notice how you’re creating branching logic with JavaScript’s `if` and `return` statements. In React, control flow (like conditions) is handled by JavaScript.
+
+### Conditionally returning nothing with null
+In some situations, you won’t want to render anything at all. For example, say you don’t want to show packed items at all. A component must return something. In this case, you can return `null`:
+```jsx
+if (isPacked) {
+  return null;
+}
+return <li className="item">{name}</li>;
+```
+If `isPacked` is true, the component will return nothing, `null`. Otherwise, it will return JSX to render.
+```jsx
+// App.js
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return null;
+  }
+  return <li className="item">{name}</li>;
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+```
+In practice, returning `null` from a component isn’t common because it might surprise a developer trying to render it. More often, you would conditionally include or exclude the component in the parent component’s JSX. Here’s how to do that!
