@@ -124,3 +124,24 @@ export default function PackingList() {
 }
 ```
 In practice, returning `null` from a component isn’t common because it might surprise a developer trying to render it. More often, you would conditionally include or exclude the component in the parent component’s JSX. Here’s how to do that!
+
+## Conditionally including JSX
+In the previous example, you controlled which (if any!) JSX tree would be returned by the component. You may already have noticed some duplication in the render output:\
+duplication [ˌdjuːplɪˈkeɪʃn] 重复
+```jsx
+<li className="item">{name} ✅</li>
+```
+is very similar to
+```jsx
+<li className="item">{name}</li>
+```
+Both of the conditional branches return `<li className="item">...</li>`:
+```jsx
+if (isPacked) {
+  return <li className="item">{name} ✅</li>;
+}
+return <li className="item">{name}</li>;
+```
+While this duplication isn’t harmful, it could make your code harder to maintain. What if you want to change the className? You’d have to do it in two places in your code! In such a situation, you could conditionally include a little JSX to make your code more DRY.\
+harmful [ˈhɑːrmfl] 有害的\
+maintain [meɪnˈteɪn] 维护
