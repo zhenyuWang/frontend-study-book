@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.5
+[React doc Tutorial:Conditional Rendering-Conditional (ternary) operator (? :)](./English//React/Conditional-Rendering.md)
+
 ## 2024.9.4
 [React doc Tutorial:Conditional Rendering-Conditionally including JSX](./English//React/Conditional-Rendering.md)
 
