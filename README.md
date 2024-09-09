@@ -4,6 +4,12 @@
 
 # 日志
 
+## 2024.9.9
+[React doc Tutorial:Conditional Rendering-Conditionally assigning JSX to a variable](./English//React/Conditional-Rendering.md)
+
+## 2024.9.6
+[React doc Tutorial:Conditional Rendering-Logical AND operator (&&)](./English//React/Conditional-Rendering.md)
+
 ## 2024.9.5
 [React doc Tutorial:Conditional Rendering-Conditional (ternary) operator (? :)](./English//React/Conditional-Rendering.md)
 

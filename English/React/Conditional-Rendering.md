@@ -207,3 +207,152 @@ export default function PackingList() {
 This style works well for simple conditions, but use it in moderation. If your components get messy with too much nested conditional markup, consider extracting child components to clean things up. In React, markup is a part of your code, so you can use tools like variables and functions to tidy up complex expressions.\
 moderation [ˌmɑːdəˈreɪʃn] 适度\
 messy [ˈmesi] 混乱的
+
+### Logical AND operator (&&)
+Another common shortcut you’ll encounter is the JavaScript logical AND (&&) operator. Inside React components, it often comes up when you want to render some JSX when the condition is true, or render nothing otherwise. With `&&`, you could conditionally render the checkmark only if `isPacked` is `true`:
+```jsx
+return (
+  <li className="item">
+    {name} {isPacked && '✅'}
+  </li>
+);
+```
+You can read this as `“if isPacked, then (&&) render the checkmark, otherwise, render nothing”`.
+
+Here it is in action:
+```jsx
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {name} {isPacked && '✅'}
+    </li>
+  );
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+```
+A JavaScript `&&` expression returns the value of its right side (in our case, the checkmark) if the left side (our condition) is `true`. But if the condition is false, the whole expression becomes false. React considers false as a “hole” in the JSX tree, just like null or undefined, and doesn’t render anything in its place.
+
+**Pitfall**\
+Don’t put numbers on the left side of &&.
+
+To test the condition, JavaScript converts the left side to a boolean automatically. However, if the left side is 0, then the whole expression gets that value (0), and React will happily render 0 rather than nothing.
+
+For example, a common mistake is to write code like `messageCount && <p>New messages</p>`. It’s easy to assume that it renders nothing when `messageCount` is `0`, but it really renders the `0` itself!
+
+To fix it, make the left side a boolean: `messageCount > 0 && <p>New messages</p>`.
+
+## Conditionally assigning JSX to a variable
+When the shortcuts get in the way of writing plain code, try using an `if` statement and a variable. You can reassign variables defined with `let`, so start by providing the default content you want to display, the name:
+```jsx
+let itemContent = name;
+```
+Use an `if` statement to reassign a JSX expression to `itemContent` if `isPacked` is `true`:
+```jsx
+if (isPacked) {
+  itemContent = name + " ✅";
+}
+```
+Curly braces open the “window into JavaScript”. Embed the variable with curly braces in the returned JSX tree, nesting the previously calculated expression inside of JSX:
+```jsx
+<li className="item">
+  {itemContent}
+</li>
+```
+This style is the most verbose, but it’s also the most flexible. Here it is in action:\
+verbose [ˈvɜːrbəs] 冗长的
+```jsx
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = name + " ✅";
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+```
+Like before, this works not only for text, but for arbitrary JSX too:
+```jsx
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = (
+      <del>
+        {name + " ✅"}
+      </del>
+    );
+  }
+  return (
+    <li className="item">
+      {itemContent}
+    </li>
+  );
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+```
+If you’re not familiar with JavaScript, this variety of styles might seem overwhelming at first. However, learning them will help you read and write any JavaScript code — and not just React components! Pick the one you prefer for a start, and then consult this reference again if you forget how the other ones work.\
+variety [ˈvɛərɪti] 多样性\
+overwhelm [əʊvərˈhɛlm] 压倒\
+consult [ˈkɒnsʌlt] 咨询
