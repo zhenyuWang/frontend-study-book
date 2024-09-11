@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.10
+[React doc Tutorial:Rendering Lists](./English//React/Rendering-Lists.md)
+
 ## 2024.9.9
 [React doc Tutorial:Conditional Rendering-Conditionally assigning JSX to a variable](./English//React/Conditional-Rendering.md)
 
