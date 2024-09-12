@@ -63,3 +63,76 @@ Console
 Warning: Each child in a list should have a unique “key” prop.
 ```
 You’ll learn how to fix this error later on this page. Before we get to that, let’s add some structure to your data.
+
+## Filtering arrays of items
+This data can be structured even more.
+```jsx
+const people = [{
+  id: 0,
+  name: 'Creola Katherine Johnson',
+  profession: 'mathematician',
+}, {
+  id: 1,
+  name: 'Mario José Molina-Pasquel Henríquez',
+  profession: 'chemist',
+}, {
+  id: 2,
+  name: 'Mohammad Abdus Salam',
+  profession: 'physicist',
+}, {
+  id: 3,
+  name: 'Percy Lavon Julian',
+  profession: 'chemist',  
+}, {
+  id: 4,
+  name: 'Subrahmanyan Chandrasekhar',
+  profession: 'astrophysicist',
+}];
+```
+Let’s say you want a way to only show people whose profession is `'chemist'`. You can use JavaScript’s `filter()` method to return just those people. This method takes an array of items, passes them through a “test” (a function that returns `true` or `false`), and returns a new array of only those items that passed the test (returned true).\
+profession [prəˈfɛʃən] 职业\
+chemical [ˈkɛmɪkəl] 化学的
+
+You only want the items where profession is `'chemist'`. The “test” function for this looks like `(person) => person.profession === 'chemist'`. Here’s how to put it together:
+
+1. Create a new array of just “chemist” people, `chemists`, by calling `filter()` on the people filtering by `person.profession === 'chemist'`:
+```jsx
+const chemists = people.filter(person =>
+  person.profession === 'chemist'
+);
+```
+2. Now map over `chemists`:
+```jsx
+const listItems = chemists.map(person =>
+  <li>
+     <img
+       src={getImageUrl(person)}
+       alt={person.name}
+     />
+     <p>
+       <b>{person.name}:</b>
+       {' ' + person.profession + ' '}
+       known for {person.accomplishment}
+     </p>
+  </li>
+);
+```
+3. Lastly, return the listItems from your component:
+```jsx
+return <ul>{listItems}</ul>;
+```
+**Pitfall**\
+Arrow functions implicitly return the expression right after `=>`, so you didn’t need a return statement:\
+implicitly [ɪmˈplɪsɪtli] 隐含地
+```jsx
+const listItems = chemists.map(person =>
+  <li>...</li> // Implicit return!
+);
+```
+However, you must write return explicitly if your `=>` is followed by a `{` curly brace!
+```jsx
+const listItems = chemists.map(person => { // Curly brace
+  return <li>...</li>;
+});
+```
+Arrow functions containing `=> {` are said to have a “block body”. They let you write more than a single line of code, but you have to write a `return` statement yourself. If you forget it, nothing gets returned!

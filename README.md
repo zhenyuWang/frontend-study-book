@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.12
+[React doc Tutorial:Rendering Lists-Filtering arrays of items](./English//React/Rendering-Lists.md)
+
 ## 2024.9.11
 [React doc Tutorial:Rendering Lists-Rendering data from arrays](./English//React/Rendering-Lists.md)
 
