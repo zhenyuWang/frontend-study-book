@@ -136,3 +136,21 @@ const listItems = chemists.map(person => { // Curly brace
 });
 ```
 Arrow functions containing `=> {` are said to have a “block body”. They let you write more than a single line of code, but you have to write a `return` statement yourself. If you forget it, nothing gets returned!
+
+## Keeping list items in order with key
+Notice that all the sandboxes above show an error in the console:
+```jsx
+Console
+Warning: Each child in a list should have a unique “key” prop.
+```
+You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
+```jsx
+<li key={person.id}>...</li>
+```
+**Note**\
+JSX elements directly inside a `map()` call always need keys!
+
+Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.\
+corresponds [ˌkɔːrɪˈspɒndz] 对应；符合
+
+Rather than generating keys on the fly, you should include them in your data:
