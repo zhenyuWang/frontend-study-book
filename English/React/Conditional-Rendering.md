@@ -356,3 +356,9 @@ If you’re not familiar with JavaScript, this variety of styles might seem over
 variety [ˈvɛərɪti] 多样性\
 overwhelm [əʊvərˈhɛlm] 压倒\
 consult [ˈkɒnsʌlt] 咨询
+
+### Where to get your key
+Different sources of data provide different sources of keys:
+
+- Data from a database: If your data is coming from a database, you can use the database keys/IDs, which are unique by nature.
+- Locally generated data: If your data is generated and persisted locally (e.g. notes in a note-taking app), use an incrementing counter, crypto.randomUUID() or a package like uuid when creating items.

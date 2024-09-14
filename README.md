@@ -4,7 +4,10 @@
 
 # 日志
 
-## 2024.9.11
+## 2024.9.13
+[React doc Tutorial:Rendering Lists-Where to get your key](./English//React/Rendering-Lists.md)
+
+## 2024.9.12
 [React doc Tutorial:Rendering Lists-Keeping list items in order with key](./English//React/Rendering-Lists.md)
 
 ## 2024.9.11
