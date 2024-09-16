@@ -362,3 +362,10 @@ Different sources of data provide different sources of keys:
 
 - Data from a database: If your data is coming from a database, you can use the database keys/IDs, which are unique by nature.
 - Locally generated data: If your data is generated and persisted locally (e.g. notes in a note-taking app), use an incrementing counter, crypto.randomUUID() or a package like uuid when creating items.
+
+### Rules of keys
+- Keys must be unique among siblings. However, it’s okay to use the same keys for JSX nodes in different arrays.
+- Keys must not change or that defeats their purpose! Don’t generate them while rendering.
+
+defeats [dɪˈfiːts] 打败\
+purpose [ˈpɜːpəs] 目的
