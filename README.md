@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.18
+[React doc Tutorial:Rendering Lists-Why does React need keys?](./English//React/Rendering-Lists.md)
+
 ## 2024.9.14
 [React doc Tutorial:Rendering Lists-Rules of keys](./English//React/Rendering-Lists.md)
 
