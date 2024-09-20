@@ -381,3 +381,11 @@ You might be tempted to use an item’s index in the array as its key. In fact, 
 Similarly, do not generate keys on the fly, e.g. with `key={Math.random()}`. This will cause keys to never match up between renders, leading to all your components and DOM being recreated every time. Not only is this slow, but it will also lose any user input inside the list items. Instead, use a stable ID based on the data.
 
 Note that your components won’t receive key as a prop. It’s only used as a hint by React itself. If your component needs an ID, you have to pass it as a separate prop: `<Profile key={id} userId={id} />`.
+
+## Recap
+On this page you learned:
+
+How to move data out of components and into data structures like arrays and objects.
+How to generate sets of similar components with JavaScript’s `map()`.
+How to create arrays of filtered items with JavaScript’s `filter()`.
+Why and how to set `key` on each component in a collection so React can keep track of each of them even if their position or data changes.
