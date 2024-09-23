@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.23
+[React doc Tutorial:Keeping Components Pure-Purity: Components as formulas](./English//React/Rendering-Lists.md)
+
 ## 2024.9.20
 [React doc Tutorial:Keeping Components Pure](./English//React/Rendering-Lists.md)
 
