@@ -123,3 +123,26 @@ Now your component is pure, as the JSX it returns only depends on the guest prop
 In general, you should not expect your components to be rendered in any particular order. It doesn’t matter if you call `y = 2x` before or after `y = 5x`: both formulas will resolve independently of each other. In the same way, each component should only “think for itself”, and not attempt to coordinate with or depend upon others during rendering. Rendering is like a school exam: each component should calculate JSX on their own!\
 attempt [əˈtempt] 尝试、试图\
 coordinate [koʊˈɔːrdɪneɪt] 协调、配合
+
+### Local mutation: Your component’s little secret
+In the above example, the problem was that the component changed a preexisting variable while rendering. This is often called a “mutation” to make it sound a bit scarier. Pure functions don’t mutate variables outside of the function’s scope or objects that were created before the call—that makes them impure!\
+preexisting [ˌpriːɪɡˈzɪstɪŋ] 事先存在的
+mutate [ˈmjuːteɪt] 突变、变异
+
+However, it’s completely fine to change variables and objects that you’ve just created while rendering. In this example, you create an `[]` array, assign it to a `cups` variable, and then `push` a dozen cups into it:
+```jsx
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaGathering() {
+  let cups = [];
+  for (let i = 1; i <= 12; i++) {
+    cups.push(<Cup key={i} guest={i} />);
+  }
+  return cups;
+}
+```
+If the `cups` variable or the `[]` array were created outside the `TeaGathering` function, this would be a huge problem! You would be changing a preexisting object by pushing items into that array.
+
+However, it’s fine because you’ve created them during the same render, inside `TeaGathering`. No code outside of `TeaGathering` will ever know that this happened. This is called “local mutation”—it’s like your component’s little secret.

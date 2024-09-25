@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.25
+[React doc Tutorial:Keeping Components Pure-Local mutation: Your component’s little secret](./English//React/Rendering-Lists.md)
+
 ## 2024.9.24
 [React doc Tutorial:Keeping Components Pure-Side Effects: (un)intended consequences](./English//React/Rendering-Lists.md)
 
