@@ -72,3 +72,54 @@ Just like a math formula.
 
 You could think of your components as recipes: if you follow them and don’t introduce new ingredients during the cooking process, you will get the same dish every time. That “dish” is the JSX that the component serves to React to render.\
 ingredients [ɪnˈɡriːdiənts] 食材
+
+## Side Effects: (un)intended consequences
+React’s rendering process must always be pure. Components should only return their JSX, and not change any objects or variables that existed before rendering—that would make them impure!
+
+Here is a component that breaks this rule:
+```jsx
+let guest = 0;
+
+function Cup() {
+  // Bad: changing a preexisting variable!
+  guest = guest + 1;
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaSet() {
+  return (
+    <>
+      <Cup />
+      <Cup />
+      <Cup />
+    </>
+  );
+}
+```
+This component is reading and writing a `guest` variable declared outside of it. This means that calling this component multiple times will produce different JSX! And what’s more, if other components read `guest`, they will produce different JSX, too, depending on when they were rendered! That’s not predictable.\
+predictable [prɪˈdɪktəbl] 可预测的
+
+Going back to our formula `y = 2x`, now even if `x = 2`, we cannot trust that `y = 4`. Our tests could fail, our users would be baffled, planes would fall out of the sky—you can see how this would lead to confusing bugs!\
+baffled [ˈbæfl] 困惑的
+
+You can fix this component by passing guest as a prop instead:
+```jsx
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaSet() {
+  return (
+    <>
+      <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
+    </>
+  );
+}
+```
+Now your component is pure, as the JSX it returns only depends on the guest prop.
+
+In general, you should not expect your components to be rendered in any particular order. It doesn’t matter if you call `y = 2x` before or after `y = 5x`: both formulas will resolve independently of each other. In the same way, each component should only “think for itself”, and not attempt to coordinate with or depend upon others during rendering. Rendering is like a school exam: each component should calculate JSX on their own!\
+attempt [əˈtempt] 尝试、试图\
+coordinate [koʊˈɔːrdɪneɪt] 协调、配合

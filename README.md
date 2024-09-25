@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.9.24
+[React doc Tutorial:Keeping Components Pure-Side Effects: (un)intended consequences](./English//React/Rendering-Lists.md)
+
 ## 2024.9.23
 [React doc Tutorial:Keeping Components Pure-Purity: Components as formulas](./English//React/Rendering-Lists.md)
 
