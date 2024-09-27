@@ -4,20 +4,23 @@
 
 # 日志
 
+## 2024.9.27
+[React doc Tutorial:Keeping Components Pure-Recap](./English//React/Keeping-Components-Pure.md)
+
 ## 2024.9.26
-[React doc Tutorial:Keeping Components Pure-Where you can cause side effects](./English//React/Rendering-Lists.md)
+[React doc Tutorial:Keeping Components Pure-Where you can cause side effects](./English//React/Keeping-Components-Pure.md)
 
 ## 2024.9.25
-[React doc Tutorial:Keeping Components Pure-Local mutation: Your component’s little secret](./English//React/Rendering-Lists.md)
+[React doc Tutorial:Keeping Components Pure-Local mutation: Your component’s little secret](./English//React/Keeping-Components-Pure.md)
 
 ## 2024.9.24
-[React doc Tutorial:Keeping Components Pure-Side Effects: (un)intended consequences](./English//React/Rendering-Lists.md)
+[React doc Tutorial:Keeping Components Pure-Side Effects: (un)intended consequences](./English//React/Keeping-Components-Pure.md)
 
 ## 2024.9.23
-[React doc Tutorial:Keeping Components Pure-Purity: Components as formulas](./English//React/Rendering-Lists.md)
+[React doc Tutorial:Keeping Components Pure-Purity: Components as formulas](./English//React/Keeping-Components-Pure.md)
 
 ## 2024.9.20
-[React doc Tutorial:Keeping Components Pure](./English//React/Rendering-Lists.md)
+[React doc Tutorial:Keeping Components Pure](./English//React/Keeping-Components-Pure.md)
 
 ## 2024.9.19
 [React doc Tutorial:Rendering Lists-Recap](./English//React/Rendering-Lists.md)
