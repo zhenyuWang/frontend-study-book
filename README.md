@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.9
+[React doc Tutorial:Understanding Your UI as a Tree-The Render Tree](./English//React/Understanding-Your-UI-as-a-Tree.md)
+
 ## 2024.10.8
 [React doc Tutorial:Understanding Your UI as a Tree-The Render Tree](./English//React/Understanding-Your-UI-as-a-Tree.md)
 
