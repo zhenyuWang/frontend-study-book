@@ -157,3 +157,28 @@ In this example, depending on what `inspiration.type` is, we may render `<FancyT
 Although render trees may differ across render passes, these trees are generally helpful for identifying what the top-level and leaf components are in a React app. Top-level components are the components nearest to the root component and affect the rendering performance of all the components beneath them and often contain the most complexity. Leaf components are near the bottom of the tree and have no child components and are often frequently re-rendered.
 
 Identifying these categories of components are useful for understanding data flow and performance of your app.
+
+## The Module Dependency Tree
+Another relationship in a React app that can be modeled with a tree are an app’s module dependencies. As we break up our components and logic into separate files, we create JS modules where we may export components, functions, or constants.
+
+Each node in a module dependency tree is a module and each branch represents an import statement in that module.
+
+If we take the previous Inspirations app, we can build a module dependency tree, or dependency tree for short.\
+inspiration [ˌɪnspəˈreɪʃən] 灵感、启示
+
+The root node of the tree is the root module, also known as the entrypoint file. It often is the module that contains the root component.
+
+Comparing to the render tree of the same app, there are similar structures but some notable differences:
+- The nodes that make-up the tree represent modules, not components.
+- Non-component modules, like `inspirations.js`, are also represented in this tree. The render tree only encapsulates components.
+- `Copyright.js` appears under `App.js` but in the render tree, `Copyright`, the component, appears as a child of `InspirationGenerator`. This is because `InspirationGenerator` accepts JSX as children props, so it renders `Copyright` as a child component but does not import the module.
+
+encapsulate [ɪnˈkæpsəleɪt] 封装
+
+Dependency trees are useful to determine what modules are necessary to run your React app. When building a React app for production, there is typically a build step that will bundle all the necessary JavaScript to ship to the client. The tool responsible for this is called a bundler, and bundlers will use the dependency tree to determine what modules should be included.\
+determine [dɪˈtɜːrmɪn] 确定、决定\
+necessary [ˈnesəˌseri] 必要的\
+typically [ˈtɪpɪkəli] 通常的\
+responsible [rɪˈspɑːnsəbl] 负责的
+
+As your app grows, often the bundle size does too. Large bundle sizes are expensive for a client to download and run. Large bundle sizes can delay the time for your UI to get drawn. Getting a sense of your app’s dependency tree may help with debugging these issues.
