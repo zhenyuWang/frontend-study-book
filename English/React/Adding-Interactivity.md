@@ -466,3 +466,9 @@ function ItemList({ artworks, onToggle }) {
   );
 }
 ```
+
+## What’s next? 
+Head over to Responding to Events to start reading this chapter page by page!\
+head over to [phr.]: 去，前往
+
+Or, if you’re already familiar with these topics, why not read about Managing State?

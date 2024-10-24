@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.23
+[React doc Tutorial:Adding Interactivity-What's next](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.22
 [React doc Tutorial:Adding Interactivity-Updating arrays in state](./English//React/Adding-Interactivity.md)
 
