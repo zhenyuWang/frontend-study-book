@@ -238,3 +238,63 @@ export default function Form() {
   );
 }
 ```
+
+## Queueing a series of state updates
+This component is buggy: clicking “+3” increments the score only once.
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [score, setScore] = useState(0);
+
+  function increment() {
+    setScore(score + 1);
+  }
+
+  return (
+    <>
+      <button onClick={() => increment()}>+1</button>
+      <button onClick={() => {
+        increment();
+        increment();
+        increment();
+      }}>+3</button>
+      <h1>Score: {score}</h1>
+    </>
+  )
+}
+```
+State as a Snapshot explains why this is happening. Setting state requests a new re-render, but does not change it in the already running code. So `score` continues to be `0` right after you call `setScore(score + 1)`.
+```jsx
+console.log(score);  // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score);  // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score);  // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score);  // 0
+```
+You can fix this by passing an updater function when setting state. Notice how replacing `setScore(score + 1)` with `setScore(s => s + 1) ` fixes the “+3” button. This lets you queue multiple state updates.
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [score, setScore] = useState(0);
+
+  function increment() {
+    setScore(s => s + 1);
+  }
+
+  return (
+    <>
+      <button onClick={() => increment()}>+1</button>
+      <button onClick={() => {
+        increment();
+        increment();
+        increment();
+      }}>+3</button>
+      <h1>Score: {score}</h1>
+    </>
+  )
+}
+```

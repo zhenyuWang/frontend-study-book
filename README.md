@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.18
+[React doc Tutorial:Adding Interactivity-Queueing a series of state updates](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.17
 [React doc Tutorial:Adding Interactivity-State as a snapshot](./English//React/Adding-Interactivity.md)
 
