@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.12
+[React doc Tutorial:Adding Interactivity](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.11
 [React doc Tutorial:Understanding Your UI as a Tree-Recap](./English//React/Understanding-Your-UI-as-a-Tree.md)
 
