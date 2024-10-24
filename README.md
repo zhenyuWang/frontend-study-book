@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.14
+[React doc Tutorial:Adding Interactivity-Responding to events](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.12
 [React doc Tutorial:Adding Interactivity](./English//React/Adding-Interactivity.md)
 
