@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.15
+[React doc Tutorial:Adding Interactivity-State: a component’s memory](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.14
 [React doc Tutorial:Adding Interactivity-Responding to events](./English//React/Adding-Interactivity.md)
 
