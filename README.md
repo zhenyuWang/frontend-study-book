@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.17
+[React doc Tutorial:Adding Interactivity-State as a snapshot](./English//React/Adding-Interactivity.md)
+
 ## 2024.10.16
 [React doc Tutorial:Adding Interactivity-Render and commit](./English//React/Adding-Interactivity.md)
 
