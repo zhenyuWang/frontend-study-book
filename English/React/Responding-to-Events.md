@@ -92,3 +92,56 @@ export default function Toolbar() {
 }
 ```
 This lets these two buttons show different messages. Try changing the messages passed to them.
+
+### Passing event handlers as props
+Often you’ll want the parent component to specify a child’s event handler. Consider buttons: depending on where you’re using a Button component, you might want to execute a different function—perhaps one plays a movie and another uploads an image.\
+function-perhaps [fʌŋkʃən] n. 功能，函数
+
+To do this, pass a prop the component receives from its parent as the event handler like so:
+```jsx
+function Button({ onClick, children }) {
+  return (
+    <button onClick={onClick}>
+      {children}
+    </button>
+  );
+}
+
+function PlayButton({ movieName }) {
+  function handlePlayClick() {
+    alert(`Playing ${movieName}!`);
+  }
+
+  return (
+    <Button onClick={handlePlayClick}>
+      Play "{movieName}"
+    </Button>
+  );
+}
+
+function UploadButton() {
+  return (
+    <Button onClick={() => alert('Uploading!')}>
+      Upload Image
+    </Button>
+  );
+}
+
+export default function Toolbar() {
+  return (
+    <div>
+      <PlayButton movieName="Kiki's Delivery Service" />
+      <UploadButton />
+    </div>
+  );
+}
+```
+Here, the `Toolbar` component renders a `PlayButton` and an `UploadButton`:
+
+- `PlayButton` passes `handlePlayClick` as the `onClick` prop to the `Button` inside.
+- `UploadButton` passes `() => alert('Uploading!')` as the `onClick` prop to the `Button` inside.
+
+Finally, your `Button` component accepts a prop called `onClick`. It passes that prop directly to the built-in browser `<button>` with `onClick={onClick}`. This tells React to call the passed function on click.\
+directly [dɪˈrektli] adv. 直接地
+
+If you use a design system, it’s common for components like buttons to contain styling but not specify behavior. Instead, components like `PlayButton` and `UploadButton` will pass event handlers down.
