@@ -145,3 +145,78 @@ Finally, your `Button` component accepts a prop called `onClick`. It passes that
 directly [dɪˈrektli] adv. 直接地
 
 If you use a design system, it’s common for components like buttons to contain styling but not specify behavior. Instead, components like `PlayButton` and `UploadButton` will pass event handlers down.
+
+### Naming event handler props
+Built-in components like `<button>` and `<div>` only support browser event names like `onClick`. However, when you’re building your own components, you can name their event handler props any way that you like.
+
+By convention, event handler props should start with on, followed by a capital letter.
+
+For example, the `Button` component’s `onClick` prop could have been called `onSmash`:
+```jsx
+function Button({ onSmash, children }) {
+  return (
+    <button onClick={onSmash}>
+      {children}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Button onSmash={() => alert('Playing!')}>
+        Play Movie
+      </Button>
+      <Button onSmash={() => alert('Uploading!')}>
+        Upload Image
+      </Button>
+    </div>
+  );
+}
+```
+In this example, `<button onClick={onSmash}>` shows that the browser `<button>` (lowercase) still needs a prop called `onClick`, but the prop name received by your custom `Button` component is up to you!
+
+When your component supports multiple interactions, you might name event handler props for app-specific concepts. For example, this `Toolbar` component receives `onPlayMovie` and `onUploadImage` event handlers:\
+interaction [ˌɪntərˈækʃən] n. 互动，交互\
+app-specific [æpˈspesɪfɪk] adj. 应用程序特定的\
+concept [ˈkɒnsept] n. 概念
+```jsx
+export default function App() {
+  return (
+    <Toolbar
+      onPlayMovie={() => alert('Playing!')}
+      onUploadImage={() => alert('Uploading!')}
+    />
+  );
+}
+
+function Toolbar({ onPlayMovie, onUploadImage }) {
+  return (
+    <div>
+      <Button onClick={onPlayMovie}>
+        Play Movie
+      </Button>
+      <Button onClick={onUploadImage}>
+        Upload Image
+      </Button>
+    </div>
+  );
+}
+
+function Button({ onClick, children }) {
+  return (
+    <button onClick={onClick}>
+      {children}
+    </button>
+  );
+}
+```
+Notice how the `App` component does not need to know what `Toolbar` will do with `onPlayMovie` or `onUploadImage`. That’s an implementation detail of the `Toolbar`. Here, `Toolbar` passes them down as `onClick` handlers to its `Buttons`, but it could later also trigger them on a keyboard shortcut. Naming props after app-specific interactions like `onPlayMovie` gives you the flexibility to change how they’re used later.\
+implementation detail [ˌɪmplɪmenˈteɪʃən diˈteɪl] 实现细节\
+shortcut [ˈʃɔːtkʌt] n. 快捷方式\
+flexibility [ˌfleksɪˈbɪləti] n. 灵活性
+
+**Note**\
+Make sure that you use the appropriate HTML tags for your event handlers. For example, to handle clicks, use `<button onClick={handleClick}>` instead of `<div onClick={handleClick}>`. Using a real browser `<button>` enables built-in browser behaviors like keyboard navigation. If you don’t like the default browser styling of a button and want to make it look more like a link or a different UI element, you can achieve it with CSS. Learn more about writing accessible markup.\
+appropriate [əˈprəʊpriət] adj. 适当的，恰当的\
+achieve [əˈtʃiːv] v. 实现，达到
