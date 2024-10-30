@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.28
+[React doc Tutorial:Responding to Events-Reading props in event handlers](./English//React/Responding-to-Events.md)
+
 ## 2024.10.25
 [React doc Tutorial:Responding to Events-Adding event handlers](./English//React/Responding-to-Events.md)
 

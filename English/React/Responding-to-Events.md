@@ -66,3 +66,29 @@ concisely [kənˈsaɪsli] adv. 简洁地
 ```
 All of these styles are equivalent. Inline event handlers are convenient for short functions.\
 equivalent [ɪˈkwɪvələnt] adj. 相等的，等效的
+
+### Reading props in event handlers
+Because event handlers are declared inside of a component, they have access to the component’s props. Here is a button that, when clicked, shows an alert with its message prop:
+```jsx
+function AlertButton({ message, children }) {
+  return (
+    <button onClick={() => alert(message)}>
+      {children}
+    </button>
+  );
+}
+
+export default function Toolbar() {
+  return (
+    <div>
+      <AlertButton message="Playing!">
+        Play Movie
+      </AlertButton>
+      <AlertButton message="Uploading!">
+        Upload Image
+      </AlertButton>
+    </div>
+  );
+}
+```
+This lets these two buttons show different messages. Try changing the messages passed to them.
