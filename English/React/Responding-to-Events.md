@@ -220,3 +220,29 @@ flexibility [ˌfleksɪˈbɪləti] n. 灵活性
 Make sure that you use the appropriate HTML tags for your event handlers. For example, to handle clicks, use `<button onClick={handleClick}>` instead of `<div onClick={handleClick}>`. Using a real browser `<button>` enables built-in browser behaviors like keyboard navigation. If you don’t like the default browser styling of a button and want to make it look more like a link or a different UI element, you can achieve it with CSS. Learn more about writing accessible markup.\
 appropriate [əˈprəʊpriət] adj. 适当的，恰当的\
 achieve [əˈtʃiːv] v. 实现，达到
+
+### Event propagation
+Event handlers will also catch events from any children your component might have. We say that an event “bubbles” or “propagates” up the tree: it starts with where the event happened, and then goes up the tree.\
+propagate [ˈprɒpəˌɡeɪt] v. 传播，传递
+
+This `<div>` contains two buttons. Both the `<div>` and each button have their own `onClick` handlers. Which handlers do you think will fire when you click a button?
+```jsx
+export default function Toolbar() {
+  return (
+    <div className="Toolbar" onClick={() => {
+      alert('You clicked on the toolbar!');
+    }}>
+      <button onClick={() => alert('Playing!')}>
+        Play Movie
+      </button>
+      <button onClick={() => alert('Uploading!')}>
+        Upload Image
+      </button>
+    </div>
+  );
+}
+```
+If you click on either button, its `onClick` will run first, followed by the parent `<div>`’s `onClick`. So two messages will appear. If you click the `toolbar` itself, only the parent `<div>`’s `onClick` will run.
+
+**Pitfall**\
+All events propagate in React except `onScroll`, which only works on the JSX tag you attach it to.

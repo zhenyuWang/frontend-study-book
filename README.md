@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.10.31
+[React doc Tutorial:Responding to Events-Event propagation](./English//React/Responding-to-Events.md)
+
 ## 2024.10.30
 [React doc Tutorial:Responding to Events-Naming event handler props](./English//React/Responding-to-Events.md)
 
