@@ -221,7 +221,7 @@ Make sure that you use the appropriate HTML tags for your event handlers. For ex
 appropriate [əˈprəʊpriət] adj. 适当的，恰当的\
 achieve [əˈtʃiːv] v. 实现，达到
 
-### Event propagation
+## Event propagation
 Event handlers will also catch events from any children your component might have. We say that an event “bubbles” or “propagates” up the tree: it starts with where the event happened, and then goes up the tree.\
 propagate [ˈprɒpəˌɡeɪt] v. 传播，传递
 
@@ -246,3 +246,47 @@ If you click on either button, its `onClick` will run first, followed by the par
 
 **Pitfall**\
 All events propagate in React except `onScroll`, which only works on the JSX tag you attach it to.
+
+### Stopping propagation
+Event handlers receive an event object as their only argument. By convention, it’s usually called e, which stands for “event”. You can use this object to read information about the event.
+
+That event object also lets you stop the propagation. If you want to prevent an event from reaching parent components, you need to call `e.stopPropagation()` like this `Button` component does:
+```jsx
+function Button({ onClick, children }) {
+  return (
+    <button onClick={e => {
+      e.stopPropagation();
+      onClick();
+    }}>
+      {children}
+    </button>
+  );
+}
+
+export default function Toolbar() {
+  return (
+    <div className="Toolbar" onClick={() => {
+      alert('You clicked on the toolbar!');
+    }}>
+      <Button onClick={() => alert('Playing!')}>
+        Play Movie
+      </Button>
+      <Button onClick={() => alert('Uploading!')}>
+        Upload Image
+      </Button>
+    </div>
+  );
+}
+```
+When you click on a button:
+
+1. React calls the `onClick` handler passed to `<button>`.
+2. That handler, defined in `Button`, does the following:
+    - Calls `e.stopPropagation()`, preventing the event from bubbling further.
+    - Calls the `onClick` function, which is a prop passed from the `Toolbar` component.
+3. That function, defined in the `Toolbar` component, displays the button’s own alert.
+4. Since the propagation was stopped, the parent `<div>`’s `onClick` handler does not run.
+
+As a result of `e.stopPropagation()`, clicking on the buttons now only shows a single alert (from the `<button>`) rather than the two of them (from the `<button>` and the parent `toolbar` `<div>`). Clicking a button is not the same thing as clicking the surrounding toolbar, so stopping the propagation makes sense for this UI.\
+surround [səˈraʊnd] v. 周围；包围\
+make sense 合乎情理

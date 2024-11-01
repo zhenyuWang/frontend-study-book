@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.1
+[React doc Tutorial:Responding to Events-Stopping propagation](./English//React/Responding-to-Events.md)
+
 ## 2024.10.31
 [React doc Tutorial:Responding to Events-Event propagation](./English//React/Responding-to-Events.md)
 
