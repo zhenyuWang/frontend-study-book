@@ -290,3 +290,31 @@ When you click on a button:
 As a result of `e.stopPropagation()`, clicking on the buttons now only shows a single alert (from the `<button>`) rather than the two of them (from the `<button>` and the parent `toolbar` `<div>`). Clicking a button is not the same thing as clicking the surrounding toolbar, so stopping the propagation makes sense for this UI.\
 surround [səˈraʊnd] v. 周围；包围\
 make sense 合乎情理
+
+### Passing handlers as alternative to propagation
+alternative [ɔːlˈtɜːnətɪv] n. 替代方案\
+Notice how this click handler runs a line of code and then calls the `onClick` prop passed by the parent:
+```jsx
+function Button({ onClick, children }) {
+  return (
+    <button onClick={e => {
+      e.stopPropagation();
+      onClick();
+    }}>
+      {children}
+    </button>
+  );
+}
+```
+You could add more code to this handler before calling the parent `onClick` event handler, too. This pattern provides an alternative to propagation. It lets the child component handle the event, while also letting the parent component specify some additional behavior. Unlike propagation, it’s not automatic. But the benefit of this pattern is that you can clearly follow the whole chain of code that executes as a result of some event.\
+pattern [ˈpætən] n. 模式，样式\
+specify [ˈspesɪfaɪ] v. 指定，规定\
+additional [əˈdɪʃənl] adj. 附加的，额外的\
+automatic [ˌɔːtəˈmætɪk] adj. 自动的\
+benefit [ˈbenɪfɪt] n. 好处\
+chain [tʃeɪn] n. 链条\
+execute [ˈeksɪkjuːt] v. 执行
+
+If you rely on propagation and it’s difficult to trace which handlers execute and why, try this approach instead.\
+trace [treɪs] v. 追踪\
+approach [əˈprəʊtʃ] n. 方法
