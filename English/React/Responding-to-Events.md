@@ -350,3 +350,8 @@ confuse [kənˈfjuːz] v. 使困惑
 
 - `e.stopPropagation()` stops the event handlers attached to the tags above from firing.
 - `e.preventDefault()` prevents the default browser behavior for the few events that have it.
+
+## Can event handlers have side effects?
+Absolutely! Event handlers are the best place for side effects.
+
+Unlike rendering functions, event handlers don’t need to be pure, so it’s a great place to change something—for example, change an input’s value in response to typing, or change a list in response to a button press. However, in order to change some information, you first need some way to store it. In React, this is done by using state, a component’s memory. You will learn all about it on the next page.
