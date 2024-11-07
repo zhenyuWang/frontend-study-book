@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2024.11.7
+[React doc Tutorial:Responding to Events-Recap](./English//React/Responding-to-Events.md)
+
 ## 2024.11.6
-[React doc Tutorial:Responding to Events-Can event handlers have side effects? ](./English//React/Responding-to-Events.md)
+[React doc Tutorial:Responding to Events-Can event handlers have side effects?](./English//React/Responding-to-Events.md)
 
 ## 2024.11.5
 [React doc Tutorial:Responding to Events-Preventing default behavior](./English//React/Responding-to-Events.md)
