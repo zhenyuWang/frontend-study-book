@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.8
+[React doc Tutorial:State:A Component's Memory](./English//React/State:A-Component's-Memory.md)
+
 ## 2024.11.7
 [React doc Tutorial:Responding to Events-Recap](./English//React/Responding-to-Events.md)
 
