@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.12
+[React doc Tutorial:State:A Component's Memory-Adding a state variable](./English//React/State:A-Component's-Memory.md)
+
 ## 2024.11.11
 [React doc Tutorial:State:A Component's Memory-When a regular variable isn’t enough](./English//React/State:A-Component's-Memory.md)
 
