@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.13
+[React doc Tutorial:State:A Component's Memory-Meet your first Hook](./English//React/State:A-Component's-Memory.md)
+
 ## 2024.11.12
 [React doc Tutorial:State:A Component's Memory-Adding a state variable](./English//React/State:A-Component's-Memory.md)
 
