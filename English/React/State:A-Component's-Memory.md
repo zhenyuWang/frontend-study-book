@@ -284,3 +284,29 @@ State is just one of those features, but you will meet the other Hooks later.
 
 **Pitfall**\
 Hooks—functions starting with use—can only be called at the top level of your components or your own Hooks. You can’t call Hooks inside conditions, loops, or other nested functions. Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs. You “use” React features at the top of your component similar to how you “import” modules at the top of your file.
+
+### Anatomy of useState
+When you call useState, you are telling React that you want this component to remember something:
+```jsx
+const [index, setIndex] = useState(0);
+```
+In this case, you want React to remember `index`.
+
+**Note**\
+The convention is to name this pair like `const [something, setSomething]`. You could name it anything you like, but conventions make things easier to understand across projects.
+
+The only argument to `useState` is the initial value of your state variable. In this example, the `index`’s initial value is set to `0` with `useState(0)`.
+
+Every time your component renders, `useState` gives you an array containing two values:
+
+1. The state variable (`index`) with the value you stored.
+2. The state setter function (`setIndex`) which can update the state variable and trigger React to render the component again.
+
+Here’s how that happens in action:
+```jsx
+const [index, setIndex] = useState(0);
+```
+1. Your component renders the first time. Because you passed `0` to `useState` as the initial value for `index`, it will return `[0, setIndex]`. React remembers `0` is the latest state value.
+2. You update the state. When a user clicks the button, it calls `setIndex(index + 1)`. `index` is `0`, so it’s `setIndex(1)`. This tells React to remember `index` is `1` now and triggers another render.
+3. Your component’s second render. React still sees `useState(0)`, but because React remembers that you set index to `1`, it returns `[1, setIndex]` instead.
+4. And so on!
