@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.18
+[React doc Tutorial:State:A Component's Memory-State is isolated and private](./English//React/State:A-Component's-Memory.md)
+
 ## 2024.11.15
 [React doc Tutorial:State:A Component's Memory-Giving a component multiple state variables](./English//React/State:A-Component's-Memory.md)
 
