@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.20
+[React doc Tutorial:State:Render and Commit](./English//React/Render-and-Commit.md)
+
 ## 2024.11.19
 [React doc Tutorial:State:A Component's Memory-Recap](./English//React/State:A-Component's-Memory.md)
 
