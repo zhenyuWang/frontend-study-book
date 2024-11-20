@@ -568,3 +568,15 @@ Also notice how the `Page` component doesn’t “know” anything about the `Ga
 impact [ˈɪmpækt] v. 影响
 
 What if you wanted both galleries to keep their states in sync? The right way to do it in React is to remove state from child components and add it to their closest shared parent. The next few pages will focus on organizing state of a single component, but we will return to this topic in Sharing State Between Components.
+
+## Recap
+- Use a state variable when a component needs to “remember” some information between renders.
+- State variables are declared by calling the `useState` Hook.
+- Hooks are special functions that start with `use`. They let you “hook into” React features like state.
+- Hooks might remind you of imports: they need to be called unconditionally. Calling Hooks, including `useState`, is only valid at the top level of a component or another Hook.
+- The `useState` Hook returns a pair of values: the current state and the function to update it.
+- You can have more than one state variable. Internally, React matches them up by their order.
+- State is private to the component. If you render it in two places, each copy gets its own state.
+
+unconditionally [ˌʌnkənˈdɪʃənəli] adv. 无条件地\
+internally [ɪnˈtɜːrnəli] adv. 内部地
