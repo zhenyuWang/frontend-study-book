@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.21
+[React doc Tutorial:State:Render and Commit-Step 1: Trigger a render](./English//React/Render-and-Commit.md)
+
 ## 2024.11.20
 [React doc Tutorial:State:Render and Commit](./English//React/Render-and-Commit.md)
 
