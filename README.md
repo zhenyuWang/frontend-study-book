@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.25
+[React doc Tutorial:State:Render and Commit-Step 3: React commits changes to the DOM](./English//React/Render-and-Commit.md)
+
 ## 2024.11.22
 [React doc Tutorial:State:Render and Commit-Step 2: React renders your components](./English//React/Render-and-Commit.md)
 

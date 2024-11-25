@@ -113,3 +113,26 @@ The default behavior of rendering all components nested within the updated compo
 optimal [ˈɒptɪməl]: adj. 最佳的，最优的\
 opt-in: adj. 自愿的，选择的\
 prematurely [prɪˈmætʃərli]: adv. 过早地
+
+## Step 3: React commits changes to the DOM
+After rendering (calling) your components, React will modify the DOM.
+
+- For the initial render, React will use the `appendChild()` DOM API to put all the DOM nodes it has created on screen.
+- For re-renders, React will apply the minimal necessary operations (calculated while rendering!) to make the DOM match the latest rendering output.
+
+minimal [ˈmɪnɪməl]: adj. 最小的，最低限度的\
+necessary [ˈnesəsəri]: adj. 必要的，必需的\
+operation [ˌɒpəˈreɪʃn]: n. 操作，运算
+
+React only changes the DOM nodes if there’s a difference between renders. For example, here is a component that re-renders with different props passed from its parent every second. Notice how you can add some text into the `<input>`, updating its value, but the text doesn’t disappear when the component re-renders:
+```jsx
+export default function Clock({ time }) {
+  return (
+    <>
+      <h1>{time}</h1>
+      <input />
+    </>
+  );
+}
+```
+This works because during this last step, React only updates the content of `<h1>` with the new time. It sees that the `<input>` appears in the JSX in the same place as last time, so React doesn’t touch the `<input>`—or its `value`!
