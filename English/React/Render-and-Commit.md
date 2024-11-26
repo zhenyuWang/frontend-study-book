@@ -136,3 +136,15 @@ export default function Clock({ time }) {
 }
 ```
 This works because during this last step, React only updates the content of `<h1>` with the new time. It sees that the `<input>` appears in the JSX in the same place as last time, so React doesn’t touch the `<input>`—or its `value`!
+
+## Epilogue: Browser paint
+After rendering is done and React updated the DOM, the browser will repaint the screen. Although this process is known as “browser rendering”, we’ll refer to it as “painting” to avoid confusion throughout the docs.\
+repaint [ˌriːˈpeɪnt]: v. 重绘
+
+## Recap
+- Any screen update in a React app happens in three steps:
+  1. Trigger
+  2. Render
+  3. Commit
+- You can use Strict Mode to find mistakes in your components
+- React does not touch the DOM if the rendering result is the same as last time
