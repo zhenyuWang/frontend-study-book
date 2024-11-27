@@ -4,20 +4,23 @@
 
 # 日志
 
+## 2024.11.27
+[React doc Tutorial:State as a Snapshot](./English//React/State-as-a-Snapshot.md)
+
 ## 2024.11.26
-[React doc Tutorial:State:Render and Commit-Epilogue: Browser paint](./English//React/Render-and-Commit.md)
+[React doc Tutorial:Render and Commit-Epilogue: Browser paint](./English//React/Render-and-Commit.md)
 
 ## 2024.11.25
-[React doc Tutorial:State:Render and Commit-Step 3: React commits changes to the DOM](./English//React/Render-and-Commit.md)
+[React doc Tutorial:Render and Commit-Step 3: React commits changes to the DOM](./English//React/Render-and-Commit.md)
 
 ## 2024.11.22
-[React doc Tutorial:State:Render and Commit-Step 2: React renders your components](./English//React/Render-and-Commit.md)
+[React doc Tutorial:Render and Commit-Step 2: React renders your components](./English//React/Render-and-Commit.md)
 
 ## 2024.11.21
-[React doc Tutorial:State:Render and Commit-Step 1: Trigger a render](./English//React/Render-and-Commit.md)
+[React doc Tutorial:Render and Commit-Step 1: Trigger a render](./English//React/Render-and-Commit.md)
 
 ## 2024.11.20
-[React doc Tutorial:State:Render and Commit](./English//React/Render-and-Commit.md)
+[React doc Tutorial:Render and Commit](./English//React/Render-and-Commit.md)
 
 ## 2024.11.19
 [React doc Tutorial:State:A Component's Memory-Recap](./English//React/State:A-Component's-Memory.md)
