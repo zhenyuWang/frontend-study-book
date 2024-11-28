@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.11.28
+[React doc Tutorial:State as a Snapshot-Setting state triggers renders](./English//React/State-as-a-Snapshot.md)
+
 ## 2024.11.27
 [React doc Tutorial:State as a Snapshot](./English//React/State-as-a-Snapshot.md)
 
