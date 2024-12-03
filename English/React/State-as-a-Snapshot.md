@@ -131,3 +131,107 @@ For the next render, `number` is `1`, so that render’s click handler looks lik
 }}>+3</button>
 ```
 This is why clicking the button again will set the counter to `2`, then to `3` on the next click, and so on.
+
+## State over time
+Well, that was fun. Try to guess what clicking this button will alert:
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);
+        alert(number);
+      }}>+5</button>
+    </>
+  )
+}
+```
+If you use the substitution method from before, you can guess that the alert shows “0”:\
+substitution [/ˌsʌbstɪˈtjuːʃən/] 替代
+```jsx
+setNumber(0 + 5);
+alert(0);
+```
+But what if you put a timer on the alert, so it only fires after the component re-rendered? Would it say “0” or “5”? Have a guess!
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);
+        setTimeout(() => {
+          alert(number);
+        }, 3000);
+      }}>+5</button>
+    </>
+  )
+}
+```
+Surprised? If you use the substitution method, you can see the “snapshot” of the state passed to the alert.
+```jsx
+setNumber(0 + 5);
+setTimeout(() => {
+  alert(0);
+}, 3000);
+```
+The state stored in React may have changed by the time the alert runs, but it was scheduled using a snapshot of the state at the time the user interacted with it!
+
+A state variable’s value never changes within a render, even if its event handler’s code is asynchronous. Inside that render’s `onClick`, the value of number continues to be `0` even after `setNumber(number + 5)` was called. Its value was “fixed” when React “took the snapshot” of the UI by calling your component.\
+asynchronous [/ˌæsɪŋˈkrɑːnəs/] 异步的
+
+Here is an example of how that makes your event handlers less prone to timing mistakes. Below is a form that sends a message with a five-second delay. Imagine this scenario:\
+prone to 易于\
+scenario [/səˈnɑːrioʊ/] 情景
+
+1. You press the “Send” button, sending “Hello” to Alice.
+2. Before the five-second delay ends, you change the value of the “To” field to “Bob”.
+
+What do you expect the alert to display? Would it display, “You said Hello to Alice”? Or would it display, “You said Hello to Bob”? Make a guess based on what you know, and then try it:
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [to, setTo] = useState('Alice');
+  const [message, setMessage] = useState('Hello');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setTimeout(() => {
+      alert(`You said ${message} to ${to}`);
+    }, 5000);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        To:{' '}
+        <select
+          value={to}
+          onChange={e => setTo(e.target.value)}>
+          <option value="Alice">Alice</option>
+          <option value="Bob">Bob</option>
+        </select>
+      </label>
+      <textarea
+        placeholder="Message"
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+      />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
+```
+React keeps the state values “fixed” within one render’s event handlers. You don’t need to worry whether the state has changed while the code is running.
+
+But what if you wanted to read the latest state before a re-render? You’ll want to use a state updater function, covered on the next page!
