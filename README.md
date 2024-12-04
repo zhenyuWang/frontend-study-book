@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.3
+[React doc Tutorial:State as a Snapshot-Recap](./English//React/State-as-a-Snapshot.md)
+
 ## 2024.12.2
 [React doc Tutorial:State as a Snapshot-State over time](./English//React/State-as-a-Snapshot.md)
 

@@ -235,3 +235,14 @@ export default function Form() {
 React keeps the state values “fixed” within one render’s event handlers. You don’t need to worry whether the state has changed while the code is running.
 
 But what if you wanted to read the latest state before a re-render? You’ll want to use a state updater function, covered on the next page!
+
+## Recap
+- Setting state requests a new render.
+- React stores state outside of your component, as if on a shelf.
+- When you call `useState`, React gives you a snapshot of the state for that render.
+- Variables and event handlers don’t “survive” re-renders. Every render has its own event handlers.
+- Every render (and functions inside it) will always “see” the snapshot of the state that React gave to that render.
+- You can mentally substitute state in event handlers, similarly to how you think about the rendered JSX.
+- Event handlers created in the past have the state values from the render in which they were created.
+
+survive [/sərˈvaɪv/] 存活
