@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.4
+[React doc Tutorial:State as a Snapshot-Try out some challenges](./English//React/State-as-a-Snapshot.md)
+
 ## 2024.12.3
 [React doc Tutorial:State as a Snapshot-Recap](./English//React/State-as-a-Snapshot.md)
 
