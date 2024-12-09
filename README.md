@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.9
+[React doc Tutorial:Queueing a Series of State Updates-Updating the same state multiple times before the next render](./English/React/Queueing-a-Series-of-State-Updates.md)
+
 ## 2024.12.6
 [React doc Tutorial:Queueing a Series of State Updates-React batches state updates](./English/React/Queueing-a-Series-of-State-Updates.md)
 
