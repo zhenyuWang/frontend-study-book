@@ -91,3 +91,40 @@ When you call `useState` during the next render, React goes through the queue. T
 React stores `3` as the final result and returns it from `useState`.
 
 This is why clicking “+3” in the above example correctly increments the value by 3.
+
+### What happens if you update state after replacing it
+What about this event handler? What do you think `number` will be in the next render?
+```jsx
+<button onClick={() => {
+  setNumber(number + 5);
+  setNumber(n => n + 1);
+}}>
+```
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);
+        setNumber(n => n + 1);
+      }}>Increase the number</button>
+    </>
+  )
+}
+```
+Here’s what this event handler tells React to do:
+
+1. `setNumber(number + 5)`: `number` is `0`, so `setNumber(0 + 5)`. React adds “replace with `5`” to its queue.
+2. `setNumber(n => n + 1)`: `n => n + 1` is an updater function. React adds that function to its queue.
+
+During the next render, React goes through the state queue:
+
+React stores `6` as the final result and returns it from useState.
+
+**Note**\
+You may have noticed that `setState(5)` actually works like `setState(n => 5)`, but `n` is unused!
