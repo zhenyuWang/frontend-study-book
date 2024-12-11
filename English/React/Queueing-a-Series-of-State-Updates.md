@@ -128,3 +128,49 @@ React stores `6` as the final result and returns it from useState.
 
 **Note**\
 You may have noticed that `setState(5)` actually works like `setState(n => 5)`, but `n` is unused!
+
+### What happens if you replace state after updating it
+Let’s try one more example. What do you think `number` will be in the next render?
+```jsx
+<button onClick={() => {
+  setNumber(number + 5);
+  setNumber(n => n + 1);
+  setNumber(42);
+}}>
+```
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);
+        setNumber(n => n + 1);
+        setNumber(42);
+      }}>Increase the number</button>
+    </>
+  )
+}
+```
+Here’s how React works through these lines of code while executing this event handler:
+
+1. `setNumber(number + 5)`: `number` is `0`, so `setNumber(0 + 5)`. React adds “replace with `5`” to its queue.
+2. `setNumber(n => n + 1)`: `n => n + 1` is an updater function. React adds that function to its queue.
+3. `setNumber(42)`: React adds “replace with `42`” to its queue.
+
+During the next render, React goes through the state queue:
+
+Then React stores `42` as the final result and returns it from `useState`.
+
+To summarize, here’s how you can think of what you’re passing to the `setNumber` state setter:\
+summarize 总结\
+
+- An updater function (e.g. `n => n + 1`) gets added to the queue.
+- Any other value (e.g. number `5`) adds “replace with `5`” to the queue, ignoring what’s already queued.
+
+After the event handler completes, React will trigger a re-render. During the re-render, React will process the queue. Updater functions run during rendering, so updater functions must be pure and only return the result. Don’t try to set state from inside of them or run other side effects. In Strict Mode, React will run each updater function twice (but discard the second result) to help you find mistakes.\
+discard [dɪsˈkɑːrd] 丢弃
