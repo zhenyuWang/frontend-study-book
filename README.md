@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.13
+[React doc Tutorial:Queueing a Series of State Updates-Recap](./English/React/Queueing-a-Series-of-State-Updates.md)
+
 ## 2024.12.12
 [React doc Tutorial:Queueing a Series of State Updates-Naming conventions](./English/React/Queueing-a-Series-of-State-Updates.md)
 
