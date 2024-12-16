@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.16
+[React doc Tutorial:Updating Objects in State](./English/React/Updating-Objects-in-State.md)
+
 ## 2024.12.13
 [React doc Tutorial:Queueing a Series of State Updates-Recap](./English/React/Queueing-a-Series-of-State-Updates.md)
 
