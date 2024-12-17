@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.17
+[React doc Tutorial:Updating Objects in State-What’s a mutation?](./English/React/Updating-Objects-in-State.md)
+
 ## 2024.12.16
 [React doc Tutorial:Updating Objects in State](./English/React/Updating-Objects-in-State.md)
 
