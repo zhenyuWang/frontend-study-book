@@ -130,3 +130,206 @@ export default function MovingDot() {
   );
 }
 ```
+
+## Copying objects with the spread syntax
+In the previous example, the position object is always created fresh from the current cursor position. But often, you will want to include existing data as a part of the new object you’re creating. For example, you may want to update only one field in a form, but keep the previous values for all other fields.
+
+These input fields don’t work because the `onChange` handlers mutate the state:
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleFirstNameChange(e) {
+    person.firstName = e.target.value;
+  }
+
+  function handleLastNameChange(e) {
+    person.lastName = e.target.value;
+  }
+
+  function handleEmailChange(e) {
+    person.email = e.target.value;
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          value={person.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={person.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          value={person.email}
+          onChange={handleEmailChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+```
+For example, this line mutates the state from a past render:
+```jsx
+person.firstName = e.target.value;
+```
+The reliable way to get the behavior you’re looking for is to create a new object and pass it to `setPerson`. But here, you want to also copy the existing data into it because only one of the fields has changed:\
+reliable [rɪˈlaɪəbl] adj. 可靠的；可信赖的
+```jsx
+setPerson({
+  firstName: e.target.value, // New first name from the input
+  lastName: person.lastName,
+  email: person.email
+});
+```
+You can use the `...` object spread syntax so that you don’t need to copy every property separately.
+```jsx
+setPerson({
+  ...person, // Copy the old fields
+  firstName: e.target.value // But override this one
+});
+```
+Now the form works!
+
+Notice how you didn’t declare a separate state variable for each input field. For large forms, keeping all data grouped in an object is very convenient—as long as you update it correctly!\
+separate [ˈsepərət] adj. 分开的；独立的；单独的；个别的
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleFirstNameChange(e) {
+    setPerson({
+      ...person,
+      firstName: e.target.value
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPerson({
+      ...person,
+      lastName: e.target.value
+    });
+  }
+
+  function handleEmailChange(e) {
+    setPerson({
+      ...person,
+      email: e.target.value
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          value={person.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={person.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          value={person.email}
+          onChange={handleEmailChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+```
+Note that the `...` spread syntax is “shallow”—it only copies things one level deep. This makes it fast, but it also means that if you want to update a nested property, you’ll have to use it more than once.
+
+### Using a single event handler for multiple fields
+You can also use the [ and ] braces inside your object definition to specify a property with a dynamic name. Here is the same example, but with a single event handler instead of three different ones:
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleChange(e) {
+    setPerson({
+      ...person,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          name="firstName"
+          value={person.firstName}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          name="lastName"
+          value={person.lastName}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          name="email"
+          value={person.email}
+          onChange={handleChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+```
+Here, `e.target.name` refers to the `name` property given to the `<input>` DOM element.

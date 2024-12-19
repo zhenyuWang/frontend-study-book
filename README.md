@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.19
+[React doc Tutorial:Updating Objects in State-Copying objects with the spread syntax](./English/React/Updating-Objects-in-State.md)
+
 ## 2024.12.18
 [React doc Tutorial:Updating Objects in State-Treat state as read-only](./English/React/Updating-Objects-in-State.md)
 
