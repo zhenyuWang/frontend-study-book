@@ -333,3 +333,178 @@ export default function Form() {
 }
 ```
 Here, `e.target.name` refers to the `name` property given to the `<input>` DOM element.
+
+## Updating a nested object
+Consider a nested object structure like this:
+```jsx
+const [person, setPerson] = useState({
+  name: 'Niki de Saint Phalle',
+  artwork: {
+    title: 'Blue Nana',
+    city: 'Hamburg',
+    image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+  }
+});
+```
+If you wanted to update person.artwork.city, it’s clear how to do it with mutation:
+```jsx
+person.artwork.city = 'New Delhi';
+```
+But in React, you treat state as immutable! In order to change city, you would first need to produce the new artwork object (pre-populated with data from the previous one), and then produce the new person object which points at the new artwork:
+```jsx
+const nextArtwork = { ...person.artwork, city: 'New Delhi' };
+const nextPerson = { ...person, artwork: nextArtwork };
+setPerson(nextPerson);
+```
+Or, written as a single function call:
+```jsx
+setPerson({
+  ...person, // Copy other fields
+  artwork: { // but replace the artwork
+    ...person.artwork, // with the same one
+    city: 'New Delhi' // but in New Delhi!
+  }
+});
+```
+This gets a bit wordy, but it works fine for many cases:
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    name: 'Niki de Saint Phalle',
+    artwork: {
+      title: 'Blue Nana',
+      city: 'Hamburg',
+      image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+    }
+  });
+
+  function handleNameChange(e) {
+    setPerson({
+      ...person,
+      name: e.target.value
+    });
+  }
+
+  function handleTitleChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        title: e.target.value
+      }
+    });
+  }
+
+  function handleCityChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        city: e.target.value
+      }
+    });
+  }
+
+  function handleImageChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        image: e.target.value
+      }
+    });
+  }
+
+  return (
+    <>
+      <label>
+        Name:
+        <input
+          value={person.name}
+          onChange={handleNameChange}
+        />
+      </label>
+      <label>
+        Title:
+        <input
+          value={person.artwork.title}
+          onChange={handleTitleChange}
+        />
+      </label>
+      <label>
+        City:
+        <input
+          value={person.artwork.city}
+          onChange={handleCityChange}
+        />
+      </label>
+      <label>
+        Image:
+        <input
+          value={person.artwork.image}
+          onChange={handleImageChange}
+        />
+      </label>
+      <p>
+        <i>{person.artwork.title}</i>
+        {' by '}
+        {person.name}
+        <br />
+        (located in {person.artwork.city})
+      </p>
+      <img 
+        src={person.artwork.image} 
+        alt={person.artwork.title}
+      />
+    </>
+  );
+}
+```
+### Objects are not really nested
+An object like this appears “nested” in code:
+```jsx
+let obj = {
+  name: 'Niki de Saint Phalle',
+  artwork: {
+    title: 'Blue Nana',
+    city: 'Hamburg',
+    image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+  }
+};
+```
+However, “nesting” is an inaccurate way to think about how objects behave. When the code executes, there is no such thing as a “nested” object. You are really looking at two different objects:\
+inaccurate [ɪnˈækjərət] adj. 不准确的；错误的；不精确的\
+behave [bɪˈheɪv] v. 表现；举止；行为；运转
+```jsx
+let obj1 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+let obj2 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1
+};
+```
+The `obj1` object is not “inside” obj2. For example, `obj3` could “point” at `obj1` too:
+```jsx
+let obj1 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+let obj2 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1
+};
+
+let obj3 = {
+  name: 'Copycat',
+  artwork: obj1
+};
+```
+If you were to mutate `obj3.artwork.city`, it would affect both `obj2.artwork.city` and `obj1.city`. This is because `obj3.artwork`, `obj2.artwork`, and `obj1` are the same object. This is difficult to see when you think of objects as “nested”. Instead, they are separate objects “pointing” at each other with properties.
