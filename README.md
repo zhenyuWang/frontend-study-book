@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.24
+[React doc Tutorial:Updating Objects in State-Updating a nested object-Recap](./English/React/Updating-Objects-in-State.md)
+
 ## 2024.12.23
 [React doc Tutorial:Updating Objects in State-Updating a nested object](./English/React/Updating-Objects-in-State.md)
 

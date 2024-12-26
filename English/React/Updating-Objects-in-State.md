@@ -646,3 +646,12 @@ appropriate [əˈprəʊpriət] adj. 适当的；恰当的；合适的\
 implementation [ˌɪmplɪmenˈteɪʃn] n. 实施；执行；履行；安装
 
 In practice, you can often “get away” with mutating state in React, but we strongly advise you not to do that so that you can use new React features developed with this approach in mind. Future contributors and perhaps even your future self will thank you!
+
+## Recap
+- Treat all state in React as immutable.
+- When you store objects in state, mutating them will not trigger renders and will change the state in previous render “snapshots”.
+- Instead of mutating an object, create a new version of it, and trigger a re-render by setting state to it.
+- You can use the `{...obj, something: 'newValue'}` object spread syntax to create copies of objects.
+- Spread syntax is shallow: it only copies one level deep.
+- To update a nested object, you need to create copies all the way up from the place you’re updating.
+- To reduce repetitive copying code, use Immer.
