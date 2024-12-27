@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.26
+[React doc Tutorial:Updating Arrays in State-Updating arrays without mutation](./English/React/Updating-Arrays-in-State.md)
+
 ## 2024.12.25
 [React doc Tutorial:Updating Arrays in State](./English/React/Updating-Arrays-in-State.md)
 
