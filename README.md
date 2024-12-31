@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2024.12.31
+[React doc Tutorial:Updating Arrays in State-Transforming an array](./English/React/Updating-Arrays-in-State.md)
+
 ## 2024.12.30
 [React doc Tutorial:Updating Arrays in State-Removing from an array](./English/React/Updating-Arrays-in-State.md)
 
