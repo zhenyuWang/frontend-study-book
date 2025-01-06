@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.6
+[React doc Tutorial:Updating Arrays in State-Making other changes to an array(./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.3
 [React doc Tutorial:Updating Arrays in State-Inserting into an array](./English/React/Updating-Arrays-in-State.md)
 
