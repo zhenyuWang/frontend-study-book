@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.8
+[React doc Tutorial:Updating Arrays in State-Write concise update logic with Immer](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.7
 [React doc Tutorial:Updating Arrays in State-Updating objects inside arrays](./English/React/Updating-Arrays-in-State.md)
 
