@@ -668,3 +668,12 @@ construct [/kənˈstrʌkt/] 构建，建造\
 scratch [/skrætʃ/] 从零开始，从头开始\
 according to 根据，按照\
 draft [/dræft/] 草稿，草案
+
+## Recap
+
+- You can put arrays into state, but you can’t change them.
+- Instead of mutating an array, create a new version of it, and update the state to it.
+- You can use the `[...arr, newItem]` array spread syntax to create arrays with new items.
+- You can use `filter()` and `map()` to create new arrays with filtered or transformed items.
+- You can use Immer to keep your code concise.
+
