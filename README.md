@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.10
+[React doc Tutorial:Reacting to Input with State](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.9
 [React doc Tutorial:Updating Arrays in State-Recap](./English/React/Updating-Arrays-in-State.md)
 
