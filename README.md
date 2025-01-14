@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.14
+[React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.13
 [React doc Tutorial:Reacting to Input with State-How declarative UI compares to imperative](./English/React/Updating-Arrays-in-State.md)
 

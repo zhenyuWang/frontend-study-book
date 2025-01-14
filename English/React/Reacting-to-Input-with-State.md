@@ -124,3 +124,13 @@ exponentially [ˌekspəˈnenʃəli] 指数地
 React was built to solve this problem.
 
 In React, you don’t directly manipulate the UI—meaning you don’t enable, disable, show, or hide components directly. Instead, you declare what you want to show, and React figures out how to update the UI. Think of getting into a taxi and telling the driver where you want to go instead of telling them exactly where to turn. It’s the driver’s job to get you there, and they might even know some shortcuts you haven’t considered!
+
+## Thinking about UI declaratively
+You’ve seen how to implement a form imperatively above. To better understand how to think in React, you’ll walk through reimplementing this UI in React below:\
+reimplement 重新实现
+
+1. Identify your component’s different visual states
+2. Determine what triggers those state changes
+3. Represent the state in memory using `useState`
+4. Remove any non-essential state variables
+5. Connect the event handlers to set the state
