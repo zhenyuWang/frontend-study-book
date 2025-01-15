@@ -134,3 +134,81 @@ reimplement 重新实现
 3. Represent the state in memory using `useState`
 4. Remove any non-essential state variables
 5. Connect the event handlers to set the state
+
+### Step 1: Identify your component’s different visual states
+In computer science, you may hear about a “state machine” being in one of several “states”. If you work with a designer, you may have seen mockups for different “visual states”. React stands at the intersection of design and computer science, so both of these ideas are sources of inspiration.\
+mockup [ˈmɒkʌp]设计图，模型\
+intersection [ˌɪntəˈsekʃn] 交叉点\
+inspiration [ˌɪnspəˈreɪʃn] 灵感
+
+First, you need to visualize all the different “states” of the UI the user might see:\
+visualize [ˈvɪʒʊəlaɪz] 可视化
+
+- Empty: Form has a disabled “Submit” button.
+- Typing: Form has an enabled “Submit” button.
+- Submitting: Form is completely disabled. Spinner is shown.
+- Success: “Thank you” message is shown instead of a form.
+- Error: Same as Typing state, but with an extra error message.
+
+Just like a designer, you’ll want to “mock up” or create “mocks” for the different states before you add logic. For example, here is a mock for just the visual part of the form. This mock is controlled by a prop called `status` with a default value of `'empty'`:
+```jsx
+export default function Form({
+  status = 'empty'
+}) {
+  if (status === 'success') {
+    return <h1>That's right!</h1>
+  }
+  return (
+    <>
+      <h2>City quiz</h2>
+      <p>
+        In which city is there a billboard that turns air into drinkable water?
+      </p>
+      <form>
+        <textarea />
+        <br />
+        <button>
+          Submit
+        </button>
+      </form>
+    </>
+  )
+}
+```
+You could call that prop anything you like, the naming is not important. Try editing `status = 'empty'` to `status = 'success'` to see the success message appear. Mocking lets you quickly iterate on the UI before you wire up any logic. Here is a more fleshed out prototype of the same component, still “controlled” by the `status` prop:\
+flesh out 充实
+```jsx
+export default function Form({
+  // Try 'submitting', 'error', 'success':
+  status = 'empty'
+}) {
+  if (status === 'success') {
+    return <h1>That's right!</h1>
+  }
+  return (
+    <>
+      <h2>City quiz</h2>
+      <p>
+        In which city is there a billboard that turns air into drinkable water?
+      </p>
+      <form>
+        <textarea disabled={
+          status === 'submitting'
+        } />
+        <br />
+        <button disabled={
+          status === 'empty' ||
+          status === 'submitting'
+        }>
+          Submit
+        </button>
+        {status === 'error' &&
+          <p className="Error">
+            Good guess but a wrong answer. Try again!
+          </p>
+        }
+      </form>
+      </>
+  );
+}
+```
