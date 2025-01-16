@@ -212,3 +212,22 @@ export default function Form({
   );
 }
 ```
+
+### Step 2: Determine what triggers those state changes
+You can trigger state updates in response to two kinds of inputs:
+
+- Human inputs, like clicking a button, typing in a field, navigating a link.
+- Computer inputs, like a network response arriving, a timeout completing, an image loading.
+
+In both cases, you must set state variables to update the UI. For the form you’re developing, you will need to change state in response to a few different inputs:
+
+- Changing the text input (human) should switch it from the Empty state to the Typing state or back, depending on whether the text box is empty or not.
+- Clicking the Submit button (human) should switch it to the Submitting state.
+- Successful network response (computer) should switch it to the Success state.
+- Failed network response (computer) should switch it to the Error state with the matching error message.
+
+**Note**\
+Notice that human inputs often require event handlers!
+
+To help visualize this flow, try drawing each state on paper as a labeled circle, and each change between two states as an arrow. You can sketch out many flows this way and sort out bugs long before implementation.\
+sketch out 草拟

@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.16
+[React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 2: Determine what triggers those state changes](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.15
 [React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 1: Identify your component’s different visual states](./English/React/Updating-Arrays-in-State.md)
 
