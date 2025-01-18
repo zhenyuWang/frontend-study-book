@@ -231,3 +231,27 @@ Notice that human inputs often require event handlers!
 
 To help visualize this flow, try drawing each state on paper as a labeled circle, and each change between two states as an arrow. You can sketch out many flows this way and sort out bugs long before implementation.\
 sketch out 草拟
+
+### Step 3: Represent the state in memory with useState
+Next you’ll need to represent the visual states of your component in memory with useState. Simplicity is key: each piece of state is a “moving piece”, and you want as few “moving pieces” as possible. More complexity leads to more bugs!\
+simplicity [sɪmˈplɪsəti] 简单\
+is key 是关键
+
+Start with the state that absolutely must be there. For example, you’ll need to store the answer for the input, and the error (if it exists) to store the last error:
+```jsx
+const [answer, setAnswer] = useState('');
+const [error, setError] = useState(null);
+```
+Then, you’ll need a state variable representing which one of the visual states that you want to display. There’s usually more than a single way to represent that in memory, so you’ll need to experiment with it.\
+experiment [ɪkˈsperɪmənt] 实验
+
+If you struggle to think of the best way immediately, start by adding enough state that you’re definitely sure that all the possible visual states are covered:\
+struggle to 努力做某事
+```jsx
+const [isEmpty, setIsEmpty] = useState(true);
+const [isTyping, setIsTyping] = useState(false);
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [isSuccess, setIsSuccess] = useState(false);
+const [isError, setIsError] = useState(false);
+```
+Your first idea likely won’t be the best, but that’s ok—refactoring state is a part of the process!
