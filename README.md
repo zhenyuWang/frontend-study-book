@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.20
+[React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 4: Remove any non-essential state variables](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.17
 [React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 3: Represent the state in memory with useState](./English/React/Updating-Arrays-in-State.md)
 

@@ -255,3 +255,41 @@ const [isSuccess, setIsSuccess] = useState(false);
 const [isError, setIsError] = useState(false);
 ```
 Your first idea likely won’t be the best, but that’s ok—refactoring state is a part of the process!
+
+###Step 4: Remove any non-essential state variables
+You want to avoid duplication in the state content so you’re only tracking what is essential. Spending a little time on refactoring your state structure will make your components easier to understand, reduce duplication, and avoid unintended meanings. Your goal is to prevent the cases where the state in memory doesn’t represent any valid UI that you’d want a user to see. (For example, you never want to show an error message and disable the input at the same time, or the user won’t be able to correct the error!)\
+essential [ɪˈsenʃl] 必要的\
+duplication [ˌdjuːplɪˈkeɪʃn] 重复\
+unitended [ˌʌnɪnˈtɛndɪd] 非预期的
+
+Here are some questions you can ask about your state variables:
+
+- Does this state cause a paradox? For example, `isTyping` and `isSubmitting` can’t both be `true`. A paradox usually means that the state is not constrained enough. There are four possible combinations of two booleans, but only three correspond to valid states. To remove the “impossible” state, you can combine these into a `status` that must be one of three values: `'typing'`, `'submitting'`, or `'success'`.
+- Is the same information available in another state variable already? Another paradox: `isEmpty` and `isTyping` can’t be `true` at the same time. By making them separate state variables, you risk them going out of sync and causing bugs. Fortunately, you can remove `isEmpty` and instead check `answer.length === 0`.
+- Can you get the same information from the inverse of another state variable? `isError` is not needed because you can check `error !== null` instead.
+
+paradox [ˈpærədɒks] 悖论\
+constrain [kənˈstreɪn] 约束\
+correspond [ˌkɒrɪˈspɒnd] 对应\
+combine [kəmˈbaɪn] 结合\
+risk [rɪsk] 风险\
+fortunately [ˈfɔːtʃənətli] 幸运地\
+inverse [ˈɪnvɜːs] 相反的
+
+After this clean-up, you’re left with 3 (down from 7!) essential state variables:
+```jsx
+const [answer, setAnswer] = useState('');
+const [error, setError] = useState(null);
+const [status, setStatus] = useState('typing'); // 'typing', 'submitting', or 'success'
+```
+You know they are essential, because you can’t remove any of them without breaking the functionality.
+
+**Eliminating “impossible” states with a reducer **\
+eliminate [ɪˈlɪmɪneɪt] 消除\
+
+These three variables are a good enough representation of this form’s state. However, there are still some intermediate states that don’t fully make sense. For example, a non-null error doesn’t make sense when status is 'success'. To model the state more precisely, you can extract it into a reducer. Reducers let you unify multiple state variables into a single object and consolidate all the related logic!\
+representation [ˌreprɪzenˈteɪʃn] 表示\
+intermediate [ˌɪntəˈmiːdiət] 中间的\
+precisely [prɪˈsaɪsli] 精确地\
+unify [ˈjuːnɪfaɪ] 统一\
+consolidate [kənˈsɒlɪdeɪt] 巩固
