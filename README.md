@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.21
+[React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 5: Connect the event handlers to set state](./English/React/Updating-Arrays-in-State.md)
+
 ## 2025.1.20
 [React doc Tutorial:Reacting to Input with State-Thinking about UI declaratively-Step 4: Remove any non-essential state variables](./English/React/Updating-Arrays-in-State.md)
 
