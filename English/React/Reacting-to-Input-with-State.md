@@ -369,3 +369,17 @@ function submitForm(answer) {
 ```
 Although this code is longer than the original imperative example, it is much less fragile. Expressing all interactions as state changes lets you later introduce new visual states without breaking existing ones. It also lets you change what should be displayed in each state without changing the logic of the interaction itself.\
 fragile [ˈfrædʒaɪl] 脆弱的
+
+## Recap
+- Declarative programming means describing the UI for each visual state rather than micromanaging the UI (imperative).
+- When developing a component:
+  1. Identify all its visual states.
+  2. Determine the human and computer triggers for state changes.
+  3. Model the state with `useState`.
+  4. Remove non-essential state to avoid bugs and paradoxes.
+  5. Connect the event handlers to set state.
+
+declarative [dɪˈklærətɪv] 声明式的\
+micromanage [ˈmaɪkrəʊˌmænɪdʒ] 微观管理\
+identify [aɪˈdentɪfaɪ] 识别\
+determine [dɪˈtɜːmɪn] 确定
