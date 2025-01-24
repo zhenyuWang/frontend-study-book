@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.23
+[React doc Tutorial:Choosing the State Structure](./English/React/Choosing-the-State-Structure.md)
+
 ## 2025.1.22
 [React doc Tutorial:Reacting to Input with State-Recap](./English/React/Updating-Arrays-in-State.md)
 
