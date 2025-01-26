@@ -4,7 +4,10 @@
 
 # 日志
 
-## 2025.1.25
+## 2025.1.26
+[React doc Tutorial:Choosing the State Structure-Group related state](./English/React/Choosing-the-State-Structure.md)
+
+## 2025.1.24
 [React doc Tutorial:Choosing the State Structure-Principles for structuring state](./English/React/Choosing-the-State-Structure.md)
 
 ## 2025.1.23
