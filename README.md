@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.1.27
+[React doc Tutorial:Choosing the State Structure-Avoid contradictions in state](./English/React/Choosing-the-State-Structure.md)
+
 ## 2025.1.26
 [React doc Tutorial:Choosing the State Structure-Group related state](./English/React/Choosing-the-State-Structure.md)
 
