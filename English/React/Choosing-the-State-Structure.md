@@ -186,3 +186,125 @@ const isSending = status === 'sending';
 const isSent = status === 'sent';
 ```
 But they’re not state variables, so you don’t need to worry about them getting out of sync with each other.
+
+## Avoid redundant state
+
+redundant [rɪˈdʌndənt] 多余的
+If you can calculate some information from the component’s props or its existing state variables during rendering, you should not put that information into that component’s state.
+
+For example, take this form. It works, but can you find any redundant state in it?
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+    setFullName(e.target.value + ' ' + lastName);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+    setFullName(firstName + ' ' + e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Let’s check you in</h2>
+      <label>
+        First name:{' '}
+        <input
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:{' '}
+        <input
+          value={lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+```
+This form has three state variables: `firstName`, `lastName`, and `fullName`. However, `fullName` is redundant. You can always calculate `fullName` from `firstName` and `lastName` during render, so remove it from state.
+
+This is how you can do it:
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const fullName = firstName + ' ' + lastName;
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Let’s check you in</h2>
+      <label>
+        First name:{' '}
+        <input
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:{' '}
+        <input
+          value={lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+```
+Here, `fullName` is not a state variable. Instead, it’s calculated during render:
+```jsx
+const fullName = firstName + ' ' + lastName;
+```
+As a result, the change handlers don’t need to do anything special to update it. When you call `setFirstName` or `setLastName`, you trigger a re-render, and then the next `fullName` will be calculated from the fresh data.
+
+**Don’t mirror props in state **\
+mirror [ˈmɪrər] 镜像\
+A common example of redundant state is code like this:
+```jsx
+function Message({ messageColor }) {
+  const [color, setColor] = useState(messageColor);
+```
+Here, a `color` state variable is initialized to the `messageColor` prop. The problem is that if the parent component passes a different value of `messageColor` later (for example, 'red' instead of 'blue'), the color state variable would not be updated! The state is only initialized during the first render.
+
+This is why “mirroring” some prop in a state variable can lead to confusion. Instead, use the `messageColor` prop directly in your code. If you want to give it a shorter name, use a constant:
+```
+function Message({ messageColor }) {
+  const color = messageColor;
+```
+This way it won’t get out of sync with the prop passed from the parent component.
+
+”Mirroring” props into state only makes sense when you want to ignore all updates for a specific prop. By convention, start the prop name with initial or default to clarify that its new values are ignored:
+```jsx
+function Message({ initialColor }) {
+  // The `color` state variable holds the *first* value of `initialColor`.
+  // Further changes to the `initialColor` prop are ignored.
+  const [color, setColor] = useState(initialColor);
+```
