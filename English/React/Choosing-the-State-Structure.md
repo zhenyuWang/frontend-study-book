@@ -472,3 +472,1208 @@ The duplication is gone, and you only keep the essential state!
 Now if you edit the selected item, the message below will update immediately. This is because `setItems` triggers a re-render, and `items.find(...)` would find the item with the updated title. You didn’t need to hold the selected item in state, because only the selected ID is essential. The rest could be calculated during render.\
 essential [ɪˈsenʃl] 必要的\
 rest [rest] 其余的
+
+## Avoid deeply nested state
+Imagine a travel plan consisting of planets, continents, and countries. You might be tempted to structure its state using nested objects and arrays, like in this example:\
+consist [kənˈsɪst] 包含\
+planet [ˈplænɪt] 行星\
+continent [ˈkɒntɪnənt] 大陆
+```jsx
+// App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function PlaceTree({ place }) {
+  const childPlaces = place.childPlaces;
+  return (
+    <li>
+      {place.title}
+      {childPlaces.length > 0 && (
+        <ol>
+          {childPlaces.map(place => (
+            <PlaceTree key={place.id} place={place} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+export default function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const planets = plan.childPlaces;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planets.map(place => (
+          <PlaceTree key={place.id} place={place} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+// places.js
+export const initialTravelPlan = {
+  id: 0,
+  title: '(Root)',
+  childPlaces: [{
+    id: 1,
+    title: 'Earth',
+    childPlaces: [{
+      id: 2,
+      title: 'Africa',
+      childPlaces: [{
+        id: 3,
+        title: 'Botswana',
+        childPlaces: []
+      }, {
+        id: 4,
+        title: 'Egypt',
+        childPlaces: []
+      }, {
+        id: 5,
+        title: 'Kenya',
+        childPlaces: []
+      }, {
+        id: 6,
+        title: 'Madagascar',
+        childPlaces: []
+      }, {
+        id: 7,
+        title: 'Morocco',
+        childPlaces: []
+      }, {
+        id: 8,
+        title: 'Nigeria',
+        childPlaces: []
+      }, {
+        id: 9,
+        title: 'South Africa',
+        childPlaces: []
+      }]
+    }, {
+      id: 10,
+      title: 'Americas',
+      childPlaces: [{
+        id: 11,
+        title: 'Argentina',
+        childPlaces: []
+      }, {
+        id: 12,
+        title: 'Brazil',
+        childPlaces: []
+      }, {
+        id: 13,
+        title: 'Barbados',
+        childPlaces: []
+      }, {
+        id: 14,
+        title: 'Canada',
+        childPlaces: []
+      }, {
+        id: 15,
+        title: 'Jamaica',
+        childPlaces: []
+      }, {
+        id: 16,
+        title: 'Mexico',
+        childPlaces: []
+      }, {
+        id: 17,
+        title: 'Trinidad and Tobago',
+        childPlaces: []
+      }, {
+        id: 18,
+        title: 'Venezuela',
+        childPlaces: []
+      }]
+    }, {
+      id: 19,
+      title: 'Asia',
+      childPlaces: [{
+        id: 20,
+        title: 'China',
+        childPlaces: []
+      }, {
+        id: 21,
+        title: 'India',
+        childPlaces: []
+      }, {
+        id: 22,
+        title: 'Singapore',
+        childPlaces: []
+      }, {
+        id: 23,
+        title: 'South Korea',
+        childPlaces: []
+      }, {
+        id: 24,
+        title: 'Thailand',
+        childPlaces: []
+      }, {
+        id: 25,
+        title: 'Vietnam',
+        childPlaces: []
+      }]
+    }, {
+      id: 26,
+      title: 'Europe',
+      childPlaces: [{
+        id: 27,
+        title: 'Croatia',
+        childPlaces: [],
+      }, {
+        id: 28,
+        title: 'France',
+        childPlaces: [],
+      }, {
+        id: 29,
+        title: 'Germany',
+        childPlaces: [],
+      }, {
+        id: 30,
+        title: 'Italy',
+        childPlaces: [],
+      }, {
+        id: 31,
+        title: 'Portugal',
+        childPlaces: [],
+      }, {
+        id: 32,
+        title: 'Spain',
+        childPlaces: [],
+      }, {
+        id: 33,
+        title: 'Turkey',
+        childPlaces: [],
+      }]
+    }, {
+      id: 34,
+      title: 'Oceania',
+      childPlaces: [{
+        id: 35,
+        title: 'Australia',
+        childPlaces: [],
+      }, {
+        id: 36,
+        title: 'Bora Bora (French Polynesia)',
+        childPlaces: [],
+      }, {
+        id: 37,
+        title: 'Easter Island (Chile)',
+        childPlaces: [],
+      }, {
+        id: 38,
+        title: 'Fiji',
+        childPlaces: [],
+      }, {
+        id: 39,
+        title: 'Hawaii (the USA)',
+        childPlaces: [],
+      }, {
+        id: 40,
+        title: 'New Zealand',
+        childPlaces: [],
+      }, {
+        id: 41,
+        title: 'Vanuatu',
+        childPlaces: [],
+      }]
+    }]
+  }, {
+    id: 42,
+    title: 'Moon',
+    childPlaces: [{
+      id: 43,
+      title: 'Rheita',
+      childPlaces: []
+    }, {
+      id: 44,
+      title: 'Piccolomini',
+      childPlaces: []
+    }, {
+      id: 45,
+      title: 'Tycho',
+      childPlaces: []
+    }]
+  }, {
+    id: 46,
+    title: 'Mars',
+    childPlaces: [{
+      id: 47,
+      title: 'Corn Town',
+      childPlaces: []
+    }, {
+      id: 48,
+      title: 'Green Hill',
+      childPlaces: []      
+    }]
+  }]
+};
+```
+Now let’s say you want to add a button to delete a place you’ve already visited. How would you go about it? Updating nested state involves making copies of objects all the way up from the part that changed. Deleting a deeply nested place would involve copying its entire parent place chain. Such code can be very verbose.\
+involve [ɪnˈvɒlv] 涉及\
+chain [tʃeɪn] 链\
+verbose [vɜːˈbəʊs] 冗长的
+
+If the state is too nested to update easily, consider making it “flat”. Here is one way you can restructure this data. Instead of a tree-like structure where each `place` has an array of its child places, you can have each place hold an array of its child place IDs. Then store a mapping from each place ID to the corresponding place.\
+corrresponding [ˌkɒrɪˈspɒndɪŋ] 相应的
+
+This data restructuring might remind you of seeing a database table:
+```jsx
+// App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function PlaceTree({ id, placesById }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree
+              key={childId}
+              id={childId}
+              placesById={placesById}
+            />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+export default function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree
+            key={id}
+            id={id}
+            placesById={plan}
+          />
+        ))}
+      </ol>
+    </>
+  );
+}
+// places.js
+export const initialTravelPlan = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 42, 46],
+  },
+  1: {
+    id: 1,
+    title: 'Earth',
+    childIds: [2, 10, 19, 26, 34]
+  },
+  2: {
+    id: 2,
+    title: 'Africa',
+    childIds: [3, 4, 5, 6 , 7, 8, 9]
+  }, 
+  3: {
+    id: 3,
+    title: 'Botswana',
+    childIds: []
+  },
+  4: {
+    id: 4,
+    title: 'Egypt',
+    childIds: []
+  },
+  5: {
+    id: 5,
+    title: 'Kenya',
+    childIds: []
+  },
+  6: {
+    id: 6,
+    title: 'Madagascar',
+    childIds: []
+  }, 
+  7: {
+    id: 7,
+    title: 'Morocco',
+    childIds: []
+  },
+  8: {
+    id: 8,
+    title: 'Nigeria',
+    childIds: []
+  },
+  9: {
+    id: 9,
+    title: 'South Africa',
+    childIds: []
+  },
+  10: {
+    id: 10,
+    title: 'Americas',
+    childIds: [11, 12, 13, 14, 15, 16, 17, 18],   
+  },
+  11: {
+    id: 11,
+    title: 'Argentina',
+    childIds: []
+  },
+  12: {
+    id: 12,
+    title: 'Brazil',
+    childIds: []
+  },
+  13: {
+    id: 13,
+    title: 'Barbados',
+    childIds: []
+  }, 
+  14: {
+    id: 14,
+    title: 'Canada',
+    childIds: []
+  },
+  15: {
+    id: 15,
+    title: 'Jamaica',
+    childIds: []
+  },
+  16: {
+    id: 16,
+    title: 'Mexico',
+    childIds: []
+  },
+  17: {
+    id: 17,
+    title: 'Trinidad and Tobago',
+    childIds: []
+  },
+  18: {
+    id: 18,
+    title: 'Venezuela',
+    childIds: []
+  },
+  19: {
+    id: 19,
+    title: 'Asia',
+    childIds: [20, 21, 22, 23, 24, 25],   
+  },
+  20: {
+    id: 20,
+    title: 'China',
+    childIds: []
+  },
+  21: {
+    id: 21,
+    title: 'India',
+    childIds: []
+  },
+  22: {
+    id: 22,
+    title: 'Singapore',
+    childIds: []
+  },
+  23: {
+    id: 23,
+    title: 'South Korea',
+    childIds: []
+  },
+  24: {
+    id: 24,
+    title: 'Thailand',
+    childIds: []
+  },
+  25: {
+    id: 25,
+    title: 'Vietnam',
+    childIds: []
+  },
+  26: {
+    id: 26,
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
+  },
+  27: {
+    id: 27,
+    title: 'Croatia',
+    childIds: []
+  },
+  28: {
+    id: 28,
+    title: 'France',
+    childIds: []
+  },
+  29: {
+    id: 29,
+    title: 'Germany',
+    childIds: []
+  },
+  30: {
+    id: 30,
+    title: 'Italy',
+    childIds: []
+  },
+  31: {
+    id: 31,
+    title: 'Portugal',
+    childIds: []
+  },
+  32: {
+    id: 32,
+    title: 'Spain',
+    childIds: []
+  },
+  33: {
+    id: 33,
+    title: 'Turkey',
+    childIds: []
+  },
+  34: {
+    id: 34,
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40, 41],   
+  },
+  35: {
+    id: 35,
+    title: 'Australia',
+    childIds: []
+  },
+  36: {
+    id: 36,
+    title: 'Bora Bora (French Polynesia)',
+    childIds: []
+  },
+  37: {
+    id: 37,
+    title: 'Easter Island (Chile)',
+    childIds: []
+  },
+  38: {
+    id: 38,
+    title: 'Fiji',
+    childIds: []
+  },
+  39: {
+    id: 40,
+    title: 'Hawaii (the USA)',
+    childIds: []
+  },
+  40: {
+    id: 40,
+    title: 'New Zealand',
+    childIds: []
+  },
+  41: {
+    id: 41,
+    title: 'Vanuatu',
+    childIds: []
+  },
+  42: {
+    id: 42,
+    title: 'Moon',
+    childIds: [43, 44, 45]
+  },
+  43: {
+    id: 43,
+    title: 'Rheita',
+    childIds: []
+  },
+  44: {
+    id: 44,
+    title: 'Piccolomini',
+    childIds: []
+  },
+  45: {
+    id: 45,
+    title: 'Tycho',
+    childIds: []
+  },
+  46: {
+    id: 46,
+    title: 'Mars',
+    childIds: [47, 48]
+  },
+  47: {
+    id: 47,
+    title: 'Corn Town',
+    childIds: []
+  },
+  48: {
+    id: 48,
+    title: 'Green Hill',
+    childIds: []
+  }
+};
+```
+Now that the state is “flat” (also known as “normalized”), updating nested items becomes easier.
+
+In order to remove a place now, you only need to update two levels of state:
+
+- The updated version of its parent place should exclude the removed ID from its `childIds` array.
+- The updated version of the root “table” object should include the updated version of the parent place.
+
+Here is an example of how you could go about it:
+```jsx
+// App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+export default function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+
+  function handleComplete(parentId, childId) {
+    const parent = plan[parentId];
+    // Create a new version of the parent place
+    // that doesn't include this child ID.
+    const nextParent = {
+      ...parent,
+      childIds: parent.childIds
+        .filter(id => id !== childId)
+    };
+    // Update the root state object...
+    setPlan({
+      ...plan,
+      // ...so that it has the updated parent.
+      [parentId]: nextParent
+    });
+  }
+
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree
+            key={id}
+            id={id}
+            parentId={0}
+            placesById={plan}
+            onComplete={handleComplete}
+          />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function PlaceTree({ id, parentId, placesById, onComplete }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      <button onClick={() => {
+        onComplete(parentId, id);
+      }}>
+        Complete
+      </button>
+      {childIds.length > 0 &&
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree
+              key={childId}
+              id={childId}
+              parentId={id}
+              placesById={placesById}
+              onComplete={onComplete}
+            />
+          ))}
+        </ol>
+      }
+    </li>
+  );
+}
+// places.js
+export const initialTravelPlan = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 42, 46],
+  },
+  1: {
+    id: 1,
+    title: 'Earth',
+    childIds: [2, 10, 19, 26, 34]
+  },
+  2: {
+    id: 2,
+    title: 'Africa',
+    childIds: [3, 4, 5, 6 , 7, 8, 9]
+  }, 
+  3: {
+    id: 3,
+    title: 'Botswana',
+    childIds: []
+  },
+  4: {
+    id: 4,
+    title: 'Egypt',
+    childIds: []
+  },
+  5: {
+    id: 5,
+    title: 'Kenya',
+    childIds: []
+  },
+  6: {
+    id: 6,
+    title: 'Madagascar',
+    childIds: []
+  }, 
+  7: {
+    id: 7,
+    title: 'Morocco',
+    childIds: []
+  },
+  8: {
+    id: 8,
+    title: 'Nigeria',
+    childIds: []
+  },
+  9: {
+    id: 9,
+    title: 'South Africa',
+    childIds: []
+  },
+  10: {
+    id: 10,
+    title: 'Americas',
+    childIds: [11, 12, 13, 14, 15, 16, 17, 18],   
+  },
+  11: {
+    id: 11,
+    title: 'Argentina',
+    childIds: []
+  },
+  12: {
+    id: 12,
+    title: 'Brazil',
+    childIds: []
+  },
+  13: {
+    id: 13,
+    title: 'Barbados',
+    childIds: []
+  }, 
+  14: {
+    id: 14,
+    title: 'Canada',
+    childIds: []
+  },
+  15: {
+    id: 15,
+    title: 'Jamaica',
+    childIds: []
+  },
+  16: {
+    id: 16,
+    title: 'Mexico',
+    childIds: []
+  },
+  17: {
+    id: 17,
+    title: 'Trinidad and Tobago',
+    childIds: []
+  },
+  18: {
+    id: 18,
+    title: 'Venezuela',
+    childIds: []
+  },
+  19: {
+    id: 19,
+    title: 'Asia',
+    childIds: [20, 21, 22, 23, 24, 25],   
+  },
+  20: {
+    id: 20,
+    title: 'China',
+    childIds: []
+  },
+  21: {
+    id: 21,
+    title: 'India',
+    childIds: []
+  },
+  22: {
+    id: 22,
+    title: 'Singapore',
+    childIds: []
+  },
+  23: {
+    id: 23,
+    title: 'South Korea',
+    childIds: []
+  },
+  24: {
+    id: 24,
+    title: 'Thailand',
+    childIds: []
+  },
+  25: {
+    id: 25,
+    title: 'Vietnam',
+    childIds: []
+  },
+  26: {
+    id: 26,
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
+  },
+  27: {
+    id: 27,
+    title: 'Croatia',
+    childIds: []
+  },
+  28: {
+    id: 28,
+    title: 'France',
+    childIds: []
+  },
+  29: {
+    id: 29,
+    title: 'Germany',
+    childIds: []
+  },
+  30: {
+    id: 30,
+    title: 'Italy',
+    childIds: []
+  },
+  31: {
+    id: 31,
+    title: 'Portugal',
+    childIds: []
+  },
+  32: {
+    id: 32,
+    title: 'Spain',
+    childIds: []
+  },
+  33: {
+    id: 33,
+    title: 'Turkey',
+    childIds: []
+  },
+  34: {
+    id: 34,
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40, 41],   
+  },
+  35: {
+    id: 35,
+    title: 'Australia',
+    childIds: []
+  },
+  36: {
+    id: 36,
+    title: 'Bora Bora (French Polynesia)',
+    childIds: []
+  },
+  37: {
+    id: 37,
+    title: 'Easter Island (Chile)',
+    childIds: []
+  },
+  38: {
+    id: 38,
+    title: 'Fiji',
+    childIds: []
+  },
+  39: {
+    id: 39,
+    title: 'Hawaii (the USA)',
+    childIds: []
+  },
+  40: {
+    id: 40,
+    title: 'New Zealand',
+    childIds: []
+  },
+  41: {
+    id: 41,
+    title: 'Vanuatu',
+    childIds: []
+  },
+  42: {
+    id: 42,
+    title: 'Moon',
+    childIds: [43, 44, 45]
+  },
+  43: {
+    id: 43,
+    title: 'Rheita',
+    childIds: []
+  },
+  44: {
+    id: 44,
+    title: 'Piccolomini',
+    childIds: []
+  },
+  45: {
+    id: 45,
+    title: 'Tycho',
+    childIds: []
+  },
+  46: {
+    id: 46,
+    title: 'Mars',
+    childIds: [47, 48]
+  },
+  47: {
+    id: 47,
+    title: 'Corn Town',
+    childIds: []
+  },
+  48: {
+    id: 48,
+    title: 'Green Hill',
+    childIds: []
+  }
+};
+```
+You can nest state as much as you like, but making it “flat” can solve numerous problems. It makes state easier to update, and it helps ensure you don’t have duplication in different parts of a nested object.\
+numerous [ˈnjuːmərəs] 许多
+
+#### Improving memory usage
+Ideally, you would also remove the deleted items (and their children!) from the “table” object to improve memory usage. This version does that. It also uses Immer to make the update logic more concise.\
+ideally [aɪˈdɪəli] 理想地\
+usage [ˈjuːsɪdʒ] 使用\
+concise [kənˈsaɪs] 简洁的
+```jsx
+// App.js
+import { useImmer } from 'use-immer';
+import { initialTravelPlan } from './places.js';
+
+export default function TravelPlan() {
+  const [plan, updatePlan] = useImmer(initialTravelPlan);
+
+  function handleComplete(parentId, childId) {
+    updatePlan(draft => {
+      // Remove from the parent place's child IDs.
+      const parent = draft[parentId];
+      parent.childIds = parent.childIds
+        .filter(id => id !== childId);
+
+      // Forget this place and all its subtree.
+      deleteAllChildren(childId);
+      function deleteAllChildren(id) {
+        const place = draft[id];
+        place.childIds.forEach(deleteAllChildren);
+        delete draft[id];
+      }
+    });
+  }
+
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree
+            key={id}
+            id={id}
+            parentId={0}
+            placesById={plan}
+            onComplete={handleComplete}
+          />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function PlaceTree({ id, parentId, placesById, onComplete }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      <button onClick={() => {
+        onComplete(parentId, id);
+      }}>
+        Complete
+      </button>
+      {childIds.length > 0 &&
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree
+              key={childId}
+              id={childId}
+              parentId={id}
+              placesById={placesById}
+              onComplete={onComplete}
+            />
+          ))}
+        </ol>
+      }
+    </li>
+  );
+}
+// places.js
+export const initialTravelPlan = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 42, 46],
+  },
+  1: {
+    id: 1,
+    title: 'Earth',
+    childIds: [2, 10, 19, 26, 34]
+  },
+  2: {
+    id: 2,
+    title: 'Africa',
+    childIds: [3, 4, 5, 6 , 7, 8, 9]
+  }, 
+  3: {
+    id: 3,
+    title: 'Botswana',
+    childIds: []
+  },
+  4: {
+    id: 4,
+    title: 'Egypt',
+    childIds: []
+  },
+  5: {
+    id: 5,
+    title: 'Kenya',
+    childIds: []
+  },
+  6: {
+    id: 6,
+    title: 'Madagascar',
+    childIds: []
+  }, 
+  7: {
+    id: 7,
+    title: 'Morocco',
+    childIds: []
+  },
+  8: {
+    id: 8,
+    title: 'Nigeria',
+    childIds: []
+  },
+  9: {
+    id: 9,
+    title: 'South Africa',
+    childIds: []
+  },
+  10: {
+    id: 10,
+    title: 'Americas',
+    childIds: [11, 12, 13, 14, 15, 16, 17, 18],   
+  },
+  11: {
+    id: 11,
+    title: 'Argentina',
+    childIds: []
+  },
+  12: {
+    id: 12,
+    title: 'Brazil',
+    childIds: []
+  },
+  13: {
+    id: 13,
+    title: 'Barbados',
+    childIds: []
+  }, 
+  14: {
+    id: 14,
+    title: 'Canada',
+    childIds: []
+  },
+  15: {
+    id: 15,
+    title: 'Jamaica',
+    childIds: []
+  },
+  16: {
+    id: 16,
+    title: 'Mexico',
+    childIds: []
+  },
+  17: {
+    id: 17,
+    title: 'Trinidad and Tobago',
+    childIds: []
+  },
+  18: {
+    id: 18,
+    title: 'Venezuela',
+    childIds: []
+  },
+  19: {
+    id: 19,
+    title: 'Asia',
+    childIds: [20, 21, 22, 23, 24, 25,],   
+  },
+  20: {
+    id: 20,
+    title: 'China',
+    childIds: []
+  },
+  21: {
+    id: 21,
+    title: 'India',
+    childIds: []
+  },
+  22: {
+    id: 22,
+    title: 'Singapore',
+    childIds: []
+  },
+  23: {
+    id: 23,
+    title: 'South Korea',
+    childIds: []
+  },
+  24: {
+    id: 24,
+    title: 'Thailand',
+    childIds: []
+  },
+  25: {
+    id: 25,
+    title: 'Vietnam',
+    childIds: []
+  },
+  26: {
+    id: 26,
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
+  },
+  27: {
+    id: 27,
+    title: 'Croatia',
+    childIds: []
+  },
+  28: {
+    id: 28,
+    title: 'France',
+    childIds: []
+  },
+  29: {
+    id: 29,
+    title: 'Germany',
+    childIds: []
+  },
+  30: {
+    id: 30,
+    title: 'Italy',
+    childIds: []
+  },
+  31: {
+    id: 31,
+    title: 'Portugal',
+    childIds: []
+  },
+  32: {
+    id: 32,
+    title: 'Spain',
+    childIds: []
+  },
+  33: {
+    id: 33,
+    title: 'Turkey',
+    childIds: []
+  },
+  34: {
+    id: 34,
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40,, 41],   
+  },
+  35: {
+    id: 35,
+    title: 'Australia',
+    childIds: []
+  },
+  36: {
+    id: 36,
+    title: 'Bora Bora (French Polynesia)',
+    childIds: []
+  },
+  37: {
+    id: 37,
+    title: 'Easter Island (Chile)',
+    childIds: []
+  },
+  38: {
+    id: 38,
+    title: 'Fiji',
+    childIds: []
+  },
+  39: {
+    id: 39,
+    title: 'Hawaii (the USA)',
+    childIds: []
+  },
+  40: {
+    id: 40,
+    title: 'New Zealand',
+    childIds: []
+  },
+  41: {
+    id: 41,
+    title: 'Vanuatu',
+    childIds: []
+  },
+  42: {
+    id: 42,
+    title: 'Moon',
+    childIds: [43, 44, 45]
+  },
+  43: {
+    id: 43,
+    title: 'Rheita',
+    childIds: []
+  },
+  44: {
+    id: 44,
+    title: 'Piccolomini',
+    childIds: []
+  },
+  45: {
+    id: 45,
+    title: 'Tycho',
+    childIds: []
+  },
+  46: {
+    id: 46,
+    title: 'Mars',
+    childIds: [47, 48]
+  },
+  47: {
+    id: 47,
+    title: 'Corn Town',
+    childIds: []
+  },
+  48: {
+    id: 48,
+    title: 'Green Hill',
+    childIds: []
+  }
+};
+```
+Sometimes, you can also reduce state nesting by moving some of the nested state into the child components. This works well for ephemeral UI state that doesn’t need to be stored, like whether an item is hovered.\
+reduce [rɪˈdjuːs] 减少\
+ephemeral [ɪˈfemərəl] 短暂的
