@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.2.7
+[React doc Tutorial:Choosing the State Structure-Recap](./English/React/Choosing-the-State-Structure.md)
+
 ## 2025.2.6
 [React doc Tutorial:Choosing the State Structure-Avoid deeply nested state](./English/React/Choosing-the-State-Structure.md)
 

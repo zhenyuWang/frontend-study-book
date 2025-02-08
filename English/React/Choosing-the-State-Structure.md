@@ -1677,3 +1677,12 @@ export const initialTravelPlan = {
 Sometimes, you can also reduce state nesting by moving some of the nested state into the child components. This works well for ephemeral UI state that doesn’t need to be stored, like whether an item is hovered.\
 reduce [rɪˈdjuːs] 减少\
 ephemeral [ɪˈfemərəl] 短暂的
+
+## Recap
+- If two state variables always update together, consider merging them into one.
+- Choose your state variables carefully to avoid creating “impossible” states.
+- Structure your state in a way that reduces the chances that you’ll make a mistake updating it.
+- Avoid redundant and duplicate state so that you don’t need to keep it in sync.
+- Don’t put props into state unless you specifically want to prevent updates.
+- For UI patterns like selection, keep ID or index in state instead of the object itself.
+- If updating deeply nested state is complicated, try flattening it.
