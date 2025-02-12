@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2025.2.11
+[React doc Tutorial:Sharing State Between Components-Lifting state up by example](./English/React/Sharing-State-Between-Components.md)
+
 ## 2025.2.10
-[React doc Tutorial:Choosing the State Structure-Sharing State Between Components](./English/React/Sharing-State-Between-Components.md)
+[React doc Tutorial:Sharing State Between Components](./English/React/Sharing-State-Between-Components.md)
 
 ## 2025.2.7
 [React doc Tutorial:Choosing the State Structure-Recap](./English/React/Choosing-the-State-Structure.md)
