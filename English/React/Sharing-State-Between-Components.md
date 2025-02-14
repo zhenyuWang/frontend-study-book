@@ -61,3 +61,14 @@ coordinate [/koʊˈɔːrdɪneɪt/] 协调
 
 hardcoded data 硬编码数据\
 This will allow the `Accordion` component to coordinate both `Panels` and only expand one at a time.
+
+### Step 1: Remove state from the child components 
+You will give control of the `Panel`’s `isActive` to its parent component. This means that the parent component will pass `isActive` to `Panel` as a prop instead. Start by removing this line from the Panel component:
+```jsx
+const [isActive, setIsActive] = useState(false);
+```
+And instead, add `isActive` to the `Panel`’s list of props:
+```jsx
+function Panel({ title, children, isActive }) {
+```
+Now the `Panel`’s parent component can control `isActive` by passing it down as a prop. Conversely, the `Panel` component now has no control over the value of `isActive`—it’s now up to the parent component!
