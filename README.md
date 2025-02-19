@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2025.2.18
+[React doc Tutorial:Sharing State Between Components-Recap](./English/React/Sharing-State-Between-Components.md)
+
 ## 2025.2.17
-[React doc Tutorial:Sharing State Between Components-Lifting state up by example](./English/React/Sharing-State-Between-Components.md)
+[React doc Tutorial:Sharing State Between Components-A single source of truth for each state](./English/React/Sharing-State-Between-Components.md)
 
 ## 2025.2.14
 [React doc Tutorial:Sharing State Between Components-Lifting state up by example](./English/React/Sharing-State-Between-Components.md)

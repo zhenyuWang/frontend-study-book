@@ -219,3 +219,9 @@ For each unique piece of state, you will choose the component that “owns” it
 Your app will change as you work on it. It is common that you will move state down or back up while you’re still figuring out where each piece of the state “lives”. This is all part of the process!
 
 To see what this feels like in practice with a few more components, read Thinking in React.
+
+## Recap
+- When you want to coordinate two components, move their state to their common parent.
+- Then pass the information down through props from their common parent.
+- Finally, pass the event handlers down so that the children can change the parent’s state.
+- It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
