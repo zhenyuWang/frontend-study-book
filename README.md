@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.2.19
+[React doc Tutorial:Preserving and Resetting State](./English/React/Preserving-and-Resetting-State.md)
+
 ## 2025.2.18
 [React doc Tutorial:Sharing State Between Components-Recap](./English/React/Sharing-State-Between-Components.md)
 
