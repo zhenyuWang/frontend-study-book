@@ -277,3 +277,158 @@ You might expect the state to reset when you tick checkbox, but it doesn’t! Th
 
 In both cases, the `App` component returns a `<div>` with `<Counter />` as a first child. To React, these two counters have the same “address”: the first child of the first child of the root. This is how React matches them up between the previous and next renders, regardless of how you structure your logic.\
 regardless [/rɪˈɡɑːrdləs/] of 不管
+
+## Different components at the same position reset state
+In this example, ticking the checkbox will replace `<Counter>` with a `<p>`:
+```jsx
+import { useState } from 'react';
+
+export default function App() {
+  const [isPaused, setIsPaused] = useState(false);
+  return (
+    <div>
+      {isPaused ? (
+        <p>See you later!</p> 
+      ) : (
+        <Counter /> 
+      )}
+      <label>
+        <input
+          type="checkbox"
+          checked={isPaused}
+          onChange={e => {
+            setIsPaused(e.target.checked)
+          }}
+        />
+        Take a break
+      </label>
+    </div>
+  );
+}
+
+function Counter() {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div
+      className={className}
+      onPointerEnter={() => setHover(true)}
+      onPointerLeave={() => setHover(false)}
+    >
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>
+        Add one
+      </button>
+    </div>
+  );
+}
+```
+Here, you switch between different component types at the same position. Initially, the first child of the `<div>` contained a `Counter`. But when you swapped in a `p`, React removed the `Counter` from the UI tree and destroyed its state.
+
+When `Counter` changes to `p`, the `Counter` is deleted and the `p` is added
+
+Also, when you render a different component in the same position, it resets the state of its entire subtree. To see how this works, increment the counter and then tick the checkbox:
+```jsx
+import { useState } from 'react';
+
+export default function App() {
+  const [isFancy, setIsFancy] = useState(false);
+  return (
+    <div>
+      {isFancy ? (
+        <div>
+          <Counter isFancy={true} /> 
+        </div>
+      ) : (
+        <section>
+          <Counter isFancy={false} />
+        </section>
+      )}
+      <label>
+        <input
+          type="checkbox"
+          checked={isFancy}
+          onChange={e => {
+            setIsFancy(e.target.checked)
+          }}
+        />
+        Use fancy styling
+      </label>
+    </div>
+  );
+}
+
+function Counter({ isFancy }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+  if (isFancy) {
+    className += ' fancy';
+  }
+
+  return (
+    <div
+      className={className}
+      onPointerEnter={() => setHover(true)}
+      onPointerLeave={() => setHover(false)}
+    >
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>
+        Add one
+      </button>
+    </div>
+  );
+}
+```
+The counter state gets reset when you click the checkbox. Although you render a Counter, the first child of the div changes from a div to a section. When the child div was removed from the DOM, the whole tree below it (including the Counter and its state) was destroyed as well.
+
+When section changes to div, the section is deleted and the new div is added
+
+When switching back, the div is deleted and the new section is added
+
+As a rule of thumb, if you want to preserve the state between re-renders, the structure of your tree needs to “match up” from one render to another. If the structure is different, the state gets destroyed because React destroys state when it removes a component from the tree.\
+as a rule of thumb 作为经验法则
+
+**Pitfall**\
+This is why you should not nest component function definitions.\
+definiton [ˌdefɪˈnɪʃn] 定义
+
+Here, the `MyTextField` component function is defined inside `MyComponent`:
+```jsx
+import { useState } from 'react';
+
+export default function MyComponent() {
+  const [counter, setCounter] = useState(0);
+
+  function MyTextField() {
+    const [text, setText] = useState('');
+
+    return (
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+    );
+  }
+
+  return (
+    <>
+      <MyTextField />
+      <button onClick={() => {
+        setCounter(counter + 1)
+      }}>Clicked {counter} times</button>
+    </>
+  );
+}
+```
+Every time you click the button, the input state disappears! This is because a different `MyTextField` function is created for every render of `MyComponent`. You’re rendering a different component in the same position, so React resets all state below. This leads to bugs and performance problems. To avoid this problem, always declare component functions at the top level, and don’t nest their definitions.
