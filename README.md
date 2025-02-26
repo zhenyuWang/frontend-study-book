@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.2.25
+[React doc Tutorial:Preserving and Resetting State-Resetting state at the same position](./English/React/Preserving-and-Resetting-State.md)
+
 ## 2025.2.24
 [React doc Tutorial:Preserving and Resetting State-Different components at the same position reset state](./English/React/Preserving-and-Resetting-State.md)
 
