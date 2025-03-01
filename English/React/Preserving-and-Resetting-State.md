@@ -491,3 +491,58 @@ There are two ways to reset state when switching between them:
 
 explicit [ɪkˈsplɪsɪt] 明确的\
 identity [aɪˈdentəti] 身份
+
+### Option 1: Rendering a component in different positions
+If you want these two `Counters` to be independent, you can render them in two different positions:
+```jsx
+import { useState } from 'react';
+
+export default function Scoreboard() {
+  const [isPlayerA, setIsPlayerA] = useState(true);
+  return (
+    <div>
+      {isPlayerA &&
+        <Counter person="Taylor" />
+      }
+      {!isPlayerA &&
+        <Counter person="Sarah" />
+      }
+      <button onClick={() => {
+        setIsPlayerA(!isPlayerA);
+      }}>
+        Next player!
+      </button>
+    </div>
+  );
+}
+
+function Counter({ person }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div
+      className={className}
+      onPointerEnter={() => setHover(true)}
+      onPointerLeave={() => setHover(false)}
+    >
+      <h1>{person}'s score: {score}</h1>
+      <button onClick={() => setScore(score + 1)}>
+        Add one
+      </button>
+    </div>
+  );
+}
+```
+- Initially, `isPlayerA` is `true`. So the first position contains `Counter` state, and the second one is empty.
+- When you click the “Next player” button the first position clears but the second one now contains a `Counter`.
+
+Each `Counter`’s state gets destroyed each time it’s removed from the DOM. This is why they reset every time you click the button.
+
+This solution is convenient when you only have a few independent components rendered in the same place. In this example, you only have two, so it’s not a hassle to render both separately in the JSX.\
+hassle [ˈhæsl] 麻烦
