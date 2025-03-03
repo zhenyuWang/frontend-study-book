@@ -612,3 +612,159 @@ Specifying a key tells React to use the key itself as part of the position, inst
 
 **Note**\
 Remember that keys are not globally unique. They only specify the position within the parent.
+
+## Resetting a form with a key
+Resetting state with a key is particularly useful when dealing with forms.
+
+In this chat app, the `<Chat>` component contains the text input state:
+```jsx
+// App.js
+import { useState } from 'react';
+import Chat from './Chat.js';
+import ContactList from './ContactList.js';
+
+export default function Messenger() {
+  const [to, setTo] = useState(contacts[0]);
+  return (
+    <div>
+      <ContactList
+        contacts={contacts}
+        selectedContact={to}
+        onSelect={contact => setTo(contact)}
+      />
+      <Chat contact={to} />
+    </div>
+  )
+}
+
+const contacts = [
+  { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
+  { id: 1, name: 'Alice', email: 'alice@mail.com' },
+  { id: 2, name: 'Bob', email: 'bob@mail.com' }
+];
+// ContactList.js
+export default function ContactList({
+  selectedContact,
+  contacts,
+  onSelect
+}) {
+  return (
+    <section className="contact-list">
+      <ul>
+        {contacts.map(contact =>
+          <li key={contact.id}>
+            <button onClick={() => {
+              onSelect(contact);
+            }}>
+              {contact.name}
+            </button>
+          </li>
+        )}
+      </ul>
+    </section>
+  );
+}
+// Chat.js
+import { useState } from 'react';
+
+export default function Chat({ contact }) {
+  const [text, setText] = useState('');
+  return (
+    <section className="chat">
+      <textarea
+        value={text}
+        placeholder={'Chat to ' + contact.name}
+        onChange={e => setText(e.target.value)}
+      />
+      <br />
+      <button>Send to {contact.email}</button>
+    </section>
+  );
+}
+```
+Try entering something into the input, and then press “Alice” or “Bob” to choose a different recipient. You will notice that the input state is preserved because the `<Chat>` is rendered at the same position in the tree.
+
+In many apps, this may be the desired behavior, but not in a chat app! You don’t want to let the user send a message they already typed to a wrong person due to an accidental click. To fix it, add a `key`:
+```jsx
+<Chat key={to.id} contact={to} />
+```
+This ensures that when you select a different recipient, the `Chat` component will be recreated from scratch, including any state in the tree below it. React will also re-create the DOM elements instead of reusing them.\
+recipient [rɪˈsɪpɪənt] 接收者
+
+Now switching the recipient always clears the text field:
+```jsx
+// App.js
+import { useState } from 'react';
+import Chat from './Chat.js';
+import ContactList from './ContactList.js';
+
+export default function Messenger() {
+  const [to, setTo] = useState(contacts[0]);
+  return (
+    <div>
+      <ContactList
+        contacts={contacts}
+        selectedContact={to}
+        onSelect={contact => setTo(contact)}
+      />
+      <Chat key={to.id} contact={to} />
+    </div>
+  )
+}
+
+const contacts = [
+  { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
+  { id: 1, name: 'Alice', email: 'alice@mail.com' },
+  { id: 2, name: 'Bob', email: 'bob@mail.com' }
+];
+// ContactList.js
+export default function ContactList({
+  selectedContact,
+  contacts,
+  onSelect
+}) {
+  return (
+    <section className="contact-list">
+      <ul>
+        {contacts.map(contact =>
+          <li key={contact.id}>
+            <button onClick={() => {
+              onSelect(contact);
+            }}>
+              {contact.name}
+            </button>
+          </li>
+        )}
+      </ul>
+    </section>
+  );
+}
+// Chat.js
+import { useState } from 'react';
+
+export default function Chat({ contact }) {
+  const [text, setText] = useState('');
+  return (
+    <section className="chat">
+      <textarea
+        value={text}
+        placeholder={'Chat to ' + contact.name}
+        onChange={e => setText(e.target.value)}
+      />
+      <br />
+      <button>Send to {contact.email}</button>
+    </section>
+  );
+}
+```
+### Preserving state for removed components
+In a real chat app, you’d probably want to recover the input state when the user selects the previous recipient again. There are a few ways to keep the state “alive” for a component that’s no longer visible:
+
+- You could render all chats instead of just the current one, but hide all the others with CSS. The chats would not get removed from the tree, so their local state would be preserved. This solution works great for simple UIs. But it can get very slow if the hidden trees are large and contain a lot of DOM nodes.
+- You could lift the state up and hold the pending message for each recipient in the parent component. This way, when the child components get removed, it doesn’t matter, because it’s the parent that keeps the important information. This is the most common solution.
+- You might also use a different source in addition to React state. For example, you probably want a message draft to persist even if the user accidentally closes the page. To implement this, you could have the Chat component initialize its state by reading from the localStorage, and save the drafts there too.
+
+No matter which strategy you pick, a chat with Alice is conceptually distinct from a chat with Bob, so it makes sense to give a key to the `<Chat>` tree based on the current recipient.\
+strategy [ˈstrætədʒi] 策略\
+conceptually [kənˈseptʃuəli] 概念上\
+distinct [dɪˈstɪŋkt] 不同的
