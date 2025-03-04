@@ -768,3 +768,9 @@ No matter which strategy you pick, a chat with Alice is conceptually distinct fr
 strategy [ˈstrætədʒi] 策略\
 conceptually [kənˈseptʃuəli] 概念上\
 distinct [dɪˈstɪŋkt] 不同的
+
+## Recap
+- React keeps state for as long as the same component is rendered at the same position.
+- State is not kept in JSX tags. It’s associated with the tree position in which you put that JSX.
+- You can force a subtree to reset its state by giving it a different key.
+- Don’t nest component definitions, or you’ll reset state by accident.
