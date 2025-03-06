@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.5
+[React doc Tutorial:Extracting State Logic into a Reducer-Consolidate state logic with a reduce](./English/React/Extracting-State-Logic-into-a-Reducer.md)
+
 ## 2025.3.4
 [React doc Tutorial:Extracting State Logic into a Reducer](./English/React/Extracting-State-Logic-into-a-Reducer.md)
 
