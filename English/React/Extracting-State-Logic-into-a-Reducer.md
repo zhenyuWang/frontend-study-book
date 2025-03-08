@@ -170,3 +170,103 @@ dispatch({
   // other fields go here
 });
 ```
+
+### Step 2: Write a reducer function
+A reducer function is where you will put your state logic. It takes two arguments, the current state and the action object, and it returns the next state:
+```jsx
+function yourReducer(state, action) {
+  // return next state for React to set
+}
+```
+React will set the state to what you return from the reducer.
+
+To move your state setting logic from your event handlers to a reducer function in this example, you will:
+
+1. Declare the current state (`tasks`) as the first argument.
+2. Declare the `action` object as the second argument.
+3. Return the next state from the reducer (which React will set the state to).
+
+Here is all the state setting logic migrated to a reducer function:
+```jsx
+function tasksReducer(tasks, action) {
+  if (action.type === 'added') {
+    return [
+      ...tasks,
+      {
+        id: action.id,
+        text: action.text,
+        done: false,
+      },
+    ];
+  } else if (action.type === 'changed') {
+    return tasks.map((t) => {
+      if (t.id === action.task.id) {
+        return action.task;
+      } else {
+        return t;
+      }
+    });
+  } else if (action.type === 'deleted') {
+    return tasks.filter((t) => t.id !== action.id);
+  } else {
+    throw Error('Unknown action: ' + action.type);
+  }
+}
+```
+Because the reducer function takes state (`tasks`) as an argument, you can declare it outside of your component. This decreases the indentation level and can make your code easier to read.
+
+**Note**\
+The code above uses if/else statements, but it’s a convention to use switch statements inside reducers. The result is the same, but it can be easier to read switch statements at a glance.
+
+We’ll be using them throughout the rest of this documentation like so:
+```jsx
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case 'added': {
+      return [
+        ...tasks,
+        {
+          id: action.id,
+          text: action.text,
+          done: false,
+        },
+      ];
+    }
+    case 'changed': {
+      return tasks.map((t) => {
+        if (t.id === action.task.id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
+    case 'deleted': {
+      return tasks.filter((t) => t.id !== action.id);
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type);
+    }
+  }
+}
+```
+We recommend wrapping each case block into the `{` and `}` curly braces so that variables declared inside of different `case`s don’t clash with each other. Also, a `case` should usually end with a `return`. If you forget to `return`, the code will “fall through” to the next `case`, which can lead to mistakes!
+
+If you’re not yet comfortable with switch statements, using if/else is completely fine.
+
+**Why are reducers called this way? **\
+Although reducers can “reduce” the amount of code inside your component, they are actually named after the `reduce()` operation that you can perform on arrays.
+
+The `reduce()` operation lets you take an array and “accumulate” a single value out of many:\
+accumulate [əˈkjuːmjəˌleɪt] 积累；累积；堆积
+```jsx
+const arr = [1, 2, 3, 4, 5];
+const sum = arr.reduce(
+  (result, number) => result + number
+); // 1 + 2 + 3 + 4 + 5
+```
+The function you pass to `reduce` is known as a “reducer”. It takes the result so far and the current item, then it returns the next result. React reducers are an example of the same idea: they take the state so far and the action, and return the next state. In this way, they accumulate actions over time into state.
+
+You could even use the `reduce()` method with an `initialState` and an array of `actions` to calculate the final state by passing your reducer function to it:
+
+You probably won’t need to do this yourself, but this is similar to what React does!

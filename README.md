@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.7
+[React doc Tutorial:Extracting State Logic into a Reducer-Consolidate state logic with a reduce-Step 2: Write a reducer function ](./English/React/Extracting-State-Logic-into-a-Reducer.md)
+
 ## 2025.3.6
 [React doc Tutorial:Extracting State Logic into a Reducer-Consolidate state logic with a reduce-Step 1: Move from setting state to dispatching actions](./English/React/Extracting-State-Logic-into-a-Reducer.md)
 
