@@ -461,3 +461,27 @@ const initialTasks = [
 ];
 ```
 Component logic can be easier to read when you separate concerns like this. Now the event handlers only specify what happened by dispatching actions, and the reducer function determines how the state updates in response to them.
+
+## Comparing useState and useReducer
+Reducers are not without downsides! Here’s a few ways you can compare them:\
+downside [ˈdaʊnˌsaɪd] 缺点；不利因素
+
+- Code size: Generally, with `useState` you have to write less code upfront. With `useReducer`, you have to write both a reducer function and dispatch actions. However, `useReducer` can help cut down on the code if many event handlers modify state in a similar way.
+- Readability: `useState` is very easy to read when the state updates are simple. When they get more complex, they can bloat your component’s code and make it difficult to scan. In this case, `useReducer` lets you cleanly separate the how of update logic from the what happened of event handlers.
+- Debugging: When you have a bug with `useState`, it can be difficult to tell where the state was set incorrectly, and why. With `useReducer`, you can add a console log into your reducer to see every state update, and why it happened (due to which action). If each action is correct, you’ll know that the mistake is in the reducer logic itself. However, you have to step through more code than with useState.
+- Testing: A reducer is a pure function that doesn’t depend on your component. This means that you can export and test it separately in isolation. While generally it’s best to test components in a more realistic environment, for complex state update logic it can be useful to assert that your reducer returns a particular state for a particular initial state and action.
+- Personal preference: Some people like reducers, others don’t. That’s okay. It’s a matter of preference. You can always convert between `useState` and `useReducer` back and forth: they are equivalent!
+
+upfront [ˈʌpˈfrʌnt] 预先；事先\
+readability [ˌriːdəˈbɪləti] 可读性\
+bloat [bloʊt] 膨胀；肿胀；使膨胀\
+scan [skæn] 扫描；浏览\
+isolation [ˌaɪsəˈleɪʃn] 隔离；孤立\
+realistic [ˌriːəˈlɪstɪk] 现实的；现实主义的\
+particular [pərˈtɪkjələr] 特定的；具体的\
+preference [ˈprɛfərəns] 偏爱；喜好；优先权\
+convert [kənˈvɜːrt] 转变；转换；改变\
+forth [fɔːrθ] 向前；向外；向未来
+
+We recommend using a reducer if you often encounter bugs due to incorrect state updates in some component, and want to introduce more structure to its code. You don’t have to use reducers for everything: feel free to mix and match! You can even `useState` and `useReducer` in the same component.\
+encounter [ɪnˈkaʊntər] 遭遇；遇到；邂逅
