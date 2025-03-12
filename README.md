@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.12
+[React doc Tutorial:Extracting State Logic into a Reducer-Writing reducers well](./English/React/Extracting-State-Logic-into-a-Reducer.md)
+
 ## 2025.3.11
 [React doc Tutorial:Extracting State Logic into a Reducer-Comparing useState and useReducer](./English/React/Extracting-State-Logic-into-a-Reducer.md)
 

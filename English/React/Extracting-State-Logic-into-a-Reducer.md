@@ -485,3 +485,13 @@ forth [fɔːrθ] 向前；向外；向未来
 
 We recommend using a reducer if you often encounter bugs due to incorrect state updates in some component, and want to introduce more structure to its code. You don’t have to use reducers for everything: feel free to mix and match! You can even `useState` and `useReducer` in the same component.\
 encounter [ɪnˈkaʊntər] 遭遇；遇到；邂逅
+
+## Writing reducers well
+Keep these two tips in mind when writing reducers:
+
+- Reducers must be pure. Similar to state updater functions, reducers run during rendering! (Actions are queued until the next render.) This means that reducers must be pure—same inputs always result in the same output. They should not send requests, schedule timeouts, or perform any side effects (operations that impact things outside the component). They should update objects and arrays without mutations.
+- Each action describes a single user interaction, even if that leads to multiple changes in the data. For example, if a user presses “Reset” on a form with five fields managed by a reducer, it makes more sense to dispatch one reset_form action rather than five separate set_field actions. If you log every action in a reducer, that log should be clear enough for you to reconstruct what interactions or responses happened in what order. This helps with debugging!
+
+schedule [ˈskɛdʒuːl] 安排；计划；预定\
+impact [ˈɪmpækt] 影响；作用\
+reconstruct [ˌriːkənˈstrʌkt] 重建；复原；重现
