@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.14
+[React doc Tutorial:Extracting State Logic into a Reducer-Recap](./English/React/Extracting-State-Logic-into-a-Reducer.md)
+
 ## 2025.3.13
 [React doc Tutorial:Extracting State Logic into a Reducer-Writing concise reducers with Immer](./English/React/Extracting-State-Logic-into-a-Reducer.md)
 

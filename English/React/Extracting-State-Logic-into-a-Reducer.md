@@ -592,3 +592,13 @@ const initialTasks = [
 ];
 ```
 Reducers must be pure, so they shouldn’t mutate state. But Immer provides you with a special `draft` object which is safe to mutate. Under the hood, Immer will create a copy of your state with the changes you made to the `draft`. This is why reducers managed by `useImmerReducer` can mutate their first argument and don’t need to return state.
+
+## Recap
+- To convert from `useState` to `useReducer`:
+  1. Dispatch actions from event handlers.
+  2. Write a reducer function that returns the next state for a given state and action.
+  3. Replace `useState` with `useReducer`.
+- Reducers require you to write a bit more code, but they help with debugging and testing.
+- Reducers must be pure.
+- Each action describes a single user interaction.
+- Use Immer if you want to write reducers in a mutating style.
