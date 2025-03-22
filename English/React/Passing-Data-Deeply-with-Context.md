@@ -38,3 +38,8 @@ You can’t do it with props alone. This is where context comes into play. You w
 Context lets a parent—even a distant one!—provide some data to the entire tree inside of it.\
 distant [ˈdɪstənt] adj. 遥远的；远隔的
 
+### Step 1: Create the context
+First, you need to create the context. You’ll need to export it from a file so that your components can use it:
+
+The only argument to `createContext` is the default value. Here, `1` refers to the biggest heading level, but you could pass any kind of value (even an object). You will see the significance of the default value in the next step.\
+significance [sɪɡˈnɪfɪkəns] n. 重要性；意义
