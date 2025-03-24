@@ -43,3 +43,46 @@ First, you need to create the context. You’ll need to export it from a file so
 
 The only argument to `createContext` is the default value. Here, `1` refers to the biggest heading level, but you could pass any kind of value (even an object). You will see the significance of the default value in the next step.\
 significance [sɪɡˈnɪfɪkəns] n. 重要性；意义
+
+### Step 2: Use the context
+Import the `useContext` Hook from React and your context:
+```jsx
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+```
+Currently, the `Heading` component reads `level` from props:
+```jsx
+export default function Heading({ level, children }) {
+  // ...
+}
+```
+Instead, remove the `level` prop and read the value from the context you just imported, `LevelContext`:
+```jsx
+export default function Heading({ children }) {
+  const level = useContext(LevelContext);
+  // ...
+}
+```
+`useContext` is a Hook. Just like `useState` and `useReducer`, you can only call a Hook immediately inside a React component (not inside loops or conditions). `useContext` tells React that the `Heading` component wants to read the `LevelContext`.
+
+Now that the `Heading` component doesn’t have a level prop, you don’t need to pass the level prop to `Heading` in your JSX like this anymore:
+```jsx
+<Section>
+  <Heading level={4}>Sub-sub-heading</Heading>
+  <Heading level={4}>Sub-sub-heading</Heading>
+  <Heading level={4}>Sub-sub-heading</Heading>
+</Section>
+```
+Update the JSX so that it’s the `Section` that receives it instead:
+```jsx
+<Section level={4}>
+  <Heading>Sub-sub-heading</Heading>
+  <Heading>Sub-sub-heading</Heading>
+  <Heading>Sub-sub-heading</Heading>
+</Section>
+```
+As a reminder, this is the markup that you were trying to get working:
+
+Notice this example doesn’t quite work, yet! All the headings have the same size because even though you’re using the context, you have not provided it yet. React doesn’t know where to get it!
+
+If you don’t provide the context, React will use the default value you’ve specified in the previous step. In this example, you specified 1 as the argument to `createContext`, so `useContext(LevelContext)` returns `1`, setting all those headings to `<h1>`. Let’s fix this problem by having each `Section` provide its own context.
