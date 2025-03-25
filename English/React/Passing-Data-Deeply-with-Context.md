@@ -86,3 +86,36 @@ As a reminder, this is the markup that you were trying to get working:
 Notice this example doesn’t quite work, yet! All the headings have the same size because even though you’re using the context, you have not provided it yet. React doesn’t know where to get it!
 
 If you don’t provide the context, React will use the default value you’ve specified in the previous step. In this example, you specified 1 as the argument to `createContext`, so `useContext(LevelContext)` returns `1`, setting all those headings to `<h1>`. Let’s fix this problem by having each `Section` provide its own context.
+
+### Step 3: Provide the context 
+The `Section` component currently renders its children:
+```jsx
+export default function Section({ children }) {
+  return (
+    <section className="section">
+      {children}
+    </section>
+  );
+}
+```
+Wrap them with a context provider to provide the `LevelContext` to them:
+```jsx
+import { LevelContext } from './LevelContext.js';
+
+export default function Section({ level, children }) {
+  return (
+    <section className="section">
+      <LevelContext value={level}>
+        {children}
+      </LevelContext>
+    </section>
+  );
+}
+```
+This tells React: “if any component inside this `<Section>` asks for `LevelContext`, give them this level.” The component will use the value of the nearest `<LevelContext>` in the UI tree above it.
+
+It’s the same result as the original code, but you did not need to pass the `level` prop to each `Heading` component! Instead, it “figures out” its heading level by asking the closest `Section` above:
+
+1. You pass a level prop to the `<Section>`.
+2. `Section` wraps its children into `<LevelContext value={level}>`.
+3. `Heading` asks the closest value of `LevelContext` above with `useContext(LevelContext)`.
