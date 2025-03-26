@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.25
+[React doc Tutorial:Passing Data Deeply with Context-Using and providing context from the same component](./English/React/Passing-Data-Deeply-with-Context.md)
+
 ## 2025.3.24
 [React doc Tutorial:Passing Data Deeply with Context-Context: an alternative to passing props](./English/React/Passing-Data-Deeply-with-Context.md)
 

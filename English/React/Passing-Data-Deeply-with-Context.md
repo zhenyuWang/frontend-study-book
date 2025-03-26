@@ -119,3 +119,39 @@ It’s the same result as the original code, but you did not need to pass the `l
 1. You pass a level prop to the `<Section>`.
 2. `Section` wraps its children into `<LevelContext value={level}>`.
 3. `Heading` asks the closest value of `LevelContext` above with `useContext(LevelContext)`.
+
+## Using and providing context from the same component
+Currently, you still have to specify each section’s level manually:
+```jsx
+export default function Page() {
+  return (
+    <Section level={1}>
+      ...
+      <Section level={2}>
+        ...
+        <Section level={3}>
+          ...
+```
+Since context lets you read information from a component above, each `Section` could read the `level` from the `Section` above, and pass `level + 1` down automatically. Here is how you could do it:
+```jsx
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+export default function Section({ children }) {
+  const level = useContext(LevelContext);
+  return (
+    <section className="section">
+      <LevelContext value={level + 1}>
+        {children}
+      </LevelContext>
+    </section>
+  );
+}
+```
+With this change, you don’t need to pass the level prop either to the `<Section>` or to the `<Heading>`:
+
+Now both `Heading` and `Section` read the `LevelContext` to figure out how “deep” they are. And the `Section` wraps its children into the `LevelContext` to specify that anything inside of it is at a “deeper” level.
+
+**Note**\
+This example uses heading levels because they show visually how nested components can override context. But context is useful for many other use cases too. You can pass down any information needed by the entire subtree: the current color theme, the currently logged in user, and so on.\
+visually [ˈvɪʒuəli] adv. 视觉上地
