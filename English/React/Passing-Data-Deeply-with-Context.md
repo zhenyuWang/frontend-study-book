@@ -155,3 +155,22 @@ Now both `Heading` and `Section` read the `LevelContext` to figure out how “de
 **Note**\
 This example uses heading levels because they show visually how nested components can override context. But context is useful for many other use cases too. You can pass down any information needed by the entire subtree: the current color theme, the currently logged in user, and so on.\
 visually [ˈvɪʒuəli] adv. 视觉上地
+
+## Context passes through intermediate components
+You can insert as many components as you like between the component that provides context and the one that uses it. This includes both built-in components like `<div>` and components you might build yourself.
+
+In this example, the same `Post` component (with a dashed border) is rendered at two different nesting levels. Notice that the `<Heading>` inside of it gets its level automatically from the closest `<Section>`:
+
+You didn’t do anything special for this to work. A `Section` specifies the context for the tree inside it, so you can insert a `<Heading>` anywhere, and it will have the correct size. Try it in the sandbox above!
+
+Context lets you write components that “adapt to their surroundings” and display themselves differently depending on where (or, in other words, in which context) they are being rendered.\
+adapt [əˈdæpt] vi. 适应；适合\
+surrounding [səˈraʊndɪŋ] n. 环境；周围
+
+How context works might remind you of CSS property inheritance. In CSS, you can specify color: `blue` for a `<div>`, and any DOM node inside of it, no matter how deep, will inherit that color unless some other DOM node in the middle overrides it with color: `green`. Similarly, in React, the only way to override some context coming from above is to wrap children into a context provider with a different value.
+
+In CSS, different properties like `color` and `background-color` don’t override each other. You can set all  `<div>`’s color to `red` without impacting `background-color`. Similarly, different React contexts don’t override each other. Each context that you make with `createContext()` is completely separate from other ones, and ties together components using and providing that particular context. One component may use or provide many different contexts without a problem.\
+impact [ˈɪmpækt] n. 影响；作用\
+separate [ˈsepərət] adj. 分开的；独立的\
+tie [taɪ] v. 连接；系\
+particular [pəˈtɪkjələ(r)] adj. 特定的；特殊的
