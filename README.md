@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.3.27
+[React doc Tutorial:Passing Data Deeply with Context-Before you use context](./English/React/Passing-Data-Deeply-with-Context.md)
+
 ## 2025.3.26
 [React doc Tutorial:Passing Data Deeply with Context-Context passes through intermediate components](./English/React/Passing-Data-Deeply-with-Context.md)
 

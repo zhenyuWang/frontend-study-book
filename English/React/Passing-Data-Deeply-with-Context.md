@@ -174,3 +174,27 @@ impact [ˈɪmpækt] n. 影响；作用\
 separate [ˈsepərət] adj. 分开的；独立的\
 tie [taɪ] v. 连接；系\
 particular [pəˈtɪkjələ(r)] adj. 特定的；特殊的
+
+## Before you use context
+Context is very tempting to use! However, this also means it’s too easy to overuse it. Just because you need to pass some props several levels deep doesn’t mean you should put that information into context.\
+tempting [ˈtemptɪŋ] adj. 诱人的；吸引人的
+
+Here’s a few alternatives you should consider before using context:\
+alternative [ɔːlˈtɜːrnətɪv] n. 替代的；替代物
+
+1. Start by passing props. If your components are not trivial, it’s not unusual to pass a dozen props down through a dozen components. It may feel like a slog, but it makes it very clear which components use which data! The person maintaining your code will be glad you’ve made the data flow explicit with props.
+2. Extract components and pass JSX as children to them. If you pass some data through many layers of intermediate components that don’t use that data (and only pass it further down), this often means that you forgot to extract some components along the way. For example, maybe you pass data props like posts to visual components that don’t use them directly, like `<Layout posts={posts} />`. Instead, make Layout take children as a prop, and render `<Layout><Posts posts={posts} /></Layout>`. This reduces the number of layers between the component specifying the data and the one that needs it.\
+
+trivial [ˈtrɪviəl] adj. 琐碎的；不重要的\
+unusual [ʌnˈjuːʒuəl] adj. 不寻常的；罕见的\
+dozen [ˈdʌzn] n. 十二个；一打\
+slog [slɒɡ] n. 艰苦工作；长途跋涉\
+maintain [meɪnˈteɪn] vt. 维护\
+explicit [ɪkˈsplɪsɪt] adj. 明确的；清楚的\
+extract [ɪkˈstrækt] vt. 提取；提炼\
+intermediate [ˌɪntəˈmiːdiət] adj. 中间的；中级的\
+further [ˈfɜːðə(r)] adv. 更远地；进一步地
+
+If neither of these approaches works well for you, consider context.\
+neither [ˈnaɪðə(r)] pron. 两者都不\
+approach [əˈprəʊtʃ] n. 方法；途径
