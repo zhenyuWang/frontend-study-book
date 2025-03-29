@@ -198,3 +198,21 @@ further [ˈfɜːðə(r)] adv. 更远地；进一步地
 If neither of these approaches works well for you, consider context.\
 neither [ˈnaɪðə(r)] pron. 两者都不\
 approach [əˈprəʊtʃ] n. 方法；途径
+
+## Use cases for context
+- Theming: If your app lets the user change its appearance (e.g. dark mode), you can put a context provider at the top of your app, and use that context in components that need to adjust their visual look.
+- Current account: Many components might need to know the currently logged in user. Putting it in context makes it convenient to read it anywhere in the tree. Some apps also let you operate multiple accounts at the same time (e.g. to leave a comment as a different user). In those cases, it can be convenient to wrap a part of the UI into a nested provider with a different current account value.
+- Routing: Most routing solutions use context internally to hold the current route. This is how every link “knows” whether it’s active or not. If you build your own router, you might want to do it too.
+- Managing state: As your app grows, you might end up with a lot of state closer to the top of your app. Many distant components below may want to change it. It is common to use a reducer together with context to manage complex state and pass it down to distant components without too much hassle.
+
+appearance [əˈpɪərəns] n. 外观；外貌\
+internally [ɪnˈtɜːnəli] adv. 内部地\
+distant [ˈdɪstənt] adj. 遥远的；远隔的\
+hassle [ˈhæsl] n. 麻烦；困难
+
+Context is not limited to static values. If you pass a different value on the next render, React will update all the components reading it below! This is why context is often used in combination with state.\
+limit to 限制在\
+combination [ˌkɒmbɪˈneɪʃn] n. 结合；组合
+
+In general, if some information is needed by distant components in different parts of the tree, it’s a good indication that context will help you.\
+indication [ˌɪndɪˈkeɪʃn] n. 指示；迹象
