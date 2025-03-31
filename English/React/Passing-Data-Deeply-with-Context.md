@@ -216,3 +216,16 @@ combination [ˌkɒmbɪˈneɪʃn] n. 结合；组合
 
 In general, if some information is needed by distant components in different parts of the tree, it’s a good indication that context will help you.\
 indication [ˌɪndɪˈkeɪʃn] n. 指示；迹象
+
+## Recap
+- Context lets a component provide some information to the entire tree below it.
+- To pass context:
+  1. Create and export it with `export const MyContext = createContext(defaultValue)`.
+  2. Pass it to the `useContext(MyContext)` Hook to read it in any child component, no matter how deep.
+  3. Wrap children into `<MyContext value={...}>` to provide it from a parent.
+- Context passes through any components in the middle.
+- Context lets you write components that “adapt to their surroundings”.
+- Before you use context, try passing props or passing JSX as children.
+
+adapt [əˈdæpt] vi. 适应；适合\
+surrounding [/səˈraʊndɪŋz/] n. 环境；周围
