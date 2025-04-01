@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.1
+[React doc Tutorial:Scaling Up with Reducer and Context](./English/React/Scaling-Up-with-Reducer-and-Context.md)
+
 ## 2025.3.31
 [React doc Tutorial:Passing Data Deeply with Context-Recap](./English/React/Passing-Data-Deeply-with-Context.md)
 
