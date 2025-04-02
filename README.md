@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.2
+[React doc Tutorial:Scaling Up with Reducer and Context-Combining a reducer with context](./English/React/Scaling-Up-with-Reducer-and-Context.md)
+
 ## 2025.4.1
 [React doc Tutorial:Scaling Up with Reducer and Context](./English/React/Scaling-Up-with-Reducer-and-Context.md)
 
