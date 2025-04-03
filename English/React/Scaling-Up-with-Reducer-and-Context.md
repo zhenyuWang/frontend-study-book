@@ -40,3 +40,17 @@ Here is how you can combine a reducer with context:
 1. Create the context.
 2. Put state and dispatch into context.
 3. Use context anywhere in the tree.
+
+### Step 1: Create the context 
+The `useReducer` Hook returns the current `tasks` and the `dispatch` function that lets you update them:
+```jsx
+const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+```
+To pass them down the tree, you will create two separate contexts:
+
+- `TasksContext` provides the current list of tasks.
+- `TasksDispatchContext` provides the function that lets components dispatch actions.
+
+Export them from a separate file so that you can later import them from other files:
+
+Here, you’re passing `null` as the default value to both contexts. The actual values will be provided by the `TaskApp` component.
