@@ -54,3 +54,24 @@ To pass them down the tree, you will create two separate contexts:
 Export them from a separate file so that you can later import them from other files:
 
 Here, you’re passing `null` as the default value to both contexts. The actual values will be provided by the `TaskApp` component.
+
+### Step 2: Put state and dispatch into context
+Now you can import both contexts in your `TaskApp` component. Take the `tasks` and `dispatch` returned by `useReducer()` and provide them to the entire tree below:
+```jsx
+import { TasksContext, TasksDispatchContext } from './TasksContext.js';
+
+export default function TaskApp() {
+  const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+  // ...
+  return (
+    <TasksContext.Provider value={tasks}>
+      <TasksDispatchContext.Provider value={dispatch}>
+        ...
+      </TasksDispatchContext.Provider>
+    </TasksContext.Provider>
+  );
+}
+```
+For now, you pass the information both via props and in context:
+
+In the next step, you will remove prop passing.
