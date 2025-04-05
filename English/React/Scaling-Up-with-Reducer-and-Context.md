@@ -75,3 +75,42 @@ export default function TaskApp() {
 For now, you pass the information both via props and in context:
 
 In the next step, you will remove prop passing.
+
+### Step 3: Use context anywhere in the tree
+Now you don’t need to pass the list of `tasks` or the event handlers down the tree:
+```jsx
+<TasksContext.Provider value={tasks}>
+  <TasksDispatchContext.Provider value={dispatch}>
+    <h1>Day off in Kyoto</h1>
+    <AddTask />
+    <TaskList />
+  </TasksDispatchContext.Provider>
+</TasksContext.Provider>
+```
+Instead, any component that needs the task list can read it from the TaskContext:
+```jsx
+export default function TaskList() {
+  const tasks = useContext(TasksContext);
+  // ...
+```
+To update the task list, any component can read the `dispatch` function from context and call it:
+```jsx
+export default function AddTask() {
+  const [text, setText] = useState('');
+  const dispatch = useContext(TasksDispatchContext);
+  // ...
+  return (
+    // ...
+    <button onClick={() => {
+      setText('');
+      dispatch({
+        type: 'added',
+        id: nextId++,
+        text: text,
+      });
+    }}>Add</button>
+    // ...
+```    
+The `TaskApp` component does not pass any event handlers down, and the `TaskList` does not pass any event handlers to the `Task` component either. Each component reads the context that it needs:
+
+The state still “lives” in the top-level `TaskApp` component, managed with `useReducer`. But its `tasks` and `dispatch` are now available to every component below in the tree by importing and using these contexts.
