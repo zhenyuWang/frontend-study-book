@@ -114,3 +114,60 @@ export default function AddTask() {
 The `TaskApp` component does not pass any event handlers down, and the `TaskList` does not pass any event handlers to the `Task` component either. Each component reads the context that it needs:
 
 The state still “lives” in the top-level `TaskApp` component, managed with `useReducer`. But its `tasks` and `dispatch` are now available to every component below in the tree by importing and using these contexts.
+
+## Moving all wiring into a single file
+You don’t have to do this, but you could further declutter the components by moving both reducer and context into a single file. Currently, `TasksContext.js` contains only two context declarations:\
+further [ˈfɜːrðər] 进一步地\
+declutter [dɪˈklʌtər] 清理\
+declaration [ˌdekləˈreɪʃənz] 声明
+```jsx
+import { createContext } from 'react';
+
+export const TasksContext = createContext(null);
+export const TasksDispatchContext = createContext(null);
+```
+This file is about to get crowded! You’ll move the reducer into that same file. Then you’ll declare a new `TasksProvider` component in the same file. This component will tie all the pieces together:\
+crowded [ˈkraʊdɪd] 拥挤的
+
+1. It will manage the state with a reducer.
+2. It will provide both contexts to components below.
+3. It will take children as a prop so you can pass JSX to it.
+```jsx
+export function TasksProvider({ children }) {
+  const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+
+  return (
+    <TasksContext.Provider value={tasks}>
+      <TasksDispatchContext.Provider value={dispatch}>
+        {children}
+      </TasksDispatchContext.Provider>
+    </TasksContext.Provider>
+  );
+}
+```
+This removes all the complexity and wiring from your `TaskApp` component:
+
+You can also export functions that use the context from `TasksContext.js`:
+```jsx
+export function useTasks() {
+  return useContext(TasksContext);
+}
+
+export function useTasksDispatch() {
+  return useContext(TasksDispatchContext);
+}
+```
+When a component needs to read context, it can do it through these functions:
+```jsx
+const tasks = useTasks();
+const dispatch = useTasksDispatch();
+```
+This doesn’t change the behavior in any way, but it lets you later split these contexts further or add some logic to these functions. Now all of the context and reducer wiring is in `TasksContext.js`. This keeps the components clean and uncluttered, focused on what they display rather than where they get the data:\
+uncluttered [ʌnˈklʌtərd] 整洁的，清晰的
+
+You can think of `TasksProvider` as a part of the screen that knows how to deal with tasks, `useTasks` as a way to read them, and `useTasksDispatch` as a way to update them from any component below in the tree.
+
+**Note**\
+Functions like `useTasks` and `useTasksDispatch` are called Custom Hooks. Your function is considered a custom Hook if its name starts with `use`. This lets you use other Hooks, like `useContext`, inside it.
+
+As your app grows, you may have many context-reducer pairs like this. This is a powerful way to scale your app and lift state up without too much work whenever you want to access the data deep in the tree.
