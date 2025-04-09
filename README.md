@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.8
+[React doc Tutorial:Scaling Up with Reducer and Context-Recap](./English/React/Scaling-Up-with-Reducer-and-Context.md)
+
 ## 2025.4.7
 [React doc Tutorial:Scaling Up with Reducer and Context-Moving all wiring into a single file](./English/React/Scaling-Up-with-Reducer-and-Context.md)
 

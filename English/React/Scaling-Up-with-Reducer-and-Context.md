@@ -171,3 +171,14 @@ You can think of `TasksProvider` as a part of the screen that knows how to deal 
 Functions like `useTasks` and `useTasksDispatch` are called Custom Hooks. Your function is considered a custom Hook if its name starts with `use`. This lets you use other Hooks, like `useContext`, inside it.
 
 As your app grows, you may have many context-reducer pairs like this. This is a powerful way to scale your app and lift state up without too much work whenever you want to access the data deep in the tree.
+
+## Recap
+- You can combine reducer with context to let any component read and update state above it.
+- To provide state and the dispatch function to components below:
+  1. Create two contexts (for state and for dispatch functions).
+  2. Provide both contexts from the component that uses the reducer.
+  3. Use either context from components that need to read them.
+- You can further declutter the components by moving all wiring into one file.
+  - You can export a component like TasksProvider that provides context.
+  - You can also export custom Hooks like useTasks and useTasksDispatch to read it.
+- You can have many context-reducer pairs like this in your app.
