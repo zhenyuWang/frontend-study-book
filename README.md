@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.9
+[React doc Tutorial:Referencing Values with Refs](./English/React/Referencing-Values-with-Refs.md)
+
 ## 2025.4.8
 [React doc Tutorial:Scaling Up with Reducer and Context-Recap](./English/React/Scaling-Up-with-Reducer-and-Context.md)
 
