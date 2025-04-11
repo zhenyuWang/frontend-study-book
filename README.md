@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.10
+[React doc Tutorial:Referencing Values with Refs-Adding a ref to your component](./English/React/Referencing-Values-with-Refs.md)
+
 ## 2025.4.9
 [React doc Tutorial:Referencing Values with Refs](./English/React/Referencing-Values-with-Refs.md)
 
