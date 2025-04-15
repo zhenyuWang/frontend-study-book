@@ -134,3 +134,72 @@ export default function Stopwatch() {
 ```
 When a piece of information is used for rendering, keep it in state. When a piece of information is only needed by event handlers and changing it doesn’t require a re-render, using a ref may be more efficient.\
 efficient [/ɪˈfɪʃənt/] 高效的
+
+## Differences between refs and state
+Perhaps you’re thinking refs seem less “strict” than state—you can mutate them instead of always having to use a state setting function, for instance. But in most cases, you’ll want to use state. Refs are an “escape hatch” you won’t need often. Here’s how state and refs compare:
+
+| Feature | State |
+| ------- | ----- |
+| `useRef(initialValue)` returns `{ current: initialValue }` | `useState(initialValue)` returns the current value of a state variable and a state setter function ( `[value, setValue]`) |
+| Doesn’t trigger re-render when you change it. | Triggers re-render when you change it. |
+| Mutable—you can modify and update current’s value outside of the rendering process. | ”Immutable”—you must use the state setting function to modify state variables to queue a re-render. |
+| You shouldn’t read (or write) the `current` value during rendering. | You can read state at any time. However, each render has its own snapshot of state which does not change. |
+
+Here is a counter button that’s implemented with state:
+```jsx
+import { useState } from 'react';
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      You clicked {count} times
+    </button>
+  );
+}
+```
+Because the `count` value is displayed, it makes sense to use a state value for it. When the `counter`’s value is set with `setCount()`, React re-renders the component and the screen updates to reflect the new count.
+
+If you tried to implement this with a ref, React would never re-render the component, so you’d never see the count change! See how clicking this button does not update its text:
+```jsx
+import { useRef } from 'react';
+
+export default function Counter() {
+  let countRef = useRef(0);
+
+  function handleClick() {
+    // This doesn't re-render the component!
+    countRef.current = countRef.current + 1;
+  }
+
+  return (
+    <button onClick={handleClick}>
+      You clicked {countRef.current} times
+    </button>
+  );
+}
+```
+This is why reading `ref.current` during render leads to unreliable code. If you need that, use state instead.\
+unreliable [/ˌʌnˈrɪl.jə.bəl/] 不可靠的
+
+**How does useRef work inside? **\
+Although both `useState` and `useRef` are provided by React, in principle `useRef` could be implemented on top of `useState`. You can imagine that inside of React, `useRef` is implemented like this:\
+principal [/ˈprɪn.sə.pəl/] 原则\
+```jsx
+// Inside of React
+function useRef(initialValue) {
+  const [ref, unused] = useState({ current: initialValue });
+  return ref;
+}
+```
+During the first render, `useRef` returns `{ current: initialValue }`. This object is stored by React, so during the next render the same object will be returned. Note how the state setter is unused in this example. It is unnecessary because `useRef` always needs to return the same object!\
+unnecessary [/ˌʌnˈnes.ə.ser.i/] 不必要的
+
+React provides a built-in version of `useRef` because it is common enough in practice. But you can think of it as a regular state variable without a setter. If you’re familiar with object-oriented programming, refs might remind you of instance fields—but instead of `this.something` you write `somethingRef.current`.\
+practice [/ˈpræk.tɪs/] 实践\
+object-oriented [/ˌɒb.dʒekt ˈɔːr.ɪ.en.tɪd/] 面向对象的
