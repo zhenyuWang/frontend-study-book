@@ -214,3 +214,29 @@ typically [/ˈtɪp.ɪ.kəl.i/] 典型地
 
 If your component needs to store some value, but it doesn’t impact the rendering logic, choose refs.\
 impact [/ɪmˈpækt/] 影响
+
+## Best practices for refs
+Following these principles will make your components more predictable:\
+principles [/ˈprɪn.sə.pəl/] 原则\
+predictable [/prɪˈdɪk.tə.bəl/] 可预见的;可预料的
+
+- Treat refs as an escape hatch. Refs are useful when you work with external systems or browser APIs. If much of your application logic and data flow relies on refs, you might want to rethink your approach.
+- Don’t read or write `ref.current` during rendering. If some information is needed during rendering, use state instead. Since React doesn’t know when `ref.current` changes, even reading it while rendering makes your component’s behavior difficult to predict. (The only exception to this is code like `if (!ref.current) ref.current = new Thing()` which only sets the ref once during the first render.)
+
+rely [/rɪˈlaɪ/] 依赖\
+approach [/əˈprəʊtʃ/] 方法\
+predict [/prɪˈdɪkt/] 预言\
+exception [/ɪkˈsep.ʃən/] 例外
+
+Limitations of React state don’t apply to refs. For example, state acts like a snapshot for every render and doesn’t update synchronously. But when you mutate the current value of a ref, it changes immediately:\
+limitation [/ˌlɪm.ɪˈteɪ.ʃən/] 限制\
+synchronously [/sɪŋˈkrəʊ.nəs.li/] 同步地
+
+```jsx
+ref.current = 5;
+console.log(ref.current); // 5
+```
+This is because the ref itself is a regular JavaScript object, and so it behaves like one.
+
+You also don’t need to worry about avoiding mutation when you work with a ref. As long as the object you’re mutating isn’t used for rendering, React doesn’t care what you do with the ref or its contents.\
+mutation [/mjuːˈteɪ.ʃən/] 变异
