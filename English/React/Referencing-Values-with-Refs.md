@@ -240,3 +240,10 @@ This is because the ref itself is a regular JavaScript object, and so it behaves
 
 You also don’t need to worry about avoiding mutation when you work with a ref. As long as the object you’re mutating isn’t used for rendering, React doesn’t care what you do with the ref or its contents.\
 mutation [/mjuːˈteɪ.ʃən/] 变异
+
+## Refs and the DOM
+You can point a ref to any value. However, the most common use case for a ref is to access a DOM element. For example, this is handy if you want to focus an input programmatically. When you pass a ref to a ref attribute in JSX, like `<div ref={myRef}>`, React will put the corresponding DOM element into `myRef.current`. Once the element is removed from the DOM, React will update `myRef.current` to be `null`. You can read more about this in Manipulating the DOM with Refs.\
+handy [/ˈhæn.di/] 方便的\
+programmatically [/ˌprəʊ.ɡræmˈæt.ɪ.kəl.i/] 编码的方式；以编程方式；程序化\
+corresponding [/ˌkɔːr.ɪˈspɑːn.dɪŋ/] 相应的\
+manipulate [/məˈnɪp.jə.leɪt/] 操作
