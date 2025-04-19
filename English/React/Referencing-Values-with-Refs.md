@@ -247,3 +247,13 @@ handy [/ˈhæn.di/] 方便的\
 programmatically [/ˌprəʊ.ɡræmˈæt.ɪ.kəl.i/] 编码的方式；以编程方式；程序化\
 corresponding [/ˌkɔːr.ɪˈspɑːn.dɪŋ/] 相应的\
 manipulate [/məˈnɪp.jə.leɪt/] 操作
+
+## Recap
+- Refs are an escape hatch to hold onto values that aren’t used for rendering. You won’t need them often.
+- A ref is a plain JavaScript object with a single property called `current`, which you can read or set.
+- You can ask React to give you a ref by calling the `useRef` Hook.
+- Like state, refs let you retain information between re-renders of a component.
+- Unlike state, setting the ref’s `current` value does not trigger a re-render.
+- Don’t read or write `ref.current` during rendering. This makes your component hard to predict.
+
+retain [/rɪˈteɪn/] 保留
