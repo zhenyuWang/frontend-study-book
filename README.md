@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.19
+[React doc Tutorial:Manipulating the DOM with Refs](./English/React/Manipulating-the-DOM-with-Refs.md)
+
 ## 2025.4.18
 [React doc Tutorial:Referencing Values with Refs-Recap](./English/React/Referencing-Values-with-Refs.md)
 
