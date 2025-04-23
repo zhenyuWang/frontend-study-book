@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.23
+[React doc Tutorial:Manipulating the DOM with Refs-Example: building a stopwatch](./English/React/Manipulating-the-DOM-with-Refs.md)
+
 ## 2025.4.22
 [React doc Tutorial:Manipulating the DOM with Refs-Adding a ref to your component](./English/React/Manipulating-the-DOM-with-Refs.md)
 
