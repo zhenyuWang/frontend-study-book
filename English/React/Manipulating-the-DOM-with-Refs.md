@@ -248,3 +248,84 @@ This lets you read individual DOM nodes from the Map later.
 When Strict Mode is enabled, ref callbacks will run twice in development.
 
 Read more about how this helps find bugs in callback refs.
+
+## Accessing another component’s DOM nodes
+**Pitfall**\
+Refs are an escape hatch. Manually manipulating another component’s DOM nodes can make your code fragile.\
+manually [/ˈmænʊəli/] 手动地\
+fragile [/ˈfrædʒaɪl/] 脆弱的，易损坏的
+
+You can pass refs from parent component to child components just like any other prop.
+```jsx
+import { useRef } from 'react';
+
+function MyInput({ ref }) {
+  return <input ref={ref} />;
+}
+
+function MyForm() {
+  const inputRef = useRef(null);
+  return <MyInput ref={inputRef} />
+}
+```
+In the above example, a ref is created in the parent component, `MyForm`, and is passed to the child component, `MyInput`. `MyInput` then passes the ref to `<input>`. Because `<input>` is a built-in component React sets the `.current` property of the ref to the `<input>` DOM element.
+
+The `inputRef` created in `MyForm` now points to the `<input>` DOM element returned by `MyInput`. A click handler created in `MyForm` can access `inputRef` and call `focus()` to set the focus on `<input>`.
+```jsx
+import { useRef } from 'react';
+
+function MyInput({ ref }) {
+  return <input ref={ref} />;
+}
+
+export default function MyForm() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  );
+}
+```
+### Exposing a subset of the API with an imperative handle
+In the above example, the ref passed to `MyInput` is passed on to the original DOM input element. This lets the parent component call `focus()` on it. However, this also lets the parent component do something else—for example, change its CSS styles. In uncommon cases, you may want to restrict the exposed functionality. You can do that with `useImperativeHandle`:\
+restrict [/rɪˈstrɪkt/] 限制，约束\
+functionality [/fʌŋkʃəˈnælɪti/] 功能
+```jsx
+import { useRef, useImperativeHandle } from "react";
+
+function MyInput({ ref }) {
+  const realInputRef = useRef(null);
+  useImperativeHandle(ref, () => ({
+    // Only expose focus and nothing else
+    focus() {
+      realInputRef.current.focus();
+    },
+  }));
+  return <input ref={realInputRef} />;
+};
+
+export default function Form() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>Focus the input</button>
+    </>
+  );
+}
+```
+Here, r`ealInputRef` inside `MyInput` holds the actual input DOM node. However, `useImperativeHandle` instructs React to provide your own special object as the value of a ref to the parent component. So `inputRef.current` inside the `Form` component will only have the focus method. In this case, the ref “handle” is not the DOM node, but the custom object you create inside `useImperativeHandle` call.

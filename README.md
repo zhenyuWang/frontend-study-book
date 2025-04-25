@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.25
+[React doc Tutorial:Manipulating the DOM with Refs-Accessing another component’s DOM nodes](./English/React/Manipulating-the-DOM-with-Refs.md)
+
 ## 2025.4.24
 [React doc Tutorial:Manipulating the DOM with Refs-Getting a ref to the node](./English/React/Manipulating-the-DOM-with-Refs.md)
 
