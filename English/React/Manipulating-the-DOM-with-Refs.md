@@ -329,3 +329,135 @@ export default function Form() {
 }
 ```
 Here, r`ealInputRef` inside `MyInput` holds the actual input DOM node. However, `useImperativeHandle` instructs React to provide your own special object as the value of a ref to the parent component. So `inputRef.current` inside the `Form` component will only have the focus method. In this case, the ref “handle” is not the DOM node, but the custom object you create inside `useImperativeHandle` call.
+
+## When React attaches the refs
+In React, every update is split in two phases:\
+phase [/feɪz/] 阶段，时期
+
+- During render, React calls your components to figure out what should be on the screen.
+- During commit, React applies changes to the DOM.
+
+In general, you don’t want to access refs during rendering. That goes for refs holding DOM nodes as well. During the first render, the DOM nodes have not yet been created, so `ref.current` will be null. And during the rendering of updates, the DOM nodes haven’t been updated yet. So it’s too early to read them.
+
+React sets `ref.current` during the commit. Before updating the DOM, React sets the affected `ref.current` values to null. After updating the DOM, React immediately sets them to the corresponding DOM nodes.
+
+Usually, you will access refs from event handlers. If you want to do something with a ref, but there is no particular event to do it in, you might need an Effect. We will discuss Effects on the next pages.
+
+### Flushing state updates synchronously with flushSync
+
+flush [flʌʃ] 冲洗，冲刷\
+synchronously [/ˈsɪŋkrənəsli/] 同步地\
+Consider code like this, which adds a new todo and scrolls the screen down to the last child of the list. Notice how, for some reason, it always scrolls to the todo that was just before the last added one:
+```jsx
+import { useState, useRef } from 'react';
+
+export default function TodoList() {
+  const listRef = useRef(null);
+  const [text, setText] = useState('');
+  const [todos, setTodos] = useState(
+    initialTodos
+  );
+
+  function handleAdd() {
+    const newTodo = { id: nextId++, text: text };
+    setText('');
+    setTodos([ ...todos, newTodo]);
+    listRef.current.lastChild.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }
+
+  return (
+    <>
+      <button onClick={handleAdd}>
+        Add
+      </button>
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <ul ref={listRef}>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+let nextId = 0;
+let initialTodos = [];
+for (let i = 0; i < 20; i++) {
+  initialTodos.push({
+    id: nextId++,
+    text: 'Todo #' + (i + 1)
+  });
+}
+```
+The issue is with these two lines:
+```jsx
+setTodos([ ...todos, newTodo]);
+listRef.current.lastChild.scrollIntoView();
+```
+In React, state updates are queued. Usually, this is what you want. However, here it causes a problem because `setTodos` does not immediately update the DOM. So the time you scroll the list to its last element, the todo has not yet been added. This is why scrolling always “lags behind” by one item.\
+lags behind 落后于
+
+To fix this issue, you can force React to update (“flush”) the DOM synchronously. To do this, import `flushSync` from `react-dom` and wrap the state update into a `flushSync` call:
+```jsx
+flushSync(() => {
+  setTodos([ ...todos, newTodo]);
+});
+listRef.current.lastChild.scrollIntoView();
+```
+This will instruct React to update the DOM synchronously right after the code wrapped in `flushSync` executes. As a result, the last todo will already be in the DOM by the time you try to scroll to it:
+```jsx
+import { useState, useRef } from 'react';
+import { flushSync } from 'react-dom';
+
+export default function TodoList() {
+  const listRef = useRef(null);
+  const [text, setText] = useState('');
+  const [todos, setTodos] = useState(
+    initialTodos
+  );
+
+  function handleAdd() {
+    const newTodo = { id: nextId++, text: text };
+    flushSync(() => {
+      setText('');
+      setTodos([ ...todos, newTodo]);
+    });
+    listRef.current.lastChild.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }
+
+  return (
+    <>
+      <button onClick={handleAdd}>
+        Add
+      </button>
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <ul ref={listRef}>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+let nextId = 0;
+let initialTodos = [];
+for (let i = 0; i < 20; i++) {
+  initialTodos.push({
+    id: nextId++,
+    text: 'Todo #' + (i + 1)
+  });
+}
+```
