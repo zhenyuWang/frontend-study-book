@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.28
+[React doc Tutorial:Manipulating the DOM with Refs-Best practices for DOM manipulation with refs](./English/React/Manipulating-the-DOM-with-Refs.md)
+
 ## 2025.4.27
 [React doc Tutorial:Manipulating the DOM with Refs-When React attaches the refs](./English/React/Manipulating-the-DOM-with-Refs.md)
 
