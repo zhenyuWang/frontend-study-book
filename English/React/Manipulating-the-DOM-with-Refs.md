@@ -509,3 +509,15 @@ inconsistent [/ˌɪnkənˈsɪstənt/] 不一致的，矛盾的
 
 However, this doesn’t mean that you can’t do it at all. It requires caution. You can safely modify parts of the DOM that React has no reason to update. For example, if some `<div>` is always empty in the JSX, React won’t have a reason to touch its children list. Therefore, it is safe to manually add or remove elements there.\
 caution [/ˈkɔːʃən/] 小心，谨慎
+
+## Recap
+- Refs are a generic concept, but most often you’ll use them to hold DOM elements.
+- You instruct React to put a DOM node into `myRef.current` by passing `<div ref={myRef}>`.
+- Usually, you will use refs for non-destructive actions like focusing, scrolling, or measuring DOM elements.
+- A component doesn’t expose its DOM nodes by default. You can opt into exposing a DOM node by using the `ref` prop.
+- Avoid changing DOM nodes managed by React.
+- If you do modify DOM nodes managed by React, modify parts that React has no reason to update.
+
+generic [/dʒəˈnɛrɪk/] 一般的，通用的\
+concept [/ˈkɒnsept/] 概念，观念\
+instruct [/ɪnˈstrʌkt/] 指示，命令
