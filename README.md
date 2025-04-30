@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.4.30
+[React doc Tutorial:Synchronizing with Effects](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.4.29
 [React doc Tutorial:Manipulating the DOM with Refs-Recap](./English/React/Manipulating-the-DOM-with-Refs.md)
 
