@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.2
+[React doc Tutorial:Synchronizing with Effects-You might not need an Effect](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.1
 [React doc Tutorial:Synchronizing with Effects-What are Effects and how are they different from events?](./English/React/Synchronizing-with-Effects.md)
 

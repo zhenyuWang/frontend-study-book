@@ -24,3 +24,8 @@ specify [/ˈspɛsɪfaɪ/] 指定，明确说明\
 **Note**\
 Here and later in this text, capitalized “Effect” refers to the React-specific definition above, i.e. a side effect caused by rendering. To refer to the broader programming concept, we’ll say “side effect”.\
 broader [/ˈbrɔːdər/] 更广泛的，宽广的
+
+## You might not need an Effect
+Don’t rush to add Effects to your components. Keep in mind that Effects are typically used to “step out” of your React code and synchronize with some external system. This includes browser APIs, third-party widgets, network, and so on. If your Effect only adjusts some state based on other state, you might not need an Effect.\
+rush [/rʌʃ/] 匆忙，急于\
+typically [/ˈtɪpɪkli/] 通常，典型地
