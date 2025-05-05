@@ -29,3 +29,12 @@ broader [/ˈbrɔːdər/] 更广泛的，宽广的
 Don’t rush to add Effects to your components. Keep in mind that Effects are typically used to “step out” of your React code and synchronize with some external system. This includes browser APIs, third-party widgets, network, and so on. If your Effect only adjusts some state based on other state, you might not need an Effect.\
 rush [/rʌʃ/] 匆忙，急于\
 typically [/ˈtɪpɪkli/] 通常，典型地
+
+## How to write an Effect
+To write an Effect, follow these three steps:
+
+1. Declare an Effect. By default, your Effect will run after every commit.
+2. Specify the Effect dependencies. Most Effects should only re-run when needed rather than after every render. For example, a fade-in animation should only trigger when a component appears. Connecting and disconnecting to a chat room should only happen when the component appears and disappears, or when the chat room changes. You will learn how to control this by specifying dependencies.
+3. Add cleanup if needed. Some Effects need to specify how to stop, undo, or clean up whatever they were doing. For example, “connect” needs “disconnect”, “subscribe” needs “unsubscribe”, and “fetch” needs either “cancel” or “ignore”. You will learn how to do this by returning a cleanup function.
+
+Let’s look at each of these steps in detail.

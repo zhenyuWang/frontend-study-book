@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.5
+[React doc Tutorial:Synchronizing with Effects-How to write an Effect](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.2
 [React doc Tutorial:Synchronizing with Effects-You might not need an Effect](./English/React/Synchronizing-with-Effects.md)
 
