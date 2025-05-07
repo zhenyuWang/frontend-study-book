@@ -181,3 +181,162 @@ Effects run as a result of rendering. Setting state triggers rendering. Setting 
 outlet [/ˈaʊtlet/] 插座，出口
 
 Effects should usually synchronize your components with an external system. If there’s no external system and you only want to adjust some state based on other state, you might not need an Effect.
+
+### Step 2: Specify the Effect dependencies
+By default, Effects run after every render. Often, this is not what you want:
+
+- Sometimes, it’s slow. Synchronizing with an external system is not always instant, so you might want to skip doing it unless it’s necessary. For example, you don’t want to reconnect to the chat server on every keystroke.
+- Sometimes, it’s wrong. For example, you don’t want to trigger a component fade-in animation on every keystroke. The animation should only play once when the component appears for the first time.
+
+necessary [/ˈnɛsəˌsɛri/] 必要的，必需的\
+keystroke [/ˈkiːstroʊk/] 按键，击键
+
+To demonstrate the issue, here is the previous example with a few `console.log` calls and a text input that updates the parent component’s state. Notice how typing causes the Effect to re-run:\
+demonstrate [/ˈdɛmənstreɪt/] 演示，证明
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function VideoPlayer({ src, isPlaying }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      console.log('Calling video.play()');
+      ref.current.play();
+    } else {
+      console.log('Calling video.pause()');
+      ref.current.pause();
+    }
+  });
+
+  return <video ref={ref} src={src} loop playsInline />;
+}
+
+export default function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [text, setText] = useState('');
+  return (
+    <>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? 'Pause' : 'Play'}
+      </button>
+      <VideoPlayer
+        isPlaying={isPlaying}
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+      />
+    </>
+  );
+}
+```
+You can tell React to skip unnecessarily re-running the Effect by specifying an array of dependencies as the second argument to the `useEffect` call. Start by adding an empty `[]` array to the above example on line 14:
+```jsx
+  useEffect(() => {
+    // ...
+  }, []);
+	```
+You should see an error saying `React Hook useEffect has a missing dependency: 'isPlaying'`:
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function VideoPlayer({ src, isPlaying }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      console.log('Calling video.play()');
+      ref.current.play();
+    } else {
+      console.log('Calling video.pause()');
+      ref.current.pause();
+    }
+  }, []); // This causes an error
+
+  return <video ref={ref} src={src} loop playsInline />;
+}
+
+export default function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [text, setText] = useState('');
+  return (
+    <>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? 'Pause' : 'Play'}
+      </button>
+      <VideoPlayer
+        isPlaying={isPlaying}
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+      />
+    </>
+  );
+}
+```
+The problem is that the code inside of your Effect depends on the `isPlaying` prop to decide what to do, but this dependency was not explicitly declared. To fix this issue, add `isPlaying` to the dependency array:
+```jsx
+  useEffect(() => {
+    if (isPlaying) { // It's used here...
+      // ...
+    } else {
+      // ...
+    }
+  }, [isPlaying]); // ...so it must be declared here!
+	```
+Now all dependencies are declared, so there is no error. Specifying `[isPlaying]` as the dependency array tells React that it should skip re-running your Effect if `isPlaying` is the same as it was during the previous render. With this change, typing into the input doesn’t cause the Effect to re-run, but pressing Play/Pause does:\
+specifying [/spəˈsɪfaɪɪŋ/] 指定，明确说明
+```jsx
+import { useState, useRef, useEffect } from 'react';
+
+function VideoPlayer({ src, isPlaying }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      console.log('Calling video.play()');
+      ref.current.play();
+    } else {
+      console.log('Calling video.pause()');
+      ref.current.pause();
+    }
+  }, [isPlaying]);
+
+  return <video ref={ref} src={src} loop playsInline />;
+}
+
+export default function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [text, setText] = useState('');
+  return (
+    <>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? 'Pause' : 'Play'}
+      </button>
+      <VideoPlayer
+        isPlaying={isPlaying}
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+      />
+    </>
+  );
+}
+```
+The dependency array can contain multiple dependencies. React will only skip re-running the Effect if all of the dependencies you specify have exactly the same values as they had during the previous render. React compares the dependency values using the `Object.is` comparison. See the `useEffect` reference for details.
+
+Notice that you can’t “choose” your dependencies. You will get a lint error if the dependencies you specified don’t match what React expects based on the code inside your Effect. This helps catch many bugs in your code. If you don’t want some code to re-run, edit the Effect code itself to not “need” that dependency.
+
+**Pitfall**\
+The behaviors without the dependency array and with an empty `[]` dependency array are different:
+```jsx
+useEffect(() => {
+  // This runs after every render
+});
+
+useEffect(() => {
+  // This runs only on mount (when the component appears)
+}, []);
+
+useEffect(() => {
+  // This runs on mount *and also* if either a or b have changed since the last render
+}, [a, b]);
+```
+We’ll take a close look at what “mount” means in the next step.
