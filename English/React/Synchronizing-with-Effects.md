@@ -340,3 +340,38 @@ useEffect(() => {
 }, [a, b]);
 ```
 We’ll take a close look at what “mount” means in the next step.
+
+#### Why was the ref omitted from the dependency array?
+imit [/ɪˈmɪt/] 省略，遗漏\
+This Effect uses both ref and `isPlaying`, but only `isPlaying` is declared as a dependency:
+```jsx
+function VideoPlayer({ src, isPlaying }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (isPlaying) {
+      ref.current.play();
+    } else {
+      ref.current.pause();
+    }
+  }, [isPlaying]);
+```
+This is because the `ref` object has a stable identity: React guarantees you’ll always get the same object from the same `useRef` call on every render. It never changes, so it will never by itself cause the Effect to re-run. Therefore, it does not matter whether you include it or not. Including it is fine too:\
+stable [/ˈsteɪbəl/] 稳定的，牢固的\
+identity [/aɪˈdɛntɪti/] 身份，特性\
+guarantee [/ˌɡærənˈtiː/] 保证，担保\
+therefore [/ˈðerfɔːr/] 因此，所以
+```jsx
+function VideoPlayer({ src, isPlaying }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (isPlaying) {
+      ref.current.play();
+    } else {
+      ref.current.pause();
+    }
+  }, [isPlaying, ref]);
+```
+The set functions returned by `useState` also have stable identity, so you will often see them omitted from the dependencies too. If the linter lets you omit a dependency without errors, it is safe to do.
+
+Omitting always-stable dependencies only works when the linter can “see” that the object is stable. For example, if ref was passed from a parent component, you would have to specify it in the dependency array. However, this is good because you can’t know whether the parent component always passes the same ref, or passes one of several refs conditionally. So your Effect would depend on which ref is passed.\
+conditionally [/kənˈdɪʃənəli/] 有条件地，视情况而定
