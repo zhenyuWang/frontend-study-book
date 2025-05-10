@@ -375,3 +375,109 @@ The set functions returned by `useState` also have stable identity, so you will 
 
 Omitting always-stable dependencies only works when the linter can “see” that the object is stable. For example, if ref was passed from a parent component, you would have to specify it in the dependency array. However, this is good because you can’t know whether the parent component always passes the same ref, or passes one of several refs conditionally. So your Effect would depend on which ref is passed.\
 conditionally [/kənˈdɪʃənəli/] 有条件地，视情况而定
+
+### Step 3: Add cleanup if needed
+Consider a different example. You’re writing a `ChatRoom` component that needs to connect to the chat server when it appears. You are given a `createConnection()` API that returns an object with `connect()` and `disconnect()` methods. How do you keep the component connected while it is displayed to the user?
+
+Start by writing the Effect logic:
+```jsx
+useEffect(() => {
+  const connection = createConnection();
+  connection.connect();
+});
+```
+It would be slow to connect to the chat after every re-render, so you add the dependency array:
+```jsx
+useEffect(() => {
+  const connection = createConnection();
+  connection.connect();
+}, []);
+```
+The code inside the Effect does not use any props or state, so your dependency array is `[]` (empty). This tells React to only run this code when the component “mounts”, i.e. appears on the screen for the first time.
+
+Let’s try running this code:
+```jsx
+// App.js
+import { useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+export default function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection();
+    connection.connect();
+  }, []);
+  return <h1>Welcome to the chat!</h1>;
+}
+// Chat.js
+export function createConnection() {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected.');
+    }
+  };
+}
+```
+This Effect only runs on mount, so you might expect `"✅ Connecting..."` to be printed once in the console. However, if you check the console, `"✅ Connecting..."` gets printed twice. Why does it happen?
+
+Imagine the `ChatRoom` component is a part of a larger app with many different screens. The user starts their journey on the `ChatRoom` page. The component mounts and calls `connection.connect()`. Then imagine the user navigates to another screen—for example, to the Settings page. The `ChatRoom` component unmounts. Finally, the user clicks Back and `ChatRoom` mounts again. This would set up a second connection—but the first connection was never destroyed! As the user navigates across the app, the connections would keep piling up.\
+journey [/ˈdʒɜːrni/] 旅程，旅行\
+piling up [/ˈpaɪlɪŋ ʌp/] 堆积，积累
+
+Bugs like this are easy to miss without extensive manual testing. To help you spot them quickly, in development React remounts every component once immediately after its initial mount.\
+extensive [/ɪkˈstɛnsɪv/] 广泛的，全面的\
+manual [/ˈmænjuəl/] 手动的，人工的
+
+Seeing the `"✅ Connecting..."` log twice helps you notice the real issue: your code doesn’t close the connection when the component unmounts.
+
+To fix the issue, return a cleanup function from your Effect:
+```jsx
+  useEffect(() => {
+    const connection = createConnection();
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, []);
+  ```
+React will call your cleanup function each time before the Effect runs again, and one final time when the component unmounts (gets removed). Let’s see what happens when the cleanup function is implemented:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+export default function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection();
+    connection.connect();
+    return () => connection.disconnect();
+  }, []);
+  return <h1>Welcome to the chat!</h1>;
+}
+// Chat.js
+export function createConnection() {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected.');
+    }
+  };
+}
+```
+Now you get three console logs in development:
+
+1. "✅ Connecting..."
+2. "❌ Disconnected."
+3. "✅ Connecting..."
+
+This is the correct behavior in development. By remounting your component, React verifies that navigating away and back would not break your code. Disconnecting and then connecting again is exactly what should happen! When you implement the cleanup well, there should be no user-visible difference between running the Effect once vs running it, cleaning it up, and running it again. There’s an extra connect/disconnect call pair because React is probing your code for bugs in development. This is normal—don’t try to make it go away!\
+verify [/ˈvɛrɪfaɪ/] 验证，核实\
+probe [/proʊb/] 探测，探查
+
+In production, you would only see "✅ Connecting..." printed once. Remounting components only happens in development to help you find Effects that need cleanup. You can turn off Strict Mode to opt out of the development behavior, but we recommend keeping it on. This lets you find many bugs like the one above.
