@@ -481,3 +481,35 @@ verify [/ˈvɛrɪfaɪ/] 验证，核实\
 probe [/proʊb/] 探测，探查
 
 In production, you would only see "✅ Connecting..." printed once. Remounting components only happens in development to help you find Effects that need cleanup. You can turn off Strict Mode to opt out of the development behavior, but we recommend keeping it on. This lets you find many bugs like the one above.
+
+## How to handle the Effect firing twice in development?
+React intentionally remounts your components in development to find bugs like in the last example. The right question isn’t “how to run an Effect once”, but “how to fix my Effect so that it works after remounting”.\
+intentionally [/ɪnˈtɛnʃənəli/] 故意地，蓄意地
+
+Usually, the answer is to implement the cleanup function. The cleanup function should stop or undo whatever the Effect was doing. The rule of thumb is that the user shouldn’t be able to distinguish between the Effect running once (as in production) and a setup → cleanup → setup sequence (as you’d see in development).\
+implement [/ˈɪmplɪˌmɛnt/] 实现，执行\
+distinguish [/dɪˈstɪŋɡwɪʃ/] 区分，辨别
+
+Most of the Effects you’ll write will fit into one of the common patterns below.
+
+**Pitfall**\
+**Don’t use refs to prevent Effects from firing**\
+A common pitfall for preventing Effects firing twice in development is to use a `ref` to prevent the Effect from running more than once. For example, you could “fix” the above bug with a `useRef`:\
+pitfall [/ˈpɪtˌfɔːl/] 陷阱，错误\
+```jsx
+const connectionRef = useRef(null);
+useEffect(() => {
+  // 🚩 This wont fix the bug!!!
+  if (!connectionRef.current) {
+    connectionRef.current = createConnection();
+    connectionRef.current.connect();
+  }
+}, []);
+```
+This makes it so you only see `"✅ Connecting..."` once in development, but it doesn’t fix the bug.
+
+When the user navigates away, the connection still isn’t closed and when they navigate back, a new connection is created. As the user navigates across the app, the connections would keep piling up, the same as it would before the “fix”.
+
+To fix the bug, it is not enough to just make the Effect run once. The effect needs to work after re-mounting, which means the connection needs to be cleaned up like in the solution above.
+
+See the examples below for how to handle common patterns.
