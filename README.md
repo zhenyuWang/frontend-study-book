@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2025.5.13
+[React doc Tutorial:Synchronizing with Effects-Controlling non-React widgets](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.12
-[React doc Tutorial:Synchronizing with Effects-How to write an Effect](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.9
 [React doc Tutorial:Synchronizing with Effects-How to write an Effect](./English/React/Synchronizing-with-Effects.md)
