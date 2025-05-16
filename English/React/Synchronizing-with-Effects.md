@@ -546,3 +546,18 @@ useEffect(() => {
 }, []);
 ```
 In development, your Effect will call `addEventListener()`, then immediately `removeEventListener()`, and then `addEventListener()` again with the same handler. So there would be only one active subscription at a time. This has the same user-visible behavior as calling `addEventListener()` once, as in production.
+
+## Triggering animations
+If your Effect animates something in, the cleanup function should reset the animation to the initial values:
+```jsx
+useEffect(() => {
+  const node = ref.current;
+  node.style.opacity = 1; // Trigger the animation
+  return () => {
+    node.style.opacity = 0; // Reset to the initial value
+  };
+}, []);
+```
+In development, opacity will be set to `1`, then to `0`, and then to `1` again. This should have the same user-visible behavior as setting it to `1` directly, which is what would happen in production. If you use a third-party animation library with support for tweening, your cleanup function should reset the timeline to its initial state.\
+tweening [/ˈtwiːnɪŋ/] 插值动画，补间动画\
+timeline [/ˈtaɪmˌlaɪn/] 时间线，时间轴

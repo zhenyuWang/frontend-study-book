@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.15
+[React doc Tutorial:Synchronizing with Effects-Triggering animations](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.14
 [React doc Tutorial:Synchronizing with Effects-Subscribing to events](./English/React/Synchronizing-with-Effects.md)
 
