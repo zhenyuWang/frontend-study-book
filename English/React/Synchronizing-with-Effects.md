@@ -561,3 +561,68 @@ useEffect(() => {
 In development, opacity will be set to `1`, then to `0`, and then to `1` again. This should have the same user-visible behavior as setting it to `1` directly, which is what would happen in production. If you use a third-party animation library with support for tweening, your cleanup function should reset the timeline to its initial state.\
 tweening [/ˈtwiːnɪŋ/] 插值动画，补间动画\
 timeline [/ˈtaɪmˌlaɪn/] 时间线，时间轴
+
+## Fetching data
+If your Effect fetches something, the cleanup function should either abort the fetch or ignore its result:
+```jsx
+useEffect(() => {
+  let ignore = false;
+
+  async function startFetching() {
+    const json = await fetchTodos(userId);
+    if (!ignore) {
+      setTodos(json);
+    }
+  }
+
+  startFetching();
+
+  return () => {
+    ignore = true;
+  };
+}, [userId]);
+```
+You can’t “undo” a network request that already happened, but your cleanup function should ensure that the fetch that’s not relevant anymore does not keep affecting your application. If the `userId` changes from `'Alice'` to `'Bob'`, cleanup ensures that the `'Alice'` response is ignored even if it arrives after `'Bob'`.\
+relevant [/ˈrɛlɪvənt/] 相关的，有关的
+
+In development, you will see two fetches in the Network tab. There is nothing wrong with that. With the approach above, the first Effect will immediately get cleaned up so its copy of the `ignore` variable will be set to `true`. So even though there is an extra request, it won’t affect the state thanks to the `if (!ignore)` check.
+
+In production, there will only be one request. If the second request in development is bothering you, the best approach is to use a solution that deduplicates requests and caches their responses between components:\
+deduplicate [/ˌdiːˈdjuːplɪkeɪt/] 去重，消除重复
+```jsx
+function TodoList() {
+  const todos = useSomeDataLibrary(`/api/user/${userId}/todos`);
+  // ...
+```
+This will not only improve the development experience, but also make your application feel faster. For example, the user pressing the Back button won’t have to wait for some data to load again because it will be cached. You can either build such a cache yourself or use one of the many alternatives to manual fetching in Effects.\
+alternative [/ɔːlˈtɜrnətɪv/] 替代方案，选择
+
+### What are good alternatives to data fetching in Effects?
+Writing fetch calls inside Effects is a popular way to fetch data, especially in fully client-side apps. This is, however, a very manual approach and it has significant downsides:\
+significant [/sɪɡˈnɪfɪkənt/] 重要的，显著的\
+downside [/ˈdaʊnˌsaɪd/] 缺点，劣势
+
+- Effects don’t run on the server. This means that the initial server-rendered HTML will only include a loading state with no data. The client computer will have to download all JavaScript and render your app only to discover that now it needs to load the data. This is not very efficient.
+- Fetching directly in Effects makes it easy to create “network waterfalls”. You render the parent component, it fetches some data, renders the child components, and then they start fetching their data. If the network is not very fast, this is significantly slower than fetching all data in parallel.
+- Fetching directly in Effects usually means you don’t preload or cache data. For example, if the component unmounts and then mounts again, it would have to fetch the data again.
+- It’s not very ergonomic. There’s quite a bit of boilerplate code involved when writing fetch calls in a way that doesn’t suffer from bugs like race conditions.
+
+efficient [/ɪˈfɪʃənt/] 高效的，有效的\
+parallel [/ˈpærəˌlɛl/] 并行的，同时发生的\
+ergonomic [/ˌɜːrɡəˈnɑːmɪk/] 人体工程学的，符合人体工学的\
+boilerplate [/ˈbɔɪlərˌpleɪt/] 样板代码，模板
+
+This list of downsides is not specific to React. It applies to fetching data on mount with any library. Like with routing, data fetching is not trivial to do well, so we recommend the following approaches:\
+trivial [/ˈtrɪviəl/] 微不足道的，琐碎的
+
+- If you use a framework, use its built-in data fetching mechanism. Modern React frameworks have integrated data fetching mechanisms that are efficient and don’t suffer from the above pitfalls.
+- Otherwise, consider using or building a client-side cache. Popular open source solutions include React Query, useSWR, and React Router 6.4+. You can build your own solution too, in which case you would use Effects under the hood, but add logic for deduplicating requests, caching responses, and avoiding network waterfalls (by preloading data or hoisting data requirements to routes).
+
+mechanism [/ˈmɛkənɪzəm/] 机制，方法\
+integrated [/ˈɪntɪɡreɪtɪd/] 集成的，综合的\
+suffer [/ˈsʌfər/] 遭受，遭遇\
+hood [/hʊd/] 内部，底层\
+deduplicate [/ˌdiːˈdjuːplɪkeɪt/] 去重，消除重复\
+hoist [/hɔɪst/] 提升，抬高
+
+You can continue fetching data directly in Effects if neither of these approaches suit you.
