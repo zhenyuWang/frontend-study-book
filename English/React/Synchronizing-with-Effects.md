@@ -626,3 +626,23 @@ deduplicate [/ˌdiːˈdjuːplɪkeɪt/] 去重，消除重复\
 hoist [/hɔɪst/] 提升，抬高
 
 You can continue fetching data directly in Effects if neither of these approaches suit you.
+
+## Sending analytics
+analytics [/əˈnælɪtɪks/] 分析，分析学\
+Consider this code that sends an analytics event on the page visit:
+```jsx
+useEffect(() => {
+  logVisit(url); // Sends a POST request
+}, [url]);
+```
+In development, `logVisit` will be called twice for every URL, so you might be tempted to try to fix that. We recommend keeping this code as is. Like with earlier examples, there is no user-visible behavior difference between running it once and running it twice. From a practical point of view, `logVisit` should not do anything in development because you don’t want the logs from the development machines to skew the production metrics. Your component remounts every time you save its file, so it logs extra visits in development anyway.\
+tempt [/tɛmpt/] 诱惑，吸引\
+skew [/skjuː/] 歪斜，偏斜
+
+In production, there will be no duplicate visit logs.\
+duplicate [/ˈduːplɪkeɪt/] 重复的，复制的
+
+To debug the analytics events you’re sending, you can deploy your app to a staging environment (which runs in production mode) or temporarily opt out of Strict Mode and its development-only remounting checks. You may also send analytics from the route change event handlers instead of Effects. For more precise analytics, intersection observers can help track which components are in the viewport and how long they remain visible.\
+temporarily [/ˈtɛmpəˌrɛrɪli/] 暂时地，临时地\
+precise [/prɪˈsaɪs/] 精确的，准确的\
+intersection [/ˌɪntərˈsɛkʃən/] 交集，交叉

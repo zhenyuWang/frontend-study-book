@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.19
+[React doc Tutorial:Synchronizing with Effects-Sending analytics](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.16
 [React doc Tutorial:Synchronizing with Effects-Fetching data](./English/React/Synchronizing-with-Effects.md)
 
