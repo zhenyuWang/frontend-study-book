@@ -646,3 +646,18 @@ To debug the analytics events you’re sending, you can deploy your app to a sta
 temporarily [/ˈtɛmpəˌrɛrɪli/] 暂时地，临时地\
 precise [/prɪˈsaɪs/] 精确的，准确的\
 intersection [/ˌɪntərˈsɛkʃən/] 交集，交叉
+
+## Not an Effect: Initializing the application
+Some logic should only run once when the application starts. You can put it outside your components:
+```jsx
+if (typeof window !== 'undefined') { // Check if we're running in the browser.
+  checkAuthToken();
+  loadDataFromLocalStorage();
+}
+
+function App() {
+  // ...
+}
+```
+This guarantees that such logic only runs once after the browser loads the page.\
+guarantee [/ˈɡærənˌtiː/] 保证，担保
