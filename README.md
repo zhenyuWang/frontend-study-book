@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.21
+[React doc Tutorial:Synchronizing with Effects-Not an Effect: Buying a product](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.20
 [React doc Tutorial:Synchronizing with Effects-Not an Effect: Initializing the application](./English/React/Synchronizing-with-Effects.md)
 

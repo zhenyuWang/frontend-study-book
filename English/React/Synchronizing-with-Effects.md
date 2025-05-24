@@ -661,3 +661,26 @@ function App() {
 ```
 This guarantees that such logic only runs once after the browser loads the page.\
 guarantee [/ˈɡærənˌtiː/] 保证，担保
+
+## Not an Effect: Buying a product
+Sometimes, even if you write a cleanup function, there’s no way to prevent user-visible consequences of running the Effect twice. For example, maybe your Effect sends a POST request like buying a product:\
+consequence [/ˈkɒnsɪkwəns/] 结果，后果
+```jsx
+useEffect(() => {
+  // 🔴 Wrong: This Effect fires twice in development, exposing a problem in the code.
+  fetch('/api/buy', { method: 'POST' });
+}, []);
+```
+You wouldn’t want to buy the product twice. However, this is also why you shouldn’t put this logic in an Effect. What if the user goes to another page and then presses Back? Your Effect would run again. You don’t want to buy the product when the user visits a page; you want to buy it when the user clicks the Buy button.
+
+Buying is not caused by rendering; it’s caused by a specific interaction. It should run only when the user presses the button. Delete the Effect and move your `/api/buy` request into the Buy button event handler:
+```jsx
+  function handleClick() {
+    // ✅ Buying is an event because it is caused by a particular interaction.
+    fetch('/api/buy', { method: 'POST' });
+  }
+```
+This illustrates that if remounting breaks the logic of your application, this usually uncovers existing bugs. From a user’s perspective, visiting a page shouldn’t be different from visiting it, clicking a link, then pressing Back to view the page again. React verifies that your components abide by this principle by remounting them once in development.\
+illustrate [/ˈɪləsˌtreɪt/] 说明，阐明\
+prespective [/prɪˈspɛktɪv/] 观点，视角\
+abide [/əˈbaɪd/] 遵守，遵循
