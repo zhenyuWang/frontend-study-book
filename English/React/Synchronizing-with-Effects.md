@@ -514,7 +514,7 @@ To fix the bug, it is not enough to just make the Effect run once. The effect ne
 
 See the examples below for how to handle common patterns.
 
-## Controlling non-React widgets
+### Controlling non-React widgets
 Sometimes you need to add UI widgets that aren’t written in React. For example, let’s say you’re adding a map component to your page. It has a `setZoomLevel()` method, and you’d like to keep the zoom level in sync with a `zoomLevel` state variable in your React code. Your Effect would look similar to this:
 ```jsx
 useEffect(() => {
@@ -534,7 +534,7 @@ useEffect(() => {
 ```
 In development, your Effect will call `showModal()`, then immediately `close()`, and then `showModal()` again. This has the same user-visible behavior as calling `showModal()` once, as you would see in production.
 
-## Subscribing to events
+### Subscribing to events
 If your Effect subscribes to something, the cleanup function should unsubscribe:
 ```jsx
 useEffect(() => {
@@ -547,7 +547,7 @@ useEffect(() => {
 ```
 In development, your Effect will call `addEventListener()`, then immediately `removeEventListener()`, and then `addEventListener()` again with the same handler. So there would be only one active subscription at a time. This has the same user-visible behavior as calling `addEventListener()` once, as in production.
 
-## Triggering animations
+### Triggering animations
 If your Effect animates something in, the cleanup function should reset the animation to the initial values:
 ```jsx
 useEffect(() => {
@@ -562,7 +562,7 @@ In development, opacity will be set to `1`, then to `0`, and then to `1` again. 
 tweening [/ˈtwiːnɪŋ/] 插值动画，补间动画\
 timeline [/ˈtaɪmˌlaɪn/] 时间线，时间轴
 
-## Fetching data
+### Fetching data
 If your Effect fetches something, the cleanup function should either abort the fetch or ignore its result:
 ```jsx
 useEffect(() => {
@@ -597,7 +597,7 @@ function TodoList() {
 This will not only improve the development experience, but also make your application feel faster. For example, the user pressing the Back button won’t have to wait for some data to load again because it will be cached. You can either build such a cache yourself or use one of the many alternatives to manual fetching in Effects.\
 alternative [/ɔːlˈtɜrnətɪv/] 替代方案，选择
 
-### What are good alternatives to data fetching in Effects?
+#### What are good alternatives to data fetching in Effects?
 Writing fetch calls inside Effects is a popular way to fetch data, especially in fully client-side apps. This is, however, a very manual approach and it has significant downsides:\
 significant [/sɪɡˈnɪfɪkənt/] 重要的，显著的\
 downside [/ˈdaʊnˌsaɪd/] 缺点，劣势
@@ -627,7 +627,7 @@ hoist [/hɔɪst/] 提升，抬高
 
 You can continue fetching data directly in Effects if neither of these approaches suit you.
 
-## Sending analytics
+### Sending analytics
 analytics [/əˈnælɪtɪks/] 分析，分析学\
 Consider this code that sends an analytics event on the page visit:
 ```jsx
@@ -647,7 +647,7 @@ temporarily [/ˈtɛmpəˌrɛrɪli/] 暂时地，临时地\
 precise [/prɪˈsaɪs/] 精确的，准确的\
 intersection [/ˌɪntərˈsɛkʃən/] 交集，交叉
 
-## Not an Effect: Initializing the application
+### Not an Effect: Initializing the application
 Some logic should only run once when the application starts. You can put it outside your components:
 ```jsx
 if (typeof window !== 'undefined') { // Check if we're running in the browser.
@@ -662,7 +662,7 @@ function App() {
 This guarantees that such logic only runs once after the browser loads the page.\
 guarantee [/ˈɡærənˌtiː/] 保证，担保
 
-## Not an Effect: Buying a product
+### Not an Effect: Buying a product
 Sometimes, even if you write a cleanup function, there’s no way to prevent user-visible consequences of running the Effect twice. For example, maybe your Effect sends a POST request like buying a product:\
 consequence [/ˈkɒnsɪkwəns/] 结果，后果
 ```jsx
@@ -684,3 +684,68 @@ This illustrates that if remounting breaks the logic of your application, this u
 illustrate [/ˈɪləsˌtreɪt/] 说明，阐明\
 prespective [/prɪˈspɛktɪv/] 观点，视角\
 abide [/əˈbaɪd/] 遵守，遵循
+
+## Putting it all together
+This playground can help you “get a feel” for how Effects work in practice.
+
+This example uses `setTimeout` to schedule a console log with the input text to appear three seconds after the Effect runs. The cleanup function cancels the pending timeout. Start by pressing “Mount the component”:\
+schedule [/ˈskɛdʒuːl/] 安排，计划\
+```jsx
+import { useState, useEffect } from 'react';
+
+function Playground() {
+  const [text, setText] = useState('a');
+
+  useEffect(() => {
+    function onTimeout() {
+      console.log('⏰ ' + text);
+    }
+
+    console.log('🔵 Schedule "' + text + '" log');
+    const timeoutId = setTimeout(onTimeout, 3000);
+
+    return () => {
+      console.log('🟡 Cancel "' + text + '" log');
+      clearTimeout(timeoutId);
+    };
+  }, [text]);
+
+  return (
+    <>
+      <label>
+        What to log:{' '}
+        <input
+          value={text}
+          onChange={e => setText(e.target.value)}
+        />
+      </label>
+      <h1>{text}</h1>
+    </>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Unmount' : 'Mount'} the component
+      </button>
+      {show && <hr />}
+      {show && <Playground />}
+    </>
+  );
+}
+```
+You will see three logs at first: `Schedule "a" log`, `Cancel "a" log`, and `Schedule "a" log` again. Three second later there will also be a log saying `a`. As you learned earlier, the extra schedule/cancel pair is because React remounts the component once in development to verify that you’ve implemented cleanup well.
+
+Now edit the input to say `abc`. If you do it fast enough, you’ll see `Schedule "ab" log` immediately followed by `Cancel "ab"` log and `Schedule "abc" log`. React always cleans up the previous render’s Effect before the next render’s Effect. This is why even if you type into the input fast, there is at most one timeout scheduled at a time. Edit the input a few times and watch the console to get a feel for how Effects get cleaned up.
+
+Type something into the input and then immediately press “Unmount the component”. Notice how unmounting cleans up the last render’s Effect. Here, it clears the last timeout before it has a chance to fire.
+
+Finally, edit the component above and comment out the cleanup function so that the timeouts don’t get cancelled. Try typing abcde fast. What do you expect to happen in three seconds? Will `console.log(text)` inside the timeout print the latest `text` and produce five `abcde` logs? Give it a try to check your intuition!
+
+Three seconds later, you should see a sequence of logs (`a`, `ab`, `abc`, `abcd`, and `abcde`) rather than five `abcde` logs. Each Effect “captures” the `text` value from its corresponding render.  It doesn’t matter that the `text` state changed: an Effect from the render with `text = 'ab'` will always see `'ab'`. In other words, Effects from each render are isolated from each other. If you’re curious how this works, you can read about closures.\
+corresponding [/kəˈrɛspɒndɪŋ/] 相应的，对应的\
+isolated [/ˈaɪsəleɪtɪd/] 隔离的，孤立的\
+curious [/ˈkjʊəriəs/] 好奇的，想知道的

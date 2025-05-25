@@ -4,26 +4,29 @@
 
 # 日志
 
+## 2025.5.22
+[React doc Tutorial:Synchronizing with Effects-Putting it all together](./English/React/Synchronizing-with-Effects.md)
+
 ## 2025.5.21
-[React doc Tutorial:Synchronizing with Effects-Not an Effect: Buying a product](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.20
-[React doc Tutorial:Synchronizing with Effects-Not an Effect: Initializing the application](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.19
-[React doc Tutorial:Synchronizing with Effects-Sending analytics](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.16
-[React doc Tutorial:Synchronizing with Effects-Fetching data](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.15
-[React doc Tutorial:Synchronizing with Effects-Triggering animations](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.14
-[React doc Tutorial:Synchronizing with Effects-Subscribing to events](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.13
-[React doc Tutorial:Synchronizing with Effects-Controlling non-React widgets](./English/React/Synchronizing-with-Effects.md)
+[React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
 
 ## 2025.5.12
 [React doc Tutorial:Synchronizing with Effects-How to handle the Effect firing twice in development?](./English/React/Synchronizing-with-Effects.md)
