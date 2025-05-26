@@ -749,3 +749,92 @@ Three seconds later, you should see a sequence of logs (`a`, `ab`, `abc`, `abcd`
 corresponding [/kəˈrɛspɒndɪŋ/] 相应的，对应的\
 isolated [/ˈaɪsəleɪtɪd/] 隔离的，孤立的\
 curious [/ˈkjʊəriəs/] 好奇的，想知道的
+
+### Each render has its own Effects
+You can think of `useEffect` as “attaching” a piece of behavior to the render output. Consider this Effect:
+
+```jsx
+export default function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+
+  return <h1>Welcome to {roomId}!</h1>;
+}
+```
+Let’s see what exactly happens as the user navigates around the app.
+
+#### Initial render
+The user visits `<ChatRoom roomId="general" />`. Let’s mentally substitute `roomId` with `'general'`:
+```jsx
+  // JSX for the first render (roomId = "general")
+  return <h1>Welcome to general!</h1>;
+```
+The Effect is also a part of the rendering output. The first render’s Effect becomes:
+```jsx
+  // Effect for the first render (roomId = "general")
+  () => {
+    const connection = createConnection('general');
+    connection.connect();
+    return () => connection.disconnect();
+  },
+  // Dependencies for the first render (roomId = "general")
+  ['general']
+```
+React runs this Effect, which connects to the `'general'` chat room.
+
+#### Re-render with same dependencies
+Let’s say `<ChatRoom roomId="general" />` re-renders. The JSX output is the same:
+```jsx
+  // JSX for the second render (roomId = "general")
+  return <h1>Welcome to general!</h1>;
+```
+React sees that the rendering output has not changed, so it doesn’t update the DOM.
+
+The Effect from the second render looks like this:
+```jsx
+  // Effect for the second render (roomId = "general")
+  () => {
+    const connection = createConnection('general');
+    connection.connect();
+    return () => connection.disconnect();
+  },
+  // Dependencies for the second render (roomId = "general")
+  ['general']
+```
+React compares `['general']` from the second render with `['general']` from the first render. Because all dependencies are the same, React ignores the Effect from the second render. It never gets called.
+
+#### Re-render with different dependencies
+Then, the user visits `<ChatRoom roomId="travel" />`. This time, the component returns different JSX:
+```jsx
+  // JSX for the third render (roomId = "travel")
+  return <h1>Welcome to travel!</h1>;
+```
+React updates the DOM to change `"Welcome to general"` into `"Welcome to travel"`.
+
+The Effect from the third render looks like this:
+
+```jsx
+  // Effect for the third render (roomId = "travel")
+  () => {
+    const connection = createConnection('travel');
+    connection.connect();
+    return () => connection.disconnect();
+  },
+  // Dependencies for the third render (roomId = "travel")
+  ['travel']
+```
+React compares `['travel']` from the third render with `['general']` from the second render. One dependency is different: `Object.is('travel', 'general')` is false. The Effect can’t be skipped.
+
+Before React can apply the Effect from the third render, it needs to clean up the last Effect that did run. The second render’s Effect was skipped, so React needs to clean up the first render’s Effect. If you scroll up to the first render, you’ll see that its cleanup calls `disconnect()` on the connection that was created with `createConnection('general')`. This disconnects the app from the `'general'` chat room.
+
+After that, React runs the third render’s Effect. It connects to the `'travel'` chat room.
+
+#### Unmount
+Finally, let’s say the user navigates away, and the `ChatRoom` component unmounts. React runs the last Effect’s cleanup function. The last Effect was from the third render. The third render’s cleanup destroys the `createConnection('travel')` connection. So the app disconnects from the `'travel'` room.
+
+#### Development-only behaviors
+When Strict Mode is on, React remounts every component once after mount (state and DOM are preserved). This helps you find Effects that need cleanup and exposes bugs like race conditions early. Additionally, React will remount the Effects whenever you save a file in development. Both of these behaviors are development-only.\
+preserve [/prɪˈzɜːrv/] 保护；保留  
