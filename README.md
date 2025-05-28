@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.27
+[React doc Tutorial:You Might Not Need an Effect](./English/React/You-Might-Not-Need-an-Effect.md)
+
 ## 2025.5.26
 [React doc Tutorial:Synchronizing with Effects-Recap](./English/React/Synchronizing-with-Effects.md)
 
