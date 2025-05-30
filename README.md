@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.5.29
+[React doc Tutorial:You Might Not Need an Effect-Next.js (App Router)](./English/React/You-Might-Not-Need-an-Effect.md)
+
 ## 2025.5.28
 [React doc Tutorial:You Might Not Need an Effect-How to remove unnecessary Effects](./English/React/You-Might-Not-Need-an-Effect.md)
 

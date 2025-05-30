@@ -30,3 +30,12 @@ mechanism [/ˈmekənɪzəm/] 机制；方法
 To help you gain the right intuition, let’s look at some common concrete examples!\
 intuition [/ˌɪntuˈɪʃən/] 直觉；直观\
 concrete [/ˈkɒnkriːt/] 具体的；实在的
+
+## Next.js (App Router)
+Next.js’s App Router is a React framework that takes full advantage of React’s architecture to enable full-stack React apps.\
+architecture [/ˈɑːrkɪtektʃər/] 架构；结构
+``` bash
+npx create-next-app@latest
+```
+Next.js is maintained by Vercel. You can deploy a Next.js app to any hosting provider that supports Node.js or Docker containers, or to your own server. Next.js also supports static export which doesn’t require a server.\
+maintained [/meɪnˈteɪnd/] 维护；保养
