@@ -28,14 +28,97 @@ synchronize [/ˈsɪŋkrənaɪz/] 同步\
 mechanism [/ˈmekənɪzəm/] 机制；方法
 
 To help you gain the right intuition, let’s look at some common concrete examples!\
+gain [/ɡeɪn/] 获得；取得\
 intuition [/ˌɪntuˈɪʃən/] 直觉；直观\
 concrete [/ˈkɒnkriːt/] 具体的；实在的
 
-## Next.js (App Router)
-Next.js’s App Router is a React framework that takes full advantage of React’s architecture to enable full-stack React apps.\
-architecture [/ˈɑːrkɪtektʃər/] 架构；结构
-``` bash
-npx create-next-app@latest
+### Updating state based on props or state
+Suppose you have a component with two state variables: `firstName` and `lastName`. You want to calculate a `fullName` from them by concatenating them. Moreover, you’d like `fullName` to update whenever `firstName` or `lastName` change. Your first instinct might be to add a `fullName` state variable and update it in an Effect:\
+concatenate [/kənˈkætəneɪt/] 连接；串联\
+moreover [/məˈrɔːvər/] 此外；而且\
+instinct [/ˈɪnstɪŋkt/] 本能；直觉
+```jsx
+function Form() {
+  const [firstName, setFirstName] = useState('Taylor');
+  const [lastName, setLastName] = useState('Swift');
+
+  // 🔴 Avoid: redundant state and unnecessary Effect
+  const [fullName, setFullName] = useState('');
+  useEffect(() => {
+    setFullName(firstName + ' ' + lastName);
+  }, [firstName, lastName]);
+  // ...
+}
 ```
-Next.js is maintained by Vercel. You can deploy a Next.js app to any hosting provider that supports Node.js or Docker containers, or to your own server. Next.js also supports static export which doesn’t require a server.\
-maintained [/meɪnˈteɪnd/] 维护；保养
+This is more complicated than necessary. It is inefficient too: it does an entire render pass with a stale value for `fullName`, then immediately re-renders with the updated value. Remove the state variable and the Effect:\
+complicate [/ˈkɒmplɪkeɪt/] 使复杂；使困难\
+inefficient [/ɪnɪˈfɪʃənt/] 低效的；无效率的\
+stale [/steɪl/] 陈旧的；过时的
+```jsx
+function Form() {
+  const [firstName, setFirstName] = useState('Taylor');
+  const [lastName, setLastName] = useState('Swift');
+  // ✅ Good: calculated during rendering
+  const fullName = firstName + ' ' + lastName;
+  // ...
+}
+```
+When something can be calculated from the existing props or state, don’t put it in state. Instead, calculate it during rendering. This makes your code faster (you avoid the extra “cascading” updates), simpler (you remove some code), and less error-prone (you avoid bugs caused by different state variables getting out of sync with each other). If this approach feels new to you, Thinking in React explains what should go into state.\
+cascading [/kæˈskeɪdɪŋ/] 级联的；连锁的\
+simpler [/ˈsɪmplər/] 更简单的；更简洁的\
+prone [/proʊn/] 易于；倾向于
+
+### Caching expensive calculations
+This component computes `visibleTodos` by taking the `todos` it receives by props and filtering them according to the `filter` prop. You might feel tempted to store the result in state and update it from an Effect:
+```jsx
+function TodoList({ todos, filter }) {
+  const [newTodo, setNewTodo] = useState('');
+
+  // 🔴 Avoid: redundant state and unnecessary Effect
+  const [visibleTodos, setVisibleTodos] = useState([]);
+  useEffect(() => {
+    setVisibleTodos(getFilteredTodos(todos, filter));
+  }, [todos, filter]);
+
+  // ...
+}
+```
+Like in the earlier example, this is both unnecessary and inefficient. First, remove the state and the Effect:
+```jsx
+function TodoList({ todos, filter }) {
+  const [newTodo, setNewTodo] = useState('');
+  // ✅ This is fine if getFilteredTodos() is not slow.
+  const visibleTodos = getFilteredTodos(todos, filter);
+  // ...
+}
+```
+Usually, this code is fine! But maybe `getFilteredTodos()` is slow or you have a lot of `todos`. In that case you don’t want to recalculate `getFilteredTodos()` if some unrelated state variable like `newTodo` has changed.
+
+You can cache (or “memoize”) an expensive calculation by wrapping it in a `useMemo` Hook:
+```jsx
+import { useMemo, useState } from 'react';
+
+function TodoList({ todos, filter }) {
+  const [newTodo, setNewTodo] = useState('');
+  const visibleTodos = useMemo(() => {
+    // ✅ Does not re-run unless todos or filter change
+    return getFilteredTodos(todos, filter);
+  }, [todos, filter]);
+  // ...
+}
+```
+Or, written as a single line:
+
+```jsx
+import { useMemo, useState } from 'react';
+
+function TodoList({ todos, filter }) {
+  const [newTodo, setNewTodo] = useState('');
+  // ✅ Does not re-run getFilteredTodos() unless todos or filter change
+  const visibleTodos = useMemo(() => getFilteredTodos(todos, filter), [todos, filter]);
+  // ...
+}
+```
+This tells React that you don’t want the inner function to re-run unless either `todos` or `filter` have changed. React will remember the return value of `getFilteredTodos()` during the initial render. During the next renders, it will check if `todos` or `filter` are different. If they’re the same as last time, `useMemo` will return the last result it has stored. But if they are different, React will call the inner function again (and store its result).
+
+The function you wrap in `useMemo` runs during rendering, so this only works for pure calculations.
