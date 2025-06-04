@@ -122,3 +122,32 @@ function TodoList({ todos, filter }) {
 This tells React that you don’t want the inner function to re-run unless either `todos` or `filter` have changed. React will remember the return value of `getFilteredTodos()` during the initial render. During the next renders, it will check if `todos` or `filter` are different. If they’re the same as last time, `useMemo` will return the last result it has stored. But if they are different, React will call the inner function again (and store its result).
 
 The function you wrap in `useMemo` runs during rendering, so this only works for pure calculations.
+
+#### How to tell if a calculation is expensive?
+In general, unless you’re creating or looping over thousands of objects, it’s probably not expensive. If you want to get more confidence, you can add a console log to measure the time spent in a piece of code:
+```jsx
+console.time('filter array');
+const visibleTodos = getFilteredTodos(todos, filter);
+console.timeEnd('filter array');
+```
+Perform the interaction you’re measuring (for example, typing into the input). You will then see logs like `filter array: 0.15ms` in your console. If the overall logged time adds up to a significant amount (say, 1ms or more), it might make sense to memoize that calculation. As an experiment, you can then wrap the calculation in `useMemo` to verify whether the total logged time has decreased for that interaction or not:\
+perform [/pərˈfɔːrm/] 执行；进行\
+overall [/ˈoʊvərɔːl/] 整体的；总的\
+significant [/sɪɡˈnɪfɪkənt/] 显著的；重要的\
+experiment [/ɪkˈsperɪmənt/] 实验；尝试\
+decrease [/dɪˈkriːs/] 减少；降低
+```jsx
+console.time('filter array');
+const visibleTodos = useMemo(() => {
+  return getFilteredTodos(todos, filter); // Skipped if todos and filter haven't changed
+}, [todos, filter]);
+console.timeEnd('filter array');
+```
+`useMemo` won’t make the first render faster. It only helps you skip unnecessary work on updates.
+
+Keep in mind that your machine is probably faster than your users’ so it’s a good idea to test the performance with an artificial slowdown. For example, Chrome offers a CPU Throttling option for this.\
+artificial [/ˌɑːrtɪˈfɪʃl/] 人工的；人造的\
+slowdown [/ˈsloʊdaʊn/] 减速；放慢
+
+Also note that measuring performance in development will not give you the most accurate results. (For example, when Strict Mode is on, you will see each component render twice rather than once.) To get the most accurate timings, build your app for production and test it on a device like your users have.\
+accurate [/ˈækjərət/] 准确的；精确的
