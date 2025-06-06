@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.6.4
+[React doc Tutorial:You Might Not Need an Effect-How to remove unnecessary Effects](./English/React/You-Might-Not-Need-an-Effect.md)
+
 ## 2025.6.3
 [React doc Tutorial:You Might Not Need an Effect-How to remove unnecessary Effects](./English/React/You-Might-Not-Need-an-Effect.md)
 

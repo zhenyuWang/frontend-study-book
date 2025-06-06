@@ -188,3 +188,55 @@ function Profile({ userId }) {
 Normally, React preserves the state when the same component is rendered in the same spot. By passing `userId` as a key to the `Profile` component, you’re asking React to treat two `Profile` components with different `userId` as two different components that should not share any state. Whenever the key (which you’ve set to `userId`) changes, React will recreate the DOM and reset the state of the `Profile` component and all of its children. Now the comment field will clear out automatically when navigating between profiles.
 
 Note that in this example, only the outer `ProfilePage` component is exported and visible to other files in the project. Components rendering `ProfilePage` don’t need to pass the key to it: they pass `userId` as a regular prop. The fact `ProfilePage` passes it as a key to the inner `Profile` component is an implementation detail.
+
+### Adjusting some state when a prop changes
+Sometimes, you might want to reset or adjust a part of the state on a prop change, but not all of it.
+
+This `List` component receives a list of items as a prop, and maintains the selected item in the `selection` state variable. You want to reset the `selection` to `null` whenever the items prop receives a different array:\
+maintain [/meɪnˈteɪn/] 维护；保持\
+```jsx
+function List({ items }) {
+  const [isReverse, setIsReverse] = useState(false);
+  const [selection, setSelection] = useState(null);
+
+  // 🔴 Avoid: Adjusting state on prop change in an Effect
+  useEffect(() => {
+    setSelection(null);
+  }, [items]);
+  // ...
+}
+```
+This, too, is not ideal. Every time the `items` change, the List and its child components will render with a stale `selection` value at first. Then React will update the DOM and run the Effects. Finally, the `setSelection(null)` call will cause another re-render of the `List` and its child components, restarting this whole process again.
+
+Start by deleting the Effect. Instead, adjust the state directly during rendering:
+```jsx
+function List({ items }) {
+  const [isReverse, setIsReverse] = useState(false);
+  const [selection, setSelection] = useState(null);
+
+  // Better: Adjust the state while rendering
+  const [prevItems, setPrevItems] = useState(items);
+  if (items !== prevItems) {
+    setPrevItems(items);
+    setSelection(null);
+  }
+  // ...
+}
+```
+Storing information from previous renders like this can be hard to understand, but it’s better than updating the same state in an Effect. In the above example, `setSelection` is called directly during a render. React will re-render the `List` immediately after it exits with a `return` statement. React has not rendered the `List` children or updated the DOM yet, so this lets the `List` children skip rendering the stale `selection` value.
+
+When you update a component during rendering, React throws away the returned JSX and immediately retries rendering. To avoid very slow cascading retries, React only lets you update the same component’s state during a render. If you update another component’s state during a render, you’ll see an error. A condition like `items !== prevItems` is necessary to avoid loops. You may adjust state like this, but any other side effects (like changing the DOM or setting timeouts) should stay in event handlers or Effects to keep components pure.\
+cascade [/kæˈskeɪd/] 级联；连锁
+
+Although this pattern is more efficient than an Effect, most components shouldn’t need it either. No matter how you do it, adjusting state based on props or other state makes your data flow more difficult to understand and debug. Always check whether you can reset all state with a key or calculate everything during rendering instead. For example, instead of storing (and resetting) the selected item, you can store the selected item ID:
+```jsx
+function List({ items }) {
+  const [isReverse, setIsReverse] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  // ✅ Best: Calculate everything during rendering
+  const selection = items.find(item => item.id === selectedId) ?? null;
+  // ...
+}
+```
+Now there is no need to “adjust” the state at all. If the item with the selected ID is in the list, it remains selected. If it’s not, the `selection` calculated during rendering will be `null` because no matching item was found. This behavior is different, but arguably better because most changes to `items` preserve the selection.\
+arguably [/ˈɑːrɡjuəbli/] 可论证地；可以说
