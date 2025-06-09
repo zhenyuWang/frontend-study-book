@@ -343,3 +343,95 @@ function Form() {
 }
 ```
 When you choose whether to put some logic into an event handler or an Effect, the main question you need to answer is what kind of logic it is from the user’s perspective. If this logic is caused by a particular interaction, keep it in the event handler. If it’s caused by the user seeing the component on the screen, keep it in the Effect.
+
+### Chains of computations
+Sometimes you might feel tempted to chain Effects that each adjust a piece of state based on other state:
+```jsx
+function Game() {
+  const [card, setCard] = useState(null);
+  const [goldCardCount, setGoldCardCount] = useState(0);
+  const [round, setRound] = useState(1);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  // 🔴 Avoid: Chains of Effects that adjust the state solely to trigger each other
+  useEffect(() => {
+    if (card !== null && card.gold) {
+      setGoldCardCount(c => c + 1);
+    }
+  }, [card]);
+
+  useEffect(() => {
+    if (goldCardCount > 3) {
+      setRound(r => r + 1)
+      setGoldCardCount(0);
+    }
+  }, [goldCardCount]);
+
+  useEffect(() => {
+    if (round > 5) {
+      setIsGameOver(true);
+    }
+  }, [round]);
+
+  useEffect(() => {
+    alert('Good game!');
+  }, [isGameOver]);
+
+  function handlePlaceCard(nextCard) {
+    if (isGameOver) {
+      throw Error('Game already ended.');
+    } else {
+      setCard(nextCard);
+    }
+  }
+
+  // ...
+```
+There are two problems with this code.
+
+The first problem is that it is very inefficient: the component (and its children) have to re-render between each `set` call in the chain. In the example above, in the worst case (`setCard` → render → `setGoldCardCount` → render → `setRound` → render → `setIsGameOver` → render) there are three unnecessary re-renders of the tree below.
+
+The second problem is that even if it weren’t slow, as your code evolves, you will run into cases where the “chain” you wrote doesn’t fit the new requirements. Imagine you are adding a way to step through the history of the game moves. You’d do it by updating each state variable to a value from the past. However, setting the `card` state to a value from the past would trigger the Effect chain again and change the data you’re showing. Such code is often rigid and fragile.\
+evolve [/ɪˈvɒlv/] 发展；演变\
+requirement [/rɪˈkwaɪərmənt/] 要求；需求\
+rigid [/ˈrɪdʒɪd/] 僵硬的；不灵活的\
+fragile [/ˈfrædʒaɪl/] 脆弱的；易碎的
+
+In this case, it’s better to calculate what you can during rendering, and adjust the state in the event handler:
+```jsx
+function Game() {
+  const [card, setCard] = useState(null);
+  const [goldCardCount, setGoldCardCount] = useState(0);
+  const [round, setRound] = useState(1);
+
+  // ✅ Calculate what you can during rendering
+  const isGameOver = round > 5;
+
+  function handlePlaceCard(nextCard) {
+    if (isGameOver) {
+      throw Error('Game already ended.');
+    }
+
+    // ✅ Calculate all the next state in the event handler
+    setCard(nextCard);
+    if (nextCard.gold) {
+      if (goldCardCount <= 3) {
+        setGoldCardCount(goldCardCount + 1);
+      } else {
+        setGoldCardCount(0);
+        setRound(round + 1);
+        if (round === 5) {
+          alert('Good game!');
+        }
+      }
+    }
+  }
+
+  // ...
+```
+This is a lot more efficient. Also, if you implement a way to view game history, now you will be able to set each state variable to a move from the past without triggering the Effect chain that adjusts every other value. If you need to reuse logic between several event handlers, you can extract a function and call it from those handlers.
+
+Remember that inside event handlers, state behaves like a snapshot. For example, even after you call `setRound(round + 1)`, the `round` variable will reflect the value at the time the user clicked the button. If you need to use the next value for calculations, define it manually like `const nextRound = round + 1`.
+
+In some cases, you can’t calculate the next state directly in the event handler. For example, imagine a form with multiple dropdowns where the options of the next dropdown depend on the selected value of the previous dropdown. Then, a chain of Effects is appropriate because you are synchronizing with network.\
+appropriate [/əˈprəʊpriət/] 适当的；合适的
