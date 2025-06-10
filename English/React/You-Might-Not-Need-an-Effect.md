@@ -435,3 +435,56 @@ Remember that inside event handlers, state behaves like a snapshot. For example,
 
 In some cases, you can’t calculate the next state directly in the event handler. For example, imagine a form with multiple dropdowns where the options of the next dropdown depend on the selected value of the previous dropdown. Then, a chain of Effects is appropriate because you are synchronizing with network.\
 appropriate [/əˈprəʊpriət/] 适当的；合适的
+
+### Initializing the application
+Some logic should only run once when the app loads.
+
+You might be tempted to place it in an Effect in the top-level component:
+```jsx
+function App() {
+  // 🔴 Avoid: Effects with logic that should only ever run once
+  useEffect(() => {
+    loadDataFromLocalStorage();
+    checkAuthToken();
+  }, []);
+  // ...
+}
+```
+However, you’ll quickly discover that it runs twice in development. This can cause issues—for example, maybe it invalidates the authentication token because the function wasn’t designed to be called twice. In general, your components should be resilient to being remounted. This includes your top-level App component.\
+resilient [/rɪˈzɪlɪənt/] 有弹性的；有适应力的
+
+Although it may not ever get remounted in practice in production, following the same constraints in all components makes it easier to move and reuse code. If some logic must run once per app load rather than once per component mount, add a top-level variable to track whether it has already executed:\
+practice [/ˈpræktɪs/] 实践；实际操作\
+constraint [/kənˈstreɪnt/] 约束；限制
+
+```jsx
+let didInit = false;
+
+function App() {
+  useEffect(() => {
+    if (!didInit) {
+      didInit = true;
+      // ✅ Only runs once per app load
+      loadDataFromLocalStorage();
+      checkAuthToken();
+    }
+  }, []);
+  // ...
+}
+```
+You can also run it during module initialization and before the app renders:
+```jsx
+if (typeof window !== 'undefined') { // Check if we're running in the browser.
+   // ✅ Only runs once per app load
+  checkAuthToken();
+  loadDataFromLocalStorage();
+}
+
+function App() {
+  // ...
+}
+```
+Code at the top level runs once when your component is imported—even if it doesn’t end up being rendered. To avoid slowdown or surprising behavior when importing arbitrary components, don’t overuse this pattern. Keep app-wide initialization logic to root component modules like `App.js` or in your application’s entry point.\
+surprise [/sərˈpraɪz/] 使惊讶；使吃惊\
+arbitrary [/ˈɑːrbɪtrəri/] 任意的；随意的\
+overuse [/ˌoʊvərˈjuːs/] 过度使用；滥用\
