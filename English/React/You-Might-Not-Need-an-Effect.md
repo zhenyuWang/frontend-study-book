@@ -565,3 +565,40 @@ function Toggle({ isOn, onChange }) {
 }
 ```
 “Lifting state up” lets the parent component fully control the `Toggle` by toggling the parent’s own state. This means the parent component will have to contain more logic, but there will be less state overall to worry about. Whenever you try to keep two different state variables synchronized, try lifting state up instead!
+
+### Passing data to the parent
+This `Child` component fetches some data and then passes it to the `Parent` component in an Effect:
+```jsx
+function Parent() {
+  const [data, setData] = useState(null);
+  // ...
+  return <Child onFetched={setData} />;
+}
+
+function Child({ onFetched }) {
+  const data = useSomeAPI();
+  // 🔴 Avoid: Passing data to the parent in an Effect
+  useEffect(() => {
+    if (data) {
+      onFetched(data);
+    }
+  }, [onFetched, data]);
+  // ...
+}
+```
+In React, data flows from the parent components to their children. When you see something wrong on the screen, you can trace where the information comes from by going up the component chain until you find which component passes the wrong prop or has the wrong state. When child components update the state of their parent components in Effects, the data flow becomes very difficult to trace. Since both the child and the parent need the same data, let the parent component fetch that data, and pass it down to the child instead:
+
+```jsx
+function Parent() {
+  const data = useSomeAPI();
+  // ...
+  // ✅ Good: Passing data down to the child
+  return <Child data={data} />;
+}
+
+function Child({ data }) {
+  // ...
+}
+```
+This is simpler and keeps the data flow predictable: the data flows down from the parent to the child.\
+predictable [/prɪˈdɪktəbl/] 可预测的；可预见的
