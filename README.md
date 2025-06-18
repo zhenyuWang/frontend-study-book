@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.6.18
+[React doc Tutorial:Lifecycle of Reactive Effects](./English/React/Lifecycle-of-Reactive-Effects.md)
+
 ## 2025.6.17
 [React doc Tutorial:You Might Not Need an Effect-Recap](./English/React/You-Might-Not-Need-an-Effect.md)
 
