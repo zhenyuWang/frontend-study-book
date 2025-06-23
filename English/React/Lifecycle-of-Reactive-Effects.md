@@ -107,3 +107,34 @@ At this point, you want React to do two things:
 2. Start synchronizing with the new roomId (connect to the `"travel"` room)
 
 Luckily, you’ve already taught React how to do both of these things! Your Effect’s body specifies how to start synchronizing, and your cleanup function specifies how to stop synchronizing. All that React needs to do now is to call them in the correct order and with the correct props and state. Let’s see how exactly that happens.
+
+### How React re-synchronizes your Effect
+Recall that your `ChatRoom` component has received a new value for its `roomId` prop. It used to be `"general"`, and now it is `"travel"`. React needs to re-synchronize your Effect to re-connect you to a different room.
+
+To stop synchronizing, React will call the cleanup function that your Effect returned after connecting to the `"general"` room. Since `roomId` was `"general"`, the cleanup function disconnects from the `"general"` room:
+```jsx
+function ChatRoom({ roomId /* "general" */ }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId); // Connects to the "general" room
+    connection.connect();
+    return () => {
+      connection.disconnect(); // Disconnects from the "general" room
+    };
+    // ...
+```
+Then React will run the Effect that you’ve provided during this render. This time, `roomId` is `"travel"` so it will start synchronizing to the `"travel"` chat room (until its cleanup function is eventually called too):\
+eventually [/ɪˈventʃuəli/] adv. 最终，最后
+```jsx
+function ChatRoom({ roomId /* "travel" */ }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId); // Connects to the "travel" room
+    connection.connect();
+    // ...
+```
+Thanks to this, you’re now connected to the same room that the user chose in the UI. Disaster averted!\
+disaster [/dɪˈzæstər/] n. 灾难，灾祸\
+averted [/əˈvɜːrtɪd/] v. 避免，防止
+
+Every time after your component re-renders with a different `roomId`, your Effect will re-synchronize. For example, let’s say the user changes `roomId` from `"travel"` to `"music"`. React will again stop synchronizing your Effect by calling its cleanup function (disconnecting you from the `"travel"` room). Then it will start synchronizing again by running its body with the new `roomId` prop (connecting you to the `"music"` room).
+
+Finally, when the user goes to a different screen, `ChatRoom` unmounts. Now there is no need to stay connected at all. React will stop synchronizing your Effect one last time and disconnect you from the `"music"` chat room.
