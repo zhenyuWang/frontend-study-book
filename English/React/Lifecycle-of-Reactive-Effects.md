@@ -138,3 +138,42 @@ averted [/əˈvɜːrtɪd/] v. 避免，防止
 Every time after your component re-renders with a different `roomId`, your Effect will re-synchronize. For example, let’s say the user changes `roomId` from `"travel"` to `"music"`. React will again stop synchronizing your Effect by calling its cleanup function (disconnecting you from the `"travel"` room). Then it will start synchronizing again by running its body with the new `roomId` prop (connecting you to the `"music"` room).
 
 Finally, when the user goes to a different screen, `ChatRoom` unmounts. Now there is no need to stay connected at all. React will stop synchronizing your Effect one last time and disconnect you from the `"music"` chat room.
+
+### Thinking from the Effect’s perspective 
+Let’s recap everything that’s happened from the ChatRoom component’s perspective:
+
+1. ChatRoom mounted with roomId set to "general"
+2. ChatRoom updated with roomId set to "travel"
+3. ChatRoom updated with roomId set to "music"
+4. ChatRoom unmounted
+
+During each of these points in the component’s lifecycle, your Effect did different things:
+
+1. Your Effect connected to the "general" room
+2. Your Effect disconnected from the "general" room and connected to the "travel" room
+3. Your Effect disconnected from the "travel" room and connected to the "music" room
+4. Your Effect disconnected from the "music" room
+
+Now let’s think about what happened from the perspective of the Effect itself:
+```jsx
+  useEffect(() => {
+    // Your Effect connected to the room specified with roomId...
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      // ...until it disconnected
+      connection.disconnect();
+    };
+  }, [roomId]);
+```
+This code’s structure might inspire you to see what happened as a sequence of non-overlapping time periods:
+
+1. Your Effect connected to the "general" room (until it disconnected)
+2. Your Effect connected to the "travel" room (until it disconnected)
+3. Your Effect connected to the "music" room (until it disconnected)
+
+Previously, you were thinking from the component’s perspective. When you looked from the component’s perspective, it was tempting to think of Effects as “callbacks” or “lifecycle events” that fire at a specific time like “after a render” or “before unmount”. This way of thinking gets complicated very fast, so it’s best to avoid.
+
+Instead, always focus on a single start/stop cycle at a time. It shouldn’t matter whether a component is mounting, updating, or unmounting. All you need to do is to describe how to start synchronization and how to stop it. If you do it well, your Effect will be resilient to being started and stopped as many times as it’s needed.
+
+This might remind you how you don’t think whether a component is mounting or updating when you write the rendering logic that creates JSX. You describe what should be on the screen, and React figures out the rest.
