@@ -140,19 +140,19 @@ Every time after your component re-renders with a different `roomId`, your Effec
 Finally, when the user goes to a different screen, `ChatRoom` unmounts. Now there is no need to stay connected at all. React will stop synchronizing your Effect one last time and disconnect you from the `"music"` chat room.
 
 ### Thinking from the Effect’s perspective 
-Let’s recap everything that’s happened from the ChatRoom component’s perspective:
+Let’s recap everything that’s happened from the `ChatRoom` component’s perspective:
 
-1. ChatRoom mounted with roomId set to "general"
-2. ChatRoom updated with roomId set to "travel"
-3. ChatRoom updated with roomId set to "music"
-4. ChatRoom unmounted
+1. `ChatRoom` mounted with `roomId` set to `"general"`
+2. `ChatRoom` updated with `roomId` set to `"travel"`
+3. `ChatRoom` updated with `roomId` set to `"music"`
+4. `ChatRoom` unmounted
 
 During each of these points in the component’s lifecycle, your Effect did different things:
 
-1. Your Effect connected to the "general" room
-2. Your Effect disconnected from the "general" room and connected to the "travel" room
-3. Your Effect disconnected from the "travel" room and connected to the "music" room
-4. Your Effect disconnected from the "music" room
+1. Your Effect connected to the `"general"` room
+2. Your Effect disconnected from the `"general"` room and connected to the `"travel"` room
+3. Your Effect disconnected from the `"travel"` room and connected to the `"music"` room
+4. Your Effect disconnected from the `"music"` room
 
 Now let’s think about what happened from the perspective of the Effect itself:
 ```jsx
@@ -166,14 +166,90 @@ Now let’s think about what happened from the perspective of the Effect itself:
     };
   }, [roomId]);
 ```
-This code’s structure might inspire you to see what happened as a sequence of non-overlapping time periods:
+This code’s structure might inspire you to see what happened as a sequence of non-overlapping time periods:\
+inspire [/ɪnˈspaɪər/] v. 激励，鼓舞\
+sequence [/ˈsiːkwəns/] n. 顺序，连续\
+overlapping [/ˌoʊvərˈlæpɪŋ/] adj. 重叠的
 
-1. Your Effect connected to the "general" room (until it disconnected)
-2. Your Effect connected to the "travel" room (until it disconnected)
-3. Your Effect connected to the "music" room (until it disconnected)
+1. Your Effect connected to the `"general"` room (until it disconnected)
+2. Your Effect connected to the `"travel"` room (until it disconnected)
+3. Your Effect connected to the `"music"` room (until it disconnected)
 
-Previously, you were thinking from the component’s perspective. When you looked from the component’s perspective, it was tempting to think of Effects as “callbacks” or “lifecycle events” that fire at a specific time like “after a render” or “before unmount”. This way of thinking gets complicated very fast, so it’s best to avoid.
+Previously, you were thinking from the component’s perspective. When you looked from the component’s perspective, it was tempting to think of Effects as “callbacks” or “lifecycle events” that fire at a specific time like “after a render” or “before unmount”. This way of thinking gets complicated very fast, so it’s best to avoid.\
+tempting [/ˈtemptɪŋ/] adj. 诱人的，吸引人的\
+fire [/faɪər/] v. 开火，触发\
+complicated [/ˈkɑːmplɪkeɪtɪd/] adj. 复杂的，难懂的
 
-Instead, always focus on a single start/stop cycle at a time. It shouldn’t matter whether a component is mounting, updating, or unmounting. All you need to do is to describe how to start synchronization and how to stop it. If you do it well, your Effect will be resilient to being started and stopped as many times as it’s needed.
+Instead, always focus on a single start/stop cycle at a time. It shouldn’t matter whether a component is mounting, updating, or unmounting. All you need to do is to describe how to start synchronization and how to stop it. If you do it well, your Effect will be resilient to being started and stopped as many times as it’s needed.\
+resilient [/rɪˈzɪliənt/] adj. 有弹性的，适应力强的
 
 This might remind you how you don’t think whether a component is mounting or updating when you write the rendering logic that creates JSX. You describe what should be on the screen, and React figures out the rest.
+
+### How React verifies that your Effect can re-synchronize 
+Here is a live example that you can play with. Press “Open chat” to mount the `ChatRoom` component:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+  return <h1>Welcome to the {roomId} room!</h1>;
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Close chat' : 'Open chat'}
+      </button>
+      {show && <hr />}
+      {show && <ChatRoom roomId={roomId} />}
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting to "' + roomId + '" room at ' + serverUrl + '...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected from "' + roomId + '" room at ' + serverUrl);
+    }
+  };
+}
+```
+Notice that when the component mounts for the first time, you see three logs:
+
+1. ✅ Connecting to "general" room at https://localhost:1234... (development-only)
+2. ❌ Disconnected from "general" room at https://localhost:1234. (development-only)
+3. ✅ Connecting to "general" room at https://localhost:1234...
+
+The first two logs are development-only. In development, React always remounts each component once.
+
+React verifies that your Effect can re-synchronize by forcing it to do that immediately in development. This might remind you of opening a door and closing it an extra time to check if the door lock works. React starts and stops your Effect one extra time in development to check you’ve implemented its cleanup well.
+
+The main reason your Effect will re-synchronize in practice is if some data it uses has changed. In the sandbox above, change the selected chat room. Notice how, when the `roomId` changes, your Effect re-synchronizes.
+
+However, there are also more unusual cases in which re-synchronization is necessary. For example, try editing the `serverUrl` in the sandbox above while the chat is open. Notice how the Effect re-synchronizes in response to your edits to the code. In the future, React may add more features that rely on re-synchronization.
