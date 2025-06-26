@@ -253,3 +253,26 @@ React verifies that your Effect can re-synchronize by forcing it to do that imme
 The main reason your Effect will re-synchronize in practice is if some data it uses has changed. In the sandbox above, change the selected chat room. Notice how, when the `roomId` changes, your Effect re-synchronizes.
 
 However, there are also more unusual cases in which re-synchronization is necessary. For example, try editing the `serverUrl` in the sandbox above while the chat is open. Notice how the Effect re-synchronizes in response to your edits to the code. In the future, React may add more features that rely on re-synchronization.
+
+### How React knows that it needs to re-synchronize the Effect 
+You might be wondering how React knew that your Effect needed to re-synchronize after `roomId` changes. It’s because you told React that its code depends on `roomId` by including it in the list of dependencies:
+```jsx
+function ChatRoom({ roomId }) { // The roomId prop may change over time
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId); // This Effect reads roomId 
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId]); // So you tell React that this Effect "depends on" roomId
+  // ...
+```
+Here’s how this works:
+
+1. You knew `roomId` is a prop, which means it can change over time.
+2. You knew that your Effect reads `roomId` (so its logic depends on a value that may change later).
+3. This is why you specified it as your Effect’s dependency (so that it re-synchronizes when `roomId` changes).
+
+Every time after your component re-renders, React will look at the array of dependencies that you have passed. If any of the values in the array is different from the value at the same spot that you passed during the previous render, React will re-synchronize your Effect.
+
+For example, if you passed `["general"]` during the initial render, and later you passed `["travel"]` during the next render, React will compare `"general"` and `"travel"`. These are different values (compared with `Object.is`), so React will re-synchronize your Effect. On the other hand, if your component re-renders but `roomId` has not changed, your Effect will remain connected to the same room.
