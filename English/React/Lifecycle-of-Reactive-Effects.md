@@ -276,3 +276,44 @@ Here’s how this works:
 Every time after your component re-renders, React will look at the array of dependencies that you have passed. If any of the values in the array is different from the value at the same spot that you passed during the previous render, React will re-synchronize your Effect.
 
 For example, if you passed `["general"]` during the initial render, and later you passed `["travel"]` during the next render, React will compare `"general"` and `"travel"`. These are different values (compared with `Object.is`), so React will re-synchronize your Effect. On the other hand, if your component re-renders but `roomId` has not changed, your Effect will remain connected to the same room.
+
+### Each Effect represents a separate synchronization process
+Resist adding unrelated logic to your Effect only because this logic needs to run at the same time as an Effect you already wrote. For example, let’s say you want to send an analytics event when the user visits the room. You already have an Effect that depends on roomId, so you might feel tempted to add the analytics call there:\
+represent [/rɪˈprɪzent/] v. 代表，表现\
+separate [/ˈsepərət/] adj. 分开的，独立的\
+resist [/rɪˈzɪst/] v. 抵抗，抵制
+```jsx
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    logVisit(roomId);
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId]);
+  // ...
+}
+```
+But imagine you later add another dependency to this Effect that needs to re-establish the connection. If this Effect re-synchronizes, it will also call `logVisit(roomId)` for the same room, which you did not intend. Logging the visit is a separate process from connecting. Write them as two separate Effects:\
+establish [/ɪˈstæblɪʃ/] v. 建立，确立\
+intend [/ɪnˈtend/] v. 打算，计划
+```jsx
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    logVisit(roomId);
+  }, [roomId]);
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    // ...
+  }, [roomId]);
+  // ...
+}
+```
+Each Effect in your code should represent a separate and independent synchronization process.
+
+In the above example, deleting one Effect wouldn’t break the other Effect’s logic. This is a good indication that they synchronize different things, and so it made sense to split them up. On the other hand, if you split up a cohesive piece of logic into separate Effects, the code may look “cleaner” but will be more difficult to maintain. This is why you should think whether the processes are same or separate, not whether the code looks cleaner.\
+indication [/ˌɪndɪˈkeɪʃn/] n. 指示，迹象\
+cohesive [/koʊˈhiːsɪv/] adj. 有凝聚力的，内聚的\
+maintain [/meɪnˈteɪn/] v. 维护，保持
