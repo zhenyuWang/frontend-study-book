@@ -317,3 +317,107 @@ In the above example, deleting one Effect wouldn’t break the other Effect’s 
 indication [/ˌɪndɪˈkeɪʃn/] n. 指示，迹象\
 cohesive [/koʊˈhiːsɪv/] adj. 有凝聚力的，内聚的\
 maintain [/meɪnˈteɪn/] v. 维护，保持
+
+### Effects “react” to reactive values
+Your Effect reads two variables (`serverUrl` and `roomId`), but you only specified `roomId` as a dependency:
+```jsx
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId]);
+  // ...
+}
+```
+Why doesn’t `serverUrl` need to be a dependency?
+
+This is because the `serverUrl` never changes due to a re-render. It’s always the same no matter how many times the component re-renders and why. Since `serverUrl` never changes, it wouldn’t make sense to specify it as a dependency. After all, dependencies only do something when they change over time!
+
+On the other hand, `roomId` may be different on a re-render. Props, state, and other values declared inside the component are reactive because they’re calculated during rendering and participate in the React data flow.
+
+If `serverUrl` was a state variable, it would be reactive. Reactive values must be included in dependencies:
+
+```jsx
+function ChatRoom({ roomId }) { // Props change over time
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234'); // State may change over time
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId); // Your Effect reads props and state
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId, serverUrl]); // So you tell React that this Effect "depends on" on props and state
+  // ...
+}
+```
+By including `serverUrl` as a dependency, you ensure that the Effect re-synchronizes after it changes.
+
+Try changing the selected chat room or edit the server URL in this sandbox:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId, serverUrl]);
+
+  return (
+    <>
+      <label>
+        Server URL:{' '}
+        <input
+          value={serverUrl}
+          onChange={e => setServerUrl(e.target.value)}
+        />
+      </label>
+      <h1>Welcome to the {roomId} room!</h1>
+    </>
+  );
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <hr />
+      <ChatRoom roomId={roomId} />
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting to "' + roomId + '" room at ' + serverUrl + '...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected from "' + roomId + '" room at ' + serverUrl);
+    }
+  };
+}
+```
+Whenever you change a reactive value like `roomId` or `serverUrl`, the Effect re-connects to the chat server.
