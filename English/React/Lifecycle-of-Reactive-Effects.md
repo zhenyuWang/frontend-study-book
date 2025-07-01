@@ -318,7 +318,7 @@ indication [/ˌɪndɪˈkeɪʃn/] n. 指示，迹象\
 cohesive [/koʊˈhiːsɪv/] adj. 有凝聚力的，内聚的\
 maintain [/meɪnˈteɪn/] v. 维护，保持
 
-### Effects “react” to reactive values
+## Effects “react” to reactive values
 Your Effect reads two variables (`serverUrl` and `roomId`), but you only specified `roomId` as a dependency:
 ```jsx
 const serverUrl = 'https://localhost:1234';
@@ -421,3 +421,68 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 Whenever you change a reactive value like `roomId` or `serverUrl`, the Effect re-connects to the chat server.
+
+### What an Effect with empty dependencies means 
+What happens if you move both `serverUrl` and `roomId` outside the component?
+```jsx
+const serverUrl = 'https://localhost:1234';
+const roomId = 'general';
+
+function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, []); // ✅ All dependencies declared
+  // ...
+}
+```
+Now your Effect’s code does not use any reactive values, so its dependencies can be empty (`[]`).
+
+Thinking from the component’s perspective, the empty `[]` dependency array means this Effect connects to the chat room only when the component mounts, and disconnects only when the component unmounts. (Keep in mind that React would still re-synchronize it an extra time in development to stress-test your logic.)\
+perspective [/pərˈspektɪv/] n. 观点，视角
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+const serverUrl = 'https://localhost:1234';
+const roomId = 'general';
+
+function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, []);
+  return <h1>Welcome to the {roomId} room!</h1>;
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Close chat' : 'Open chat'}
+      </button>
+      {show && <hr />}
+      {show && <ChatRoom />}
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting to "' + roomId + '" room at ' + serverUrl + '...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected from "' + roomId + '" room at ' + serverUrl);
+    }
+  };
+}
+```
+However, if you think from the Effect’s perspective, you don’t need to think about mounting and unmounting at all. What’s important is you’ve specified what your Effect does to start and stop synchronizing. Today, it has no reactive dependencies. But if you ever want the user to change `roomId` or `serverUrl` over time (and they would become reactive), your Effect’s code won’t change. You will only need to add them to the dependencies.

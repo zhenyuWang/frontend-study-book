@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2025.7.1
+[React doc Tutorial:Lifecycle of Reactive Effects-Effects “react” to reactive values](./English/React/Lifecycle-of-Reactive-Effects.md)
+
 ## 2025.6.30
-[React doc Tutorial:Lifecycle of Reactive Effects-The lifecycle of an Effect](./English/React/Lifecycle-of-Reactive-Effects.md)
+[React doc Tutorial:Lifecycle of Reactive Effects-Effects “react” to reactive values](./English/React/Lifecycle-of-Reactive-Effects.md)
 
 ## 2025.6.27
 [React doc Tutorial:Lifecycle of Reactive Effects-The lifecycle of an Effect](./English/React/Lifecycle-of-Reactive-Effects.md)
