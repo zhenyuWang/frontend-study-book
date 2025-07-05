@@ -486,3 +486,27 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 However, if you think from the Effect’s perspective, you don’t need to think about mounting and unmounting at all. What’s important is you’ve specified what your Effect does to start and stop synchronizing. Today, it has no reactive dependencies. But if you ever want the user to change `roomId` or `serverUrl` over time (and they would become reactive), your Effect’s code won’t change. You will only need to add them to the dependencies.
+
+### All variables declared in the component body are reactive 
+Props and state aren’t the only reactive values. Values that you calculate from them are also reactive. If the props or state change, your component will re-render, and the values calculated from them will also change. This is why all variables from the component body used by the Effect should be in the Effect dependency list.
+
+Let’s say that the user can pick a chat server in the dropdown, but they can also configure a default server in settings. Suppose you’ve already put the settings state in a context so you read the `settings` from that context. Now you calculate the `serverUrl` based on the selected server from props and the default server:
+```jsx
+function ChatRoom({ roomId, selectedServerUrl }) { // roomId is reactive
+  const settings = useContext(SettingsContext); // settings is reactive
+  const serverUrl = selectedServerUrl ?? settings.defaultServerUrl; // serverUrl is reactive
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId); // Your Effect reads roomId and serverUrl
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId, serverUrl]); // So it needs to re-synchronize when either of them changes!
+  // ...
+}
+```
+In this example, `serverUrl` is not a prop or a state variable. It’s a regular variable that you calculate during rendering. But it’s calculated during rendering, so it can change due to a re-render. This is why it’s reactive.
+
+All values inside the component (including props, state, and variables in your component’s body) are reactive. Any reactive value can change on a re-render, so you need to include reactive values as Effect’s dependencies.
+
+In other words, Effects “react” to all values from the component body.
