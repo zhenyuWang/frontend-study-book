@@ -510,3 +510,16 @@ In this example, `serverUrl` is not a prop or a state variable. It’s a regular
 All values inside the component (including props, state, and variables in your component’s body) are reactive. Any reactive value can change on a re-render, so you need to include reactive values as Effect’s dependencies.
 
 In other words, Effects “react” to all values from the component body.
+
+#### Can global or mutable values be dependencies? 
+Mutable values (including global variables) aren’t reactive.
+
+A mutable value like location.pathname can’t be a dependency. It’s mutable, so it can change at any time completely outside of the React rendering data flow. Changing it wouldn’t trigger a re-render of your component. Therefore, even if you specified it in the dependencies, React wouldn’t know to re-synchronize the Effect when it changes. This also breaks the rules of React because reading mutable data during rendering (which is when you calculate the dependencies) breaks purity of rendering. Instead, you should read and subscribe to an external mutable value with `useSyncExternalStore`.\
+mutable [/ˈmjuːtəbl/] adj. 可变的，易变的\
+therefore [/ðerˈfɔːr/] adv. 因此，所以\
+purity [/ˈpjʊrəti/] n. 纯净，纯粹性
+
+A mutable value like `ref.current` or things you read from it also can’t be a dependency. The ref object returned by `useRef` itself can be a dependency, but its `current` property is intentionally mutable. It lets you keep track of something without triggering a re-render. But since changing it doesn’t trigger a re-render, it’s not a reactive value, and React won’t know to re-run your Effect when it changes.\
+intentionally [/ɪnˈtenʃənəli/] adv. 故意地，有意地
+
+As you’ll learn below on this page, a linter will check for these issues automatically.
