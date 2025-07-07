@@ -523,3 +523,88 @@ A mutable value like `ref.current` or things you read from it also can’t be a 
 intentionally [/ɪnˈtenʃənəli/] adv. 故意地，有意地
 
 As you’ll learn below on this page, a linter will check for these issues automatically.
+
+### React verifies that you specified every reactive value as a dependency 
+If your linter is configured for React, it will check that every reactive value used by your Effect’s code is declared as its dependency. For example, this is a lint error because both `roomId` and `serverUrl` are reactive:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection } from './chat.js';
+
+function ChatRoom({ roomId }) { // roomId is reactive
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234'); // serverUrl is reactive
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, []); // <-- Something's wrong here!
+
+  return (
+    <>
+      <label>
+        Server URL:{' '}
+        <input
+          value={serverUrl}
+          onChange={e => setServerUrl(e.target.value)}
+        />
+      </label>
+      <h1>Welcome to the {roomId} room!</h1>
+    </>
+  );
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <hr />
+      <ChatRoom roomId={roomId} />
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting to "' + roomId + '" room at ' + serverUrl + '...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected from "' + roomId + '" room at ' + serverUrl);
+    }
+  };
+}
+```
+This may look like a React error, but really React is pointing out a bug in your code. Both `roomId` and `serverUrl` may change over time, but you’re forgetting to re-synchronize your Effect when they change. You will remain connected to the initial `roomId` and `serverUrl` even after the user picks different values in the UI.
+
+To fix the bug, follow the linter’s suggestion to specify `roomId` and `serverUrl` as dependencies of your Effect:
+
+```jsx
+function ChatRoom({ roomId }) { // roomId is reactive
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234'); // serverUrl is reactive
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [serverUrl, roomId]); // ✅ All dependencies declared
+  // ...
+}
+```
+Try this fix in the sandbox above. Verify that the linter error is gone, and the chat re-connects when needed.
+
+**Note**\
+In some cases, React knows that a value never changes even though it’s declared inside the component. For example, the set function returned from `useState` and the ref object returned by `useRef` are stable—they are guaranteed to not change on a re-render. Stable values aren’t reactive, so you may omit them from the list. Including them is allowed: they won’t change, so it doesn’t matter.
