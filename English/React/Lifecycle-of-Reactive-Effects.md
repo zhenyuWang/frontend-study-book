@@ -608,3 +608,48 @@ Try this fix in the sandbox above. Verify that the linter error is gone, and the
 
 **Note**\
 In some cases, React knows that a value never changes even though it’s declared inside the component. For example, the set function returned from `useState` and the ref object returned by `useRef` are stable—they are guaranteed to not change on a re-render. Stable values aren’t reactive, so you may omit them from the list. Including them is allowed: they won’t change, so it doesn’t matter.
+
+### What to do when you don’t want to re-synchronize 
+In the previous example, you’ve fixed the lint error by listing `roomId` and `serverUrl` as dependencies.
+
+However, you could instead “prove” to the linter that these values aren’t reactive values, i.e. that they can’t change as a result of a re-render. For example, if `serverUrl` and `roomId` don’t depend on rendering and always have the same values, you can move them outside the component. Now they don’t need to be dependencies:
+
+```jsx
+const serverUrl = 'https://localhost:1234'; // serverUrl is not reactive
+const roomId = 'general'; // roomId is not reactive
+
+function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, []); // ✅ All dependencies declared
+  // ...
+}
+```
+You can also move them inside the Effect. They aren’t calculated during rendering, so they’re not reactive:
+```jsx
+function ChatRoom() {
+  useEffect(() => {
+    const serverUrl = 'https://localhost:1234'; // serverUrl is not reactive
+    const roomId = 'general'; // roomId is not reactive
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, []); // ✅ All dependencies declared
+  // ...
+}
+```
+Effects are reactive blocks of code. They re-synchronize when the values you read inside of them change. Unlike event handlers, which only run once per interaction, Effects run whenever synchronization is necessary.
+
+You can’t “choose” your dependencies. Your dependencies must include every reactive value you read in the Effect. The linter enforces this. Sometimes this may lead to problems like infinite loops and to your Effect re-synchronizing too often. Don’t fix these problems by suppressing the linter! Here’s what to try instead:\
+enforce [/ɪnˈfɔːrs/] v. 强制执行，实施\
+suppress [/səˈpres/] v. 抑制，压制
+
+- Check that your Effect represents an independent synchronization process. If your Effect doesn’t synchronize anything, it might be unnecessary. If it synchronizes several independent things, split it up.
+- If you want to read the latest value of props or state without “reacting” to it and re-synchronizing the Effect, you can split your Effect into a reactive part (which you’ll keep in the Effect) and a non-reactive part (which you’ll extract into something called an Effect Event). Read about separating Events from Effects.
+- Avoid relying on objects and functions as dependencies. If you create objects and functions during rendering and then read them from an Effect, they will be different on every render. This will cause your Effect to re-synchronize every time. Read more about removing unnecessary dependencies from Effects.
