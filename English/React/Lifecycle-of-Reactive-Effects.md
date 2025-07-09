@@ -653,3 +653,16 @@ suppress [/səˈpres/] v. 抑制，压制
 - Check that your Effect represents an independent synchronization process. If your Effect doesn’t synchronize anything, it might be unnecessary. If it synchronizes several independent things, split it up.
 - If you want to read the latest value of props or state without “reacting” to it and re-synchronizing the Effect, you can split your Effect into a reactive part (which you’ll keep in the Effect) and a non-reactive part (which you’ll extract into something called an Effect Event). Read about separating Events from Effects.
 - Avoid relying on objects and functions as dependencies. If you create objects and functions during rendering and then read them from an Effect, they will be different on every render. This will cause your Effect to re-synchronize every time. Read more about removing unnecessary dependencies from Effects.
+
+#### Pitfall
+The linter is your friend, but its powers are limited. The linter only knows when the dependencies are wrong. It doesn’t know the best way to solve each case. If the linter suggests a dependency, but adding it causes a loop, it doesn’t mean the linter should be ignored. You need to change the code inside (or outside) the Effect so that that value isn’t reactive and doesn’t need to be a dependency.
+
+If you have an existing codebase, you might have some Effects that suppress the linter like this:
+```jsx
+useEffect(() => {
+  // ...
+  // 🔴 Avoid suppressing the linter like this:
+  // eslint-ignore-next-line react-hooks/exhaustive-deps
+}, []);
+```
+On the next pages, you’ll learn how to fix this code without breaking the rules. It’s always worth fixing!
