@@ -17,3 +17,24 @@ Imagine you’re implementing a chat room component. Your requirements look like
 2. When you click the “Send” button, it should send a message to the chat.
 
 Let’s say you’ve already implemented the code for them, but you’re not sure where to put it. Should you use event handlers or Effects? Every time you need to answer this question, consider why the code needs to run.
+
+### Event handlers run in response to specific interactions 
+From the user’s perspective, sending a message should happen because the particular “Send” button was clicked. The user will get rather upset if you send their message at any other time or for any other reason. This is why sending a message should be an event handler. Event handlers let you handle specific interactions:\
+perspective [/pərˈspektɪv/] 视角
+```jsx
+function ChatRoom({ roomId }) {
+  const [message, setMessage] = useState('');
+  // ...
+  function handleSendClick() {
+    sendMessage(message);
+  }
+  // ...
+  return (
+    <>
+      <input value={message} onChange={e => setMessage(e.target.value)} />
+      <button onClick={handleSendClick}>Send</button>
+    </>
+  );
+}
+```
+With an event handler, you can be sure that `sendMessage(message)` will only run if the user presses the button.
