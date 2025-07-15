@@ -38,3 +38,96 @@ function ChatRoom({ roomId }) {
 }
 ```
 With an event handler, you can be sure that `sendMessage(message)` will only run if the user presses the button.
+
+### Effects run whenever synchronization is needed 
+Recall that you also need to keep the component connected to the chat room. Where does that code go?\
+recall [/rɪˈkɔːl/] 回想起
+
+The reason to run this code is not some particular interaction. It doesn’t matter why or how the user navigated to the chat room screen. Now that they’re looking at it and could interact with it, the component needs to stay connected to the selected chat server. Even if the chat room component was the initial screen of your app, and the user has not performed any interactions at all, you would still need to connect. This is why it’s an Effect:\
+performed [/pərˈfɔːrmd/] 执行
+```jsx
+function ChatRoom({ roomId }) {
+  // ...
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect();
+    };
+  }, [roomId]);
+  // ...
+}
+```
+With this code, you can be sure that there is always an active connection to the currently selected chat server, regardless of the specific interactions performed by the user. Whether the user has only opened your app, selected a different room, or navigated to another screen and back, your Effect ensures that the component will remain synchronized with the currently selected room, and will re-connect whenever it’s necessary.\
+regardless [/rɪˈɡɑːrdləs/] 无论\
+remain [/rɪˈmeɪn/] 保持
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection, sendMessage } from './chat.js';
+
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId }) {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+
+  function handleSendClick() {
+    sendMessage(message);
+  }
+
+  return (
+    <>
+      <h1>Welcome to the {roomId} room!</h1>
+      <input value={message} onChange={e => setMessage(e.target.value)} />
+      <button onClick={handleSendClick}>Send</button>
+    </>
+  );
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Close chat' : 'Open chat'}
+      </button>
+      {show && <hr />}
+      {show && <ChatRoom roomId={roomId} />}
+    </>
+  );
+}
+// chat.js
+export function sendMessage(message) {
+  console.log('🔵 You sent: ' + message);
+}
+
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log('✅ Connecting to "' + roomId + '" room at ' + serverUrl + '...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected from "' + roomId + '" room at ' + serverUrl);
+    }
+  };
+}
+```
