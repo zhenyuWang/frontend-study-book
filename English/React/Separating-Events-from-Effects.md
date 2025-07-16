@@ -131,3 +131,29 @@ export function createConnection(serverUrl, roomId) {
   };
 }
 ```
+
+## Reactive values and reactive logic 
+Intuitively, you could say that event handlers are always triggered “manually”, for example by clicking a button. Effects, on the other hand, are “automatic”: they run and re-run as often as it’s needed to stay synchronized.\
+intuitively [/ɪnˈtuːɪtɪvli/] 直观地
+
+There is a more precise way to think about this.\
+precise [/prɪˈsaɪs/] 精确的
+
+Props, state, and variables declared inside your component’s body are called reactive values. In this example, `serverUrl` is not a reactive value, but `roomId` and `message` are. They participate in the rendering data flow:\
+participate [/pɑːrˈtɪsɪpeɪt/] 参与
+```jsx
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId }) {
+  const [message, setMessage] = useState('');
+
+  // ...
+}
+```
+Reactive values like these can change due to a re-render. For example, the user may edit the `message` or choose a different `roomId` in a dropdown. Event handlers and Effects respond to changes differently:
+
+- Logic inside event handlers is not reactive. It will not run again unless the user performs the same interaction (e.g. a click) again. Event handlers can read reactive values without “reacting” to their changes.
+- Logic inside Effects is reactive. If your Effect reads a reactive value, you have to specify it as a dependency. Then, if a re-render causes that value to change, React will re-run your Effect’s logic with the new value.
+
+Let’s revisit the previous example to illustrate this difference.\
+illustrate [/ˈɪlʌstreɪt/] 说明

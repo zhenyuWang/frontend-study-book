@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.7.16
+[React doc Tutorial:Separating Events from Effects-Reactive values and reactive logic](./English/React/Separating-Events-from-Effects.md)
+
 ## 2025.7.15
 [React doc Tutorial:Separating Events from Effects-Choosing between event handlers and Effects](./English/React/Separating-Events-from-Effects.md)
 
