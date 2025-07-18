@@ -157,3 +157,18 @@ Reactive values like these can change due to a re-render. For example, the user 
 
 Let’s revisit the previous example to illustrate this difference.\
 illustrate [/ˈɪlʌstreɪt/] 说明
+
+### Logic inside event handlers is not reactive 
+Take a look at this line of code. Should this logic be reactive or not?
+```jsx
+    // ...
+    sendMessage(message);
+    // ...
+```
+From the user’s perspective, a change to the message does not mean that they want to send a message. It only means that the user is typing. In other words, the logic that sends a message should not be reactive. It should not run again only because the reactive value has changed. That’s why it belongs in the event handler:
+```jsx
+  function handleSendClick() {
+    sendMessage(message);
+  }
+```
+Event handlers aren’t reactive, so `sendMessage(message)` will only run when the user clicks the Send button.
