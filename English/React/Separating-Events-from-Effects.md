@@ -172,3 +172,24 @@ From the user’s perspective, a change to the message does not mean that they w
   }
 ```
 Event handlers aren’t reactive, so `sendMessage(message)` will only run when the user clicks the Send button.
+
+### Logic inside Effects is reactive 
+Now let’s return to these lines:
+```jsx
+    // ...
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    // ...
+```
+From the user’s perspective, a change to the `roomId` does mean that they want to connect to a different room. In other words, the logic for connecting to the room should be reactive. You want these lines of code to “keep up” with the reactive value, and to run again if that value is different. That’s why it belongs in an Effect:
+```jsx
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return () => {
+      connection.disconnect()
+    };
+  }, [roomId]);
+```
+Effects are reactive, so `createConnection(serverUrl, roomId)` and `connection.connect()` will run for every distinct value of `roomId`. Your Effect keeps the chat connection synchronized to the currently selected room.\
+distinct [/dɪˈstɪŋkt/] 不同的
