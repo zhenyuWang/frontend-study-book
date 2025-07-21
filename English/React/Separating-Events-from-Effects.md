@@ -193,3 +193,141 @@ From the user’s perspective, a change to the `roomId` does mean that they want
 ```
 Effects are reactive, so `createConnection(serverUrl, roomId)` and `connection.connect()` will run for every distinct value of `roomId`. Your Effect keeps the chat connection synchronized to the currently selected room.\
 distinct [/dɪˈstɪŋkt/] 不同的
+
+## Extracting non-reactive logic out of Effects 
+Things get more tricky when you want to mix reactive logic with non-reactive logic.\
+tricky [ˈtrɪki/] 棘手的
+
+For example, imagine that you want to show a notification when the user connects to the chat. You read the current theme (dark or light) from the props so that you can show the notification in the correct color:
+```jsx
+function ChatRoom({ roomId, theme }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      showNotification('Connected!', theme);
+    });
+    connection.connect();
+    // ...
+```
+However, `theme` is a reactive value (it can change as a result of re-rendering), and every reactive value read by an Effect must be declared as its dependency. Now you have to specify `theme` as a dependency of your Effect:
+```jsx
+function ChatRoom({ roomId, theme }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      showNotification('Connected!', theme);
+    });
+    connection.connect();
+    return () => {
+      connection.disconnect()
+    };
+  }, [roomId, theme]); // ✅ All dependencies declared
+  // ...
+```
+Play with this example and see if you can spot the problem with this user experience:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { createConnection, sendMessage } from './chat.js';
+import { showNotification } from './notifications.js';
+
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId, theme }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      showNotification('Connected!', theme);
+    });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId, theme]);
+
+  return <h1>Welcome to the {roomId} room!</h1>
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  const [isDark, setIsDark] = useState(false);
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={e => setIsDark(e.target.checked)}
+        />
+        Use dark theme
+      </label>
+      <hr />
+      <ChatRoom
+        roomId={roomId}
+        theme={isDark ? 'dark' : 'light'}
+      />
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  let connectedCallback;
+  let timeout;
+  return {
+    connect() {
+      timeout = setTimeout(() => {
+        if (connectedCallback) {
+          connectedCallback();
+        }
+      }, 100);
+    },
+    on(event, callback) {
+      if (connectedCallback) {
+        throw Error('Cannot add the handler twice.');
+      }
+      if (event !== 'connected') {
+        throw Error('Only "connected" event is supported.');
+      }
+      connectedCallback = callback;
+    },
+    disconnect() {
+      clearTimeout(timeout);
+    }
+  };
+}
+// notifications.js
+import Toastify from 'toastify-js';
+import 'toastify-js/src/toastify.css';
+
+export function showNotification(message, theme) {
+  Toastify({
+    text: message,
+    duration: 2000,
+    gravity: 'top',
+    position: 'right',
+    style: {
+      background: theme === 'dark' ? 'black' : 'white',
+      color: theme === 'dark' ? 'white' : 'black',
+    },
+  }).showToast();
+}
+```
+When the `roomId` changes, the chat re-connects as you would expect. But since `theme` is also a dependency, the chat also re-connects every time you switch between the dark and the light theme. That’s not great!
+
+In other words, you don’t want this line to be reactive, even though it is inside an Effect (which is reactive):
+```jsx
+      // ...
+      showNotification('Connected!', theme);
+      // ...
+```
+You need a way to separate this non-reactive logic from the reactive Effect around it.
