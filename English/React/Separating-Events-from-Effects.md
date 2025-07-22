@@ -331,3 +331,129 @@ In other words, you don’t want this line to be reactive, even though it is ins
       // ...
 ```
 You need a way to separate this non-reactive logic from the reactive Effect around it.
+
+### Declaring an Effect Event 
+**Under Construction**\
+This section describes an experimental API that has not yet been released in a stable version of React.\
+experimental [/ɪkˈsperɪməntl/] 实验性的
+
+Use a special Hook called `useEffectEvent` to extract this non-reactive logic out of your Effect:
+```jsx
+import { useEffect, useEffectEvent } from 'react';
+
+function ChatRoom({ roomId, theme }) {
+  const onConnected = useEffectEvent(() => {
+    showNotification('Connected!', theme);
+  });
+  // ...
+```
+Here, `onConnected` is called an Effect Event. It’s a part of your Effect logic, but it behaves a lot more like an event handler. The logic inside it is not reactive, and it always “sees” the latest values of your props and state.
+
+Now you can call the `onConnected` Effect Event from inside your Effect:
+```jsx
+function ChatRoom({ roomId, theme }) {
+  const onConnected = useEffectEvent(() => {
+    showNotification('Connected!', theme);
+  });
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      onConnected();
+    });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]); // ✅ All dependencies declared
+  // ...
+```
+This solves the problem. Note that you had to remove `theme` from the list of your Effect’s dependencies, because it’s no longer used in the Effect. You also don’t need to add `onConnected` to it, because Effect Events are not reactive and must be omitted from dependencies.
+
+Verify that the new behavior works as you would expect:
+```jsx
+// App.js
+import { useState, useEffect } from 'react';
+import { experimental_useEffectEvent as useEffectEvent } from 'react';
+import { createConnection, sendMessage } from './chat.js';
+import { showNotification } from './notifications.js';
+
+const serverUrl = 'https://localhost:1234';
+
+function ChatRoom({ roomId, theme }) {
+  const onConnected = useEffectEvent(() => {
+    showNotification('Connected!', theme);
+  });
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      onConnected();
+    });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+
+  return <h1>Welcome to the {roomId} room!</h1>
+}
+
+export default function App() {
+  const [roomId, setRoomId] = useState('general');
+  const [isDark, setIsDark] = useState(false);
+  return (
+    <>
+      <label>
+        Choose the chat room:{' '}
+        <select
+          value={roomId}
+          onChange={e => setRoomId(e.target.value)}
+        >
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={e => setIsDark(e.target.checked)}
+        />
+        Use dark theme
+      </label>
+      <hr />
+      <ChatRoom
+        roomId={roomId}
+        theme={isDark ? 'dark' : 'light'}
+      />
+    </>
+  );
+}
+// chat.js
+export function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  let connectedCallback;
+  let timeout;
+  return {
+    connect() {
+      timeout = setTimeout(() => {
+        if (connectedCallback) {
+          connectedCallback();
+        }
+      }, 100);
+    },
+    on(event, callback) {
+      if (connectedCallback) {
+        throw Error('Cannot add the handler twice.');
+      }
+      if (event !== 'connected') {
+        throw Error('Only "connected" event is supported.');
+      }
+      connectedCallback = callback;
+    },
+    disconnect() {
+      clearTimeout(timeout);
+    }
+  };
+}
+```
+You can think of Effect Events as being very similar to event handlers. The main difference is that event handlers run in response to a user interactions, whereas Effect Events are triggered by you from Effects. Effect Events let you “break the chain” between the reactivity of Effects and code that should not be reactive.\
+whereas [/ˈwerəz/] 而
