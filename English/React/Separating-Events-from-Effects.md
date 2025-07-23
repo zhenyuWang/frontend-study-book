@@ -457,3 +457,79 @@ export function createConnection(serverUrl, roomId) {
 ```
 You can think of Effect Events as being very similar to event handlers. The main difference is that event handlers run in response to a user interactions, whereas Effect Events are triggered by you from Effects. Effect Events let you “break the chain” between the reactivity of Effects and code that should not be reactive.\
 whereas [/ˈwerəz/] 而
+
+### Reading latest props and state with Effect Events 
+**Under Construction**\
+This section describes an experimental API that has not yet been released in a stable version of React.
+
+Effect Events let you fix many patterns where you might be tempted to suppress the dependency linter.\
+pattern [/ˈpætərn/] 模式\
+tempted [/ˈtemptɪd/] 诱惑\
+suppress [/səˈpres/] 压制
+
+For example, say you have an Effect to log the page visits:
+```jsx
+function Page() {
+  useEffect(() => {
+    logVisit();
+  }, []);
+  // ...
+}
+```
+Later, you add multiple routes to your site. Now your `Page` component receives a `url` prop with the current path. You want to pass the `url` as a part of your `logVisit` call, but the dependency linter complains:
+
+```jsx
+function Page({ url }) {
+  useEffect(() => {
+    logVisit(url);
+  }, []); // 🔴 React Hook useEffect has a missing dependency: 'url'
+  // ...
+}
+```
+Think about what you want the code to do. You want to log a separate visit for different URLs since each URL represents a different page. In other words, this `logVisit` call should be reactive with respect to the `url`. This is why, in this case, it makes sense to follow the dependency linter, and add `url` as a dependency:
+
+```jsx
+function Page({ url }) {
+  useEffect(() => {
+    logVisit(url);
+  }, [url]); // ✅ All dependencies declared
+  // ...
+}
+```
+Now let’s say you want to include the number of items in the shopping cart together with every page visit:
+
+```jsx
+function Page({ url }) {
+  const { items } = useContext(ShoppingCartContext);
+  const numberOfItems = items.length;
+
+  useEffect(() => {
+    logVisit(url, numberOfItems);
+  }, [url]); // 🔴 React Hook useEffect has a missing dependency: 'numberOfItems'
+  // ...
+}
+```
+You used `numberOfItems` inside the Effect, so the linter asks you to add it as a dependency. However, you don’t want the `logVisit` call to be reactive with respect to `numberOfItems`. If the user puts something into the shopping cart, and the `numberOfItems` changes, this does not mean that the user visited the page again. In other words, visiting the page is, in some sense, an “event”. It happens at a precise moment in time.\
+precise [/prɪˈsaɪs/] 精确的
+
+Split the code in two parts:
+```jsx
+function Page({ url }) {
+  const { items } = useContext(ShoppingCartContext);
+  const numberOfItems = items.length;
+
+  const onVisit = useEffectEvent(visitedUrl => {
+    logVisit(visitedUrl, numberOfItems);
+  });
+
+  useEffect(() => {
+    onVisit(url);
+  }, [url]); // ✅ All dependencies declared
+  // ...
+}
+```
+Here, `onVisit` is an Effect Event. The code inside it isn’t reactive. This is why you can use `numberOfItems` (or any other reactive value!) without worrying that it will cause the surrounding code to re-execute on changes.
+
+On the other hand, the Effect itself remains reactive. Code inside the Effect uses the `url` prop, so the Effect will re-run after every re-render with a different `url`. This, in turn, will call the `onVisit` Effect Event.
+
+As a result, you will call `logVisit` for every change to the `url`, and always read the latest `numberOfItems`. However, if `numberOfItems` changes on its own, this will not cause any of the code to re-run.
