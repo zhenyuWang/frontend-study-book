@@ -533,3 +533,40 @@ Here, `onVisit` is an Effect Event. The code inside it isn’t reactive. This is
 On the other hand, the Effect itself remains reactive. Code inside the Effect uses the `url` prop, so the Effect will re-run after every re-render with a different `url`. This, in turn, will call the `onVisit` Effect Event.
 
 As a result, you will call `logVisit` for every change to the `url`, and always read the latest `numberOfItems`. However, if `numberOfItems` changes on its own, this will not cause any of the code to re-run.
+
+**Note**
+You might be wondering if you could call `onVisit()` with no arguments, and read the `url` inside it:
+```jsx
+  const onVisit = useEffectEvent(() => {
+    logVisit(url, numberOfItems);
+  });
+
+  useEffect(() => {
+    onVisit();
+  }, [url]);
+```
+This would work, but it’s better to pass this `url` to the Effect Event explicitly. By passing `url` as an argument to your Effect Event, you are saying that visiting a page with a different `url` constitutes a separate “event” from the user’s perspective. The `visitedUrl` is a part of the “event” that happened:
+```jsx
+  const onVisit = useEffectEvent(visitedUrl => {
+    logVisit(visitedUrl, numberOfItems);
+  });
+
+  useEffect(() => {
+    onVisit(url);
+  }, [url]);
+```
+Since your Effect Event explicitly “asks” for the `visitedUrl`, now you can’t accidentally remove `url` from the Effect’s dependencies. If you remove the `url` dependency (causing distinct page visits to be counted as one), the linter will warn you about it. You want `onVisit` to be reactive with regards to the `url`, so instead of reading the `url` inside (where it wouldn’t be reactive), you pass it from your Effect.
+
+This becomes especially important if there is some asynchronous logic inside the Effect:
+```jsx
+  const onVisit = useEffectEvent(visitedUrl => {
+    logVisit(visitedUrl, numberOfItems);
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      onVisit(url);
+    }, 5000); // Delay logging visits
+  }, [url]);
+```
+Here, `url` inside `onVisit` corresponds to the latest `url` (which could have already changed), but `visitedUrl` corresponds to the `url` that originally caused this Effect (and this `onVisit` call) to run.
