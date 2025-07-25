@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.7.25
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+
 ## 2025.7.24
 [React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
 

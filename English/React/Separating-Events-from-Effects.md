@@ -570,3 +570,128 @@ This becomes especially important if there is some asynchronous logic inside the
   }, [url]);
 ```
 Here, `url` inside `onVisit` corresponds to the latest `url` (which could have already changed), but `visitedUrl` corresponds to the `url` that originally caused this Effect (and this `onVisit` call) to run.
+
+#### Is it okay to suppress the dependency linter instead? 
+
+In the existing codebases, you may sometimes see the lint rule suppressed like this:
+```jsx
+function Page({ url }) {
+  const { items } = useContext(ShoppingCartContext);
+  const numberOfItems = items.length;
+
+  useEffect(() => {
+    logVisit(url, numberOfItems);
+    // 🔴 Avoid suppressing the linter like this:
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]);
+  // ...
+}
+```
+After `useEffectEvent` becomes a stable part of React, we recommend never suppressing the linter.
+
+The first downside of suppressing the rule is that React will no longer warn you when your Effect needs to “react” to a new reactive dependency you’ve introduced to your code. In the earlier example, you added `url` to the dependencies because React reminded you to do it. You will no longer get such reminders for any future edits to that Effect if you disable the linter. This leads to bugs.
+
+Here is an example of a confusing bug caused by suppressing the linter. In this example, the `handleMove` function is supposed to read the current `canMove` state variable value in order to decide whether the dot should follow the cursor. However, `canMove` is always `true` inside `handleMove`.
+
+Can you see why?
+```jsx
+import { useState, useEffect } from 'react';
+
+export default function App() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [canMove, setCanMove] = useState(true);
+
+  function handleMove(e) {
+    if (canMove) {
+      setPosition({ x: e.clientX, y: e.clientY });
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('pointermove', handleMove);
+    return () => window.removeEventListener('pointermove', handleMove);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <>
+      <label>
+        <input type="checkbox"
+          checked={canMove}
+          onChange={e => setCanMove(e.target.checked)}
+        />
+        The dot is allowed to move
+      </label>
+      <hr />
+      <div style={{
+        position: 'absolute',
+        backgroundColor: 'pink',
+        borderRadius: '50%',
+        opacity: 0.6,
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        pointerEvents: 'none',
+        left: -20,
+        top: -20,
+        width: 40,
+        height: 40,
+      }} />
+    </>
+  );
+}
+```
+The problem with this code is in suppressing the dependency linter. If you remove the suppression, you’ll see that this Effect should depend on the `handleMove` function. This makes sense: `handleMove` is declared inside the component body, which makes it a reactive value. Every reactive value must be specified as a dependency, or it can potentially get stale over time!\
+potentially [/pəˈtenʃəli/] 可能地
+
+The author of the original code has “lied” to React by saying that the Effect does not depend (`[]`) on any reactive values. This is why React did not re-synchronize the Effect after `canMove` has changed (and `handleMove` with it). Because React did not re-synchronize the Effect, the `handleMove` attached as a listener is the `handleMove` function created during the initial render. During the initial render, `canMove` was `true`, which is why `handleMove` from the initial render will forever see that value.
+
+If you never suppress the linter, you will never see problems with stale values.
+
+With `useEffectEvent`, there is no need to “lie” to the linter, and the code works as you would expect:
+```jsx
+import { useState, useEffect } from 'react';
+import { experimental_useEffectEvent as useEffectEvent } from 'react';
+
+export default function App() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [canMove, setCanMove] = useState(true);
+
+  const onMove = useEffectEvent(e => {
+    if (canMove) {
+      setPosition({ x: e.clientX, y: e.clientY });
+    }
+  });
+
+  useEffect(() => {
+    window.addEventListener('pointermove', onMove);
+    return () => window.removeEventListener('pointermove', onMove);
+  }, []);
+
+  return (
+    <>
+      <label>
+        <input type="checkbox"
+          checked={canMove}
+          onChange={e => setCanMove(e.target.checked)}
+        />
+        The dot is allowed to move
+      </label>
+      <hr />
+      <div style={{
+        position: 'absolute',
+        backgroundColor: 'pink',
+        borderRadius: '50%',
+        opacity: 0.6,
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        pointerEvents: 'none',
+        left: -20,
+        top: -20,
+        width: 40,
+        height: 40,
+      }} />
+    </>
+  );
+}
+```
+This doesn’t mean that `useEffectEvent` is always the correct solution. You should only apply it to the lines of code that you don’t want to be reactive. In the above sandbox, you didn’t want the Effect’s code to be reactive with regards to `canMove`. That’s why it made sense to extract an Effect Event.
+
+Read Removing Effect Dependencies for other correct alternatives to suppressing the linter.
