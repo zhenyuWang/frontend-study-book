@@ -695,3 +695,64 @@ export default function App() {
 This doesn’t mean that `useEffectEvent` is always the correct solution. You should only apply it to the lines of code that you don’t want to be reactive. In the above sandbox, you didn’t want the Effect’s code to be reactive with regards to `canMove`. That’s why it made sense to extract an Effect Event.
 
 Read Removing Effect Dependencies for other correct alternatives to suppressing the linter.
+
+### Limitations of Effect Event
+**Under Construction**\
+This section describes an experimental API that has not yet been released in a stable version of React.
+
+Effect Events are very limited in how you can use them:
+
+- Only call them from inside Effects.
+- Never pass them to other components or Hooks.
+
+For example, don’t declare and pass an Effect Event like this:
+```jsx
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  const onTick = useEffectEvent(() => {
+    setCount(count + 1);
+  });
+
+  useTimer(onTick, 1000); // 🔴 Avoid: Passing Effect Events
+
+  return <h1>{count}</h1>
+}
+
+function useTimer(callback, delay) {
+  useEffect(() => {
+    const id = setInterval(() => {
+      callback();
+    }, delay);
+    return () => {
+      clearInterval(id);
+    };
+  }, [delay, callback]); // Need to specify "callback" in dependencies
+}
+```
+Instead, always declare Effect Events directly next to the Effects that use them:
+```jsx
+function Timer() {
+  const [count, setCount] = useState(0);
+  useTimer(() => {
+    setCount(count + 1);
+  }, 1000);
+  return <h1>{count}</h1>
+}
+
+function useTimer(callback, delay) {
+  const onTick = useEffectEvent(() => {
+    callback();
+  });
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      onTick(); // ✅ Good: Only called locally inside an Effect
+    }, delay);
+    return () => {
+      clearInterval(id);
+    };
+  }, [delay]); // No need to specify "onTick" (an Effect Event) as a dependency
+}
+```
+Effect Events are non-reactive “pieces” of your Effect code. They should be next to the Effect using them.
