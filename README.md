@@ -4,23 +4,26 @@
 
 # 日志
 
+## 2025.7.29
+[React doc Tutorial:Separating Events from Effects-Recap](./English/React/Separating-Events-from-Effects.md)
+
 ## 2025.7.28
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.25
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.24
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.23
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.22
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.21
-[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects ](./English/React/Separating-Events-from-Effects.md)
+[React doc Tutorial:Separating Events from Effects-Extracting non-reactive logic out of Effects](./English/React/Separating-Events-from-Effects.md)
 
 ## 2025.7.18
 [React doc Tutorial:Separating Events from Effects-Reactive values and reactive logic](./English/React/Separating-Events-from-Effects.md)
