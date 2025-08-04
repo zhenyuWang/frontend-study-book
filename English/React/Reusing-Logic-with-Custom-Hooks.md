@@ -76,3 +76,106 @@ export default function SaveButton() {
 Verify that, if you turn off the network, the button will change its appearance.
 
 These two components work fine, but the duplication in logic between them is unfortunate. It seems like even though they have different visual appearance, you want to reuse the logic between them.
+
+### Extracting your own custom Hook from a component 
+Imagine for a moment that, similar to useState and useEffect, there was a built-in `useOnlineStatus` Hook. Then both of these components could be simplified and you could remove the duplication between them:
+```jsx
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+```
+Although there is no such built-in Hook, you can write it yourself. Declare a function called `useOnlineStatus` and move all the duplicated code into it from the components you wrote earlier:
+```jsx
+function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+```
+At the end of the function, return `isOnline`. This lets your components read that value:
+```jsx
+// App.js
+import { useOnlineStatus } from './useOnlineStatus.js';
+
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <SaveButton />
+      <StatusBar />
+    </>
+  );
+}
+// useOnlineStatus.js
+import { useState, useEffect } from 'react';
+
+export function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+```
+Verify that switching the network on and off updates both components.
+
+Now your components don’t have as much repetitive logic. More importantly, the code inside them describes what they want to do (use the online status!) rather than how to do it (by subscribing to the browser events).
+
+When you extract logic into custom Hooks, you can hide the gnarly details of how you deal with some external system or a browser API. The code of your components expresses your intent, not the implementation.
