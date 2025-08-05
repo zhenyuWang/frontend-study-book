@@ -179,3 +179,19 @@ Verify that switching the network on and off updates both components.
 Now your components don’t have as much repetitive logic. More importantly, the code inside them describes what they want to do (use the online status!) rather than how to do it (by subscribing to the browser events).
 
 When you extract logic into custom Hooks, you can hide the gnarly details of how you deal with some external system or a browser API. The code of your components expresses your intent, not the implementation.
+
+### Hook names always start with use 
+React applications are built from components. Components are built from Hooks, whether built-in or custom. You’ll likely often use custom Hooks created by others, but occasionally you might write one yourself!\
+occasionally [/əˈkeɪʒ(ə)nəli/] 偶尔
+
+You must follow these naming conventions:
+
+1. React component names must start with a capital letter, like `StatusBar` and `SaveButton`. React components also need to return something that React knows how to display, like a piece of JSX.
+2. Hook names must start with `use` followed by a capital letter, like `useState` (built-in) or `useOnlineStatus` (custom, like earlier on the page). Hooks may return arbitrary values.
+
+This convention guarantees that you can always look at a component and know where its state, Effects, and other React features might “hide”. For example, if you see a `getColor()` function call inside your component, you can be sure that it can’t possibly contain React state inside because its name doesn’t start with `use`. However, a function call like `useOnlineStatus()` will most likely contain calls to other Hooks inside!\
+convention [/kənˈvɛnʃ(ə)n/] 约定，惯例\
+guarantee [/ˌɡærənˈtiː/] 保证\
+
+**Note**\
+If your linter is configured for React, it will enforce this naming convention. Scroll up to the sandbox above and rename `useOnlineStatus` to `getOnlineStatus`. Notice that the linter won’t allow you to call `useState` or `useEffect` inside of it anymore. Only Hooks and components can call other Hooks!
