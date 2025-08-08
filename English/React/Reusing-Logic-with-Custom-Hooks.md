@@ -239,3 +239,132 @@ function useAuth() {
 }
 ```
 Then components won’t be able to call it conditionally. This will become important when you actually add Hook calls inside. If you don’t plan to use Hooks inside it (now or later), don’t make it a Hook.
+
+### Custom Hooks let you share stateful logic, not state itself
+In the earlier example, when you turned the network on and off, both components updated together. However, it’s wrong to think that a single `isOnline` state variable is shared between them. Look at this code:
+```jsx
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  // ...
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+  // ...
+}
+```
+It works the same way as before you extracted the duplication:\
+extract [/ɪkˈstrækt/] 提取\
+duplication [/ˌduːplɪˈkeɪʃ(ə)n/] 重复
+```jsx
+function StatusBar() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    // ...
+  }, []);
+  // ...
+}
+
+function SaveButton() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    // ...
+  }, []);
+  // ...
+}
+```
+These are two completely independent state variables and Effects! They happened to have the same value at the same time because you synchronized them with the same external value (whether the network is on).
+
+To better illustrate this, we’ll need a different example. Consider this `Form` component:\
+illustrate [/ˈɪləsˌtreɪt/] 说明，阐明
+```jsx
+import { useState } from 'react';
+
+export default function Form() {
+  const [firstName, setFirstName] = useState('Mary');
+  const [lastName, setLastName] = useState('Poppins');
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input value={firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name:
+        <input value={lastName} onChange={handleLastNameChange} />
+      </label>
+      <p><b>Good morning, {firstName} {lastName}.</b></p>
+    </>
+  );
+}
+```
+There’s some repetitive logic for each form field:
+
+1. There’s a piece of state (`firstName` and `lastName`).
+2. There’s a change handler (`handleFirstNameChange` and `handleLastNameChange`).
+3. There’s a piece of JSX that specifies the `value` and `onChange` attributes for that input.
+
+You can extract the repetitive logic into this `useFormInput` custom Hook:
+```jsx
+// App.js
+import { useFormInput } from './useFormInput.js';
+
+export default function Form() {
+  const firstNameProps = useFormInput('Mary');
+  const lastNameProps = useFormInput('Poppins');
+
+  return (
+    <>
+      <label>
+        First name:
+        <input {...firstNameProps} />
+      </label>
+      <label>
+        Last name:
+        <input {...lastNameProps} />
+      </label>
+      <p><b>Good morning, {firstNameProps.value} {lastNameProps.value}.</b></p>
+    </>
+  );
+}
+// useFormInput.js
+import { useState } from 'react';
+
+export function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  const inputProps = {
+    value: value,
+    onChange: handleChange
+  };
+
+  return inputProps;
+}
+```
+Notice that it only declares one state variable called `value`.
+
+However, the `Form` component calls `useFormInput` two times:
+```jsx
+function Form() {
+  const firstNameProps = useFormInput('Mary');
+  const lastNameProps = useFormInput('Poppins');
+  // ...
+```
+This is why it works like declaring two separate state variables!
+
+Custom Hooks let you share stateful logic but not state itself. Each call to a Hook is completely independent from every other call to the same Hook. This is why the two sandboxes above are completely equivalent. If you’d like, scroll back up and compare them. The behavior before and after extracting a custom Hook is identical.
+
+When you need to share the state itself between multiple components, lift it up and pass it down instead.

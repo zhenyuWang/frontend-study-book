@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.8.6
+[React doc Tutorial:Reusing Logic with Custom Hooks-Custom Hooks: Sharing logic between components](./English/React/Reusing-Logic-with-Custom-Hooks.md)
+
 ## 2025.8.5
 [React doc Tutorial:Reusing Logic with Custom Hooks-Custom Hooks: Sharing logic between components](./English/React/Reusing-Logic-with-Custom-Hooks.md)
 
