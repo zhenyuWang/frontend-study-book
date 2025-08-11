@@ -496,3 +496,112 @@ export default function ChatRoom({ roomId }) {
   // ...
 ```
 Every time your `ChatRoom` component re-renders, it passes the latest `roomId` and `serverUrl` to your Hook. This is why your Effect re-connects to the chat whenever their values are different after a re-render. (If you ever worked with audio or video processing software, chaining Hooks like this might remind you of chaining visual or audio effects. It’s as if the output of `useState` “feeds into” the input of the `useChatRoom`.)
+
+### Passing event handlers to custom Hooks
+**Under Construction**\
+This section describes an experimental API that has not yet been released in a stable version of React.
+
+As you start using `useChatRoom` in more components, you might want to let components customize its behavior. For example, currently, the logic for what to do when a message arrives is hardcoded inside the Hook:\
+hardcode [/ˈhɑːdˌkəʊd/] 硬编码
+```jsx
+export function useChatRoom({ serverUrl, roomId }) {
+  useEffect(() => {
+    const options = {
+      serverUrl: serverUrl,
+      roomId: roomId
+    };
+    const connection = createConnection(options);
+    connection.connect();
+    connection.on('message', (msg) => {
+      showNotification('New message: ' + msg);
+    });
+    return () => connection.disconnect();
+  }, [roomId, serverUrl]);
+}
+Let’s say you want to move this logic back to your component:
+
+export default function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  useChatRoom({
+    roomId: roomId,
+    serverUrl: serverUrl,
+    onReceiveMessage(msg) {
+      showNotification('New message: ' + msg);
+    }
+  });
+  // ...
+```
+To make this work, change your custom Hook to take `onReceiveMessage` as one of its named options:
+```jsx
+export function useChatRoom({ serverUrl, roomId, onReceiveMessage }) {
+  useEffect(() => {
+    const options = {
+      serverUrl: serverUrl,
+      roomId: roomId
+    };
+    const connection = createConnection(options);
+    connection.connect();
+    connection.on('message', (msg) => {
+      onReceiveMessage(msg);
+    });
+    return () => connection.disconnect();
+  }, [roomId, serverUrl, onReceiveMessage]); // ✅ All dependencies declared
+}
+```
+This will work, but there’s one more improvement you can do when your custom Hook accepts event handlers.\
+improvement [/ɪmˈpruːvmənt/] 改进
+
+Adding a dependency on onReceiveMessage is not ideal because it will cause the chat to re-connect every time the component re-renders. Wrap this event handler into an Effect Event to remove it from the dependencies:\
+ideal [/aɪˈdɪəl/] 理想的
+```jsx
+import { useEffect, useEffectEvent } from 'react';
+// ...
+
+export function useChatRoom({ serverUrl, roomId, onReceiveMessage }) {
+  const onMessage = useEffectEvent(onReceiveMessage);
+
+  useEffect(() => {
+    const options = {
+      serverUrl: serverUrl,
+      roomId: roomId
+    };
+    const connection = createConnection(options);
+    connection.connect();
+    connection.on('message', (msg) => {
+      onMessage(msg);
+    });
+    return () => connection.disconnect();
+  }, [roomId, serverUrl]); // ✅ All dependencies declared
+}
+```
+Now the chat won’t re-connect every time that the `ChatRoom` component re-renders. Here is a fully working demo of passing an event handler to a custom Hook that you can play with:
+```jsx
+// ChatRoom.js
+import { useState } from 'react';
+import { useChatRoom } from './useChatRoom.js';
+import { showNotification } from './notifications.js';
+
+export default function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  useChatRoom({
+    roomId: roomId,
+    serverUrl: serverUrl,
+    onReceiveMessage(msg) {
+      showNotification('New message: ' + msg);
+    }
+  });
+
+  return (
+    <>
+      <label>
+        Server URL:
+        <input value={serverUrl} onChange={e => setServerUrl(e.target.value)} />
+      </label>
+      <h1>Welcome to the {roomId} room!</h1>
+    </>
+  );
+}
+```
+Notice how you no longer need to know how `useChatRoom` works in order to use it. You could add it to any other component, pass any other options, and it would work the same way. That’s the power of custom Hooks.
