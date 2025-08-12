@@ -4,11 +4,14 @@
 
 # 日志
 
+## 2025.8.11
+[React doc Tutorial:Reusing Logic with Custom Hooks-When to use custom Hooks](./English/React/Reusing-Logic-with-Custom-Hooks.md)
+
 ## 2025.8.8
-[React doc Tutorial:Reusing Logic with Custom Hooks-Custom Hooks: Sharing logic between components](./English/React/Reusing-Logic-with-Custom-Hooks.md)
+[React doc Tutorial:Reusing Logic with Custom Hooks-Passing reactive values between Hooks](./English/React/Reusing-Logic-with-Custom-Hooks.md)
 
 ## 2025.8.7
-[React doc Tutorial:Reusing Logic with Custom Hooks-Custom Hooks: Sharing logic between components](./English/React/Reusing-Logic-with-Custom-Hooks.md)
+[React doc Tutorial:Reusing Logic with Custom Hooks-Passing reactive values between Hooks](./English/React/Reusing-Logic-with-Custom-Hooks.md)
 
 ## 2025.8.6
 [React doc Tutorial:Reusing Logic with Custom Hooks-Custom Hooks: Sharing logic between components](./English/React/Reusing-Logic-with-Custom-Hooks.md)
