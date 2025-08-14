@@ -682,3 +682,83 @@ function ShippingForm({ country }) {
   // ...
 ```
 Extracting a custom Hook makes the data flow explicit. You feed the `url` in and you get the `data` out. By “hiding” your Effect inside `useData`, you also prevent someone working on the `ShippingForm` component from adding unnecessary dependencies to it. With time, most of your app’s Effects will be in custom Hooks.
+
+### Keep your custom Hooks focused on concrete high-level use cases
+Start by choosing your custom Hook’s name. If you struggle to pick a clear name, it might mean that your Effect is too coupled to the rest of your component’s logic, and is not yet ready to be extracted.\
+struggle to [/ˈstrʌɡ(ə)l/] 难以；努力做某事
+
+Ideally, your custom Hook’s name should be clear enough that even a person who doesn’t write code often could have a good guess about what your custom Hook does, what it takes, and what it returns:
+
+- ✅ `useData(url)`
+- ✅ `useImpressionLog(eventName, extraData)`
+- ✅ `useChatRoom(options)`
+
+When you synchronize with an external system, your custom Hook name may be more technical and use jargon specific to that system. It’s good as long as it would be clear to a person familiar with that system:\
+jargon [ˈdʒɑːrɡən] 行话；术语
+
+- ✅ `useMediaQuery(query)`
+- ✅ `useSocket(url)`
+- ✅ `useIntersectionObserver(ref, options)`
+
+Keep custom Hooks focused on concrete high-level use cases. Avoid creating and using custom “lifecycle” Hooks that act as alternatives and convenience wrappers for the `useEffect` API itself:
+
+- 🔴 `useMount(fn)`
+- 🔴 `useEffectOnce(fn)`
+- 🔴 `useUpdateEffect(fn)`
+
+For example, this `useMount` Hook tries to ensure some code only runs “on mount”:
+```jsx
+function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  // 🔴 Avoid: using custom "lifecycle" Hooks
+  useMount(() => {
+    const connection = createConnection({ roomId, serverUrl });
+    connection.connect();
+
+    post('/analytics/event', { eventName: 'visit_chat' });
+  });
+  // ...
+}
+
+// 🔴 Avoid: creating custom "lifecycle" Hooks
+function useMount(fn) {
+  useEffect(() => {
+    fn();
+  }, []); // 🔴 React Hook useEffect has a missing dependency: 'fn'
+}
+```
+Custom “lifecycle” Hooks like `useMount` don’t fit well into the React paradigm. For example, this code example has a mistake (it doesn’t “react” to `roomId` or `serverUrl` changes), but the linter won’t warn you about it because the linter only checks direct `useEffect` calls. It won’t know about your Hook.
+
+If you’re writing an Effect, start by using the React API directly:
+```jsx
+function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  // ✅ Good: two raw Effects separated by purpose
+
+  useEffect(() => {
+    const connection = createConnection({ serverUrl, roomId });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [serverUrl, roomId]);
+
+  useEffect(() => {
+    post('/analytics/event', { eventName: 'visit_chat', roomId });
+  }, [roomId]);
+
+  // ...
+}
+```
+Then, you can (but don’t have to) extract custom Hooks for different high-level use cases:
+```jsx
+function ChatRoom({ roomId }) {
+  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  // ✅ Great: custom Hooks named after their purpose
+  useChatRoom({ serverUrl, roomId });
+  useImpressionLog('visit_chat', { roomId });
+  // ...
+}
+```
+A good custom Hook makes the calling code more declarative by constraining what it does. For example, `useChatRoom(options)` can only connect to the chat room, while `useImpressionLog(eventName, extraData)` can only send an impression log to the analytics. If your custom Hook API doesn’t constrain the use cases and is very abstract, in the long run it’s likely to introduce more problems than it solves.
