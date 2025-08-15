@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.8.13
+[React doc Tutorial:Reusing Logic with Custom Hooks-When to use custom Hooks](./English/React/Reusing-Logic-with-Custom-Hooks.md)
+
 ## 2025.8.12
 [React doc Tutorial:Reusing Logic with Custom Hooks-When to use custom Hooks](./English/React/Reusing-Logic-with-Custom-Hooks.md)
 

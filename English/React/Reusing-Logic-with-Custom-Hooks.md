@@ -683,7 +683,7 @@ function ShippingForm({ country }) {
 ```
 Extracting a custom Hook makes the data flow explicit. You feed the `url` in and you get the `data` out. By “hiding” your Effect inside `useData`, you also prevent someone working on the `ShippingForm` component from adding unnecessary dependencies to it. With time, most of your app’s Effects will be in custom Hooks.
 
-### Keep your custom Hooks focused on concrete high-level use cases
+#### Keep your custom Hooks focused on concrete high-level use cases
 Start by choosing your custom Hook’s name. If you struggle to pick a clear name, it might mean that your Effect is too coupled to the rest of your component’s logic, and is not yet ready to be extracted.\
 struggle to [/ˈstrʌɡ(ə)l/] 难以；努力做某事
 
@@ -762,3 +762,137 @@ function ChatRoom({ roomId }) {
 }
 ```
 A good custom Hook makes the calling code more declarative by constraining what it does. For example, `useChatRoom(options)` can only connect to the chat room, while `useImpressionLog(eventName, extraData)` can only send an impression log to the analytics. If your custom Hook API doesn’t constrain the use cases and is very abstract, in the long run it’s likely to introduce more problems than it solves.
+
+### Custom Hooks help you migrate to better patterns 
+Effects are an “escape hatch”: you use them when you need to “step outside React” and when there is no better built-in solution for your use case. With time, the React team’s goal is to reduce the number of the Effects in your app to the minimum by providing more specific solutions to more specific problems. Wrapping your Effects in custom Hooks makes it easier to upgrade your code when these solutions become available.\
+upgrade [/ˌʌpˈɡreɪd/] 升级
+
+Let’s return to this example:
+```jsx
+// App.js
+import { useOnlineStatus } from './useOnlineStatus.js';
+
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <SaveButton />
+      <StatusBar />
+    </>
+  );
+}
+// useOnlineStatus.js
+import { useState, useEffect } from 'react';
+
+export function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+```
+In the above example, `useOnlineStatus` is implemented with a pair of `useState` and `useEffect`. However, this isn’t the best possible solution. There is a number of edge cases it doesn’t consider. For example, it assumes that when the component mounts, `isOnline` is already true, but this may be wrong if the network already went offline. You can use the browser `navigator.onLine` API to check for that, but using it directly would not work on the server for generating the initial HTML. In short, this code could be improved.\
+assume [/əˈsuːm/] 假设；假定
+
+React includes a dedicated API called `useSyncExternalStore` which takes care of all of these problems for you. Here is your `useOnlineStatus` Hook, rewritten to take advantage of this new API:
+```jsx
+import { useOnlineStatus } from './useOnlineStatus.js';
+
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <SaveButton />
+      <StatusBar />
+    </>
+  );
+}
+// useOnlineStatus.js
+import { useSyncExternalStore } from 'react';
+
+function subscribe(callback) {
+  window.addEventListener('online', callback);
+  window.addEventListener('offline', callback);
+  return () => {
+    window.removeEventListener('online', callback);
+    window.removeEventListener('offline', callback);
+  };
+}
+
+export function useOnlineStatus() {
+  return useSyncExternalStore(
+    subscribe,
+    () => navigator.onLine, // How to get the value on the client
+    () => true // How to get the value on the server
+  );
+}
+```
+Notice how you didn’t need to change any of the components to make this migration:
+```jsx
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  // ...
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+  // ...
+}
+```
+This is another reason for why wrapping Effects in custom Hooks is often beneficial:
+beneficial[/bɪˈnɛfɪʃəl/] 有益的；有利的
+
+1. You make the data flow to and from your Effects very explicit.
+2. You let your components focus on the intent rather than on the exact implementation of your Effects.
+3. When React adds new features, you can remove those Effects without changing any of your components.
+
+Similar to a design system, you might find it helpful to start extracting common idioms from your app’s components into custom Hooks. This will keep your components’ code focused on the intent, and let you avoid writing raw Effects very often. Many excellent custom Hooks are maintained by the React community.
+intent [/ɪnˈtɛnt/] 意图；目的
