@@ -896,3 +896,19 @@ beneficial[/bɪˈnɛfɪʃəl/] 有益的；有利的
 
 Similar to a design system, you might find it helpful to start extracting common idioms from your app’s components into custom Hooks. This will keep your components’ code focused on the intent, and let you avoid writing raw Effects very often. Many excellent custom Hooks are maintained by the React community.
 intent [/ɪnˈtɛnt/] 意图；目的
+
+#### Will React provide any built-in solution for data fetching?
+We’re still working out the details, but we expect that in the future, you’ll write data fetching like this:
+```jsx
+import { use } from 'react'; // Not available yet!
+
+function ShippingForm({ country }) {
+  const cities = use(fetch(`/api/cities?country=${country}`));
+  const [city, setCity] = useState(null);
+  const areas = city ? use(fetch(`/api/areas?city=${city}`)) : null;
+  // ...
+```
+If you use custom Hooks like `useData` above in your app, it will require fewer changes to migrate to the eventually recommended approach than if you write raw Effects in every component manually. However, the old approach will still work fine, so if you feel happy writing raw Effects, you can continue to do that.\
+fewer [ˈfjuːər] 更少的\
+migrate [ˈmaɪɡreɪt] 迁移\
+eventually [ɪˈvɛnʧuəli] 最终；最后
