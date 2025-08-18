@@ -912,3 +912,329 @@ If you use custom Hooks like `useData` above in your app, it will require fewer 
 fewer [ˈfjuːər] 更少的\
 migrate [ˈmaɪɡreɪt] 迁移\
 eventually [ɪˈvɛnʧuəli] 最终；最后
+
+### There is more than one way to do it
+Let’s say you want to implement a fade-in animation from scratch using the browser `requestAnimationFrame` API. You might start with an Effect that sets up an animation loop. During each frame of the animation, you could change the opacity of the DOM node you hold in a ref until it reaches `1`. Your code might start like this:
+```jsx
+import { useState, useEffect, useRef } from 'react';
+
+function Welcome() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const duration = 1000;
+    const node = ref.current;
+
+    let startTime = performance.now();
+    let frameId = null;
+
+    function onFrame(now) {
+      const timePassed = now - startTime;
+      const progress = Math.min(timePassed / duration, 1);
+      onProgress(progress);
+      if (progress < 1) {
+        // We still have more frames to paint
+        frameId = requestAnimationFrame(onFrame);
+      }
+    }
+
+    function onProgress(progress) {
+      node.style.opacity = progress;
+    }
+
+    function start() {
+      onProgress(0);
+      startTime = performance.now();
+      frameId = requestAnimationFrame(onFrame);
+    }
+
+    function stop() {
+      cancelAnimationFrame(frameId);
+      startTime = null;
+      frameId = null;
+    }
+
+    start();
+    return () => stop();
+  }, []);
+
+  return (
+    <h1 className="welcome" ref={ref}>
+      Welcome
+    </h1>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
+      <hr />
+      {show && <Welcome />}
+    </>
+  );
+}
+```
+To make the component more readable, you might extract the logic into a `useFadeIn` custom Hook:
+```jsx
+// App.js
+import { useState, useEffect, useRef } from 'react';
+import { useFadeIn } from './useFadeIn.js';
+
+function Welcome() {
+  const ref = useRef(null);
+
+  useFadeIn(ref, 1000);
+
+  return (
+    <h1 className="welcome" ref={ref}>
+      Welcome
+    </h1>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
+      <hr />
+      {show && <Welcome />}
+    </>
+  );
+}
+// useFadeIn.js
+import { useEffect } from 'react';
+
+export function useFadeIn(ref, duration) {
+  useEffect(() => {
+    const node = ref.current;
+
+    let startTime = performance.now();
+    let frameId = null;
+
+    function onFrame(now) {
+      const timePassed = now - startTime;
+      const progress = Math.min(timePassed / duration, 1);
+      onProgress(progress);
+      if (progress < 1) {
+        // We still have more frames to paint
+        frameId = requestAnimationFrame(onFrame);
+      }
+    }
+
+    function onProgress(progress) {
+      node.style.opacity = progress;
+    }
+
+    function start() {
+      onProgress(0);
+      startTime = performance.now();
+      frameId = requestAnimationFrame(onFrame);
+    }
+
+    function stop() {
+      cancelAnimationFrame(frameId);
+      startTime = null;
+      frameId = null;
+    }
+
+    start();
+    return () => stop();
+  }, [ref, duration]);
+}
+```
+You could keep the `useFadeIn` code as is, but you could also refactor it more. For example, you could extract the logic for setting up the animation loop out of `useFadeIn` into a custom `useAnimationLoop` Hook:
+```jsx
+// App.js
+import { useState, useEffect, useRef } from 'react';
+import { useFadeIn } from './useFadeIn.js';
+
+function Welcome() {
+  const ref = useRef(null);
+
+  useFadeIn(ref, 1000);
+
+  return (
+    <h1 className="welcome" ref={ref}>
+      Welcome
+    </h1>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
+      <hr />
+      {show && <Welcome />}
+    </>
+  );
+}
+// useFadeIn.js
+import { useState, useEffect } from 'react';
+import { experimental_useEffectEvent as useEffectEvent } from 'react';
+
+export function useFadeIn(ref, duration) {
+  const [isRunning, setIsRunning] = useState(true);
+
+  useAnimationLoop(isRunning, (timePassed) => {
+    const progress = Math.min(timePassed / duration, 1);
+    ref.current.style.opacity = progress;
+    if (progress === 1) {
+      setIsRunning(false);
+    }
+  });
+}
+
+function useAnimationLoop(isRunning, drawFrame) {
+  const onFrame = useEffectEvent(drawFrame);
+
+  useEffect(() => {
+    if (!isRunning) {
+      return;
+    }
+
+    const startTime = performance.now();
+    let frameId = null;
+
+    function tick(now) {
+      const timePassed = now - startTime;
+      onFrame(timePassed);
+      frameId = requestAnimationFrame(tick);
+    }
+
+    tick();
+    return () => cancelAnimationFrame(frameId);
+  }, [isRunning]);
+}
+```
+However, you didn’t have to do that. As with regular functions, ultimately you decide where to draw the boundaries between different parts of your code. You could also take a very different approach. Instead of keeping the logic in the Effect, you could move most of the imperative logic inside a JavaScript class:
+```jsx
+// App.js
+import { useState, useEffect, useRef } from 'react';
+import { useFadeIn } from './useFadeIn.js';
+
+function Welcome() {
+  const ref = useRef(null);
+
+  useFadeIn(ref, 1000);
+
+  return (
+    <h1 className="welcome" ref={ref}>
+      Welcome
+    </h1>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
+      <hr />
+      {show && <Welcome />}
+    </>
+  );
+}
+// useFadeIn.js
+import { useState, useEffect } from 'react';
+import { FadeInAnimation } from './animation.js';
+
+export function useFadeIn(ref, duration) {
+  useEffect(() => {
+    const animation = new FadeInAnimation(ref.current);
+    animation.start(duration);
+    return () => {
+      animation.stop();
+    };
+  }, [ref, duration]);
+}
+// animation.js
+export class FadeInAnimation {
+  constructor(node) {
+    this.node = node;
+  }
+  start(duration) {
+    this.duration = duration;
+    this.onProgress(0);
+    this.startTime = performance.now();
+    this.frameId = requestAnimationFrame(() => this.onFrame());
+  }
+  onFrame() {
+    const timePassed = performance.now() - this.startTime;
+    const progress = Math.min(timePassed / this.duration, 1);
+    this.onProgress(progress);
+    if (progress === 1) {
+      this.stop();
+    } else {
+      // We still have more frames to paint
+      this.frameId = requestAnimationFrame(() => this.onFrame());
+    }
+  }
+  onProgress(progress) {
+    this.node.style.opacity = progress;
+  }
+  stop() {
+    cancelAnimationFrame(this.frameId);
+    this.startTime = null;
+    this.frameId = null;
+    this.duration = 0;
+  }
+}
+```
+Effects let you connect React to external systems. The more coordination between Effects is needed (for example, to chain multiple animations), the more it makes sense to extract that logic out of Effects and Hooks completely like in the sandbox above. Then, the code you extracted becomes the “external system”. This lets your Effects stay simple because they only need to send messages to the system you’ve moved outside React.
+
+The examples above assume that the fade-in logic needs to be written in JavaScript. However, this particular fade-in animation is both simpler and much more efficient to implement with a plain CSS Animation:
+```jsx
+// App.js
+import { useState, useEffect, useRef } from 'react';
+import './welcome.css';
+
+function Welcome() {
+  return (
+    <h1 className="welcome">
+      Welcome
+    </h1>
+  );
+}
+
+export default function App() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
+      <hr />
+      {show && <Welcome />}
+    </>
+  );
+}
+// welcome.css
+.welcome {
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 50px;
+  background-image: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+
+  animation: fadeIn 1000ms;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+```
+Sometimes, you don’t even need a Hook!
