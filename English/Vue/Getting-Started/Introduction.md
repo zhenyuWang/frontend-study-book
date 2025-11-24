@@ -83,3 +83,28 @@ leverage [ˈlɛvərɪdʒ] 利用\
 retain [rɪˈteɪn] 保持\
 productivity [ˌproʊdəkˈtɪvɪti] 生产力\
 adapt [əˈdæpt] 适应
+
+## Single-File Components​
+In most build-tool-enabled Vue projects, we author Vue components using an HTML-like file format called Single-File Component (also known as *.vue files, abbreviated as SFC). A Vue SFC, as the name suggests, encapsulates the component's logic (JavaScript), template (HTML), and styles (CSS) in a single file. Here's the previous example, written in SFC format:\
+abbreviated [əˈbriviˌeɪtɪd] 缩写的\
+encapsulate [ɛnˈkæpsjəˌleɪt] 封装
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const count = ref(0)
+</script>
+
+<template>
+  <button @click="count++">Count is: {{ count }}</button>
+</template>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+```
+SFC is a defining feature of Vue and is the recommended way to author Vue components if your use case warrants a build setup. You can learn more about the how and why of SFC in its dedicated section - but for now, just know that Vue will handle all the build tools setup for you.\
+warrant [ˈwɔrənt] 需要\
+dedicated [ˈdɛdəˌkeɪtɪd] 专门的
