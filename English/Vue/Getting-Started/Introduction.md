@@ -146,3 +146,36 @@ export default {
   <button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
+
+## Composition API​
+With Composition API, we define a component's logic using imported API functions. In SFCs, Composition API is typically used with `<script setup>`. The `setup` attribute is a hint that makes Vue perform compile-time transforms that allow us to use Composition API with less boilerplate. For example, imports and top-level variables / functions declared in `<script setup>` are directly usable in the template.\
+typically [ˈtɪpɪkli] 通常地\
+hint [hɪnt] 提示\
+perform [pərˈfɔrm] 执行\
+compile-time [kəmˈpaɪl taɪm] 编译时\
+boilerplate [ˈbɔɪlərˌpleɪt] 样板代码
+
+Here is the same component, with the exact same template, but using Composition API and `<script setup>` instead:
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+
+// reactive state
+const count = ref(0)
+
+// functions that mutate state and trigger updates
+function increment() {
+  count.value++
+}
+
+// lifecycle hooks
+onMounted(() => {
+  console.log(`The initial count is ${count.value}.`)
+})
+</script>
+
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
+</template>
+```
