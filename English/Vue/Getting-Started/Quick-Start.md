@@ -58,3 +58,43 @@ When you are ready to ship your app to production, run the following:
 $ npm run build
 ```
 This will create a production-ready build of your app in the project's `./dist` directory. Check out the Production Deployment Guide to learn more about shipping your app to production.\
+
+## Using Vue from CDN​
+You can use Vue directly from a CDN via a script tag:
+
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+```
+Here we are using `unpkg`, but you can also use any CDN that serves npm packages, for example `jsdelivr` or `cdnjs`. Of course, you can also download this file and serve it yourself.
+
+When using Vue from a CDN, there is no "build step" involved. This makes the setup a lot simpler, and is suitable for enhancing static HTML or integrating with a backend framework. However, you won't be able to use the Single-File Component (SFC) syntax.\
+suitable [ˈsuːtəbl] 适合的，合适的\
+enhance [ɪnˈhæns] 增强，提高\
+integrate [ˈɪntɪgreɪt] 集成，整合
+
+### Using the Global Build​
+The above link loads the global build of Vue, where all top-level APIs are exposed as properties on the global Vue object. Here is a full example using the global build:
+
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">{{ message }}</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const message = ref('Hello vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+```
+#### TIP
+Many of the examples for Composition API throughout the guide will be using the `<script setup>` syntax, which requires build tools. If you intend to use Composition API without a build step, consult the usage of the `setup()` option.\
+intend [ɪnˈtɛnd] 打算，计划\
+consult [kənˈsʌlt] 咨询，查阅\
+usage [ˈjuːsɪdʒ] 用法，使用
