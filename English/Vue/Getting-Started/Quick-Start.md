@@ -98,3 +98,24 @@ Many of the examples for Composition API throughout the guide will be using the 
 intend [ɪnˈtɛnd] 打算，计划\
 consult [kənˈsʌlt] 咨询，查阅\
 usage [ˈjuːsɪdʒ] 用法，使用
+
+## Using the ES Module Build​
+Throughout the rest of the documentation, we will be primarily using ES modules syntax. Most modern browsers now support ES modules natively, so we can use Vue from a CDN via native ES modules like this:
+
+```html
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    setup() {
+      const message = ref('Hello Vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+```
+Notice that we are using `<script type="module">`, and the imported CDN URL is pointing to the ES modules build of Vue instead.

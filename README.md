@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.12.1
+[Vue doc Quick Start](./English/Vue/Getting-Started/Quick-Start.md)
+
 ## 2025.11.30
 [Vue doc Quick Start](./English/Vue/Getting-Started/Quick-Start.md)
 
