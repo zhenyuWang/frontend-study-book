@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2025.12.5
+[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+
 ## 2025.12.4
 [Vue doc Quick Start](./English/Vue/Getting-Started/Quick-Start.md)
 
