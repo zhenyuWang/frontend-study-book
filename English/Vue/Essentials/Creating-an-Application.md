@@ -75,3 +75,22 @@ Vue will automatically use the container's `innerHTML` as the template if the ro
 
 In-DOM templates are often used in applications that are using Vue without a build step. They can also be used in conjunction with server-side frameworks, where the root template might be generated dynamically by the server.\
 conjunction [/kənˈdʒʌŋkʃ(ə)n/] n. 结合，联合，连接
+
+## App Configurations​
+The application instance exposes a `.config` object that allows us to configure a few app-level options, for example, defining an app-level error handler that captures errors from all descendant components:\
+descendant [/dɪˈsendənt/] n. 后代，子孙，后裔
+```js
+app.config.errorHandler = (err) => {
+  /* handle error */
+}
+```
+The application instance also provides a few methods for registering app-scoped assets. For example, registering a component:
+
+```js
+app.component('TodoDeleteButton', TodoDeleteButton)
+```
+This makes the `TodoDeleteButton` available for use anywhere in our app. We will discuss registration for components and other types of assets in later sections of the guide. You can also browse the full list of application instance APIs in its API reference.\
+discuss [/dɪˈskʌs/] v. 讨论，商讨，议论\
+browse [/braʊz/] v. 浏览，随便翻阅
+
+Make sure to apply all app configurations before mounting the app!
