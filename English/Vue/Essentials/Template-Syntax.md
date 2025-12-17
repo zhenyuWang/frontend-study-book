@@ -12,3 +12,14 @@ manipulations [/məˌnɪpjʊˈleɪʃənz/] n. 操作，处理
 
 If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also directly write render functions instead of templates, with optional JSX support. However, do note that they do not enjoy the same level of compile-time optimizations as templates.\
 raw [/rɔː/] adj. 原始
+
+## Text Interpolation​
+The most basic form of data binding is text interpolation using the "Mustache" syntax (double curly braces):\
+form [/fɔːrm/] n. 形式\
+interpolation [/ɪntərˌpəleɪˈʃən/] n. 插值，插入
+
+```template
+<span>Message: {{ msg }}</span>
+```
+The mustache tag will be replaced with the value of the `msg` property from the corresponding component instance. It will also be updated whenever the msg property changes.\
+corresponding [/ˌkɔːrəˈspɑːndɪŋ/] adj. 相应的
