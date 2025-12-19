@@ -48,3 +48,13 @@ fundamental [/ˌfʌndəˈmentl/] adj. 基本的，根本的
 Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use `v-html` on trusted content and never on user-provided content.\
 arbitrary [/ˈɑːrbɪtreri/] adj. 任意的\
 vulnerabilities [/ˌvʌlnərəˈbɪlətiz/] n. 漏洞
+
+## Attribute Bindings​
+Mustaches cannot be used inside HTML attributes. Instead, use a `v-bind` directive:
+
+```template
+<div v-bind:id="dynamicId"></div>
+```
+The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.\
+instruct [/ɪnˈstrʌkt/] v. 指示\
+bound [/baʊnd/] adj. 绑定的
