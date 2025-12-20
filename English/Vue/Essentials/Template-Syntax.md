@@ -58,3 +58,15 @@ Mustaches cannot be used inside HTML attributes. Instead, use a `v-bind` directi
 The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.\
 instruct [/ɪnˈstrʌkt/] v. 指示\
 bound [/baʊnd/] adj. 绑定的
+
+### Shorthand​
+Because `v-bind` is so commonly used, it has a dedicated shorthand syntax:\
+dedicated [/ˈdedɪkeɪtɪd/] adj. 专用的
+
+```template
+<div :id="dynamicId"></div>
+```
+Attributes that start with `:` may look a bit different from normal HTML, but it is in fact a valid character for attribute names and all Vue-supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is optional, but you will likely appreciate it when you learn more about its usage later.\
+appreciate [/əˈpriːʃieɪt/] v. 领会，理解
+
+For the rest of the guide, we will be using the shorthand syntax in code examples, as that's the most common usage for Vue developers.
