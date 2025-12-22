@@ -70,3 +70,17 @@ Attributes that start with `:` may look a bit different from normal HTML, but it
 appreciate [/əˈpriːʃieɪt/] v. 领会，理解
 
 For the rest of the guide, we will be using the shorthand syntax in code examples, as that's the most common usage for Vue developers.
+
+### Same-name Shorthand​
+- Only supported in 3.4+
+
+If the attribute has the same name as the variable name of the JavaScript value being bound, the syntax can be further shortened to omit the attribute value:
+
+```template
+<!-- same as :id="id" -->
+<div :id></div>
+
+<!-- this also works -->
+<div v-bind:id></div>
+```
+This is similar to the property shorthand syntax when declaring objects in JavaScript. Note this is a feature that is only available in Vue 3.4 and above.
