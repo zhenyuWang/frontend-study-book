@@ -84,3 +84,18 @@ If the attribute has the same name as the variable name of the JavaScript value 
 <div v-bind:id></div>
 ```
 This is similar to the property shorthand syntax when declaring objects in JavaScript. Note this is a feature that is only available in Vue 3.4 and above.
+
+## Boolean Attributes
+Boolean attributes are attributes that can indicate true / false values by their presence on an element. For example, `disabled` is one of the most commonly used boolean attributes.\
+indicate [/ˈɪndɪkeɪt/] v. 指示\
+presence [/ˈprezəns/] n. 存在
+
+`v-bind` works a bit differently in this case:
+
+```template
+<button :disabled="isButtonDisabled">Button</button>
+```
+The `disabled` attribute will be included if `isButtonDisabled` has a `truthy value`. It will also be included if the value is an empty string, maintaining consistency with `<button disabled="">`. For other falsy values the attribute will be omitted.\
+maintaining [/meɪnˈteɪnɪŋ/] v. 保持\
+consistency [/kənˈsɪstənsi/] n. 一致性\
+omitted [/oʊˈmɪtɪd/] adj. 被省略的
