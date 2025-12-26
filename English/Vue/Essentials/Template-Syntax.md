@@ -99,3 +99,20 @@ The `disabled` attribute will be included if `isButtonDisabled` has a `truthy va
 maintaining [/meɪnˈteɪnɪŋ/] v. 保持\
 consistency [/kənˈsɪstənsi/] n. 一致性\
 omitted [/oʊˈmɪtɪd/] adj. 被省略的
+
+## Dynamically Binding Multiple Attributes​
+If you have a JavaScript object representing multiple attributes that looks like this:\
+represent [/ˌreprɪˈzent/] v. 代表
+
+```js
+const objectOfAttrs = {
+  id: 'container',
+  class: 'wrapper',
+  style: 'background-color:green'
+}
+```
+You can bind them to a single element by using `v-bind` without an argument:
+
+```template
+<div v-bind="objectOfAttrs"></div>
+```
