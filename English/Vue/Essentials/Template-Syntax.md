@@ -85,7 +85,7 @@ If the attribute has the same name as the variable name of the JavaScript value 
 ```
 This is similar to the property shorthand syntax when declaring objects in JavaScript. Note this is a feature that is only available in Vue 3.4 and above.
 
-## Boolean Attributes
+### Boolean Attributes
 Boolean attributes are attributes that can indicate true / false values by their presence on an element. For example, `disabled` is one of the most commonly used boolean attributes.\
 indicate [/ˈɪndɪkeɪt/] v. 指示\
 presence [/ˈprezəns/] n. 存在
@@ -100,7 +100,7 @@ maintaining [/meɪnˈteɪnɪŋ/] v. 保持\
 consistency [/kənˈsɪstənsi/] n. 一致性\
 omitted [/oʊˈmɪtɪd/] adj. 被省略的
 
-## Dynamically Binding Multiple Attributes​
+### Dynamically Binding Multiple Attributes​
 If you have a JavaScript object representing multiple attributes that looks like this:\
 represent [/ˌreprɪˈzent/] v. 代表
 
@@ -116,3 +116,22 @@ You can bind them to a single element by using `v-bind` without an argument:
 ```template
 <div v-bind="objectOfAttrs"></div>
 ```
+
+## Using JavaScript Expressions​
+So far we've only been binding to simple property keys in our templates. But Vue actually supports the full power of JavaScript expressions inside all data bindings:
+
+```template
+{{ number + 1 }}
+
+{{ ok ? 'YES' : 'NO' }}
+
+{{ message.split('').reverse().join('') }}
+
+<div :id="`list-${id}`"></div>
+```
+These expressions will be evaluated as JavaScript in the data scope of the current component instance.
+
+In Vue templates, JavaScript expressions can be used in the following positions:
+
+- Inside text interpolations (mustaches)
+- In the attribute value of any Vue directives (special attributes that start with `v-`)
