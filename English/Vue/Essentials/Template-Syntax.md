@@ -148,3 +148,15 @@ Therefore, the following will NOT work:
 <!-- flow control won't work either, use ternary expressions -->
 {{ if (ok) { return message } }}
 ```
+
+### Calling Functions​
+It is possible to call a component-exposed method inside a binding expression:
+
+```template
+<time :title="toTitleDate(date)" :datetime="date">
+  {{ formatDate(date) }}
+</time>
+```
+#### TIP
+Functions called inside binding expressions will be called every time the component updates, so they should not have any side effects, such as changing data or triggering asynchronous operations.\
+asynchronous [/ˌeɪsɪŋˈkrɒnəs/] adj. 异步的
