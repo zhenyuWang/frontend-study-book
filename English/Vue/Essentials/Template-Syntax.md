@@ -160,3 +160,10 @@ It is possible to call a component-exposed method inside a binding expression:
 #### TIP
 Functions called inside binding expressions will be called every time the component updates, so they should not have any side effects, such as changing data or triggering asynchronous operations.\
 asynchronous [/ˌeɪsɪŋˈkrɒnəs/] adj. 异步的
+
+### Restricted Globals Access​
+Template expressions are sandboxed and only have access to a restricted list of globals. The list exposes commonly used built-in globals such as `Math` and `Date`.\
+sandboxed [/ˈsændbɒkst/] adj. 沙盒化的\
+restricted [/rɪˈstrɪktɪd/] adj. 受限的
+
+Globals not explicitly included in the list, for example user-attached properties on window, will not be accessible in template expressions. You can, however, explicitly define additional globals for all Vue expressions by adding them to `app.config.globalProperties`.
