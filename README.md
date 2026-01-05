@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.1.5
+[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+
 ## 2026.1.4
 [Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
 

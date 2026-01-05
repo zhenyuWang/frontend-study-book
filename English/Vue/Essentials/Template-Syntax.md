@@ -180,3 +180,29 @@ respective [/rɪˈspektɪv/] adj. 各自的
 ```
 Here, the `v-if` directive would remove or insert the `<p>` element based on the truthiness of the value of the expression `seen`.\
 truthiness [/ˈtruːθɪnəs/] n. 真实性
+
+### Arguments​
+Some directives can take an "argument", denoted by a colon after the directive name. For example, the `v-bind` directive is used to reactively update an HTML attribute:\
+denote [/dɪˈnəʊt/] v. 表示\
+colon [/ˈkəʊlən/] n. 冒号
+
+```template
+<a v-bind:href="url"> ... </a>
+
+<!-- shorthand -->
+<a :href="url"> ... </a>
+```
+Here, `href` is the argument, which tells the `v-bind` directive to bind the element's href attribute to the value of the expression `url`. In the shorthand, everything before the argument (i.e., `v-bind:`) is condensed into a single character, `:`.\
+condensed [/kənˈdensd/] adj. 浓缩的
+
+Another example is the `v-on` directive, which listens to DOM events:
+
+```template
+<a v-on:click="doSomething"> ... </a>
+
+<!-- shorthand -->
+<a @click="doSomething"> ... </a>
+```
+Here, the argument is the event name to listen to: `click`. `v-on` has a corresponding shorthand, namely the `@` character. We will talk about event handling in more detail too.\
+corresponding [/ˌkɔːrəˈspɑːndɪŋ/] adj. 相应的
+
