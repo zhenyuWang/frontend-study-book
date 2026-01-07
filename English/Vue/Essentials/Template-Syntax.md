@@ -231,3 +231,6 @@ Similarly, you can use dynamic arguments to bind a handler to a dynamic event na
 ```
 In this example, when `eventName`'s value is `"focus"`, `v-on:[eventName]` will be equivalent to `v-on:focus`.\
 equivalent [/ɪˈkwɪvələnt/] adj. 等价的
+
+### Dynamic Argument Value Constraints​
+Dynamic arguments are expected to evaluate to a string, with the exception of `null`. The special value `null` can be used to explicitly remove the binding. Any other non-string value will trigger a warning.
