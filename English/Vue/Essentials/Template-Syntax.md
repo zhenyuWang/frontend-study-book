@@ -233,4 +233,22 @@ In this example, when `eventName`'s value is `"focus"`, `v-on:[eventName]` will 
 equivalent [/ɪˈkwɪvələnt/] adj. 等价的
 
 ### Dynamic Argument Value Constraints​
-Dynamic arguments are expected to evaluate to a string, with the exception of `null`. The special value `null` can be used to explicitly remove the binding. Any other non-string value will trigger a warning.
+Dynamic arguments are expected to evaluate to a string, with the exception of `null`. The special value `null` can be used to explicitly remove the binding. Any other non-string value will trigger a warning.\
+constraint [/kənˈstreɪnt/] n. 约束
+
+### Dynamic Argument Syntax Constraints​
+Dynamic argument expressions have some syntax constraints because certain characters, such as spaces and quotes, are invalid inside HTML attribute names. For example, the following is invalid:
+
+```template
+<!-- This will trigger a compiler warning. -->
+<a :['foo' + bar]="value"> ... </a>
+```
+If you need to pass a complex dynamic argument, it's probably better to use a computed property, which we will cover shortly.
+
+When using in-DOM templates (templates directly written in an HTML file), you should also avoid naming keys with uppercase characters, as browsers will coerce attribute names into lowercase:\
+coerce [/kəʊˈɜːrs/] v. 强制
+
+```template
+<a :[someAttr]="value"> ... </a>
+```
+The above will be converted to `:[someattr]` in in-DOM templates. If your component has a `someAttr` property instead of `someattr`, your code won't work. Templates inside Single-File Components are not subject to this constraint.
