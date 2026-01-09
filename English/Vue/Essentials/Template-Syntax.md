@@ -252,3 +252,14 @@ coerce [/kəʊˈɜːrs/] v. 强制
 <a :[someAttr]="value"> ... </a>
 ```
 The above will be converted to `:[someattr]` in in-DOM templates. If your component has a `someAttr` property instead of `someattr`, your code won't work. Templates inside Single-File Components are not subject to this constraint.
+
+### Modifiers​
+Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. For example, the `.prevent` modifier tells the `v-on` directive to call event.`preventDefault()` on the triggered event:\
+postfix [/ˈpəʊstfɪks/] n. 后缀\
+denote [/dɪˈnəʊt/] v. 表示\
+indicate [/ˈɪndɪkeɪt/] v. 指示
+```template
+<form @submit.prevent="onSubmit">...</form>
+```
+You'll see other examples of modifiers later, for `v-on` and for `v-model`, when we explore those features.\
+explore [/ɪkˈsplɔːr/] v. 探索
