@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.1.15
+[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+
 ## 2026.1.14
 [Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
