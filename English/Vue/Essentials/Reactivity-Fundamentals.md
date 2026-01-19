@@ -177,3 +177,19 @@ Further reading:
 
 overhead [/ˈoʊvərhed/] n. 额外开销；管理费用\
 integration [/ˌɪntɪˈɡreɪʃn/] n. 整合；结合
+
+### DOM Update Timing​
+When you mutate reactive state, the DOM is updated automatically. However, it should be noted that the DOM updates are not applied synchronously. Instead, Vue buffers them until the "next tick" in the update cycle to ensure that each component updates only once no matter how many state changes you have made.\
+buffer [/ˈbʌfər/] v. 缓冲；缓解
+
+To wait for the DOM update to complete after a state change, you can use the `nextTick()` global API:
+
+```js
+import { nextTick } from 'vue'
+
+async function increment() {
+  count.value++
+  await nextTick()
+  // Now the DOM is updated
+}
+```
