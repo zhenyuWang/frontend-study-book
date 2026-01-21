@@ -4,95 +4,98 @@
 
 # 日志
 
+## 2026.1.20
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+
 ## 2026.1.19
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.16
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.15
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.14
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.13
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.12
-[Vue doc Quick Start](./English/Vue/Essentials/Reactivity-Fundamentals.md)
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
 ## 2026.1.9
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2026.1.8
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2026.1.7
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2026.1.6
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2026.1.5
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2026.1.4
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.31
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.30
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.29
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.27
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.26
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.23
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.22
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.20
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.19
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.18
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.17
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.12
-[Vue doc Quick Start](./English/Vue/Essentials/Template-Syntax.md)
+[Vue doc Template Syntax](./English/Vue/Essentials/Template-Syntax.md)
 
 ## 2025.12.11
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.10
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.9
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.8
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.6
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.5
-[Vue doc Quick Start](./English/Vue/Essentials/Creating-an-Application.md)
+[Vue doc Creating an Application](./English/Vue/Essentials/Creating-an-Application.md)
 
 ## 2025.12.4
 [Vue doc Quick Start](./English/Vue/Getting-Started/Quick-Start.md)

@@ -214,3 +214,37 @@ behave [/bɪˈheɪv/] v. 表现；举止\
 intercept [/ˌɪntərˈsept/] v. 截取；拦截
 
 `reactive()` converts the object deeply: nested objects are also wrapped with `reactive()` when accessed. It is also called by `ref()` internally when the ref value is an object. Similar to shallow refs, there is also the `shallowReactive()` API for opting-out of deep reactivity.
+
+### Reactive Proxy vs. Original​
+It is important to note that the returned value from `reactive()` is a Proxy of the original object, which is not equal to the original object:
+
+```js
+const raw = {}
+const proxy = reactive(raw)
+
+// proxy is NOT equal to the original.
+console.log(proxy === raw) // false
+```
+Only the proxy is reactive - mutating the original object will not trigger updates. Therefore, the best practice when working with Vue's reactivity system is to exclusively use the proxied versions of your state.\
+exclusively [/ɪkˈskluːsɪvli/] adv. 专门地；排外地
+
+To ensure consistent access to the proxy, calling `reactive()` on the same object always returns the same proxy, and calling `reactive()` on an existing proxy also returns that same proxy:\
+consistent [/kənˈsɪstənt/] adj. 一致的；连贯的
+
+```js
+// calling reactive() on the same object returns the same proxy
+console.log(reactive(raw) === proxy) // true
+
+// calling reactive() on a proxy returns itself
+console.log(reactive(proxy) === proxy) // true
+```
+This rule applies to nested objects as well. Due to deep reactivity, nested objects inside a reactive object are also proxies:
+
+```js
+const proxy = reactive({})
+
+const raw = {}
+proxy.nested = raw
+
+console.log(proxy.nested === raw) // false
+```
