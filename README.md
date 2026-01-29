@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.1.27
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Computed-Properties.md)
+
 ## 2026.1.26
 [Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Reactivity-Fundamentals.md)
 
