@@ -106,3 +106,46 @@ const fullName = computed({
 </script>
 ```
 Now when you run `fullName.value = 'John Doe'`, the setter will be invoked and `firstName` and `lastName` will be updated accordingly.
+
+## Getting the Previous Value​
+In case you need it, you can get the previous value returned by the computed property accessing the first argument of the getter:
+```vue
+<script setup>
+import { ref, computed } from 'vue'
+
+const count = ref(2)
+
+// This computed will return the value of count when it's less or equal to 3.
+// When count is >=4, the last value that fulfilled our condition will be returned
+// instead until count is less or equal to 3
+const alwaysSmall = computed((previous) => {
+  if (count.value <= 3) {
+    return count.value
+  }
+
+  return previous
+})
+</script>
+```
+In case you're using a writable computed:
+
+```vue
+<script setup>
+import { ref, computed } from 'vue'
+
+const count = ref(2)
+
+const alwaysSmall = computed({
+  get(previous) {
+    if (count.value <= 3) {
+      return count.value
+    }
+
+    return previous
+  },
+  set(newValue) {
+    count.value = newValue * 2
+  }
+})
+</script>
+```
