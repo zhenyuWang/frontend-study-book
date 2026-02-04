@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.2.4
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Class-and-Style-Bindings.md)
+
 ## 2026.2.3
 [Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Computed-Properties.md)
 
