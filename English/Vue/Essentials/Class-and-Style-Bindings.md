@@ -145,3 +145,47 @@ Will render:
 <span>This is a child component</span>
 ```
 You can learn more about component attribute inheritance in Fallthrough Attributes section.
+
+## Binding Inline Styles​
+### Binding to Objects​
+`:style` supports binding to JavaScript object values - it corresponds to an HTML element's style property:
+
+```js
+const activeColor = ref('red')
+const fontSize = ref(30)
+```
+```template
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+```
+Although camelCase keys are recommended, `:style` also supports kebab-cased CSS property keys (corresponds to how they are used in actual CSS) - for example:
+
+```template
+<div :style="{ 'font-size': fontSize + 'px' }"></div>
+```
+It is often a good idea to bind to a style object directly so that the template is cleaner:
+
+```js
+const styleObject = reactive({
+  color: 'red',
+  fontSize: '30px'
+})
+```
+```template
+<div :style="styleObject"></div>
+```
+Again, object style binding is often used in conjunction with computed properties that return objects.\
+conjunction [kənˈdʒʌŋkʃən] 结合；连词
+
+`:style` directives can also coexist with regular style attributes, just like `:class`.\
+coexist [ˌkoʊɪɡˈzɪst] 共存
+
+Template:
+
+```template
+<h1 style="color: red" :style="'font-size: 1em'">hello</h1>
+```
+It will render:
+
+```template
+<h1 style="color: red; font-size: 1em;">hello</h1>
+```
