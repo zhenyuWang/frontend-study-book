@@ -189,3 +189,10 @@ It will render:
 ```template
 <h1 style="color: red; font-size: 1em;">hello</h1>
 ```
+
+### Binding to Arrays​
+We can bind `:style` to an array of multiple style objects. These objects will be merged and applied to the same element:
+
+```template
+<div :style="[baseStyles, overridingStyles]"></div>
+```
