@@ -196,3 +196,7 @@ We can bind `:style` to an array of multiple style objects. These objects will b
 ```template
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
+
+### Auto-prefixing​
+When you use a CSS property that requires a vendor prefix in `:style`, Vue will automatically add the appropriate prefix. Vue does this by checking at runtime to see which style properties are supported in the current browser. If the browser doesn't support a particular property then various prefixed variants will be tested to try to find one that is supported.\
+appropriate [əˈproʊpriət] 适当的；恰当的

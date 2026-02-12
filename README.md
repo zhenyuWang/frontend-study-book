@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.2.12
+[Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Class-and-Style-Bindings.md)
+
 ## 2026.2.11
 [Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Class-and-Style-Bindings.md)
 
