@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.2.14
+[Vue doc Conditional Rendering](./English/Vue/Essentials/Conditional-Rendering.md)
+
 ## 2026.2.13
 [Vue doc Reactivity Fundamentals](./English/Vue/Essentials/Class-and-Style-Bindings.md)
 
