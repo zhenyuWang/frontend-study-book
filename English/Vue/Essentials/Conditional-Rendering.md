@@ -48,3 +48,13 @@ Because `v-if` is a directive, it has to be attached to a single element. But wh
 ```
 `v-else` and `v-else-if` can also be used on `<template>`
 .
+
+## v-show​
+Another option for conditionally displaying an element is the `v-show` directive. The usage is largely the same:
+
+```template
+<h1 v-show="ok">Hello!</h1>
+```
+The difference is that an element with `v-show` will always be rendered and remain in the DOM; `v-show` only toggles the display CSS property of the element.
+
+`v-show` doesn't support the `<template>` element, nor does it work with `v-else`.
