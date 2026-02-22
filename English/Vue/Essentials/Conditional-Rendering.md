@@ -68,3 +68,11 @@ In comparison, `v-show` is much simpler - the element is always rendered regardl
 regardless [/rɪˈɡɑːrdləs/] 无论如何
 
 Generally speaking, `v-if` has higher toggle costs while `v-show` has higher initial render costs. So prefer `v-show` if you need to toggle something very often, and prefer `v-if` if the condition is unlikely to change at runtime.
+
+## v-if with v-for​
+When `v-if` and `v-for` are both used on the same element, `v-if` will be evaluated first. See the list rendering guide for details.
+
+### Note
+
+It's not recommended to use `v-if` and `v-for` on the same element due to implicit precedence. Refer to list rendering guide for details.\
+implicit precedence 隐式优先级
