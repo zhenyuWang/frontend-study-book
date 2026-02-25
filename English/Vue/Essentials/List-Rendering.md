@@ -65,3 +65,35 @@ You can also use `of` as the delimiter instead of `in`, so that it is closer to 
 ```template
 <div v-for="item of items"></div>
 ```
+
+## v-for with an Object​
+You can also use `v-for` to iterate through the properties of an object. The iteration order will be based on the result of calling `Object.values()` on the object:
+
+```js
+const myObject = reactive({
+  title: 'How to do lists in Vue',
+  author: 'Jane Doe',
+  publishedAt: '2016-04-10'
+})
+```
+```template
+<ul>
+  <li v-for="value in myObject">
+    {{ value }}
+  </li>
+</ul>
+```
+You can also provide a second alias for the property's name (a.k.a. key):
+
+```template
+<li v-for="(value, key) in myObject">
+  {{ key }}: {{ value }}
+</li>
+```
+And another for the index:
+
+```template
+<li v-for="(value, key, index) in myObject">
+  {{ index }}. {{ key }}: {{ value }}
+</li>
+```
