@@ -97,3 +97,11 @@ And another for the index:
   {{ index }}. {{ key }}: {{ value }}
 </li>
 ```
+
+## v-for with a Range​
+`v-for` can also take an integer. In this case it will repeat the template that many times, based on a range of `1...n`.
+
+```template
+<span v-for="n in 10">{{ n }}</span>
+```
+Note here `n` starts with an initial value of `1` instead of `0`.
