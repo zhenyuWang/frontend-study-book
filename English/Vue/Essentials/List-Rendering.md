@@ -105,3 +105,15 @@ And another for the index:
 <span v-for="n in 10">{{ n }}</span>
 ```
 Note here `n` starts with an initial value of `1` instead of `0`.
+
+## v-for on <template>​
+Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to render a block of multiple elements. For example:
+
+```template
+<ul>
+  <template v-for="item in items">
+    <li>{{ item.msg }}</li>
+    <li class="divider" role="presentation"></li>
+  </template>
+</ul>
+```
