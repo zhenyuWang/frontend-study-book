@@ -38,6 +38,7 @@ However, although objects in React state are technically mutable, you should tre
 In other words, you should treat any JavaScript object that you put into state as read-only.
 
 This example holds an object in state to represent the current pointer position. The red dot is supposed to move when you touch or move the cursor over the preview area. But the dot stays in the initial position:
+{% raw %}
 ```jsx
 import { useState } from 'react';
 
@@ -71,6 +72,7 @@ export default function MovingDot() {
   );
 }
 ```
+{% endraw %}
 The problem is with this bit of code.
 ```jsx
 onPointerMove={e => {
@@ -95,6 +97,7 @@ With `setPosition`, you’re telling React:
 - And render this component again
 
 Notice how the red dot now follows your pointer when you touch or hover over the preview area:
+{% raw %}
 ```jsx
 import { useState } from 'react';
 
@@ -130,7 +133,7 @@ export default function MovingDot() {
   );
 }
 ```
-
+{% endraw %}
 ## Copying objects with the spread syntax
 In the previous example, the position object is always created fresh from the current cursor position. But often, you will want to include existing data as a part of the new object you’re creating. For example, you may want to update only one field in a form, but keep the previous values for all other fields.
 
