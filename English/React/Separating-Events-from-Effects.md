@@ -594,6 +594,7 @@ The first downside of suppressing the rule is that React will no longer warn you
 Here is an example of a confusing bug caused by suppressing the linter. In this example, the `handleMove` function is supposed to read the current `canMove` state variable value in order to decide whether the dot should follow the cursor. However, `canMove` is always `true` inside `handleMove`.
 
 Can you see why?
+{% raw %}
 ```jsx
 import { useState, useEffect } from 'react';
 
@@ -639,6 +640,7 @@ export default function App() {
   );
 }
 ```
+{% endraw %}
 The problem with this code is in suppressing the dependency linter. If you remove the suppression, you’ll see that this Effect should depend on the `handleMove` function. This makes sense: `handleMove` is declared inside the component body, which makes it a reactive value. Every reactive value must be specified as a dependency, or it can potentially get stale over time!\
 potentially [/pəˈtenʃəli/] 可能地
 
@@ -647,6 +649,7 @@ The author of the original code has “lied” to React by saying that the Effec
 If you never suppress the linter, you will never see problems with stale values.
 
 With `useEffectEvent`, there is no need to “lie” to the linter, and the code works as you would expect:
+{% raw %}
 ```jsx
 import { useState, useEffect } from 'react';
 import { experimental_useEffectEvent as useEffectEvent } from 'react';
@@ -692,6 +695,7 @@ export default function App() {
   );
 }
 ```
+{% endraw %}
 This doesn’t mean that `useEffectEvent` is always the correct solution. You should only apply it to the lines of code that you don’t want to be reactive. In the above sandbox, you didn’t want the Effect’s code to be reactive with regards to `canMove`. That’s why it made sense to extract an Effect Event.
 
 Read Removing Effect Dependencies for other correct alternatives to suppressing the linter.

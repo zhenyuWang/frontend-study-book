@@ -46,6 +46,7 @@ export default function TodoList() {
 }
 ```
 If you copy and paste it as is, it will not work:
+{% raw %}
 ```jsx
 // App.js
 export default function TodoList() {
@@ -65,6 +66,7 @@ export default function TodoList() {
   );
 }
 ```
+{% endraw %}
 This is because JSX is stricter and has a few more rules than HTML! If you read the error messages above, they’ll guide you to fix the markup, or you can follow the guide below.
 
 **Note**\
