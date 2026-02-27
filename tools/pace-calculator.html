@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>跑步配速计算器</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #f97316;
+      --primary-light: #fff7ed;
+      --primary-dark: #c2410c;
+      --surface: #ffffff;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .header-icon {
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .header h1 {
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .card + .card {
+      margin-top: 20px;
+    }
+
+    .card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-header-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .card-header h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    /* Pace Input */
+    .pace-input-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pace-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pace-field label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .pace-input {
+      width: 90px;
+      height: 52px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -moz-appearance: textfield;
+    }
+
+    .pace-input::-webkit-inner-spin-button,
+    .pace-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .pace-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+      background: #fff;
+    }
+
+    .pace-unit {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-left: 6px;
+    }
+
+    .pace-separator {
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+      padding-top: 20px;
+    }
+
+    .pace-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      padding-top: 20px;
+      white-space: nowrap;
+    }
+
+    /* Stepper buttons */
+    .stepper {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-left: 4px;
+    }
+
+    .stepper button {
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s;
+      padding: 0;
+    }
+
+    .stepper button:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Pace display badge */
+    .pace-display {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      padding: 14px 18px;
+      background: var(--primary-light);
+      border-radius: 12px;
+    }
+
+    .pace-display-text {
+      font-size: 13px;
+      color: var(--primary-dark);
+    }
+
+    .pace-display-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pace-speed {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Presets */
+    .presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset-btn {
+      padding: 6px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .preset-btn.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      font-weight: 600;
+    }
+
+    /* Table */
+    .pace-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .pace-table thead tr {
+      background: var(--bg);
+    }
+
+    .pace-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .pace-table th:not(:first-child) {
+      text-align: right;
+    }
+
+    .pace-table th:nth-child(2) {
+      text-align: center;
+    }
+
+    .pace-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .pace-table td:not(:first-child) {
+      text-align: right;
+    }
+
+    .pace-table td:nth-child(2) {
+      text-align: center;
+    }
+
+    .pace-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pace-table tbody tr {
+      transition: background 0.15s;
+    }
+
+    .pace-table tbody tr:hover {
+      background: var(--primary-light);
+    }
+
+    .race-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .race-badge {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .race-name-text {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .race-dist {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .time-value {
+      font-size: 15px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--text);
+    }
+
+    .time-detail {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .speed-value {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Special highlight for marathon */
+    .row-highlight .race-name-text {
+      color: var(--primary-dark);
+    }
+
+    .row-highlight .time-value {
+      color: var(--primary);
+    }
+
+    /* Footer note */
+    .footer-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .card-body {
+        padding: 16px;
+      }
+
+      .pace-input {
+        width: 76px;
+        height: 46px;
+        font-size: 20px;
+      }
+
+      .pace-separator {
+        font-size: 26px;
+      }
+
+      .pace-table th,
+      .pace-table td {
+        padding: 10px 10px;
+      }
+
+      .race-dist,
+      .time-detail,
+      .speed-value {
+        display: none;
+      }
+
+      .time-value {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <span class="header-icon">🏃</span>
+      <h1>跑步配速计算器</h1>
+      <p>输入你的目标配速，查看各距离完赛时间</p>
+    </div>
+
+    <!-- Input Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">⚡</div>
+        <h2>预计配速设置</h2>
+      </div>
+      <div class="card-body">
+        <div class="pace-input-group">
+          <!-- Minutes -->
+          <div class="pace-field">
+            <label>分钟</label>
+            <div style="display:flex;align-items:center;">
+              <div class="input-wrapper">
+                <input
+                  class="pace-input"
+                  id="paceMin"
+                  type="number"
+                  min="2"
+                  max="7"
+                  value="4"
+                />
+              </div>
+              <div class="stepper">
+                <button onclick="adjust('paceMin', 1)" title="增加">▲</button>
+                <button onclick="adjust('paceMin', -1)" title="减少">▼</button>
+              </div>
+              <span class="pace-unit">分</span>
+            </div>
+          </div>
+
+          <div class="pace-separator">:</div>
+
+          <!-- Seconds -->
+          <div class="pace-field">
+            <label>秒钟</label>
+            <div style="display:flex;align-items:center;">
+              <div class="input-wrapper">
+                <input
+                  class="pace-input"
+                  id="paceSec"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="30"
+                />
+              </div>
+              <div class="stepper">
+                <button onclick="adjust('paceSec', 1)" title="增加">▲</button>
+                <button onclick="adjust('paceSec', -1)" title="减少">▼</button>
+              </div>
+              <span class="pace-unit">秒</span>
+            </div>
+          </div>
+
+          <div class="pace-label">/ 公里</div>
+        </div>
+
+        <!-- Current Pace Display -->
+        <div class="pace-display">
+          <span class="pace-display-text">当前配速</span>
+          <span class="pace-display-value" id="paceDisplayValue">4'30" / km</span>
+          <span class="pace-speed" id="paceSpeedValue">≈ 13.3 km/h</span>
+        </div>
+
+        <!-- Presets -->
+        <div class="presets">
+          <span style="font-size:12px;color:var(--text-muted);padding-top:6px;white-space:nowrap;">快捷配速：</span>
+          <button class="preset-btn" onclick="setPreset(3,50)">3'50"</button>
+          <button class="preset-btn" onclick="setPreset(3,55)">3'55"</button>
+          <button class="preset-btn" onclick="setPreset(4,0)">4'00"</button>
+          <button class="preset-btn" onclick="setPreset(4,5)">4'05"</button>
+          <button class="preset-btn" onclick="setPreset(4,10)">4'10"</button>
+          <button class="preset-btn" onclick="setPreset(4,14)">4'14"</button>
+          <button class="preset-btn" onclick="setPreset(4,20)">4'20"</button>
+          <button class="preset-btn" onclick="setPreset(4,25)">4'25"</button>
+          <button class="preset-btn" onclick="setPreset(4,30)">4'30"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📊</div>
+        <h2>各距离完赛时间表</h2>
+      </div>
+      <div class="card-body" style="padding: 0;">
+        <table class="pace-table">
+          <thead>
+            <tr>
+              <th>赛事</th>
+              <th>完赛时间</th>
+              <th>速度</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="footer-note">配速 = 跑完 1 公里所需的分钟数 &nbsp;·&nbsp; 全马距离 42.195 km</p>
+  </div>
+
+  <script>
+    const RACES = [
+      { name: '3K',   dist: 3,       color: '#94a3b8', highlight: false },
+      { name: '5K',   dist: 5,       color: '#60a5fa', highlight: false },
+      { name: '10K',  dist: 10,      color: '#34d399', highlight: false },
+      { name: '15K',  dist: 15,      color: '#a78bfa', highlight: false },
+      { name: '半马', dist: 21.0975, color: '#f97316', highlight: false },
+      { name: '30K',  dist: 30,      color: '#fb7185', highlight: false },
+      { name: '35K',  dist: 35,      color: '#e879f9', highlight: false },
+      { name: '全马', dist: 42.195,  color: '#f97316', highlight: true  },
+    ];
+
+    function formatTime(totalSeconds) {
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = Math.round(totalSeconds % 60);
+      const mm = String(m).padStart(2, '0');
+      const ss = String(s).padStart(2, '0');
+      if (h > 0) {
+        return `${h}:${mm}:${ss}`;
+      }
+      return `${mm}:${ss}`;
+    }
+
+    function formatTimeLabel(totalSeconds) {
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = Math.round(totalSeconds % 60);
+      const parts = [];
+      if (h > 0) parts.push(`${h} 时`);
+      if (m > 0) parts.push(`${m} 分`);
+      if (s > 0) parts.push(`${s} 秒`);
+      return parts.join(' ');
+    }
+
+    function getPaceSec() {
+      const min = parseInt(document.getElementById('paceMin').value) || 0;
+      const sec = parseInt(document.getElementById('paceSec').value) || 0;
+      return min * 60 + sec;
+    }
+
+    function renderTable() {
+      const paceSec = getPaceSec();
+      if (paceSec <= 0) return;
+
+      const speedKmh = (3600 / paceSec).toFixed(1);
+
+      // Update display
+      const min = Math.floor(paceSec / 60);
+      const sec = paceSec % 60;
+      document.getElementById('paceDisplayValue').textContent =
+        `${min}'${String(sec).padStart(2, '0')}" / km`;
+      document.getElementById('paceSpeedValue').textContent =
+        `≈ ${speedKmh} km/h`;
+
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      RACES.forEach(race => {
+        const totalSec = paceSec * race.dist;
+        const speed = (3600 / paceSec).toFixed(2);
+
+        const tr = document.createElement('tr');
+        if (race.highlight) tr.classList.add('row-highlight');
+
+        tr.innerHTML = `
+          <td>
+            <div class="race-name">
+              <div class="race-badge" style="background:${race.color}"></div>
+              <div>
+                <div class="race-name-text">${race.name}</div>
+                <div class="race-dist">${race.dist % 1 === 0 ? race.dist : race.dist.toFixed(4)} km</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="time-value">${formatTime(totalSec)}</div>
+            <div class="time-detail">${formatTimeLabel(totalSec)}</div>
+          </td>
+          <td>
+            <div class="speed-value">${speed} km/h</div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function adjust(id, delta) {
+      const el = document.getElementById(id);
+      let val = parseInt(el.value) || 0;
+      val += delta;
+      if (id === 'paceMin') val = Math.max(2, Math.min(20, val));
+      if (id === 'paceSec') {
+        if (val < 0) { val = 59; adjust('paceMin', -1); }
+        else if (val >= 60) { val = 0; adjust('paceMin', 1); }
+      }
+      el.value = val;
+      renderTable();
+    }
+
+    function setPreset(min, sec) {
+      document.getElementById('paceMin').value = min;
+      document.getElementById('paceSec').value = sec;
+      renderTable();
+      // Update active preset
+      document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    // Listen for direct input
+    ['paceMin', 'paceSec'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        // Clamp seconds
+        if (id === 'paceSec') {
+          let v = parseInt(document.getElementById('paceSec').value);
+          if (v > 59) document.getElementById('paceSec').value = 59;
+          if (v < 0) document.getElementById('paceSec').value = 0;
+        }
+        document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+        renderTable();
+      });
+    });
+
+    // Init
+    renderTable();
+  </script>
+</body>
+</html>
