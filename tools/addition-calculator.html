@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>加法计算器</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #6366f1;
+      --primary-light: #eef2ff;
+      --primary-dark: #4338ca;
+      --danger: #ef4444;
+      --danger-light: #fef2f2;
+      --success: #10b981;
+      --surface: #ffffff;
+      --bg: #f1f5f9;
+      --text: #1e293b;
+      --text-muted: #94a3b8;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .header-icon { font-size: 44px; display: block; margin-bottom: 10px; line-height: 1; }
+    .header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+    .header p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Card */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* Result bar */
+    .result-bar {
+      padding: 20px 24px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .result-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      white-space: nowrap;
+    }
+    .result-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -1px;
+      word-break: break-all;
+      text-align: right;
+    }
+
+    /* Items list */
+    .items-wrap {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideIn 0.18s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .item-index {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      width: 36px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+
+    .item-input {
+      flex: 1;
+      height: 44px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: right;
+      padding: 0 14px;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+      -moz-appearance: textfield;
+    }
+    .item-input::-webkit-inner-spin-button,
+    .item-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+    .item-input:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+    }
+    .item-input::placeholder { color: var(--text-muted); font-weight: 400; font-size: 14px; }
+
+    .item-plus {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 300;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .item-row:last-child .item-plus { visibility: hidden; }
+
+    .btn-delete {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border: none;
+      border-radius: 10px;
+      background: var(--danger-light);
+      color: var(--danger);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-delete:hover { background: #fecaca; transform: scale(1.08); }
+    .btn-delete:active { transform: scale(0.95); }
+    .btn-delete:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+
+    /* Footer */
+    .card-footer {
+      padding: 0 16px 16px;
+    }
+
+    .btn-add {
+      width: 100%;
+      height: 46px;
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-add:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    /* Clear */
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+    .btn-clear {
+      padding: 6px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-clear:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-light); }
+
+    /* Count info */
+    .count-info {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 8px 0 4px;
+    }
+
+    @media (max-width: 400px) {
+      .result-value { font-size: 26px; }
+      .item-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="header-icon">➕</span>
+      <h1>加法计算器</h1>
+      <p>添加数字项，实时计算总和</p>
+    </div>
+
+    <div class="card">
+      <!-- Result -->
+      <div class="result-bar">
+        <span class="result-label">当前总和</span>
+        <span class="result-value" id="resultValue">0</span>
+      </div>
+
+      <!-- Items -->
+      <div class="items-wrap" id="itemsWrap"></div>
+
+      <!-- Add button -->
+      <div class="card-footer">
+        <div class="count-info" id="countInfo">共 2 项</div>
+        <button class="btn-add" onclick="addItem()">
+          <span style="font-size:18px;line-height:1">＋</span> 添加数字
+        </button>
+        <div class="actions">
+          <button class="btn-clear" onclick="clearAll()">清空所有</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let items = [
+      { id: 1, value: '' },
+      { id: 2, value: '' },
+    ];
+    let nextId = 3;
+
+    function render() {
+      const wrap = document.getElementById('itemsWrap');
+      wrap.innerHTML = '';
+
+      items.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.id = `row-${item.id}`;
+
+        row.innerHTML = `
+          <div class="item-index">${index + 1}</div>
+          <input
+            class="item-input"
+            type="number"
+            placeholder="输入数字"
+            value="${item.value}"
+            oninput="updateValue(${item.id}, this.value)"
+            onfocus="this.select()"
+          />
+          <div class="item-plus">+</div>
+          <button
+            class="btn-delete"
+            onclick="deleteItem(${item.id})"
+            title="删除"
+            ${items.length <= 1 ? 'disabled' : ''}
+          >✕</button>
+        `;
+
+        wrap.appendChild(row);
+      });
+
+      updateResult();
+      document.getElementById('countInfo').textContent = `共 ${items.length} 项`;
+    }
+
+    function updateValue(id, val) {
+      const item = items.find(i => i.id === id);
+      if (item) item.value = val;
+      updateResult();
+      // Re-render only index badges + delete disabled state without full re-render
+      items.forEach((it, idx) => {
+        const row = document.getElementById(`row-${it.id}`);
+        if (row) {
+          row.querySelector('.item-index').textContent = idx + 1;
+          row.querySelector('.btn-delete').disabled = items.length <= 1;
+        }
+      });
+    }
+
+    function updateResult() {
+      const sum = items.reduce((acc, item) => {
+        const num = parseFloat(item.value);
+        return acc + (isNaN(num) ? 0 : num);
+      }, 0);
+      // Format: if integer, show as integer; else show up to 10 decimal digits
+      const display = Number.isInteger(sum) ? sum : parseFloat(sum.toFixed(10));
+      document.getElementById('resultValue').textContent = display;
+    }
+
+    function addItem() {
+      items.push({ id: nextId++, value: '' });
+      render();
+      // Focus the new input
+      const rows = document.getElementById('itemsWrap').querySelectorAll('.item-input');
+      const last = rows[rows.length - 1];
+      if (last) last.focus();
+    }
+
+    function deleteItem(id) {
+      if (items.length <= 1) return;
+      items = items.filter(i => i.id !== id);
+      render();
+    }
+
+    function clearAll() {
+      items = [
+        { id: nextId++, value: '' },
+        { id: nextId++, value: '' },
+      ];
+      render();
+    }
+
+    // Init
+    render();
+  </script>
+</body>
+</html>
