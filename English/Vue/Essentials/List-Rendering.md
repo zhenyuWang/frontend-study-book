@@ -148,3 +148,38 @@ There are two common cases where this can be tempting:
 - To filter items in a list (e.g. `v-for="user in users"` `v-if="user.isActive"`). In these cases, replace `users` with a new computed property that returns your filtered list (e.g. `activeUsers`).
 
 - To avoid rendering a list if it should be hidden (e.g. `v-for="user in users"` `v-if="shouldShowUsers"`). In these cases, move the `v-if` to a container element (e.g. `ul`, `ol`).
+
+## Maintaining State with key​
+When Vue is updating a list of elements rendered with `v-for`, by default it uses an "in-place patch" strategy. If the order of the data items has changed, instead of moving the DOM elements to match the order of the items, Vue will patch each element in-place and make sure it reflects what should be rendered at that particular index.\
+strategy [/ˈstrætədʒi/] 策略\
+reflect [/rɪˈflɛkt/] 反映
+
+This default mode is efficient, but only suitable when your list render output does not rely on child component state or temporary DOM state (e.g. form input values).\
+efficient [/ɪˈfɪʃənt/] 高效的\
+suitable [/ˈsuːtəbl/] 适合的\
+rely on 依赖于\
+temporary [/ˈtɛmpərɛri/] 临时的
+
+To give Vue a hint so that it can track each node's identity, and thus reuse and reorder existing elements, you need to provide a unique `key` attribute for each item:\
+hint [/hɪnt/] 提示\
+thus [/ðʌs/] 因此
+
+```template
+<div v-for="item in items" :key="item.id">
+  <!-- content -->
+</div>
+```
+When using `<template v-for>`, the `key` should be placed on the `<template>` container:
+
+```template
+<template v-for="todo in todos" :key="todo.name">
+  <li>{{ todo.name }}</li>
+</template>
+```
+### Note
+
+`key` here is a special attribute being bound with `v-bind`. It should not be confused with the property key variable when using `v-for` with an object.
+
+It is recommended to provide a key attribute with `v-for` whenever possible, unless the iterated DOM content is simple (i.e. contains no components or stateful DOM elements), or you are intentionally relying on the default behavior for performance gains.
+
+The `key` binding expects primitive values - i.e. strings and numbers. Do not use objects as `v-for` keys. For detailed usage of the `key` attribute, please see the [`key` API documentation](https://vuejs.org/api/built-in-special-attributes.html#key).
