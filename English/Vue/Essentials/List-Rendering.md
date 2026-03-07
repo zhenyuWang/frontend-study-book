@@ -208,3 +208,16 @@ The reason for not automatically injecting `item` into the component is because 
 tightly coupled 紧密耦合\
 
 Check out this example of a simple todo list to see how to render a list of components using `v-for`, passing different data to each instance.
+
+## Array Change Detection​
+### Mutation Methods​
+Vue is able to detect when a reactive array's mutation methods are called and trigger necessary updates. These mutation methods are:\
+detect [/dɪˈtɛkt/] 检测\
+
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
