@@ -183,3 +183,28 @@ When using `<template v-for>`, the `key` should be placed on the `<template>` co
 It is recommended to provide a key attribute with `v-for` whenever possible, unless the iterated DOM content is simple (i.e. contains no components or stateful DOM elements), or you are intentionally relying on the default behavior for performance gains.
 
 The `key` binding expects primitive values - i.e. strings and numbers. Do not use objects as `v-for` keys. For detailed usage of the `key` attribute, please see the [`key` API documentation](https://vuejs.org/api/built-in-special-attributes.html#key).
+
+## v-for with a Component​
+This section assumes knowledge of Components. Feel free to skip it and come back later.\
+assume [/əˈsjuːm/] 假设
+
+You can directly use `v-for` on a component, like any normal element (don't forget to provide a key):
+
+```template
+<MyComponent v-for="item in items" :key="item.id" />
+```
+However, this won't automatically pass any data to the component, because components have isolated scopes of their own. In order to pass the iterated data into the component, we should also use props:\
+iterated [/ɪˈtɛreɪtɪd/] 迭代的
+
+```template
+<MyComponent
+  v-for="(item, index) in items"
+  :item="item"
+  :index="index"
+  :key="item.id"
+/>
+```
+The reason for not automatically injecting `item` into the component is because that makes the component tightly coupled to how `v-for` works. Being explicit about where its data comes from makes the component reusable in other situations.\
+tightly coupled 紧密耦合\
+
+Check out this example of a simple todo list to see how to render a list of components using `v-for`, passing different data to each instance.
