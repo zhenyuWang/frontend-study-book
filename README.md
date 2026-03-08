@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.3.5
+[Vue doc List Rendering](./English/Vue/Essentials/List-Rendering.md)
+
 ## 2026.3.4
 [Vue doc List Rendering](./English/Vue/Essentials/List-Rendering.md)
 

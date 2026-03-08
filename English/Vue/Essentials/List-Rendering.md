@@ -214,10 +214,22 @@ Check out this example of a simple todo list to see how to render a list of comp
 Vue is able to detect when a reactive array's mutation methods are called and trigger necessary updates. These mutation methods are:\
 detect [/dɪˈtɛkt/] 检测\
 
-- push()
-- pop()
-- shift()
-- unshift()
-- splice()
-- sort()
-- reverse()
+- `push()`
+- `pop()`
+- `shift()`
+- `unshift()`
+- `splice()`
+- `sort()`
+- `reverse()`
+
+### Replacing an Array​
+Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. `filter()`, `concat()` and `slice()`, which do not mutate the original array but always return a new array. When working with non-mutating methods, we should replace the old array with the new one:
+
+```js
+// `items` is a ref with array value
+items.value = items.value.filter((item) => item.message.match(/Foo/))
+```
+You might think this will cause Vue to throw away the existing DOM and re-render the entire list - luckily, that is not the case. Vue implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation.\
+heuristic [/hjʊəˈrɪstɪk/] 启发式的\
+maximize [/ˈmæksɪmaɪz/] 最大化\
+overlap [/ˈoʊvərlæp/] 重叠
