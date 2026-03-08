@@ -233,3 +233,43 @@ You might think this will cause Vue to throw away the existing DOM and re-render
 heuristic [/hjʊəˈrɪstɪk/] 启发式的\
 maximize [/ˈmæksɪmaɪz/] 最大化\
 overlap [/ˈoʊvərlæp/] 重叠
+
+## Displaying Filtered/Sorted Results​
+Sometimes we want to display a filtered or sorted version of an array without actually mutating or resetting the original data. In this case, you can create a computed property that returns the filtered or sorted array.
+
+For example:
+
+```js
+const numbers = ref([1, 2, 3, 4, 5])
+
+const evenNumbers = computed(() => {
+  return numbers.value.filter((n) => n % 2 === 0)
+})
+```
+```template
+<li v-for="n in evenNumbers">{{ n }}</li>
+```
+In situations where computed properties are not feasible (e.g. inside nested `v-for` loops), you can use a method:\
+feasible [/ˈfiːzəbl/] 可行的
+
+```js
+const sets = ref([
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10]
+])
+
+function even(numbers) {
+  return numbers.filter((number) => number % 2 === 0)
+}
+```
+```template
+<ul v-for="numbers in sets">
+  <li v-for="n in even(numbers)">{{ n }}</li>
+</ul>
+```
+Be careful with `reverse()` and `sort()` in a computed property! These two methods will mutate the original array, which should be avoided in computed getters. Create a copy of the original array before calling these methods:
+
+```diff
+- return numbers.reverse()
++ return [...numbers].reverse()
+```
