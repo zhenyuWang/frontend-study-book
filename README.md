@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.3.9
+[Vue doc Event Handling](./English/Vue/Essentials/Event-Handling.md)
+
 ## 2026.3.6
 [Vue doc List Rendering](./English/Vue/Essentials/List-Rendering.md)
 
