@@ -19,3 +19,31 @@ const count = ref(0)
 <button @click="count++">Add 1</button>
 <p>Count is: {{ count }}</p>
 ```
+
+## Method Handlers​
+The logic for many event handlers will be more complex though, and likely isn't feasible with inline handlers. That's why `v-on` can also accept the name or path of a component method you'd like to call.\
+feasible [ˈfiːzəbl] adj. 可行的；行得通的；合理的；可实行的
+
+For example:
+
+```js
+const name = ref('Vue.js')
+
+function greet(event) {
+  alert(`Hello ${name.value}!`)
+  // `event` is the native DOM event
+  if (event) {
+    alert(event.target.tagName)
+  }
+}
+```
+```template
+<!-- `greet` is the name of the method defined above -->
+<button @click="greet">Greet</button>
+```
+A method handler automatically receives the native DOM Event object that triggers it - in the example above, we are able to access the element dispatching the event via `event.target`.
+
+
+### Method vs. Inline Detection​
+The template compiler detects method handlers by checking whether the `v-on` value string is a valid JavaScript identifier or property access path. For example, `foo`, `foo.bar` and `foo['bar']` are treated as method handlers, while `foo()` and `count++` are treated as inline handlers.\
+detect [dɪˈtekt] v. 发现；察觉；检测；侦查
