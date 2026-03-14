@@ -47,3 +47,16 @@ A method handler automatically receives the native DOM Event object that trigger
 ### Method vs. Inline Detection​
 The template compiler detects method handlers by checking whether the `v-on` value string is a valid JavaScript identifier or property access path. For example, `foo`, `foo.bar` and `foo['bar']` are treated as method handlers, while `foo()` and `count++` are treated as inline handlers.\
 detect [dɪˈtekt] v. 发现；察觉；检测；侦查
+
+## Calling Methods in Inline Handlers​
+Instead of binding directly to a method name, we can also call methods in an inline handler. This allows us to pass the method custom arguments instead of the native event:
+
+```js
+function say(message) {
+  alert(message)
+}
+```
+```template
+<button @click="say('hello')">Say hello</button>
+<button @click="say('bye')">Say bye</button>
+```
