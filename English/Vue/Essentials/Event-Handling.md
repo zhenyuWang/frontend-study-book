@@ -84,3 +84,35 @@ function warn(message, event) {
   alert(message)
 }
 ```
+
+## Event Modifiers​
+It is a very common need to call `event.preventDefault()` or `event.stopPropagation()` inside event handlers. Although we can do this easily inside methods, it would be better if the methods can be purely about data logic rather than having to deal with DOM event details.
+
+To address this problem, Vue provides event modifiers for v-on. Recall that modifiers are directive postfixes denoted by a dot.
+
+- .stop
+- .prevent
+- .self
+- .capture
+- .once
+- .passive
+```template
+<!-- the click event's propagation will be stopped -->
+<a @click.stop="doThis"></a>
+
+<!-- the submit event will no longer reload the page -->
+<form @submit.prevent="onSubmit"></form>
+
+<!-- modifiers can be chained -->
+<a @click.stop.prevent="doThat"></a>
+
+<!-- just the modifier -->
+<form @submit.prevent></form>
+
+<!-- only trigger handler if event.target is the element itself -->
+<!-- i.e. not from a child element -->
+<div @click.self="doThat">...</div>
+```
+### TIP
+Order matters when using modifiers because the relevant code is generated in the same order. Therefore using `@click.prevent.self` will prevent click's default action on the element itself and its children, while `@click.self.prevent` will only prevent click's default action on the element itself.\
+relevant [ˈrelɪvənt] adj. 相关的；切题的；有重大关系的
