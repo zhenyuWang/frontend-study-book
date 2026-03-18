@@ -116,3 +116,27 @@ To address this problem, Vue provides event modifiers for v-on. Recall that modi
 ### TIP
 Order matters when using modifiers because the relevant code is generated in the same order. Therefore using `@click.prevent.self` will prevent click's default action on the element itself and its children, while `@click.self.prevent` will only prevent click's default action on the element itself.\
 relevant [ˈrelɪvənt] adj. 相关的；切题的；有重大关系的
+
+The `.capture`, `.once`, and `.passive` modifiers mirror the options of the native addEventListener method:\
+mirror [ˈmɪrər] v. 反映；反射；模仿
+
+```template
+<!-- use capture mode when adding the event listener     -->
+<!-- i.e. an event targeting an inner element is handled -->
+<!-- here before being handled by that element           -->
+<div @click.capture="doThis">...</div>
+
+<!-- the click event will be triggered at most once -->
+<a @click.once="doThis"></a>
+
+<!-- the scroll event's default behavior (scrolling) will happen -->
+<!-- immediately, instead of waiting for `onScroll` to complete  -->
+<!-- in case it contains `event.preventDefault()`                -->
+<div @scroll.passive="onScroll">...</div>
+```
+The `.passive` modifier is typically used with touch event listeners for improving performance on mobile devices.\
+typically [ˈtɪpɪkli] adv. 典型地；通常；一般来说
+
+### TIP
+
+Do not use `.passive` and `.prevent` together, because `.passive` already indicates to the browser that you do not intend to prevent the event's default behavior, and you will likely see a warning from the browser if you do so.
