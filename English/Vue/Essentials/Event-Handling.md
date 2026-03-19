@@ -140,3 +140,17 @@ typically [ˈtɪpɪkli] adv. 典型地；通常；一般来说
 ### TIP
 
 Do not use `.passive` and `.prevent` together, because `.passive` already indicates to the browser that you do not intend to prevent the event's default behavior, and you will likely see a warning from the browser if you do so.
+
+## Key Modifiers​
+When listening for keyboard events, we often need to check for specific keys. Vue allows adding key modifiers for `v-on` or `@` when listening for key events:
+
+```template
+<!-- only call `submit` when the `key` is `Enter` -->
+<input @keyup.enter="submit" />
+```
+You can directly use any valid key names exposed via `KeyboardEvent.key` as modifiers by converting them to kebab-case.
+
+```template
+<input @keyup.page-down="onPageDown" />
+```
+In the above example, the handler will only be called if `$event.key` is equal to `'PageDown'`.
