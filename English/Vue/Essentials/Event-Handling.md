@@ -154,3 +154,16 @@ You can directly use any valid key names exposed via `KeyboardEvent.key` as modi
 <input @keyup.page-down="onPageDown" />
 ```
 In the above example, the handler will only be called if `$event.key` is equal to `'PageDown'`.
+
+### Key Aliases​
+Vue provides aliases for the most commonly used keys:
+
+- .`enter`
+- .`tab`
+- .`delete` (captures both "Delete" and "Backspace" keys)
+- .`esc`
+- .`space`
+- .`up`
+- .`down`
+- .`left`
+- .`right`
