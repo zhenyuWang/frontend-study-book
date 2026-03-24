@@ -191,3 +191,18 @@ For example:
 #### TIP
 
 Note that modifier keys are different from regular keys and when used with `keyup` events, they have to be pressed when the event is emitted. In other words, `keyup.ctrl` will only trigger if you release a key while holding down `ctrl`. It won't trigger if you release the `ctrl` key alone.
+
+## `.exact` Modifier​
+The `.exact` modifier allows control of the exact combination of system modifiers needed to trigger an event.\
+combination [ˌkɒmbɪˈneɪʃn] n. 结合；组合；联合
+
+```template
+<!-- this will fire even if Alt or Shift is also pressed -->
+<button @click.ctrl="onClick">A</button>
+
+<!-- this will only fire when Ctrl and no other keys are pressed -->
+<button @click.ctrl.exact="onCtrlClick">A</button>
+
+<!-- this will only fire when no system modifiers are pressed -->
+<button @click.exact="onClick">A</button>
+```
