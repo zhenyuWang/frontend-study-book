@@ -192,7 +192,7 @@ For example:
 
 Note that modifier keys are different from regular keys and when used with `keyup` events, they have to be pressed when the event is emitted. In other words, `keyup.ctrl` will only trigger if you release a key while holding down `ctrl`. It won't trigger if you release the `ctrl` key alone.
 
-## `.exact` Modifier​
+### `.exact` Modifier​
 The `.exact` modifier allows control of the exact combination of system modifiers needed to trigger an event.\
 combination [ˌkɒmbɪˈneɪʃn] n. 结合；组合；联合
 
@@ -206,3 +206,11 @@ combination [ˌkɒmbɪˈneɪʃn] n. 结合；组合；联合
 <!-- this will only fire when no system modifiers are pressed -->
 <button @click.exact="onClick">A</button>
 ```
+
+## Mouse Button Modifiers​
+- `.left`
+- `.right`
+- `.middle`
+These modifiers restrict the handler to events triggered by a specific mouse button.
+
+Note, however, that `.left`, `.right`, and `.middle` modifier names are based on the typical right-handed mouse layout, but in fact represent "main", "secondary", and "auxiliary" pointing device event triggers, respectively, and not the actual physical buttons. So that for a left-handed mouse layout the "main" button might physically be the right one but would trigger the `.left` modifier handler. Or a trackpad might trigger the `.left` handler with a one-finger tap, the `.right` handler with a two-finger tap, and the `.middle` handler with a three-finger tap. Similarly, other devices and event sources generating "mouse" events might have trigger modes that are not related to "left" and "right" whatsoever.

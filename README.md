@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.3.24
+[Vue doc Event Handling](./English/Vue/Essentials/Event-Handling.md)
+
 ## 2026.3.23
 [Vue doc Event Handling](./English/Vue/Essentials/Event-Handling.md)
 
