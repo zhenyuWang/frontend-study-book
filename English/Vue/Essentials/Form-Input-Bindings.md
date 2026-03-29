@@ -22,3 +22,19 @@ In addition, `v-model` can be used on inputs of different types, `<textarea>`, a
 Note
 
 `v-model` will ignore the initial value, `checked` or `selected` attributes found on any form elements. It will always treat the current bound JavaScript state as the source of truth. You should declare the initial value on the JavaScript side, using reactivity APIs.
+
+## Basic Usage​
+### Text​
+```template
+<p>Message is: {{ message }}</p>
+<input v-model="message" placeholder="edit me" />
+```
+```
+Message is:
+
+edit me
+```
+
+#### Note
+
+For languages that require an IME (Chinese, Japanese, Korean, etc.), you'll notice that `v-model` doesn't get updated during IME composition. If you want to respond to these updates as well, use your own `input` event listener and `value` binding instead of using `v-model`.
