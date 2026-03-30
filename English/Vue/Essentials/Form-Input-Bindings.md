@@ -38,3 +38,23 @@ edit me
 #### Note
 
 For languages that require an IME (Chinese, Japanese, Korean, etc.), you'll notice that `v-model` doesn't get updated during IME composition. If you want to respond to these updates as well, use your own `input` event listener and `value` binding instead of using `v-model`.
+
+### Multiline Text​
+```template
+<span>Multiline message is:</span>
+<p style="white-space: pre-line;">{{ message }}</p>
+<textarea v-model="message" placeholder="add multiple lines"></textarea>
+```
+```
+Multiline message is:
+add multiple lines
+```
+Note that interpolation inside `<textarea>` won't work. Use v-model instead.
+
+```template
+<!-- bad -->
+<textarea>{{ text }}</textarea>
+
+<!-- good -->
+<textarea v-model="text"></textarea>
+```
