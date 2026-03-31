@@ -58,3 +58,37 @@ Note that interpolation inside `<textarea>` won't work. Use v-model instead.
 <!-- good -->
 <textarea v-model="text"></textarea>
 ```
+
+### Checkbox​
+Single checkbox, boolean value:
+
+```template
+<input type="checkbox" id="checkbox" v-model="checked" />
+<label for="checkbox">{{ checked }}</label>
+```
+```
+false
+```
+
+We can also bind multiple checkboxes to the same array or Set value:
+
+```js
+const checkedNames = ref([])
+```
+```template
+<div>Checked names: {{ checkedNames }}</div>
+
+<input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+<label for="jack">Jack</label>
+
+<input type="checkbox" id="john" value="John" v-model="checkedNames" />
+<label for="john">John</label>
+
+<input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+<label for="mike">Mike</label>
+```
+```
+Checked names: []
+Jack John Mike
+```
+In this case, the checkedNames array will always contain the values from the currently checked boxes.

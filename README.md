@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.3.30
+[Vue doc Form Input Bindings](./English/Vue/Essentials/Form-Input-Bindings.md)
+
 ## 2026.3.27
 [Vue doc Form Input Bindings](./English/Vue/Essentials/Form-Input-Bindings.md)
 
