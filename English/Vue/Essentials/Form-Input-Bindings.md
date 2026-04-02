@@ -92,3 +92,19 @@ Checked names: []
 Jack John Mike
 ```
 In this case, the checkedNames array will always contain the values from the currently checked boxes.
+
+
+### Radio​
+```template
+<div>Picked: {{ picked }}</div>
+
+<input type="radio" id="one" value="One" v-model="picked" />
+<label for="one">One</label>
+
+<input type="radio" id="two" value="Two" v-model="picked" />
+<label for="two">Two</label>
+```
+```
+Picked:
+One Two
+```
