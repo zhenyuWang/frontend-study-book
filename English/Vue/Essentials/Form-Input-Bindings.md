@@ -108,3 +108,53 @@ In this case, the checkedNames array will always contain the values from the cur
 Picked:
 One Two
 ```
+
+### Select​
+Single select:
+
+```template
+<div>Selected: {{ selected }}</div>
+
+<select v-model="selected">
+  <option disabled value="">Please select one</option>
+  <option>A</option>
+  <option>B</option>
+  <option>C</option>
+</select>
+```
+#### Note
+
+If the initial value of your `v-model` expression does not match any of the options, the `<select>` element will render in an "unselected" state. On iOS this will cause the user not being able to select the first item because iOS does not fire a change event in this case. It is therefore recommended to provide a disabled option with an empty value, as demonstrated in the example above.\
+demonstrated [/ˈdɛmənˌstreɪtɪd/] 证明，展示
+
+Multiple select (bound to array):
+
+```template
+<div>Selected: {{ selected }}</div>
+
+<select v-model="selected" multiple>
+  <option>A</option>
+  <option>B</option>
+  <option>C</option>
+</select>
+```
+Select options can be dynamically rendered with v-for:
+
+```js
+const selected = ref('A')
+
+const options = ref([
+  { text: 'One', value: 'A' },
+  { text: 'Two', value: 'B' },
+  { text: 'Three', value: 'C' }
+])
+```
+```template
+<div>Selected: {{ selected }}</div>
+
+<select v-model="selected">
+  <option v-for="option in options" :value="option.value">
+    {{ option.text }}
+  </option>
+</select>
+```
