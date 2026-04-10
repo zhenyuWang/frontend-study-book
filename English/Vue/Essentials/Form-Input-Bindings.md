@@ -213,3 +213,12 @@ guarantee [/ˌɡærənˈtiː/] 保证，担保
 </select>
 ```
 `v-model` supports value bindings of non-string values as well! In the above example, when the option is selected, `selected` will be set to the object literal value of `{ number: 123 }`.
+
+## Modifiers​
+### `.lazy​`
+By default, `v-model` syncs the input with the data after each `input` event (with the exception of IME composition as stated above). You can add the `lazy` modifier to instead sync after change events:
+
+```template
+<!-- synced after "change" instead of "input" -->
+<input v-model.lazy="msg" />
+```
