@@ -222,3 +222,14 @@ By default, `v-model` syncs the input with the data after each `input` event (wi
 <!-- synced after "change" instead of "input" -->
 <input v-model.lazy="msg" />
 ```
+
+### `.number​`
+If you want user input to be automatically typecast as a number, you can add the `number` modifier to your `v-model` managed inputs:
+
+```template
+<input v-model.number="age" />
+```
+If the value cannot be parsed with `parseFloat()`, then the original (string) value is used instead. In particular, if the input is empty (for instance after the user clearing the input field), an empty string is returned. This behavior differs from the DOM property `valueAsNumber`.\
+particular [/pərˈtɪkjələr/] 特别的，特殊的
+
+The `number` modifier is applied automatically if the input has type="number".
