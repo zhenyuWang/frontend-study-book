@@ -233,3 +233,10 @@ If the value cannot be parsed with `parseFloat()`, then the original (string) va
 particular [/pərˈtɪkjələr/] 特别的，特殊的
 
 The `number` modifier is applied automatically if the input has type="number".
+
+### `.trim​`
+If you want whitespace from user input to be trimmed automatically, you can add the `trim` modifier to your `v-model` managed inputs:
+
+```template
+<input v-model.trim="msg" />
+```
