@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.4.15
+[Vue doc Watchers](./English/Vue/Essentials/Watchers.md)
+
 ## 2026.4.14
 [Vue doc Form Input Bindings](./English/Vue/Essentials/Form-Input-Bindings.md)
 
