@@ -87,3 +87,48 @@ watch(
   }
 )
 ```
+
+## Deep Watchers​
+When you call `watch()` directly on a reactive object, it will implicitly create a deep watcher - the callback will be triggered on all nested mutations:
+
+```js
+const obj = reactive({ count: 0 })
+
+watch(obj, (newValue, oldValue) => {
+  // fires on nested property mutations
+  // Note: `newValue` will be equal to `oldValue` here
+  // because they both point to the same object!
+})
+
+obj.count++
+```
+This should be differentiated with a getter that returns a reactive object - in the latter case, the callback will only fire if the getter returns a different object:
+
+```js
+watch(
+  () => state.someObject,
+  () => {
+    // fires only when state.someObject is replaced
+  }
+)
+```
+You can, however, force the second case into a deep watcher by explicitly using the `deep` option:
+
+```js
+watch(
+  () => state.someObject,
+  (newValue, oldValue) => {
+    // Note: `newValue` will be equal to `oldValue` here
+    // *unless* state.someObject has been replaced
+  },
+  { deep: true }
+)
+```
+In Vue 3.5+, the `deep` option can also be a number indicating the max traversal depth - i.e. how many levels should Vue traverse an object's nested properties.
+
+### Use with Caution
+
+Deep watch requires traversing all nested properties in the watched object, and can be expensive when used on large data structures. Use it only when necessary and beware of the performance implications.\
+traverse [/ˈtrævɜːrs/] 横越，穿过；遍历\
+necessary [/ˈnesəsəri/] 必要的；必需的；必然的\
+beware [/bɪˈwer/] 当心，提防；注意
