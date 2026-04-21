@@ -132,3 +132,18 @@ Deep watch requires traversing all nested properties in the watched object, and 
 traverse [/ˈtrævɜːrs/] 横越，穿过；遍历\
 necessary [/ˈnesəsəri/] 必要的；必需的；必然的\
 beware [/bɪˈwer/] 当心，提防；注意
+
+## Eager Watchers​
+`watch` is lazy by default: the callback won't be called until the watched source has changed. But in some cases we may want the same callback logic to be run eagerly - for example, we may want to fetch some initial data, and then re-fetch the data whenever relevant state changes.
+
+We can force a watcher's callback to be executed immediately by passing the `immediate: true` option:
+
+```js
+watch(
+  source,
+  (newValue, oldValue) => {
+    // executed immediately, then again when `source` changes
+  },
+  { immediate: true }
+)
+```
