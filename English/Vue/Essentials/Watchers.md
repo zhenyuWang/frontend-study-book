@@ -147,3 +147,16 @@ watch(
   { immediate: true }
 )
 ```
+
+## Once Watchers​
+Watcher's callback will execute whenever the watched source changes. If you want the callback to trigger only once when the source changes, use the `once: true` option.\
+execute [/ˈeksɪkjuːt/] 执行；实施；完成
+```js
+watch(
+  source,
+  (newValue, oldValue) => {
+    // when `source` changes, triggers only once
+  },
+  { once: true }
+)
+```
