@@ -478,7 +478,7 @@
                   type="number"
                   min="0"
                   max="59"
-                  value="30"
+                  value="0"
                 />
               </div>
               <div class="stepper">
@@ -495,22 +495,21 @@
         <!-- Current Pace Display -->
         <div class="pace-display">
           <span class="pace-display-text">当前配速</span>
-          <span class="pace-display-value" id="paceDisplayValue">4'30" / km</span>
-          <span class="pace-speed" id="paceSpeedValue">≈ 13.3 km/h</span>
+          <span class="pace-display-value" id="paceDisplayValue"></span>
+          <span class="pace-speed" id="paceSpeedValue"></span>
         </div>
 
         <!-- Presets -->
         <div class="presets">
           <span style="font-size:12px;color:var(--text-muted);padding-top:6px;white-space:nowrap;">快捷配速：</span>
+          <button class="preset-btn" onclick="setPreset(3,35)">3'35"</button>
+          <button class="preset-btn" onclick="setPreset(3,40)">3'40"</button>
+          <button class="preset-btn" onclick="setPreset(3,45)">3'45"</button>
           <button class="preset-btn" onclick="setPreset(3,50)">3'50"</button>
           <button class="preset-btn" onclick="setPreset(3,55)">3'55"</button>
           <button class="preset-btn" onclick="setPreset(4,0)">4'00"</button>
           <button class="preset-btn" onclick="setPreset(4,5)">4'05"</button>
           <button class="preset-btn" onclick="setPreset(4,10)">4'10"</button>
-          <button class="preset-btn" onclick="setPreset(4,14)">4'14"</button>
-          <button class="preset-btn" onclick="setPreset(4,20)">4'20"</button>
-          <button class="preset-btn" onclick="setPreset(4,25)">4'25"</button>
-          <button class="preset-btn" onclick="setPreset(4,30)">4'30"</button>
         </div>
       </div>
     </div>
