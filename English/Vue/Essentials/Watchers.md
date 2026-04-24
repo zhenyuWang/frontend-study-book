@@ -204,3 +204,15 @@ rather than [/ˈræðər ðæn/] 而不是；宁可
 
 `watchEffect()` only tracks dependencies during its synchronous execution. When using it with an async callback, only properties accessed before the first `await` tick will be tracked.\
 synchronous [/sɪŋˈkrɑːnəs/] 同步的；同时发生的；一致的
+
+### `watch` vs. `watchEffect`​
+`watch` and `watchEffect` both allow us to reactively perform side effects. Their main difference is the way they track their reactive dependencies:
+
+- `watch` only tracks the explicitly watched source. It won't track anything accessed inside the callback. In addition, the callback only triggers when the source has actually changed. `watch` separates dependency tracking from the side effect, giving us more precise control over when the callback should fire.
+
+- `watchEffect`, on the other hand, combines dependency tracking and side effect into one phase. It automatically tracks every reactive property accessed during its synchronous execution. This is more convenient and typically results in terser code, but makes its reactive dependencies less explicit.
+
+precise [/prɪˈsaɪs/] 精确的；准确的；明确的\
+phase [/feɪz/] 阶段；时期；相位\
+typically [/ˈtɪpɪkli/] 典型地；通常；一般来说\
+terser [/ˈtɜːrsər/] 简洁的；简练
