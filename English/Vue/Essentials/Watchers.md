@@ -216,3 +216,56 @@ precise [/prɪˈsaɪs/] 精确的；准确的；明确的\
 phase [/feɪz/] 阶段；时期；相位\
 typically [/ˈtɪpɪkli/] 典型地；通常；一般来说\
 terser [/ˈtɜːrsər/] 简洁的；简练
+
+## Side Effect Cleanup​
+Sometimes we may perform side effects, e.g. asynchronous requests, in a watcher:
+
+```js
+watch(id, (newId) => {
+  fetch(`/api/${newId}`).then(() => {
+    // callback logic
+  })
+})
+```
+But what if `id` changes before the request completes? When the previous request completes, it will still fire the callback with an ID value that is already stale. Ideally, we want to be able to cancel the stale request when id changes to a new value.\
+ideally [/aɪˈdiːəli/] 理想地；完美地；理想情况下
+
+We can use the `onWatcherCleanup()`  API to register a cleanup function that will be called when the watcher is invalidated and is about to re-run:
+
+```js
+import { watch, onWatcherCleanup } from 'vue'
+
+watch(id, (newId) => {
+  const controller = new AbortController()
+
+  fetch(`/api/${newId}`, { signal: controller.signal }).then(() => {
+    // callback logic
+  })
+
+  onWatcherCleanup(() => {
+    // abort stale request
+    controller.abort()
+  })
+})
+```
+Note that `onWatcherCleanup` is only supported in Vue 3.5+ and must be called during the synchronous execution of a `watchEffect` effect function or `watch` callback function: you cannot call it after an `await` statement in an async function.
+
+Alternatively, an `onCleanup` function is also passed to watcher callbacks as the 3rd argument, and to the `watchEffect` effect function as the first argument:\
+alternatively [/ɔːlˈtɜːrnətɪvli/] 另外；或者；二者择一地
+
+```js
+watch(id, (newId, oldId, onCleanup) => {
+  // ...
+  onCleanup(() => {
+    // cleanup logic
+  })
+})
+
+watchEffect((onCleanup) => {
+  // ...
+  onCleanup(() => {
+    // cleanup logic
+  })
+})
+```
+`onCleanup` passed via function argument is bound to the watcher instance so it is not subject to the synchronous constraint of `onWatcherCleanup`.
