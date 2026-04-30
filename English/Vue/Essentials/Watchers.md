@@ -269,3 +269,10 @@ watchEffect((onCleanup) => {
 })
 ```
 `onCleanup` passed via function argument is bound to the watcher instance so it is not subject to the synchronous constraint of `onWatcherCleanup`.
+
+## Callback Flush Timing​
+When you mutate reactive state, it may trigger both Vue component updates and watcher callbacks created by you.
+
+Similar to component updates, user-created watcher callbacks are batched to avoid duplicate invocations. For example, we probably don't want a watcher to fire a thousand times if we synchronously push a thousand items into an array being watched.
+
+By default, a watcher's callback is called after parent component updates (if any), and before the owner component's DOM updates. This means if you attempt to access the owner component's own DOM inside a watcher callback, the DOM will be in a pre-update state.
