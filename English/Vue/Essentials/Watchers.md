@@ -276,3 +276,25 @@ When you mutate reactive state, it may trigger both Vue component updates and wa
 Similar to component updates, user-created watcher callbacks are batched to avoid duplicate invocations. For example, we probably don't want a watcher to fire a thousand times if we synchronously push a thousand items into an array being watched.
 
 By default, a watcher's callback is called after parent component updates (if any), and before the owner component's DOM updates. This means if you attempt to access the owner component's own DOM inside a watcher callback, the DOM will be in a pre-update state.
+
+### Post Watchers​
+If you want to access the owner component's DOM in a watcher callback after Vue has updated it, you need to specify the `flush: 'post'` option:
+
+```js
+watch(source, callback, {
+  flush: 'post'
+})
+
+watchEffect(callback, {
+  flush: 'post'
+})
+```
+Post-flush `watchEffect()` also has a convenience alias, `watchPostEffect()`:
+
+```js
+import { watchPostEffect } from 'vue'
+
+watchPostEffect(() => {
+  /* executed after Vue updates */
+})
+```
