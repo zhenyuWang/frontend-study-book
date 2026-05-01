@@ -298,3 +298,31 @@ watchPostEffect(() => {
   /* executed after Vue updates */
 })
 ```
+
+### Sync Watchers​
+It's also possible to create a watcher that fires synchronously, before any Vue-managed updates:
+
+```js
+watch(source, callback, {
+  flush: 'sync'
+})
+
+watchEffect(callback, {
+  flush: 'sync'
+})
+```
+Sync `watchEffect()` also has a convenience alias, `watchSyncEffect()`:
+
+```js
+import { watchSyncEffect } from 'vue'
+
+watchSyncEffect(() => {
+  /* executed synchronously upon reactive data change */
+})
+```
+
+#### Use with Caution
+
+Sync watchers do not have batching and triggers every time a reactive mutation is detected. It's ok to use them to watch simple boolean values, but avoid using them on data sources that might be synchronously mutated many times, e.g. arrays.\
+caution [/kɔːˈʃuːn/] 小心；谨慎；注意\
+batch [/bætʃ/] 批；一批；一组
