@@ -326,3 +326,42 @@ watchSyncEffect(() => {
 Sync watchers do not have batching and triggers every time a reactive mutation is detected. It's ok to use them to watch simple boolean values, but avoid using them on data sources that might be synchronously mutated many times, e.g. arrays.\
 caution [/kɔːˈʃuːn/] 小心；谨慎；注意\
 batch [/bætʃ/] 批；一批；一组
+
+### Stopping a Watcher​
+Watchers declared synchronously inside `setup()` or `<script setup>` are bound to the owner component instance, and will be automatically stopped when the owner component is unmounted. In most cases, you don't need to worry about stopping the watcher yourself.
+
+The key here is that the watcher must be created synchronously: if the watcher is created in an async callback, it won't be bound to the owner component and must be stopped manually to avoid memory leaks. Here's an example:
+
+```vue
+<script setup>
+import { watchEffect } from 'vue'
+
+// this one will be automatically stopped
+watchEffect(() => {})
+
+// ...this one will not!
+setTimeout(() => {
+  watchEffect(() => {})
+}, 100)
+</script>
+```
+To manually stop a watcher, use the returned handle function. This works for both `watch` and `watchEffect`:
+
+```js
+const unwatch = watchEffect(() => {})
+
+// ...later, when no longer needed
+unwatch()
+```
+Note that there should be very few cases where you need to create watchers asynchronously, and synchronous creation should be preferred whenever possible. If you need to wait for some async data, you can make your watch logic conditional instead:
+
+```js
+// data to be loaded asynchronously
+const data = ref(null)
+
+watchEffect(() => {
+  if (data.value) {
+    // do something when data is loaded
+  }
+})
+```

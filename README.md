@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.4.30
+[Vue doc Watchers](./English/Vue/Essentials/Watchers.md)
+
 ## 2026.4.29
 [Vue doc Watchers](./English/Vue/Essentials/Watchers.md)
 
