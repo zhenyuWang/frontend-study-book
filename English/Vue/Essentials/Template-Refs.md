@@ -83,3 +83,67 @@ watchEffect(() => {
   }
 })
 ```
+
+## Ref on Component​
+This section assumes knowledge of Components. Feel free to skip it and come back later.
+
+`ref` can also be used on a child component. In this case the reference will be that of a component instance:
+
+```vue
+<script setup>
+import { useTemplateRef, onMounted } from 'vue'
+import Child from './Child.vue'
+
+const childRef = useTemplateRef('child')
+
+onMounted(() => {
+  // childRef.value will hold an instance of <Child />
+})
+</script>
+
+<template>
+  <Child ref="child" />
+</template>
+```
+### Usage before 3.5
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+import Child from './Child.vue'
+
+const child = ref(null)
+
+onMounted(() => {
+  // child.value will hold an instance of <Child />
+})
+</script>
+
+<template>
+  <Child ref="child" />
+</template>
+```
+
+If the child component is using Options API or not using `<script setup>`, the referenced instance will be identical to the child component's `this`, which means the parent component will have full access to every property and method of the child component. This makes it easy to create tightly coupled implementation details between the parent and the child, so component refs should be only used when absolutely needed - in most cases, you should try to implement parent / child interactions using the standard props and emit interfaces first.\
+tightly coupled 紧密耦合
+implementation details 实现细节
+standard props and emit interfaces 标准的 props 和 emit 接口
+
+An exception here is that components using `<script setup>` are private by default: a parent component referencing a child component using `<script setup>` won't be able to access anything unless the child component chooses to expose a public interface using the `defineExpose` macro:
+
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const a = 1
+const b = ref(2)
+
+// Compiler macros, such as defineExpose, don't need to be imported
+defineExpose({
+  a,
+  b
+})
+</script>
+```
+When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
+
+Note that `defineExpose` must be called before any await operation. Otherwise, properties and methods exposed after the await operation will not be accessible.
