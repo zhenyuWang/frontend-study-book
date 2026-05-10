@@ -147,3 +147,56 @@ defineExpose({
 When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
 
 Note that `defineExpose` must be called before any await operation. Otherwise, properties and methods exposed after the await operation will not be accessible.
+
+## Refs inside v-for​
+When `ref` is used inside `v-for`, the corresponding ref should contain an Array value, which will be populated with the elements after mount:\
+corresponding [ˌkɔːrəˈspɑːndɪŋ] 相应的，符合的\
+populated [ˈpɑːpjuleɪtɪd] 被填充的
+
+```vue
+<script setup>
+import { ref, useTemplateRef, onMounted } from 'vue'
+
+const list = ref([
+  /* ... */
+])
+
+const itemRefs = useTemplateRef('items')
+
+onMounted(() => console.log(itemRefs.value))
+</script>
+
+<template>
+  <ul>
+    <li v-for="item in list" ref="items">
+      {{ item }}
+    </li>
+  </ul>
+</template>
+```
+### Usage before 3.5
+In versions before 3.5 where `useTemplateRef()` was not introduced, we need to declare a ref with a name that matches the template ref attribute's value. The ref should also contain an array value:
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const list = ref([
+  /* ... */
+])
+
+const itemRefs = ref([])
+
+onMounted(() => console.log(itemRefs.value))
+</script>
+
+<template>
+  <ul>
+    <li v-for="item in list" ref="itemRefs">
+      {{ item }}
+    </li>
+  </ul>
+</template>
+```
+It should be noted that the ref array does not guarantee the same order as the source array.\
+guarantee [ˌɡærənˈtiː] 保证，担保
