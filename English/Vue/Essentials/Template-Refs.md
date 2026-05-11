@@ -200,3 +200,11 @@ onMounted(() => console.log(itemRefs.value))
 ```
 It should be noted that the ref array does not guarantee the same order as the source array.\
 guarantee [ˌɡærənˈtiː] 保证，担保
+
+## Function Refs​
+Instead of a string key, the `ref` attribute can also be bound to a function, which will be called on each component update and gives you full flexibility on where to store the element reference. The function receives the element reference as the first argument:
+
+```template
+<input :ref="(el) => { /* assign el to a property or ref */ }">
+```
+Note we are using a dynamic `:ref` binding so we can pass it a function instead of a ref name string. When the element is unmounted, the argument will be `null`. You can, of course, use a method instead of an inline function.
