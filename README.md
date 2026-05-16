@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.5.13
+[Vue doc Components Basics](./English/Vue/Essentials/Components-Basics.md)
+
 ## 2026.5.12
 [Vue doc Components Basics](./English/Vue/Essentials/Components-Basics.md)
 
