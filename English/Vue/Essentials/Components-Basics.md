@@ -92,3 +92,59 @@ If you are authoring your templates directly in a DOM (e.g. as the content of a 
 <button-counter></button-counter>
 <button-counter></button-counter>
 ```
+
+## Passing Props​
+If we are building a blog, we will likely need a component representing a blog post. We want all the blog posts to share the same visual layout, but with different content. Such a component won't be useful unless you can pass data to it, such as the title and content of the specific post we want to display. That's where props come in.
+
+Props are custom attributes you can register on a component. To pass a title to our blog post component, we must declare it in the list of props this component accepts, using the `props` option:
+
+```vue
+<script>
+export default {
+  props: ['title']
+}
+</script>
+
+<template>
+  <h4>{{ title }}</h4>
+</template>
+```
+When a value is passed to a prop attribute, it becomes a property on that component instance. The value of that property is accessible within the template and on the component's `this` context, just like any other component property.
+
+A component can have as many props as you like and, by default, any value can be passed to any prop.
+
+Once a prop is registered, you can pass data to it as a custom attribute, like this:
+
+```template
+<BlogPost title="My journey with Vue" />
+<BlogPost title="Blogging with Vue" />
+<BlogPost title="Why Vue is so fun" />
+```
+In a typical app, however, you'll likely have an array of posts in your parent component:
+
+```js
+export default {
+  // ...
+  data() {
+    return {
+      posts: [
+        { id: 1, title: 'My journey with Vue' },
+        { id: 2, title: 'Blogging with Vue' },
+        { id: 3, title: 'Why Vue is so fun' }
+      ]
+    }
+  }
+}
+```
+Then want to render a component for each one, using v-for:
+
+```template
+<BlogPost
+  v-for="post in posts"
+  :key="post.id"
+  :title="post.title"
+ />
+```
+Notice how `v-bind` syntax (`:title="post.title"`) is used to pass dynamic prop values. This is especially useful when you don't know the exact content you're going to render ahead of time.
+
+That's all you need to know about props for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Props.
