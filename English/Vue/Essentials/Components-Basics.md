@@ -148,3 +148,75 @@ Then want to render a component for each one, using v-for:
 Notice how `v-bind` syntax (`:title="post.title"`) is used to pass dynamic prop values. This is especially useful when you don't know the exact content you're going to render ahead of time.
 
 That's all you need to know about props for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Props.
+
+## Listening to Events​
+As we develop our `<BlogPost>` component, some features may require communicating back up to the parent. For example, we may decide to include an accessibility feature to enlarge the text of blog posts, while leaving the rest of the page at its default size.
+
+In the parent, we can support this feature by adding a `postFontSize` data property:
+
+```js
+data() {
+  return {
+    posts: [
+      /* ... */
+    ],
+    postFontSize: 1
+  }
+}
+```
+Which can be used in the template to control the font size of all blog posts:
+
+```template
+<div :style="{ fontSize: postFontSize + 'em' }">
+  <BlogPost
+    v-for="post in posts"
+    :key="post.id"
+    :title="post.title"
+   />
+</div>
+```
+Now let's add a button to the `<BlogPost>` component's template:
+
+```vue
+<!-- omitting <script> -->
+<template>
+  <div class="blog-post">
+    <h4>{{ title }}</h4>
+    <button>Enlarge text</button>
+  </div>
+</template>
+```
+The button doesn't do anything yet - we want clicking the button to communicate to the parent that it should enlarge the text of all posts. To solve this problem, components provide a custom events system. The parent can choose to listen to any event on the child component instance with `v-on` or `@`, just as we would with a native DOM event:
+
+```template
+<BlogPost
+  ...
+  @enlarge-text="postFontSize += 0.1"
+ />
+ ```
+Then the child component can emit an event on itself by calling the built-in `$emit` method, passing the name of the event:
+
+```vue
+<!-- omitting <script> -->
+<template>
+  <div class="blog-post">
+    <h4>{{ title }}</h4>
+    <button @click="$emit('enlarge-text')">Enlarge text</button>
+  </div>
+</template>
+```
+Thanks to the `@enlarge-text="postFontSize += 0.1"` listener, the parent will receive the event and update the value of `postFontSize`.
+
+We can optionally declare emitted events using the `emits` option:
+
+```vue
+<script>
+export default {
+  props: ['title'],
+  emits: ['enlarge-text']
+}
+</script>
+```
+This documents all the events that a component emits and optionally validates them. It also allows Vue to avoid implicitly applying them as native listeners to the child component's root element.
+
+That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Custom Events.
