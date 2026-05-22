@@ -256,3 +256,21 @@ This can be achieved using Vue's custom `<slot>` element:
 As you'll see above, we use the `<slot>` as a placeholder where we want the content to go – and that's it. We're done!
 
 That's all you need to know about slots for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Slots.
+
+## Dynamic Components​
+Sometimes, it's useful to dynamically switch between components, like in a tabbed interface:
+
+The above is made possible by Vue's `<component>` element with the special `is` attribute:
+
+```template
+<!-- Component changes when currentTab changes -->
+<component :is="currentTab"></component>
+```
+In the example above, the value passed to `:is` can contain either:
+
+- the name string of a registered component, OR
+- the actual imported component object
+
+You can also use the `is` attribute to create regular HTML elements.
+
+When switching between multiple components with `<component :is="...">`, a component will be unmounted when it is switched away from. We can force the inactive components to stay "alive" with the built-in `<KeepAlive>` component.
