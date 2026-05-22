@@ -220,3 +220,39 @@ export default {
 This documents all the events that a component emits and optionally validates them. It also allows Vue to avoid implicitly applying them as native listeners to the child component's root element.
 
 That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Custom Events.
+
+## Content Distribution with Slots​
+Just like with HTML elements, it's often useful to be able to pass content to a component, like this:
+
+```template
+<AlertBox>
+  Something bad happened.
+</AlertBox>
+```
+Which might render something like:
+
+```
+This is an Error for Demo Purposes
+
+Something bad happened.
+```
+
+This can be achieved using Vue's custom `<slot>` element:
+
+```vue
+<template>
+  <div class="alert-box">
+    <strong>This is an Error for Demo Purposes</strong>
+    <slot />
+  </div>
+</template>
+
+<style scoped>
+.alert-box {
+  /* ... */
+}
+</style>
+```
+As you'll see above, we use the `<slot>` as a placeholder where we want the content to go – and that's it. We're done!
+
+That's all you need to know about slots for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on Slots.
