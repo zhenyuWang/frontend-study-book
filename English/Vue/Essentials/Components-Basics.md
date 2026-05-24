@@ -274,3 +274,32 @@ In the example above, the value passed to `:is` can contain either:
 You can also use the `is` attribute to create regular HTML elements.
 
 When switching between multiple components with `<component :is="...">`, a component will be unmounted when it is switched away from. We can force the inactive components to stay "alive" with the built-in `<KeepAlive>` component.
+
+## in-DOM Template Parsing Caveats​
+If you are writing your Vue templates directly in the DOM, Vue will have to retrieve the template string from the DOM. This leads to some caveats due to browsers' native HTML parsing behavior.
+
+#### TIP
+
+It should be noted that the limitations discussed below only apply if you are writing your templates directly in the DOM. They do NOT apply if you are using string templates from the following sources:
+
+- Single-File Components
+- Inlined template strings (e.g. template: '...')
+- `<script type="text/x-template">`
+
+### Case Insensitivity​
+HTML tags and attribute names are case-insensitive, so browsers will interpret any uppercase characters as lowercase. That means when you’re using in-DOM templates, PascalCase component names and camelCased prop names or `v-on` event names all need to use their kebab-cased (hyphen-delimited) equivalents:
+
+```js
+// camelCase in JavaScript
+const BlogPost = {
+  props: ['postTitle'],
+  emits: ['updatePost'],
+  template: `
+    <h3>{{ postTitle }}</h3>
+  `
+}
+```
+```template
+<!-- kebab-case in HTML -->
+<blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
+```
