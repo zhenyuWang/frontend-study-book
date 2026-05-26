@@ -330,3 +330,37 @@ will be parsed as:
   <span>hello</span>
 </my-component> <!-- but the browser will close it here. -->
 ```
+
+### Element Placement Restrictions​
+Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.\
+restriction [/rɪˈstrɪkʃn/] 限制
+
+This will lead to issues when using components with elements that have such restrictions. For example:
+
+```template
+<table>
+  <blog-post-row></blog-post-row>
+</table>
+```
+The custom component `<blog-post-row>` will be hoisted out as invalid content, causing errors in the eventual rendered output. We can use the special `is` attribute as a workaround:\
+hoist [/hɔɪst/] 提升\
+eventual [/ɪˈventʃuəl/] 最终的\
+workaround [/ˈwɜːrkəraʊnd/] 解决方法
+
+```template
+<table>
+  <tr is="vue:blog-post-row"></tr>
+</table>
+```
+#### TIP
+
+When used on native HTML elements, the value of `is` must be prefixed with `vue:` in order to be interpreted as a Vue component. This is required to avoid confusion with native customized built-in elements.\
+interpret [/ɪnˈtɜːrprɪt/] 解释\
+confusion [/kənˈfjuːʒn/] 混淆
+
+That's all you need to know about in-DOM template parsing caveats for now - and actually, the end of Vue's Essentials. Congratulations! There's still more to learn, but first, we recommend taking a break to play with Vue yourself - build something fun, or check out some of the Examples if you haven't already.\
+caveat [/ˈkeɪviːt/] 注意事项\
+essential [/ɪˈsenʃl/] 基础的
+
+Once you feel comfortable with the knowledge you've just digested, move on with the guide to learn more about components in depth.\
+digest [/ˈdaɪdʒest/] 消化
