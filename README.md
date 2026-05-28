@@ -4,8 +4,11 @@
 
 # 日志
 
+## 2026.5.27
+[Vue doc Lifecycle Hooks](./English/Vue/Essentials/Lifecycle-Hooks.md)
+
 ## 2026.5.26
-[Vue doc Components Basics](./English/Vue/Essentials/Components-Basics.md)
+[Vue doc Lifecycle Hooks](./English/Vue/Essentials/Lifecycle-Hooks.md)
 
 ## 2026.5.25
 [Vue doc Components Basics](./English/Vue/Essentials/Components-Basics.md)
