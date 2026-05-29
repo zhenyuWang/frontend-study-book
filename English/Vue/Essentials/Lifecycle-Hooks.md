@@ -14,3 +14,8 @@ export default {
 There are also other hooks which will be called at different stages of the instance's lifecycle, with the most commonly used being `mounted`, `updated`, and `unmounted`.
 
 All lifecycle hooks are called with their `this` context pointing to the current active instance invoking it. Note this means you should avoid using arrow functions when declaring lifecycle hooks, as you won't be able to access the component instance via `this` if you do so.
+
+## Lifecycle Diagram​
+Below is a diagram for the instance lifecycle. You don't need to fully understand everything going on right now, but as you learn and build more, it will be a useful reference.
+
+Consult the Lifecycle Hooks API reference for details on all lifecycle hooks and their respective use cases.
