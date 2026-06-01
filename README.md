@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.6.1
+[Vue doc Component Registration](./English/Vue/Components-In-Depth/Component-Registration.md)
+
 ## 2026.5.29
 [Vue doc Component Registration](./English/Vue/Components-In-Depth/Component-Registration.md)
 
