@@ -94,3 +94,51 @@ You've also seen props assigned dynamically with `v-bind` or its : shortcut, suc
 <!-- Dynamically assign the value of a complex expression -->
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
+
+### Passing Different Value Types​
+In the two examples above, we happen to pass string values, but any type of value can be passed to a prop.
+
+Number​
+```template
+<!-- Even though `42` is static, we need v-bind to tell Vue that -->
+<!-- this is a JavaScript expression rather than a string.       -->
+<BlogPost :likes="42" />
+
+<!-- Dynamically assign to the value of a variable. -->
+<BlogPost :likes="post.likes" />
+```
+Boolean​
+```template
+<!-- Including the prop with no value will imply `true`. -->
+<BlogPost is-published />
+
+<!-- Even though `false` is static, we need v-bind to tell Vue that -->
+<!-- this is a JavaScript expression rather than a string.          -->
+<BlogPost :is-published="false" />
+
+<!-- Dynamically assign to the value of a variable. -->
+<BlogPost :is-published="post.isPublished" />
+```
+Array​
+```template
+<!-- Even though the array is static, we need v-bind to tell Vue that -->
+<!-- this is a JavaScript expression rather than a string.            -->
+<BlogPost :comment-ids="[234, 266, 273]" />
+
+<!-- Dynamically assign to the value of a variable. -->
+<BlogPost :comment-ids="post.commentIds" />
+```
+Object​
+```template
+<!-- Even though the object is static, we need v-bind to tell Vue that -->
+<!-- this is a JavaScript expression rather than a string.             -->
+<BlogPost
+  :author="{
+    name: 'Veronica',
+    company: 'Veridian Dynamics'
+  }"
+ />
+
+<!-- Dynamically assign to the value of a variable. -->
+<BlogPost :author="post.author" />
+```
