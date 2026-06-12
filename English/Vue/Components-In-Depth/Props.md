@@ -142,3 +142,29 @@ Object​
 <!-- Dynamically assign to the value of a variable. -->
 <BlogPost :author="post.author" />
 ```
+
+### Binding Multiple Properties Using an Object​
+If you want to pass all the properties of an object as props, you can use `v-bind` without an argument (v-bind instead of :prop-name). For example, given a post object:
+
+```js
+export default {
+  data() {
+    return {
+      post: {
+        id: 1,
+        title: 'My Journey with Vue'
+      }
+    }
+  }
+}
+```
+The following template:
+
+```template
+<BlogPost v-bind="post" />
+```
+Will be equivalent to:
+
+```template
+<BlogPost :id="post.id" :title="post.title" />
+```
