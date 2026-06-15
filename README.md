@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.6.12
+[Vue doc Component Props](./English/Vue/Components-In-Depth/Props.md)
+
 ## 2026.6.11
 [Vue doc Component Props](./English/Vue/Components-In-Depth/Props.md)
 

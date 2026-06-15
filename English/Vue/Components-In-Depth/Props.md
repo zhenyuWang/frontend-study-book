@@ -212,3 +212,10 @@ export default {
   }
 }
 ```
+
+### Mutating Object / Array Props​
+When objects and arrays are passed as props, while the child component cannot mutate the prop binding, it will be able to mutate the object or array's nested properties. This is because in JavaScript objects and arrays are passed by reference, and it is unreasonably expensive for Vue to prevent such mutations.
+
+The main drawback of such mutations is that it allows the child component to affect parent state in a way that isn't obvious to the parent component, potentially making it more difficult to reason about the data flow in the future. As a best practice, you should avoid such mutations unless the parent and child are tightly coupled by design. In most cases, the child should emit an event to let the parent perform the mutation.\
+drawback [/ˈdrɔːbæk/] 缺点\
+potentially [/ˈpɒtənʃəli/] 潜在地
