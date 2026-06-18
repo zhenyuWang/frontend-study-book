@@ -296,3 +296,38 @@ When prop validation fails, Vue will produce a console warning (if using the dev
 **Note**
 
 Note that props are validated before a component instance is created, so instance properties (e.g. `data`, `computed`, etc.) will not be available inside `default` or `validator` functions.
+
+### Runtime Type Checks​
+The `type` can be one of the following native constructors:
+
+- String
+- Number
+- Boolean
+- Array
+- Object
+- Date
+- Function
+- Symbol
+- Error
+
+In addition, `type` can also be a custom class or constructor function and the assertion will be made with an `instanceof` check. For example, given the following class:
+
+```js
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+}
+```
+You could use it as a prop's type:
+
+```js
+export default {
+  props: {
+    author: Person
+  }
+}
+```
+Vue will use `instanceof Person` to validate whether the value of the `author` prop is indeed an instance of the `Person` class.
+
