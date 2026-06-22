@@ -331,3 +331,17 @@ export default {
 ```
 Vue will use `instanceof Person` to validate whether the value of the `author` prop is indeed an instance of the `Person` class.
 
+### Nullable Type​
+If the type is required but nullable, you can use the array syntax that includes `null`:
+
+```js
+export default {
+  props: {
+    id: {
+      type: [String, null],
+      required: true
+    }
+  }
+}
+```
+Note that if type is just `null` without using the array syntax, it will allow any type.
