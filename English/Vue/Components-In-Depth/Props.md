@@ -345,3 +345,53 @@ export default {
 }
 ```
 Note that if type is just `null` without using the array syntax, it will allow any type.
+
+## Boolean Casting​
+Props with `Boolean` type have special casting rules to mimic the behavior of native boolean attributes. Given a `<MyComponent>` with the following declaration:
+
+```js
+export default {
+  props: {
+    disabled: Boolean
+  }
+}
+```
+The component can be used like this:
+```template
+<!-- equivalent of passing :disabled="true" -->
+<MyComponent disabled />
+
+<!-- equivalent of passing :disabled="false" -->
+<MyComponent />
+```
+When a prop is declared to allow multiple types, the casting rules for `Boolean` will also be applied. However, there is an edge when both `String` and `Boolean` are allowed - the Boolean casting rule only applies if Boolean appears before String:
+
+```js
+// disabled will be casted to true
+export default {
+  props: {
+    disabled: [Boolean, Number]
+  }
+}
+
+// disabled will be casted to true
+export default {
+  props: {
+    disabled: [Boolean, String]
+  }
+}
+
+// disabled will be casted to true
+export default {
+  props: {
+    disabled: [Number, Boolean]
+  }
+}
+
+// disabled will be parsed as an empty string (disabled="")
+export default {
+  props: {
+    disabled: [String, Boolean]
+  }
+}
+```
