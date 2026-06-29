@@ -66,3 +66,30 @@ methods: {
 **TIP**
 
 All extra arguments passed to `$emit()` after the event name will be forwarded to the listener. For example, with `$emit('foo', 1, 2, 3)` the listener function will receive three arguments.
+
+## Declaring Emitted Events​
+A component can explicitly declare the events it will emit using the `emits` option:
+
+```js
+export default {
+  emits: ['inFocus', 'submit']
+}
+```
+The `emits` option and `defineEmits()` macro also support an object syntax. If using TypeScript you can type arguments, which allows us to perform runtime validation of the payload of the emitted events:
+
+```js
+export default {
+  emits: {
+    submit(payload: { email: string, password: string }) {
+      // return `true` or `false` to indicate
+      // validation pass / fail
+    }
+  }
+}
+```
+
+Although optional, it is recommended to define all emitted events in order to better document how a component should work. It also allows Vue to exclude known listeners from fallthrough attributes, avoiding edge cases caused by DOM events manually dispatched by 3rd party code.
+
+**TIP**
+
+If a native event (e.g., `click`) is defined in the `emits` option, the listener will now only listen to component-emitted `click` events and no longer respond to native `click` events.
