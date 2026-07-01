@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.6.26
+[Vue doc Component v-model](./English/Vue/Components-In-Depth/Component-v-model.md)
+
 ## 2026.6.25
 [Vue doc Component Events](./English/Vue/Components-In-Depth/Component-Events.md)
 
