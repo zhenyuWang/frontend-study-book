@@ -93,3 +93,32 @@ Although optional, it is recommended to define all emitted events in order to be
 **TIP**
 
 If a native event (e.g., `click`) is defined in the `emits` option, the listener will now only listen to component-emitted `click` events and no longer respond to native `click` events.
+
+## Events Validation​
+Similar to prop type validation, an emitted event can be validated if it is defined with the object syntax instead of the array syntax.
+
+To add validation, the event is assigned a function that receives the arguments passed to the `this.$emit` call and returns a boolean to indicate whether the event is valid or not.
+
+```js
+export default {
+  emits: {
+    // No validation
+    click: null,
+
+    // Validate submit event
+    submit: ({ email, password }) => {
+      if (email && password) {
+        return true
+      } else {
+        console.warn('Invalid submit event payload!')
+        return false
+      }
+    }
+  },
+  methods: {
+    submitForm(email, password) {
+      this.$emit('submit', { email, password })
+    }
+  }
+}
+```
