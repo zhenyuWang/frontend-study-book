@@ -81,3 +81,29 @@ export default {
   <input v-model="value" />
 </template>
 ```
+
+## `v-model` Arguments​
+`v-model` on a component can also accept an argument:
+
+```template
+<MyComponent v-model:title="bookTitle" />
+```
+In this case, instead of the default `modelValue` prop and `update:modelValue` event, the child component should expect a `title` prop and emit an `update:title` event to update the parent value:
+
+MyComponent.vue
+```vue
+<script>
+export default {
+  props: ['title'],
+  emits: ['update:title']
+}
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="title"
+    @input="$emit('update:title', $event.target.value)"
+  />
+</template>
+```
