@@ -107,3 +107,105 @@ export default {
   />
 </template>
 ```
+
+## Multiple `v-model` Bindings​
+By leveraging the ability to target a particular prop and event as we learned before with `v-model` arguments, we can now create multiple `v-model` bindings on a single component instance.\
+leverage /ˈliːvərɪdʒ/ 利用
+
+Each `v-model` will sync to a different prop, without the need for extra options in the component:
+
+```template
+<UserName
+  v-model:first-name="first"
+  v-model:last-name="last"
+/>
+```
+```vue
+<script>
+export default {
+  props: {
+    firstName: String,
+    lastName: String
+  },
+  emits: ['update:firstName', 'update:lastName']
+}
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="firstName"
+    @input="$emit('update:firstName', $event.target.value)"
+  />
+  <input
+    type="text"
+    :value="lastName"
+    @input="$emit('update:lastName', $event.target.value)"
+  />
+</template>
+```
+
+## Handling `v-model` Modifiers​
+When we were learning about form input bindings, we saw that `v-model` has built-in modifiers - `.trim`, `.number` and `.lazy`. In some cases, you might also want the `v-model` on your custom input component to support custom modifiers.
+
+Let's create an example custom modifier, `capitalize`, that capitalizes the first letter of the string provided by the `v-model` binding:
+
+```template
+<MyComponent v-model.capitalize="myText" />
+```
+Modifiers added to a component `v-model` will be provided to the component via the `modelModifiers` prop. In the below example, we have created a component that contains a `modelModifiers` prop that defaults to an empty object:
+
+```vue
+<script>
+export default {
+  props: {
+    modelValue: String,
+    modelModifiers: {
+      default: () => ({})
+    }
+  },
+  emits: ['update:modelValue'],
+  created() {
+    console.log(this.modelModifiers) // { capitalize: true }
+  }
+}
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  />
+</template>
+```
+Notice the component's `modelModifiers` prop contains `capitalize` and its value is `true` - due to it being set on the `v-model` binding `v-model.capitalize="myText"`.
+
+Now that we have our prop set up, we can check the `modelModifiers` object keys and write a handler to change the emitted value. In the code below we will capitalize the string whenever the `<input />` element fires an input event.
+
+```vue
+<script>
+export default {
+  props: {
+    modelValue: String,
+    modelModifiers: {
+      default: () => ({})
+    }
+  },
+  emits: ['update:modelValue'],
+  methods: {
+    emitValue(e) {
+      let value = e.target.value
+      if (this.modelModifiers.capitalize) {
+        value = value.charAt(0).toUpperCase() + value.slice(1)
+      }
+      this.$emit('update:modelValue', value)
+    }
+  }
+}
+</script>
+
+<template>
+  <input type="text" :value="modelValue" @input="emitValue" />
+</template>
+```
