@@ -209,3 +209,50 @@ export default {
   <input type="text" :value="modelValue" @input="emitValue" />
 </template>
 ```
+
+## Modifiers for `v-model` with Arguments​
+For `v-model` bindings with both argument and modifiers, the generated prop name will be `arg + "Modifiers"`. For example:
+
+```template
+<MyComponent v-model:title.capitalize="myText">
+```
+The corresponding declarations should be:
+
+```js
+export default {
+  props: ['title', 'titleModifiers'],
+  emits: ['update:title'],
+  created() {
+    console.log(this.titleModifiers) // { capitalize: true }
+  }
+}
+```
+Here's another example of using modifiers with multiple `v-model` bindings with different arguments:
+
+```template
+<UserName
+  v-model:first-name.capitalize="first"
+  v-model:last-name.uppercase="last"
+/>
+```
+```vue
+<script>
+export default {
+  props: {
+    firstName: String,
+    lastName: String,
+    firstNameModifiers: {
+      default: () => ({})
+    },
+    lastNameModifiers: {
+      default: () => ({})
+    }
+  },
+  emits: ['update:firstName', 'update:lastName'],
+  created() {
+    console.log(this.firstNameModifiers) // { capitalize: true }
+    console.log(this.lastNameModifiers) // { uppercase: true }
+  }
+}
+</script>
+```
