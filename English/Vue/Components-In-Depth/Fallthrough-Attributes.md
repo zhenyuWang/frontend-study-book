@@ -57,3 +57,37 @@ Note that:
 1. Forwarded attributes do not include any attributes that are declared as props, or `v-on` listeners of declared events by `<MyButton>` - in other words, the declared props and listeners have been "consumed" by `<MyButton>`.
 
 2. Forwarded attributes may be accepted as props by `<BaseButton>`, if declared by it.
+
+## Disabling Attribute Inheritance​
+If you do not want a component to automatically inherit attributes, you can set `inheritAttrs: false` in the component's options.
+
+The common scenario for disabling attribute inheritance is when attributes need to be applied to other elements besides the root node. By setting the `inheritAttrs` option to `false`, you can take full control over where the fallthrough attributes should be applied.
+
+These fallthrough attributes can be accessed directly in template expressions as `$attrs`:
+
+```template
+<span>Fallthrough attributes: {{ $attrs }}</span>
+```
+The `$attrs` object includes all attributes that are not declared by the component's `props` or `emits` options (e.g., `class`, `style`, `v-on` listeners, etc.).
+
+Some notes:
+
+Unlike props, fallthrough attributes preserve their original casing in JavaScript, so an attribute like `foo-bar` needs to be accessed as `$attrs['foo-bar']`.
+
+A `v-on` event listener like `@click` will be exposed on the object as a function under `$attrs.onClick`.
+
+Using our `<MyButton>` component example from the previous section - sometimes we may need to wrap the actual `<button>` element with an extra `<div>` for styling purposes:
+
+```template
+<div class="btn-wrapper">
+  <button class="btn">Click Me</button>
+</div>
+```
+We want all fallthrough attributes like `class` and `v-on` listeners to be applied to the inner `<button>`, not the outer `<div>`. We can achieve this with `inheritAttrs: false` and `v-bind="$attrs"`:
+
+```template
+<div class="btn-wrapper">
+  <button class="btn" v-bind="$attrs">Click Me</button>
+</div>
+```
+Remember that `v-bind` without an argument binds all the properties of an object as attributes of the target element.
