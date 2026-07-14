@@ -91,3 +91,24 @@ We want all fallthrough attributes like `class` and `v-on` listeners to be appli
 </div>
 ```
 Remember that `v-bind` without an argument binds all the properties of an object as attributes of the target element.
+
+## Attribute Inheritance on Multiple Root Nodes​
+Unlike components with a single root node, components with multiple root nodes do not have an automatic attribute fallthrough behavior. If `$attrs` are not bound explicitly, a runtime warning will be issued.
+
+```template
+<CustomLayout id="custom-layout" @click="changeValue" />
+```
+If `<CustomLayout>` has the following multi-root template, there will be a warning because Vue cannot be sure where to apply the fallthrough attributes:
+
+```template
+<header>...</header>
+<main>...</main>
+<footer>...</footer>
+```
+The warning will be suppressed if `$attrs` is explicitly bound:
+
+```template
+<header>...</header>
+<main v-bind="$attrs">...</main>
+<footer>...</footer>
+```
