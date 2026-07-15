@@ -112,3 +112,14 @@ The warning will be suppressed if `$attrs` is explicitly bound:
 <main v-bind="$attrs">...</main>
 <footer>...</footer>
 ```
+
+## Accessing Fallthrough Attributes in JavaScript​
+If needed, you can access a component's fallthrough attributes via the $attrs `instance` property:
+
+```js
+export default {
+  created() {
+    console.log(this.$attrs)
+  }
+}
+```
