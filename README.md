@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.7.14
+[Vue doc Slots](./English/Vue/Components-In-Depth/Slots.md)
+
 ## 2026.7.13
 [Vue doc Fallthrough Attributes](./English/Vue/Components-In-Depth/Fallthrough-Attributes.md)
 
