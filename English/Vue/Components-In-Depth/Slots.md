@@ -59,3 +59,15 @@ mechanism [/ˈmekənɪzəm/] 机制\
 inspired [/ɪnˈspaɪərd/] 受到启发的\
 capability [/ˌkeɪpəˈbɪləti/] 能力
 
+## Render Scope​
+Slot content has access to the data scope of the parent component, because it is defined in the parent. For example:
+
+```template
+<span>{{ message }}</span>
+<FancyButton>{{ message }}</FancyButton>
+```
+Here both `{{ message }}` interpolations will render the same content.
+
+Slot content does not have access to the child component's data. Expressions in Vue templates can only access the scope it is defined in, consistent with JavaScript's lexical scoping. In other words:
+
+Expressions in the parent template only have access to the parent scope; expressions in the child template only have access to the child scope.
