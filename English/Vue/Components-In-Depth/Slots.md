@@ -71,3 +71,41 @@ Here both `{{ message }}` interpolations will render the same content.
 Slot content does not have access to the child component's data. Expressions in Vue templates can only access the scope it is defined in, consistent with JavaScript's lexical scoping. In other words:
 
 Expressions in the parent template only have access to the parent scope; expressions in the child template only have access to the child scope.
+
+## Fallback Content​
+There are cases when it's useful to specify fallback (i.e. default) content for a slot, to be rendered only when no content is provided. For example, in a `<SubmitButton>` component:
+
+```template
+<button type="submit">
+  <slot></slot>
+</button>
+```
+We might want the text "Submit" to be rendered inside the `<button>` if the parent didn't provide any slot content. To make "Submit" the fallback content, we can place it in between the `<slot>` tags:
+
+```template
+<button type="submit">
+  <slot>
+    Submit <!-- fallback content -->
+  </slot>
+</button>
+```
+Now when we use `<SubmitButton>` in a parent component, providing no content for the slot:
+
+```template
+<SubmitButton />
+```
+This will render the fallback content, "Submit":
+
+```html
+<button type="submit">Submit</button>
+```
+But if we provide content:
+
+```template
+<SubmitButton>Save</SubmitButton>
+```
+Then the provided content will be rendered instead:
+
+```html
+<button type="submit">Save</button>
+```
