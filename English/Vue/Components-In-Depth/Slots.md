@@ -109,3 +109,121 @@ Then the provided content will be rendered instead:
 ```html
 <button type="submit">Save</button>
 ```
+
+## Named Slots​
+There are times when it's useful to have multiple slot outlets in a single component. For example, in a `<BaseLayout>` component with the following template:
+
+```html
+<div class="container">
+  <header>
+    <!-- We want header content here -->
+  </header>
+  <main>
+    <!-- We want main content here -->
+  </main>
+  <footer>
+    <!-- We want footer content here -->
+  </footer>
+</div>
+```
+For these cases, the `<slot>` element has a special attribute, `name`, which can be used to assign a unique ID to different slots so you can determine where content should be rendered:
+
+```html
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name="footer"></slot>
+  </footer>
+</div>
+A `<slot>` outlet without `name` implicitly has the name "default".
+
+In a parent component using `<BaseLayout>`, we need a way to pass multiple slot content fragments, each targeting a different slot outlet. This is where named slots come in.
+
+To pass a named slot, we need to use a `<template>` element with the `v-slot` directive, and then pass the name of the slot as an argument to `v-slot`:
+
+```html
+<BaseLayout>
+  <template v-slot:header>
+    <!-- content for the header slot -->
+  </template>
+</BaseLayout>
+```
+`v-slot` has a dedicated shorthand `#`, so `<template v-slot:header>` can be shortened to just `<template #header>`. Think of it as "render this template fragment in the child component's 'header' slot".
+
+Diagram showing multiple named slots in a layout component, with content from the parent being directed to the corresponding header, main, and footer slots
+
+Here's the code passing content for all three slots to `<BaseLayout>` using the shorthand syntax:
+
+```html
+<BaseLayout>
+  <template #header>
+    <h1>Here might be a page title</h1>
+  </template>
+
+  <template #default>
+    <p>A paragraph for the main content.</p>
+    <p>And another one.</p>
+  </template>
+
+  <template #footer>
+    <p>Here's some contact info</p>
+  </template>
+</BaseLayout>
+```
+When a component accepts both a default slot and named slots, all top-level non-`<template>` nodes are implicitly treated as content for the default slot. So the above `<BaseLayout>` usage can also be written as:
+
+```html
+<BaseLayout>
+  <template #header>
+    <h1>Here might be a page title</h1>
+  </template>
+
+  <!-- implicit default slot -->
+  <p>A paragraph for the main content.</p>
+  <p>And another one.</p>
+
+  <template #footer>
+    <p>Here's some contact info</p>
+  </template>
+</BaseLayout>
+```
+Now everything inside the `<template>` elements will be passed to the corresponding slots. The final rendered HTML will be:
+
+```html
+<div class="container">
+  <header>
+    <h1>Here might be a page title</h1>
+  </header>
+  <main>
+    <p>A paragraph for the main content.</p>
+    <p>And another one.</p>
+  </main>
+  <footer>
+    <p>Here's some contact info</p>
+  </footer>
+</div>
+```
+Again, it may help you understand named slots better using the JavaScript function analogy:
+
+```js
+// passing multiple slot fragments with different names
+BaseLayout({
+  header: `...`,
+  default: `...`,
+  footer: `...`
+})
+
+// <BaseLayout> renders them in different places
+function BaseLayout(slots) {
+  return `<div class="container">
+      <header>${slots.header}</header>
+      <main>${slots.default}</main>
+      <footer>${slots.footer}</footer>
+    </div>`
+}
+```
