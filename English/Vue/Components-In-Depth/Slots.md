@@ -227,3 +227,28 @@ function BaseLayout(slots) {
     </div>`
 }
 ```
+
+## Conditional Slots​
+Sometimes you want to render something based on whether or not content has been passed to a slot.
+
+You can use the `$slots` property in combination with a `v-if` to achieve this.
+
+In the example below we define a Card component with three conditional slots: `header`, `footer` and the `default` one. When content for the header / footer / default is present, we want to wrap it to provide additional styling:
+
+```template
+<template>
+  <div class="card">
+    <div v-if="$slots.header" class="card-header">
+      <slot name="header" />
+    </div>
+    
+    <div v-if="$slots.default" class="card-content">
+      <slot />
+    </div>
+    
+    <div v-if="$slots.footer" class="card-footer">
+      <slot name="footer" />
+    </div>
+  </div>
+</template>
+```

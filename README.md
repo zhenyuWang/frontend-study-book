@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.7.20
+[Vue doc Slots](./English/Vue/Components-In-Depth/Slots.md)
+
 ## 2026.7.17
 [Vue doc Slots](./English/Vue/Components-In-Depth/Slots.md)
 
