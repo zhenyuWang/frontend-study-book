@@ -252,3 +252,20 @@ In the example below we define a Card component with three conditional slots: `h
   </div>
 </template>
 ```
+
+## Dynamic Slot Names​
+Dynamic directive arguments also work on `v-slot`, allowing the definition of dynamic slot names:
+
+```template
+<base-layout>
+  <template v-slot:[dynamicSlotName]>
+    ...
+  </template>
+
+  <!-- with shorthand -->
+  <template #[dynamicSlotName]>
+    ...
+  </template>
+</base-layout>
+```
+Do note the expression is subject to the syntax constraints of dynamic directive arguments.
