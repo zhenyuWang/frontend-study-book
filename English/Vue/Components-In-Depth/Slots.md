@@ -269,3 +269,54 @@ Dynamic directive arguments also work on `v-slot`, allowing the definition of dy
 </base-layout>
 ```
 Do note the expression is subject to the syntax constraints of dynamic directive arguments.
+
+## Scoped Slots​
+As discussed in Render Scope, slot content does not have access to state in the child component.
+
+However, there are cases where it could be useful if a slot's content can make use of data from both the parent scope and the child scope. To achieve that, we need a way for the child to pass data to a slot when rendering it.
+
+In fact, we can do exactly that - we can pass attributes to a slot outlet just like passing props to a component. The parent template receives slot props with `v-slot`, while the child template passes props to the slot outlet when rendering:
+
+```template
+<!-- Parent template (usage) -->
+<ChildComponent v-slot="receivedProps">
+  {{ receivedProps.text }} {{ receivedProps.count }}
+</ChildComponent>
+```
+```template
+<!-- Child template (slot definition) -->
+<!-- render with props! -->
+<slot
+  text="hello"
+  :count="1"
+/>
+```
+Receiving the slot props is a bit different when using a single default slot vs. using named slots. The example above receives props using a single default slot, by using `v-slot` directly on the `<ChildComponent>` tag.
+
+The props passed to the slot by the child are available as the value of the corresponding `v-slot` directive, which can be accessed by expressions inside the slot.\
+corresponding [/ˌkɔːrəˈspɑːndɪŋ/] 相应的
+
+You can think of a scoped slot as a function being passed into the child component. The child component then calls it, passing props as arguments:
+
+```js
+ChildComponent({
+  // passing the default slot, but as a function
+  default: (receivedProps) => {
+    return `${receivedProps.text} ${receivedProps.count}`
+  }
+})
+
+function ChildComponent(slots) {
+  // call the slot function with props!
+  return slots.default({ text: 'hello', count: 1 })
+}
+```
+In fact, this is very close to how scoped slots are compiled, and how you would use scoped slots in manual render functions.
+
+Notice how `v-slot="receivedProps"` matches the slot function signature. Just like with function arguments, we can use destructuring in `v-slot`:
+
+```template
+<ChildComponent v-slot="{ text, count }">
+  {{ text }} {{ count }}
+</ChildComponent>
+```
