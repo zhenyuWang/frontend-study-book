@@ -320,3 +320,65 @@ Notice how `v-slot="receivedProps"` matches the slot function signature. Just li
   {{ text }} {{ count }}
 </ChildComponent>
 ```
+
+## Named Scoped Slots​
+Named scoped slots work similarly - slot props are accessible as the value of the `v-slot` directive: `v-slot:name="receivedProps"`. When using the shorthand, it looks like this:
+
+```template
+<MyComponent>
+  <template #header="headerProps">
+    {{ headerProps }}
+  </template>
+
+  <template #default="defaultProps">
+    {{ defaultProps }}
+  </template>
+
+  <template #footer="footerProps">
+    {{ footerProps }}
+  </template>
+</MyComponent>
+```
+Passing props to a named slot:
+
+```template
+<slot name="header" message="hello" />
+```
+Note the `name` of a slot won't be included in the props because it is reserved - so the resulting `headerProps` would be `{ message: 'hello' }`.
+
+If you are mixing named slots with the default scoped slot, you need to use an explicit `<template>` tag for the default slot. Attempting to place the `v-slot` directive directly on the component will result in a compilation error. This is to avoid any ambiguity about the scope of the props of the default slot. For example:\
+attempting [/əˈtemptɪŋ/] 试图,尝试\
+compilation [/ˌkɑːmpɪˈleɪʃn/] 编译\
+ambiguity [/ˌæmbɪˈɡjuːəti/] 模糊,不明确
+
+```template
+<!-- <MyComponent> template -->
+<div>
+  <slot message="hello" />
+  <slot name="footer" />
+</div>
+```
+```template
+<!-- This template won't compile -->
+<MyComponent v-slot="{ message }">
+  <p>{{ message }}</p>
+  <template #footer>
+    <!-- message belongs to the default slot, and is not available here -->
+    <p>{{ message }}</p>
+  </template>
+</MyComponent>
+```
+Using an explicit `<template>` tag for the default slot helps to make it clear that the message prop is not available inside the other slot:
+
+```template
+<MyComponent>
+  <!-- Use explicit default slot -->
+  <template #default="{ message }">
+    <p>{{ message }}</p>
+  </template>
+
+  <template #footer>
+    <p>Here's some contact info</p>
+  </template>
+</MyComponent>
+```
