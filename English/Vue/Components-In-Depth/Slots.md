@@ -382,3 +382,30 @@ Using an explicit `<template>` tag for the default slot helps to make it clear t
   </template>
 </MyComponent>
 ```
+
+
+## Fancy List Example​
+You may be wondering what would be a good use case for scoped slots. Here's an example: imagine a `<FancyList>` component that renders a list of items - it may encapsulate the logic for loading remote data, using the data to display a list, or even advanced features like pagination or infinite scrolling. However, we want it to be flexible with how each item looks and leave the styling of each item to the parent component consuming it. So the desired usage may look like this:\
+encapsulate [/ɪnˈkæpsjuleɪt/] 封装,包封\
+infinite [/ɪnˈfɪnət/] 无限的\
+desired [/dɪˈzaɪərd/] 想要的,渴望的
+
+```template
+<FancyList :api-url="url" :per-page="10">
+  <template #item="{ body, username, likes }">
+    <div class="item">
+      <p>{{ body }}</p>
+      <p>by {{ username }} | {{ likes }} likes</p>
+    </div>
+  </template>
+</FancyList>
+```
+Inside `<FancyList>`, we can render the same `<slot>` multiple times with different item data (notice we are using `v-bind` to pass an object as slot props):
+
+```template
+<ul>
+  <li v-for="item in items">
+    <slot name="item" v-bind="item" />
+  </li>
+</ul>
+```
