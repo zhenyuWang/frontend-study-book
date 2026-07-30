@@ -321,7 +321,7 @@ Notice how `v-slot="receivedProps"` matches the slot function signature. Just li
 </ChildComponent>
 ```
 
-## Named Scoped Slots​
+### Named Scoped Slots​
 Named scoped slots work similarly - slot props are accessible as the value of the `v-slot` directive: `v-slot:name="receivedProps"`. When using the shorthand, it looks like this:
 
 ```template
@@ -384,7 +384,7 @@ Using an explicit `<template>` tag for the default slot helps to make it clear t
 ```
 
 
-## Fancy List Example​
+### Fancy List Example​
 You may be wondering what would be a good use case for scoped slots. Here's an example: imagine a `<FancyList>` component that renders a list of items - it may encapsulate the logic for loading remote data, using the data to display a list, or even advanced features like pagination or infinite scrolling. However, we want it to be flexible with how each item looks and leave the styling of each item to the parent component consuming it. So the desired usage may look like this:\
 encapsulate [/ɪnˈkæpsjuleɪt/] 封装,包封\
 infinite [/ɪnˈfɪnət/] 无限的\
@@ -409,3 +409,20 @@ Inside `<FancyList>`, we can render the same `<slot>` multiple times with differ
   </li>
 </ul>
 ```
+
+### Renderless Components​
+The `<FancyList>` use case we discussed above encapsulates both reusable logic (data fetching, pagination etc.) and visual output, while delegating part of the visual output to the consumer component via scoped slots.
+
+If we push this concept a bit further, we can come up with components that only encapsulate logic and do not render anything by themselves - visual output is fully delegated to the consumer component with scoped slots. We call this type of component a Renderless Component.
+
+An example renderless component could be one that encapsulates the logic of tracking the current mouse position:
+
+```template
+<MouseTracker v-slot="{ x, y }">
+  Mouse is at: {{ x }}, {{ y }}
+</MouseTracker>
+```
+
+While an interesting pattern, most of what can be achieved with Renderless Components can be achieved in a more efficient fashion with Composition API, without incurring the overhead of extra component nesting. Later, we will see how we can implement the same mouse tracking functionality as a Composable.
+
+That said, scoped slots are still useful in cases where we need to both encapsulate logic and compose visual output, like in the `<FancyList>` example.
