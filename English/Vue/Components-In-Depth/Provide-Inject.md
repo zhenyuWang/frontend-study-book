@@ -12,3 +12,39 @@ drilling [/ˈdrɪlɪŋ/] 钻孔
 We can solve props drilling with `provide` and `inject`. A parent component can serve as a dependency provider for all its descendants. Any component in the descendant tree, regardless of how deep it is, can inject dependencies provided by components up in its parent chain.\
 descendant [/dɪˈsendənt/] 后代\
 regardless [/rɪˈɡɑrdləs/] 不管
+
+## Provide​
+To provide data to a component's descendants, use the `provide()` function:\
+descendant [/dɪˈsendənt/] 后代
+
+```vue
+<script setup>
+import { provide } from 'vue'
+
+provide(/* key */ 'message', /* value */ 'hello!')
+</script>
+```
+If not using `<script setup>`, make sure `provide()` is called synchronously inside `setup()`:
+
+```js
+import { provide } from 'vue'
+
+export default {
+  setup() {
+    provide(/* key */ 'message', /* value */ 'hello!')
+  }
+}
+```
+The `provide()` function accepts two arguments. The first argument is called the injection key, which can be a string or a `Symbol`. The injection key is used by descendant components to lookup the desired value to inject. A single component can call `provide()` multiple times with different injection keys to provide different values.\
+desired [/dɪˈzaɪərd/] 想要的
+
+The second argument is the provided value. The value can be of any type, including reactive state such as refs:
+
+```js
+import { ref, provide } from 'vue'
+
+const count = ref(0)
+provide('key', count)
+```
+Providing reactive values allows the descendant components using the provided value to establish a reactive connection to the provider component.\
+establish [/ɪˈstæblɪʃ/] 建立
