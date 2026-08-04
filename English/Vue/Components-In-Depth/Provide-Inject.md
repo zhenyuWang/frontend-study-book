@@ -48,3 +48,15 @@ provide('key', count)
 ```
 Providing reactive values allows the descendant components using the provided value to establish a reactive connection to the provider component.\
 establish [/ɪˈstæblɪʃ/] 建立
+
+## App-level Provide​
+In addition to providing data in a component, we can also provide at the app level:
+
+```js
+import { createApp } from 'vue'
+
+const app = createApp({})
+
+app.provide(/* key */ 'message', /* value */ 'hello!')
+```
+App-level provides are available to all components rendered in the app. This is especially useful when writing plugins, as plugins typically wouldn't be able to provide values using components.
