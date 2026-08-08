@@ -60,3 +60,30 @@ const app = createApp({})
 app.provide(/* key */ 'message', /* value */ 'hello!')
 ```
 App-level provides are available to all components rendered in the app. This is especially useful when writing plugins, as plugins typically wouldn't be able to provide values using components.
+
+## Inject​
+To inject data provided by an ancestor component, use the `inject()` function:
+
+```vue
+<script setup>
+import { inject } from 'vue'
+
+const message = inject('message')
+</script>
+```
+If multiple parents provide data with the same key, inject will resolve to the value from the closest parent in component's parent chain.
+
+If the provided value is a ref, it will be injected as-is and will not be automatically unwrapped. This allows the injector component to retain the reactivity connection to the provider component.
+
+Again, if not using `<script setup>`, `inject()` should only be called synchronously inside `setup()`:
+
+```js
+import { inject } from 'vue'
+
+export default {
+  setup() {
+    const message = inject('message')
+    return { message }
+  }
+}
+```
