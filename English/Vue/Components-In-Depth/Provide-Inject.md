@@ -87,3 +87,20 @@ export default {
   }
 }
 ```
+
+### Injection Default Values​
+By default, `inject` assumes that the injected key is provided somewhere in the parent chain. In the case where the key is not provided, there will be a runtime warning.
+
+If we want to make an injected property work with optional providers, we need to declare a default value, similar to props:
+
+```js
+// `value` will be "default value"
+// if no data matching "message" was provided
+const value = inject('message', 'default value')
+```
+In some cases, the default value may need to be created by calling a function or instantiating a new class. To avoid unnecessary computation or side effects in case the optional value is not used, we can use a factory function for creating the default value:
+
+```js
+const value = inject('key', () => new ExpensiveClass(), true)
+```
+The third parameter indicates the default value should be treated as a factory function.
