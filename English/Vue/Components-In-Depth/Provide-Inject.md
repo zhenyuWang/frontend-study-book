@@ -62,31 +62,48 @@ app.provide(/* key */ 'message', /* value */ 'hello!')
 App-level provides are available to all components rendered in the app. This is especially useful when writing plugins, as plugins typically wouldn't be able to provide values using components.
 
 ## Inject​
-To inject data provided by an ancestor component, use the `inject()` function:
-
-```vue
-<script setup>
-import { inject } from 'vue'
-
-const message = inject('message')
-</script>
-```
-If multiple parents provide data with the same key, inject will resolve to the value from the closest parent in component's parent chain.
-
-If the provided value is a ref, it will be injected as-is and will not be automatically unwrapped. This allows the injector component to retain the reactivity connection to the provider component.
-
-Again, if not using `<script setup>`, `inject()` should only be called synchronously inside `setup()`:
+To inject data provided by an ancestor component, use the inject option:
 
 ```js
-import { inject } from 'vue'
-
 export default {
-  setup() {
-    const message = inject('message')
-    return { message }
+  inject: ['message'],
+  created() {
+    console.log(this.message) // injected value
   }
 }
 ```
+Injections are resolved before the component's own state, so you can access injected properties in data():
+
+```js
+export default {
+  inject: ['message'],
+  data() {
+    return {
+      // initial data based on injected value
+      fullMessage: this.message
+    }
+  }
+}
+```
+If multiple parents provide data with the same key, inject will resolve to the value from the closest parent in component's parent chain.
+
+### Injection Aliasing​
+When using the array syntax for `inject`, the injected properties are exposed on the component instance using the same key. In the example above, the property was provided under the key `"message"`, and injected as `this.message`. The local key is the same as the injection key.
+
+If we want to inject the property using a different local key, we need to use the object syntax for the `inject` option:
+
+```js
+export default {
+  inject: {
+    /* local key */ localMessage: {
+      from: /* injection key */ 'message'
+    }
+  }
+}
+```
+Here, the component will locate a property provided with the key `"message"`, and then expose it as `this.localMessage`.
+
+
 
 ### Injection Default Values​
 By default, `inject` assumes that the injected key is provided somewhere in the parent chain. In the case where the key is not provided, there will be a runtime warning.
@@ -94,13 +111,19 @@ By default, `inject` assumes that the injected key is provided somewhere in the 
 If we want to make an injected property work with optional providers, we need to declare a default value, similar to props:
 
 ```js
-// `value` will be "default value"
-// if no data matching "message" was provided
-const value = inject('message', 'default value')
+export default {
+  // object syntax is required
+  // when declaring default values for injections
+  inject: {
+    message: {
+      from: 'message', // this is optional if using the same key for injection
+      default: 'default value'
+    },
+    user: {
+      // use a factory function for non-primitive values that are expensive
+      // to create, or ones that should be unique per component instance.
+      default: () => ({ name: 'John' })
+    }
+  }
+}
 ```
-In some cases, the default value may need to be created by calling a function or instantiating a new class. To avoid unnecessary computation or side effects in case the optional value is not used, we can use a factory function for creating the default value:
-
-```js
-const value = inject('key', () => new ExpensiveClass(), true)
-```
-The third parameter indicates the default value should be treated as a factory function.
