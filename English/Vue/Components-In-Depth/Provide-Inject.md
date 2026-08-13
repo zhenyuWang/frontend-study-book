@@ -127,3 +127,26 @@ export default {
   }
 }
 ```
+
+## Working with Reactivity​
+In order to make injections reactively linked to the provider, we need to provide a computed property using the `computed()` function:
+
+```js
+import { computed } from 'vue'
+
+export default {
+  data() {
+    return {
+      message: 'hello!'
+    }
+  },
+  provide() {
+    return {
+      // explicitly provide a computed property
+      message: computed(() => this.message)
+    }
+  }
+}
+```
+
+The `computed()` function is typically used in Composition API components, but can also be used to complement certain use cases in Options API. You can learn more about its usage by reading the Reactivity Fundamentals and Computed Properties with the API Preference set to Composition API.

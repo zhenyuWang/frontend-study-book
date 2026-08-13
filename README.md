@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.8.5
+[Vue doc Provide / Inject](./English/Vue/Components-In-Depth/Provide-Inject.md)
+
 ## 2026.8.4
 [Vue doc Provide / Inject](./English/Vue/Components-In-Depth/Provide-Inject.md)
 
