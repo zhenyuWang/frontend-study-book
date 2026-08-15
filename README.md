@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.8.7
+[Vue doc Async Components](./English/Vue/Components-In-Depth/Async-Components.md)
+
 ## 2026.8.6
 [Vue doc Provide / Inject](./English/Vue/Components-In-Depth/Provide-Inject.md)
 
