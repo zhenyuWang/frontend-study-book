@@ -150,3 +150,29 @@ export default {
 ```
 
 The `computed()` function is typically used in Composition API components, but can also be used to complement certain use cases in Options API. You can learn more about its usage by reading the Reactivity Fundamentals and Computed Properties with the API Preference set to Composition API.
+
+## Working with Symbol Keys​
+So far, we have been using string injection keys in the examples. If you are working in a large application with many dependency providers, or you are authoring components that are going to be used by other developers, it is best to use Symbol injection keys to avoid potential collisions.
+
+It's recommended to export the Symbols in a dedicated file:
+
+```js
+keys.js
+export const myInjectionKey = Symbol()
+```
+```js
+// in provider component
+import { provide } from 'vue'
+import { myInjectionKey } from './keys.js'
+
+provide(myInjectionKey, {
+  /* data to provide */
+})
+```
+```js
+// in injector component
+import { inject } from 'vue'
+import { myInjectionKey } from './keys.js'
+
+const injected = inject(myInjectionKey)
+```
