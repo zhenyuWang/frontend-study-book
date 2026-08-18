@@ -79,3 +79,12 @@ instant [/ˈɪnstənt/] 瞬间的\
 ficker [/ˈflɪkə(r)/] 闪烁
 
 If an error component is provided, it will be displayed when the Promise returned by the loader function is rejected. You can also specify a timeout to show the error component when the request is taking too long.
+
+# Lazy Hydration ​
+This section only applies if you are using Server-Side Rendering.
+
+In Vue 3.5+, async components can control when they are hydrated by providing a hydration strategy.
+
+Vue provides a number of built-in hydration strategies. These built-in strategies need to be individually imported so they can be tree-shaken if not used.
+
+The design is intentionally low-level for flexibility. Compiler syntax sugar can potentially be built on top of this in the future either in core or in higher level solutions such as Vue frameworks.
