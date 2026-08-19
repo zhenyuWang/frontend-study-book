@@ -88,3 +88,15 @@ In Vue 3.5+, async components can control when they are hydrated by providing a 
 Vue provides a number of built-in hydration strategies. These built-in strategies need to be individually imported so they can be tree-shaken if not used.
 
 The design is intentionally low-level for flexibility. Compiler syntax sugar can potentially be built on top of this in the future either in core or in higher level solutions such as Vue frameworks.
+
+## Hydrate on Idle​
+Hydrates via requestIdleCallback:
+
+```js
+import { defineAsyncComponent, hydrateOnIdle } from 'vue'
+
+const AsyncComp = defineAsyncComponent({
+  loader: () => import('./Comp.vue'),
+  hydrate: hydrateOnIdle(/* optionally pass a max timeout */)
+})
+```
