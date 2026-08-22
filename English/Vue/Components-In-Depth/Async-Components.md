@@ -117,3 +117,15 @@ Can optionally pass in an options object value for the observer:
 ```js
 hydrateOnVisible({ rootMargin: '100px' })
 ```
+
+## Hydrate on Media Query​
+Hydrates when the specified media query matches.
+
+```js
+import { defineAsyncComponent, hydrateOnMediaQuery } from 'vue'
+
+const AsyncComp = defineAsyncComponent({
+  loader: () => import('./Comp.vue'),
+  hydrate: hydrateOnMediaQuery('(max-width:500px)')
+})
+```
