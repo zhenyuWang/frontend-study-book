@@ -146,3 +146,27 @@ Can also be a list of multiple event types:
 ```js
 hydrateOnInteraction(['wheel', 'mouseover'])
 ```
+
+## Custom Strategy​
+```ts
+import { defineAsyncComponent, type HydrationStrategy } from 'vue'
+
+const myStrategy: HydrationStrategy = (hydrate, forEachElement) => {
+  // forEachElement is a helper to iterate through all the root elements
+  // in the component's non-hydrated DOM, since the root can be a fragment
+  // instead of a single element
+  forEachElement(el => {
+    // ...
+  })
+  // call `hydrate` when ready
+  hydrate()
+  return () => {
+    // return a teardown function if needed
+  }
+}
+
+const AsyncComp = defineAsyncComponent({
+  loader: () => import('./Comp.vue'),
+  hydrate: myStrategy
+})
+```
