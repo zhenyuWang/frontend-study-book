@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.8.19
+[Vue doc Async Components](./English/Vue/Components-In-Depth/Async-Components.md)
+
 ## 2026.8.18
 [Vue doc Async Components](./English/Vue/Components-In-Depth/Async-Components.md)
 

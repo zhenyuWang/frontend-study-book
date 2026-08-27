@@ -170,3 +170,6 @@ const AsyncComp = defineAsyncComponent({
   hydrate: myStrategy
 })
 ```
+
+# Using with Suspense​
+Async components can be used with the `<Suspense>` built-in component. The interaction between `<Suspense>` and async components is documented in the dedicated chapter for `<Suspense>`.
