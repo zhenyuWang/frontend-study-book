@@ -230,3 +230,6 @@ This version of `useFetch()` now accepts static URL strings, refs, and getters, 
 
 Here's the updated version of useFetch(), with an artificial delay and randomized error for demo purposes.
 
+## Conventions and Best Practices​
+### Naming​
+It is a convention to name composable functions with camelCase names that start with "use".
