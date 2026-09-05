@@ -277,3 +277,16 @@ It is OK to perform side effects (e.g. adding DOM event listeners or fetching da
 - If you are working on an application that uses Server-Side Rendering (SSR), make sure to perform DOM-specific side effects in post-mount lifecycle hooks, e.g. `onMounted()`. These hooks are only called in the browser, so you can be sure that code inside them has access to the DOM.
 
 - Remember to clean up side effects in `onUnmounted()`. For example, if a composable sets up a DOM event listener, it should remove that listener in `onUnmounted()` as we have seen in the `useMouse()` example. It can be a good idea to use a composable that automatically does this for you, like the `useEventListener()` example.
+
+### Usage Restrictions​
+Composables should only be called in `<script setup>` or the `setup()` hook. They should also be called synchronously in these contexts. In some cases, you can also call them in lifecycle hooks like `onMounted()`.
+
+These restrictions are important because these are the contexts where Vue is able to determine the current active component instance. Access to an active component instance is necessary so that:
+
+1. Lifecycle hooks can be registered to it.
+
+2. Watchers can be linked to it, so that they can be disposed when the instance is unmounted to prevent memory leaks.
+
+**TIP**
+
+`<script setup>` is the only place where you can call composables after using await. The compiler automatically restores the active instance context for you after the async operation.
