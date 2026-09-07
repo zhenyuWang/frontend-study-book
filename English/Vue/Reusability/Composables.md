@@ -306,3 +306,24 @@ const { qux } = useFeatureC(baz)
 </script>
 ```
 To some extent, you can think of these extracted composables as component-scoped services that can talk to one another.
+
+## Using Composables in Options API​
+If you are using Options API, composables must be called inside `setup()`, and the returned bindings must be returned from `setup()` so that they are exposed to `this` and the template:
+
+```js
+import { useMouse } from './mouse.js'
+import { useFetch } from './fetch.js'
+
+export default {
+  setup() {
+    const { x, y } = useMouse()
+    const { data, error } = useFetch('...')
+    return { x, y, data, error }
+  },
+  mounted() {
+    // setup() exposed properties can be accessed on `this`
+    console.log(this.x)
+  }
+  // ...other options
+}
+```
