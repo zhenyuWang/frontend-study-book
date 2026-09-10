@@ -346,3 +346,6 @@ In the component slots chapter, we discussed the Renderless Component pattern ba
 The main advantage of composables over renderless components is that composables do not incur the extra component instance overhead. When used across an entire application, the amount of extra component instances created by the renderless component pattern can become a noticeable performance overhead.
 
 The recommendation is to use composables when reusing pure logic, and use components when reusing both logic and visual layout.
+
+### vs. React Hooks​
+If you have experience with React, you may notice that this looks very similar to custom React hooks. Composition API was in part inspired by React hooks, and Vue composables are indeed similar to React hooks in terms of logic composition capabilities. However, Vue composables are based on Vue's fine-grained reactivity system, which is fundamentally different from React hooks' execution model. This is discussed in more detail in the Composition API FAQ.
