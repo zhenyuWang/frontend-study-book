@@ -59,3 +59,30 @@ export default {
 This directive is more useful than the `autofocus` attribute because it works not just on page load - it also works when the element is dynamically inserted by Vue!
 
 Declarative templating with built-in directives such as `v-bind` is recommended when possible because they are more efficient and server-rendering friendly.
+
+## Directive Hooks​
+A directive definition object can provide several hook functions (all optional):
+
+```js
+const myDirective = {
+  // called before bound element's attributes
+  // or event listeners are applied
+  created(el, binding, vnode) {
+    // see below for details on arguments
+  },
+  // called right before the element is inserted into the DOM.
+  beforeMount(el, binding, vnode) {},
+  // called when the bound element's parent component
+  // and all its children are mounted.
+  mounted(el, binding, vnode) {},
+  // called before the parent component is updated
+  beforeUpdate(el, binding, vnode, prevVnode) {},
+  // called after the parent component and
+  // all of its children have updated
+  updated(el, binding, vnode, prevVnode) {},
+  // called before the parent component is unmounted
+  beforeUnmount(el, binding, vnode) {},
+  // called when the parent component is unmounted
+  unmounted(el, binding, vnode) {}
+}
+```
