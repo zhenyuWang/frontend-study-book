@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.9.15
+[Vue doc Custom Directives](./English/Vue/Reusability/Custom-Directives.md)
+
 ## 2026.9.14
 [Vue doc Custom Directives](./English/Vue/Reusability/Custom-Directives.md)
 

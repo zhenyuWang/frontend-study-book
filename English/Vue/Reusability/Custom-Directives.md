@@ -86,3 +86,47 @@ const myDirective = {
   unmounted(el, binding, vnode) {}
 }
 ```
+
+### Hook Arguments​
+Directive hooks are passed these arguments:
+
+- `el`: the element the directive is bound to. This can be used to directly manipulate the DOM.
+
+- `binding`: an object containing the following properties.
+
+	- `value`: The value passed to the directive. For example in `v-my-directive="1 + 1"`, the value would be `2`.
+	- `oldValue`: The previous value, only available in `beforeUpdate` and `updated`. It is available whether or not the value has changed.
+	- `arg`: The argument passed to the directive, if any. For example in `v-my-directive:foo`, the arg would be `"foo"`.
+	- `modifiers`: An object containing modifiers, if any. For example in `v-my-directive.foo.bar`, the modifiers object would be `{ foo: true, bar: true }`.
+	- `instance`: The instance of the component where the directive is used.
+	- `dir`: the directive definition object.
+
+- `vnode`: the underlying VNode representing the bound element.
+
+- `prevVnode`: the VNode representing the bound element from the previous render. Only available in the `beforeUpdate` and `updated` hooks.
+
+As an example, consider the following directive usage:
+
+```template
+<div v-example:foo.bar="baz">
+```
+The `binding` argument would be an object in the shape of:
+
+```js
+{
+  arg: 'foo',
+  modifiers: { bar: true },
+  value: /* value of `baz` */,
+  oldValue: /* value of `baz` from previous update */
+}
+``` 
+Similar to built-in directives, custom directive arguments can be dynamic. For example:
+
+```template
+<div v-example:[arg]="value"></div>
+```
+Here the directive argument will be reactively updated based on arg property in our component state.
+
+**Note**
+
+Apart from `el`, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element's dataset.
