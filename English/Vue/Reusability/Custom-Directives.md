@@ -130,3 +130,16 @@ Here the directive argument will be reactively updated based on arg property in 
 **Note**
 
 Apart from `el`, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element's dataset.
+
+## Function Shorthand​
+It's common for a custom directive to have the same behavior for `mounted` and `updated`, with no need for the other hooks. In such cases we can define the directive as a function:
+
+```template
+<div v-color="color"></div>
+```
+```js
+app.directive('color', (el, binding) => {
+  // this will be called for both `mounted` and `updated`
+  el.style.color = binding.value
+})
+```
