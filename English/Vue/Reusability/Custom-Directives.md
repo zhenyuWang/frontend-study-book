@@ -156,3 +156,23 @@ app.directive('demo', (el, binding) => {
   console.log(binding.value.text) // => "hello!"
 })
 ```
+
+## Usage on Components​
+**Not recommended**
+
+Using custom directives on components is not recommended. Unexpected behaviour may occur when a component has multiple root nodes.
+
+When used on components, custom directives will always apply to a component's root node, similar to Fallthrough Attributes.
+
+```template
+<MyComponent v-demo="test" />
+```
+```template
+<!-- template of MyComponent -->
+
+<div> <!-- v-demo directive will be applied here -->
+  <span>My component content</span>
+</div>
+```
+Note that components can potentially have more than one root node. When applied to a multi-root component, a directive will be ignored and a warning will be thrown. Unlike attributes, directives can't be passed to a different element with `v-bind="$attrs"`.
+
