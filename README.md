@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.9.21
+[Vue doc Plugins](./English/Vue/Reusability/Plugins.md)
+
 ## 2026.9.18
 [Vue doc Custom Directives](./English/Vue/Reusability/Custom-Directives.md)
 
