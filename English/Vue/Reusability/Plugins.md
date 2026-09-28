@@ -85,3 +85,25 @@ See also: Augmenting Global Properties
 **TIP**
 
 Use global properties scarcely, since it can quickly become confusing if too many global properties injected by different plugins are used throughout an app.
+
+### Provide / Inject with Plugins​
+Plugins also allow us to use `provide` to give plugin users access to a function or attribute. For example, we can allow the application to have access to the `options` parameter to be able to use the translations object.
+
+```js
+// plugins/i18n.js
+export default {
+  install: (app, options) => {
+    app.provide('i18n', options)
+  }
+}
+```
+Plugin users will now be able to inject the plugin options into their components using the `i18n` key:
+
+```js
+export default {
+  inject: ['i18n'],
+  created() {
+    console.log(this.i18n.greetings.hello)
+  }
+}
+```
