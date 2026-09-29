@@ -107,3 +107,6 @@ export default {
   }
 }
 ```
+
+### Bundle for NPM​
+If you further want to build and publish your plugin for others to use, see Vite's section on Library Mode.

@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.9.24
+[Vue doc Plugins](./English/Vue/Reusability/Plugins.md)
+
 ## 2026.9.23
 [Vue doc Plugins](./English/Vue/Reusability/Plugins.md)
 
