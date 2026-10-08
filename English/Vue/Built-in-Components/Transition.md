@@ -91,3 +91,33 @@ For a named transition, its transition classes will be prefixed with its name in
   opacity: 0;
 }
 ```
+
+### CSS Transitions​
+`<Transition>` is most commonly used in combination with native CSS transitions, as seen in the basic example above. The `transition` CSS property is a shorthand that allows us to specify multiple aspects of a transition, including properties that should be animated, duration of the transition, and easing curves.
+
+Here is a more advanced example that transitions multiple properties, with different durations and easing curves for enter and leave:
+
+```template
+<Transition name="slide-fade">
+  <p v-if="show">hello</p>
+</Transition>
+```
+```css
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+```
