@@ -121,3 +121,35 @@ Here is a more advanced example that transitions multiple properties, with diffe
   opacity: 0;
 }
 ```
+
+### CSS Animations​
+Native CSS animations are applied in the same way as CSS transitions, with the difference being that `*-enter-from` is not removed immediately after the element is inserted, but on an `animationend` event.
+
+For most CSS animations, we can simply declare them under the `*-enter-active` and `*-leave-active` classes. Here's an example:
+
+```template
+<Transition name="bounce">
+  <p v-if="show" style="text-align: center;">
+    Hello here is some bouncy text!
+  </p>
+</Transition>
+```
+```css
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+```
