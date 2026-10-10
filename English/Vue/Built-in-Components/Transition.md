@@ -153,3 +153,26 @@ For most CSS animations, we can simply declare them under the `*-enter-active` a
   }
 }
 ```
+
+### Custom Transition Classes​
+You can also specify custom transition classes by passing the following props to `<Transition>`:
+
+- enter-from-class
+- enter-active-class
+- enter-to-class
+- leave-from-class
+- leave-active-class
+- leave-to-class
+
+These will override the conventional class names. This is especially useful when you want to combine Vue's transition system with an existing CSS animation library, such as Animate.css:
+
+```template
+<!-- assuming Animate.css is included on the page -->
+<Transition
+  name="custom-classes"
+  enter-active-class="animate__animated animate__tada"
+  leave-active-class="animate__animated animate__bounceOutRight"
+>
+  <p v-if="show">hello</p>
+</Transition>
+```
