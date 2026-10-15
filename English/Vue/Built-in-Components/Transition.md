@@ -184,3 +184,51 @@ However, in some cases you may want to have both on the same element, for exampl
 ```template
 <Transition type="animation">...</Transition>
 ```
+### Nested Transitions and Explicit Transition Durations​
+Although the transition classes are only applied to the direct child element in `<Transition>`, we can transition nested elements using nested CSS selectors:
+
+```template
+<Transition name="nested">
+  <div v-if="show" class="outer">
+    <div class="inner">
+      Hello
+    </div>
+  </div>
+</Transition>
+```
+```css
+/* rules that target nested elements */
+.nested-enter-active .inner,
+.nested-leave-active .inner {
+  transition: all 0.3s ease-in-out;
+}
+
+.nested-enter-from .inner,
+.nested-leave-to .inner {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+/* ... other necessary CSS omitted */
+```
+We can even add a transition delay to the nested element on enter, which creates a staggered enter animation sequence:
+
+```css
+/* delay enter of nested element for staggered effect */
+.nested-enter-active .inner {
+  transition-delay: 0.25s;
+}
+```
+However, this creates a small issue. By default, the `<Transition>` component attempts to automatically figure out when the transition has finished by listening to the first `transitionend` or `animationend` event on the root transition element. With a nested transition, the desired behavior should be waiting until the transitions of all inner elements have finished.
+
+In such cases you can specify an explicit transition duration (in milliseconds) using the `duration` prop on the `<Transition>` component. The total duration should match the delay plus transition duration of the inner element:
+
+```template
+<Transition :duration="550">...</Transition>
+```
+
+If necessary, you can also specify separate values for enter and leave durations using an object:
+
+```template
+<Transition :duration="{ enter: 500, leave: 800 }">...</Transition>
+```
