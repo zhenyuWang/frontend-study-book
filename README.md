@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.10.14
+[Vue doc Transition](./English/Vue/Built-in-Components/Transition.md)
+
 ## 2026.10.13
 [Vue doc Transition](./English/Vue/Built-in-Components/Transition.md)
 

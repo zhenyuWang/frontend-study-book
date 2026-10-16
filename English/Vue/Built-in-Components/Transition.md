@@ -232,3 +232,11 @@ If necessary, you can also specify separate values for enter and leave durations
 ```template
 <Transition :duration="{ enter: 500, leave: 800 }">...</Transition>
 ```
+### Performance Considerations​
+You may notice that the animations shown above are mostly using properties like `transform` and `opacity`. These properties are efficient to animate because:
+
+1. They do not affect the document layout during the animation, so they do not trigger expensive CSS layout calculation on every animation frame.
+
+2. Most modern browsers can leverage GPU hardware acceleration when animating `transform`.
+
+In comparison, properties like `height` or `margin` will trigger CSS layout, so they are much more expensive to animate, and should be used with caution.
