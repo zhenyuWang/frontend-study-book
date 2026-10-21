@@ -240,3 +240,79 @@ You may notice that the animations shown above are mostly using properties like 
 2. Most modern browsers can leverage GPU hardware acceleration when animating `transform`.
 
 In comparison, properties like `height` or `margin` will trigger CSS layout, so they are much more expensive to animate, and should be used with caution.
+
+## JavaScript Hooks​
+You can hook into the transition process with JavaScript by listening to events on the `<Transition>` component:
+
+```template
+<Transition
+  @before-enter="onBeforeEnter"
+  @enter="onEnter"
+  @after-enter="onAfterEnter"
+  @enter-cancelled="onEnterCancelled"
+  @before-leave="onBeforeLeave"
+  @leave="onLeave"
+  @after-leave="onAfterLeave"
+  @leave-cancelled="onLeaveCancelled"
+>
+  <!-- ... -->
+</Transition>
+```
+```js
+export default {
+  // ...
+  methods: {
+    // called before the element is inserted into the DOM.
+    // use this to set the "enter-from" state of the element
+    onBeforeEnter(el) {},
+
+    // called one frame after the element is inserted.
+    // use this to start the animation.
+    onEnter(el, done) {
+      // call the done callback to indicate transition end
+      // optional if used in combination with CSS
+      done()
+    },
+
+    // called when the enter transition has finished.
+    onAfterEnter(el) {},
+
+    // called when the enter transition is cancelled before completion.
+    onEnterCancelled(el) {},
+
+    // called before the leave hook.
+    // Most of the time, you should just use the leave hook.
+    onBeforeLeave(el) {},
+
+    // called when the leave transition starts.
+    // use this to start the leaving animation.
+    onLeave(el, done) {
+      // call the done callback to indicate transition end
+      // optional if used in combination with CSS
+      done()
+    },
+
+    // called when the leave transition has finished and the
+    // element has been removed from the DOM.
+    onAfterLeave(el) {},
+
+    // only available with v-show transitions
+    onLeaveCancelled(el) {}
+  }
+}
+```
+These hooks can be used in combination with CSS transitions / animations or on their own.
+
+When using JavaScript-only transitions, it is usually a good idea to add the `:css="false"` prop. This explicitly tells Vue to skip auto CSS transition detection. Aside from being slightly more performant, this also prevents CSS rules from accidentally interfering with the transition:
+
+```template
+<Transition
+  ...
+  :css="false"
+>
+  ...
+</Transition>
+```
+With `:css="false"`, we are also fully responsible for controlling when the transition ends. In this case, the `done` callbacks are required for the `@enter` and `@leave` hooks. Otherwise, the hooks will be called synchronously and the transition will finish immediately.
+
+Here's a demo using the GSAP library to perform the animations. You can, of course, use any other animation library you want, for example Anime.js or Motion One:
