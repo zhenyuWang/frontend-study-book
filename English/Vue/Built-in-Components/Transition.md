@@ -316,3 +316,38 @@ When using JavaScript-only transitions, it is usually a good idea to add the `:c
 With `:css="false"`, we are also fully responsible for controlling when the transition ends. In this case, the `done` callbacks are required for the `@enter` and `@leave` hooks. Otherwise, the hooks will be called synchronously and the transition will finish immediately.
 
 Here's a demo using the GSAP library to perform the animations. You can, of course, use any other animation library you want, for example Anime.js or Motion One:
+
+## Reusable Transitions​
+Transitions can be reused through Vue's component system. To create a reusable transition, we can create a component that wraps the `<Transition>` component and passes down the slot content:
+
+```vue
+<!-- MyTransition.vue -->
+<script>
+// JavaScript hooks logic...
+</script>
+
+<template>
+  <!-- wrap the built-in Transition component -->
+  <Transition
+    name="my-transition"
+    @enter="onEnter"
+    @leave="onLeave">
+    <slot></slot> <!-- pass down slot content -->
+  </Transition>
+</template>
+
+<style>
+/*
+  Necessary CSS...
+  Note: avoid using <style scoped> here since it
+  does not apply to slot content.
+*/
+</style>
+```
+Now `MyTransition` can be imported and used just like the built-in version:
+
+```template
+<MyTransition>
+  <div v-if="show">Hello</div>
+</MyTransition>
+```
