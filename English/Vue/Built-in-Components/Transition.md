@@ -351,3 +351,12 @@ Now `MyTransition` can be imported and used just like the built-in version:
   <div v-if="show">Hello</div>
 </MyTransition>
 ```
+
+## Transition on Appear​
+If you also want to apply a transition on the initial render of a node, you can add the `appear` prop:
+
+```template
+<Transition appear>
+  ...
+</Transition>
+```
