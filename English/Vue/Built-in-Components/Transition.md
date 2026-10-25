@@ -360,3 +360,14 @@ If you also want to apply a transition on the initial render of a node, you can 
   ...
 </Transition>
 ```
+
+## Transition Between Elements​
+In addition to toggling an element with `v-if` / `v-show`, we can also transition between two elements using `v-if` / `v-else` / `v-else-if``, as long as we make sure that there is only one element being shown at any given moment:
+
+```template
+<Transition>
+  <button v-if="docState === 'saved'">Edit</button>
+  <button v-else-if="docState === 'edited'">Save</button>
+  <button v-else-if="docState === 'editing'">Cancel</button>
+</Transition>
+```
