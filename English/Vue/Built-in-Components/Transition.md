@@ -371,3 +371,17 @@ In addition to toggling an element with `v-if` / `v-show`, we can also transitio
   <button v-else-if="docState === 'editing'">Cancel</button>
 </Transition>
 ```
+
+## Transition Modes​
+In the previous example, the entering and leaving elements are animated at the same time, and we had to make them `position: absolute` to avoid the layout issue when both elements are present in the DOM.
+
+However, in some cases this isn't an option, or simply isn't the desired behavior. We may want the leaving element to be animated out first, and for the entering element to only be inserted after the leaving animation has finished. Orchestrating such animations manually would be very complicated - luckily, we can enable this behavior by passing `<Transition>` a `mode` prop:
+
+```template
+<Transition mode="out-in">
+  ...
+</Transition>
+```
+Here's the previous demo with `mode="out-in"`:
+
+`<Transition>` also supports `mode="in-out"`, although it's much less frequently used.
