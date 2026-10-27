@@ -385,3 +385,12 @@ However, in some cases this isn't an option, or simply isn't the desired behavio
 Here's the previous demo with `mode="out-in"`:
 
 `<Transition>` also supports `mode="in-out"`, although it's much less frequently used.
+
+## Transition Between Components​
+`<Transition>` can also be used around dynamic components:
+
+```template
+<Transition name="fade" mode="out-in">
+  <component :is="activeComponent"></component>
+</Transition>
+```
