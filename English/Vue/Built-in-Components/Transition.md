@@ -394,3 +394,15 @@ Here's the previous demo with `mode="out-in"`:
   <component :is="activeComponent"></component>
 </Transition>
 ```
+
+## Dynamic Transitions​
+`<Transition>` props like `name` can also be dynamic! It allows us to dynamically apply different transitions based on state change:
+
+```template
+<Transition :name="transitionName">
+  <!-- ... -->
+</Transition>
+```
+This can be useful when you've defined CSS transitions / animations using Vue's transition class conventions and want to switch between them.
+
+You can also apply different behavior in JavaScript transition hooks based on the current state of your component. Finally, the ultimate way of creating dynamic transitions is through reusable transition components that accept props to change the nature of the transition(s) to be used. It may sound cheesy, but the only limit really is your imagination.
