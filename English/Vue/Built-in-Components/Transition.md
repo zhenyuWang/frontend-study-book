@@ -406,3 +406,36 @@ Here's the previous demo with `mode="out-in"`:
 This can be useful when you've defined CSS transitions / animations using Vue's transition class conventions and want to switch between them.
 
 You can also apply different behavior in JavaScript transition hooks based on the current state of your component. Finally, the ultimate way of creating dynamic transitions is through reusable transition components that accept props to change the nature of the transition(s) to be used. It may sound cheesy, but the only limit really is your imagination.
+
+## Transitions with the Key Attribute​
+Sometimes you need to force the re-render of a DOM element in order for a transition to occur.
+
+Take this counter component for example:
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      count: 1,
+      interval: null 
+    }
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.count++;
+    }, 1000)
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
+  }
+}
+</script>
+
+<template>
+  <Transition>
+    <span :key="count">{{ count }}</span>
+  </Transition>
+</template>
+```
+If we had excluded the `key` attribute, only the text node would be updated and thus no transition would occur. However, with the `key` attribute in place, Vue knows to create a new `span` element whenever `count` changes and thus the `<Transition>` component has 2 different elements to transition between.
