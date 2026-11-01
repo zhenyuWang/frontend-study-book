@@ -12,3 +12,24 @@
 **TIP**
 
 When used in in-DOM templates, it should be referenced as `<transition-group>`.
+
+## Enter / Leave Transitions​
+Here is an example of applying enter / leave transitions to a `v-for` list using `<TransitionGroup>`:
+
+```template
+<TransitionGroup name="list" tag="ul">
+  <li v-for="item in items" :key="item">
+    {{ item }}
+  </li>
+</TransitionGroup>
+css
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+```
