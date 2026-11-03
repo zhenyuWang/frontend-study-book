@@ -57,3 +57,6 @@ The above demo has some obvious flaws: when an item is inserted or removed, its 
 }
 ```
 Now it looks much better - even animating smoothly when the whole list is shuffled:
+
+### Custom TransitionGroup classes​
+You can also specify custom transition classes for the moving element by passing the `moveClass` prop to `<TransitionGroup>`, just like custom transition classes on `<Transition>`.
