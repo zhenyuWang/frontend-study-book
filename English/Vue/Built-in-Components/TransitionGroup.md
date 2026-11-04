@@ -60,3 +60,36 @@ Now it looks much better - even animating smoothly when the whole list is shuffl
 
 ### Custom TransitionGroup classes​
 You can also specify custom transition classes for the moving element by passing the `moveClass` prop to `<TransitionGroup>`, just like custom transition classes on `<Transition>`.
+
+## Staggering List Transitions​
+By communicating with JavaScript transitions through data attributes, it's also possible to stagger transitions in a list. First, we render the index of an item as a data attribute on the DOM element:
+
+```template
+<TransitionGroup
+  tag="ul"
+  :css="false"
+  @before-enter="onBeforeEnter"
+  @enter="onEnter"
+  @leave="onLeave"
+>
+  <li
+    v-for="(item, index) in computedList"
+    :key="item.msg"
+    :data-index="index"
+  >
+    {{ item.msg }}
+  </li>
+</TransitionGroup>
+```
+Then, in JavaScript hooks, we animate the element with a delay based on the data attribute. This example is using the GSAP library to perform the animation:
+
+```js
+function onEnter(el, done) {
+  gsap.to(el, {
+    opacity: 1,
+    height: '1.6em',
+    delay: el.dataset.index * 0.15,
+    onComplete: done
+  })
+}
+```
