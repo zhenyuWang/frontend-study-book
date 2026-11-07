@@ -26,3 +26,28 @@ Now, the state will be persisted across component switches:
 > **TIP**
 
 When used in in-DOM templates, it should be referenced as `<keep-alive>`.
+
+## Include / Exclude​
+By default, `<KeepAlive>` will cache any component instance inside. We can customize this behavior via the `include` and `exclude` props. Both props can be a comma-delimited string, a `RegExp`, or an array containing either types:
+
+```template
+<!-- comma-delimited string -->
+<KeepAlive include="a,b">
+  <component :is="view" />
+</KeepAlive>
+
+<!-- regex (use `v-bind`) -->
+<KeepAlive :include="/a|b/">
+  <component :is="view" />
+</KeepAlive>
+
+<!-- Array (use `v-bind`) -->
+<KeepAlive :include="['a', 'b']">
+  <component :is="view" />
+</KeepAlive>
+```
+The match is checked against the component's `name` option, so components that need to be conditionally cached by `<KeepAlive>` must explicitly declare a `name` option.
+
+> **TIP**
+
+Since version 3.2.34, a single-file component using `<script setup>` will automatically infer its `name` option based on the filename, removing the need to manually declare the name.
