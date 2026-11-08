@@ -51,3 +51,12 @@ The match is checked against the component's `name` option, so components that n
 > **TIP**
 
 Since version 3.2.34, a single-file component using `<script setup>` will automatically infer its `name` option based on the filename, removing the need to manually declare the name.
+
+## Max Cached Instances​
+We can limit the maximum number of component instances that can be cached via the `max` prop. When `max` is specified, `<KeepAlive>` behaves like an LRU cache: if the number of cached instances is about to exceed the specified max count, the least recently accessed cached instance will be destroyed to make room for the new one.
+
+```template
+<KeepAlive :max="10">
+  <component :is="activeComponent" />
+</KeepAlive>
+```

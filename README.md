@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.11.6
+[Vue doc Transition](./English/Vue/Built-in-Components/KeepAlive.md)
+
 ## 2026.11.5
 [Vue doc Transition](./English/Vue/Built-in-Components/KeepAlive.md)
 
