@@ -78,3 +78,8 @@ You can combine `<Teleport>` with `<Transition>` to create animated modals - see
 > **TIP**
 
 The teleport `<to>` target must be already in the DOM when the `<Teleport>` component is mounted. Ideally, this should be an element outside the entire Vue application. If targeting another element rendered by Vue, you need to make sure that element is mounted before the `<Teleport>`. If you are using SSR, see Handling Teleports in SSR.
+
+## Using with Components​
+`<Teleport>` only alters the rendered DOM structure - it does not affect the logical hierarchy of the components. That is to say, if `<Teleport>` contains a component, that component will remain a logical child of the parent component containing the `<Teleport>`. Props passing and event emitting will continue to work the same way.
+
+This also means that injections from a parent component work as expected, and that the child component will be nested below the parent component in the Vue Devtools, instead of being placed where the actual content moved to.
