@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.11.13
+[Vue doc Teleport](./English/Vue/Built-in-Components/Teleport.md)
+
 ## 2026.11.12
 [Vue doc Teleport](./English/Vue/Built-in-Components/Teleport.md)
 
