@@ -93,3 +93,25 @@ In some cases, we may want to conditionally disable `<Teleport>`. For example, w
 </Teleport>
 ```
 We could then dynamically update `isMobile`.
+
+## Multiple Teleports on the Same Target​
+A common use case would be a reusable `<Modal>` component, with the potential for multiple instances to be active at the same time. For this kind of scenario, multiple `<Teleport>` components can mount their content to the same target element. The order will be a simple append, with later mounts located after earlier ones, but all within the target element.
+
+Given the following usage:
+
+```template
+<Teleport to="#modals">
+  <div>A</div>
+</Teleport>
+<Teleport to="#modals">
+  <div>B</div>
+</Teleport>
+```html
+The rendered result would be:
+
+```html
+<div id="modals">
+  <div>A</div>
+  <div>B</div>
+</div>
+```
