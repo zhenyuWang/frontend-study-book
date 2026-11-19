@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.11.18
+[Vue doc Suspense](./English/Vue/Built-in-Components/Suspense.md)
+
 ## 2026.11.17
 [Vue doc Teleport](./English/Vue/Built-in-Components/Teleport.md)
 
