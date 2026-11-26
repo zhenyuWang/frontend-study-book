@@ -58,3 +58,25 @@ const posts = await res.json()
 Async components are "suspensible" by default. This means that if it has a `<Suspense>` in the parent chain, it will be treated as an async dependency of that `<Suspense>`. In this case, the loading state will be controlled by the `<Suspense>`, and the component's own loading, error, delay and timeout options will be ignored.
 
 The async component can opt-out of `<Suspense>` control and let the component always control its own loading state by specifying `suspensible: false` in its options.
+
+## Loading State​
+The `<Suspense>` component has two slots: `#default` and `#fallback`. Both slots only allow for one immediate child node. The node in the default slot is shown if possible. If not, the node in the fallback slot will be shown instead.
+
+```vue
+<Suspense>
+  <!-- component with nested async dependencies -->
+  <Dashboard />
+
+  <!-- loading state via #fallback slot -->
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>
+```
+On initial render, `<Suspense>` will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a pending state. During the pending state, the fallback content will be displayed. When all encountered async dependencies have been resolved, `<Suspense>` enters a resolved state and the resolved default slot content is displayed.
+
+If no async dependencies were encountered during the initial render, `<Suspense>` will directly go into a resolved state.
+
+Once in a resolved state, `<Suspense>` will only revert to a pending state if the root node of the `#default` slot is replaced. New async dependencies nested deeper in the tree will not cause the `<Suspense>` to revert to a pending state.
+
+When a revert happens, fallback content will not be immediately displayed. Instead, `<Suspense>` will display the previous `#default` content while waiting for the new content and its async dependencies to be resolved. This behavior can be configured with the `timeout` prop: `<Suspense>` will switch to fallback content if it takes longer than `timeout` milliseconds to render the new default content. A `timeout` value of `0` will cause the fallback content to be displayed immediately when default content is replaced.
