@@ -4,6 +4,9 @@
 
 # 日志
 
+## 2026.11.25
+[Vue doc Suspense](./English/Vue/Built-in-Components/Suspense.md)
+
 ## 2026.11.24
 [Vue doc Suspense](./English/Vue/Built-in-Components/Suspense.md)
 
